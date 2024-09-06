@@ -120,11 +120,13 @@ async function main() {
     return false
   }
 
+  const debugUnknownTypes = false
+
   const unknownTypes = new Set<string>()
   const warnUnknownType = (name: string, label = "type") => {
-    if (!unknownTypes.has(name)) {
+    if (debugUnknownTypes && !unknownTypes.has(name)) {
       unknownTypes.add(name)
-      // console.warn("Unknown %s: %O", label, name)
+      console.warn("Unknown %s: %O", label, name)
     }
   }
 
@@ -303,10 +305,6 @@ async function main() {
             // Strangely, the result of pg_query_parse doesn't actually include
             // the node tags, so skip defining them.
             continue
-          }
-
-          if (fieldName === "relations") {
-            console.log({ typeName, fieldName, fieldType, field })
           }
 
           const debugTags = false
