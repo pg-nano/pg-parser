@@ -9,16 +9,17 @@ const cwd = process.cwd()
 const renderTest = (testFile: string) => `
 import { describe, test, expect } from "vitest"
 import { parseTestFile } from "../parseTestFile"
+import { parseQuery } from "../../index"
 
 describe("${testFile}", () => {
   const tests = parseTestFile("${path.relative(cwd, path.join(testDir, testFile))}")
-  for (const { line, run } of tests) {
+  for (const { line, stmt } of tests) {
     test("line " + line, async () => {
       try {
-        const ast = await run()
-        expect(ast).toMatchSnapshot()
+        const ast = await parseQuery(stmt)
+        expect([stmt, ast]).toMatchSnapshot()
       } catch (error) {
-        expect(error).toMatchSnapshot()
+        expect([stmt, error]).toMatchSnapshot()
       }
     })
   }

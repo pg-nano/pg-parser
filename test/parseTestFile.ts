@@ -1,4 +1,4 @@
-import { parseQuery, splitWithScannerSync } from "../index"
+import { fingerprintSync, splitWithScannerSync } from "../binding"
 import fs from "node:fs"
 
 export function parseTestFile(testPath: string) {
@@ -7,8 +7,9 @@ export function parseTestFile(testPath: string) {
 
   const stmts = splitWithScannerSync(sql)
   const lineBreaks = getLineBreakLocations(sql)
+  const fingerprints = new Set<string>()
 
-  const tests: { line: number; run: () => Promise<any> }[] = []
+  const tests: { line: number; stmt: string }[] = []
 
   for (let { location, length } of stmts) {
     // Skip comments and empty lines.
@@ -18,18 +19,23 @@ export function parseTestFile(testPath: string) {
     }
     length -= location - originalLocation
 
-    // Get the line number.
-    const line =
-      lineBreaks.findIndex((lineBreak) => location < lineBreak) + 1 ||
-      lineBreaks.length
+    const stmt = sql.slice(location, location + length)
+    if (stmt) {
+      try {
+        const fingerprint = fingerprintSync(stmt)
+        if (fingerprints.has(fingerprint)) {
+          continue
+        }
 
-    tests.push({
-      line,
-      run: async () => {
-        const stmt = sql.slice(location, location + length)
-        return parseQuery(stmt)
-      },
-    })
+        // Get the line number.
+        const line =
+          lineBreaks.findIndex((lineBreak) => location < lineBreak) + 1 ||
+          lineBreaks.length
+
+        tests.push({ line, stmt })
+        fingerprints.add(fingerprint)
+      } catch {}
+    }
   }
 
   return tests

@@ -19,26 +19,33 @@ export const typeMappings: Record<string, string> = {
   Node: "Node",
   "[]Node": "Node[]",
   RelFileNumber: "number",
-  ParallelVacuumState: "any",
 
   // Overrides
   List: "any[]",
-  "Query.cteList": "CommonTableExpr[]",
-  "Query.rtable": "RangeTblEntry[]",
-  "Query.rteperminfos": "RTEPermissionInfo[]",
-  "Query.mergeActionList": "MergeAction[]",
-  "Query.targetList": "TargetEntry[]",
-  "Query.returningList": "TargetEntry[]",
-  "Query.groupClause": "SortGroupClause[]",
-  "Query.groupingSets": "GroupingSet[]",
-  "Query.windowClause": "WindowClause[]",
-  "Query.distinctClause": "SortGroupClause[]",
-  "Query.sortClause": "SortGroupClause[]",
-  "Query.rowMarks": "RowMarkClause[]",
-  "Query.constraintDeps": "Oid[]",
-  "Query.withCheckOptions": "WithCheckOption[]",
-  "LockingClause.lockedRels": "RangeVar[] | null",
-  "PartitionElem.collation": "String[]",
-  "TypeName.names": "String[]",
-  "ColumnRef.fields": "(String | A_Star)[]",
+  "Alias.colnames": NodeArray("String"),
+  "AlterSeqStmt.options": NodeArray("DefElem"),
+  "AlterTableStmt.cmds": NodeArray("AlterTableCmd"),
+  "ColumnRef.fields": NodeArray("String | A_Star"),
+  "CreateOpClassItem.class_args": NodeArray("TypeName"),
+  "CreateSeqStmt.options": NodeArray("DefElem"),
+  "DefElem.arg": "TypeName | String | Integer | Float",
+  "DropRoleStmt.roles": NodeArray("RoleSpec"),
+  "LockingClause.lockedRels": NodeArray("RangeVar"),
+  "ObjectWithArgs.objargs": NodeArray("TypeName"),
+  "ObjectWithArgs.objname": NodeArray("String"),
+  "PartitionElem.collation": NodeArray("String"),
+  "RangeSubselect.subquery": "SelectStmt",
+  "SelectStmt.valuesLists": "List<Expr>[]",
+  "TypeName.names": NodeArray("String"),
+}
+
+function Node(types: string) {
+  return types
+    .split(" | ")
+    .map((type) => `{ ${type}: ${type} }`)
+    .join(" | ")
+}
+
+function NodeArray(types: string) {
+  return `(${Node(types)})[]`
 }

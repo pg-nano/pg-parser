@@ -1,0 +1,4658 @@
+{
+  "SelectStmt": {
+    "targetList": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "limitOption": [
+      false,
+      null,
+      null
+    ],
+    "op": [
+      false,
+      null,
+      null
+    ],
+    "fromClause": [
+      true,
+      [
+        "RangeVar",
+        "RangeTableFunc",
+        "RangeSubselect",
+        "RangeFunction",
+        "JoinExpr",
+        "RangeTableSample"
+      ],
+      null
+    ],
+    "whereClause": [
+      true,
+      [
+        "A_Expr",
+        "FuncCall",
+        "BoolExpr",
+        "A_Const",
+        "SubLink",
+        "NullTest",
+        "JsonIsPredicate",
+        "ColumnRef",
+        "BooleanTest"
+      ],
+      null
+    ],
+    "valuesLists": [
+      true,
+      [
+        "List"
+      ],
+      [
+        "A_Const",
+        "SubLink",
+        "ColumnRef",
+        "TypeCast",
+        "FuncCall",
+        "SetToDefault",
+        "ParamRef",
+        "A_ArrayExpr",
+        "RowExpr",
+        "A_Expr",
+        "BoolExpr",
+        "SQLValueFunction",
+        "CollateClause"
+      ]
+    ],
+    "groupClause": [
+      true,
+      [
+        "FuncCall",
+        "ColumnRef",
+        "A_Const",
+        "A_Expr",
+        "GroupingSet",
+        "RowExpr"
+      ],
+      null
+    ],
+    "sortClause": [
+      true,
+      [
+        "SortBy"
+      ],
+      null
+    ],
+    "havingClause": [
+      true,
+      [
+        "A_Expr",
+        "BoolExpr",
+        "ColumnRef",
+        "SubLink"
+      ],
+      null
+    ],
+    "distinctClause": [
+      true,
+      [
+        "ColumnRef",
+        "A_Const"
+      ],
+      null
+    ],
+    "all": [
+      true,
+      null,
+      null
+    ],
+    "larg": [
+      true,
+      null,
+      null
+    ],
+    "rarg": [
+      true,
+      null,
+      null
+    ],
+    "limitCount": [
+      true,
+      [
+        "A_Const",
+        "FuncCall",
+        "A_Expr",
+        "CaseExpr"
+      ],
+      null
+    ],
+    "withClause": [
+      true,
+      null,
+      null
+    ],
+    "lockingClause": [
+      true,
+      [
+        "LockingClause"
+      ],
+      null
+    ],
+    "intoClause": [
+      true,
+      null,
+      null
+    ],
+    "limitOffset": [
+      true,
+      [
+        "A_Const",
+        "A_Expr",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "groupDistinct": [
+      true,
+      null,
+      null
+    ],
+    "windowClause": [
+      true,
+      [
+        "WindowDef"
+      ],
+      null
+    ]
+  },
+  "ResTarget": {
+    "val": [
+      true,
+      [
+        "ColumnRef",
+        "XmlExpr",
+        "TypeCast",
+        "A_Const",
+        "FuncCall",
+        "CaseExpr",
+        "A_Expr",
+        "XmlSerialize",
+        "SubLink",
+        "MultiAssignRef",
+        "A_ArrayExpr",
+        "SetToDefault",
+        "A_Indirection",
+        "ParamRef",
+        "RowExpr",
+        "NullTest",
+        "JsonIsPredicate",
+        "BoolExpr",
+        "JsonArrayQueryConstructor",
+        "JsonArrayAgg",
+        "JsonObjectAgg",
+        "JsonArrayConstructor",
+        "JsonObjectConstructor",
+        "SQLValueFunction",
+        "MinMaxExpr",
+        "CoalesceExpr",
+        "GroupingFunc",
+        "CollateClause",
+        "BooleanTest"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "indirection": [
+      true,
+      [
+        "A_Indices",
+        "String"
+      ],
+      null
+    ]
+  },
+  "FuncCall": {
+    "funcname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "args": [
+      true,
+      [
+        "A_Const",
+        "ColumnRef",
+        "XmlExpr",
+        "TypeCast",
+        "FuncCall",
+        "A_Expr",
+        "NamedArgExpr",
+        "SubLink",
+        "SQLValueFunction",
+        "A_ArrayExpr",
+        "RowExpr",
+        "A_Indirection",
+        "CollateClause",
+        "BoolExpr"
+      ],
+      null
+    ],
+    "funcformat": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "agg_star": [
+      true,
+      null,
+      null
+    ],
+    "agg_distinct": [
+      true,
+      null,
+      null
+    ],
+    "agg_order": [
+      true,
+      [
+        "SortBy"
+      ],
+      null
+    ],
+    "agg_filter": [
+      true,
+      [
+        "A_Expr",
+        "A_Const",
+        "ColumnRef",
+        "NullTest",
+        "SubLink"
+      ],
+      null
+    ],
+    "agg_within_group": [
+      true,
+      null,
+      null
+    ],
+    "over": [
+      true,
+      null,
+      null
+    ],
+    "func_variadic": [
+      true,
+      null,
+      null
+    ]
+  },
+  "String": {
+    "sval": [
+      false,
+      null,
+      null
+    ]
+  },
+  "A_Const": {
+    "ival": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "fval": [
+      true,
+      null,
+      null
+    ],
+    "isnull": [
+      true,
+      null,
+      null
+    ],
+    "sval": [
+      true,
+      null,
+      null
+    ],
+    "boolval": [
+      true,
+      null,
+      null
+    ],
+    "bsval": [
+      true,
+      null,
+      null
+    ]
+  },
+  "TransactionStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "savepoint_name": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "gid": [
+      true,
+      null,
+      null
+    ],
+    "chain": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "tableElts": [
+      true,
+      [
+        "ColumnDef",
+        "Constraint",
+        "TableLikeClause"
+      ],
+      null
+    ],
+    "oncommit": [
+      false,
+      null,
+      null
+    ],
+    "inhRelations": [
+      true,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "partspec": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ],
+    "accessMethod": [
+      true,
+      null,
+      null
+    ],
+    "partbound": [
+      true,
+      null,
+      null
+    ],
+    "tablespacename": [
+      true,
+      null,
+      null
+    ],
+    "ofTypename": [
+      true,
+      null,
+      null
+    ]
+  },
+  "ColumnDef": {
+    "colname": [
+      true,
+      null,
+      null
+    ],
+    "typeName": [
+      true,
+      null,
+      null
+    ],
+    "is_local": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "constraints": [
+      true,
+      [
+        "Constraint"
+      ],
+      null
+    ],
+    "raw_default": [
+      true,
+      [
+        "TypeCast",
+        "A_Const"
+      ],
+      null
+    ],
+    "collClause": [
+      true,
+      null,
+      null
+    ],
+    "compression": [
+      true,
+      null,
+      null
+    ],
+    "fdwoptions": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "VacuumStmt": {
+    "rels": [
+      true,
+      [
+        "VacuumRelation"
+      ],
+      null
+    ],
+    "is_vacuumcmd": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "VacuumRelation": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "va_cols": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "ColumnRef": {
+    "fields": [
+      false,
+      [
+        "String",
+        "A_Star"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RangeVar": {
+    "relname": [
+      false,
+      null,
+      null
+    ],
+    "inh": [
+      true,
+      null,
+      null
+    ],
+    "relpersistence": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "alias": [
+      true,
+      null,
+      null
+    ],
+    "schemaname": [
+      true,
+      null,
+      null
+    ]
+  },
+  "A_Expr": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "name": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "lexpr": [
+      true,
+      [
+        "A_Const",
+        "A_Expr",
+        "ColumnRef",
+        "XmlSerialize",
+        "FuncCall",
+        "TypeCast",
+        "RowExpr",
+        "A_Indirection",
+        "SubLink",
+        "CaseExpr",
+        "SQLValueFunction",
+        "A_ArrayExpr",
+        "ParamRef",
+        "CollateClause",
+        "CoalesceExpr",
+        "MinMaxExpr",
+        "BoolExpr",
+        "GroupingFunc"
+      ],
+      null
+    ],
+    "rexpr": [
+      false,
+      [
+        "FuncCall",
+        "A_Const",
+        "XmlSerialize",
+        "TypeCast",
+        "ColumnRef",
+        "SubLink",
+        "RowExpr",
+        "A_Indirection",
+        "A_Expr",
+        "CoalesceExpr",
+        "CaseExpr",
+        "SQLValueFunction",
+        "List",
+        "A_ArrayExpr",
+        "ParamRef",
+        "CollateClause",
+        "NullTest"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RangeSubselect": {
+    "subquery": [
+      false,
+      [
+        "SelectStmt"
+      ],
+      null
+    ],
+    "alias": [
+      true,
+      null,
+      null
+    ],
+    "lateral": [
+      true,
+      null,
+      null
+    ]
+  },
+  "List": {
+    "items": [
+      false,
+      [
+        "A_Const",
+        "FuncCall",
+        "String",
+        "SubLink",
+        "ColumnRef",
+        "TypeCast",
+        "FunctionParameter",
+        "DefElem",
+        "SetToDefault",
+        "ParamRef",
+        "A_ArrayExpr",
+        "RowExpr",
+        "A_Expr",
+        "BoolExpr",
+        "RoleSpec",
+        "SQLValueFunction",
+        "ColumnDef",
+        "List",
+        "IndexElem",
+        "TypeName",
+        "CoalesceExpr",
+        "CollateClause"
+      ],
+      [
+        "ColumnDef",
+        "String"
+      ]
+    ]
+  },
+  "TypeCast": {
+    "arg": [
+      false,
+      [
+        "A_Const",
+        "ColumnRef",
+        "TypeCast",
+        "A_Expr",
+        "A_ArrayExpr",
+        "FuncCall",
+        "RowExpr",
+        "SubLink",
+        "ParamRef",
+        "A_Indirection",
+        "SQLValueFunction",
+        "CollateClause"
+      ],
+      null
+    ],
+    "typeName": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RangeFunction": {
+    "functions": [
+      false,
+      [
+        "List"
+      ],
+      [
+        "FuncCall",
+        "List",
+        "SQLValueFunction",
+        "TypeCast",
+        "CoalesceExpr"
+      ]
+    ],
+    "alias": [
+      true,
+      null,
+      null
+    ],
+    "ordinality": [
+      true,
+      null,
+      null
+    ],
+    "lateral": [
+      true,
+      null,
+      null
+    ],
+    "coldeflist": [
+      true,
+      [
+        "ColumnDef"
+      ],
+      null
+    ],
+    "is_rowsfrom": [
+      true,
+      null,
+      null
+    ]
+  },
+  "SortBy": {
+    "node": [
+      false,
+      [
+        "A_Const",
+        "ColumnRef",
+        "FuncCall",
+        "TypeCast",
+        "A_Expr",
+        "CollateClause",
+        "A_Indirection"
+      ],
+      null
+    ],
+    "sortby_dir": [
+      false,
+      null,
+      null
+    ],
+    "sortby_nulls": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "useOp": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "SubLink": {
+    "subLinkType": [
+      false,
+      null,
+      null
+    ],
+    "subselect": [
+      false,
+      [
+        "SelectStmt"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "testexpr": [
+      true,
+      [
+        "ColumnRef",
+        "A_Const",
+        "RowExpr",
+        "CaseExpr",
+        "TypeCast",
+        "A_Expr"
+      ],
+      null
+    ],
+    "operName": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "ExplainStmt": {
+    "query": [
+      false,
+      [
+        "SelectStmt",
+        "CreateTableAsStmt",
+        "MergeStmt",
+        "UpdateStmt",
+        "InsertStmt",
+        "DeleteStmt",
+        "DeclareCursorStmt",
+        "ExecuteStmt"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "DefElem": {
+    "defname": [
+      false,
+      null,
+      null
+    ],
+    "defaction": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      true,
+      null,
+      null
+    ],
+    "arg": [
+      true,
+      [
+        "String",
+        "List",
+        "TypeName",
+        "Boolean",
+        "Float",
+        "Integer",
+        "A_Const",
+        "VariableSetStmt"
+      ],
+      null
+    ],
+    "defnamespace": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CopyStmt": {
+    "relation": [
+      true,
+      null,
+      null
+    ],
+    "is_from": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "attlist": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "query": [
+      true,
+      [
+        "MergeStmt",
+        "SelectStmt",
+        "InsertStmt"
+      ],
+      null
+    ]
+  },
+  "NullTest": {
+    "arg": [
+      false,
+      [
+        "ColumnRef",
+        "A_Expr",
+        "JsonObjectAgg",
+        "JsonArrayAgg",
+        "SubLink",
+        "FuncCall",
+        "SQLValueFunction"
+      ],
+      null
+    ],
+    "nulltesttype": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "BoolExpr": {
+    "boolop": [
+      false,
+      null,
+      null
+    ],
+    "args": [
+      false,
+      [
+        "A_Expr",
+        "ColumnRef",
+        "BoolExpr",
+        "NullTest",
+        "FuncCall",
+        "SubLink",
+        "JsonIsPredicate",
+        "BooleanTest",
+        "ParamRef",
+        "TypeCast"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "InsertStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "selectStmt": [
+      true,
+      [
+        "SelectStmt"
+      ],
+      null
+    ],
+    "override": [
+      false,
+      null,
+      null
+    ],
+    "cols": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "withClause": [
+      true,
+      null,
+      null
+    ],
+    "onConflictClause": [
+      true,
+      null,
+      null
+    ],
+    "returningList": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ]
+  },
+  "DropStmt": {
+    "objects": [
+      false,
+      [
+        "List",
+        "ObjectWithArgs",
+        "TypeName",
+        "String"
+      ],
+      [
+        "String",
+        "TypeName"
+      ]
+    ],
+    "removeType": [
+      false,
+      null,
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "concurrent": [
+      true,
+      null,
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ]
+  },
+  "A_Star": {},
+  "JoinExpr": {
+    "jointype": [
+      false,
+      null,
+      null
+    ],
+    "larg": [
+      false,
+      [
+        "RangeVar",
+        "RangeSubselect",
+        "JoinExpr",
+        "RangeFunction"
+      ],
+      null
+    ],
+    "rarg": [
+      false,
+      [
+        "RangeVar",
+        "RangeSubselect",
+        "RangeFunction",
+        "JoinExpr"
+      ],
+      null
+    ],
+    "quals": [
+      true,
+      [
+        "A_Expr",
+        "BoolExpr",
+        "A_Const",
+        "NullTest"
+      ],
+      null
+    ],
+    "usingClause": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "isNatural": [
+      true,
+      null,
+      null
+    ],
+    "alias": [
+      true,
+      null,
+      null
+    ],
+    "join_using_alias": [
+      true,
+      null,
+      null
+    ]
+  },
+  "Constraint": {
+    "contype": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      true,
+      null,
+      null
+    ],
+    "keys": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "raw_expr": [
+      true,
+      [
+        "FuncCall",
+        "A_Const",
+        "BoolExpr",
+        "A_Expr",
+        "NullTest",
+        "TypeCast",
+        "SubLink",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "conname": [
+      true,
+      null,
+      null
+    ],
+    "initially_valid": [
+      true,
+      null,
+      null
+    ],
+    "pktable": [
+      true,
+      null,
+      null
+    ],
+    "fk_attrs": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "fk_matchtype": [
+      true,
+      null,
+      null
+    ],
+    "fk_upd_action": [
+      true,
+      null,
+      null
+    ],
+    "fk_del_action": [
+      true,
+      null,
+      null
+    ],
+    "pk_attrs": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "skip_validation": [
+      true,
+      null,
+      null
+    ],
+    "deferrable": [
+      true,
+      null,
+      null
+    ],
+    "initdeferred": [
+      true,
+      null,
+      null
+    ],
+    "is_no_inherit": [
+      true,
+      null,
+      null
+    ],
+    "nulls_not_distinct": [
+      true,
+      null,
+      null
+    ],
+    "exclusions": [
+      true,
+      [
+        "List"
+      ],
+      [
+        "IndexElem",
+        "List"
+      ]
+    ],
+    "access_method": [
+      true,
+      null,
+      null
+    ],
+    "indexname": [
+      true,
+      null,
+      null
+    ],
+    "generated_when": [
+      true,
+      null,
+      null
+    ],
+    "including": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "indexspace": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "PartitionElem": {
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "expr": [
+      true,
+      [
+        "FuncCall",
+        "BoolExpr",
+        "A_Expr",
+        "ColumnRef",
+        "TypeCast",
+        "RowExpr",
+        "A_Const"
+      ],
+      null
+    ],
+    "opclass": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "collation": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "VariableSetStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "args": [
+      true,
+      [
+        "A_Const",
+        "DefElem"
+      ],
+      null
+    ],
+    "is_local": [
+      true,
+      null,
+      null
+    ]
+  },
+  "ViewStmt": {
+    "view": [
+      false,
+      null,
+      null
+    ],
+    "query": [
+      false,
+      [
+        "SelectStmt"
+      ],
+      null
+    ],
+    "replace": [
+      true,
+      null,
+      null
+    ],
+    "withCheckOption": [
+      false,
+      null,
+      null
+    ],
+    "aliases": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CaseExpr": {
+    "arg": [
+      true,
+      [
+        "ColumnRef",
+        "TypeCast",
+        "FuncCall",
+        "CaseExpr",
+        "A_Const",
+        "A_Expr"
+      ],
+      null
+    ],
+    "args": [
+      false,
+      [
+        "CaseWhen"
+      ],
+      null
+    ],
+    "defresult": [
+      true,
+      [
+        "A_Const",
+        "A_Expr",
+        "TypeCast",
+        "CaseExpr",
+        "SubLink",
+        "FuncCall",
+        "ColumnRef",
+        "A_ArrayExpr"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CaseWhen": {
+    "expr": [
+      false,
+      [
+        "A_Expr",
+        "ColumnRef",
+        "NullTest",
+        "SubLink",
+        "A_Const",
+        "TypeCast",
+        "FuncCall",
+        "BoolExpr"
+      ],
+      null
+    ],
+    "result": [
+      false,
+      [
+        "FuncCall",
+        "A_Const",
+        "CoalesceExpr",
+        "A_Expr",
+        "TypeCast",
+        "ColumnRef",
+        "CaseExpr",
+        "SubLink"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "A_ArrayExpr": {
+    "elements": [
+      true,
+      [
+        "RowExpr",
+        "A_Const",
+        "A_Expr",
+        "FuncCall",
+        "TypeCast",
+        "A_ArrayExpr",
+        "SQLValueFunction",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CollateClause": {
+    "arg": [
+      false,
+      [
+        "ColumnRef",
+        "A_Const",
+        "TypeCast",
+        "CaseExpr",
+        "A_Expr"
+      ],
+      null
+    ],
+    "collname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "Integer": {
+    "ival": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CompositeTypeStmt": {
+    "typevar": [
+      false,
+      null,
+      null
+    ],
+    "coldeflist": [
+      false,
+      [
+        "ColumnDef"
+      ],
+      null
+    ]
+  },
+  "CreateFunctionStmt": {
+    "replace": [
+      true,
+      null,
+      null
+    ],
+    "funcname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "parameters": [
+      true,
+      [
+        "FunctionParameter"
+      ],
+      null
+    ],
+    "returnType": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "sql_body": [
+      true,
+      [
+        "ReturnStmt",
+        "List"
+      ],
+      null
+    ],
+    "is_procedure": [
+      true,
+      null,
+      null
+    ]
+  },
+  "FunctionParameter": {
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "argType": [
+      false,
+      null,
+      null
+    ],
+    "mode": [
+      false,
+      null,
+      null
+    ],
+    "defexpr": [
+      true,
+      [
+        "A_Const",
+        "SQLValueFunction",
+        "TypeCast"
+      ],
+      null
+    ]
+  },
+  "DefineStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "defnames": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "args": [
+      true,
+      [
+        "List",
+        "Integer"
+      ],
+      [
+        "FunctionParameter"
+      ]
+    ],
+    "definition": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "oldstyle": [
+      true,
+      null,
+      null
+    ],
+    "replace": [
+      true,
+      null,
+      null
+    ]
+  },
+  "TypeName": {
+    "names": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "typemod": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "typmods": [
+      true,
+      [
+        "A_Const",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "arrayBounds": [
+      true,
+      [
+        "Integer"
+      ],
+      null
+    ]
+  },
+  "AlterTableStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "cmds": [
+      false,
+      [
+        "AlterTableCmd"
+      ],
+      null
+    ],
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterTableCmd": {
+    "subtype": [
+      false,
+      null,
+      null
+    ],
+    "def": [
+      true,
+      [
+        "List",
+        "PartitionCmd",
+        "A_Const",
+        "ColumnDef",
+        "Constraint",
+        "ReplicaIdentityStmt",
+        "RangeVar",
+        "TypeCast",
+        "A_Expr",
+        "FuncCall",
+        "String",
+        "Integer"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "num": [
+      true,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ],
+    "newowner": [
+      true,
+      null,
+      null
+    ]
+  },
+  "Boolean": {
+    "boolval": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RowExpr": {
+    "args": [
+      true,
+      [
+        "ColumnRef",
+        "A_Const",
+        "A_Expr",
+        "SetToDefault",
+        "TypeCast",
+        "RowExpr",
+        "A_ArrayExpr",
+        "FuncCall",
+        "SubLink",
+        "CollateClause"
+      ],
+      null
+    ],
+    "row_format": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateTableAsStmt": {
+    "query": [
+      false,
+      [
+        "SelectStmt",
+        "ExecuteStmt"
+      ],
+      null
+    ],
+    "into": [
+      false,
+      null,
+      null
+    ],
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ]
+  },
+  "DropRoleStmt": {
+    "roles": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ]
+  },
+  "RoleSpec": {
+    "roletype": [
+      false,
+      null,
+      null
+    ],
+    "rolename": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateRoleStmt": {
+    "stmt_type": [
+      false,
+      null,
+      null
+    ],
+    "role": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CreateSchemaStmt": {
+    "schemaname": [
+      true,
+      null,
+      null
+    ],
+    "authrole": [
+      true,
+      null,
+      null
+    ],
+    "schemaElts": [
+      true,
+      [
+        "CreateStmt",
+        "IndexStmt",
+        "ViewStmt",
+        "CreateSeqStmt"
+      ],
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ]
+  },
+  "GrantStmt": {
+    "is_grant": [
+      true,
+      null,
+      null
+    ],
+    "targtype": [
+      false,
+      null,
+      null
+    ],
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "objects": [
+      false,
+      [
+        "RangeVar",
+        "String",
+        "ObjectWithArgs"
+      ],
+      null
+    ],
+    "grantees": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "privileges": [
+      true,
+      [
+        "AccessPriv"
+      ],
+      null
+    ],
+    "grantor": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterOwnerStmt": {
+    "objectType": [
+      false,
+      null,
+      null
+    ],
+    "object": [
+      false,
+      [
+        "String",
+        "ObjectWithArgs",
+        "List"
+      ],
+      null
+    ],
+    "newowner": [
+      false,
+      null,
+      null
+    ]
+  },
+  "ObjectWithArgs": {
+    "objname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "objargs": [
+      true,
+      [
+        "TypeName"
+      ],
+      null
+    ],
+    "objfuncargs": [
+      true,
+      [
+        "FunctionParameter"
+      ],
+      null
+    ],
+    "args_unspecified": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterObjectSchemaStmt": {
+    "objectType": [
+      false,
+      null,
+      null
+    ],
+    "object": [
+      false,
+      [
+        "List",
+        "ObjectWithArgs"
+      ],
+      null
+    ],
+    "newschema": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RenameStmt": {
+    "renameType": [
+      false,
+      null,
+      null
+    ],
+    "relationType": [
+      false,
+      null,
+      null
+    ],
+    "object": [
+      true,
+      [
+        "String",
+        "ObjectWithArgs",
+        "List"
+      ],
+      null
+    ],
+    "newname": [
+      false,
+      null,
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "relation": [
+      true,
+      null,
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ],
+    "subname": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateFdwStmt": {
+    "fdwname": [
+      false,
+      null,
+      null
+    ],
+    "func_options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CreateForeignServerStmt": {
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "fdwname": [
+      false,
+      null,
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CreatePLangStmt": {
+    "plname": [
+      false,
+      null,
+      null
+    ],
+    "plhandler": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "CreateOpFamilyStmt": {
+    "opfamilyname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "amname": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateOpClassStmt": {
+    "opclassname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "amname": [
+      false,
+      null,
+      null
+    ],
+    "datatype": [
+      false,
+      null,
+      null
+    ],
+    "items": [
+      false,
+      [
+        "CreateOpClassItem"
+      ],
+      null
+    ],
+    "isDefault": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateOpClassItem": {
+    "itemtype": [
+      false,
+      null,
+      null
+    ],
+    "storedtype": [
+      true,
+      null,
+      null
+    ],
+    "number": [
+      true,
+      null,
+      null
+    ],
+    "class_args": [
+      true,
+      [
+        "TypeName"
+      ],
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterOpFamilyStmt": {
+    "opfamilyname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "amname": [
+      false,
+      null,
+      null
+    ],
+    "isDrop": [
+      true,
+      null,
+      null
+    ],
+    "items": [
+      false,
+      [
+        "CreateOpClassItem"
+      ],
+      null
+    ]
+  },
+  "AlterOperatorStmt": {
+    "opername": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CommentStmt": {
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "object": [
+      false,
+      [
+        "List",
+        "String",
+        "ObjectWithArgs",
+        "Integer",
+        "TypeName"
+      ],
+      null
+    ],
+    "comment": [
+      true,
+      null,
+      null
+    ]
+  },
+  "IndexStmt": {
+    "idxname": [
+      true,
+      null,
+      null
+    ],
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "accessMethod": [
+      false,
+      null,
+      null
+    ],
+    "indexParams": [
+      false,
+      [
+        "IndexElem"
+      ],
+      null
+    ],
+    "indexIncludingParams": [
+      true,
+      [
+        "IndexElem"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "concurrent": [
+      true,
+      null,
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ],
+    "whereClause": [
+      true,
+      [
+        "A_Expr",
+        "NullTest",
+        "BoolExpr"
+      ],
+      null
+    ],
+    "unique": [
+      true,
+      null,
+      null
+    ],
+    "nulls_not_distinct": [
+      true,
+      null,
+      null
+    ],
+    "tableSpace": [
+      true,
+      null,
+      null
+    ]
+  },
+  "IndexElem": {
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "ordering": [
+      false,
+      null,
+      null
+    ],
+    "nulls_ordering": [
+      false,
+      null,
+      null
+    ],
+    "expr": [
+      true,
+      [
+        "A_Const",
+        "FuncCall",
+        "A_Expr",
+        "CoalesceExpr",
+        "TypeCast",
+        "CollateClause"
+      ],
+      null
+    ],
+    "opclass": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "opclassopts": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "collation": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "DeleteStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "whereClause": [
+      true,
+      [
+        "A_Expr",
+        "BoolExpr",
+        "SubLink"
+      ],
+      null
+    ],
+    "returningList": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "usingClause": [
+      true,
+      [
+        "RangeVar",
+        "RangeSubselect"
+      ],
+      null
+    ],
+    "withClause": [
+      true,
+      null,
+      null
+    ]
+  },
+  "UpdateStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "targetList": [
+      false,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "whereClause": [
+      true,
+      [
+        "BoolExpr",
+        "A_Expr",
+        "CurrentOfExpr",
+        "NullTest",
+        "A_Const",
+        "SubLink"
+      ],
+      null
+    ],
+    "returningList": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "fromClause": [
+      true,
+      [
+        "RangeVar",
+        "RangeSubselect",
+        "JoinExpr",
+        "RangeFunction"
+      ],
+      null
+    ],
+    "withClause": [
+      true,
+      null,
+      null
+    ]
+  },
+  "A_Indices": {
+    "uidx": [
+      false,
+      [
+        "A_Const",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "is_slice": [
+      true,
+      null,
+      null
+    ],
+    "lidx": [
+      true,
+      [
+        "A_Const"
+      ],
+      null
+    ]
+  },
+  "A_Indirection": {
+    "arg": [
+      false,
+      [
+        "ColumnRef",
+        "FuncCall",
+        "SubLink",
+        "TypeCast",
+        "RowExpr",
+        "A_Indirection"
+      ],
+      null
+    ],
+    "indirection": [
+      false,
+      [
+        "A_Indices",
+        "String",
+        "A_Star"
+      ],
+      null
+    ]
+  },
+  "DoStmt": {
+    "args": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CreateEnumStmt": {
+    "typeName": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "vals": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "NotifyStmt": {
+    "conditionname": [
+      false,
+      null,
+      null
+    ]
+  },
+  "BooleanTest": {
+    "arg": [
+      false,
+      [
+        "A_Expr",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "booltesttype": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CommonTableExpr": {
+    "ctename": [
+      false,
+      null,
+      null
+    ],
+    "ctematerialized": [
+      false,
+      null,
+      null
+    ],
+    "ctequery": [
+      false,
+      [
+        "SelectStmt",
+        "UpdateStmt",
+        "InsertStmt",
+        "DeleteStmt",
+        "MergeStmt"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "aliascolnames": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "search_clause": [
+      true,
+      null,
+      null
+    ],
+    "cycle_clause": [
+      true,
+      null,
+      null
+    ]
+  },
+  "Float": {
+    "fval": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CoalesceExpr": {
+    "args": [
+      false,
+      [
+        "TypeCast",
+        "A_Const",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateDomainStmt": {
+    "domainname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "typeName": [
+      false,
+      null,
+      null
+    ],
+    "collClause": [
+      true,
+      null,
+      null
+    ],
+    "constraints": [
+      true,
+      [
+        "Constraint"
+      ],
+      null
+    ]
+  },
+  "ClusterStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "indexname": [
+      true,
+      null,
+      null
+    ]
+  },
+  "TableLikeClause": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      null,
+      null
+    ]
+  },
+  "MinMaxExpr": {
+    "op": [
+      false,
+      null,
+      null
+    ],
+    "args": [
+      false,
+      [
+        "ColumnRef",
+        "A_Expr",
+        "A_Const"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "DeclareCursorStmt": {
+    "portalname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      null,
+      null
+    ],
+    "query": [
+      false,
+      [
+        "SelectStmt"
+      ],
+      null
+    ]
+  },
+  "FetchStmt": {
+    "direction": [
+      false,
+      null,
+      null
+    ],
+    "howMany": [
+      true,
+      null,
+      null
+    ],
+    "portalname": [
+      false,
+      null,
+      null
+    ],
+    "ismove": [
+      true,
+      null,
+      null
+    ]
+  },
+  "LockingClause": {
+    "strength": [
+      false,
+      null,
+      null
+    ],
+    "waitPolicy": [
+      false,
+      null,
+      null
+    ],
+    "lockedRels": [
+      true,
+      [
+        "RangeVar"
+      ],
+      null
+    ]
+  },
+  "PartitionCmd": {
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "bound": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateSeqStmt": {
+    "sequence": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterSeqStmt": {
+    "sequence": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ]
+  },
+  "ConstraintsSetStmt": {
+    "constraints": [
+      true,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "deferred": [
+      true,
+      null,
+      null
+    ]
+  },
+  "ReindexStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "relation": [
+      true,
+      null,
+      null
+    ],
+    "params": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateConversionStmt": {
+    "conversion_name": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "for_encoding_name": [
+      false,
+      null,
+      null
+    ],
+    "to_encoding_name": [
+      false,
+      null,
+      null
+    ],
+    "func_name": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "def": [
+      true,
+      null,
+      null
+    ]
+  },
+  "TruncateStmt": {
+    "relations": [
+      false,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "restart_seqs": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateTrigStmt": {
+    "trigname": [
+      false,
+      null,
+      null
+    ],
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "funcname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "row": [
+      true,
+      null,
+      null
+    ],
+    "timing": [
+      true,
+      null,
+      null
+    ],
+    "events": [
+      false,
+      null,
+      null
+    ],
+    "transitionRels": [
+      true,
+      [
+        "TriggerTransition"
+      ],
+      null
+    ],
+    "isconstraint": [
+      true,
+      null,
+      null
+    ],
+    "args": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "RuleStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "rulename": [
+      false,
+      null,
+      null
+    ],
+    "event": [
+      false,
+      null,
+      null
+    ],
+    "instead": [
+      true,
+      null,
+      null
+    ],
+    "actions": [
+      true,
+      [
+        "DeleteStmt",
+        "SelectStmt",
+        "InsertStmt",
+        "UpdateStmt"
+      ],
+      null
+    ],
+    "replace": [
+      true,
+      null,
+      null
+    ],
+    "whereClause": [
+      true,
+      [
+        "A_Expr",
+        "SubLink",
+        "BoolExpr"
+      ],
+      null
+    ]
+  },
+  "CreateAmStmt": {
+    "amname": [
+      false,
+      null,
+      null
+    ],
+    "handler_name": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "amtype": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateCastStmt": {
+    "sourcetype": [
+      false,
+      null,
+      null
+    ],
+    "targettype": [
+      false,
+      null,
+      null
+    ],
+    "context": [
+      false,
+      null,
+      null
+    ],
+    "inout": [
+      true,
+      null,
+      null
+    ],
+    "func": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterFunctionStmt": {
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "func": [
+      false,
+      null,
+      null
+    ],
+    "actions": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "ReturnStmt": {
+    "returnval": [
+      false,
+      [
+        "ColumnRef",
+        "FuncCall",
+        "SubLink",
+        "A_Expr",
+        "A_Indirection",
+        "BoolExpr"
+      ],
+      null
+    ]
+  },
+  "CallStmt": {
+    "funccall": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterRoleStmt": {
+    "role": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "action": [
+      false,
+      null,
+      null
+    ]
+  },
+  "ReassignOwnedStmt": {
+    "roles": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "newrole": [
+      false,
+      null,
+      null
+    ]
+  },
+  "GrantRoleStmt": {
+    "granted_roles": [
+      false,
+      [
+        "AccessPriv"
+      ],
+      null
+    ],
+    "grantee_roles": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "opt": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "is_grant": [
+      true,
+      null,
+      null
+    ],
+    "grantor": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AccessPriv": {
+    "priv_name": [
+      false,
+      null,
+      null
+    ],
+    "cols": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "PrepareStmt": {
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "query": [
+      false,
+      [
+        "SelectStmt",
+        "InsertStmt",
+        "UpdateStmt"
+      ],
+      null
+    ],
+    "argtypes": [
+      true,
+      [
+        "TypeName"
+      ],
+      null
+    ]
+  },
+  "SQLValueFunction": {
+    "op": [
+      false,
+      null,
+      null
+    ],
+    "typmod": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterTypeStmt": {
+    "typeName": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "DropOwnedStmt": {
+    "roles": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterDomainStmt": {
+    "subtype": [
+      false,
+      null,
+      null
+    ],
+    "typeName": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ],
+    "def": [
+      true,
+      [
+        "Constraint",
+        "A_Const"
+      ],
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ]
+  },
+  "ExecuteStmt": {
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "params": [
+      true,
+      [
+        "A_Const",
+        "A_ArrayExpr"
+      ],
+      null
+    ]
+  },
+  "CreateRangeStmt": {
+    "typeName": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "params": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "DropdbStmt": {
+    "dbname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterEnumStmt": {
+    "typeName": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "newVal": [
+      false,
+      null,
+      null
+    ],
+    "newValIsAfter": [
+      true,
+      null,
+      null
+    ],
+    "newValNeighbor": [
+      true,
+      null,
+      null
+    ],
+    "skipIfNewValExists": [
+      true,
+      null,
+      null
+    ],
+    "oldVal": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateEventTrigStmt": {
+    "trigname": [
+      false,
+      null,
+      null
+    ],
+    "eventname": [
+      false,
+      null,
+      null
+    ],
+    "funcname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "whenclause": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterEventTrigStmt": {
+    "trigname": [
+      false,
+      null,
+      null
+    ],
+    "tgenabled": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreatePolicyStmt": {
+    "policy_name": [
+      false,
+      null,
+      null
+    ],
+    "table": [
+      false,
+      null,
+      null
+    ],
+    "cmd_name": [
+      false,
+      null,
+      null
+    ],
+    "permissive": [
+      true,
+      null,
+      null
+    ],
+    "roles": [
+      false,
+      [
+        "RoleSpec"
+      ],
+      null
+    ],
+    "qual": [
+      false,
+      [
+        "A_Const",
+        "A_Expr",
+        "BoolExpr"
+      ],
+      null
+    ]
+  },
+  "AlterFdwStmt": {
+    "fdwname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "func_options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "CreateUserMappingStmt": {
+    "user": [
+      false,
+      null,
+      null
+    ],
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterForeignServerStmt": {
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "version": [
+      true,
+      null,
+      null
+    ],
+    "has_version": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterUserMappingStmt": {
+    "user": [
+      false,
+      null,
+      null
+    ],
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "DropUserMappingStmt": {
+    "user": [
+      false,
+      null,
+      null
+    ],
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "missing_ok": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CreateForeignTableStmt": {
+    "base": [
+      false,
+      null,
+      null
+    ],
+    "servername": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "TriggerTransition": {
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "isNew": [
+      true,
+      null,
+      null
+    ],
+    "isTable": [
+      false,
+      null,
+      null
+    ]
+  },
+  "ImportForeignSchemaStmt": {
+    "server_name": [
+      false,
+      null,
+      null
+    ],
+    "remote_schema": [
+      false,
+      null,
+      null
+    ],
+    "local_schema": [
+      false,
+      null,
+      null
+    ],
+    "list_type": [
+      false,
+      null,
+      null
+    ],
+    "table_list": [
+      true,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "SetToDefault": {
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "GroupingFunc": {
+    "args": [
+      false,
+      [
+        "ColumnRef"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "GroupingSet": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "content": [
+      true,
+      [
+        "ColumnRef",
+        "GroupingSet",
+        "RowExpr",
+        "TypeCast",
+        "A_Const",
+        "A_Expr"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "VariableShowStmt": {
+    "name": [
+      false,
+      null,
+      null
+    ]
+  },
+  "LoadStmt": {
+    "filename": [
+      false,
+      null,
+      null
+    ]
+  },
+  "DiscardStmt": {
+    "target": [
+      false,
+      null,
+      null
+    ]
+  },
+  "MergeStmt": {
+    "relation": [
+      false,
+      null,
+      null
+    ],
+    "sourceRelation": [
+      false,
+      [
+        "RangeSubselect",
+        "RangeVar",
+        "RangeFunction",
+        "JoinExpr"
+      ],
+      null
+    ],
+    "joinCondition": [
+      false,
+      [
+        "A_Expr",
+        "BoolExpr",
+        "A_Const"
+      ],
+      null
+    ],
+    "mergeWhenClauses": [
+      false,
+      [
+        "MergeWhenClause"
+      ],
+      null
+    ],
+    "withClause": [
+      true,
+      null,
+      null
+    ]
+  },
+  "MergeWhenClause": {
+    "commandType": [
+      false,
+      null,
+      null
+    ],
+    "override": [
+      false,
+      null,
+      null
+    ],
+    "targetList": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ],
+    "values": [
+      true,
+      [
+        "ColumnRef",
+        "A_Expr",
+        "A_Const"
+      ],
+      null
+    ],
+    "matched": [
+      true,
+      null,
+      null
+    ],
+    "condition": [
+      true,
+      [
+        "A_Expr",
+        "NullTest",
+        "BoolExpr"
+      ],
+      null
+    ]
+  },
+  "ReplicaIdentityStmt": {
+    "identity_type": [
+      false,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ]
+  },
+  "MultiAssignRef": {
+    "source": [
+      false,
+      [
+        "SubLink",
+        "ColumnRef",
+        "RowExpr"
+      ],
+      null
+    ],
+    "colno": [
+      false,
+      null,
+      null
+    ],
+    "ncolumns": [
+      false,
+      null,
+      null
+    ]
+  },
+  "NamedArgExpr": {
+    "arg": [
+      false,
+      [
+        "ColumnRef",
+        "A_Const",
+        "A_Expr",
+        "TypeCast"
+      ],
+      null
+    ],
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "argnumber": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "ParamRef": {
+    "number": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RefreshMatViewStmt": {
+    "concurrent": [
+      false,
+      null,
+      null
+    ],
+    "skipData": [
+      false,
+      null,
+      null
+    ],
+    "relation": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterDefaultPrivilegesStmt": {
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "action": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateTransformStmt": {
+    "type_name": [
+      false,
+      null,
+      null
+    ],
+    "lang": [
+      false,
+      null,
+      null
+    ],
+    "fromsql": [
+      false,
+      null,
+      null
+    ],
+    "tosql": [
+      false,
+      null,
+      null
+    ]
+  },
+  "DeallocateStmt": {
+    "name": [
+      false,
+      null,
+      null
+    ]
+  },
+  "ClosePortalStmt": {
+    "portalname": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterPublicationStmt": {
+    "pubname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "action": [
+      false,
+      null,
+      null
+    ],
+    "pubobjects": [
+      true,
+      [
+        "PublicationObjSpec"
+      ],
+      null
+    ]
+  },
+  "CreatePublicationStmt": {
+    "pubname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "pubobjects": [
+      true,
+      [
+        "PublicationObjSpec"
+      ],
+      null
+    ]
+  },
+  "PublicationObjSpec": {
+    "pubobjtype": [
+      false,
+      null,
+      null
+    ],
+    "pubtable": [
+      true,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      true,
+      null,
+      null
+    ]
+  },
+  "XmlExpr": {
+    "op": [
+      false,
+      null,
+      null
+    ],
+    "args": [
+      true,
+      [
+        "XmlExpr",
+        "FuncCall",
+        "TypeCast",
+        "A_Const",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "xmloption": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ],
+    "named_args": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ]
+  },
+  "RangeTableSample": {
+    "relation": [
+      false,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "method": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "args": [
+      false,
+      [
+        "A_Const",
+        "ColumnRef",
+        "TypeCast",
+        "A_Expr"
+      ],
+      null
+    ],
+    "repeatable": [
+      true,
+      [
+        "A_Const"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterPolicyStmt": {
+    "policy_name": [
+      false,
+      null,
+      null
+    ],
+    "table": [
+      false,
+      null,
+      null
+    ],
+    "qual": [
+      false,
+      [
+        "A_Const"
+      ],
+      null
+    ],
+    "roles": [
+      true,
+      [
+        "RoleSpec"
+      ],
+      null
+    ]
+  },
+  "CurrentOfExpr": {
+    "cursor_name": [
+      false,
+      null,
+      null
+    ]
+  },
+  "SecLabelStmt": {
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "object": [
+      false,
+      [
+        "String",
+        "List"
+      ],
+      null
+    ],
+    "label": [
+      false,
+      null,
+      null
+    ],
+    "provider": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonObjectConstructor": {
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "exprs": [
+      true,
+      [
+        "JsonKeyValue"
+      ],
+      null
+    ],
+    "output": [
+      true,
+      null,
+      null
+    ],
+    "unique": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonKeyValue": {
+    "key": [
+      false,
+      [
+        "A_Const",
+        "A_Expr"
+      ],
+      null
+    ],
+    "value": [
+      false,
+      null,
+      null
+    ]
+  },
+  "JsonArrayConstructor": {
+    "absent_on_null": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "exprs": [
+      true,
+      [
+        "JsonValueExpr"
+      ],
+      null
+    ],
+    "output": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonValueExpr": {
+    "raw_expr": [
+      false,
+      [
+        "A_Const",
+        "A_Expr",
+        "ColumnRef",
+        "JsonArrayConstructor",
+        "TypeCast",
+        "A_ArrayExpr"
+      ],
+      null
+    ],
+    "format": [
+      false,
+      null,
+      null
+    ]
+  },
+  "JsonArrayQueryConstructor": {
+    "query": [
+      false,
+      [
+        "SelectStmt"
+      ],
+      null
+    ],
+    "format": [
+      false,
+      null,
+      null
+    ],
+    "absent_on_null": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "output": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonArrayAgg": {
+    "arg": [
+      false,
+      null,
+      null
+    ],
+    "absent_on_null": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonObjectAgg": {
+    "arg": [
+      false,
+      null,
+      null
+    ],
+    "absent_on_null": [
+      true,
+      null,
+      null
+    ],
+    "unique": [
+      true,
+      null,
+      null
+    ]
+  },
+  "JsonIsPredicate": {
+    "expr": [
+      false,
+      [
+        "A_Const",
+        "A_Expr",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "format": [
+      false,
+      null,
+      null
+    ],
+    "item_type": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "unique_keys": [
+      true,
+      null,
+      null
+    ]
+  },
+  "CheckPointStmt": {},
+  "CreateStatsStmt": {
+    "defnames": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "exprs": [
+      false,
+      [
+        "StatsElem"
+      ],
+      null
+    ],
+    "relations": [
+      false,
+      [
+        "RangeVar"
+      ],
+      null
+    ],
+    "if_not_exists": [
+      true,
+      null,
+      null
+    ],
+    "stat_types": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "StatsElem": {
+    "expr": [
+      true,
+      [
+        "A_Expr",
+        "FuncCall",
+        "CaseExpr",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "name": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterStatsStmt": {
+    "defnames": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "CreateSubscriptionStmt": {
+    "subname": [
+      false,
+      null,
+      null
+    ],
+    "conninfo": [
+      false,
+      null,
+      null
+    ],
+    "publication": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterSubscriptionStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "subname": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "conninfo": [
+      true,
+      null,
+      null
+    ],
+    "publication": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ]
+  },
+  "DropSubscriptionStmt": {
+    "subname": [
+      false,
+      null,
+      null
+    ],
+    "missing_ok": [
+      false,
+      null,
+      null
+    ],
+    "behavior": [
+      false,
+      null,
+      null
+    ]
+  },
+  "CreateTableSpaceStmt": {
+    "tablespacename": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      true,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "DropTableSpaceStmt": {
+    "tablespacename": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterTableSpaceOptionsStmt": {
+    "tablespacename": [
+      false,
+      null,
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ],
+    "isReset": [
+      true,
+      null,
+      null
+    ]
+  },
+  "AlterTableMoveAllStmt": {
+    "orig_tablespacename": [
+      false,
+      null,
+      null
+    ],
+    "objtype": [
+      false,
+      null,
+      null
+    ],
+    "new_tablespacename": [
+      false,
+      null,
+      null
+    ]
+  },
+  "AlterTSDictionaryStmt": {
+    "dictname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "options": [
+      false,
+      [
+        "DefElem"
+      ],
+      null
+    ]
+  },
+  "AlterTSConfigurationStmt": {
+    "kind": [
+      false,
+      null,
+      null
+    ],
+    "cfgname": [
+      false,
+      [
+        "String"
+      ],
+      null
+    ],
+    "tokentype": [
+      true,
+      [
+        "String"
+      ],
+      null
+    ],
+    "dicts": [
+      false,
+      [
+        "List"
+      ],
+      [
+        "String"
+      ]
+    ],
+    "override": [
+      true,
+      null,
+      null
+    ],
+    "replace": [
+      true,
+      null,
+      null
+    ]
+  },
+  "WindowDef": {
+    "name": [
+      false,
+      null,
+      null
+    ],
+    "partitionClause": [
+      true,
+      [
+        "ColumnRef"
+      ],
+      null
+    ],
+    "frameOptions": [
+      false,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "orderClause": [
+      true,
+      [
+        "SortBy"
+      ],
+      null
+    ],
+    "startOffset": [
+      true,
+      [
+        "TypeCast",
+        "A_Const"
+      ],
+      null
+    ],
+    "endOffset": [
+      true,
+      [
+        "A_Const",
+        "TypeCast"
+      ],
+      null
+    ]
+  },
+  "XmlSerialize": {
+    "xmloption": [
+      false,
+      null,
+      null
+    ],
+    "expr": [
+      false,
+      [
+        "A_Const"
+      ],
+      null
+    ],
+    "typeName": [
+      false,
+      null,
+      null
+    ],
+    "indent": [
+      true,
+      null,
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ]
+  },
+  "RangeTableFunc": {
+    "lateral": [
+      true,
+      null,
+      null
+    ],
+    "docexpr": [
+      false,
+      [
+        "A_Const",
+        "ColumnRef"
+      ],
+      null
+    ],
+    "rowexpr": [
+      false,
+      [
+        "A_Const",
+        "RowExpr"
+      ],
+      null
+    ],
+    "columns": [
+      false,
+      [
+        "RangeTableFuncCol"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "alias": [
+      true,
+      null,
+      null
+    ],
+    "namespaces": [
+      true,
+      [
+        "ResTarget"
+      ],
+      null
+    ]
+  },
+  "RangeTableFuncCol": {
+    "colname": [
+      false,
+      null,
+      null
+    ],
+    "typeName": [
+      true,
+      null,
+      null
+    ],
+    "colexpr": [
+      true,
+      [
+        "A_Const",
+        "A_Expr"
+      ],
+      null
+    ],
+    "location": [
+      false,
+      null,
+      null
+    ],
+    "for_ordinality": [
+      true,
+      null,
+      null
+    ],
+    "is_not_null": [
+      true,
+      null,
+      null
+    ],
+    "coldefexpr": [
+      true,
+      [
+        "A_Const"
+      ],
+      null
+    ]
+  }
+}
