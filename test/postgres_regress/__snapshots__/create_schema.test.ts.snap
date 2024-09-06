@@ -1,0 +1,1011 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`create_schema.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 98,
+              },
+            },
+          ],
+          "role": "regress_create_schema_role",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 223,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "CreateSeqStmt": {
+                "sequence": {
+                  "inh": true,
+                  "location": 268,
+                  "relname": "seq",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 71,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 96,
+                      "typeName": {
+                        "location": 99,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "ViewStmt": {
+                "query": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 105,
+                          "val": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1,
+                              },
+                              "location": 105,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                "view": {
+                  "inh": true,
+                  "location": 70,
+                  "relname": "view",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "withCheckOption": "NO_CHECK_OPTION",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "IndexStmt": {
+                "accessMethod": "btree",
+                "indexParams": [
+                  {
+                    "IndexElem": {
+                      "name": "id",
+                      "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                      "ordering": "SORTBY_DEFAULT",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 74,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "CreateTrigStmt": {
+                "events": 4,
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "schema_trig",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_func",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 102,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "timing": 2,
+                "trigname": "schema_trig",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 67,
+                "sval": {
+                  "sval": "regress_create_schema_role",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateSeqStmt": {
+                "sequence": {
+                  "inh": true,
+                  "location": 60,
+                  "relname": "seq",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 57,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 82,
+                      "typeName": {
+                        "location": 85,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "ViewStmt": {
+                "query": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 91,
+                          "val": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1,
+                              },
+                              "location": 91,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                "view": {
+                  "inh": true,
+                  "location": 56,
+                  "relname": "view",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "withCheckOption": "NO_CHECK_OPTION",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "IndexStmt": {
+                "accessMethod": "btree",
+                "indexParams": [
+                  {
+                    "IndexElem": {
+                      "name": "id",
+                      "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                      "ordering": "SORTBY_DEFAULT",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 60,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateTrigStmt": {
+                "events": 4,
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "schema_trig",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_func",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 88,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "timing": 2,
+                "trigname": "schema_trig",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 101,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateSeqStmt": {
+                "sequence": {
+                  "inh": true,
+                  "location": 132,
+                  "relname": "seq",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 46,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 74,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 99,
+                      "typeName": {
+                        "location": 102,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 46,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "ViewStmt": {
+                "query": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 108,
+                          "val": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1,
+                              },
+                              "location": 108,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                "view": {
+                  "inh": true,
+                  "location": 73,
+                  "relname": "view",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "withCheckOption": "NO_CHECK_OPTION",
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 46,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "IndexStmt": {
+                "accessMethod": "btree",
+                "indexParams": [
+                  {
+                    "IndexElem": {
+                      "name": "id",
+                      "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                      "ordering": "SORTBY_DEFAULT",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 77,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 46,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateTrigStmt": {
+                "events": 4,
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "schema_trig",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_func",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 105,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "schema_not_existing",
+                },
+                "timing": 2,
+                "trigname": "schema_trig",
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 120,
+            "rolename": "regress_create_schema_role",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 162,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "regress_create_schema_role",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 194,
+                      "typeName": {
+                        "location": 197,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 54 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_schema.sql > line 56 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 77,
+                "sval": {
+                  "sval": "regress_create_schema_role",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 29,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 57,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "regress_create_schema_role",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 89,
+                      "typeName": {
+                        "location": 92,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 60 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_schema.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 101,
+            "roletype": "ROLESPEC_CURRENT_ROLE",
+          },
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 129,
+                  "relname": "tab",
+                  "relpersistence": "p",
+                  "schemaname": "regress_schema_1",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "id",
+                      "is_local": true,
+                      "location": 151,
+                      "typeName": {
+                        "location": 154,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "schemaname": "regress_schema_1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 65 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_schema.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_schema.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 24,
+                "rolename": "regress_create_schema_role",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

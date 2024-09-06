@@ -1,0 +1,673 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`delete.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 41,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 31,
+                "typeName": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 60,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 69,
+                "typeName": {
+                  "location": 71,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "a",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 38,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 26,
+                "name": "a",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 29,
+                "name": "b",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 50,
+                          },
+                          "location": 40,
+                        },
+                      },
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "A_Const": {
+                                "location": 51,
+                                "sval": {
+                                  "sval": "x",
+                                },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 10000,
+                                },
+                                "location": 56,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "repeat",
+                              },
+                            },
+                          ],
+                          "location": 44,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 9 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 26,
+                "name": "a",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 100,
+                          },
+                          "location": 37,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "alias": {
+              "aliasname": "dt",
+            },
+            "inh": true,
+            "location": 74,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "dt",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 98,
+                },
+              },
+              "location": 103,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 75,
+                  },
+                  "location": 105,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 13 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "alias": {
+              "aliasname": "dt",
+            },
+            "inh": true,
+            "location": 99,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "delete_test",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 120,
+                },
+              },
+              "location": 134,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 25,
+                  },
+                  "location": 136,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "delete_test",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "id",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 13,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 13,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 16,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 28,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "char_length",
+                        },
+                      },
+                    ],
+                    "location": 16,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 51,
+            "relname": "delete_test",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 69,
+                },
+              },
+              "location": 71,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 25,
+                  },
+                  "location": 73,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "delete_test",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "id",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 13,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 13,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 16,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 28,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "char_length",
+                        },
+                      },
+                    ],
+                    "location": 16,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`delete.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "delete_test",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

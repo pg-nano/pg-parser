@@ -1,0 +1,542 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`copy2.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 18,
+            "relname": "x",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 23,
+                "typeName": {
+                  "location": 25,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 34,
+                "typeName": {
+                  "location": 36,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 49,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 58,
+                      "raw_expr": {
+                        "A_Const": {
+                          "location": 66,
+                          "sval": {
+                            "sval": "stuff",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 42,
+                "typeName": {
+                  "location": 44,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "d",
+                "is_local": true,
+                "location": 76,
+                "typeName": {
+                  "location": 78,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "e",
+                "is_local": true,
+                "location": 85,
+                "typeName": {
+                  "location": 87,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "fn_x_before",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+  BEGIN
+		NEW.e := 'before trigger fired'::text;
+		return NEW;
+	END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 49,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 127,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 41,
+            "names": [
+              {
+                "String": {
+                  "sval": "trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "fn_x_after",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+  BEGIN
+		UPDATE x set e='after trigger fired' where c='stuff';
+		return NULL;
+	END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 48,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 144,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 40,
+            "names": [
+              {
+                "String": {
+                  "sval": "trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTrigStmt": {
+          "events": 4,
+          "funcname": [
+            {
+              "String": {
+                "sval": "fn_x_after",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 45,
+            "relname": "x",
+            "relpersistence": "p",
+          },
+          "row": true,
+          "trigname": "trg_x_after",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTrigStmt": {
+          "events": 4,
+          "funcname": [
+            {
+              "String": {
+                "sval": "fn_x_before",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 47,
+            "relname": "x",
+            "relpersistence": "p",
+          },
+          "row": true,
+          "timing": 2,
+          "trigname": "trg_x_before",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CopyStmt": {
+          "attlist": [
+            {
+              "String": {
+                "sval": "a",
+              },
+            },
+            {
+              "String": {
+                "sval": "b",
+              },
+            },
+            {
+              "String": {
+                "sval": "c",
+              },
+            },
+            {
+              "String": {
+                "sval": "d",
+              },
+            },
+            {
+              "String": {
+                "sval": "e",
+              },
+            },
+          ],
+          "is_from": true,
+          "relation": {
+            "inh": true,
+            "location": 7,
+            "relname": "x",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "copy_default",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "id",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 13,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "text_value",
+                        },
+                      },
+                    ],
+                    "location": 13,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 25,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ts_value",
+                        },
+                      },
+                    ],
+                    "location": 25,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TruncateStmt": {
+          "behavior": "DROP_RESTRICT",
+          "relations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 11,
+                "relname": "copy_default",
+                "relpersistence": "p",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`copy2.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CopyStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "\\D",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "default",
+                "location": 79,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 52,
+                    "name": "test",
+                    "val": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 52,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

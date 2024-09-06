@@ -1,0 +1,925 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`vacuum_parallel.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 4,
+                },
+                "location": 40,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "max_parallel_maintenance_workers",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 2 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 37,
+                "sval": {
+                  "sval": "128kB",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "min_parallel_index_scan_size",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 3 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 233,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "off",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "autovacuum_enabled",
+                "location": 212,
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 176,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 199,
+                "typeName": {
+                  "location": 201,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 7 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeFunction": {
+                    "alias": {
+                      "aliasname": "i",
+                    },
+                    "functions": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 1,
+                                      },
+                                      "location": 65,
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 10000,
+                                      },
+                                      "location": 68,
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "generate_series",
+                                    },
+                                  },
+                                ],
+                                "location": 49,
+                              },
+                            },
+                            {},
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 42,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "i",
+                            },
+                          },
+                        ],
+                        "location": 42,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "regular_sized_index",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "a",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 257,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 13 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "typically_sized_index",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "a",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 39,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "vacuum_in_leader_small_index",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "expr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 180,
+                  },
+                },
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 157,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 220,
+                "name": "leader_will_handle_small_index",
+                "val": {
+                  "SubLink": {
+                    "location": 220,
+                    "subLinkType": "EXISTS_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 243,
+                              "relname": "pg_class",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 236,
+                              "val": {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 236,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "whereClause": {
+                          "BoolExpr": {
+                            "args": [
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "oid",
+                                          },
+                                        },
+                                      ],
+                                      "location": 258,
+                                    },
+                                  },
+                                  "location": 262,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "=",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 264,
+                                          "sval": {
+                                            "sval": "vacuum_in_leader_small_index",
+                                          },
+                                        },
+                                      },
+                                      "location": 294,
+                                      "typeName": {
+                                        "location": 296,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "regclass",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "oid",
+                                                },
+                                              },
+                                            ],
+                                            "location": 328,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "pg_relation_size",
+                                          },
+                                        },
+                                      ],
+                                      "location": 311,
+                                    },
+                                  },
+                                  "location": 333,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "<",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "FuncCall": {
+                                            "args": [
+                                              {
+                                                "A_Const": {
+                                                  "location": 367,
+                                                  "sval": {
+                                                    "sval": "min_parallel_index_scan_size",
+                                                  },
+                                                },
+                                              },
+                                            ],
+                                            "funcformat": "COERCE_EXPLICIT_CALL",
+                                            "funcname": [
+                                              {
+                                                "String": {
+                                                  "sval": "current_setting",
+                                                },
+                                              },
+                                            ],
+                                            "location": 351,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "pg_size_bytes",
+                                          },
+                                        },
+                                      ],
+                                      "location": 337,
+                                    },
+                                  },
+                                },
+                              },
+                            ],
+                            "boolop": "AND_EXPR",
+                            "location": 305,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 58,
+                "relname": "pg_class",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "name": "trigger_parallel_vacuum_nindexes",
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_IN",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "oid",
+                            },
+                          },
+                        ],
+                        "location": 73,
+                      },
+                    },
+                    "location": 77,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "List": {
+                        "items": [
+                          {
+                            "TypeCast": {
+                              "arg": {
+                                "A_Const": {
+                                  "location": 81,
+                                  "sval": {
+                                    "sval": "regular_sized_index",
+                                  },
+                                },
+                              },
+                              "location": 102,
+                              "typeName": {
+                                "location": 104,
+                                "names": [
+                                  {
+                                    "String": {
+                                      "sval": "regclass",
+                                    },
+                                  },
+                                ],
+                                "typemod": -1,
+                              },
+                            },
+                          },
+                          {
+                            "TypeCast": {
+                              "arg": {
+                                "A_Const": {
+                                  "location": 114,
+                                  "sval": {
+                                    "sval": "typically_sized_index",
+                                  },
+                                },
+                              },
+                              "location": 137,
+                              "typeName": {
+                                "location": 139,
+                                "names": [
+                                  {
+                                    "String": {
+                                      "sval": "regclass",
+                                    },
+                                  },
+                                ],
+                                "typemod": -1,
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "oid",
+                                  },
+                                },
+                              ],
+                              "location": 172,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "pg_relation_size",
+                            },
+                          },
+                        ],
+                        "location": 155,
+                      },
+                    },
+                    "location": 177,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "location": 212,
+                                    "sval": {
+                                      "sval": "min_parallel_index_scan_size",
+                                    },
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "current_setting",
+                                  },
+                                },
+                              ],
+                              "location": 196,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "pg_size_bytes",
+                            },
+                          },
+                        ],
+                        "location": 182,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 149,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 81,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VacuumStmt": {
+          "is_vacuumcmd": true,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 4,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "parallel",
+                "location": 9,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "on",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "index_cleanup",
+                "location": 21,
+              },
+            },
+          ],
+          "rels": [
+            {
+              "VacuumRelation": {
+                "relation": {
+                  "inh": true,
+                  "location": 39,
+                  "relname": "parallel_vacuum_table",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 37 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 150,
+            "relname": "parallel_vacuum_table",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeFunction": {
+                    "alias": {
+                      "aliasname": "i",
+                    },
+                    "functions": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 1,
+                                      },
+                                      "location": 202,
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 10000,
+                                      },
+                                      "location": 205,
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "generate_series",
+                                    },
+                                  },
+                                ],
+                                "location": 186,
+                              },
+                            },
+                            {},
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 179,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "i",
+                            },
+                          },
+                        ],
+                        "location": 179,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "max_parallel_maintenance_workers",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`vacuum_parallel.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "min_parallel_index_scan_size",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

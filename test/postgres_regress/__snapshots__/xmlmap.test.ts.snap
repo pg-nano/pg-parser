@@ -1,0 +1,3140 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`xmlmap.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaname": "testxmlschema",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 2 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "test1",
+            "relpersistence": "p",
+            "schemaname": "testxmlschema",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 36,
+                "typeName": {
+                  "location": 38,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 43,
+                "typeName": {
+                  "location": 45,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 4 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test1",
+            "relpersistence": "p",
+            "schemaname": "testxmlschema",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 44,
+                          "sval": {
+                            "sval": "one",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 53,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "two",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 65,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "isnull": true,
+                          "location": 69,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 5 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "domainname": [
+            {
+              "String": {
+                "sval": "testxmldomain",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 32,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "varchar",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test2",
+            "relpersistence": "p",
+            "schemaname": "testxmlschema",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "z",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "y",
+                "is_local": true,
+                "location": 42,
+                "typeName": {
+                  "location": 44,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "varchar",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                  "typmods": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 500,
+                        },
+                        "location": 52,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 60,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "bpchar",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                  "typmods": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 6,
+                        },
+                        "location": 65,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "w",
+                "is_local": true,
+                "location": 73,
+                "typeName": {
+                  "location": 75,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "numeric",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                  "typmods": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 9,
+                        },
+                        "location": 83,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 85,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "v",
+                "is_local": true,
+                "location": 89,
+                "typeName": {
+                  "location": 91,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int2",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "u",
+                "is_local": true,
+                "location": 101,
+                "typeName": {
+                  "location": 103,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "t",
+                "is_local": true,
+                "location": 111,
+                "typeName": {
+                  "location": 113,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "float4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "s",
+                "is_local": true,
+                "location": 123,
+                "typeName": {
+                  "location": 125,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "time",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "stz",
+                "is_local": true,
+                "location": 131,
+                "typeName": {
+                  "location": 135,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "timetz",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "r",
+                "is_local": true,
+                "location": 143,
+                "typeName": {
+                  "location": 145,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "timestamp",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "rtz",
+                "is_local": true,
+                "location": 156,
+                "typeName": {
+                  "location": 160,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "timestamptz",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "q",
+                "is_local": true,
+                "location": 173,
+                "typeName": {
+                  "location": 175,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "date",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "p",
+                "is_local": true,
+                "location": 185,
+                "typeName": {
+                  "location": 187,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "xml",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "o",
+                "is_local": true,
+                "location": 192,
+                "typeName": {
+                  "location": 194,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "testxmldomain",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "n",
+                "is_local": true,
+                "location": 209,
+                "typeName": {
+                  "location": 211,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "bool",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "m",
+                "is_local": true,
+                "location": 217,
+                "typeName": {
+                  "location": 219,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "bytea",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "aaa",
+                "is_local": true,
+                "location": 226,
+                "typeName": {
+                  "location": 230,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "aaa",
+                "subtype": "AT_DropColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test2",
+            "relpersistence": "p",
+            "schemaname": "testxmlschema",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test2",
+            "relpersistence": "p",
+            "schemaname": "testxmlschema",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 55,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 45,
+                          "sval": {
+                            "sval": "abc",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 52,
+                          "sval": {
+                            "sval": "def",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "fval": {
+                            "fval": "98.6",
+                          },
+                          "location": 63,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 69,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 999,
+                          },
+                          "location": 72,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 77,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 84,
+                          "sval": {
+                            "sval": "21:07",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 93,
+                          "sval": {
+                            "sval": "21:11 +05",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 106,
+                          "sval": {
+                            "sval": "2009-06-08 21:07:30",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 129,
+                          "sval": {
+                            "sval": "2009-06-08 21:07:30 -07",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 156,
+                          "sval": {
+                            "sval": "2009-06-08",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "isnull": true,
+                          "location": 174,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 180,
+                          "sval": {
+                            "sval": "ABC",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 187,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 193,
+                          "sval": {
+                            "sval": "XYZ",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 59,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "testxmlschema.test2",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 28,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 58,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 65,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 56,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 63,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 57,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 63,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 56,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 62,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 26 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "testxmlschema.test2",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 57,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 64,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 36,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 59,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 66,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 73,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 35,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 58,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 64,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 71,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 35,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 58,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 65,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 71,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 35,
+                          "sval": {
+                            "sval": "testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 58,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 64,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 70,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "SELECT * FROM testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 59,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 66,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 73,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "query_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "SELECT * FROM testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 64,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 71,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 78,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "query_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 35,
+                          "sval": {
+                            "sval": "SELECT * FROM testxmlschema.test1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 72,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 78,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 84,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "query_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeclareCursorStmt": {
+          "options": 288,
+          "portalname": "xc",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 48,
+                    "relname": "test1",
+                    "relpersistence": "p",
+                    "schemaname": "testxmlschema",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "sortClause": [
+                {
+                  "SortBy": {
+                    "location": -1,
+                    "node": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 77,
+                      },
+                    },
+                    "sortby_dir": "SORTBY_DEFAULT",
+                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  },
+                },
+                {
+                  "SortBy": {
+                    "location": -1,
+                    "node": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 80,
+                      },
+                    },
+                    "sortby_dir": "SORTBY_DEFAULT",
+                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 41,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 41,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 22,
+                              "sval": {
+                                "sval": "xc",
+                              },
+                            },
+                          },
+                          "location": 26,
+                          "typeName": {
+                            "location": 28,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "refcursor",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 39,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 42,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 49,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cursor_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 28,
+                              "sval": {
+                                "sval": "xc",
+                              },
+                            },
+                          },
+                          "location": 32,
+                          "typeName": {
+                            "location": 34,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "refcursor",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cursor_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_BACKWARD",
+          "howMany": 9223372036854776000,
+          "ismove": true,
+          "portalname": "xc",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 22,
+                              "sval": {
+                                "sval": "xc",
+                              },
+                            },
+                          },
+                          "location": 26,
+                          "typeName": {
+                            "location": 28,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "refcursor",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 39,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 42,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 48,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cursor_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 28,
+                              "sval": {
+                                "sval": "xc",
+                              },
+                            },
+                          },
+                          "location": 32,
+                          "typeName": {
+                            "location": 34,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "refcursor",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cursor_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "testxmlschema",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 40,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 47,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 53,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "schema_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "testxmlschema",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 39,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 52,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "schema_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 46 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 28,
+                          "sval": {
+                            "sval": "testxmlschema",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "schema_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 28,
+                          "sval": {
+                            "sval": "testxmlschema",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {},
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "schema_to_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 36,
+                          "sval": {
+                            "sval": "testxmlschema",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 53,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 59,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 65,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "schema_to_xml_and_xmlschema",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "domainname": [
+            {
+              "String": {
+                "sval": "testboolxmldomain",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 98,
+            "names": [
+              {
+                "String": {
+                  "sval": "bool",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "domainname": [
+            {
+              "String": {
+                "sval": "testdatexmldomain",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 36,
+            "names": [
+              {
+                "String": {
+                  "sval": "date",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 15,
+              "relname": "test3",
+              "relpersistence": "p",
+              "schemaname": "testxmlschema",
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+          "query": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 49,
+                    "name": "c1",
+                    "val": {
+                      "A_Const": {
+                        "boolval": {
+                          "boolval": true,
+                        },
+                        "location": 49,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 72,
+                    "name": "c2",
+                    "val": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "boolval": {
+                              "boolval": true,
+                            },
+                            "location": 72,
+                          },
+                        },
+                        "location": 76,
+                        "typeName": {
+                          "location": 78,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "testboolxmldomain",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 114,
+                    "name": "c3",
+                    "val": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 114,
+                            "sval": {
+                              "sval": "2013-02-21",
+                            },
+                          },
+                        },
+                        "location": 126,
+                        "typeName": {
+                          "location": 128,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "date",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 151,
+                    "name": "c4",
+                    "val": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 151,
+                            "sval": {
+                              "sval": "2013-02-21",
+                            },
+                          },
+                        },
+                        "location": 163,
+                        "typeName": {
+                          "location": 165,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "testdatexmldomain",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 40,
+                "relname": "test3",
+                "relpersistence": "p",
+                "schemaname": "testxmlschema",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "XmlExpr": {
+                    "location": 9,
+                    "named_args": [
+                      {
+                        "ResTarget": {
+                          "location": 19,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "c1",
+                                  },
+                                },
+                              ],
+                              "location": 19,
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "ResTarget": {
+                          "location": 23,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "c2",
+                                  },
+                                },
+                              ],
+                              "location": 23,
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "ResTarget": {
+                          "location": 27,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "c3",
+                                  },
+                                },
+                              ],
+                              "location": 27,
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "ResTarget": {
+                          "location": 31,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "c4",
+                                  },
+                                },
+                              ],
+                              "location": 31,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "op": "IS_XMLFOREST",
+                    "xmloption": "XMLOPTION_DOCUMENT",
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`xmlmap.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "testxmlschema.test3",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "boolval": {
+                            "boolval": true,
+                          },
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "table_to_xml",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

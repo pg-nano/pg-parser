@@ -1,0 +1,1338 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`collate.windows.win1252.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.windows.win1252.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaname": "collate_tests",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 19,
+                "sval": {
+                  "sval": "collate_tests",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "search_path",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 16,
+            "relname": "collate_test1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 36,
+                "typeName": {
+                  "location": 38,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en_US",
+                      },
+                    },
+                  ],
+                  "location": 54,
+                },
+                "colname": "b",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 70,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 47,
+                "typeName": {
+                  "location": 49,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 26 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.windows.win1252.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_fail",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "foo",
+                      },
+                    },
+                  ],
+                  "location": 57,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 50,
+                "typeName": {
+                  "location": 52,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_fail",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en_US",
+                      },
+                    },
+                  ],
+                  "location": 45,
+                },
+                "colname": "a",
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 66,
+                "typeName": {
+                  "location": 68,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_like",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 44,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 47 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.windows.win1252.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 53,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 46,
+                "typeName": {
+                  "location": 48,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 59 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "collate_test1",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 36,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 39,
+                          "sval": {
+                            "sval": "abc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 48,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 51,
+                          "sval": {
+                            "sval": "�bc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 62,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 65,
+                          "sval": {
+                            "sval": "bbc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 74,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 77,
+                          "sval": {
+                            "sval": "ABC",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 83,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 61 1`] = `[Error: syntax error at or near "NSERT"]`;
+
+exports[`collate.windows.win1252.sql > line 62 1`] = `[Error: syntax error at or near "NSERT"]`;
+
+exports[`collate.windows.win1252.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 36,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 39,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 44,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 65 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 66 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 67 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 34,
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 48,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 51,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 56,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 70 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 71 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 72 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "collClause": {
+            "collname": [
+              {
+                "String": {
+                  "sval": "sv_SE",
+                },
+              },
+            ],
+            "location": 37,
+          },
+          "domainname": [
+            {
+              "String": {
+                "sval": "testdomain_sv",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 32,
+            "names": [
+              {
+                "String": {
+                  "sval": "text",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+      "stmt_len": 52,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 76 1`] = `[Error: syntax error at or near "REATE"]`;
+
+exports[`collate.windows.win1252.sql > line 76 2`] = `[Error: syntax error at or near "-"]`;
+
+exports[`collate.windows.win1252.sql > line 81 1`] = `[Error: syntax error at or near "NSERT"]`;
+
+exports[`collate.windows.win1252.sql > line 82 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "collate_test5",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 33,
+                "typeName": {
+                  "location": 35,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en_US",
+                      },
+                    },
+                  ],
+                  "location": 60,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 44,
+                "typeName": {
+                  "location": 46,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "testdomain_sv",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 77,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 88 1`] = `[Error: syntax error at or near "NSERT"]`;
+
+exports[`collate.windows.win1252.sql > line 89 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 18,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 41,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 42,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 93 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 94 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 17,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "CollateClause": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 40,
+                      },
+                    },
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "C",
+                        },
+                      },
+                    ],
+                    "location": 42,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 10,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 10,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 53,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 98 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 32,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 55,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 25,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 25,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 56,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.windows.win1252.sql > line 100 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 101 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.windows.win1252.sql > line 103 1`] = `[Error: syntax error at or near "SE"]`;
+
+exports[`collate.windows.win1252.sql > line 105 1`] = `[Error: syntax error at or near "ECT"]`;
+
+exports[`collate.windows.win1252.sql > line 107 1`] = `[Error: syntax error at or near "IKE"]`;
+
+exports[`collate.windows.win1252.sql > line 110 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 111 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 112 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 113 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 114 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 117 1`] = `[Error: syntax error at or near "The"]`;
+
+exports[`collate.windows.win1252.sql > line 120 1`] = `[Error: syntax error at or near "egular"]`;
+
+exports[`collate.windows.win1252.sql > line 123 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 124 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 125 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 126 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 127 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 129 1`] = `[Error: syntax error at or near "TE"]`;
+
+exports[`collate.windows.win1252.sql > line 133 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 137 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.windows.win1252.sql > line 149 1`] = `[Error: syntax error at or near "owing"]`;
+
+exports[`collate.windows.win1252.sql > line 153 1`] = `[Error: syntax error at or near "s"]`;
+
+exports[`collate.windows.win1252.sql > line 156 1`] = `[Error: syntax error at or near "ollview2"]`;
+
+exports[`collate.windows.win1252.sql > line 158 1`] = `[Error: syntax error at or near "_name"]`;
+
+exports[`collate.windows.win1252.sql > line 162 1`] = `[Error: syntax error at or near "n"]`;
+
+exports[`collate.windows.win1252.sql > line 165 1`] = `[Error: syntax error at or near "lesce"]`;
+
+exports[`collate.windows.win1252.sql > line 166 1`] = `[Error: syntax error at or near "lesce"]`;
+
+exports[`collate.windows.win1252.sql > line 168 1`] = `[Error: syntax error at or near "greatest"]`;
+
+exports[`collate.windows.win1252.sql > line 169 1`] = `[Error: syntax error at or near "greatest"]`;
+
+exports[`collate.windows.win1252.sql > line 170 1`] = `[Error: syntax error at or near "greatest"]`;
+
+exports[`collate.windows.win1252.sql > line 172 1`] = `[Error: syntax error at or near "llif"]`;
+
+exports[`collate.windows.win1252.sql > line 173 1`] = `[Error: syntax error at or near "lif"]`;
+
+exports[`collate.windows.win1252.sql > line 174 1`] = `[Error: syntax error at or near "lif"]`;
+
+exports[`collate.windows.win1252.sql > line 176 1`] = `[Error: syntax error at or near "SE"]`;
+
+exports[`collate.windows.win1252.sql > line 177 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.windows.win1252.sql > line 178 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.windows.win1252.sql > line 180 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.windows.win1252.sql > line 181 1`] = `[Error: syntax error at or near "testdomain"]`;
+
+exports[`collate.windows.win1252.sql > line 182 1`] = `[Error: syntax error at or near "testdomain"]`;
+
+exports[`collate.windows.win1252.sql > line 183 1`] = `[Error: syntax error at or near "testdomain"]`;
+
+exports[`collate.windows.win1252.sql > line 184 1`] = `[Error: syntax error at or near "testdomain_sv"]`;
+
+exports[`collate.windows.win1252.sql > line 186 1`] = `[Error: syntax error at or near ")"]`;
+
+exports[`collate.windows.win1252.sql > line 187 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.windows.win1252.sql > line 188 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.windows.win1252.sql > line 190 1`] = `[Error: syntax error at or near "_agg"]`;
+
+exports[`collate.windows.win1252.sql > line 191 1`] = `[Error: syntax error at or near "agg"]`;
+
+exports[`collate.windows.win1252.sql > line 192 1`] = `[Error: syntax error at or near "agg"]`;
+
+exports[`collate.windows.win1252.sql > line 194 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.windows.win1252.sql > line 195 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.windows.win1252.sql > line 196 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.windows.win1252.sql > line 197 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.windows.win1252.sql > line 199 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.windows.win1252.sql > line 200 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 201 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.windows.win1252.sql > line 202 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 203 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.windows.win1252.sql > line 204 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 206 1`] = `[Error: syntax error at or near "TE"]`;
+
+exports[`collate.windows.win1252.sql > line 208 1`] = `[Error: syntax error at or near "ollation"]`;
+
+exports[`collate.windows.win1252.sql > line 218 1`] = `[Error: syntax error at or near "COLLATE"]`;
+
+exports[`collate.windows.win1252.sql > line 220 1`] = `[Error: syntax error at or near "ST"]`;
+
+exports[`collate.windows.win1252.sql > line 221 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 222 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.windows.win1252.sql > line 225 1`] = `[Error: syntax error at or near "ion"]`;
+
+exports[`collate.windows.win1252.sql > line 231 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 234 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 237 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.windows.win1252.sql > line 242 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.windows.win1252.sql > line 249 1`] = `[Error: syntax error at or near "n"]`;
+
+exports[`collate.windows.win1252.sql > line 260 1`] = `[Error: syntax error at or near "'a'"]`;
+
+exports[`collate.windows.win1252.sql > line 262 1`] = `[Error: syntax error at or near "PLACE"]`;
+
+exports[`collate.windows.win1252.sql > line 272 1`] = `[Error: syntax error at or near "'a'"]`;
+
+exports[`collate.windows.win1252.sql > line 273 1`] = `[Error: syntax error at or near "'a'"]`;
+
+exports[`collate.windows.win1252.sql > line 273 2`] = `[Error: syntax error at or near "g"]`;
+
+exports[`collate.windows.win1252.sql > line 277 1`] = `[Error: syntax error at or near "hism"]`;
+
+exports[`collate.windows.win1252.sql > line 280 1`] = `[Error: syntax error at or near "unnest"]`;
+
+exports[`collate.windows.win1252.sql > line 281 1`] = `[Error: syntax error at or near "unnest"]`;
+
+exports[`collate.windows.win1252.sql > line 283 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 286 1`] = `[Error: syntax error at or near "p"]`;
+
+exports[`collate.windows.win1252.sql > line 287 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.windows.win1252.sql > line 288 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.windows.win1252.sql > line 293 1`] = `[Error: syntax error at end of input]`;
+
+exports[`collate.windows.win1252.sql > line 294 1`] = `[Error: syntax error at or near "collate_test1_idx2"]`;
+
+exports[`collate.windows.win1252.sql > line 295 1`] = `[Error: syntax error at or near "collate_test1_idx3"]`;
+
+exports[`collate.windows.win1252.sql > line 295 2`] = `[Error: syntax error at or near "fferent"]`;
+
+exports[`collate.windows.win1252.sql > line 298 1`] = `[Error: syntax error at or near "collate_test1_idx5"]`;
+
+exports[`collate.windows.win1252.sql > line 299 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.windows.win1252.sql > line 301 1`] = `[Error: syntax error at or near "CT"]`;
+
+exports[`collate.windows.win1252.sql > line 304 1`] = `[Error: syntax error at or near "anipulation"]`;
+
+exports[`collate.windows.win1252.sql > line 307 1`] = `[Error: syntax error at or near "test_schema"]`;
+
+exports[`collate.windows.win1252.sql > line 309 1`] = `[Error: syntax error at or near "o"]`;
+
+exports[`collate.windows.win1252.sql > line 316 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 316 2`] = `[Error: syntax error at or near "icate"]`;
+
+exports[`collate.windows.win1252.sql > line 317 1`] = `[Error: syntax error at or near "d"]`;
+
+exports[`collate.windows.win1252.sql > line 318 1`] = `[Error: syntax error at or near "d"]`;
+
+exports[`collate.windows.win1252.sql > line 327 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 327 2`] = `[Error: syntax error at or near "lc_ctype"]`;
+
+exports[`collate.windows.win1252.sql > line 330 1`] = `[Error: syntax error at or near "TE"]`;
+
+exports[`collate.windows.win1252.sql > line 331 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 333 1`] = `[Error: syntax error at or near "ame"]`;
+
+exports[`collate.windows.win1252.sql > line 335 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 336 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.windows.win1252.sql > line 337 1`] = `[Error: syntax error at or near "COLLATION"]`;
+
+exports[`collate.windows.win1252.sql > line 339 1`] = `[Error: syntax error at or near "R"]`;
+
+exports[`collate.windows.win1252.sql > line 340 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.windows.win1252.sql > line 341 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.windows.win1252.sql > line 343 1`] = `[Error: syntax error at or near "OLLATION"]`;
+
+exports[`collate.windows.win1252.sql > line 345 1`] = `[Error: syntax error at or near "ame"]`;
+
+exports[`collate.windows.win1252.sql > line 350 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.windows.win1252.sql > line 351 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.windows.win1252.sql > line 352 1`] = `[Error: syntax error at or near "COLLATION"]`;
+
+exports[`collate.windows.win1252.sql > line 354 1`] = `[Error: syntax error at or near "ame"]`;
+
+exports[`collate.windows.win1252.sql > line 356 1`] = `[Error: syntax error at or near "test_schema"]`;
+
+exports[`collate.windows.win1252.sql > line 357 1`] = `[Error: syntax error at or near "ress_test_role"]`;
+
+exports[`collate.windows.win1252.sql > line 362 1`] = `[Error: syntax error at or near "LTER"]`;
+
+exports[`collate.windows.win1252.sql > line 364 1`] = `[Error: syntax error at or near "for"]`;
+
+exports[`collate.windows.win1252.sql > line 369 1`] = `[Error: syntax error at or near "cies"]`;
+
+exports[`collate.windows.win1252.sql > line 373 1`] = `[Error: syntax error at or near "collate_dep_test1"]`;
+
+exports[`collate.windows.win1252.sql > line 374 1`] = `[Error: syntax error at or near "collate_dep_dom1"]`;
+
+exports[`collate.windows.win1252.sql > line 375 1`] = `[Error: syntax error at or near "ollate_dep_test2"]`;
+
+exports[`collate.windows.win1252.sql > line 376 1`] = `[Error: syntax error at or near "ollate_dep_test3"]`;
+
+exports[`collate.windows.win1252.sql > line 377 1`] = `[Error: syntax error at or near "collate_dep_test4t"]`;
+
+exports[`collate.windows.win1252.sql > line 378 1`] = `[Error: syntax error at or near "collate_dep_test4i"]`;
+
+exports[`collate.windows.win1252.sql > line 380 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.windows.win1252.sql > line 381 1`] = `[Error: syntax error at or near "COLLATION"]`;
+
+exports[`collate.windows.win1252.sql > line 383 1`] = `[Error: syntax error at or near "ep_test1"]`;
+
+exports[`collate.windows.win1252.sql > line 387 1`] = `[Error: syntax error at or near "late_dep_test2"]`;
+
+exports[`collate.windows.win1252.sql > line 389 1`] = `[Error: syntax error at or near "e"]`;
+
+exports[`collate.windows.win1252.sql > line 392 1`] = `[Error: syntax error at or near "extrange_en_us"]`;
+
+exports[`collate.windows.win1252.sql > line 394 1`] = `[Error: syntax error at or near "ange_c"]`;
+
+exports[`collate.windows.win1252.sql > line 395 1`] = `[Error: syntax error at or near "nge_en_us"]`;
+
+exports[`collate.windows.win1252.sql > line 397 1`] = `[Error: syntax error at or near "xtrange_c"]`;
+
+exports[`collate.windows.win1252.sql > line 398 1`] = `[Error: syntax error at or near "trange_en_us"]`;
+
+exports[`collate.windows.win1252.sql > line 401 1`] = `[Error: syntax error at or near "ministic"]`;
+
+exports[`collate.windows.win1252.sql > line 405 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.windows.win1252.sql > line 409 1`] = `[Error: syntax error at end of input]`;
+
+exports[`collate.windows.win1252.sql > line 410 1`] = `[Error: syntax error at or near "ollate_tests"]`;

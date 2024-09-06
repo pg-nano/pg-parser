@@ -1,0 +1,4306 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`create_role.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 92,
+              },
+            },
+          ],
+          "role": "regress_role_super",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 3 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 32,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createrole",
+                "location": 41,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 52,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 64,
+              },
+            },
+          ],
+          "role": "regress_role_admin",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 4 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grant_option": true,
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 40,
+                "rolename": "regress_role_admin",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "regression",
+              },
+            },
+          ],
+          "objtype": "OBJECT_DATABASE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "create",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 5 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createrole",
+                "location": 40,
+              },
+            },
+          ],
+          "role": "regress_role_limited_admin",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_role_normal",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 7 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 105,
+                "sval": {
+                  "sval": "regress_role_limited_admin",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 38,
+              },
+            },
+          ],
+          "role": "regress_nosuch_superuser",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 50,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 62,
+              },
+            },
+          ],
+          "role": "regress_nosuch_replication_bypassrls",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 40,
+              },
+            },
+          ],
+          "role": "regress_nosuch_replication",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 13 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 38,
+              },
+            },
+          ],
+          "role": "regress_nosuch_bypassrls",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 37,
+              },
+            },
+          ],
+          "role": "regress_nosuch_createdb",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_role_limited",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 93,
+              },
+            },
+          ],
+          "role": {
+            "location": 72,
+            "rolename": "regress_role_limited",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 33,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_role_limited",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 33,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_role_limited",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 33,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_role_limited",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_limited",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 88,
+                "sval": {
+                  "sval": "regress_role_admin",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 43,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 55,
+              },
+            },
+          ],
+          "role": "regress_replication_bypassrls",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 33,
+              },
+            },
+          ],
+          "role": "regress_replication",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 31,
+              },
+            },
+          ],
+          "role": "regress_bypassrls",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 30,
+              },
+            },
+          ],
+          "role": "regress_createdb",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 101,
+              },
+            },
+          ],
+          "role": {
+            "location": 81,
+            "rolename": "regress_replication",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "isreplication",
+                "location": 32,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_replication",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 30,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_bypassrls",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 37 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "bypassrls",
+                "location": 30,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_bypassrls",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 29,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_createdb",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createdb",
+                "location": 29,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_createdb",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 62,
+              },
+            },
+          ],
+          "role": {
+            "location": 45,
+            "rolename": "regress_createdb",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 29,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_createdb",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 44 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createrole",
+                "location": 106,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 117,
+              },
+            },
+          ],
+          "role": "regress_createrole",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grant_option": true,
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 40,
+                "rolename": "regress_createrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "regression",
+              },
+            },
+          ],
+          "objtype": "OBJECT_DATABASE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "create",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "canlogin",
+                "location": 27,
+              },
+            },
+          ],
+          "role": "regress_login",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 29,
+              },
+            },
+          ],
+          "role": "regress_inherit",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 50 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 5,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "connectionlimit",
+                "location": 38,
+              },
+            },
+          ],
+          "role": "regress_connection_limit",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "foo",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "password",
+                "location": 40,
+              },
+            },
+          ],
+          "role": "regress_encrypted_password",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "password",
+                "location": 35,
+              },
+            },
+          ],
+          "role": "regress_password_null",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 53 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 12345,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "sysid",
+                "location": 90,
+              },
+            },
+          ],
+          "role": "regress_noiseword",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 56 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 94,
+                          "rolename": "regress_role_super",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 86,
+              },
+            },
+          ],
+          "role": "regress_nosuch_super",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 59 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 89,
+                          "rolename": "pg_database_owner",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 81,
+              },
+            },
+          ],
+          "role": "regress_nosuch_dbowner",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 77,
+                          "rolename": "regress_role_super",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 97,
+                          "rolename": "regress_createdb",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 115,
+                          "rolename": "regress_createrole",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 135,
+                          "rolename": "regress_login",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 151,
+                          "rolename": "regress_inherit",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 168,
+                          "rolename": "regress_connection_limit",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 194,
+                          "rolename": "regress_encrypted_password",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 222,
+                          "rolename": "regress_password_null",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "rolemembers",
+                "location": 71,
+              },
+            },
+          ],
+          "role": "regress_inroles",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 85,
+                          "rolename": "regress_nosuch_recursive",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "rolemembers",
+                "location": 80,
+              },
+            },
+          ],
+          "role": "regress_nosuch_recursive",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 99,
+                          "rolename": "regress_role_super",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 119,
+                          "rolename": "regress_createdb",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 137,
+                          "rolename": "regress_createrole",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 157,
+                          "rolename": "regress_login",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 173,
+                          "rolename": "regress_inherit",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 190,
+                          "rolename": "regress_connection_limit",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 216,
+                          "rolename": "regress_encrypted_password",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                      {
+                        "RoleSpec": {
+                          "location": 244,
+                          "rolename": "regress_password_null",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "adminmembers",
+                "location": 92,
+              },
+            },
+          ],
+          "role": "regress_adminroles",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 110,
+                          "rolename": "regress_nosuch_admin_recursive",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "adminmembers",
+                "location": 104,
+              },
+            },
+          ],
+          "role": "regress_nosuch_admin_recursive",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 89,
+                "sval": {
+                  "sval": "regress_createrole",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreatedbStmt": {
+          "dbname": "regress_nosuch_db",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 82 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_plainrole",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createrole",
+                "location": 92,
+              },
+            },
+          ],
+          "role": "regress_rolecreator",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 88 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "createrole",
+                "location": 137,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "canlogin",
+                "location": 148,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 154,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 5,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "connectionlimit",
+                "location": 162,
+              },
+            },
+          ],
+          "role": "regress_hasprivs",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "some comment",
+          "object": {
+            "String": {
+              "sval": "regress_hasprivs",
+            },
+          },
+          "objtype": "OBJECT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "regress_tenant",
+          "relationType": "OBJECT_ACCESS_METHOD",
+          "renameType": "OBJECT_ROLE",
+          "subname": "regress_hasprivs",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 27,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "canlogin",
+                "location": 37,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 7,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "connectionlimit",
+                "location": 45,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_tenant",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 97 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "some comment",
+          "object": {
+            "String": {
+              "sval": "regress_role_normal",
+            },
+          },
+          "objtype": "OBJECT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "regress_role_abnormal",
+          "relationType": "OBJECT_ACCESS_METHOD",
+          "renameType": "OBJECT_ROLE",
+          "subname": "regress_role_normal",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 101 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 32,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "canlogin",
+                "location": 42,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Integer": {
+                    "ival": 7,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "connectionlimit",
+                "location": 50,
+              },
+            },
+          ],
+          "role": {
+            "location": 12,
+            "rolename": "regress_role_normal",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 102 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 89,
+                "sval": {
+                  "sval": "regress_tenant",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 105 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "tenant_table",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "i",
+                "is_local": true,
+                "location": 28,
+                "typeName": {
+                  "location": 30,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "tenant_idx",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "i",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 28,
+            "relname": "tenant_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 107 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ViewStmt": {
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 42,
+                    "relname": "pg_class",
+                    "relpersistence": "p",
+                    "schemaname": "pg_catalog",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 35,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "view": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant_view",
+            "relpersistence": "p",
+          },
+          "withCheckOption": "NO_CHECK_OPTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 44,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "tenant_table",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 79,
+                "sval": {
+                  "sval": "regress_createrole",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_idx",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "t",
+                    "is_local": true,
+                    "location": 37,
+                    "typeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 114 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_table",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 33,
+                  "rolename": "regress_role_admin",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_VIEW",
+          "relation": {
+            "inh": true,
+            "location": 12,
+            "relname": "tenant_view",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 116 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_view",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 117 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 106,
+            "rolename": "regress_tenant",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaname": "regress_tenant_schema",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 120 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ReassignOwnedStmt": {
+          "newrole": {
+            "location": 96,
+            "rolename": "regress_createrole",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 78,
+                "rolename": "regress_tenant",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 90,
+                "sval": {
+                  "sval": "set, inherit",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "createrole_self_grant",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_tenant2",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 40,
+                "rolename": "regress_tenant2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "regression",
+              },
+            },
+          ],
+          "objtype": "OBJECT_DATABASE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "create",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 90,
+                "sval": {
+                  "sval": "regress_tenant2",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 131 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "i",
+                "is_local": true,
+                "location": 29,
+                "typeName": {
+                  "location": 31,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 45,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "tenant2_table",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 133 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 86,
+                "sval": {
+                  "sval": "regress_createrole",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 136 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 52,
+            "rolename": "regress_tenant2",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaname": "regress_tenant2_schema",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 137 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterOwnerStmt": {
+          "newowner": {
+            "location": 46,
+            "rolename": "regress_createrole",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "object": {
+            "String": {
+              "sval": "regress_tenant2_schema",
+            },
+          },
+          "objectType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 36,
+                  "rolename": "regress_createrole",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 139 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 36,
+                  "rolename": "regress_tenant2",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantRoleStmt": {
+          "behavior": "DROP_RESTRICT",
+          "granted_roles": [
+            {
+              "AccessPriv": {
+                "priv_name": "regress_tenant2",
+              },
+            },
+          ],
+          "grantee_roles": [
+            {
+              "RoleSpec": {
+                "location": 121,
+                "rolename": "regress_createrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "opt": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 81,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterOwnerStmt": {
+          "newowner": {
+            "location": 46,
+            "rolename": "regress_tenant2",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "object": {
+            "String": {
+              "sval": "regress_tenant2_schema",
+            },
+          },
+          "objectType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 144 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 36,
+                  "rolename": "regress_createrole",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 145 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantRoleStmt": {
+          "behavior": "DROP_RESTRICT",
+          "granted_roles": [
+            {
+              "AccessPriv": {
+                "priv_name": "regress_tenant2",
+              },
+            },
+          ],
+          "grantee_roles": [
+            {
+              "RoleSpec": {
+                "location": 99,
+                "rolename": "regress_createrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "is_grant": true,
+          "opt": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "inherit",
+                "location": 123,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "set",
+                "location": 137,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 36,
+                  "rolename": "regress_createrole",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 149 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "newowner": {
+                  "location": 36,
+                  "rolename": "regress_tenant2",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+                "subtype": "AT_ChangeOwner",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "tenant2_table",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 150 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant2_table",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 114,
+                          "rolename": "pg_read_all_data",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 106,
+              },
+            },
+          ],
+          "role": "regress_read_all_data",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 154 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 44,
+                          "rolename": "pg_write_all_data",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 36,
+              },
+            },
+          ],
+          "role": "regress_write_all_data",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 37,
+                          "rolename": "pg_monitor",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 29,
+              },
+            },
+          ],
+          "role": "regress_monitor",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 156 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 47,
+                          "rolename": "pg_read_all_settings",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 39,
+              },
+            },
+          ],
+          "role": "regress_read_all_settings",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 157 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 44,
+                          "rolename": "pg_read_all_stats",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 36,
+              },
+            },
+          ],
+          "role": "regress_read_all_stats",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 46,
+                          "rolename": "pg_stat_scan_tables",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 38,
+              },
+            },
+          ],
+          "role": "regress_stat_scan_tables",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 47,
+                          "rolename": "pg_read_server_files",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 39,
+              },
+            },
+          ],
+          "role": "regress_read_server_files",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 160 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 48,
+                          "rolename": "pg_write_server_files",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 40,
+              },
+            },
+          ],
+          "role": "regress_write_server_files",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 161 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 52,
+                          "rolename": "pg_execute_server_program",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 44,
+              },
+            },
+          ],
+          "role": "regress_execute_server_program",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 162 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 44,
+                          "rolename": "pg_signal_backend",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "addroleto",
+                "location": 36,
+              },
+            },
+          ],
+          "role": "regress_signal_backend",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 163 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 54,
+                "rolename": "regress_tenant",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 166 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 99,
+                "sval": {
+                  "sval": "regress_role_admin",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 169 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_superuser",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 170 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_replication_bypassrls",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 171 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_replication",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 172 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_bypassrls",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 173 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_super",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 174 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_dbowner",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 175 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_recursive",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 176 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_nosuch_admin_recursive",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 177 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_plainrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 178 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_CASCADE",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 91,
+                "rolename": "regress_createrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "objects": [
+            {
+              "String": {
+                "sval": "regression",
+              },
+            },
+          ],
+          "objtype": "OBJECT_DATABASE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "create",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 181 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 73,
+                "rolename": "regress_replication_bypassrls",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 184 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_replication",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 185 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_bypassrls",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 186 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_createdb",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 187 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_createrole",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 188 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_login",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 189 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_inherit",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 190 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_connection_limit",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 191 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_encrypted_password",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 192 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_password_null",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 193 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_noiseword",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 194 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_inroles",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 195 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_adminroles",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 196 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 84,
+                "rolename": "regress_role_super",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 199 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_admin",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 200 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_rolecreator",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 201 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 204 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_CASCADE",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 43,
+                "rolename": "regress_role_admin",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+          "objects": [
+            {
+              "String": {
+                "sval": "regression",
+              },
+            },
+          ],
+          "objtype": "OBJECT_DATABASE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "create",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 205 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_idx",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 206 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_table",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 207 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tenant_view",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 208 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_tenant2_schema",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_tenant",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 210 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_tenant2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 211 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_rolecreator",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 212 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_admin",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 213 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_limited_admin",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 214 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_super",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_role.sql > line 215 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 11,
+                "rolename": "regress_role_normal",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

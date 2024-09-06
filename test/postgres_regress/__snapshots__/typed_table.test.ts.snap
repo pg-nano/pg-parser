@@ -1,0 +1,1113 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`typed_table.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 24,
+            "names": [
+              {
+                "String": {
+                  "sval": "nothing",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ttable1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 2 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 30,
+                "typeName": {
+                  "location": 33,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "name",
+                "is_local": true,
+                "location": 38,
+                "typeName": {
+                  "location": 43,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 14,
+            "relname": "person_type",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 4 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 25,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 5 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "if_not_exists": true,
+          "ofTypename": {
+            "location": 39,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 28,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "persons",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 7 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`typed_table.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "get_all_persons",
+                                },
+                              },
+                            ],
+                            "location": 16,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "comment",
+                    "is_local": true,
+                    "location": 99,
+                    "typeName": {
+                      "location": 107,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 80,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "name",
+                "subtype": "AT_DropColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "num",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+          "relationType": "OBJECT_TABLE",
+          "renameType": "OBJECT_COLUMN",
+          "subname": "id",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 34,
+                    "typeName": {
+                      "location": 44,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "varchar",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "name",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "stuff",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 21,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 29,
+                    "relname": "stuff",
+                    "relpersistence": "p",
+                  },
+                },
+                "subtype": "AT_AddInherit",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 27,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "personsx",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "myname",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 60,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 40,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 36,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 24,
+            "relname": "persons2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 70,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 54,
+              },
+            },
+            {
+              "Constraint": {
+                "contype": "CONSTR_UNIQUE",
+                "keys": [
+                  {
+                    "String": {
+                      "sval": "name",
+                    },
+                  },
+                ],
+                "location": 87,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 31 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`typed_table.sql > line 38 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`typed_table.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 12,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "person_type",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 11,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "person_type",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 27,
+            "names": [
+              {
+                "String": {
+                  "sval": "stuff",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "persons5",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "stuff",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 52,
+                "typeName": {
+                  "location": 55,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "name",
+                "is_local": true,
+                "location": 60,
+                "typeName": {
+                  "location": 65,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 36,
+            "relname": "person_type",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 57 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 25,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "persons",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 29,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "test",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 59 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "namelen",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 51,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " SELECT length($1.name) ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 64,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 26,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "person_type",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 47,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 34,
+                "relname": "persons",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "id",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 12,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "persons",
+                              },
+                            },
+                          ],
+                          "location": 20,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "namelen",
+                        },
+                      },
+                    ],
+                    "location": 12,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 27,
+            "names": [
+              {
+                "String": {
+                  "sval": "person_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "persons2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 61,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 45,
+              },
+            },
+            {
+              "Constraint": {
+                "contype": "CONSTR_UNIQUE",
+                "keys": [
+                  {
+                    "String": {
+                      "sval": "name",
+                    },
+                  },
+                ],
+                "location": 78,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`typed_table.sql > line 67 1`] = `[Error: syntax error at or near "\\"]`;

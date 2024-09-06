@@ -1,0 +1,6280 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`create_table_like.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 56,
+            "relname": "inhx",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "xx",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 70,
+                      "raw_expr": {
+                        "A_Const": {
+                          "location": 78,
+                          "sval": {
+                            "sval": "text",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 62,
+                "typeName": {
+                  "location": 65,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 3 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 135,
+            "relname": "ctla",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "aa",
+                "is_local": true,
+                "location": 141,
+                "typeName": {
+                  "location": 144,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "ctla",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlb",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "bb",
+                "is_local": true,
+                "location": 20,
+                "typeName": {
+                  "location": 23,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 25,
+                  "relname": "nonexistent",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 51,
+                "relname": "ctlb",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "inhe",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "ee",
+                "is_local": true,
+                "location": 21,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 35,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhe",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 26,
+                          "sval": {
+                            "sval": "ee-col1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 37,
+                          "sval": {
+                            "sval": "ee-col2",
+                          },
+                        },
+                      },
+                      {
+                        "SetToDefault": {
+                          "location": 48,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "ee-col4",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "inhe",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 17 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 55,
+                "relname": "inhx",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 48,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 48,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 66,
+                "relname": "ctlb",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 59,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 59,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 34,
+                "relname": "ctla",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 27,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 34,
+            "relname": "inhf",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 45,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 56,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 33,
+            "relname": "inhf",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 12,
+                "relation": {
+                  "inh": true,
+                  "location": 44,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhf",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 26 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "inhf",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 26 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "conname": "foo",
+                    "contype": "CONSTR_CHECK",
+                    "initially_valid": true,
+                    "location": 60,
+                    "raw_expr": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "xx",
+                                },
+                              },
+                            ],
+                            "location": 82,
+                          },
+                        },
+                        "location": 85,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 87,
+                            "sval": {
+                              "sval": "text",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                "subtype": "AT_AddConstraint",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 51,
+            "relname": "inhx",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_PRIMARY",
+                    "keys": [
+                      {
+                        "String": {
+                          "sval": "xx",
+                        },
+                      },
+                    ],
+                    "location": 22,
+                  },
+                },
+                "subtype": "AT_AddConstraint",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhx",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 25,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 30 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 43,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "inhg",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "is_local": true,
+                "location": 20,
+                "typeName": {
+                  "location": 22,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 4,
+                "relation": {
+                  "inh": true,
+                  "location": 33,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "y",
+                "is_local": true,
+                "location": 61,
+                "typeName": {
+                  "location": 63,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 33 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 38,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 51,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "text",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 64,
+                          "sval": {
+                            "sval": "y",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 28,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 41,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 46,
+                          "sval": {
+                            "sval": "text",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 54,
+                          "sval": {
+                            "sval": "y",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 61,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 74,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 79,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 87,
+                          "sval": {
+                            "sval": "y",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "inhg",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 39,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 39,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 37 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "inhg",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "test_like_id_1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 40,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 31,
+                "typeName": {
+                  "location": 33,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 70,
+                "typeName": {
+                  "location": 72,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 41 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_id_1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 44 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_id_2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 35,
+                  "relname": "test_like_id_1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 45 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_id_2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 47 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 42,
+            "relname": "test_like_id_3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 32,
+                "relation": {
+                  "inh": true,
+                  "location": 63,
+                  "relname": "test_like_id_1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 49 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_id_3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 51 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_id_1",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_id_2",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_id_3",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 53 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "test_like_gen_1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 32,
+                "typeName": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_GENERATED",
+                      "generated_when": "a",
+                      "location": 45,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "a",
+                                  },
+                                },
+                              ],
+                              "location": 66,
+                            },
+                          },
+                          "location": 68,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "*",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 2,
+                              },
+                              "location": 70,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 55 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 57 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_gen_1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_gen_2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 36,
+                  "relname": "test_like_gen_1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 59 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_gen_2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_gen_3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 16,
+                "relation": {
+                  "inh": true,
+                  "location": 36,
+                  "relname": "test_like_gen_1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 63 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_like_gen_3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_gen_1",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_gen_2",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_gen_3",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 85,
+            "relname": "test_like_4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 104,
+                      "raw_expr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 112,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 98,
+                "typeName": {
+                  "location": 100,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_GENERATED",
+                      "generated_when": "a",
+                      "location": 124,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "a",
+                                  },
+                                },
+                              ],
+                              "location": 145,
+                            },
+                          },
+                          "location": 147,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "*",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 2,
+                              },
+                              "location": 149,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 118,
+                "typeName": {
+                  "location": 120,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "location": 168,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "a",
+                                  },
+                                },
+                              ],
+                              "location": 175,
+                            },
+                          },
+                          "location": 177,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 179,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 162,
+                "typeName": {
+                  "location": 164,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 72 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 74 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_4b",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 8,
+                "relation": {
+                  "inh": true,
+                  "location": 33,
+                  "relname": "test_like_4",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_4c",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 16,
+                "relation": {
+                  "inh": true,
+                  "location": 33,
+                  "relname": "test_like_4",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 76 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_4d",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 24,
+                "relation": {
+                  "inh": true,
+                  "location": 33,
+                  "relname": "test_like_4",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 77 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 79 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "test_like_4a",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 80 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 82 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "test_like_4b",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 83 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "test_like_4c",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 86 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 88 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "test_like_4d",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 89 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 80,
+            "relname": "test_like_5",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "is_local": true,
+                "location": 93,
+                "typeName": {
+                  "location": 95,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "point",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "y",
+                "is_local": true,
+                "location": 102,
+                "typeName": {
+                  "location": 104,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "point",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "z",
+                "is_local": true,
+                "location": 111,
+                "typeName": {
+                  "location": 113,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "point",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_5x",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "p",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "location": 34,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "p",
+                                  },
+                                },
+                              ],
+                              "location": 41,
+                            },
+                          },
+                          "location": 43,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 45,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 28,
+                "typeName": {
+                  "location": 30,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "q",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_GENERATED",
+                      "generated_when": "a",
+                      "location": 58,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "p",
+                                  },
+                                },
+                              ],
+                              "location": 79,
+                            },
+                          },
+                          "location": 81,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "*",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 2,
+                              },
+                              "location": 83,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 52,
+                "typeName": {
+                  "location": 54,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 72,
+                "relname": "test_like_5",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 85,
+                "relname": "test_like_5x",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_like_5c",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 2147483647,
+                "relation": {
+                  "inh": true,
+                  "location": 33,
+                  "relname": "test_like_4",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 96 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_5",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_5x",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_like_5c",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "is_local": true,
+                "location": 21,
+                "typeName": {
+                  "location": 23,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 64,
+                "relation": {
+                  "inh": true,
+                  "location": 34,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "y",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 60,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 101 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 34,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 47,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 50,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 20,
+                          },
+                          "location": 26,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 30,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 103 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "inhg",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 105 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 63,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "is_local": true,
+                "location": 69,
+                "typeName": {
+                  "location": 71,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 64,
+                "relation": {
+                  "inh": true,
+                  "location": 82,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "Constraint": {
+                "contype": "CONSTR_PRIMARY",
+                "keys": [
+                  {
+                    "String": {
+                      "sval": "x",
+                    },
+                  },
+                ],
+                "location": 106,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 26,
+            "relname": "inhz",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "xx",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 40,
+                      "raw_expr": {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "text",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 32,
+                "typeName": {
+                  "location": 35,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "yy",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_UNIQUE",
+                      "location": 63,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 56,
+                "typeName": {
+                  "location": 59,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "inhz_xx_idx",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "xx",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 36,
+            "relname": "inhz",
+            "relpersistence": "p",
+          },
+          "unique": true,
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "xx",
+                      },
+                    },
+                  ],
+                  "location": 52,
+                },
+              },
+              "location": 55,
+              "name": [
+                {
+                  "String": {
+                    "sval": "<>",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 58,
+                  "sval": {
+                    "sval": "test",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 57,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_UNIQUE",
+                      "location": 70,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 63,
+                "typeName": {
+                  "location": 65,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 64,
+                "relation": {
+                  "inh": true,
+                  "location": 83,
+                  "relname": "inhz",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 111 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "name": "xx",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 23,
+                "name": "yy",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "x",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "test",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 46,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 49,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "name": "xx",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 23,
+                "name": "yy",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "x",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "test",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 46,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 15,
+                          },
+                          "location": 50,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "name": "xx",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 23,
+                "name": "yy",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "x",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "inhg",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "foo",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 15,
+                          },
+                          "location": 49,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 113 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "inhg",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "inhz",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 116 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 89,
+            "relname": "inhz",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "x",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_FOREIGN",
+                      "fk_del_action": "a",
+                      "fk_matchtype": "s",
+                      "fk_upd_action": "a",
+                      "initially_valid": true,
+                      "location": 102,
+                      "pktable": {
+                        "inh": true,
+                        "location": 113,
+                        "relname": "inhz",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 95,
+                "typeName": {
+                  "location": 97,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 64,
+                "relation": {
+                  "inh": true,
+                  "location": 124,
+                  "relname": "inhx",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 119 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 49,
+            "relname": "ctlt1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "location": 63,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "a",
+                                        },
+                                      },
+                                    ],
+                                    "location": 77,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "length",
+                                  },
+                                },
+                              ],
+                              "location": 70,
+                            },
+                          },
+                          "location": 80,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 2,
+                              },
+                              "location": 82,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 85,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 56,
+                "typeName": {
+                  "location": 58,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 98,
+                "typeName": {
+                  "location": 100,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 124 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "ctlt1_b_key",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "b",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 29,
+            "relname": "ctlt1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 125 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "ctlt1_fnidx",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "expr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 37,
+                      },
+                    },
+                    "location": 39,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "||",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 42,
+                      },
+                    },
+                  },
+                },
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 29,
+            "relname": "ctlt1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStatsStmt": {
+          "defnames": [
+            {
+              "String": {
+                "sval": "ctlt1_a_b_stat",
+              },
+            },
+          ],
+          "exprs": [
+            {
+              "StatsElem": {
+                "name": "a",
+              },
+            },
+            {
+              "StatsElem": {
+                "name": "b",
+              },
+            },
+          ],
+          "relations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "ctlt1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStatsStmt": {
+          "defnames": [
+            {
+              "String": {
+                "sval": "ctlt1_expr_stat",
+              },
+            },
+          ],
+          "exprs": [
+            {
+              "StatsElem": {
+                "expr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 39,
+                      },
+                    },
+                    "location": 41,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "||",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 44,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "relations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 52,
+                "relname": "ctlt1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "ab stats",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1_a_b_stat",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_STATISTIC_EXT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 129 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "ab expr stats",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1_expr_stat",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_STATISTIC_EXT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 130 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "A",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "a",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_COLUMN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 131 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "B",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "b",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_COLUMN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "t1_a_check",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "ctlt1_a_check",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_TABCONSTRAINT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 133 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "index pkey",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1_pkey",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 134 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "index b_key",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt1_b_key",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 135 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "String": {
+                    "sval": "main",
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_SetStorage",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ctlt1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 136 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "ctlt2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "is_local": true,
+                "location": 22,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "String": {
+                    "sval": "external",
+                  },
+                },
+                "name": "c",
+                "subtype": "AT_SetStorage",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ctlt2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 139 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "C",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt2",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "c",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_COLUMN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "ctlt3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "location": 29,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "a",
+                                        },
+                                      },
+                                    ],
+                                    "location": 43,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "length",
+                                  },
+                                },
+                              ],
+                              "location": 36,
+                            },
+                          },
+                          "location": 46,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "<",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 5,
+                              },
+                              "location": 48,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 22,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "location": 59,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "c",
+                                        },
+                                      },
+                                    ],
+                                    "location": 73,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "length",
+                                  },
+                                },
+                              ],
+                              "location": 66,
+                            },
+                          },
+                          "location": 76,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "<",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 7,
+                              },
+                              "location": 78,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 52,
+                "typeName": {
+                  "location": 54,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 142 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "String": {
+                    "sval": "external",
+                  },
+                },
+                "name": "c",
+                "subtype": "AT_SetStorage",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ctlt3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "String": {
+                    "sval": "main",
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_SetStorage",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ctlt3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 144 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "ctlt3_fnidx",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "expr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 37,
+                      },
+                    },
+                    "location": 39,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "||",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "c",
+                            },
+                          },
+                        ],
+                        "location": 42,
+                      },
+                    },
+                  },
+                },
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 29,
+            "relname": "ctlt3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 145 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "A3",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt3",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "a",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_COLUMN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 146 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "C",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt3",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "c",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_COLUMN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 147 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "t3_a_check",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "ctlt3",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "ctlt3_a_check",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_TABCONSTRAINT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "ctlt4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 22,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "is_local": true,
+                "location": 30,
+                "typeName": {
+                  "location": 32,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 150 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "String": {
+                    "sval": "external",
+                  },
+                },
+                "name": "c",
+                "subtype": "AT_SetStorage",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "ctlt4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "ctlt12_storage",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 256,
+                "relation": {
+                  "inh": true,
+                  "location": 36,
+                  "relname": "ctlt1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "TableLikeClause": {
+                "options": 256,
+                "relation": {
+                  "inh": true,
+                  "location": 66,
+                  "relname": "ctlt2",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 153 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 155 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 157 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 38,
+                "relname": "ctlt1",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 45,
+                "relname": "ctlt3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt13_inh",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 160 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 162 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 164 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "ctlt_all",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 2147483647,
+                "relation": {
+                  "inh": true,
+                  "location": 30,
+                  "relname": "ctlt1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 166 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 168 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "pg_description",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "s",
+                },
+                "inh": true,
+                "location": 62,
+                "relname": "pg_statistic_ext",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "s",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "stxname",
+                        },
+                      },
+                    ],
+                    "location": 193,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "objsubid",
+                        },
+                      },
+                    ],
+                    "location": 204,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "s",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "stxname",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 19,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "objsubid",
+                        },
+                      },
+                    ],
+                    "location": 19,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 29,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "description",
+                        },
+                      },
+                    ],
+                    "location": 29,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "classoid",
+                            },
+                          },
+                        ],
+                        "location": 87,
+                      },
+                    },
+                    "location": 96,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 98,
+                            "sval": {
+                              "sval": "pg_statistic_ext",
+                            },
+                          },
+                        },
+                        "location": 116,
+                        "typeName": {
+                          "location": 118,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "regclass",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "objoid",
+                            },
+                          },
+                        ],
+                        "location": 131,
+                      },
+                    },
+                    "location": 138,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "s",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "oid",
+                            },
+                          },
+                        ],
+                        "location": 140,
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "s",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stxrelid",
+                            },
+                          },
+                        ],
+                        "location": 150,
+                      },
+                    },
+                    "location": 161,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 163,
+                            "sval": {
+                              "sval": "ctlt_all",
+                            },
+                          },
+                        },
+                        "location": 173,
+                        "typeName": {
+                          "location": 175,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "regclass",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 127,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 169 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "ctlt1",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "ctlt4",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "inh_error1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 171 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 66,
+                "relname": "ctlt1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "inh_error2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 256,
+                "relation": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "ctlt4",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 172 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 86,
+            "relname": "pg_attrdef",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 2147483647,
+                "relation": {
+                  "inh": true,
+                  "location": 103,
+                  "relname": "ctlt1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 175 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 177 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 180 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaname": "ctl_schema",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 181 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 25,
+                "sval": {
+                  "sval": "ctl_schema",
+                },
+              },
+            },
+            {
+              "A_Const": {
+                "location": 37,
+                "sval": {
+                  "sval": "public",
+                },
+              },
+            },
+          ],
+          "is_local": true,
+          "kind": "VAR_SET_VALUE",
+          "name": "search_path",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 182 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 2147483647,
+                "relation": {
+                  "inh": true,
+                  "location": 26,
+                  "relname": "ctlt1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 183 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 185 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt1",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt2",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt3",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt4",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt12_storage",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt12_comments",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt1_inh",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt13_inh",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt13_like",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt_all",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctla",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlb",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 187 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 71,
+            "relname": "noinh_con_copy",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_CHECK",
+                      "initially_valid": true,
+                      "is_no_inherit": true,
+                      "location": 93,
+                      "raw_expr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "a",
+                                  },
+                                },
+                              ],
+                              "location": 100,
+                            },
+                          },
+                          "location": 102,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 104,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 87,
+                "typeName": {
+                  "location": 89,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 190 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "noinh_con_copy1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 4,
+                "relation": {
+                  "inh": true,
+                  "location": 36,
+                  "relname": "noinh_con_copy",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 191 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`create_table_like.sql > line 196 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "noinh_con_copy",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "noinh_con_copy1",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 198 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 54,
+            "relname": "ctlt4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 61,
+                "typeName": {
+                  "location": 63,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 68,
+                "typeName": {
+                  "location": 70,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 203 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSeqStmt": {
+          "sequence": {
+            "inh": true,
+            "location": 18,
+            "relname": "ctlseq1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 205 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt10",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "ctlseq1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 205 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ViewStmt": {
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 46,
+                    "relname": "ctlt4",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 39,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 39,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "view": {
+            "inh": true,
+            "location": 23,
+            "relname": "ctlv1",
+            "relpersistence": "p",
+          },
+          "withCheckOption": "NO_CHECK_OPTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 208 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt11",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "ctlv1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt11a",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "options": 2147483647,
+                "relation": {
+                  "inh": true,
+                  "location": 28,
+                  "relname": "ctlv1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 210 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 25,
+                "typeName": {
+                  "location": 27,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 32,
+                "typeName": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 14,
+            "relname": "ctlty1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 212 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "ctlt12",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "ctlty1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 213 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlseq1",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 215 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 11,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "ctlty1",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 216 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlv1",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`create_table_like.sql > line 217 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt4",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt10",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt11",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt11a",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "ctlt12",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

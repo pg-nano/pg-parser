@@ -1,0 +1,4462 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`tidscan.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 36,
+            "relname": "tidscan",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 44,
+                "typeName": {
+                  "location": 47,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 4 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 89,
+            "relname": "tidscan",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 105,
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 110,
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 115,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 7 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 23,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 23,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 29,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 29,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 53,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 84,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 71,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 71,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 77,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 77,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 98,
+                    },
+                  },
+                  "location": 103,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "A_Const": {
+                      "location": 105,
+                      "sval": {
+                        "sval": "(0,1)",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ctid",
+                      },
+                    },
+                  ],
+                  "location": 35,
+                },
+              },
+              "location": 40,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 42,
+                  "sval": {
+                    "sval": "(0,1)",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 11,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 42,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 29,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 29,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 35,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "A_Const": {
+                      "location": 56,
+                      "sval": {
+                        "sval": "(0,1)",
+                      },
+                    },
+                  },
+                  "location": 64,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 66,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "A_Const": {
+                  "location": 35,
+                  "sval": {
+                    "sval": "(0,1)",
+                  },
+                },
+              },
+              "location": 43,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ctid",
+                      },
+                    },
+                  ],
+                  "location": 45,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 27,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 58,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 45,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 45,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 51,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 51,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "BoolExpr": {
+                  "args": [
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 72,
+                          },
+                        },
+                        "location": 77,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 79,
+                            "sval": {
+                              "sval": "(0,2)",
+                            },
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "A_Const": {
+                            "location": 90,
+                            "sval": {
+                              "sval": "(0,1)",
+                            },
+                          },
+                        },
+                        "location": 98,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 100,
+                          },
+                        },
+                      },
+                    },
+                  ],
+                  "boolop": "OR_EXPR",
+                  "location": 87,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                    "location": 40,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 42,
+                        "sval": {
+                          "sval": "(0,2)",
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "location": 53,
+                        "sval": {
+                          "sval": "(0,1)",
+                        },
+                      },
+                    },
+                    "location": 61,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 63,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "OR_EXPR",
+              "location": 50,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 60,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 91,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 78,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 78,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 84,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 84,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP_ANY",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 105,
+                    },
+                  },
+                  "location": 110,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_ArrayExpr": {
+                          "elements": [
+                            {
+                              "A_Const": {
+                                "location": 122,
+                                "sval": {
+                                  "sval": "(0,1)",
+                                },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "location": 131,
+                                "sval": {
+                                  "sval": "(0,2)",
+                                },
+                              },
+                            },
+                          ],
+                          "location": 116,
+                        },
+                      },
+                      "location": 139,
+                      "typeName": {
+                        "arrayBounds": [
+                          {
+                            "Integer": {},
+                          },
+                        ],
+                        "location": 141,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "tid",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP_ANY",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ctid",
+                      },
+                    },
+                  ],
+                  "location": 35,
+                },
+              },
+              "location": 40,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "TypeCast": {
+                  "arg": {
+                    "A_ArrayExpr": {
+                      "elements": [
+                        {
+                          "A_Const": {
+                            "location": 52,
+                            "sval": {
+                              "sval": "(0,1)",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 61,
+                            "sval": {
+                              "sval": "(0,2)",
+                            },
+                          },
+                        },
+                      ],
+                      "location": 46,
+                    },
+                  },
+                  "location": 69,
+                  "typeName": {
+                    "arrayBounds": [
+                      {
+                        "Integer": {},
+                      },
+                    ],
+                    "location": 71,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "tid",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 70,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 101,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 88,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 88,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 94,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 94,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP_ANY",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 115,
+                    },
+                  },
+                  "location": 120,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "<>",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_ArrayExpr": {
+                          "elements": [
+                            {
+                              "A_Const": {
+                                "location": 133,
+                                "sval": {
+                                  "sval": "(0,1)",
+                                },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "location": 142,
+                                "sval": {
+                                  "sval": "(0,2)",
+                                },
+                              },
+                            },
+                          ],
+                          "location": 127,
+                        },
+                      },
+                      "location": 150,
+                      "typeName": {
+                        "arrayBounds": [
+                          {
+                            "Integer": {},
+                          },
+                        ],
+                        "location": 152,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "tid",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP_ANY",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ctid",
+                      },
+                    },
+                  ],
+                  "location": 35,
+                },
+              },
+              "location": 40,
+              "name": [
+                {
+                  "String": {
+                    "sval": "<>",
+                  },
+                },
+              ],
+              "rexpr": {
+                "TypeCast": {
+                  "arg": {
+                    "A_ArrayExpr": {
+                      "elements": [
+                        {
+                          "A_Const": {
+                            "location": 53,
+                            "sval": {
+                              "sval": "(0,1)",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 62,
+                            "sval": {
+                              "sval": "(0,2)",
+                            },
+                          },
+                        },
+                      ],
+                      "location": 47,
+                    },
+                  },
+                  "location": 70,
+                  "typeName": {
+                    "arrayBounds": [
+                      {
+                        "Integer": {},
+                      },
+                    ],
+                    "location": 72,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "tid",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 58,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 89,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 76,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 76,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 82,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 82,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "BoolExpr": {
+                  "args": [
+                    {
+                      "BoolExpr": {
+                        "args": [
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "id",
+                                      },
+                                    },
+                                  ],
+                                  "location": 104,
+                                },
+                              },
+                              "location": 107,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 3,
+                                  },
+                                  "location": 109,
+                                },
+                              },
+                            },
+                          },
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_IN",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "ctid",
+                                      },
+                                    },
+                                  ],
+                                  "location": 115,
+                                },
+                              },
+                              "location": 120,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "A_Const": {
+                                        "location": 124,
+                                        "sval": {
+                                          "sval": "(0,2)",
+                                        },
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "location": 133,
+                                        "sval": {
+                                          "sval": "(0,3)",
+                                        },
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "boolop": "AND_EXPR",
+                        "location": 111,
+                      },
+                    },
+                    {
+                      "BoolExpr": {
+                        "args": [
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "ctid",
+                                      },
+                                    },
+                                  ],
+                                  "location": 147,
+                                },
+                              },
+                              "location": 152,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "location": 154,
+                                  "sval": {
+                                    "sval": "(0,1)",
+                                  },
+                                },
+                              },
+                            },
+                          },
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "id",
+                                      },
+                                    },
+                                  ],
+                                  "location": 166,
+                                },
+                              },
+                              "location": 169,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 171,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "boolop": "AND_EXPR",
+                        "location": 162,
+                      },
+                    },
+                  ],
+                  "boolop": "OR_EXPR",
+                  "location": 143,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 14,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 14,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "id",
+                                  },
+                                },
+                              ],
+                              "location": 36,
+                            },
+                          },
+                          "location": 39,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 3,
+                              },
+                              "location": 41,
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_IN",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 47,
+                            },
+                          },
+                          "location": 52,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Const": {
+                                    "location": 56,
+                                    "sval": {
+                                      "sval": "(0,2)",
+                                    },
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "location": 65,
+                                    "sval": {
+                                      "sval": "(0,3)",
+                                    },
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "boolop": "AND_EXPR",
+                    "location": 43,
+                  },
+                },
+                {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 79,
+                            },
+                          },
+                          "location": 84,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "location": 86,
+                              "sval": {
+                                "sval": "(0,1)",
+                              },
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "id",
+                                  },
+                                },
+                              ],
+                              "location": 98,
+                            },
+                          },
+                          "location": 101,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1,
+                              },
+                              "location": 103,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "boolop": "AND_EXPR",
+                    "location": 94,
+                  },
+                },
+              ],
+              "boolop": "OR_EXPR",
+              "location": 75,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 69,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "enable_hashjoin",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 44,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "JoinExpr": {
+                    "jointype": "JOIN_INNER",
+                    "larg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t1",
+                        },
+                        "inh": true,
+                        "location": 96,
+                        "relname": "tidscan",
+                        "relpersistence": "p",
+                      },
+                    },
+                    "quals": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t1",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 126,
+                          },
+                        },
+                        "location": 134,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t2",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 136,
+                          },
+                        },
+                      },
+                    },
+                    "rarg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t2",
+                        },
+                        "inh": true,
+                        "location": 112,
+                        "relname": "tidscan",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 62,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 62,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 71,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 71,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 77,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 77,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 86,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 86,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "t1",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 150,
+                    },
+                  },
+                  "location": 156,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 158,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "JoinExpr": {
+                "jointype": "JOIN_INNER",
+                "larg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t1",
+                    },
+                    "inh": true,
+                    "location": 42,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+                "quals": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 72,
+                      },
+                    },
+                    "location": 80,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 82,
+                      },
+                    },
+                  },
+                },
+                "rarg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t2",
+                    },
+                    "inh": true,
+                    "location": 58,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t1",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 17,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t1",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 17,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 23,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t2",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 23,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 32,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t2",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 32,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t1",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "id",
+                      },
+                    },
+                  ],
+                  "location": 96,
+                },
+              },
+              "location": 102,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 104,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 10,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "JoinExpr": {
+                    "jointype": "JOIN_LEFT",
+                    "larg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t1",
+                        },
+                        "inh": true,
+                        "location": 62,
+                        "relname": "tidscan",
+                        "relpersistence": "p",
+                      },
+                    },
+                    "quals": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t1",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 97,
+                          },
+                        },
+                        "location": 105,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t2",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 107,
+                          },
+                        },
+                      },
+                    },
+                    "rarg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t2",
+                        },
+                        "inh": true,
+                        "location": 83,
+                        "relname": "tidscan",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 28,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 28,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 37,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 37,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 43,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 43,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 52,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 52,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "t1",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 121,
+                    },
+                  },
+                  "location": 127,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 129,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "JoinExpr": {
+                "jointype": "JOIN_LEFT",
+                "larg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t1",
+                    },
+                    "inh": true,
+                    "location": 42,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+                "quals": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 77,
+                      },
+                    },
+                    "location": 85,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 87,
+                      },
+                    },
+                  },
+                },
+                "rarg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t2",
+                    },
+                    "inh": true,
+                    "location": 63,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t1",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 17,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t1",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 17,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 23,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t2",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 23,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 32,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t2",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 32,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t1",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "id",
+                      },
+                    },
+                  ],
+                  "location": 101,
+                },
+              },
+              "location": 107,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 109,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "enable_hashjoin",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeclareCursorStmt": {
+          "options": 256,
+          "portalname": "c",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 42,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 29,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 29,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 35,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP_ANY",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 56,
+                    },
+                  },
+                  "location": 61,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_ArrayExpr": {
+                          "elements": [
+                            {
+                              "A_Const": {
+                                "location": 73,
+                                "sval": {
+                                  "sval": "(0,1)",
+                                },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "location": 82,
+                                "sval": {
+                                  "sval": "(0,2)",
+                                },
+                              },
+                            },
+                          ],
+                          "location": 67,
+                        },
+                      },
+                      "location": 90,
+                      "typeName": {
+                        "arrayBounds": [
+                          {
+                            "Integer": {},
+                          },
+                        ],
+                        "location": 92,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "tid",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 60 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_FORWARD",
+          "howMany": 9223372036854776000,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_BACKWARD",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_ABSOLUTE",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeclareCursorStmt": {
+          "options": 256,
+          "portalname": "c",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 42,
+                    "relname": "tidscan",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 29,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 29,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 35,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_FORWARD",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 68 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_FORWARD",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "analyze",
+                "location": 28,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 37,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "summary",
+                "location": 48,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "timing",
+                "location": 61,
+              },
+            },
+          ],
+          "query": {
+            "UpdateStmt": {
+              "relation": {
+                "inh": true,
+                "location": 80,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+              "returningList": [
+                {
+                  "ResTarget": {
+                    "location": 130,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 130,
+                      },
+                    },
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 92,
+                    "name": "id",
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "location": 97,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "-",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "id",
+                                },
+                              },
+                            ],
+                            "location": 98,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "CurrentOfExpr": {
+                  "cursor_name": "c",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 73 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_FORWARD",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 74 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "analyze",
+                "location": 28,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 37,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "summary",
+                "location": 48,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "timing",
+                "location": 61,
+              },
+            },
+          ],
+          "query": {
+            "UpdateStmt": {
+              "relation": {
+                "inh": true,
+                "location": 80,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+              "returningList": [
+                {
+                  "ResTarget": {
+                    "location": 130,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 130,
+                      },
+                    },
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 92,
+                    "name": "id",
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "location": 97,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "-",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "id",
+                                },
+                              },
+                            ],
+                            "location": 98,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "CurrentOfExpr": {
+                  "cursor_name": "c",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 77 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "FetchStmt": {
+          "direction": "FETCH_FORWARD",
+          "howMany": 1,
+          "portalname": "c",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 80 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "analyze",
+                "location": 30,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 39,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "summary",
+                "location": 50,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "timing",
+                "location": 63,
+              },
+            },
+          ],
+          "query": {
+            "UpdateStmt": {
+              "relation": {
+                "inh": true,
+                "location": 82,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+              "returningList": [
+                {
+                  "ResTarget": {
+                    "location": 132,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 132,
+                      },
+                    },
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 94,
+                    "name": "id",
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "location": 99,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "-",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "id",
+                                },
+                              },
+                            ],
+                            "location": 100,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "CurrentOfExpr": {
+                  "cursor_name": "c",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 83 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 137,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "JoinExpr": {
+                    "jointype": "JOIN_INNER",
+                    "larg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t1",
+                        },
+                        "inh": true,
+                        "location": 169,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                    "quals": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t1",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 195,
+                          },
+                        },
+                        "location": 203,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t2",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 205,
+                          },
+                        },
+                      },
+                    },
+                    "rarg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t2",
+                        },
+                        "inh": true,
+                        "location": 183,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 155,
+                    "val": {
+                      "FuncCall": {
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 155,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "JoinExpr": {
+                "jointype": "JOIN_INNER",
+                "larg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t1",
+                    },
+                    "inh": true,
+                    "location": 22,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+                "quals": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 48,
+                      },
+                    },
+                    "location": 56,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 58,
+                      },
+                    },
+                  },
+                },
+                "rarg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t2",
+                    },
+                    "inh": true,
+                    "location": 36,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 91 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 24,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "enable_hashjoin",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 10,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "JoinExpr": {
+                    "jointype": "JOIN_INNER",
+                    "larg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t1",
+                        },
+                        "inh": true,
+                        "location": 42,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                    "quals": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t1",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 68,
+                          },
+                        },
+                        "location": 76,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t2",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "ctid",
+                                },
+                              },
+                            ],
+                            "location": 78,
+                          },
+                        },
+                      },
+                    },
+                    "rarg": {
+                      "RangeVar": {
+                        "alias": {
+                          "aliasname": "t2",
+                        },
+                        "inh": true,
+                        "location": 56,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 28,
+                    "val": {
+                      "FuncCall": {
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 28,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "JoinExpr": {
+                "jointype": "JOIN_INNER",
+                "larg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t1",
+                    },
+                    "inh": true,
+                    "location": 22,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+                "quals": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t1",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 48,
+                      },
+                    },
+                    "location": 56,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "t2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 58,
+                      },
+                    },
+                  },
+                },
+                "rarg": {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "t2",
+                    },
+                    "inh": true,
+                    "location": 36,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "enable_hashjoin",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "location": 56,
+                    "sval": {
+                      "sval": "serializable",
+                    },
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_isolation",
+                "location": 40,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "tidscan",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ctid",
+                      },
+                    },
+                  ],
+                  "location": 29,
+                },
+              },
+              "location": 34,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 36,
+                  "sval": {
+                    "sval": "(0,1)",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 58,
+                "relname": "pg_locks",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 38,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "locktype",
+                        },
+                      },
+                    ],
+                    "location": 38,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 48,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "mode",
+                        },
+                      },
+                    ],
+                    "location": 48,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "pid",
+                            },
+                          },
+                        ],
+                        "location": 73,
+                      },
+                    },
+                    "location": 77,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "FuncCall": {
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "pg_backend_pid",
+                            },
+                          },
+                        ],
+                        "location": 79,
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "mode",
+                            },
+                          },
+                        ],
+                        "location": 100,
+                      },
+                    },
+                    "location": 105,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 107,
+                        "sval": {
+                          "sval": "SIReadLock",
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 96,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 102 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`tidscan.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tidscan",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

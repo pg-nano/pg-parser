@@ -1,0 +1,6477 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`drop_if_exists.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "test_exists",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 28,
+                "typeName": {
+                  "location": 30,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_view_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_view_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ViewStmt": {
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 48,
+                    "relname": "test_exists",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 41,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 41,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "view": {
+            "inh": true,
+            "location": 14,
+            "relname": "test_view_exists",
+            "relpersistence": "p",
+          },
+          "withCheckOption": "NO_CHECK_OPTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_view_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_view_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_index_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_index_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "test_index_exists",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "a",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 36,
+            "relname": "test_exists",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_index_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_index_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_sequence_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_sequence_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSeqStmt": {
+          "sequence": {
+            "inh": true,
+            "location": 18,
+            "relname": "test_sequence_exists",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 44 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_sequence_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 46 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_sequence_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_schema_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_schema_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaname": "test_schema_exists",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 56 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_schema_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_schema_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 60 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 21,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_type_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 22,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_type_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 42,
+                "typeName": {
+                  "location": 44,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 14,
+            "relname": "test_type_exists",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 22,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_type_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 12,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_type_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 72 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 25,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_domain_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_DOMAIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 76 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 24,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_domain_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_DOMAIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "constraints": [
+            {
+              "Constraint": {
+                "contype": "CONSTR_NOTNULL",
+                "location": 42,
+              },
+            },
+            {
+              "Constraint": {
+                "contype": "CONSTR_CHECK",
+                "initially_valid": true,
+                "location": 51,
+                "raw_expr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "value",
+                            },
+                          },
+                        ],
+                        "location": 58,
+                      },
+                    },
+                    "location": 64,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 66,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "domainname": [
+            {
+              "String": {
+                "sval": "test_domain_exists",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 38,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 80 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 24,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_domain_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_DOMAIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 82 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 14,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "test_domain_exists",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_DOMAIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_test_u1",
+          "stmt_type": "ROLESTMT_USER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_test_r1",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 91 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_test_g1",
+          "stmt_type": "ROLESTMT_GROUP",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_test_u2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "missing_ok": true,
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 22,
+                "rolename": "regress_test_u1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+            {
+              "RoleSpec": {
+                "location": 39,
+                "rolename": "regress_test_u2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_test_u1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 98 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_test_r2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "missing_ok": true,
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 22,
+                "rolename": "regress_test_r1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+            {
+              "RoleSpec": {
+                "location": 39,
+                "rolename": "regress_test_r2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 102 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_test_r1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 104 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 13,
+                "rolename": "regress_test_g2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "missing_ok": true,
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 23,
+                "rolename": "regress_test_g1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+            {
+              "RoleSpec": {
+                "location": 40,
+                "rolename": "regress_test_g2",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 13,
+                "rolename": "regress_test_g1",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 110 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_collation_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_COLLATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_conversion_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CONVERSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 116 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_conversion_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CONVERSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 117 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateConversionStmt": {
+          "conversion_name": [
+            {
+              "String": {
+                "sval": "test_conversion_exists",
+              },
+            },
+          ],
+          "for_encoding_name": "LATIN1",
+          "func_name": [
+            {
+              "String": {
+                "sval": "iso8859_1_to_utf8",
+              },
+            },
+          ],
+          "to_encoding_name": "UTF8",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 119 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_conversion_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CONVERSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 120 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsparser_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSPARSER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsparser_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSPARSER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 124 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsdict_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSDICTIONARY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsdict_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSDICTIONARY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DefineStmt": {
+          "definition": [
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 69,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "ispell",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "template",
+                "location": 60,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 94,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "ispell_sample",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "dictfile",
+                "location": 85,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 125,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "ispell_sample",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "afffile",
+                "location": 117,
+              },
+            },
+          ],
+          "defnames": [
+            {
+              "String": {
+                "sval": "test_tsdict_exists",
+              },
+            },
+          ],
+          "kind": "OBJECT_TSDICTIONARY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 133 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsdict_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSDICTIONARY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 134 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tstemplate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSTEMPLATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 137 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tstemplate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSTEMPLATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsconfig_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSCONFIGURATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 141 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsconfig_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSCONFIGURATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 142 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DefineStmt": {
+          "definition": [
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 61,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "english",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "copy",
+                "location": 56,
+              },
+            },
+          ],
+          "defnames": [
+            {
+              "String": {
+                "sval": "test_tsconfig_exists",
+              },
+            },
+          ],
+          "kind": "OBJECT_TSCONFIGURATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_tsconfig_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSCONFIGURATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 144 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_extension_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EXTENSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 147 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_extension_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EXTENSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_function_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_function_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 152 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 37,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 42,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "arrayBounds": [
+                        {
+                          "Integer": {},
+                        },
+                      ],
+                      "location": 48,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 37,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 42,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "arrayBounds": [
+                          {
+                            "Integer": {},
+                          },
+                        ],
+                        "location": 48,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_function_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 154 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 46,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 51,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "arrayBounds": [
+                        {
+                          "Integer": {},
+                        },
+                      ],
+                      "location": 57,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 46,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 51,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "arrayBounds": [
+                          {
+                            "Integer": {},
+                          },
+                        ],
+                        "location": 57,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_function_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_aggregate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_aggregate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 39,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_aggregate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 161 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 48,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 48,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_aggregate_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 162 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 33,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 38,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "@#@",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 165 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 35,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "@#@",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 166 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DefineStmt": {
+          "definition": [
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 40,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "leftarg",
+                "location": 30,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 57,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "rightarg",
+                "location": 46,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 75,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int8xor",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "procedure",
+                "location": 63,
+              },
+            },
+          ],
+          "defnames": [
+            {
+              "String": {
+                "sval": "@#@",
+              },
+            },
+          ],
+          "kind": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 168 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 20,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 26,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "@#@",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 169 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_language_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_LANGUAGE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 172 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_language_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_LANGUAGE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 173 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 21,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 29,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 176 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 22,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 177 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 180 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 181 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 183 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 184 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 186 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 187 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTrigStmt": {
+          "events": 16,
+          "funcname": [
+            {
+              "String": {
+                "sval": "suppress_redundant_updates_trigger",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 58,
+            "relname": "test_exists",
+            "relpersistence": "p",
+          },
+          "row": true,
+          "timing": 2,
+          "trigname": "test_trigger_exists",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 191 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_trigger_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 192 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 195 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 196 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 198 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 199 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 201 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_table",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 202 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "InsertStmt": {
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 90,
+                  "relname": "test_exists",
+                  "relpersistence": "p",
+                },
+                "selectStmt": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "valuesLists": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "new",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "a",
+                                    },
+                                  },
+                                ],
+                                "location": 110,
+                              },
+                            },
+                            {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "new",
+                                        },
+                                      },
+                                      {
+                                        "String": {
+                                          "sval": "b",
+                                        },
+                                      },
+                                    ],
+                                    "location": 117,
+                                  },
+                                },
+                                "location": 123,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "||",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "TypeCast": {
+                                    "arg": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "new",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "a",
+                                            },
+                                          },
+                                        ],
+                                        "location": 126,
+                                      },
+                                    },
+                                    "location": 131,
+                                    "typeName": {
+                                      "location": 133,
+                                      "names": [
+                                        {
+                                          "String": {
+                                            "sval": "text",
+                                          },
+                                        },
+                                      ],
+                                      "typemod": -1,
+                                    },
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_INSERT",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 47,
+            "relname": "test_exists",
+            "relpersistence": "p",
+          },
+          "rulename": "test_rule_exists",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 206 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_rule_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 207 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_fdw_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_FDW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 210 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_fdw_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_FDW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 211 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "test_server_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_FOREIGN_SERVER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 214 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "test_server_exists",
+              },
+            },
+          ],
+          "removeType": "OBJECT_FOREIGN_SERVER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 215 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_class",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPCLASS",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 218 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_class",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPCLASS",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 219 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_am",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_class",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPCLASS",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 221 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_am",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_class",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPCLASS",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 222 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_family",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPFAMILY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 225 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_family",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPFAMILY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 226 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_am",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_family",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPFAMILY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 228 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_am",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "test_operator_family",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPFAMILY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 229 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "no_such_am",
+              },
+            },
+          ],
+          "removeType": "OBJECT_ACCESS_METHOD",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 232 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "no_such_am",
+              },
+            },
+          ],
+          "removeType": "OBJECT_ACCESS_METHOD",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 233 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 237 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_exists",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 239 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 95,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 95,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 243 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 30,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "no_such_type",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 244 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 30,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "no_such_schema",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "no_such_type",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_AGGREGATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 245 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 22,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 33,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type2",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 246 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 22,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type1",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 247 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 22,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 33,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "bar",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 248 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "TypeName": {
+                      "location": 22,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 44,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CAST",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 249 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_COLLATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 250 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_CONVERSION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 251 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 23,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_DOMAIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 252 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FOREIGN_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 253 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 254 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 29,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 29,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "no_such_type",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 255 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 29,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 29,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "no_such_schema",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "no_such_type",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 256 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 257 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_MATVIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 258 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 43,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 48,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "+",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 259 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 28,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 42,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "+",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 260 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 28,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  {
+                    "TypeName": {
+                      "location": 57,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "+",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 261 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {},
+                  {
+                    "TypeName": {
+                      "location": 34,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "no_such_schema",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "no_such_type",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "#",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPERATOR",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 262 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "widget_ops",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPCLASS",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 263 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "btree",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "float_ops",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_OPFAMILY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 264 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "bar",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_RULE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 265 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_SEQUENCE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 266 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 267 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSCONFIGURATION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 268 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSDICTIONARY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 269 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSPARSER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 270 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TSTEMPLATE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 271 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "bar",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 272 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "TypeName": {
+                "location": 21,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 273 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "no_such_schema",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "foo",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_VIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 274 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_ambiguous_funcname",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " select $1; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 154,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 174,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 137,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 150,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 278 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_ambiguous_funcname",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " select $1; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 60,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 80,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 55,
+            "names": [
+              {
+                "String": {
+                  "sval": "text",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 279 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "args_unspecified": true,
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_funcname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 280 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "args_unspecified": true,
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_funcname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 281 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 51,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 51,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_funcname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 284 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 39,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_funcname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 285 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_ambiguous_procname",
+              },
+            },
+          ],
+          "is_procedure": true,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " begin end; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 76,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 96,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 71,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 288 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_ambiguous_procname",
+              },
+            },
+          ],
+          "is_procedure": true,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " begin end; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 48,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 68,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 42,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 289 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "args_unspecified": true,
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_procname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_PROCEDURE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 290 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "args_unspecified": true,
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_procname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_PROCEDURE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 291 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "args_unspecified": true,
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_procname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_ROUTINE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 294 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 52,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 52,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_procname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_PROCEDURE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 297 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 40,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 40,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                      "mode": "FUNC_PARAM_DEFAULT",
+                    },
+                  },
+                ],
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_ambiguous_procname",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_PROCEDURE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 298 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropdbStmt": {
+          "dbname": "test_database_exists",
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "force",
+                "location": 144,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 302 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropdbStmt": {
+          "dbname": "test_database_exists",
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "force",
+                "location": 42,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 303 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropdbStmt": {
+          "dbname": "test_database_exists",
+          "missing_ok": true,
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "force",
+                "location": 47,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`drop_if_exists.sql > line 304 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropdbStmt": {
+          "dbname": "test_database_exists",
+          "missing_ok": true,
+          "options": [
+            {
+              "DefElem": {
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "force",
+                "location": 52,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

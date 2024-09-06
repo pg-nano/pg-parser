@@ -1,0 +1,3678 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`collate.icu.utf8.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.icu.utf8.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaname": "collate_tests",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 19,
+                "sval": {
+                  "sval": "collate_tests",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "search_path",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 16,
+            "relname": "collate_test1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 36,
+                "typeName": {
+                  "location": 38,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en-x-icu",
+                      },
+                    },
+                  ],
+                  "location": 54,
+                },
+                "colname": "b",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 73,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 47,
+                "typeName": {
+                  "location": 49,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 23 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.icu.utf8.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_fail",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "foo-x-icu",
+                      },
+                    },
+                  ],
+                  "location": 57,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 50,
+                "typeName": {
+                  "location": 52,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_fail",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en-x-icu",
+                      },
+                    },
+                  ],
+                  "location": 45,
+                },
+                "colname": "a",
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 69,
+                "typeName": {
+                  "location": 71,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test_like",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 44,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 44 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`collate.icu.utf8.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "collate_test3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 53,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 46,
+                "typeName": {
+                  "location": 48,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 56 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "collate_test1",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 36,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 39,
+                          "sval": {
+                            "sval": "abc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 48,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 51,
+                          "sval": {
+                            "sval": "äbc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 61,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 64,
+                          "sval": {
+                            "sval": "bbc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 73,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 76,
+                          "sval": {
+                            "sval": "ABC",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 82,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 12,
+            "relname": "collate_test2",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 40,
+                    "relname": "collate_test1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 33,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 33,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 53,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 59 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 12,
+            "relname": "collate_test3",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 40,
+                    "relname": "collate_test1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 33,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 33,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 53,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 35,
+                },
+              },
+              "location": 37,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 40,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 45,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 36,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 39,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 44,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 36,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 39,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 44,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 36,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 39,
+                  "sval": {
+                    "sval": "BBC",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 44,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 35,
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 37,
+                },
+              },
+              "location": 49,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 52,
+                  "sval": {
+                    "sval": "bbc",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 57,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "b",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 36,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "A_Const": {
+                      "location": 39,
+                      "sval": {
+                        "sval": "bbc",
+                      },
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 45,
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 56,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 34,
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 48,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "A_Const": {
+                      "location": 51,
+                      "sval": {
+                        "sval": "bbc",
+                      },
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 57,
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 68,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 34,
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "C",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 48,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "CollateClause": {
+                  "arg": {
+                    "A_Const": {
+                      "location": 51,
+                      "sval": {
+                        "sval": "bbc",
+                      },
+                    },
+                  },
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en-x-icu",
+                      },
+                    },
+                  ],
+                  "location": 57,
+                },
+              },
+            },
+          },
+        },
+      },
+      "stmt_len": 75,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 71 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "collClause": {
+            "collname": [
+              {
+                "String": {
+                  "sval": "sv-x-icu",
+                },
+              },
+            ],
+            "location": 38,
+          },
+          "domainname": [
+            {
+              "String": {
+                "sval": "testdomain_sv",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 33,
+            "names": [
+              {
+                "String": {
+                  "sval": "text",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+      "stmt_len": 56,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 73 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateDomainStmt": {
+          "collClause": {
+            "collname": [
+              {
+                "String": {
+                  "sval": "sv-x-icu",
+                },
+              },
+            ],
+            "location": 34,
+          },
+          "domainname": [
+            {
+              "String": {
+                "sval": "testdomain_i",
+              },
+            },
+          ],
+          "typeName": {
+            "location": 30,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+      "stmt_len": 52,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 73 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 22,
+            "relname": "collate_test4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 42,
+                "typeName": {
+                  "location": 44,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 53,
+                "typeName": {
+                  "location": 55,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "testdomain_sv",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 70,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 12,
+            "relname": "collate_test4",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 40,
+                    "relname": "collate_test1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 33,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 33,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 53,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 79 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 17,
+                "relname": "collate_test4",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 40,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 10,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 10,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 41,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "collate_test5",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 34,
+                "typeName": {
+                  "location": 36,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "collClause": {
+                  "collname": [
+                    {
+                      "String": {
+                        "sval": "en-x-icu",
+                      },
+                    },
+                  ],
+                  "location": 61,
+                },
+                "colname": "b",
+                "is_local": true,
+                "location": 45,
+                "typeName": {
+                  "location": 47,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "testdomain_sv",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 81,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 12,
+            "relname": "collate_test5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 40,
+                    "relname": "collate_test1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 33,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 33,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      "stmt_len": 53,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 86 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 17,
+                "relname": "collate_test5",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 40,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 10,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 10,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 41,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 88 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 19,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 42,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 12,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 12,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 43,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 17,
+                "relname": "collate_test2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 40,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 10,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 10,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 41,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 91 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 17,
+                "relname": "collate_test3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 40,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 10,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 10,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 41,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 93 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 18,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "CollateClause": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 41,
+                      },
+                    },
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "C",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 54,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 33,
+                "relname": "collate_test1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 56,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 26,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 26,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 57,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 97 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 38,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 98 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 14,
+                "relname": "collate_test3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 38,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 39,
+                "name": "true",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "CollateClause": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 39,
+                            "sval": {
+                              "sval": "bbc",
+                            },
+                          },
+                        },
+                        "collname": [
+                          {
+                            "String": {
+                              "sval": "en-x-icu",
+                            },
+                          },
+                        ],
+                        "location": 45,
+                      },
+                    },
+                    "location": 64,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "CollateClause": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 66,
+                            "sval": {
+                              "sval": "äbc",
+                            },
+                          },
+                        },
+                        "collname": [
+                          {
+                            "String": {
+                              "sval": "en-x-icu",
+                            },
+                          },
+                        ],
+                        "location": 73,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 101,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 102 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.icu.utf8.sql > line 104 1`] = `[Error: syntax error at or near "-"]`;
+
+exports[`collate.icu.utf8.sql > line 112 1`] = `[Error: syntax error at or near "NSERT"]`;
+
+exports[`collate.icu.utf8.sql > line 114 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.icu.utf8.sql > line 115 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 117 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.icu.utf8.sql > line 119 1`] = `[Error: syntax error at or near "-"]`;
+
+exports[`collate.icu.utf8.sql > line 122 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 123 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 124 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 125 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 126 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 128 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.icu.utf8.sql > line 129 1`] = `[Error: syntax error at or near "ECT"]`;
+
+exports[`collate.icu.utf8.sql > line 131 1`] = `[Error: syntax error at or near "ECT"]`;
+
+exports[`collate.icu.utf8.sql > line 132 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.icu.utf8.sql > line 134 1`] = `[Error: syntax error at or near "e"]`;
+
+exports[`collate.icu.utf8.sql > line 137 1`] = `[Error: syntax error at or near "gular"]`;
+
+exports[`collate.icu.utf8.sql > line 140 1`] = `[Error: syntax error at or near "*"]`;
+
+exports[`collate.icu.utf8.sql > line 141 1`] = `[Error: syntax error at or near "*"]`;
+
+exports[`collate.icu.utf8.sql > line 142 1`] = `[Error: syntax error at or near "*"]`;
+
+exports[`collate.icu.utf8.sql > line 143 1`] = `[Error: syntax error at or near "*"]`;
+
+exports[`collate.icu.utf8.sql > line 144 1`] = `[Error: syntax error at or near "*"]`;
+
+exports[`collate.icu.utf8.sql > line 146 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 150 1`] = `[Error: syntax error at or near "INTO"]`;
+
+exports[`collate.icu.utf8.sql > line 154 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 165 1`] = `[Error: syntax error at or near "ürkiye"]`;
+
+exports[`collate.icu.utf8.sql > line 166 1`] = `[Error: syntax error at or near "kiye"]`;
+
+exports[`collate.icu.utf8.sql > line 166 2`] = `[Error: syntax error at or near "h"]`;
+
+exports[`collate.icu.utf8.sql > line 169 1`] = `[Error: syntax error at or near "~*"]`;
+
+exports[`collate.icu.utf8.sql > line 169 2`] = `[Error: syntax error at or near "ICU"]`;
+
+exports[`collate.icu.utf8.sql > line 175 1`] = `[Error: syntax error at or near "y"]`;
+
+exports[`collate.icu.utf8.sql > line 187 1`] = `[Error: syntax error at or near "llview2"]`;
+
+exports[`collate.icu.utf8.sql > line 188 1`] = `[Error: syntax error at or near "llview3"]`;
+
+exports[`collate.icu.utf8.sql > line 190 1`] = `[Error: syntax error at or near "name"]`;
+
+exports[`collate.icu.utf8.sql > line 194 1`] = `[Error: syntax error at or near "propagation"]`;
+
+exports[`collate.icu.utf8.sql > line 197 1`] = `[Error: syntax error at or near "esce"]`;
+
+exports[`collate.icu.utf8.sql > line 198 1`] = `[Error: syntax error at or near "esce"]`;
+
+exports[`collate.icu.utf8.sql > line 199 1`] = `[Error: syntax error at or near "r"]`;
+
+exports[`collate.icu.utf8.sql > line 201 1`] = `[Error: syntax error at or near "greatest"]`;
+
+exports[`collate.icu.utf8.sql > line 202 1`] = `[Error: syntax error at or near "reatest"]`;
+
+exports[`collate.icu.utf8.sql > line 203 1`] = `[Error: syntax error at or near "reatest"]`;
+
+exports[`collate.icu.utf8.sql > line 204 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 206 1`] = `[Error: syntax error at or near "lif"]`;
+
+exports[`collate.icu.utf8.sql > line 207 1`] = `[Error: syntax error at or near "if"]`;
+
+exports[`collate.icu.utf8.sql > line 208 1`] = `[Error: syntax error at or near "if"]`;
+
+exports[`collate.icu.utf8.sql > line 209 1`] = `[Error: syntax error at or near "r"]`;
+
+exports[`collate.icu.utf8.sql > line 211 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 212 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 213 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 215 1`] = `[Error: syntax error at or near "testdomain"]`;
+
+exports[`collate.icu.utf8.sql > line 216 1`] = `[Error: syntax error at or near "estdomain"]`;
+
+exports[`collate.icu.utf8.sql > line 217 1`] = `[Error: syntax error at or near "estdomain"]`;
+
+exports[`collate.icu.utf8.sql > line 218 1`] = `[Error: syntax error at or near "estdomain"]`;
+
+exports[`collate.icu.utf8.sql > line 219 1`] = `[Error: syntax error at or near "estdomain_sv"]`;
+
+exports[`collate.icu.utf8.sql > line 220 1`] = `[Error: syntax error at or near "r"]`;
+
+exports[`collate.icu.utf8.sql > line 222 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 223 1`] = `[Error: syntax error at or near "max"]`;
+
+exports[`collate.icu.utf8.sql > line 224 1`] = `[Error: syntax error at or near "max"]`;
+
+exports[`collate.icu.utf8.sql > line 226 1`] = `[Error: syntax error at or near "agg"]`;
+
+exports[`collate.icu.utf8.sql > line 227 1`] = `[Error: syntax error at or near "gg"]`;
+
+exports[`collate.icu.utf8.sql > line 228 1`] = `[Error: syntax error at or near "gg"]`;
+
+exports[`collate.icu.utf8.sql > line 230 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 231 1`] = `[Error: syntax error at or near "OM"]`;
+
+exports[`collate.icu.utf8.sql > line 232 1`] = `[Error: syntax error at or near "OM"]`;
+
+exports[`collate.icu.utf8.sql > line 233 1`] = `[Error: syntax error at or near "OM"]`;
+
+exports[`collate.icu.utf8.sql > line 235 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 236 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 237 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 238 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 239 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 240 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 242 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 244 1`] = `[Error: syntax error at or near "eally"]`;
+
+exports[`collate.icu.utf8.sql > line 246 1`] = `[Error: syntax error at or near "x"]`;
+
+exports[`collate.icu.utf8.sql > line 246 2`] = `[Error: syntax error at or near "||"]`;
+
+exports[`collate.icu.utf8.sql > line 249 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 248,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 241,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 241,
+                  },
+                },
+              },
+            },
+          ],
+          "withClause": {
+            "ctes": [
+              {
+                "CommonTableExpr": {
+                  "aliascolnames": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                  ],
+                  "ctematerialized": "CTEMaterializeDefault",
+                  "ctename": "foo",
+                  "ctequery": {
+                    "SelectStmt": {
+                      "all": true,
+                      "larg": {
+                        "fromClause": [
+                          {
+                            "RangeSubselect": {
+                              "alias": {
+                                "aliasname": "t",
+                                "colnames": [
+                                  {
+                                    "String": {
+                                      "sval": "x",
+                                    },
+                                  },
+                                ],
+                              },
+                              "subquery": {
+                                "SelectStmt": {
+                                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                                  "op": "SETOP_NONE",
+                                  "valuesLists": [
+                                    {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "CollateClause": {
+                                              "arg": {
+                                                "A_Const": {
+                                                  "location": 114,
+                                                  "sval": {
+                                                    "sval": "a",
+                                                  },
+                                                },
+                                              },
+                                              "collname": [
+                                                {
+                                                  "String": {
+                                                    "sval": "en-x-icu",
+                                                  },
+                                                },
+                                              ],
+                                              "location": 118,
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                    {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "A_Const": {
+                                              "location": 139,
+                                              "sval": {
+                                                "sval": "b",
+                                              },
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 99,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "x",
+                                      },
+                                    },
+                                  ],
+                                  "location": 99,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_UNION",
+                      "rarg": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 208,
+                              "relname": "foo",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 173,
+                              "val": {
+                                "CollateClause": {
+                                  "arg": {
+                                    "A_Expr": {
+                                      "kind": "AEXPR_OP",
+                                      "lexpr": {
+                                        "ColumnRef": {
+                                          "fields": [
+                                            {
+                                              "String": {
+                                                "sval": "x",
+                                              },
+                                            },
+                                          ],
+                                          "location": 174,
+                                        },
+                                      },
+                                      "location": 176,
+                                      "name": [
+                                        {
+                                          "String": {
+                                            "sval": "||",
+                                          },
+                                        },
+                                      ],
+                                      "rexpr": {
+                                        "A_Const": {
+                                          "location": 179,
+                                          "sval": {
+                                            "sval": "c",
+                                          },
+                                        },
+                                      },
+                                    },
+                                  },
+                                  "collname": [
+                                    {
+                                      "String": {
+                                        "sval": "de-x-icu",
+                                      },
+                                    },
+                                  ],
+                                  "location": 184,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "whereClause": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "x",
+                                          },
+                                        },
+                                      ],
+                                      "location": 225,
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "length",
+                                    },
+                                  },
+                                ],
+                                "location": 218,
+                              },
+                            },
+                            "location": 228,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "<",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 10,
+                                },
+                                "location": 230,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  "location": 78,
+                },
+              },
+            ],
+            "location": 63,
+            "recursive": true,
+          },
+        },
+      },
+      "stmt_len": 251,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 259 1`] = `[Error: syntax error at or near "COLLATE"]`;
+
+exports[`collate.icu.utf8.sql > line 261 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.icu.utf8.sql > line 262 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 263 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 266 1`] = `[Error: syntax error at or near "on"]`;
+
+exports[`collate.icu.utf8.sql > line 272 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 275 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 278 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 283 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 290 1`] = `[Error: syntax error at or near "override"]`;
+
+exports[`collate.icu.utf8.sql > line 301 1`] = `[Error: syntax error at or near "'a'"]`;
+
+exports[`collate.icu.utf8.sql > line 303 1`] = `[Error: syntax error at or near "LACE"]`;
+
+exports[`collate.icu.utf8.sql > line 313 1`] = `[Error: syntax error at or near "'a'"]`;
+
+exports[`collate.icu.utf8.sql > line 314 1`] = `[Error: syntax error at or near "a"]`;
+
+exports[`collate.icu.utf8.sql > line 314 2`] = `[Error: syntax error at or near "collations"]`;
+
+exports[`collate.icu.utf8.sql > line 318 1`] = `[Error: syntax error at or near "ism"]`;
+
+exports[`collate.icu.utf8.sql > line 321 1`] = `[Error: syntax error at or near "unnest"]`;
+
+exports[`collate.icu.utf8.sql > line 322 1`] = `[Error: syntax error at or near "unnest"]`;
+
+exports[`collate.icu.utf8.sql > line 324 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 327 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 328 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 329 1`] = `[Error: syntax error at or near "b"]`;
+
+exports[`collate.icu.utf8.sql > line 334 1`] = `[Error: syntax error at end of input]`;
+
+exports[`collate.icu.utf8.sql > line 335 1`] = `[Error: syntax error at or near "ollate_test1_idx2"]`;
+
+exports[`collate.icu.utf8.sql > line 336 1`] = `[Error: syntax error at or near "ollate_test1_idx3"]`;
+
+exports[`collate.icu.utf8.sql > line 336 2`] = `[Error: syntax error at or near "ferent"]`;
+
+exports[`collate.icu.utf8.sql > line 339 1`] = `[Error: syntax error at or near "collate_test1_idx5"]`;
+
+exports[`collate.icu.utf8.sql > line 340 1`] = `[Error: syntax error at or near "INDEX"]`;
+
+exports[`collate.icu.utf8.sql > line 342 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.icu.utf8.sql > line 344 1`] = `[Error: syntax error at or near "qscan"]`;
+
+exports[`collate.icu.utf8.sql > line 345 1`] = `[Error: syntax error at or near "off"]`;
+
+exports[`collate.icu.utf8.sql > line 347 1`] = `[Error: syntax error at or near "collate_test1"]`;
+
+exports[`collate.icu.utf8.sql > line 348 1`] = `[Error: syntax error at or near "off"]`;
+
+exports[`collate.icu.utf8.sql > line 350 1`] = `[Error: syntax error at or near "collate_test1"]`;
+
+exports[`collate.icu.utf8.sql > line 351 1`] = `[Error: syntax error at or near "eqscan"]`;
+
+exports[`collate.icu.utf8.sql > line 354 1`] = `[Error: syntax error at or near "nipulation"]`;
+
+exports[`collate.icu.utf8.sql > line 357 1`] = `[Error: syntax error at or near "test_schema"]`;
+
+exports[`collate.icu.utf8.sql > line 359 1`] = `[Error: syntax error at or near "this"]`;
+
+exports[`collate.icu.utf8.sql > line 361 1`] = `[Error: syntax error at or near "tion_level"]`;
+
+exports[`collate.icu.utf8.sql > line 365 1`] = `[Error: syntax error at or near "'CREATE COLLATION test0 (provider = icu, locale = '"]`;
+
+exports[`collate.icu.utf8.sql > line 369 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 369 2`] = `[Error: syntax error at or near "cate"]`;
+
+exports[`collate.icu.utf8.sql > line 377 1`] = `[Error: syntax error at or near "idation_level"]`;
+
+exports[`collate.icu.utf8.sql > line 378 1`] = `[Error: syntax error at or near "in_messages"]`;
+
+exports[`collate.icu.utf8.sql > line 380 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.icu.utf8.sql > line 380 2`] = `[Error: syntax error at or near ""locale""]`;
+
+exports[`collate.icu.utf8.sql > line 382 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 383 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 384 1`] = `[Error: syntax error at or near "icu_validation_level"]`;
+
+exports[`collate.icu.utf8.sql > line 385 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 385 2`] = `[Error: syntax error at or near "testx"]`;
+
+exports[`collate.icu.utf8.sql > line 386 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 386 2`] = `[Error: syntax error at or near "testx"]`;
+
+exports[`collate.icu.utf8.sql > line 388 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.icu.utf8.sql > line 389 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 391 1`] = `[Error: syntax error at or near "me"]`;
+
+exports[`collate.icu.utf8.sql > line 393 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 394 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 395 1`] = `[Error: syntax error at or near "COLLATION"]`;
+
+exports[`collate.icu.utf8.sql > line 397 1`] = `[Error: syntax error at or near "COLLATION"]`;
+
+exports[`collate.icu.utf8.sql > line 398 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 399 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 401 1`] = `[Error: syntax error at or near "LLATION"]`;
+
+exports[`collate.icu.utf8.sql > line 403 1`] = `[Error: syntax error at or near "me"]`;
+
+exports[`collate.icu.utf8.sql > line 408 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 409 1`] = `[Error: syntax error at or near "test0"]`;
+
+exports[`collate.icu.utf8.sql > line 410 1`] = `[Error: syntax error at or near "OLLATION"]`;
+
+exports[`collate.icu.utf8.sql > line 412 1`] = `[Error: syntax error at or near "me"]`;
+
+exports[`collate.icu.utf8.sql > line 414 1`] = `[Error: syntax error at or near "est_schema"]`;
+
+exports[`collate.icu.utf8.sql > line 415 1`] = `[Error: syntax error at or near "ess_test_role"]`;
+
+exports[`collate.icu.utf8.sql > line 420 1`] = `[Error: syntax error at or near "TER"]`;
+
+exports[`collate.icu.utf8.sql > line 422 1`] = `[Error: syntax error at or near "for"]`;
+
+exports[`collate.icu.utf8.sql > line 427 1`] = `[Error: syntax error at or near "ies"]`;
+
+exports[`collate.icu.utf8.sql > line 431 1`] = `[Error: syntax error at or near "collate_dep_test1"]`;
+
+exports[`collate.icu.utf8.sql > line 432 1`] = `[Error: syntax error at or near "collate_dep_dom1"]`;
+
+exports[`collate.icu.utf8.sql > line 433 1`] = `[Error: syntax error at or near "llate_dep_test2"]`;
+
+exports[`collate.icu.utf8.sql > line 434 1`] = `[Error: syntax error at or near "llate_dep_test3"]`;
+
+exports[`collate.icu.utf8.sql > line 435 1`] = `[Error: syntax error at or near "ollate_dep_test4t"]`;
+
+exports[`collate.icu.utf8.sql > line 436 1`] = `[Error: syntax error at or near "ollate_dep_test4i"]`;
+
+exports[`collate.icu.utf8.sql > line 438 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 439 1`] = `[Error: syntax error at or near "OLLATION"]`;
+
+exports[`collate.icu.utf8.sql > line 441 1`] = `[Error: syntax error at or near "p_test1"]`;
+
+exports[`collate.icu.utf8.sql > line 445 1`] = `[Error: syntax error at or near "ate_dep_test2"]`;
+
+exports[`collate.icu.utf8.sql > line 447 1`] = `[Error: syntax error at or near "types"]`;
+
+exports[`collate.icu.utf8.sql > line 450 1`] = `[Error: syntax error at or near "xtrange_en_us"]`;
+
+exports[`collate.icu.utf8.sql > line 452 1`] = `[Error: syntax error at or near "nge_c"]`;
+
+exports[`collate.icu.utf8.sql > line 453 1`] = `[Error: syntax error at or near "ge_en_us"]`;
+
+exports[`collate.icu.utf8.sql > line 455 1`] = `[Error: syntax error at or near "trange_c"]`;
+
+exports[`collate.icu.utf8.sql > line 456 1`] = `[Error: syntax error at or near "range_en_us"]`;
+
+exports[`collate.icu.utf8.sql > line 459 1`] = `[Error: syntax error at or near "collations"]`;
+
+exports[`collate.icu.utf8.sql > line 462 1`] = `[Error: syntax error at or near "collate_test2"]`;
+
+exports[`collate.icu.utf8.sql > line 465 1`] = `[Error: syntax error at or near "collation"]`;
+
+exports[`collate.icu.utf8.sql > line 470 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 471 1`] = `[Error: syntax error at or near "in_messages"]`;
+
+exports[`collate.icu.utf8.sql > line 472 1`] = `[Error: syntax error at or near "'AAA'"]`;
+
+exports[`collate.icu.utf8.sql > line 474 1`] = `[Error: syntax error at or near "messages"]`;
+
+exports[`collate.icu.utf8.sql > line 475 1`] = `[Error: syntax error at or near "testcoll_backwards"]`;
+
+exports[`collate.icu.utf8.sql > line 476 1`] = `[Error: syntax error at or near "_messages"]`;
+
+exports[`collate.icu.utf8.sql > line 477 1`] = `[Error: syntax error at or near "'côte'"]`;
+
+exports[`collate.icu.utf8.sql > line 479 1`] = `[Error: syntax error at or near "stcoll_lower_first"]`;
+
+exports[`collate.icu.utf8.sql > line 480 1`] = `[Error: syntax error at or near "tcoll_upper_first"]`;
+
+exports[`collate.icu.utf8.sql > line 481 1`] = `[Error: syntax error at or near "COLLATE"]`;
+
+exports[`collate.icu.utf8.sql > line 483 1`] = `[Error: syntax error at or near "stcoll_shifted"]`;
+
+exports[`collate.icu.utf8.sql > line 484 1`] = `[Error: syntax error at or near "deanza"]`;
+
+exports[`collate.icu.utf8.sql > line 486 1`] = `[Error: syntax error at or near "ages"]`;
+
+exports[`collate.icu.utf8.sql > line 487 1`] = `[Error: syntax error at or near "tcoll_numeric"]`;
+
+exports[`collate.icu.utf8.sql > line 488 1`] = `[Error: syntax error at or near "sages"]`;
+
+exports[`collate.icu.utf8.sql > line 489 1`] = `[Error: syntax error at or near "23"]`;
+
+exports[`collate.icu.utf8.sql > line 491 1`] = `[Error: syntax error at or near "stcoll_error1"]`;
+
+exports[`collate.icu.utf8.sql > line 493 1`] = `[Error: syntax error at or near "utes"]`;
+
+exports[`collate.icu.utf8.sql > line 496 1`] = `[Error: syntax error at or near "'Götz'"]`;
+
+exports[`collate.icu.utf8.sql > line 501 1`] = `[Error: syntax error at or near "LATION"]`;
+
+exports[`collate.icu.utf8.sql > line 502 1`] = `[Error: syntax error at or near "text"]`;
+
+exports[`collate.icu.utf8.sql > line 503 1`] = `[Error: syntax error at or near "//"]`;
+
+exports[`collate.icu.utf8.sql > line 505 1`] = `[Error: syntax error at or near "DER"]`;
+
+exports[`collate.icu.utf8.sql > line 506 1`] = `[Error: syntax error at or near "DER"]`;
+
+exports[`collate.icu.utf8.sql > line 509 1`] = `[Error: syntax error at or near "ATE"]`;
+
+exports[`collate.icu.utf8.sql > line 509 2`] = `[Error: syntax error at or near "coll_rulesx"]`;
+
+exports[`collate.icu.utf8.sql > line 512 1`] = `[Error: syntax error at or near "collations"]`;
+
+exports[`collate.icu.utf8.sql > line 515 1`] = `[Error: syntax error at or near "_nondet"]`;
+
+exports[`collate.icu.utf8.sql > line 517 1`] = `[Error: syntax error at or near "int"]`;
+
+exports[`collate.icu.utf8.sql > line 518 1`] = `[Error: syntax error at or near "erent"]`;
+
+exports[`collate.icu.utf8.sql > line 520 1`] = `[Error: syntax error at or near "ES"]`;
+
+exports[`collate.icu.utf8.sql > line 522 1`] = `[Error: syntax error at or near "ELECT"]`;
+
+exports[`collate.icu.utf8.sql > line 522 2`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 523 1`] = `[Error: syntax error at or near "RE"]`;
+
+exports[`collate.icu.utf8.sql > line 526 1`] = `[Error: syntax error at or near "ATE"]`;
+
+exports[`collate.icu.utf8.sql > line 527 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.icu.utf8.sql > line 528 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.icu.utf8.sql > line 530 1`] = `[Error: syntax error at or near "LECT"]`;
+
+exports[`collate.icu.utf8.sql > line 530 2`] = `[Error: syntax error at or near "RE"]`;
+
+exports[`collate.icu.utf8.sql > line 531 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 533 1`] = `[Error: syntax error at or near "sitive"]`;
+
+exports[`collate.icu.utf8.sql > line 534 1`] = `[Error: syntax error at or near "nsitive"]`;
+
+exports[`collate.icu.utf8.sql > line 536 1`] = `[Error: syntax error at or near "LATE"]`;
+
+exports[`collate.icu.utf8.sql > line 537 1`] = `[Error: syntax error at or near "ATE"]`;
+
+exports[`collate.icu.utf8.sql > line 540 1`] = `[Error: syntax error at or near "ATE"]`;
+
+exports[`collate.icu.utf8.sql > line 541 1`] = `[Error: syntax error at or near "nsensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 542 1`] = `[Error: syntax error at or near "irst"]`;
+
+exports[`collate.icu.utf8.sql > line 543 1`] = `[Error: syntax error at or near "rfirst"]`;
+
+exports[`collate.icu.utf8.sql > line 545 1`] = `[Error: syntax error at or near "ext"]`;
+
+exports[`collate.icu.utf8.sql > line 546 1`] = `[Error: syntax error at or near "xt"]`;
+
+exports[`collate.icu.utf8.sql > line 547 1`] = `[Error: syntax error at or near "xt"]`;
+
+exports[`collate.icu.utf8.sql > line 548 1`] = `[Error: syntax error at or near "'abc'"]`;
+
+exports[`collate.icu.utf8.sql > line 549 1`] = `[Error: syntax error at or near "'ABC'"]`;
+
+exports[`collate.icu.utf8.sql > line 550 1`] = `[Error: syntax error at or near "'abc'"]`;
+
+exports[`collate.icu.utf8.sql > line 552 1`] = `[Error: syntax error at or near "RE"]`;
+
+exports[`collate.icu.utf8.sql > line 553 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 554 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 555 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 556 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 557 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 558 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 559 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 560 1`] = `[Error: syntax error at or near "RSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 561 1`] = `[Error: syntax error at or near "RSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 562 1`] = `[Error: syntax error at or near "PT"]`;
+
+exports[`collate.icu.utf8.sql > line 563 1`] = `[Error: syntax error at or near "PT"]`;
+
+exports[`collate.icu.utf8.sql > line 564 1`] = `[Error: syntax error at or near "t3cs"]`;
+
+exports[`collate.icu.utf8.sql > line 565 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 566 1`] = `[Error: syntax error at or near "st3cs"]`;
+
+exports[`collate.icu.utf8.sql > line 567 1`] = `[Error: syntax error at or near "R"]`;
+
+exports[`collate.icu.utf8.sql > line 568 1`] = `[Error: syntax error at or near "t1cs"]`;
+
+exports[`collate.icu.utf8.sql > line 569 1`] = `[Error: syntax error at or near "INDE"]`;
+
+exports[`collate.icu.utf8.sql > line 570 1`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 571 1`] = `[Error: syntax error at or near "ray"]`;
+
+exports[`collate.icu.utf8.sql > line 572 1`] = `[Error: syntax error at or near "CDEFGHI"]`;
+
+exports[`collate.icu.utf8.sql > line 574 1`] = `[Error: syntax error at or near "ext"]`;
+
+exports[`collate.icu.utf8.sql > line 575 1`] = `[Error: syntax error at or near "xt"]`;
+
+exports[`collate.icu.utf8.sql > line 576 1`] = `[Error: syntax error at or near "xt"]`;
+
+exports[`collate.icu.utf8.sql > line 577 1`] = `[Error: syntax error at or near "text_pattern_ops"]`;
+
+exports[`collate.icu.utf8.sql > line 578 1`] = `[Error: trailing junk after numeric literal at or near "1c"]`;
+
+exports[`collate.icu.utf8.sql > line 579 1`] = `[Error: syntax error at or near "'ABC'"]`;
+
+exports[`collate.icu.utf8.sql > line 580 1`] = `[Error: syntax error at or near "'abc'"]`;
+
+exports[`collate.icu.utf8.sql > line 582 1`] = `[Error: syntax error at or near "RE"]`;
+
+exports[`collate.icu.utf8.sql > line 583 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 584 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 585 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 586 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 587 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 588 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 589 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 590 1`] = `[Error: syntax error at or near "RSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 591 1`] = `[Error: syntax error at or near "RSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 592 1`] = `[Error: syntax error at or near "PT"]`;
+
+exports[`collate.icu.utf8.sql > line 593 1`] = `[Error: syntax error at or near "PT"]`;
+
+exports[`collate.icu.utf8.sql > line 594 1`] = `[Error: syntax error at or near "t3ci"]`;
+
+exports[`collate.icu.utf8.sql > line 595 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 596 1`] = `[Error: syntax error at or near "st3ci"]`;
+
+exports[`collate.icu.utf8.sql > line 597 1`] = `[Error: syntax error at or near "R"]`;
+
+exports[`collate.icu.utf8.sql > line 598 1`] = `[Error: syntax error at or near "t1ci"]`;
+
+exports[`collate.icu.utf8.sql > line 599 1`] = `[Error: syntax error at or near "I"]`;
+
+exports[`collate.icu.utf8.sql > line 600 1`] = `[Error: syntax error at or near "DEX"]`;
+
+exports[`collate.icu.utf8.sql > line 601 1`] = `[Error: syntax error at or near "_array"]`;
+
+exports[`collate.icu.utf8.sql > line 602 1`] = `[Error: syntax error at or near "CDEFGHI"]`;
+
+exports[`collate.icu.utf8.sql > line 605 1`] = `[Error: syntax error at or near "st1bpci"]`;
+
+exports[`collate.icu.utf8.sql > line 606 1`] = `[Error: syntax error at or near "char"]`;
+
+exports[`collate.icu.utf8.sql > line 607 1`] = `[Error: syntax error at or near "char"]`;
+
+exports[`collate.icu.utf8.sql > line 608 1`] = `[Error: syntax error at or near "x"]`;
+
+exports[`collate.icu.utf8.sql > line 609 1`] = `[Error: trailing junk after numeric literal at or near "1b"]`;
+
+exports[`collate.icu.utf8.sql > line 610 1`] = `[Error: syntax error at or near "ES"]`;
+
+exports[`collate.icu.utf8.sql > line 611 1`] = `[Error: syntax error at or near "ES"]`;
+
+exports[`collate.icu.utf8.sql > line 613 1`] = `[Error: syntax error at or near "HERE"]`;
+
+exports[`collate.icu.utf8.sql > line 614 1`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 615 1`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 616 1`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 617 1`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 618 1`] = `[Error: syntax error at or near "ERE"]`;
+
+exports[`collate.icu.utf8.sql > line 619 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.icu.utf8.sql > line 620 1`] = `[Error: syntax error at or near "ION"]`;
+
+exports[`collate.icu.utf8.sql > line 621 1`] = `[Error: syntax error at or near "TERSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 622 1`] = `[Error: syntax error at or near "TERSECT"]`;
+
+exports[`collate.icu.utf8.sql > line 623 1`] = `[Error: syntax error at or near "CEPT"]`;
+
+exports[`collate.icu.utf8.sql > line 624 1`] = `[Error: syntax error at or near "CEPT"]`;
+
+exports[`collate.icu.utf8.sql > line 625 1`] = `[Error: syntax error at or near "t3bpci"]`;
+
+exports[`collate.icu.utf8.sql > line 626 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 627 1`] = `[Error: syntax error at or near "st3bpci"]`;
+
+exports[`collate.icu.utf8.sql > line 628 1`] = `[Error: syntax error at or near "R"]`;
+
+exports[`collate.icu.utf8.sql > line 629 1`] = `[Error: syntax error at or near "t1bpci"]`;
+
+exports[`collate.icu.utf8.sql > line 630 1`] = `[Error: syntax error at or near "ci"]`;
+
+exports[`collate.icu.utf8.sql > line 631 1`] = `[Error: syntax error at or near "DEX"]`;
+
+exports[`collate.icu.utf8.sql > line 632 1`] = `[Error: syntax error at or near "_array"]`;
+
+exports[`collate.icu.utf8.sql > line 633 1`] = `[Error: syntax error at or near "CDEFGHI"]`;
+
+exports[`collate.icu.utf8.sql > line 635 1`] = `[Error: syntax error at or near "escribed"]`;
+
+exports[`collate.icu.utf8.sql > line 639 1`] = `[Error: syntax error at or near "'abc'"]`;
+
+exports[`collate.icu.utf8.sql > line 640 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 23,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "enable_seqscan",
+        },
+      },
+      "stmt_len": 25,
+      "stmt_location": 1,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 642 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "wher",
+                },
+                "inh": true,
+                "location": 14,
+                "relname": "test4c",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 7,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                    ],
+                    "location": 7,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 642 2`] = `[Error: syntax error at or near "x"]`;
+
+exports[`collate.icu.utf8.sql > line 643 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 644 1`] = `[Error: syntax error at or near "ROM"]`;
+
+exports[`collate.icu.utf8.sql > line 645 1`] = `[Error: syntax error at or near "st4c"]`;
+
+exports[`collate.icu.utf8.sql > line 646 1`] = `[Error: syntax error at or near "scan"]`;
+
+exports[`collate.icu.utf8.sql > line 648 1`] = `[Error: syntax error at or near "different"]`;
+
+exports[`collate.icu.utf8.sql > line 653 1`] = `[Error: syntax error at or near "nsitive"]`;
+
+exports[`collate.icu.utf8.sql > line 656 1`] = `[Error: syntax error at or near "s"]`;
+
+exports[`collate.icu.utf8.sql > line 657 1`] = `[Error: syntax error at or near "ATE"]`;
+
+exports[`collate.icu.utf8.sql > line 659 1`] = `[Error: syntax error at or near "<>"]`;
+
+exports[`collate.icu.utf8.sql > line 661 1`] = `[Error: syntax error at or near "text"]`;
+
+exports[`collate.icu.utf8.sql > line 665 1`] = `[Error: syntax error at or near "ext"]`;
+
+exports[`collate.icu.utf8.sql > line 667 1`] = `[Error: syntax error at or near "ALUES"]`;
+
+exports[`collate.icu.utf8.sql > line 668 1`] = `[Error: syntax error at or near "ALUES"]`;
+
+exports[`collate.icu.utf8.sql > line 669 1`] = `[Error: syntax error at end of input]`;
+
+exports[`collate.icu.utf8.sql > line 671 1`] = `[Error: syntax error at or near "r_text"]`;
+
+exports[`collate.icu.utf8.sql > line 671 2`] = `[Error: syntax error at or near "2"]`;
+
+exports[`collate.icu.utf8.sql > line 674 1`] = `[Error: syntax error at or near "xt"]`;
+
+exports[`collate.icu.utf8.sql > line 674 2`] = `[Error: syntax error at or near "er_text"]`;
+
+exports[`collate.icu.utf8.sql > line 678 1`] = `[Error: syntax error at or near "re_accents"]`;
+
+exports[`collate.icu.utf8.sql > line 678 2`] = `[Error: syntax error at or near "ength"]`;
+
+exports[`collate.icu.utf8.sql > line 682 1`] = `[Error: syntax error at or near "SERT"]`;
+
+exports[`collate.icu.utf8.sql > line 682 2`] = `[Error: syntax error at or near "'cote'"]`;
+
+exports[`collate.icu.utf8.sql > line 682 3`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 684 1`] = `[Error: syntax error at or near "ote"]`;
+
+exports[`collate.icu.utf8.sql > line 685 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.icu.utf8.sql > line 685 2`] = `[Error: syntax error at or near "case"]`;
+
+exports[`collate.icu.utf8.sql > line 686 1`] = `[Error: syntax error at or near "case_insensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 690 1`] = `[Error: syntax error at or near "sensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 693 1`] = `[Error: syntax error at or near "st10fk"]`;
+
+exports[`collate.icu.utf8.sql > line 693 2`] = `[Error: trailing junk after numeric literal at or near "10p"]`;
+
+exports[`collate.icu.utf8.sql > line 695 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.icu.utf8.sql > line 696 1`] = `[Error: trailing junk after numeric literal at or near "10f"]`;
+
+exports[`collate.icu.utf8.sql > line 697 1`] = `[Error: syntax error at or near "test10pk"]`;
+
+exports[`collate.icu.utf8.sql > line 699 1`] = `[Error: syntax error at or near "the"]`;
+
+exports[`collate.icu.utf8.sql > line 699 2`] = `[Error: syntax error at or near ""equal""]`;
+
+exports[`collate.icu.utf8.sql > line 700 1`] = `[Error: unterminated quoted string at or near "'abc"]`;
+
+exports[`collate.icu.utf8.sql > line 702 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "test10pk",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+      "stmt_len": 23,
+      "stmt_location": 1,
+    },
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+        },
+      },
+      "stmt_location": 25,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 704 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.icu.utf8.sql > line 706 1`] = `[Error: syntax error at or near "tive"]`;
+
+exports[`collate.icu.utf8.sql > line 706 2`] = `[Error: syntax error at or near "ve"]`;
+
+exports[`collate.icu.utf8.sql > line 707 1`] = `[Error: syntax error at or near "x"]`;
+
+exports[`collate.icu.utf8.sql > line 709 1`] = `[Error: syntax error at or near "st11fk"]`;
+
+exports[`collate.icu.utf8.sql > line 709 2`] = `[Error: syntax error at or near "pk"]`;
+
+exports[`collate.icu.utf8.sql > line 711 1`] = `[Error: syntax error at or near "S"]`;
+
+exports[`collate.icu.utf8.sql > line 712 1`] = `[Error: syntax error at or near "k"]`;
+
+exports[`collate.icu.utf8.sql > line 713 1`] = `[Error: syntax error at or near "st11pk"]`;
+
+exports[`collate.icu.utf8.sql > line 715 1`] = `[Error: syntax error at or near "pdate"]`;
+
+exports[`collate.icu.utf8.sql > line 715 2`] = `[Error: syntax error at or near "equal"]`;
+
+exports[`collate.icu.utf8.sql > line 716 1`] = `[Error: syntax error at or near "PDATE"]`;
+
+exports[`collate.icu.utf8.sql > line 719 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.icu.utf8.sql > line 720 1`] = `[Error: syntax error at or near "FROM"]`;
+
+exports[`collate.icu.utf8.sql > line 723 1`] = `[Error: syntax error at or near "E"]`;
+
+exports[`collate.icu.utf8.sql > line 723 2`] = `[Error: syntax error at or near "text"]`;
+
+exports[`collate.icu.utf8.sql > line 723 3`] = `[Error: syntax error at or near "sitive"]`;
+
+exports[`collate.icu.utf8.sql > line 725 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.icu.utf8.sql > line 726 1`] = `[Error: syntax error at or near "BC"]`;
+
+exports[`collate.icu.utf8.sql > line 729 1`] = `[Error: syntax error at or near "("]`;
+
+exports[`collate.icu.utf8.sql > line 729 2`] = `[Error: syntax error at or near "se_insensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 729 3`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 730 1`] = `[Error: syntax error at or near "'DEF'"]`;
+
+exports[`collate.icu.utf8.sql > line 732 1`] = `[Error: syntax error at or near "BC"]`;
+
+exports[`collate.icu.utf8.sql > line 735 1`] = `[Error: syntax error at or near "("]`;
+
+exports[`collate.icu.utf8.sql > line 735 2`] = `[Error: syntax error at or near "se_sensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 735 3`] = `[Error: syntax error at or near "BY"]`;
+
+exports[`collate.icu.utf8.sql > line 736 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 737 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 739 1`] = `[Error: syntax error at or near "EF"]`;
+
+exports[`collate.icu.utf8.sql > line 740 1`] = `[Error: syntax error at or near "itions"]`;
+
+exports[`collate.icu.utf8.sql > line 741 1`] = `[Error: syntax error at or near "st22_0"]`;
+
+exports[`collate.icu.utf8.sql > line 744 1`] = `[Error: syntax error at or near "e_sensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 745 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 746 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 748 1`] = `[Error: syntax error at or near "ES"]`;
+
+exports[`collate.icu.utf8.sql > line 749 1`] = `[Error: syntax error at or near "ent"]`;
+
+exports[`collate.icu.utf8.sql > line 750 1`] = `[Error: syntax error at or near "st22a_0"]`;
+
+exports[`collate.icu.utf8.sql > line 752 1`] = `[Error: syntax error at or near "N"]`;
+
+exports[`collate.icu.utf8.sql > line 753 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 754 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 756 1`] = `[Error: syntax error at or near "EF"]`;
+
+exports[`collate.icu.utf8.sql > line 757 1`] = `[Error: syntax error at or near "tion"]`;
+
+exports[`collate.icu.utf8.sql > line 757 2`] = `[Error: syntax error at or near "h"]`;
+
+exports[`collate.icu.utf8.sql > line 761 1`] = `[Error: syntax error at or near "e_insensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 762 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 763 1`] = `[Error: syntax error at or near ","]`;
+
+exports[`collate.icu.utf8.sql > line 765 1`] = `[Error: syntax error at or near "ES"]`;
+
+exports[`collate.icu.utf8.sql > line 766 1`] = `[Error: syntax error at or near "me"]`;
+
+exports[`collate.icu.utf8.sql > line 766 2`] = `[Error: syntax error at or near "h"]`;
+
+exports[`collate.icu.utf8.sql > line 769 1`] = `[Error: syntax error at or near "TION"]`;
+
+exports[`collate.icu.utf8.sql > line 771 1`] = `[Error: syntax error at or near "T"]`;
+
+exports[`collate.icu.utf8.sql > line 772 1`] = `[Error: syntax error at or near "BC"]`;
+
+exports[`collate.icu.utf8.sql > line 775 1`] = `[Error: syntax error at or near "("]`;
+
+exports[`collate.icu.utf8.sql > line 775 2`] = `[Error: syntax error at or near "case_insensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 775 3`] = `[Error: syntax error at or near "TION"]`;
+
+exports[`collate.icu.utf8.sql > line 776 1`] = `[Error: syntax error at or near "'DEF'"]`;
+
+exports[`collate.icu.utf8.sql > line 778 1`] = `[Error: syntax error at or near "BC"]`;
+
+exports[`collate.icu.utf8.sql > line 781 1`] = `[Error: syntax error at or near "("]`;
+
+exports[`collate.icu.utf8.sql > line 781 2`] = `[Error: syntax error at or near "case_sensitive"]`;
+
+exports[`collate.icu.utf8.sql > line 781 3`] = `[Error: syntax error at or near "ON"]`;
+
+exports[`collate.icu.utf8.sql > line 782 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 783 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 785 1`] = `[Error: syntax error at or near "EF"]`;
+
+exports[`collate.icu.utf8.sql > line 786 1`] = `[Error: syntax error at or near "itions"]`;
+
+exports[`collate.icu.utf8.sql > line 787 1`] = `[Error: syntax error at or near "st32_0"]`;
+
+exports[`collate.icu.utf8.sql > line 789 1`] = `[Error: syntax error at or near "TION"]`;
+
+exports[`collate.icu.utf8.sql > line 790 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 791 1`] = `[Error: syntax error at or near "REMAINDER"]`;
+
+exports[`collate.icu.utf8.sql > line 793 1`] = `[Error: syntax error at or near "EF"]`;
+
+exports[`collate.icu.utf8.sql > line 794 1`] = `[Error: syntax error at or near "tion"]`;
+
+exports[`collate.icu.utf8.sql > line 794 2`] = `[Error: syntax error at or near "h"]`;
+
+exports[`collate.icu.utf8.sql > line 801 1`] = `[Error: syntax error at or near "OP"]`;
+
+exports[`collate.icu.utf8.sql > line 802 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "client_min_messages",
+        },
+      },
+      "stmt_len": 26,
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`collate.icu.utf8.sql > line 804 1`] = `[Error: syntax error at or near "e"]`;
+
+exports[`collate.icu.utf8.sql > line 805 1`] = `[Error: syntax error at or near "REATE"]`;
+
+exports[`collate.icu.utf8.sql > line 805 2`] = `[Error: syntax error at or near "grade"]`;

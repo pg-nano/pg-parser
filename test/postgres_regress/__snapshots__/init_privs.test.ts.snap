@@ -1,0 +1,215 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`init_privs.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 121,
+                "relname": "pg_init_privs",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 103,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "FuncCall": {
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 103,
+                      },
+                    },
+                    "location": 112,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 114,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`init_privs.sql > line 5 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 101,
+                "roletype": "ROLESPEC_CURRENT_USER",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 90,
+                "relname": "pg_proc",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "select",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`init_privs.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 37,
+                "roletype": "ROLESPEC_CURRENT_USER",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "pg_proc",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "cols": [
+                  {
+                    "String": {
+                      "sval": "prosrc",
+                    },
+                  },
+                ],
+                "priv_name": "select",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`init_privs.sql > line 9 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 51,
+                "roletype": "ROLESPEC_CURRENT_USER",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 38,
+                "relname": "pg_authid",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "cols": [
+                  {
+                    "String": {
+                      "sval": "rolname",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "rolsuper",
+                    },
+                  },
+                ],
+                "priv_name": "select",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

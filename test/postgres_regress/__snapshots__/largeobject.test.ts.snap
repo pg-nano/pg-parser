@@ -1,0 +1,5221 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`largeobject.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_lo_user",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_create",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterOwnerStmt": {
+          "newowner": {
+            "location": 32,
+            "rolename": "regress_lo_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "object": {
+            "Integer": {
+              "ival": 42,
+            },
+          },
+          "objectType": "OBJECT_LARGEOBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 36,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "Integer": {
+                "ival": 42,
+              },
+            },
+          ],
+          "objtype": "OBJECT_LARGEOBJECT",
+          "privileges": [
+            {
+              "AccessPriv": {
+                "priv_name": "select",
+              },
+            },
+          ],
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "the ultimate answer",
+          "object": {
+            "Integer": {
+              "ival": 42,
+            },
+          },
+          "objtype": "OBJECT_LARGEOBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 18 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 184,
+                "name": "loid",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 163,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 197,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 42,
+                              },
+                              "location": 206,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "lo_creat",
+                            },
+                          },
+                        ],
+                        "location": 197,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 261,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 285,
+                "name": "fd",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 298,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x20000",
+                                  },
+                                  "location": 309,
+                                },
+                              },
+                              "location": 318,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "|",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x40000",
+                                  },
+                                  "location": 320,
+                                },
+                              },
+                            },
+                          },
+                          "location": 304,
+                          "typeName": {
+                            "location": 332,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 290,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 1057,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 187,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 195,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 199,
+                          "sval": {
+                            "sval": "
+I wandered lonely as a cloud
+That floats on high o'er vales and hills,
+When all at once I saw a crowd,
+A host, of golden daffodils;
+Beside the lake, beneath the trees,
+Fluttering and dancing in the breeze.
+
+Continuous as the stars that shine
+And twinkle on the milky way,
+They stretched in never-ending line
+Along the margin of a bay:
+Ten thousand saw I at a glance,
+Tossing their heads in sprightly dance.
+
+The waves beside them danced; but they
+Out-did the sparkling waves in glee:
+A poet could not but be gay,
+In such a jocund company:
+I gazed--and gazed--but little thought
+What wealth the show to me had brought:
+
+For oft, when on my couch I lie
+In vacant or in pensive mood,
+They flash upon that inward eye
+Which is the bliss of solitude;
+And then my heart with pleasure fills,
+And dances with the daffodils.
+
+         -- William Wordsworth
+",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lowrite",
+                        },
+                      },
+                    ],
+                    "location": 187,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 77 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 144,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 126,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 135,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_close",
+                        },
+                      },
+                    ],
+                    "location": 126,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_COMMIT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 83 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 93 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 32,
+                "name": "fd",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 43,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x20000",
+                                  },
+                                  "location": 54,
+                                },
+                              },
+                              "location": 63,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "|",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x40000",
+                                  },
+                                  "location": 65,
+                                },
+                              },
+                            },
+                          },
+                          "location": 49,
+                          "typeName": {
+                            "location": 77,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 97 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 373,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 347,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 356,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 104,
+                          },
+                          "location": 360,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 365,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 347,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 105 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 159,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 139,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 146,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 28,
+                          },
+                          "location": 150,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 139,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 35,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 27,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 111 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 31,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "n",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lowrite",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 28,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 117 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 29,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 28,
+                          },
+                          "location": 20,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 119 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_close",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_COMMIT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 42,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "bsval": {
+                                "bsval": "x40000",
+                              },
+                              "location": 22,
+                            },
+                          },
+                          "location": 30,
+                          "typeName": {
+                            "location": 32,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 128 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 136 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 139 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 32,
+                "name": "fd",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 43,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x20000",
+                                  },
+                                  "location": 54,
+                                },
+                              },
+                              "location": 63,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "|",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x40000",
+                                  },
+                                  "location": 65,
+                                },
+                              },
+                            },
+                          },
+                          "location": 49,
+                          "typeName": {
+                            "location": 77,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 34,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 21,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 11,
+                          },
+                          "location": 25,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 142 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 15,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 15,
+                          },
+                          "location": 19,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 37,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 21,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10000,
+                          },
+                          "location": 25,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 145 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 15,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 19,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 146 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 32,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 21,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 24,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 147 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 21,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5000,
+                          },
+                          "location": 25,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 150 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 32,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 21,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 24,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 152 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_close",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 154 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_COMMIT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 32,
+                "name": "fd",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x20000",
+                                  },
+                                  "location": 56,
+                                },
+                              },
+                              "location": 65,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "|",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x40000",
+                                  },
+                                  "location": 67,
+                                },
+                              },
+                            },
+                          },
+                          "location": 51,
+                          "typeName": {
+                            "location": 79,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 44,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 20,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "fval": {
+                            "fval": "4294967296",
+                          },
+                          "location": 24,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 36,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek64",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 161 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 20,
+                          "sval": {
+                            "sval": "offset:4GB",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lowrite",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 162 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 163 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 37,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 20,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 24,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 29,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek64",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 165 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 166 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 15,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 19,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 167 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 44,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 23,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "fval": {
+                            "fval": "5000000000",
+                          },
+                          "location": 27,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate64",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 169 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 34,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 19,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 23,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 26,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 170 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 171 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 44,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 23,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "fval": {
+                            "fval": "3000000000",
+                          },
+                          "location": 27,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate64",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 173 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 34,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 19,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 23,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 26,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 174 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 175 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_close",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 177 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_COMMIT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 178 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 110,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 89,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 99,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_unlink",
+                        },
+                      },
+                    ],
+                    "location": 89,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 182 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TruncateStmt": {
+          "behavior": "DROP_RESTRICT",
+          "relations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 11,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 184 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 187 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 189 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "lotest_stash_values",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 32,
+                "name": "fd",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 43,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x20000",
+                                  },
+                                  "location": 54,
+                                },
+                              },
+                              "location": 63,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "|",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "bsval": {
+                                    "bsval": "x40000",
+                                  },
+                                  "location": 65,
+                                },
+                              },
+                            },
+                          },
+                          "location": 49,
+                          "typeName": {
+                            "location": 77,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 190 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 66,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 42,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 55,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 58,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 42,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 193 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 128,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 101,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 110,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2030,
+                          },
+                          "location": 114,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 120,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 101,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 197 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 122,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 102,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 109,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 36,
+                          },
+                          "location": 113,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 102,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 201 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_tell",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 203 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 35,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 27,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 205 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "abcdefghijklmnop",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lowrite",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 207 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2030,
+                          },
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 28,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_lseek",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 29,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 36,
+                          },
+                          "location": 20,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "loread",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 211 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "fd",
+                              },
+                            },
+                          ],
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_close",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 213 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_COMMIT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 214 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 217 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 232 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 30,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "loid",
+                              },
+                            },
+                          ],
+                          "location": 19,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_unlink",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 234 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TruncateStmt": {
+          "behavior": "DROP_RESTRICT",
+          "relations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 11,
+                "relname": "lotest_stash_values",
+                "relpersistence": "p",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 236 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 248 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 250 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 251 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 252 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 253 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 255 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 256 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 257 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`largeobject.sql > line 266 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 267 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 145,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2121,
+                          },
+                          "location": 155,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_create",
+                        },
+                      },
+                    ],
+                    "location": 145,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 271 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "testing comments",
+          "object": {
+            "Integer": {
+              "ival": 2121,
+            },
+          },
+          "objtype": "OBJECT_LARGEOBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 273 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 78,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 78,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 276 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2121,
+                          },
+                          "location": 35,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "bsval": {
+                                "bsval": "x40000",
+                              },
+                              "location": 41,
+                            },
+                          },
+                          "location": 49,
+                          "typeName": {
+                            "location": 51,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 27,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 278 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 31,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2121,
+                          },
+                          "location": 39,
+                        },
+                      },
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "bsval": {
+                                "bsval": "x20000",
+                              },
+                              "location": 45,
+                            },
+                          },
+                          "location": 53,
+                          "typeName": {
+                            "location": 55,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_open",
+                        },
+                      },
+                    ],
+                    "location": 31,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 280 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 281 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 283 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_create",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 284 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 285 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 287 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 17,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_creat",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 288 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 289 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 291 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 18,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_unlink",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 292 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 293 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 295 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 16,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 20,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lowrite",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 296 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 297 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 299 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`largeobject.sql > line 300 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 301 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 303 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 20,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 24,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 304 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 305 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 307 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 26,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_truncate64",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 308 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 309 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 311 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 22,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 25,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_from_bytea",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 312 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 313 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_START",
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 20,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "transaction_read_only",
+                "location": 20,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 315 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 15,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 19,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "x",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lo_put",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 316 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 317 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "lotest_stash_values",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`largeobject.sql > line 320 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_lo_user",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

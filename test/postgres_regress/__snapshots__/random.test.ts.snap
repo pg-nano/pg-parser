@@ -1,0 +1,1699 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`random.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeSubselect": {
+                "alias": {
+                  "aliasname": "ss",
+                },
+                "subquery": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeFunction": {
+                          "functions": [
+                            {
+                              "List": {
+                                "items": [
+                                  {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1,
+                                            },
+                                            "location": 536,
+                                          },
+                                        },
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1000,
+                                            },
+                                            "location": 539,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "generate_series",
+                                          },
+                                        },
+                                      ],
+                                      "location": 520,
+                                    },
+                                  },
+                                  {},
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 504,
+                          "name": "r",
+                          "val": {
+                            "FuncCall": {
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "random",
+                                  },
+                                },
+                              ],
+                              "location": 504,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "r",
+                    },
+                  },
+                ],
+                "location": 558,
+              },
+            },
+          ],
+          "havingClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "FuncCall": {
+                  "agg_star": true,
+                  "funcformat": "COERCE_EXPLICIT_CALL",
+                  "funcname": [
+                    {
+                      "String": {
+                        "sval": "count",
+                      },
+                    },
+                  ],
+                  "location": 567,
+                },
+              },
+              "location": 576,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 578,
+                },
+              },
+            },
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 479,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "r",
+                        },
+                      },
+                    ],
+                    "location": 479,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 482,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 482,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeSubselect": {
+                "alias": {
+                  "aliasname": "ss",
+                },
+                "subquery": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeFunction": {
+                          "functions": [
+                            {
+                              "List": {
+                                "items": [
+                                  {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1,
+                                            },
+                                            "location": 418,
+                                          },
+                                        },
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 2000,
+                                            },
+                                            "location": 421,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "generate_series",
+                                          },
+                                        },
+                                      ],
+                                      "location": 402,
+                                    },
+                                  },
+                                  {},
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 386,
+                          "name": "r",
+                          "val": {
+                            "FuncCall": {
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "random",
+                                  },
+                                },
+                              ],
+                              "location": 386,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 197,
+                "name": "out_of_range",
+                "val": {
+                  "FuncCall": {
+                    "agg_filter": {
+                      "BoolExpr": {
+                        "args": [
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "r",
+                                      },
+                                    },
+                                  ],
+                                  "location": 220,
+                                },
+                              },
+                              "location": 222,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "<",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "ival": {},
+                                  "location": 224,
+                                },
+                              },
+                            },
+                          },
+                          {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "r",
+                                      },
+                                    },
+                                  ],
+                                  "location": 229,
+                                },
+                              },
+                              "location": 231,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": ">=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 234,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "boolop": "OR_EXPR",
+                        "location": 226,
+                      },
+                    },
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 197,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 261,
+                "name": "has_small",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "FuncCall": {
+                        "agg_filter": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "r",
+                                    },
+                                  },
+                                ],
+                                "location": 285,
+                              },
+                            },
+                            "location": 287,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "<",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "fval": {
+                                  "fval": "0.01",
+                                },
+                                "location": 289,
+                              },
+                            },
+                          },
+                        },
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 262,
+                      },
+                    },
+                    "location": 296,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 298,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 321,
+                "name": "has_large",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "FuncCall": {
+                        "agg_filter": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "r",
+                                    },
+                                  },
+                                ],
+                                "location": 345,
+                              },
+                            },
+                            "location": 347,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": ">",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "fval": {
+                                  "fval": "0.99",
+                                },
+                                "location": 349,
+                              },
+                            },
+                          },
+                        },
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 322,
+                      },
+                    },
+                    "location": 356,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 358,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 26 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "ks_test_uniform_random",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE
+  n int := 1000;        -- Number of samples
+  c float8 := 1.94947;  -- Critical value for 99.9% confidence
+  ok boolean;
+BEGIN
+  ok := (
+    WITH samples AS (
+      SELECT random() r FROM generate_series(1, n) ORDER BY 1
+    ), indexed_samples AS (
+      SELECT (row_number() OVER())-1.0 i, r FROM samples
+    )
+    SELECT max(abs(i/n-r)) < c / sqrt(n) FROM indexed_samples
+  );
+  RETURN ok;
+END
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 129,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 543,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 121,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "bool",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 201,
+                "name": "uniform",
+                "val": {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_uniform_random",
+                              },
+                            },
+                          ],
+                          "location": 201,
+                        },
+                      },
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_uniform_random",
+                              },
+                            },
+                          ],
+                          "location": 236,
+                        },
+                      },
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_uniform_random",
+                              },
+                            },
+                          ],
+                          "location": 271,
+                        },
+                      },
+                    ],
+                    "boolop": "OR_EXPR",
+                    "location": 226,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 56 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeSubselect": {
+                "alias": {
+                  "aliasname": "ss",
+                },
+                "subquery": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeFunction": {
+                          "functions": [
+                            {
+                              "List": {
+                                "items": [
+                                  {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1,
+                                            },
+                                            "location": 177,
+                                          },
+                                        },
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1000,
+                                            },
+                                            "location": 180,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "generate_series",
+                                          },
+                                        },
+                                      ],
+                                      "location": 161,
+                                    },
+                                  },
+                                  {},
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 138,
+                          "name": "r",
+                          "val": {
+                            "FuncCall": {
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "random_normal",
+                                  },
+                                },
+                              ],
+                              "location": 138,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "r",
+                    },
+                  },
+                ],
+                "location": 199,
+              },
+            },
+          ],
+          "havingClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "FuncCall": {
+                  "agg_star": true,
+                  "funcformat": "COERCE_EXPLICIT_CALL",
+                  "funcname": [
+                    {
+                      "String": {
+                        "sval": "count",
+                      },
+                    },
+                  ],
+                  "location": 208,
+                },
+              },
+              "location": 217,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 219,
+                },
+              },
+            },
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 113,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "r",
+                        },
+                      },
+                    ],
+                    "location": 113,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 116,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 116,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeSubselect": {
+                "alias": {
+                  "aliasname": "ss",
+                },
+                "subquery": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeFunction": {
+                          "functions": [
+                            {
+                              "List": {
+                                "items": [
+                                  {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1,
+                                            },
+                                            "location": 215,
+                                          },
+                                        },
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 100,
+                                            },
+                                            "location": 218,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "generate_series",
+                                          },
+                                        },
+                                      ],
+                                      "location": 199,
+                                    },
+                                  },
+                                  {},
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 171,
+                          "name": "r",
+                          "val": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 185,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {},
+                                    "location": 189,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "random_normal",
+                                  },
+                                },
+                              ],
+                              "location": 171,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "r",
+                    },
+                  },
+                ],
+                "location": 236,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 146,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "r",
+                        },
+                      },
+                    ],
+                    "location": 146,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 149,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 149,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeSubselect": {
+                "alias": {
+                  "aliasname": "ss",
+                },
+                "subquery": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeFunction": {
+                          "functions": [
+                            {
+                              "List": {
+                                "items": [
+                                  {
+                                    "FuncCall": {
+                                      "args": [
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 1,
+                                            },
+                                            "location": 78,
+                                          },
+                                        },
+                                        {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 100,
+                                            },
+                                            "location": 81,
+                                          },
+                                        },
+                                      ],
+                                      "funcformat": "COERCE_EXPLICIT_CALL",
+                                      "funcname": [
+                                        {
+                                          "String": {
+                                            "sval": "generate_series",
+                                          },
+                                        },
+                                      ],
+                                      "location": 62,
+                                    },
+                                  },
+                                  {},
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 33,
+                          "name": "r",
+                          "val": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {},
+                                    "location": 47,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {},
+                                    "location": 52,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "random_normal",
+                                  },
+                                },
+                              ],
+                              "location": 33,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "r",
+                    },
+                  },
+                ],
+                "location": 99,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "r",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 11,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 11,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 72 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "ks_test_normal_random",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE
+  n int := 1000;        -- Number of samples
+  c float8 := 1.94947;  -- Critical value for 99.9% confidence
+  ok boolean;
+BEGIN
+  ok := (
+    WITH samples AS (
+      SELECT random_normal() r FROM generate_series(1, n) ORDER BY 1
+    ), indexed_samples AS (
+      SELECT (row_number() OVER())-1.0 i, r FROM samples
+    )
+    SELECT max(abs((1+erf(r/sqrt(2)))/2 - i/n)) < c / sqrt(n)
+    FROM indexed_samples
+  );
+  RETURN ok;
+END
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 132,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 578,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 124,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "bool",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 136,
+                "name": "standard_normal",
+                "val": {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_normal_random",
+                              },
+                            },
+                          ],
+                          "location": 136,
+                        },
+                      },
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_normal_random",
+                              },
+                            },
+                          ],
+                          "location": 170,
+                        },
+                      },
+                      {
+                        "FuncCall": {
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "ks_test_normal_random",
+                              },
+                            },
+                          ],
+                          "location": 204,
+                        },
+                      },
+                    ],
+                    "boolop": "OR_EXPR",
+                    "location": 160,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 102 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 80,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "fval": {
+                            "fval": "0.5",
+                          },
+                          "location": 88,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "setseed",
+                        },
+                      },
+                    ],
+                    "location": 80,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 39,
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 10,
+                                  },
+                                  "location": 42,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "generate_series",
+                                },
+                              },
+                            ],
+                            "location": 23,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 252,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "extra_float_digits",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 46,
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 10,
+                                  },
+                                  "location": 49,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "generate_series",
+                                },
+                              },
+                            ],
+                            "location": 30,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "random_normal",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`random.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 71,
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 10,
+                                  },
+                                  "location": 74,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "generate_series",
+                                },
+                              },
+                            ],
+                            "location": 55,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "name": "r",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "NamedArgExpr": {
+                          "arg": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1,
+                              },
+                              "location": 30,
+                            },
+                          },
+                          "argnumber": -1,
+                          "location": 22,
+                          "name": "mean",
+                        },
+                      },
+                      {
+                        "NamedArgExpr": {
+                          "arg": {
+                            "A_Const": {
+                              "fval": {
+                                "fval": "0.1",
+                              },
+                              "location": 43,
+                            },
+                          },
+                          "argnumber": -1,
+                          "location": 33,
+                          "name": "stddev",
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "random_normal",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

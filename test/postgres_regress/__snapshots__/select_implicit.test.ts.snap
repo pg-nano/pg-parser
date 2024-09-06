@@ -1,0 +1,4682 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`select_implicit.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 261,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 282,
+                "typeName": {
+                  "location": 284,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 289,
+                "typeName": {
+                  "location": 291,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "is_local": true,
+                "location": 296,
+                "typeName": {
+                  "location": 298,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "bpchar",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                  "typmods": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 8,
+                        },
+                        "location": 303,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "d",
+                "is_local": true,
+                "location": 307,
+                "typeName": {
+                  "location": 309,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "bpchar",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                  "typmods": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": -1,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "XXXX",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "A",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "ABAB",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 13 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "ABAB",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "BBBB",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "D",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "BBBB",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "e",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "bbbb",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "F",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 6,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "cccc",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "g",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 7,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "cccc",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "h",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 8,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "CCCC",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "I",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "test_missing_target",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 9,
+                          },
+                          "location": 41,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 4,
+                          },
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "CCCC",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "j",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 60,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "test_missing_target",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "c",
+                    },
+                  },
+                ],
+                "location": 89,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 120,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 46,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 46,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 98,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "test_missing_target",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "c",
+                    },
+                  },
+                ],
+                "location": 127,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 158,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 84,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 84,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 124,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "a",
+                    },
+                  },
+                ],
+                "location": 153,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 164,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 110,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 110,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 95,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 124,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 135,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 81,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 81,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 113,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 142,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 153,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 74,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "test_missing_target",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 74,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 97,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 97,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 50,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 57,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 86,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 97,
+                  },
+                },
+                "sortby_dir": "SORTBY_DESC",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 57,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 86,
+                  },
+                },
+                "sortby_dir": "SORTBY_DESC",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 60,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 1,
+                },
+                "location": 89,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 100,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 46,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 46,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 95,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 3,
+                },
+                "location": 124,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 78,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "c",
+                        },
+                      },
+                    ],
+                    "location": 78,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 81,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 81,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 124,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 147,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 196,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 207,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 110,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 110,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 176,
+                },
+              },
+              "location": 180,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 182,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 92,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 122,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 82,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 82,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 85,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 85,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 107,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 137,
+                      },
+                    },
+                    "location": 138,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 139,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 93,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 93,
+                      },
+                    },
+                    "location": 94,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 95,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 98,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 98,
+                      },
+                    },
+                    "location": 99,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 100,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 71 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 107,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 137,
+                  },
+                },
+                "location": 138,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 139,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 150,
+                      },
+                    },
+                    "location": 151,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 152,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 93,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 93,
+                      },
+                    },
+                    "location": 94,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 95,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 98,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 98,
+                      },
+                    },
+                    "location": 99,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 100,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 76 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 93,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 116,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "x",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 165,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 178,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 74,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 74,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 79,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 145,
+                },
+              },
+              "location": 149,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 151,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 89,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 112,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "x",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "b",
+                    },
+                  },
+                ],
+                "location": 161,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 174,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 75,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 75,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 141,
+                },
+              },
+              "location": 145,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 147,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 86 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 99,
+              "relname": "test_missing_target2",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "x",
+                    },
+                    "inh": true,
+                    "location": 144,
+                    "relname": "test_missing_target",
+                    "relpersistence": "p",
+                  },
+                },
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "y",
+                    },
+                    "inh": true,
+                    "location": 167,
+                    "relname": "test_missing_target",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 216,
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "sortClause": [
+                {
+                  "SortBy": {
+                    "location": -1,
+                    "node": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "x",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 229,
+                      },
+                    },
+                    "sortby_dir": "SORTBY_DEFAULT",
+                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 130,
+                    "val": {
+                      "FuncCall": {
+                        "agg_star": true,
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 130,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "x",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 196,
+                    },
+                  },
+                  "location": 200,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "y",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 202,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_missing_target2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 93,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "test_missing_target",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 122,
+                  },
+                },
+                "location": 143,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "%",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 144,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "test_missing_target",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 155,
+                      },
+                    },
+                    "location": 176,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "%",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 177,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 74,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 74,
+                      },
+                    },
+                    "location": 75,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "%",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 76,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 79,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 85,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 98,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "test_missing_target",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 133,
+                    },
+                  },
+                ],
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "lower",
+                    },
+                  },
+                ],
+                "location": 127,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "test_missing_target",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 171,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lower",
+                        },
+                      },
+                    ],
+                    "location": 165,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 84,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 90,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 84,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 124,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "ColumnRef": {
+                "fields": [
+                  {
+                    "String": {
+                      "sval": "a",
+                    },
+                  },
+                ],
+                "location": 153,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 164,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 110,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                          ],
+                          "location": 116,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 110,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 95,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 124,
+                  },
+                },
+                "location": 125,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 126,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 137,
+                      },
+                    },
+                    "location": 138,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 139,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 81,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 87,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 81,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 120,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 155,
+                    },
+                  },
+                ],
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "lower",
+                    },
+                  },
+                ],
+                "location": 149,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 173,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lower",
+                        },
+                      },
+                    ],
+                    "location": 167,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 74,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "test_missing_target",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 80,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lower",
+                        },
+                      },
+                    ],
+                    "location": 74,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 104,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 110,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 104,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 119 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 50,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "d",
+                              },
+                            },
+                          ],
+                          "location": 85,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "upper",
+                        },
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 122 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 57,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 88,
+                      },
+                    },
+                    "location": 90,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 92,
+                      },
+                    },
+                  },
+                },
+                "location": 95,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 97,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "b",
+                                },
+                              },
+                            ],
+                            "location": 109,
+                          },
+                        },
+                        "location": 111,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 113,
+                          },
+                        },
+                      },
+                    },
+                    "location": 116,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 118,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DESC",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 43,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 49,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 126,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 149,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 198,
+                  },
+                },
+                "location": 199,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 200,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 211,
+                      },
+                    },
+                    "location": 212,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 213,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 110,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "x",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                          ],
+                          "location": 116,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 110,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 178,
+                },
+              },
+              "location": 182,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 184,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 97,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 120,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 169,
+                  },
+                },
+                "location": 172,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 173,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "x",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 184,
+                      },
+                    },
+                    "location": 187,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 188,
+                      },
+                    },
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 74,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "x",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 74,
+                      },
+                    },
+                    "location": 77,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 78,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 81,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "x",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 87,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 81,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 149,
+                },
+              },
+              "location": 153,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 155,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 137 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "x",
+                },
+                "inh": true,
+                "location": 142,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "y",
+                },
+                "inh": true,
+                "location": 165,
+                "relname": "test_missing_target",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "x",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 214,
+                  },
+                },
+                "location": 217,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "/",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 218,
+                  },
+                },
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 128,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 134,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 128,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "x",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 194,
+                },
+              },
+              "location": 198,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "y",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 200,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 99,
+              "relname": "test_missing_target3",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "x",
+                    },
+                    "inh": true,
+                    "location": 146,
+                    "relname": "test_missing_target",
+                    "relpersistence": "p",
+                  },
+                },
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "y",
+                    },
+                    "inh": true,
+                    "location": 169,
+                    "relname": "test_missing_target",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "x",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 218,
+                      },
+                    },
+                    "location": 221,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 222,
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "sortClause": [
+                {
+                  "SortBy": {
+                    "location": -1,
+                    "node": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "x",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "b",
+                                },
+                              },
+                            ],
+                            "location": 233,
+                          },
+                        },
+                        "location": 236,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "/",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 237,
+                          },
+                        },
+                      },
+                    },
+                    "sortby_dir": "SORTBY_DEFAULT",
+                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  },
+                },
+              ],
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 130,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "x",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "b",
+                                  },
+                                },
+                              ],
+                              "location": 136,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "count",
+                            },
+                          },
+                        ],
+                        "location": 130,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "x",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 198,
+                    },
+                  },
+                  "location": 202,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "=",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "y",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 204,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "test_missing_target3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 152 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_missing_target",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_missing_target2",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`select_implicit.sql > line 156 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "test_missing_target3",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

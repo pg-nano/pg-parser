@@ -1,0 +1,1149 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`write_parallel.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 61,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "parallel_setup_cost",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 9 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 25,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "parallel_tuple_cost",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 34,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "min_parallel_table_scan_size",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 4,
+                },
+                "location": 37,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "max_parallel_workers_per_gather",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 110,
+              },
+            },
+          ],
+          "query": {
+            "CreateTableAsStmt": {
+              "into": {
+                "onCommit": "ONCOMMIT_NOOP",
+                "rel": {
+                  "inh": true,
+                  "location": 134,
+                  "relname": "parallel_write",
+                  "relpersistence": "p",
+                },
+              },
+              "objtype": "OBJECT_TABLE",
+              "query": {
+                "SelectStmt": {
+                  "fromClause": [
+                    {
+                      "RangeVar": {
+                        "inh": true,
+                        "location": 185,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                  ],
+                  "groupClause": [
+                    {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 207,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 200,
+                      },
+                    },
+                  ],
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 163,
+                        "val": {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "stringu1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 170,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "length",
+                                },
+                              },
+                            ],
+                            "location": 163,
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 14,
+              "relname": "parallel_write",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 65,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 87,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "length",
+                        },
+                      },
+                    ],
+                    "location": 80,
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 43,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 50,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 43,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "parallel_write",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 11,
+              },
+            },
+          ],
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 75,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 97,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "length",
+                        },
+                      },
+                    ],
+                    "location": 90,
+                  },
+                },
+              ],
+              "intoClause": {
+                "onCommit": "ONCOMMIT_NOOP",
+                "rel": {
+                  "inh": true,
+                  "location": 51,
+                  "relname": "parallel_write",
+                  "relpersistence": "p",
+                },
+              },
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 29,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 36,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 29,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 54,
+                "relname": "tenk1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "groupClause": [
+            {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "stringu1",
+                          },
+                        },
+                      ],
+                      "location": 76,
+                    },
+                  },
+                ],
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "length",
+                    },
+                  },
+                ],
+                "location": 69,
+              },
+            },
+          ],
+          "intoClause": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 30,
+              "relname": "parallel_write",
+              "relpersistence": "p",
+            },
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 15,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "length",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "parallel_write",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 11,
+              },
+            },
+          ],
+          "query": {
+            "CreateTableAsStmt": {
+              "into": {
+                "onCommit": "ONCOMMIT_NOOP",
+                "rel": {
+                  "inh": true,
+                  "location": 47,
+                  "relname": "parallel_mat_view",
+                  "relpersistence": "p",
+                },
+              },
+              "objtype": "OBJECT_MATVIEW",
+              "query": {
+                "SelectStmt": {
+                  "fromClause": [
+                    {
+                      "RangeVar": {
+                        "inh": true,
+                        "location": 101,
+                        "relname": "tenk1",
+                        "relpersistence": "p",
+                      },
+                    },
+                  ],
+                  "groupClause": [
+                    {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 123,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 116,
+                      },
+                    },
+                  ],
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 79,
+                        "val": {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "stringu1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 86,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "length",
+                                },
+                              },
+                            ],
+                            "location": 79,
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 26,
+              "relname": "parallel_mat_view",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_MATVIEW",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 80,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 102,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "length",
+                        },
+                      },
+                    ],
+                    "location": 95,
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 58,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 65,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 58,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "length",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 24,
+            "relname": "parallel_mat_view",
+            "relpersistence": "p",
+          },
+          "unique": true,
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RefreshMatViewStmt": {
+          "relation": {
+            "inh": true,
+            "location": 27,
+            "relname": "parallel_mat_view",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RefreshMatViewStmt": {
+          "concurrent": true,
+          "relation": {
+            "inh": true,
+            "location": 40,
+            "relname": "parallel_mat_view",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "parallel_mat_view",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_MATVIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 37 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "PrepareStmt": {
+          "name": "prep_stmt",
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 52,
+                    "relname": "tenk1",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "groupClause": [
+                {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 74,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "length",
+                        },
+                      },
+                    ],
+                    "location": 67,
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 30,
+                    "val": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "stringu1",
+                                  },
+                                },
+                              ],
+                              "location": 37,
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "length",
+                            },
+                          },
+                        ],
+                        "location": 30,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 39 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ExplainStmt": {
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "off",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "costs",
+                "location": 10,
+              },
+            },
+          ],
+          "query": {
+            "CreateTableAsStmt": {
+              "into": {
+                "onCommit": "ONCOMMIT_NOOP",
+                "rel": {
+                  "inh": true,
+                  "location": 34,
+                  "relname": "parallel_write",
+                  "relpersistence": "p",
+                },
+              },
+              "objtype": "OBJECT_TABLE",
+              "query": {
+                "ExecuteStmt": {
+                  "name": "prep_stmt",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 14,
+              "relname": "parallel_write",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+          "query": {
+            "ExecuteStmt": {
+              "name": "prep_stmt",
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "parallel_write",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`write_parallel.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

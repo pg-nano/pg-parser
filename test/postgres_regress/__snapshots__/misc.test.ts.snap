@@ -1,0 +1,5162 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`misc.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`misc.sql > line 17 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`misc.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 24,
+            "relname": "onek",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 36,
+                "name": "unique1",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "unique1",
+                            },
+                          },
+                        ],
+                        "location": 46,
+                      },
+                    },
+                    "location": 59,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 61,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "onek",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 21,
+                "name": "unique1",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "unique1",
+                            },
+                          },
+                        ],
+                        "location": 31,
+                      },
+                    },
+                    "location": 44,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "-",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 46,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 411,
+                "relname": "onek",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "intoClause": {
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 399,
+              "relname": "tmp",
+              "relpersistence": "p",
+            },
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 357,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "two",
+                        },
+                      },
+                    ],
+                    "location": 357,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 362,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "stringu1",
+                        },
+                      },
+                    ],
+                    "location": 362,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 372,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ten",
+                        },
+                      },
+                    ],
+                    "location": 372,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 377,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "string4",
+                        },
+                      },
+                    ],
+                    "location": 377,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 67,
+                "relname": "onek",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "tmp",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 20,
+                "name": "stringu1",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "onek",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 44,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "reverse_name",
+                        },
+                      },
+                    ],
+                    "location": 31,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 81,
+                      },
+                    },
+                    "location": 95,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 97,
+                        "sval": {
+                          "sval": "JBAAAA",
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 113,
+                      },
+                    },
+                    "location": 127,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "tmp",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 129,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 106,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 57 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 68,
+                "relname": "onek2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "tmp",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 20,
+                "name": "stringu1",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "onek2",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "stringu1",
+                              },
+                            },
+                          ],
+                          "location": 44,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "reverse_name",
+                        },
+                      },
+                    ],
+                    "location": 31,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 83,
+                      },
+                    },
+                    "location": 98,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 100,
+                        "sval": {
+                          "sval": "JCAAAA",
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "onek2",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 116,
+                      },
+                    },
+                    "location": 131,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "tmp",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "stringu1",
+                            },
+                          },
+                        ],
+                        "location": 133,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 109,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "tmp",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 65 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`misc.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 20,
+            "relname": "onek_copy",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 36,
+                  "relname": "onek",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 80 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`misc.sql > line 82 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "all": true,
+          "larg": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 16,
+                  "relname": "onek",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 9,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_EXCEPT",
+          "rarg": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 46,
+                  "relname": "onek_copy",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 39,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 39,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "all": true,
+          "larg": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 16,
+                  "relname": "onek_copy",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 9,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_EXCEPT",
+          "rarg": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 51,
+                  "relname": "onek",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 44,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 44,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 86 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`misc.sql > line 89 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 20,
+            "relname": "stud_emp_copy",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "TableLikeClause": {
+                "relation": {
+                  "inh": true,
+                  "location": 40,
+                  "relname": "stud_emp",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 91 1`] = `[Error: syntax error at or near ":"]`;
+
+exports[`misc.sql > line 93 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "stud_emp_copy",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 58,
+            "relname": "hobbies_r",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "name",
+                "is_local": true,
+                "location": 71,
+                "typeName": {
+                  "location": 77,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "person",
+                "is_local": true,
+                "location": 84,
+                "typeName": {
+                  "location": 93,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 104 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "equipment_r",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "name",
+                "is_local": true,
+                "location": 30,
+                "typeName": {
+                  "location": 37,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "hobby",
+                "is_local": true,
+                "location": 44,
+                "typeName": {
+                  "location": 51,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 25,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 31,
+                "name": "person",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "hobbies_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "p",
+                    },
+                    "inh": true,
+                    "location": 79,
+                    "relname": "person",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 49,
+                    "val": {
+                      "A_Const": {
+                        "location": 49,
+                        "sval": {
+                          "sval": "posthacking",
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 64,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "p",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "name",
+                            },
+                          },
+                        ],
+                        "location": 64,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "BoolExpr": {
+                  "args": [
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "p",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "name",
+                                },
+                              },
+                            ],
+                            "location": 98,
+                          },
+                        },
+                        "location": 105,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 107,
+                            "sval": {
+                              "sval": "mike",
+                            },
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "p",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "name",
+                                },
+                              },
+                            ],
+                            "location": 117,
+                          },
+                        },
+                        "location": 124,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 126,
+                            "sval": {
+                              "sval": "jeff",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                  "boolop": "OR_EXPR",
+                  "location": 114,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 114 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 25,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 31,
+                "name": "person",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "hobbies_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "alias": {
+                      "aliasname": "p",
+                    },
+                    "inh": true,
+                    "location": 78,
+                    "relname": "person",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 49,
+                    "val": {
+                      "A_Const": {
+                        "location": 49,
+                        "sval": {
+                          "sval": "basketball",
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 63,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "p",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "name",
+                            },
+                          },
+                        ],
+                        "location": 63,
+                      },
+                    },
+                  },
+                },
+              ],
+              "whereClause": {
+                "BoolExpr": {
+                  "args": [
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "p",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "name",
+                                },
+                              },
+                            ],
+                            "location": 96,
+                          },
+                        },
+                        "location": 103,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 105,
+                            "sval": {
+                              "sval": "joe",
+                            },
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "p",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "name",
+                                },
+                              },
+                            ],
+                            "location": 114,
+                          },
+                        },
+                        "location": 121,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 123,
+                            "sval": {
+                              "sval": "sally",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                  "boolop": "OR_EXPR",
+                  "location": 111,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 119 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 25,
+                "name": "name",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "hobbies_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 39,
+                          "sval": {
+                            "sval": "skywalking",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 33,
+                "name": "hobby",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "equipment_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "advil",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "posthacking",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 33,
+                "name": "hobby",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "equipment_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "peet's coffee",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 66,
+                          "sval": {
+                            "sval": "posthacking",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 125 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 33,
+                "name": "hobby",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "equipment_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "hightops",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 60,
+                          "sval": {
+                            "sval": "basketball",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "name",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 33,
+                "name": "hobby",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "equipment_r",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "guts",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "skywalking",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 129 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "hobbies",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from hobbies_r where person = $1.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 93,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 148,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 55,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "person",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 80,
+            "names": [
+              {
+                "String": {
+                  "sval": "hobbies_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "hobby_construct",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select $1 as name, $2 as hobby",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 70,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 109,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 40,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 57,
+            "names": [
+              {
+                "String": {
+                  "sval": "hobbies_r",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "hobby_construct_named",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select name, hobby",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 87,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 114,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 45,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "name",
+              },
+            },
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 57,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 74,
+            "names": [
+              {
+                "String": {
+                  "sval": "hobbies_r",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "hobbies_by_name",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select person from hobbies_r where name = $1",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 91,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 144,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "name",
+                      },
+                    },
+                  ],
+                  "pct_type": true,
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 66,
+            "names": [
+              {
+                "String": {
+                  "sval": "hobbies_r",
+                },
+              },
+              {
+                "String": {
+                  "sval": "person",
+                },
+              },
+            ],
+            "pct_type": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 153 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where hobby = $1.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 71,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 127,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 28,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 56,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where equipment_r.hobby = equipment_named.hobby.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 83,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 170,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 40,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 68,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 163 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named_ambiguous_1a",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where hobby = equipment_named_ambiguous_1a.hobby.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 96,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 184,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 81,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 168 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named_ambiguous_1b",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where equipment_r.hobby = hobby.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 96,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 167,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 81,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 173 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named_ambiguous_1c",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where hobby = hobby.name",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 96,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 155,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "hobbies_r",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 81,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 178 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named_ambiguous_2a",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where hobby = equipment_named_ambiguous_2a.hobby",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 91,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 174,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 76,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 183 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "equipment_named_ambiguous_2b",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "select * from equipment_r where equipment_r.hobby = hobby",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 91,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 157,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "hobby",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 76,
+            "names": [
+              {
+                "String": {
+                  "sval": "equipment_r",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 188 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "location": 145,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 111,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 111,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 119,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 124,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 119,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 195 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "inh": true,
+                "location": 90,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 61,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 61,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 69,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 74,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 69,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 200 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "distinctClause": [
+            {},
+          ],
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 174,
+                "relname": "hobbies_r",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 195,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 197,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 127,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hobbies_r",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 127,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 143,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "hobbies_r",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 148,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 143,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 207 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 57,
+                "relname": "hobbies_r",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hobbies_r",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 25,
+                "val": {
+                  "A_Indirection": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "hobbies_r",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "equipment",
+                            },
+                          },
+                        ],
+                        "location": 26,
+                      },
+                    },
+                    "indirection": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "location": 178,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 116,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 116,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 124,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 129,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 124,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 141,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "p",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "hobbies",
+                                    },
+                                  },
+                                ],
+                                "location": 156,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 146,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 141,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 216 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "inh": true,
+                "location": 133,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 76,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 76,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 84,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 89,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 84,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 101,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "p",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "hobbies",
+                                    },
+                                  },
+                                ],
+                                "location": 116,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 106,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 101,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 221 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "location": 190,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 128,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "p",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "hobbies",
+                                    },
+                                  },
+                                ],
+                                "location": 143,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 133,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 128,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 156,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 156,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 164,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 169,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 164,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 227 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "inh": true,
+                "location": 66,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "A_Indirection": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "p",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "hobbies",
+                            },
+                          },
+                        ],
+                        "location": 10,
+                      },
+                    },
+                    "indirection": [
+                      {
+                        "String": {
+                          "sval": "equipment",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 37,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 45,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 50,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 45,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 229 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "location": 71,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "A_Indirection": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "p",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "hobbies",
+                            },
+                          },
+                        ],
+                        "location": 10,
+                      },
+                    },
+                    "indirection": [
+                      {
+                        "String": {
+                          "sval": "equipment",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 37,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 42,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 54,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 54,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 231 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "p",
+                },
+                "inh": true,
+                "location": 66,
+                "relname": "person",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "p",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "hobbies",
+                                    },
+                                  },
+                                ],
+                                "location": 24,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 37,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "p",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "hobbies",
+                              },
+                            },
+                          ],
+                          "location": 42,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 37,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 54,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 54,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 233 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 45,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 40,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 64,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 59,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct",
+                                    },
+                                  },
+                                ],
+                                "location": 24,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 235 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 51,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 46,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 70,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 65,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct_named",
+                                    },
+                                  },
+                                ],
+                                "location": 24,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 237 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 57,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 52,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 76,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 71,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct_named",
+                                    },
+                                  },
+                                ],
+                                "location": 30,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 239 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 70,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 65,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 89,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 84,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct_named",
+                                    },
+                                  },
+                                ],
+                                "location": 43,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named_ambiguous_1a",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 241 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 70,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 65,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 89,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 84,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct_named",
+                                    },
+                                  },
+                                ],
+                                "location": 43,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named_ambiguous_1b",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 243 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 70,
+                                          "sval": {
+                                            "sval": "skywalking",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 65,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "TypeCast": {
+                                      "arg": {
+                                        "A_Const": {
+                                          "location": 89,
+                                          "sval": {
+                                            "sval": "mer",
+                                          },
+                                        },
+                                      },
+                                      "location": -1,
+                                      "typeName": {
+                                        "location": 84,
+                                        "names": [
+                                          {
+                                            "String": {
+                                              "sval": "text",
+                                            },
+                                          },
+                                        ],
+                                        "typemod": -1,
+                                      },
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "hobby_construct_named",
+                                    },
+                                  },
+                                ],
+                                "location": 43,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named_ambiguous_1c",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 245 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "TypeCast": {
+                                "arg": {
+                                  "A_Const": {
+                                    "location": 48,
+                                    "sval": {
+                                      "sval": "skywalking",
+                                    },
+                                  },
+                                },
+                                "location": -1,
+                                "typeName": {
+                                  "location": 43,
+                                  "names": [
+                                    {
+                                      "String": {
+                                        "sval": "text",
+                                      },
+                                    },
+                                  ],
+                                  "typemod": -1,
+                                },
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named_ambiguous_2a",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 247 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "TypeCast": {
+                                "arg": {
+                                  "A_Const": {
+                                    "location": 48,
+                                    "sval": {
+                                      "sval": "skywalking",
+                                    },
+                                  },
+                                },
+                                "location": -1,
+                                "typeName": {
+                                  "location": 43,
+                                  "names": [
+                                    {
+                                      "String": {
+                                        "sval": "text",
+                                      },
+                                    },
+                                  ],
+                                  "typemod": -1,
+                                },
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment_named_ambiguous_2b",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 249 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 25,
+                          "sval": {
+                            "sval": "basketball",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "hobbies_by_name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 251 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "emp",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 15,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "emp",
+                              },
+                            },
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 24,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "overpaid",
+                        },
+                      },
+                    ],
+                    "location": 15,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 253 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "RowExpr": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "location": 97,
+                                        "sval": {
+                                          "sval": "skywalking",
+                                        },
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "location": 111,
+                                        "sval": {
+                                          "sval": "mer",
+                                        },
+                                      },
+                                    },
+                                  ],
+                                  "location": 93,
+                                  "row_format": "COERCE_EXPLICIT_CALL",
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "equipment",
+                                },
+                              },
+                            ],
+                            "location": 83,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 76,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 76,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 258 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "RowExpr": {
+                                "args": [
+                                  {
+                                    "A_Const": {
+                                      "location": 28,
+                                      "sval": {
+                                        "sval": "skywalking",
+                                      },
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "location": 42,
+                                      "sval": {
+                                        "sval": "mer",
+                                      },
+                                    },
+                                  },
+                                ],
+                                "location": 24,
+                                "row_format": "COERCE_EXPLICIT_CALL",
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 260 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "h",
+                },
+                "inh": true,
+                "location": 38,
+                "relname": "hobbies_r",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 12,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "h",
+                                    },
+                                  },
+                                  {
+                                    "A_Star": {},
+                                  },
+                                ],
+                                "location": 27,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "equipment",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 12,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`misc.sql > line 262 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "h",
+                },
+                "inh": true,
+                "location": 60,
+                "relname": "hobbies_r",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 12,
+                "val": {
+                  "A_Indirection": {
+                    "arg": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "TypeCast": {
+                              "arg": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "h",
+                                      },
+                                    },
+                                    {
+                                      "A_Star": {},
+                                    },
+                                  ],
+                                  "location": 29,
+                                },
+                              },
+                              "location": 23,
+                              "typeName": {
+                                "location": 37,
+                                "names": [
+                                  {
+                                    "String": {
+                                      "sval": "hobbies_r",
+                                    },
+                                  },
+                                ],
+                                "typemod": -1,
+                              },
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "equipment",
+                            },
+                          },
+                        ],
+                        "location": 13,
+                      },
+                    },
+                    "indirection": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

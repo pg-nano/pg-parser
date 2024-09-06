@@ -1,0 +1,1942 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`explain.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "explain_filter",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 477,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+declare
+    ln text;
+begin
+    for ln in execute $1
+    loop
+        -- Replace any numeric word with just 'N'
+        ln := regexp_replace(ln, '-?\\m\\d+\\M', 'N', 'g');
+        -- In sort output, the above won't match units-suffixed numbers
+        ln := regexp_replace(ln, '\\m\\d+kB', 'NkB', 'g');
+        -- Ignore text-mode buffers output because it varies depending
+        -- on the system state
+        CONTINUE WHEN (ln ~ ' +Buffers: .*');
+        -- Ignore text-mode "Planning:" line because whether it's output
+        -- varies depending on the system state
+        CONTINUE WHEN (ln = 'Planning:');
+        return next ln;
+    end loop;
+end;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 494,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 452,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 472,
+            "names": [
+              {
+                "String": {
+                  "sval": "text",
+                },
+              },
+            ],
+            "setof": true,
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "explain_filter_to_json",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 136,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+declare
+    data text := '';
+    ln text;
+begin
+    for ln in execute $1
+    loop
+        -- Replace any numeric word with just '0'
+        ln := regexp_replace(ln, '\\m\\d+\\M', '0', 'g');
+        data := data || ln;
+    end loop;
+    return data::jsonb;
+end;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 153,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 116,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 130,
+            "names": [
+              {
+                "String": {
+                  "sval": "jsonb",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 53 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 101,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "jit",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 57 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 108,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "track_io_timing",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 26,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 41,
+                          "sval": {
+                            "sval": "explain select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 26,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze, verbose) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze, buffers, format text) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze, buffers, format xml) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze, buffers, format yaml) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (buffers, format text) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 71 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (buffers, format json) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 72 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 160,
+                "sval": {
+                  "sval": "on",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "track_io_timing",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 76 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (analyze, buffers, format json) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 77 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 23,
+                "sval": {
+                  "sval": "off",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "track_io_timing",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 29,
+                "sval": {
+                  "sval": "force_generic_plan",
+                },
+              },
+            },
+          ],
+          "is_local": true,
+          "kind": "VAR_SET_VALUE",
+          "name": "plan_cache_mode",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "alias": {
+                  "aliasname": "ln",
+                },
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "location": 43,
+                                  "sval": {
+                                    "sval": "explain (settings) select * from int8_tbl i8",
+                                  },
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "explain_filter",
+                                },
+                              },
+                            ],
+                            "location": 28,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "name": "OK",
+                "val": {
+                  "A_Const": {
+                    "boolval": {
+                      "boolval": true,
+                    },
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ln",
+                      },
+                    },
+                  ],
+                  "location": 102,
+                },
+              },
+              "location": 105,
+              "name": [
+                {
+                  "String": {
+                    "sval": "~",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 107,
+                  "sval": {
+                    "sval": "^ *Settings: .*plan_cache_mode = 'force_generic_plan'",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 88 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "FuncCall": {
+                        "args": [
+                          {
+                            "A_Const": {
+                              "location": 31,
+                              "sval": {
+                                "sval": "explain (settings, format json) select * from int8_tbl i8",
+                              },
+                            },
+                          },
+                        ],
+                        "funcformat": "COERCE_EXPLICIT_CALL",
+                        "funcname": [
+                          {
+                            "String": {
+                              "sval": "explain_filter_to_json",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 92,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "#>",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 95,
+                        "sval": {
+                          "sval": "{0,Settings,plan_cache_mode}",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 89 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 33,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "explain (generic_plan) select unique1 from tenk1 where thousand = $1",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 33,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 23,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "explain (analyze, generic_plan) select unique1 from tenk1 where thousand = $1",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 23,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "partspec": {
+            "location": 262,
+            "partParams": [
+              {
+                "PartitionElem": {
+                  "location": 281,
+                  "name": "key1",
+                },
+              },
+            ],
+            "strategy": "PARTITION_STRATEGY_LIST",
+          },
+          "relation": {
+            "inh": true,
+            "location": 200,
+            "relname": "gen_part",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "key1",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 226,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 213,
+                "typeName": {
+                  "location": 218,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "key2",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 251,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 238,
+                "typeName": {
+                  "location": 243,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 104 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 40,
+                "relname": "gen_part",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "listdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 64,
+                },
+              },
+            ],
+            "location": 60,
+            "strategy": "l",
+          },
+          "partspec": {
+            "location": 69,
+            "partParams": [
+              {
+                "PartitionElem": {
+                  "location": 89,
+                  "name": "key2",
+                },
+              },
+            ],
+            "strategy": "PARTITION_STRATEGY_RANGE",
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "gen_part_1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 107 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 42,
+                "relname": "gen_part_1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 64,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 70,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 77,
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "gen_part_1_1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 42,
+                "relname": "gen_part_1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 64,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 70,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 3,
+                  },
+                  "location": 77,
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "gen_part_1_2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 111 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 40,
+                "relname": "gen_part",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "listdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 64,
+                },
+              },
+            ],
+            "location": 60,
+            "strategy": "l",
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "gen_part_2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 73,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 88,
+                          "sval": {
+                            "sval": "explain (generic_plan) select key1, key2 from gen_part where key1 = 1 and key2 = $1",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 73,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 115 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "gen_part",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 116 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 60,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "parallel_setup_cost",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 25,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "parallel_tuple_cost",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 129 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {},
+                "location": 34,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "min_parallel_table_scan_size",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 130 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 4,
+                },
+                "location": 37,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "max_parallel_workers_per_gather",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 131 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "A_Expr": {
+                                      "kind": "AEXPR_OP",
+                                      "lexpr": {
+                                        "FuncCall": {
+                                          "args": [
+                                            {
+                                              "A_Const": {
+                                                "location": 48,
+                                                "sval": {
+                                                  "sval": "explain (analyze, verbose, buffers, format json)
+                         select * from tenk1 order by tenthous",
+                                                },
+                                              },
+                                            },
+                                          ],
+                                          "funcformat": "COERCE_EXPLICIT_CALL",
+                                          "funcname": [
+                                            {
+                                              "String": {
+                                                "sval": "explain_filter_to_json",
+                                              },
+                                            },
+                                          ],
+                                          "location": 25,
+                                        },
+                                      },
+                                      "location": 218,
+                                      "name": [
+                                        {
+                                          "String": {
+                                            "sval": "#-",
+                                          },
+                                        },
+                                      ],
+                                      "rexpr": {
+                                        "A_Const": {
+                                          "location": 221,
+                                          "sval": {
+                                            "sval": "{0,Plan,Plans,0,Plans,0,Workers}",
+                                          },
+                                        },
+                                      },
+                                    },
+                                  },
+                                  "location": 307,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "#-",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "A_Const": {
+                                      "location": 310,
+                                      "sval": {
+                                        "sval": "{0,Plan,Plans,0,Workers}",
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                              "location": 406,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "#-",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "A_Const": {
+                                  "location": 409,
+                                  "sval": {
+                                    "sval": "{0,Plan,Plans,0,Sort Method}",
+                                  },
+                                },
+                              },
+                            },
+                          },
+                          "location": 442,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "#-",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "location": 445,
+                              "sval": {
+                                "sval": "{0,Plan,Plans,0,Sort Space Type}",
+                              },
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "jsonb_pretty",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 145 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 57,
+            "relname": "t1",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f1",
+                "is_local": true,
+                "location": 60,
+                "typeName": {
+                  "location": 63,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "float8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "pg_temp",
+              },
+            },
+            {
+              "String": {
+                "sval": "mysin",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 55,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "begin return sin($1); end",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 72,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 32,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "float8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 48,
+            "names": [
+              {
+                "String": {
+                  "sval": "float8",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 24,
+                          "sval": {
+                            "sval": "explain (verbose) select * from t1 where pg_temp.mysin(f1) < 0.5",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 153 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 50,
+                "sval": {
+                  "sval": "on",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "compute_query_id",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`explain.sql > line 156 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "explain (verbose) select * from int8_tbl i8",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "explain_filter",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

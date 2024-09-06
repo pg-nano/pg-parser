@@ -1,0 +1,666 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`bitmapops.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 586,
+            "relname": "bmscantest",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 598,
+                "typeName": {
+                  "location": 600,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 605,
+                "typeName": {
+                  "location": 607,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "t",
+                "is_local": true,
+                "location": 612,
+                "typeName": {
+                  "location": 614,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "bmscantest",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeFunction": {
+                    "alias": {
+                      "aliasname": "r",
+                    },
+                    "functions": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 1,
+                                      },
+                                      "location": 183,
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 70000,
+                                      },
+                                      "location": 185,
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "generate_series",
+                                    },
+                                  },
+                                ],
+                                "location": 167,
+                              },
+                            },
+                            {},
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 34,
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "r",
+                                },
+                              },
+                            ],
+                            "location": 35,
+                          },
+                        },
+                        "location": 36,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "%",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 53,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 42,
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "r",
+                                },
+                              },
+                            ],
+                            "location": 43,
+                          },
+                        },
+                        "location": 44,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "%",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 59,
+                            },
+                            "location": 45,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 50,
+                    "val": {
+                      "A_Const": {
+                        "location": 50,
+                        "sval": {
+                          "sval": "foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "i_bmtest_a",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "a",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 29,
+            "relname": "bmscantest",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "IndexStmt": {
+          "accessMethod": "btree",
+          "idxname": "i_bmtest_b",
+          "indexParams": [
+            {
+              "IndexElem": {
+                "name": "b",
+                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                "ordering": "SORTBY_DEFAULT",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 28,
+            "relname": "bmscantest",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 175,
+                "sval": {
+                  "sval": "false",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "enable_indexscan",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 20,
+                "sval": {
+                  "sval": "false",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "enable_seqscan",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "ival": {
+                  "ival": 64,
+                },
+                "location": 67,
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "work_mem",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 44,
+                "relname": "bmscantest",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 30,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 30,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 61,
+                      },
+                    },
+                    "location": 63,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 65,
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 71,
+                      },
+                    },
+                    "location": 73,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 75,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "AND_EXPR",
+              "location": 67,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 42,
+                "relname": "bmscantest",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 28,
+                "val": {
+                  "FuncCall": {
+                    "agg_star": true,
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "count",
+                        },
+                      },
+                    ],
+                    "location": 28,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 59,
+                      },
+                    },
+                    "location": 61,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 63,
+                      },
+                    },
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 68,
+                      },
+                    },
+                    "location": 70,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 72,
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "OR_EXPR",
+              "location": 65,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`bitmapops.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "bmscantest",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

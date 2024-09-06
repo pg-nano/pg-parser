@@ -1,0 +1,5320 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returning.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 81,
+            "relname": "foo",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f1",
+                "is_local": true,
+                "location": 86,
+                "typeName": {
+                  "location": 89,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f2",
+                "is_local": true,
+                "location": 97,
+                "typeName": {
+                  "location": 100,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f3",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 113,
+                      "raw_expr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 42,
+                          },
+                          "location": 121,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 106,
+                "typeName": {
+                  "location": 109,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "name": "f2",
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 22,
+                "name": "f3",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 101,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 101,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 104,
+                "name": "sum",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 104,
+                      },
+                    },
+                    "location": 106,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 107,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 36,
+                          "sval": {
+                            "sval": "test",
+                          },
+                        },
+                      },
+                      {
+                        "SetToDefault": {
+                          "location": 44,
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "More",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 11,
+                          },
+                          "location": 63,
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "A_Const": {
+                                "location": 75,
+                                "sval": {
+                                  "sval": "more",
+                                },
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "upper",
+                              },
+                            },
+                          ],
+                          "location": 69,
+                        },
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 7,
+                              },
+                              "location": 84,
+                            },
+                          },
+                          "location": 85,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "+",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 9,
+                              },
+                              "location": 86,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 56,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "foo",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 56,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 63,
+                "name": "sum13",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 63,
+                      },
+                    },
+                    "location": 65,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 66,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 17,
+                "name": "f2",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f2",
+                              },
+                            },
+                          ],
+                          "location": 28,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "lower",
+                        },
+                      },
+                    ],
+                    "location": 22,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 33,
+                "name": "f3",
+                "val": {
+                  "SetToDefault": {
+                    "location": 38,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 41,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "f3",
+                        },
+                      },
+                    ],
+                    "location": 41,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 45,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "f2",
+                        },
+                      },
+                    ],
+                    "location": 45,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 49,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "f1",
+                        },
+                      },
+                    ],
+                    "location": 49,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 53,
+                "val": {
+                  "MinMaxExpr": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 59,
+                        },
+                      },
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f3",
+                              },
+                            },
+                          ],
+                          "location": 62,
+                        },
+                      },
+                    ],
+                    "location": 53,
+                    "op": "IS_LEAST",
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 24,
+                },
+              },
+              "location": 27,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 29,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 63,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 112,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 112,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 115,
+                "name": "subplan",
+                "val": {
+                  "SubLink": {
+                    "location": 122,
+                    "subLinkType": "ANY_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 141,
+                              "relname": "int8_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 133,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "q1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 133,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    "testexpr": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 115,
+                          },
+                        },
+                        "location": 117,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 112,
+                            },
+                            "location": 118,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 167,
+                "name": "initplan",
+                "val": {
+                  "SubLink": {
+                    "location": 167,
+                    "subLinkType": "EXISTS_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 188,
+                              "relname": "int4_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 181,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "A_Star": {},
+                                    },
+                                  ],
+                                  "location": 181,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 96,
+                    "relname": "foo",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 74,
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 74,
+                          },
+                        },
+                        "location": 76,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 77,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 81,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f2",
+                            },
+                          },
+                        ],
+                        "location": 81,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 85,
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f3",
+                                },
+                              },
+                            ],
+                            "location": 85,
+                          },
+                        },
+                        "location": 87,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 99,
+                            },
+                            "location": 88,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 57,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 57,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 60,
+                "name": "subplan",
+                "val": {
+                  "SubLink": {
+                    "location": 67,
+                    "subLinkType": "ANY_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 86,
+                              "relname": "int8_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 78,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "q1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 78,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    "testexpr": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 60,
+                          },
+                        },
+                        "location": 62,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 112,
+                            },
+                            "location": 63,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 112,
+                "name": "initplan",
+                "val": {
+                  "SubLink": {
+                    "location": 112,
+                    "subLinkType": "EXISTS_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 133,
+                              "relname": "int4_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 126,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "A_Star": {},
+                                    },
+                                  ],
+                                  "location": 126,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 17,
+                "name": "f3",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 22,
+                      },
+                    },
+                    "location": 25,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 27,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 37,
+                },
+              },
+              "location": 40,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 10,
+                  },
+                  "location": 42,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 46,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 46,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 49,
+                "name": "subplan",
+                "val": {
+                  "SubLink": {
+                    "location": 56,
+                    "subLinkType": "ANY_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 75,
+                              "relname": "int8_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 67,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "q1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 67,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    "testexpr": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 49,
+                          },
+                        },
+                        "location": 51,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "+",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 112,
+                            },
+                            "location": 52,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 101,
+                "name": "initplan",
+                "val": {
+                  "SubLink": {
+                    "location": 101,
+                    "subLinkType": "EXISTS_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 122,
+                              "relname": "int4_tbl",
+                              "relpersistence": "p",
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 115,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "A_Star": {},
+                                    },
+                                  ],
+                                  "location": 115,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 26,
+                },
+              },
+              "location": 29,
+              "name": [
+                {
+                  "String": {
+                    "sval": ">",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 10,
+                  },
+                  "location": 31,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "i",
+                },
+                "inh": true,
+                "location": 44,
+                "relname": "int4_tbl",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 19,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 98,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "foo",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 98,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 105,
+                "name": "i.f1",
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "i",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "f1",
+                        },
+                      },
+                    ],
+                    "location": 105,
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 27,
+                "name": "f3",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 32,
+                      },
+                    },
+                    "location": 34,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "f1",
+                          },
+                        },
+                      ],
+                      "location": 63,
+                    },
+                  },
+                  "location": 70,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "+",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 123455,
+                      },
+                      "location": 72,
+                    },
+                  },
+                },
+              },
+              "location": 79,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "i",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 80,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "foo",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 80,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 87,
+                "name": "i.f1",
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "i",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "f1",
+                        },
+                      },
+                    ],
+                    "location": 87,
+                  },
+                },
+              },
+            },
+          ],
+          "usingClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "i",
+                },
+                "inh": true,
+                "location": 26,
+                "relname": "int4_tbl",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "A_Expr": {
+                  "kind": "AEXPR_OP",
+                  "lexpr": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "f1",
+                          },
+                        },
+                      ],
+                      "location": 45,
+                    },
+                  },
+                  "location": 52,
+                  "name": [
+                    {
+                      "String": {
+                        "sval": "+",
+                      },
+                    },
+                  ],
+                  "rexpr": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 123455,
+                      },
+                      "location": 54,
+                    },
+                  },
+                },
+              },
+              "location": 61,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "i",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 63,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 76,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 48,
+            "relname": "foochild",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "fc",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 61,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foochild",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 123,
+                          },
+                          "location": 30,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 34,
+                          "sval": {
+                            "sval": "child",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 999,
+                          },
+                          "location": 42,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 46,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 60 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "f4",
+                    "constraints": [
+                      {
+                        "Constraint": {
+                          "contype": "CONSTR_DEFAULT",
+                          "location": 37,
+                          "raw_expr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 99,
+                              },
+                              "location": 45,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "is_local": true,
+                    "location": 29,
+                    "typeName": {
+                      "location": 32,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "foochild",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 54,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 54,
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 17,
+                "name": "f4",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f4",
+                            },
+                          },
+                        ],
+                        "location": 22,
+                      },
+                    },
+                    "location": 25,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 27,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f4",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 39,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 99,
+                  },
+                  "location": 41,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "foochild",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "i",
+                },
+                "inh": true,
+                "location": 34,
+                "relname": "int8_tbl",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 79,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 17,
+                "name": "f3",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f3",
+                            },
+                          },
+                        ],
+                        "location": 22,
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 25,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "foo",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 53,
+                },
+              },
+              "location": 60,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "i",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "q2",
+                      },
+                    },
+                  ],
+                  "location": 62,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 77 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "foochild",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 71,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 71,
+                  },
+                },
+              },
+            },
+          ],
+          "usingClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "i",
+                },
+                "inh": true,
+                "location": 26,
+                "relname": "int8_tbl",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "foo",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 45,
+                },
+              },
+              "location": 52,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "i",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "q2",
+                      },
+                    },
+                  ],
+                  "location": 54,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 83 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "foochild",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 86 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "foochild",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 88 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ViewStmt": {
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeVar": {
+                    "inh": true,
+                    "location": 65,
+                    "relname": "foo",
+                    "relpersistence": "p",
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 53,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 53,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 57,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f2",
+                            },
+                          },
+                        ],
+                        "location": 57,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "view": {
+            "inh": true,
+            "location": 39,
+            "relname": "voo",
+            "relpersistence": "t",
+          },
+          "withCheckOption": "NO_CHECK_OPTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 92 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "InsertStmt": {
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 65,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "selectStmt": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "valuesLists": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "new",
+                                    },
+                                  },
+                                  {
+                                    "A_Star": {},
+                                  },
+                                ],
+                                "location": 76,
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 57,
+                                },
+                                "location": 83,
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_INSERT",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 36,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "rulename": "voo_i",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 11,
+                          },
+                          "location": 25,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 28,
+                          "sval": {
+                            "sval": "zit",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 97 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 23,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 54,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 54,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 57,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 57,
+                      },
+                    },
+                    "location": 59,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 60,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 12,
+                          },
+                          "location": 34,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 37,
+                          "sval": {
+                            "sval": "zoo",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "InsertStmt": {
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 105,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 137,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 137,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "selectStmt": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "valuesLists": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "new",
+                                    },
+                                  },
+                                  {
+                                    "A_Star": {},
+                                  },
+                                ],
+                                "location": 116,
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 57,
+                                },
+                                "location": 123,
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_INSERT",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 76,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "replace": true,
+          "rulename": "voo_i",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "InsertStmt": {
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 76,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 108,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 108,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 112,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f2",
+                              },
+                            },
+                          ],
+                          "location": 112,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "selectStmt": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "valuesLists": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "new",
+                                    },
+                                  },
+                                  {
+                                    "A_Star": {},
+                                  },
+                                ],
+                                "location": 87,
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 57,
+                                },
+                                "location": 94,
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_INSERT",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 47,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "replace": true,
+          "rulename": "voo_i",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 35,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 13,
+                          },
+                          "location": 46,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 49,
+                          "sval": {
+                            "sval": "zit2",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 26,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 58,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 58,
+                  },
+                },
+              },
+            },
+          ],
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 14,
+                          },
+                          "location": 37,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 40,
+                          "sval": {
+                            "sval": "zoo2",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 111 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "voo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 114 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "UpdateStmt": {
+                "relation": {
+                  "inh": true,
+                  "location": 71,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 134,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 134,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 138,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f2",
+                              },
+                            },
+                          ],
+                          "location": 138,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 79,
+                      "name": "f1",
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "new",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 84,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 92,
+                      "name": "f2",
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "new",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "f2",
+                              },
+                            },
+                          ],
+                          "location": 97,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 110,
+                      },
+                    },
+                    "location": 113,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "old",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 115,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_UPDATE",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 47,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "replace": true,
+          "rulename": "voo_u",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 118 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 17,
+                "name": "f1",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 22,
+                      },
+                    },
+                    "location": 25,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 27,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f2",
+                      },
+                    },
+                  ],
+                  "location": 35,
+                },
+              },
+              "location": 38,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 40,
+                  "sval": {
+                    "sval": "zoo2",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 120 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 56,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 56,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 59,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 59,
+                      },
+                    },
+                    "location": 61,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 62,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 16,
+                "name": "f1",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 21,
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 26,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f2",
+                      },
+                    },
+                  ],
+                  "location": 34,
+                },
+              },
+              "location": 37,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 39,
+                  "sval": {
+                    "sval": "zoo2",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "voo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 124 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "DeleteStmt": {
+                "relation": {
+                  "inh": true,
+                  "location": 76,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 110,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 110,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 114,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "f2",
+                              },
+                            },
+                          ],
+                          "location": 114,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 86,
+                      },
+                    },
+                    "location": 89,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "old",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 91,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_DELETE",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 47,
+            "relname": "voo",
+            "relpersistence": "p",
+          },
+          "replace": true,
+          "rulename": "voo_d",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f1",
+                      },
+                    },
+                  ],
+                  "location": 24,
+                },
+              },
+              "location": 27,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 13,
+                  },
+                  "location": 29,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 130 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 44,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 44,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f2",
+                      },
+                    },
+                  ],
+                  "location": 23,
+                },
+              },
+              "location": 26,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 28,
+                  "sval": {
+                    "sval": "zit",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 131 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 133 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "voo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 134 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 40,
+            "relname": "joinme",
+            "relpersistence": "t",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f2j",
+                "is_local": true,
+                "location": 48,
+                "typeName": {
+                  "location": 52,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "other",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 64,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "joinme",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "more",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 12345,
+                          },
+                          "location": 35,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 139 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "joinme",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "zoo2",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 54321,
+                          },
+                          "location": 35,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "joinme",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 27,
+                          "sval": {
+                            "sval": "other",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 36,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 141 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "ViewStmt": {
+          "query": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "JoinExpr": {
+                    "jointype": "JOIN_INNER",
+                    "larg": {
+                      "RangeVar": {
+                        "inh": true,
+                        "location": 58,
+                        "relname": "foo",
+                        "relpersistence": "p",
+                      },
+                    },
+                    "quals": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f2",
+                                },
+                              },
+                            ],
+                            "location": 78,
+                          },
+                        },
+                        "location": 81,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "=",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f2j",
+                                },
+                              },
+                            ],
+                            "location": 83,
+                          },
+                        },
+                      },
+                    },
+                    "rarg": {
+                      "RangeVar": {
+                        "inh": true,
+                        "location": 67,
+                        "relname": "joinme",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 40,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "foo",
+                            },
+                          },
+                          {
+                            "A_Star": {},
+                          },
+                        ],
+                        "location": 40,
+                      },
+                    },
+                  },
+                },
+                {
+                  "ResTarget": {
+                    "location": 47,
+                    "val": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "other",
+                            },
+                          },
+                        ],
+                        "location": 47,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "view": {
+            "inh": true,
+            "location": 19,
+            "relname": "joinview",
+            "relpersistence": "t",
+          },
+          "withCheckOption": "NO_CHECK_OPTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 144 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "joinview",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 146 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RuleStmt": {
+          "actions": [
+            {
+              "UpdateStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 112,
+                      "relname": "joinme",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 70,
+                  "relname": "foo",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 164,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "foo",
+                              },
+                            },
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 164,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 171,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "other",
+                              },
+                            },
+                          ],
+                          "location": 171,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 78,
+                      "name": "f1",
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "new",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "f1",
+                              },
+                            },
+                          ],
+                          "location": 83,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 91,
+                      "name": "f3",
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "new",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "f3",
+                              },
+                            },
+                          ],
+                          "location": 96,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "f2",
+                                  },
+                                },
+                              ],
+                              "location": 125,
+                            },
+                          },
+                          "location": 128,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "f2j",
+                                  },
+                                },
+                              ],
+                              "location": 130,
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "f2",
+                                  },
+                                },
+                              ],
+                              "location": 138,
+                            },
+                          },
+                          "location": 141,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "old",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "f2",
+                                  },
+                                },
+                              ],
+                              "location": 143,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "boolop": "AND_EXPR",
+                    "location": 134,
+                  },
+                },
+              },
+            },
+          ],
+          "event": "CMD_UPDATE",
+          "instead": true,
+          "relation": {
+            "inh": true,
+            "location": 41,
+            "relname": "joinview",
+            "relpersistence": "p",
+          },
+          "rulename": "joinview_u",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 9,
+            "relname": "joinview",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 58,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 58,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 61,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "other",
+                            },
+                          },
+                        ],
+                        "location": 61,
+                      },
+                    },
+                    "location": 67,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 69,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 22,
+                "name": "f1",
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "f1",
+                            },
+                          },
+                        ],
+                        "location": 27,
+                      },
+                    },
+                    "location": 30,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 32,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "f3",
+                      },
+                    },
+                  ],
+                  "location": 40,
+                },
+              },
+              "location": 43,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 57,
+                  },
+                  "location": 45,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 153 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "joinview",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "foo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 156 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "voo",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 157 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "alias": {
+              "aliasname": "bar",
+            },
+            "inh": true,
+            "location": 47,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 83,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 83,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "alias": {
+              "aliasname": "bar",
+            },
+            "inh": true,
+            "location": 19,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 55,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "foo",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 55,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 160 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "alias": {
+              "aliasname": "bar",
+            },
+            "inh": true,
+            "location": 34,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 70,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "bar",
+                        },
+                      },
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 70,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`returning.sql > line 161 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "alias": {
+              "aliasname": "bar",
+            },
+            "inh": true,
+            "location": 19,
+            "relname": "foo",
+            "relpersistence": "p",
+          },
+          "returningList": [
+            {
+              "ResTarget": {
+                "location": 55,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "bar",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "f3",
+                        },
+                      },
+                    ],
+                    "location": 55,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

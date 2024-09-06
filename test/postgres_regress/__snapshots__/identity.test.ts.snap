@@ -1,0 +1,5985 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`identity.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 77,
+                "relname": "pg_attribute",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 41,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "attrelid",
+                        },
+                      },
+                    ],
+                    "location": 41,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 51,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "attname",
+                        },
+                      },
+                    ],
+                    "location": 51,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 60,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "attidentity",
+                        },
+                      },
+                    ],
+                    "location": 60,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_IN",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "attidentity",
+                      },
+                    },
+                  ],
+                  "location": 96,
+                },
+              },
+              "location": 108,
+              "name": [
+                {
+                  "String": {
+                    "sval": "<>",
+                  },
+                },
+              ],
+              "rexpr": {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 116,
+                        "sval": {
+                          "sval": "",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 120,
+                        "sval": {
+                          "sval": "a",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 125,
+                        "sval": {
+                          "sval": "d",
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 3 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 16,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 30,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 24,
+                "typeName": {
+                  "location": 26,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 64,
+                "typeName": {
+                  "location": 66,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 6 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 31,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 22,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 61,
+                "typeName": {
+                  "location": 63,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 7 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 33,
+                      "options": [
+                        {
+                          "DefElem": {
+                            "arg": {
+                              "Integer": {
+                                "ival": 7,
+                              },
+                            },
+                            "defaction": "DEFELEM_UNSPEC",
+                            "defname": "start",
+                            "location": 67,
+                          },
+                        },
+                        {
+                          "DefElem": {
+                            "arg": {
+                              "Integer": {
+                                "ival": 5,
+                              },
+                            },
+                            "defaction": "DEFELEM_UNSPEC",
+                            "defname": "increment",
+                            "location": 80,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 22,
+                "typeName": {
+                  "location": 24,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int2",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 97,
+                "typeName": {
+                  "location": 99,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "a",
+                    "location": 39,
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 8 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 199,
+                "relname": "columns",
+                "relpersistence": "p",
+                "schemaname": "information_schema",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 266,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 269,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "table_name",
+                        },
+                      },
+                    ],
+                    "location": 19,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 31,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "column_name",
+                        },
+                      },
+                    ],
+                    "location": 31,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 44,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "column_default",
+                        },
+                      },
+                    ],
+                    "location": 44,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 60,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "is_nullable",
+                        },
+                      },
+                    ],
+                    "location": 60,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 73,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "is_identity",
+                        },
+                      },
+                    ],
+                    "location": 73,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 86,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_generation",
+                        },
+                      },
+                    ],
+                    "location": 86,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 107,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_start",
+                        },
+                      },
+                    ],
+                    "location": 107,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 123,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_increment",
+                        },
+                      },
+                    ],
+                    "location": 123,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 143,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_maximum",
+                        },
+                      },
+                    ],
+                    "location": 143,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 161,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_minimum",
+                        },
+                      },
+                    ],
+                    "location": 161,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 179,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "identity_cycle",
+                        },
+                      },
+                    ],
+                    "location": 179,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_LIKE",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "table_name",
+                      },
+                    },
+                  ],
+                  "location": 232,
+                },
+              },
+              "location": 243,
+              "name": [
+                {
+                  "String": {
+                    "sval": "~~",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 248,
+                  "sval": {
+                    "sval": "itest_",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 75,
+                "relname": "sequences",
+                "relpersistence": "p",
+                "schemaname": "information_schema",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 56,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "sequence_name",
+                        },
+                      },
+                    ],
+                    "location": 56,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_LIKE",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "sequence_name",
+                      },
+                    },
+                  ],
+                  "location": 110,
+                },
+              },
+              "location": 124,
+              "name": [
+                {
+                  "String": {
+                    "sval": "~~",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 129,
+                  "sval": {
+                    "sval": "itest%",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "itest1",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 42,
+                          "sval": {
+                            "sval": "a",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_get_serial_sequence",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 16 1`] = `[Error: syntax error at or near "\\"]`;
+
+exports[`identity.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "a",
+                    "location": 39,
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 20 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "a",
+                "subtype": "AT_SetNotNull",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 42,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "a",
+                    "location": 39,
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 22 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "a",
+                "subtype": "AT_DropNotNull",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 20,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "a",
+                    "location": 61,
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 35,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "a",
+                    "location": 62,
+                  },
+                },
+                "name": "b",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 36,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "A_Const": {
+                    "location": 88,
+                    "sval": {
+                      "sval": "",
+                    },
+                  },
+                },
+                "name": "b",
+                "subtype": "AT_ColumnDefault",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 54,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 38,
+            "relname": "itest_err_1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 58,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 51,
+                "typeName": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 32 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 37,
+            "relname": "itest_err_2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 56,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 85,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 50,
+                "typeName": {
+                  "location": 52,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 51,
+            "relname": "itest_err_3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_DEFAULT",
+                      "location": 70,
+                      "raw_expr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 5,
+                          },
+                          "location": 78,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 80,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 64,
+                "typeName": {
+                  "location": 66,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 53,
+            "relname": "itest_err_4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 75,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 66,
+                "typeName": {
+                  "location": 68,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 44 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 46 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 47 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest4",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 50 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 52 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "itest2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 53 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "itest3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "itest4",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 32,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 46,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 40,
+                "typeName": {
+                  "location": 42,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 76,
+                "typeName": {
+                  "location": 78,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 60 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 28,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 31,
+                          "sval": {
+                            "sval": "a",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 60 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 23,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 38,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "a",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 20,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 35,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 45,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 48,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 23,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 38,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 54,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 23,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 38,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 41,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 48,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 57,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 64 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 23,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 38,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 54,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 63,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 21,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 60,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 64,
+                          "sval": {
+                            "sval": "aa",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 68 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "bb",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 64,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 68,
+                          "sval": {
+                            "sval": "cc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 61,
+                          "sval": {
+                            "sval": "dd",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 69,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 73,
+                          "sval": {
+                            "sval": "ee",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 56,
+                          "sval": {
+                            "sval": "ff",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 64,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 73,
+                          "sval": {
+                            "sval": "gg",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 71 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 52,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 61,
+                          "sval": {
+                            "sval": "hh",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 69,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 78,
+                          "sval": {
+                            "sval": "ii",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 72 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 51,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 55,
+                          "sval": {
+                            "sval": "aaa",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 74 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 54,
+                          "sval": {
+                            "sval": "bbb",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 63,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 67,
+                          "sval": {
+                            "sval": "ccc",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 59,
+                          "sval": {
+                            "sval": "ddd",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 68,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 72,
+                          "sval": {
+                            "sval": "eee",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 76 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 54,
+                          "sval": {
+                            "sval": "fff",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 63,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 72,
+                          "sval": {
+                            "sval": "ggg",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 77 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest5",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 50,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 59,
+                          "sval": {
+                            "sval": "hhh",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 68,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 77,
+                          "sval": {
+                            "sval": "iii",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest5",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 80 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest5",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 29,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "a",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 83 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest3",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 28,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 37,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 44,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 53,
+                          "sval": {
+                            "sval": "c",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest3",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 86 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 99,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 114,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 118,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 234,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 20,
+                          },
+                          "location": 273,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 277,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 73,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 30,
+                          },
+                          "location": 110,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 114,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 101 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 56,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 71,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 75,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 108 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_SYSTEM_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 51,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 20,
+                          },
+                          "location": 90,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 94,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 110 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_USER_VALUE",
+          "relation": {
+            "inh": true,
+            "location": 73,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 30,
+                          },
+                          "location": 110,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 114,
+                          "sval": {
+                            "sval": "xyz",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 114 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 70,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 81,
+                "name": "a",
+                "val": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 101,
+                    },
+                    "location": 85,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 95,
+                },
+              },
+              "location": 97,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 99,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 120 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 8,
+            "relname": "itest1",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 19,
+                "name": "a",
+                "val": {
+                  "SetToDefault": {
+                    "location": 23,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 37,
+                },
+              },
+              "location": 39,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 41,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "itest1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 122 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 50,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 61,
+                "name": "a",
+                "val": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 101,
+                    },
+                    "location": 65,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 75,
+                },
+              },
+              "location": 77,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 79,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 124 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "UpdateStmt": {
+          "relation": {
+            "inh": true,
+            "location": 18,
+            "relname": "itest2",
+            "relpersistence": "p",
+          },
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 29,
+                "name": "a",
+                "val": {
+                  "SetToDefault": {
+                    "location": 33,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 47,
+                },
+              },
+              "location": 49,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
+                  },
+                  "location": 51,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 125 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 22,
+                "relname": "itest2",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 15,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 15,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 31,
+            "relname": "itest9",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 45,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 75,
+                "typeName": {
+                  "location": 77,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "c",
+                "is_local": true,
+                "location": 83,
+                "typeName": {
+                  "location": 85,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CopyStmt": {
+          "is_from": true,
+          "relation": {
+            "inh": true,
+            "location": 7,
+            "relname": "itest9",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 133 1`] = `[Error: syntax error at or near "itest8_f5_seq"]`;
+
+exports[`identity.sql > line 135 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "f1",
+                "is_local": true,
+                "location": 73,
+                "typeName": {
+                  "location": 76,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f2",
+                "is_local": true,
+                "location": 85,
+                "typeName": {
+                  "location": 88,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f3",
+                "is_local": true,
+                "location": 94,
+                "typeName": {
+                  "location": 97,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 58,
+            "relname": "itest_type",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 25,
+            "names": [
+              {
+                "String": {
+                  "sval": "itest_type",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest12",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f1",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 53,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 37,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 140 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "TypeName": {
+                "location": 20,
+                "names": [
+                  {
+                    "String": {
+                      "sval": "itest_type",
+                    },
+                  },
+                ],
+                "typemod": -1,
+              },
+            },
+          ],
+          "removeType": "OBJECT_TYPE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 142 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "partspec": {
+            "location": 115,
+            "partParams": [
+              {
+                "PartitionElem": {
+                  "location": 135,
+                  "name": "f1",
+                },
+              },
+            ],
+            "strategy": "PARTITION_STRATEGY_RANGE",
+          },
+          "relation": {
+            "inh": true,
+            "location": 63,
+            "relname": "itest_parent",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f1",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 85,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 77,
+                "typeName": {
+                  "location": 80,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "date",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f2",
+                "is_local": true,
+                "location": 95,
+                "typeName": {
+                  "location": 98,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "f3",
+                "is_local": true,
+                "location": 104,
+                "typeName": {
+                  "location": 107,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 147 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "itest_parent",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 116,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "location": 122,
+                  "sval": {
+                    "sval": "2016-07-01",
+                  },
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "location": 140,
+                  "sval": {
+                    "sval": "2016-08-01",
+                  },
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest_child",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "f3",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 74,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 58,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 149 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest_parent",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 89,
+            "relname": "itest14",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 98,
+                "typeName": {
+                  "location": 101,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 156 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "id",
+                "subtype": "AT_ColumnDefault",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest14",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 157 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "Constraint": {
+                    "contype": "CONSTR_IDENTITY",
+                    "generated_when": "d",
+                    "location": 34,
+                  },
+                },
+                "name": "id",
+                "subtype": "AT_AddIdentity",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest14",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "cols": [
+            {
+              "ResTarget": {
+                "location": 22,
+                "name": "id",
+              },
+            },
+          ],
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "itest14",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "SetToDefault": {
+                          "location": 34,
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 159 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 69,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 89,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NULL",
+                      "location": 118,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 78,
+                "typeName": {
+                  "location": 81,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 162 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 22,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NULL",
+                      "location": 42,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 47,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 31,
+                "typeName": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 163 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 22,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 42,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 71,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 31,
+                "typeName": {
+                  "location": 34,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 165 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest15",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 166 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_NOTNULL",
+                      "location": 34,
+                    },
+                  },
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 43,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 23,
+                "typeName": {
+                  "location": 26,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 167 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest15",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 168 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 30,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "a",
+                      "location": 45,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 39,
+                "typeName": {
+                  "location": 41,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 75,
+                "typeName": {
+                  "location": 77,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 171 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "itest16",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_IDENTITY",
+                      "generated_when": "d",
+                      "location": 29,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 23,
+                "typeName": {
+                  "location": 25,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 63,
+                "typeName": {
+                  "location": 65,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 172 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+              "location": 85,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 87,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_NOT_SET",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 124,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 127,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 138,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 145,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 13,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 37,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 48,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 178 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 151,
+                },
+              },
+              "location": 155,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 157,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_USER_VALUE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 194,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 197,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 230,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 237,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 83,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 107,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 20,
+                            },
+                            "location": 107,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 118,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 118,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 185 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+              "location": 85,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 87,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_SYSTEM_VALUE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 124,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 127,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 162,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 169,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 13,
+            "relname": "itest15",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 37,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 30,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 48,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 191 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+              "location": 85,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 87,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_NOT_SET",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 124,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 127,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 138,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 145,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 13,
+            "relname": "itest16",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 37,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 48,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 197 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+              "location": 85,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 87,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_USER_VALUE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 124,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 127,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 160,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 167,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 13,
+            "relname": "itest16",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 37,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 20,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 48,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 203 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "MergeStmt": {
+          "joinCondition": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "t",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "a",
+                      },
+                    },
+                  ],
+                  "location": 81,
+                },
+              },
+              "location": 85,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "s",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "s_a",
+                      },
+                    },
+                  ],
+                  "location": 87,
+                },
+              },
+            },
+          },
+          "mergeWhenClauses": [
+            {
+              "MergeWhenClause": {
+                "commandType": "CMD_INSERT",
+                "override": "OVERRIDING_SYSTEM_VALUE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 124,
+                      "name": "a",
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 127,
+                      "name": "b",
+                    },
+                  },
+                ],
+                "values": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_a",
+                          },
+                        },
+                      ],
+                      "location": 162,
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "s",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "s_b",
+                          },
+                        },
+                      ],
+                      "location": 169,
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "relation": {
+            "alias": {
+              "aliasname": "t",
+            },
+            "inh": true,
+            "location": 13,
+            "relname": "itest16",
+            "relpersistence": "p",
+          },
+          "sourceRelation": {
+            "RangeSubselect": {
+              "alias": {
+                "aliasname": "s",
+              },
+              "subquery": {
+                "SelectStmt": {
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 37,
+                        "name": "s_a",
+                        "val": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 30,
+                            },
+                            "location": 37,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 48,
+                        "name": "s_b",
+                        "val": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "inserted by merge",
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "itest15",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 211 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "itest16",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 212 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest15",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`identity.sql > line 213 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "itest16",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

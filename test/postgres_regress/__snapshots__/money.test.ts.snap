@@ -1,0 +1,5951 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`money.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 86,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "m",
+                "is_local": true,
+                "location": 98,
+                "typeName": {
+                  "location": 100,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "money",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 8 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 33,
+                          "sval": {
+                            "sval": "123",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 10 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 11 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 23,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "123",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "+",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "123.45",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 13 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 26,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "-",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "123.45",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 14 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 12,
+                            "sval": {
+                              "sval": "2",
+                            },
+                          },
+                        },
+                        "location": 15,
+                        "typeName": {
+                          "location": 17,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 19,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 12,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 16 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 19,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 12,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 17 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 19,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 12,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 18 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int2",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 9,
+                        "typeName": {
+                          "location": 11,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int2",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 16,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 18,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 20 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int2",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 21 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 22 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 9,
+                        "typeName": {
+                          "location": 11,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 16,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 18,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 25,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 24 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 25 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 9,
+                        "typeName": {
+                          "location": 11,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 18,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 20,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 26 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 28 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 9,
+                        "typeName": {
+                          "location": 11,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 18,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "*",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 20,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 29 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 12,
+                          },
+                        },
+                        "location": 13,
+                        "typeName": {
+                          "location": 15,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 30 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 40,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 21,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 21,
+                      },
+                    },
+                    "location": 23,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 25,
+                        "sval": {
+                          "sval": "$123.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 33 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<>",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$124.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 34 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$123.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$123.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 36 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "$124.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 37 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "$122.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 38 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 41,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 22,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 22,
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 26,
+                        "sval": {
+                          "sval": "$123.01",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 41 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<>",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$123.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 42 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$122.99",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 43 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 28,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 13,
+                        "sval": {
+                          "sval": "$123.01",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 44 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "$124.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "m",
+                            },
+                          },
+                        ],
+                        "location": 8,
+                      },
+                    },
+                    "location": 10,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 12,
+                        "sval": {
+                          "sval": "$122.00",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 46 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "m",
+                              },
+                            },
+                          ],
+                          "location": 20,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "$124.00",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cashlarger",
+                        },
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 48 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 39,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "m",
+                              },
+                            },
+                          ],
+                          "location": 20,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "$124.00",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cashsmaller",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 49 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 27,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "m",
+                              },
+                            },
+                          ],
+                          "location": 19,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cash_words",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 50 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 36,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "m",
+                                  },
+                                },
+                              ],
+                              "location": 19,
+                            },
+                          },
+                          "location": 21,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "+",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "location": 23,
+                              "sval": {
+                                "sval": "1.23",
+                              },
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "cash_words",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 51 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 53 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.45",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 54 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 57 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.451",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 58 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 59 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 61 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.454",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 62 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 63 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.455",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 66 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 67 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 69 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.456",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 71 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 73 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "money_data",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 32,
+                          "sval": {
+                            "sval": "$123.459",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 74 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "money_data",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 75 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 25,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 25,
+                        "sval": {
+                          "sval": "1234567890",
+                        },
+                      },
+                    },
+                    "location": 37,
+                    "typeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 78 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "12345678901234567",
+                        },
+                      },
+                    },
+                    "location": 27,
+                    "typeName": {
+                      "location": 29,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 79 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "123456789012345678",
+                        },
+                      },
+                    },
+                    "location": 28,
+                    "typeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 80 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "9223372036854775807",
+                        },
+                      },
+                    },
+                    "location": 29,
+                    "typeName": {
+                      "location": 31,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 81 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "-12345",
+                        },
+                      },
+                    },
+                    "location": 16,
+                    "typeName": {
+                      "location": 18,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 82 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "-1234567890",
+                        },
+                      },
+                    },
+                    "location": 21,
+                    "typeName": {
+                      "location": 23,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 83 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "-12345678901234567",
+                        },
+                      },
+                    },
+                    "location": 28,
+                    "typeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "-123456789012345678",
+                        },
+                      },
+                    },
+                    "location": 29,
+                    "typeName": {
+                      "location": 31,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 85 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "-9223372036854775808",
+                        },
+                      },
+                    },
+                    "location": 30,
+                    "typeName": {
+                      "location": 32,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 86 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 31,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 31,
+                        "sval": {
+                          "sval": "(1)",
+                        },
+                      },
+                    },
+                    "location": 36,
+                    "typeName": {
+                      "location": 38,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 89 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "($123,456.78)",
+                        },
+                      },
+                    },
+                    "location": 23,
+                    "typeName": {
+                      "location": 25,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 40,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 58,
+                          "sval": {
+                            "sval": "\\x0001",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 68,
+                          "sval": {
+                            "sval": "money",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_input_is_valid",
+                        },
+                      },
+                    ],
+                    "location": 40,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 93 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "location": 35,
+                                  "sval": {
+                                    "sval": "\\x0001",
+                                  },
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "location": 45,
+                                  "sval": {
+                                    "sval": "money",
+                                  },
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "pg_input_error_info",
+                                },
+                              },
+                            ],
+                            "location": 15,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 26,
+                          "sval": {
+                            "sval": "192233720368547758.07",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 51,
+                          "sval": {
+                            "sval": "money",
+                          },
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_input_is_valid",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 95 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeFunction": {
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "location": 35,
+                                  "sval": {
+                                    "sval": "192233720368547758.07",
+                                  },
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "location": 60,
+                                  "sval": {
+                                    "sval": "money",
+                                  },
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "pg_input_error_info",
+                                },
+                              },
+                            ],
+                            "location": 15,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 96 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 45,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 45,
+                        "sval": {
+                          "sval": "-92233720368547758.08",
+                        },
+                      },
+                    },
+                    "location": 68,
+                    "typeName": {
+                      "location": 70,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "92233720368547758.07",
+                        },
+                      },
+                    },
+                    "location": 30,
+                    "typeName": {
+                      "location": 32,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 9,
+                        "sval": {
+                          "sval": "-92233720368547758.09",
+                        },
+                      },
+                    },
+                    "location": 32,
+                    "typeName": {
+                      "location": 34,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 102 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "92233720368547758.08",
+                        },
+                      },
+                    },
+                    "location": 30,
+                    "typeName": {
+                      "location": 32,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 21,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 21,
+                        "sval": {
+                          "sval": "-92233720368547758.085",
+                        },
+                      },
+                    },
+                    "location": 45,
+                    "typeName": {
+                      "location": 47,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 8,
+                        "sval": {
+                          "sval": "92233720368547758.075",
+                        },
+                      },
+                    },
+                    "location": 31,
+                    "typeName": {
+                      "location": 33,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 107 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 48,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 48,
+                            "sval": {
+                              "sval": "878.08",
+                            },
+                          },
+                        },
+                        "location": 56,
+                        "typeName": {
+                          "location": 58,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 64,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 11,
+                            },
+                            "location": 66,
+                          },
+                        },
+                        "location": 68,
+                        "typeName": {
+                          "location": 70,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 110 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "878.08",
+                            },
+                          },
+                        },
+                        "location": 16,
+                        "typeName": {
+                          "location": 18,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 11,
+                            },
+                            "location": 26,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "float4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 111 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "878.08",
+                            },
+                          },
+                        },
+                        "location": 16,
+                        "typeName": {
+                          "location": 18,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 11,
+                            },
+                            "location": 26,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "878.08",
+                            },
+                          },
+                        },
+                        "location": 16,
+                        "typeName": {
+                          "location": 18,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 11,
+                            },
+                            "location": 26,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 113 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "878.08",
+                            },
+                          },
+                        },
+                        "location": 16,
+                        "typeName": {
+                          "location": 18,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 24,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 11,
+                            },
+                            "location": 26,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int2",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 114 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 49,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 49,
+                            "sval": {
+                              "sval": "90000000000000099.00",
+                            },
+                          },
+                        },
+                        "location": 71,
+                        "typeName": {
+                          "location": 73,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 79,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 81,
+                          },
+                        },
+                        "location": 83,
+                        "typeName": {
+                          "location": 85,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 117 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "90000000000000099.00",
+                            },
+                          },
+                        },
+                        "location": 30,
+                        "typeName": {
+                          "location": 32,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 38,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 40,
+                          },
+                        },
+                        "location": 42,
+                        "typeName": {
+                          "location": 44,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 118 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "90000000000000099.00",
+                            },
+                          },
+                        },
+                        "location": 30,
+                        "typeName": {
+                          "location": 32,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 38,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 40,
+                          },
+                        },
+                        "location": 42,
+                        "typeName": {
+                          "location": 44,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int2",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 119 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 44,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1234567890,
+                        },
+                        "location": 44,
+                      },
+                    },
+                    "location": 54,
+                    "typeName": {
+                      "location": 56,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 122 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "fval": {
+                          "fval": "12345678901234567",
+                        },
+                        "location": 8,
+                      },
+                    },
+                    "location": 25,
+                    "typeName": {
+                      "location": 27,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 123 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 9,
+                      },
+                    },
+                    "location": 16,
+                    "typeName": {
+                      "location": 18,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 124 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 9,
+                      },
+                    },
+                    "location": 21,
+                    "typeName": {
+                      "location": 23,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 125 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "fval": {
+                          "fval": "-12345678901234567",
+                        },
+                        "location": 9,
+                      },
+                    },
+                    "location": 28,
+                    "typeName": {
+                      "location": 30,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 126 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1234567890,
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 18,
+                        "typeName": {
+                          "location": 20,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 24,
+                    "typeName": {
+                      "location": 26,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 127 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "fval": {
+                              "fval": "12345678901234567",
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 25,
+                        "typeName": {
+                          "location": 27,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 31,
+                    "typeName": {
+                      "location": 33,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "fval": {
+                              "fval": "12345678901234567",
+                            },
+                            "location": 8,
+                          },
+                        },
+                        "location": 25,
+                        "typeName": {
+                          "location": 27,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "numeric",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 34,
+                    "typeName": {
+                      "location": 36,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 129 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "ival": {},
+                            "location": 9,
+                          },
+                        },
+                        "location": 21,
+                        "typeName": {
+                          "location": 23,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 27,
+                    "typeName": {
+                      "location": 29,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 130 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "fval": {
+                              "fval": "-12345678901234567",
+                            },
+                            "location": 9,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "int8",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 34,
+                    "typeName": {
+                      "location": 36,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 131 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "fval": {
+                              "fval": "-12345678901234567",
+                            },
+                            "location": 9,
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "numeric",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 37,
+                    "typeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "money",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 39,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 39,
+                            "sval": {
+                              "sval": "12345678901234567",
+                            },
+                          },
+                        },
+                        "location": 58,
+                        "typeName": {
+                          "location": 60,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 65,
+                    "typeName": {
+                      "location": 67,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 135 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "-12345678901234567",
+                            },
+                          },
+                        },
+                        "location": 28,
+                        "typeName": {
+                          "location": 30,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 35,
+                    "typeName": {
+                      "location": 37,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 136 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "92233720368547758.07",
+                            },
+                          },
+                        },
+                        "location": 30,
+                        "typeName": {
+                          "location": 32,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 37,
+                    "typeName": {
+                      "location": 39,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`money.sql > line 137 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "TypeCast": {
+                    "arg": {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 8,
+                            "sval": {
+                              "sval": "-92233720368547758.08",
+                            },
+                          },
+                        },
+                        "location": 31,
+                        "typeName": {
+                          "location": 33,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "money",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    "location": 38,
+                    "typeName": {
+                      "location": 40,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;

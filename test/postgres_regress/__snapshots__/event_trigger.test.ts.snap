@@ -1,0 +1,7527 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`event_trigger.sql > line 1 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "pg_backend_pid",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 5 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+    RAISE NOTICE 'test_event_trigger: % %', tg_event, tg_tag;
+END
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 67,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 148,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 53,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 12 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 59,
+                "val": {
+                  "FuncCall": {
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "test_event_trigger",
+                        },
+                      },
+                    ],
+                    "location": 59,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 15 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger_arg",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " BEGIN RETURN 1; END ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 136,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 165,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 108,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+                "name": "name",
+              },
+            },
+          ],
+          "returnType": {
+            "location": 122,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 19 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger_sql",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+SELECT 1 ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 120,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "sql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 138,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 106,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 23 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "elephant_bootstrap",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 27 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 31 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_end",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger_end",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 35 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "sandwich",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "food",
+                "location": 127,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 40 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "sandwich",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 127,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 45 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "create table",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "create skunkcabbage",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 138,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 50 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "DROP EVENT TRIGGER",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 135,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 55 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE ROLE",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 135,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 60 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE DATABASE",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 135,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 65 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE TABLESPACE",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 135,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 70 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "create table",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 129,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE FUNCTION",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 157,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 75 1`] = `[Error: syntax error at or near "'argument not allowed'"]`;
+
+exports[`event_trigger.sql > line 79 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger2",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "create table",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "CREATE FUNCTION",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 81,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 84 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "test comment",
+          "object": {
+            "String": {
+              "sval": "regress_event_trigger",
+            },
+          },
+          "objtype": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 87 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateRoleStmt": {
+          "role": "regress_evt_user",
+          "stmt_type": "ROLESTMT_ROLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 90 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 10,
+                "sval": {
+                  "sval": "regress_evt_user",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 91 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_event_trigger",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger_noperms",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 93 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 94 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterEventTrigStmt": {
+          "tgenabled": "D",
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 97 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 80,
+            "relname": "event_trigger_fire1",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 101,
+                "typeName": {
+                  "location": 103,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 99 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterEventTrigStmt": {
+          "tgenabled": "O",
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 100 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 32,
+                "sval": {
+                  "sval": "replica",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_replication_role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 101 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 31,
+            "relname": "event_trigger_fire2",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 52,
+                "typeName": {
+                  "location": 54,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 103 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterEventTrigStmt": {
+          "tgenabled": "R",
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 104 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 37,
+            "relname": "event_trigger_fire3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 60,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 106 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterEventTrigStmt": {
+          "tgenabled": "A",
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 107 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 37,
+            "relname": "event_trigger_fire4",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 58,
+                "typeName": {
+                  "location": 60,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 109 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "session_replication_role",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 110 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 33,
+            "relname": "event_trigger_fire5",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 54,
+                "typeName": {
+                  "location": 56,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 112 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "f1",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 59,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+begin
+  create table event_trigger_fire6 (a int);
+  return 0;
+end ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 76,
+              },
+            },
+          ],
+          "returnType": {
+            "location": 55,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 120 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "FuncCall": {
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "f1",
+                        },
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 121 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "p1",
+              },
+            },
+          ],
+          "is_procedure": true,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 48,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+begin
+  create table event_trigger_fire7 (a int);
+end ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 65,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 128 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CallStmt": {
+          "funccall": {
+            "funcformat": "COERCE_EXPLICIT_CALL",
+            "funcname": [
+              {
+                "String": {
+                  "sval": "p1",
+                },
+              },
+            ],
+            "location": 6,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 129 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterEventTrigStmt": {
+          "tgenabled": "D",
+          "trigname": "regress_event_trigger",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 132 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire2",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire3",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire4",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire5",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire6",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire7",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 133 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "f1",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "p1",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_ROUTINE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 134 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 103,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "is_grant": true,
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 80,
+                "relname": "event_trigger_fire1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 137 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CommentStmt": {
+          "comment": "here is a comment",
+          "object": {
+            "List": {
+              "items": [
+                {
+                  "String": {
+                    "sval": "event_trigger_fire1",
+                  },
+                },
+              ],
+            },
+          },
+          "objtype": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 138 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "GrantStmt": {
+          "behavior": "DROP_RESTRICT",
+          "grantees": [
+            {
+              "RoleSpec": {
+                "location": 46,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "objects": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 21,
+                "relname": "event_trigger_fire1",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "targtype": "ACL_TARGET_OBJECT",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 139 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_fire1",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 140 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFdwStmt": {
+          "fdwname": "useless",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 141 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateForeignServerStmt": {
+          "fdwname": "useless",
+          "servername": "useless_server",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 142 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateUserMappingStmt": {
+          "servername": "useless_server",
+          "user": {
+            "location": 25,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 143 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterDefaultPrivilegesStmt": {
+          "action": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 82,
+                  "rolename": "regress_evt_user",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "delete",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_DEFAULTS",
+          },
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "RoleSpec": {
+                          "location": 35,
+                          "rolename": "regress_evt_user",
+                          "roletype": "ROLESPEC_CSTRING",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "roles",
+                "location": 26,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 145 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterOwnerStmt": {
+          "newowner": {
+            "location": 97,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "object": {
+            "String": {
+              "sval": "regress_event_trigger",
+            },
+          },
+          "objectType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 148 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterRoleStmt": {
+          "action": 1,
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": true,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "superuser",
+                "location": 70,
+              },
+            },
+          ],
+          "role": {
+            "location": 53,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 151 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterOwnerStmt": {
+          "newowner": {
+            "location": 52,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "object": {
+            "String": {
+              "sval": "regress_event_trigger",
+            },
+          },
+          "objectType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 152 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "regress_event_trigger2",
+          "object": {
+            "String": {
+              "sval": "regress_event_trigger",
+            },
+          },
+          "relationType": "OBJECT_ACCESS_METHOD",
+          "renameType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 155 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "regress_event_trigger3",
+          "object": {
+            "String": {
+              "sval": "regress_event_trigger",
+            },
+          },
+          "relationType": "OBJECT_ACCESS_METHOD",
+          "renameType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 158 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 161 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 63,
+                "rolename": "regress_evt_user",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 164 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger2",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 168 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "missing_ok": true,
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger2",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 169 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger3",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 170 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger_end",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 171 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 77,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaname": "schema_one",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 174 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 40,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaname": "schema_two",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 175 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "authrole": {
+            "location": 40,
+            "rolename": "regress_evt_user",
+            "roletype": "ROLESPEC_CSTRING",
+          },
+          "schemaname": "audit_tbls",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 176 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 19,
+            "relname": "a_temp_tbl",
+            "relpersistence": "t",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 177 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 27,
+                "sval": {
+                  "sval": "regress_evt_user",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 178 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "table_one",
+            "relpersistence": "p",
+            "schemaname": "schema_one",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 36,
+                "typeName": {
+                  "location": 38,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 180 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "table two",
+            "relpersistence": "p",
+            "schemaname": "schema_one",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 37,
+                "typeName": {
+                  "location": 39,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 181 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "table_three",
+            "relpersistence": "p",
+            "schemaname": "schema_one",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 37,
+                "typeName": {
+                  "location": 39,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 182 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "schema_one_table_two",
+            "relpersistence": "p",
+            "schemaname": "audit_tbls",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "the_value",
+                "is_local": true,
+                "location": 46,
+                "typeName": {
+                  "location": 56,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 183 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "table_two",
+            "relpersistence": "p",
+            "schemaname": "schema_two",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 36,
+                "typeName": {
+                  "location": 38,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 185 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "table_three",
+            "relpersistence": "p",
+            "schemaname": "schema_two",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 37,
+                "typeName": {
+                  "location": 39,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 44,
+                "typeName": {
+                  "location": 46,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 186 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "schema_two_table_three",
+            "relpersistence": "p",
+            "schemaname": "audit_tbls",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "the_value",
+                "is_local": true,
+                "location": 48,
+                "typeName": {
+                  "location": 58,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 187 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "schema_two",
+              },
+            },
+            {
+              "String": {
+                "sval": "add",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 66,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "Boolean": {
+                    "boolval": false,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "strict",
+                "location": 85,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": " BEGIN RETURN coalesce($1,0) + coalesce($2,0); END; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 108,
+              },
+            },
+          ],
+          "parameters": [
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 44,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+            {
+              "FunctionParameter": {
+                "argType": {
+                  "location": 49,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+                "mode": "FUNC_PARAM_DEFAULT",
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 62,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 191 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DefineStmt": {
+          "definition": [
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 50,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "basetype",
+                "location": 39,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 63,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "schema_two",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "add",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "sfunc",
+                "location": 55,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "TypeName": {
+                    "location": 87,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "stype",
+                "location": 79,
+              },
+            },
+          ],
+          "defnames": [
+            {
+              "String": {
+                "sval": "schema_two",
+              },
+            },
+            {
+              "String": {
+                "sval": "newton",
+              },
+            },
+          ],
+          "kind": "OBJECT_AGGREGATE",
+          "oldstyle": true,
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 193 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 195 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "undroppable_objs",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "object_type",
+                "is_local": true,
+                "location": 35,
+                "typeName": {
+                  "location": 47,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "object_identity",
+                "is_local": true,
+                "location": 54,
+                "typeName": {
+                  "location": 70,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 200 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "undroppable_objs",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "valuesLists": [
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "table",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 47,
+                          "sval": {
+                            "sval": "schema_one.table_three",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "location": 75,
+                          "sval": {
+                            "sval": "table",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 84,
+                          "sval": {
+                            "sval": "audit_tbls.schema_two_table_three",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 203 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "dropped_objects",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "type",
+                "is_local": true,
+                "location": 34,
+                "typeName": {
+                  "location": 39,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "schema",
+                "is_local": true,
+                "location": 46,
+                "typeName": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "object",
+                "is_local": true,
+                "location": 60,
+                "typeName": {
+                  "location": 67,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 209 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "undroppable",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 212,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE
+	obj record;
+BEGIN
+	PERFORM 1 FROM pg_tables WHERE tablename = 'undroppable_objs';
+	IF NOT FOUND THEN
+		RAISE NOTICE 'table undroppable_objs not found, skipping';
+		RETURN;
+	END IF;
+	FOR obj IN
+		SELECT * FROM pg_event_trigger_dropped_objects() JOIN
+			undroppable_objs USING (object_type, object_identity)
+	LOOP
+		RAISE EXCEPTION 'object % of type % cannot be dropped',
+			obj.object_identity, obj.object_type;
+	END LOOP;
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 229,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 198,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 231 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "sql_drop",
+          "funcname": [
+            {
+              "String": {
+                "sval": "undroppable",
+              },
+            },
+          ],
+          "trigname": "undroppable",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 234 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_dropped_objects",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 81,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE
+    obj record;
+BEGIN
+    FOR obj IN SELECT * FROM pg_event_trigger_dropped_objects()
+    LOOP
+        IF obj.object_type = 'table' THEN
+                EXECUTE format('DROP TABLE IF EXISTS audit_tbls.%I',
+					format('%s_%s', obj.schema_name, obj.object_name));
+        END IF;
+
+	INSERT INTO dropped_objects
+		(type, schema, object) VALUES
+		(obj.object_type, obj.schema_name, obj.object_identity);
+    END LOOP;
+END
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 98,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 67,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 253 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "sql_drop",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_dropped_objects",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger_drop_objects",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "drop table",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "drop function",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "drop view",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "drop owned",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "drop schema",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "alter table",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 76,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 258 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "a",
+                "subtype": "AT_DropColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "table_one",
+            "relpersistence": "p",
+            "schemaname": "schema_one",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 260 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "String": {
+                "sval": "schema_one",
+              },
+            },
+            {
+              "String": {
+                "sval": "schema_two",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 261 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "undroppable_objs",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "object_identity",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 52,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 54,
+                  "sval": {
+                    "sval": "audit_tbls.schema_two_table_three",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 262 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "String": {
+                "sval": "schema_one",
+              },
+            },
+            {
+              "String": {
+                "sval": "schema_two",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 263 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DeleteStmt": {
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "undroppable_objs",
+            "relpersistence": "p",
+          },
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "object_identity",
+                      },
+                    },
+                  ],
+                  "location": 36,
+                },
+              },
+              "location": 52,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 54,
+                  "sval": {
+                    "sval": "schema_one.table_three",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 264 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "String": {
+                "sval": "schema_one",
+              },
+            },
+            {
+              "String": {
+                "sval": "schema_two",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 265 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 16,
+                "relname": "dropped_objects",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 9,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 9,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "BoolExpr": {
+              "args": [
+                {
+                  "NullTest": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "schema",
+                            },
+                          },
+                        ],
+                        "location": 38,
+                      },
+                    },
+                    "location": 45,
+                    "nulltesttype": "IS_NULL",
+                  },
+                },
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "schema",
+                            },
+                          },
+                        ],
+                        "location": 56,
+                      },
+                    },
+                    "location": 63,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<>",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 66,
+                        "sval": {
+                          "sval": "pg_toast",
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              "boolop": "OR_EXPR",
+              "location": 53,
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 267 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropOwnedStmt": {
+          "behavior": "DROP_RESTRICT",
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 16,
+                "rolename": "regress_evt_user",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 269 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 15,
+                "relname": "dropped_objects",
+                "relpersistence": "p",
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 8,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "A_Star": {},
+                      },
+                    ],
+                    "location": 8,
+                  },
+                },
+              },
+            },
+          ],
+          "whereClause": {
+            "A_Expr": {
+              "kind": "AEXPR_OP",
+              "lexpr": {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "type",
+                      },
+                    },
+                  ],
+                  "location": 37,
+                },
+              },
+              "location": 42,
+              "name": [
+                {
+                  "String": {
+                    "sval": "=",
+                  },
+                },
+              ],
+              "rexpr": {
+                "A_Const": {
+                  "location": 44,
+                  "sval": {
+                    "sval": "schema",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 270 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropRoleStmt": {
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": 12,
+                "rolename": "regress_evt_user",
+                "roletype": "ROLESPEC_CSTRING",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 272 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger_drop_objects",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 274 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "undroppable",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 275 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "event_trigger_report_dropped",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 116,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE r record;
+BEGIN
+    FOR r IN SELECT * from pg_event_trigger_dropped_objects()
+    LOOP
+    IF NOT r.normal AND NOT r.original THEN
+        CONTINUE;
+    END IF;
+    RAISE NOTICE 'NORMAL: orig=% normal=% istemp=% type=% identity=% name=% args=%',
+        r.original, r.normal, r.is_temporary, r.object_type,
+        r.object_identity, r.address_names, r.address_args;
+    END LOOP;
+END; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 133,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 101,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 293 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "sql_drop",
+          "funcname": [
+            {
+              "String": {
+                "sval": "event_trigger_report_dropped",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger_report_dropped",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 295 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "event_trigger_report_end",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 79,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+DECLARE r RECORD;
+BEGIN
+    FOR r IN SELECT * FROM pg_event_trigger_ddl_commands()
+    LOOP
+        RAISE NOTICE 'END: command_tag=% type=% identity=%',
+            r.command_tag, r.object_type, r.object_identity;
+    END LOOP;
+END; ",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 96,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 64,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 307 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_end",
+          "funcname": [
+            {
+              "String": {
+                "sval": "event_trigger_report_end",
+              },
+            },
+          ],
+          "trigname": "regress_event_trigger_report_end",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 309 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateSchemaStmt": {
+          "schemaElts": [
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 38,
+                  "relname": "one",
+                  "relpersistence": "p",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "col_a",
+                      "constraints": [
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_PRIMARY",
+                            "location": 56,
+                          },
+                        },
+                      ],
+                      "is_local": true,
+                      "location": 43,
+                      "typeName": {
+                        "location": 49,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "serial",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                  {
+                    "ColumnDef": {
+                      "colname": "col_b",
+                      "constraints": [
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_DEFAULT",
+                            "location": 80,
+                            "raw_expr": {
+                              "A_Const": {
+                                "location": 88,
+                                "sval": {
+                                  "sval": "forty two",
+                                },
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      "is_local": true,
+                      "location": 69,
+                      "typeName": {
+                        "location": 75,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                  {
+                    "ColumnDef": {
+                      "colname": "col_c",
+                      "is_local": true,
+                      "location": 101,
+                      "typeName": {
+                        "location": 107,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "serial",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "IndexStmt": {
+                "accessMethod": "btree",
+                "idxname": "one_idx",
+                "indexParams": [
+                  {
+                    "IndexElem": {
+                      "name": "col_b",
+                      "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                      "ordering": "SORTBY_DEFAULT",
+                    },
+                  },
+                ],
+                "relation": {
+                  "inh": true,
+                  "location": 140,
+                  "relname": "one",
+                  "relpersistence": "p",
+                },
+              },
+            },
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 166,
+                  "relname": "two",
+                  "relpersistence": "p",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "col_c",
+                      "constraints": [
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_CHECK",
+                            "initially_valid": true,
+                            "location": 185,
+                            "raw_expr": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "col_c",
+                                        },
+                                      },
+                                    ],
+                                    "location": 192,
+                                  },
+                                },
+                                "location": 198,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": ">",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {},
+                                    "location": 200,
+                                  },
+                                },
+                              },
+                            },
+                          },
+                        },
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_FOREIGN",
+                            "fk_del_action": "a",
+                            "fk_matchtype": "s",
+                            "fk_upd_action": "a",
+                            "initially_valid": true,
+                            "location": 203,
+                            "pktable": {
+                              "inh": true,
+                              "location": 214,
+                              "relname": "one",
+                              "relpersistence": "p",
+                            },
+                          },
+                        },
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_DEFAULT",
+                            "location": 218,
+                            "raw_expr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 42,
+                                },
+                                "location": 226,
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      "is_local": true,
+                      "location": 171,
+                      "typeName": {
+                        "location": 177,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "CreateStmt": {
+                "oncommit": "ONCOMMIT_NOOP",
+                "relation": {
+                  "inh": true,
+                  "location": 244,
+                  "relname": "id",
+                  "relpersistence": "p",
+                },
+                "tableElts": [
+                  {
+                    "ColumnDef": {
+                      "colname": "col_d",
+                      "constraints": [
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_NOTNULL",
+                            "location": 258,
+                          },
+                        },
+                        {
+                          "Constraint": {
+                            "contype": "CONSTR_IDENTITY",
+                            "generated_when": "a",
+                            "location": 267,
+                          },
+                        },
+                      ],
+                      "is_local": true,
+                      "location": 248,
+                      "typeName": {
+                        "location": 254,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "schemaname": "evttrig",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 315 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "partspec": {
+            "location": 107,
+            "partParams": [
+              {
+                "PartitionElem": {
+                  "location": 127,
+                  "name": "id",
+                },
+              },
+            ],
+            "strategy": "PARTITION_STRATEGY_RANGE",
+          },
+          "relation": {
+            "inh": true,
+            "location": 62,
+            "relname": "parted",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 90,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 83,
+                "typeName": {
+                  "location": 86,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 320 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 45,
+                "relname": "parted",
+                "relpersistence": "p",
+                "schemaname": "evttrig",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 78,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
+                  },
+                  "location": 84,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 10,
+                  },
+                  "location": 91,
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "part_1_10",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 61,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 322 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "parted",
+                "relpersistence": "p",
+                "schemaname": "evttrig",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 79,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 10,
+                  },
+                  "location": 85,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 20,
+                  },
+                  "location": 93,
+                },
+              },
+            ],
+          },
+          "partspec": {
+            "location": 97,
+            "partParams": [
+              {
+                "PartitionElem": {
+                  "location": 117,
+                  "name": "id",
+                },
+              },
+            ],
+            "strategy": "PARTITION_STRATEGY_RANGE",
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "part_10_20",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 62,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 324 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "part_10_20",
+                "relpersistence": "p",
+                "schemaname": "evttrig",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 83,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 10,
+                  },
+                  "location": 89,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 15,
+                  },
+                  "location": 97,
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "part_10_15",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 66,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 326 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "inhRelations": [
+            {
+              "RangeVar": {
+                "inh": true,
+                "location": 46,
+                "relname": "part_10_20",
+                "relpersistence": "p",
+                "schemaname": "evttrig",
+              },
+            },
+          ],
+          "oncommit": "ONCOMMIT_NOOP",
+          "partbound": {
+            "location": 83,
+            "lowerdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 15,
+                  },
+                  "location": 89,
+                },
+              },
+            ],
+            "strategy": "r",
+            "upperdatums": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 20,
+                  },
+                  "location": 97,
+                },
+              },
+            ],
+          },
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "part_15_20",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "is_local": true,
+                "location": 66,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 328 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "col_c",
+                "subtype": "AT_DropColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "two",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 330 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "col_b",
+                "subtype": "AT_ColumnDefault",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "one",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 331 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "one_pkey",
+                "subtype": "AT_DropConstraint",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "one",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 332 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "col_c",
+                "subtype": "AT_DropColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "one",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 333 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 37,
+                    "typeName": {
+                      "location": 57,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "col_d",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "id",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 334 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "col_d",
+                "subtype": "AT_DropIdentity",
+              },
+            },
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 73,
+                    "typeName": {
+                      "location": 93,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "col_d",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "id",
+            "relpersistence": "p",
+            "schemaname": "evttrig",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 336 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "evttrig",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "one_idx",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_INDEX",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 337 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_CASCADE",
+          "objects": [
+            {
+              "String": {
+                "sval": "evttrig",
+              },
+            },
+          ],
+          "removeType": "OBJECT_SCHEMA",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 338 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "a_temp_tbl",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 339 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateOpClassStmt": {
+          "amname": "btree",
+          "datatype": {
+            "location": 166,
+            "names": [
+              {
+                "String": {
+                  "sval": "pg_catalog",
+                },
+              },
+              {
+                "String": {
+                  "sval": "int4",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "items": [
+            {
+              "CreateOpClassItem": {
+                "itemtype": 3,
+                "storedtype": {
+                  "location": 193,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "opclassname": [
+            {
+              "String": {
+                "sval": "evttrigopclass",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 343 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger_report_dropped",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 345 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "regress_event_trigger_report_end",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 346 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 76,
+                "val": {
+                  "FuncCall": {
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_event_trigger_table_rewrite_oid",
+                        },
+                      },
+                    ],
+                    "location": 76,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 349 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_no_rewrite",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 112,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+  RAISE EXCEPTION 'rewrites not allowed';
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 129,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 98,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 357 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "table_rewrite",
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_no_rewrite",
+              },
+            },
+          ],
+          "trigname": "no_rewrite_allowed",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 360 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 15,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "id",
+                "constraints": [
+                  {
+                    "Constraint": {
+                      "contype": "CONSTR_PRIMARY",
+                      "location": 36,
+                    },
+                  },
+                ],
+                "is_local": true,
+                "location": 26,
+                "typeName": {
+                  "location": 29,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "serial",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "foo",
+                "is_local": true,
+                "location": 49,
+                "typeName": {
+                  "location": 53,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "float8",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "bar",
+                "is_local": true,
+                "location": 60,
+                "typeName": {
+                  "location": 64,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "timestamptz",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 362 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "InsertStmt": {
+          "override": "OVERRIDING_NOT_SET",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+          "selectStmt": {
+            "SelectStmt": {
+              "fromClause": [
+                {
+                  "RangeFunction": {
+                    "alias": {
+                      "aliasname": "t",
+                      "colnames": [
+                        {
+                          "String": {
+                            "sval": "x",
+                          },
+                        },
+                      ],
+                    },
+                    "functions": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "FuncCall": {
+                                "args": [
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 1,
+                                      },
+                                      "location": 66,
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 500,
+                                      },
+                                      "location": 69,
+                                    },
+                                  },
+                                ],
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "generate_series",
+                                    },
+                                  },
+                                ],
+                                "location": 50,
+                              },
+                            },
+                            {},
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 35,
+                    "val": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "x",
+                                },
+                              },
+                            ],
+                            "location": 35,
+                          },
+                        },
+                        "location": 37,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "*",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "A_Const": {
+                            "fval": {
+                              "fval": "1.001",
+                            },
+                            "location": 39,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 364 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 36,
+                    "typeName": {
+                      "location": 45,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "foo",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 365 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "baz",
+                    "constraints": [
+                      {
+                        "Constraint": {
+                          "contype": "CONSTR_DEFAULT",
+                          "location": 42,
+                          "raw_expr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 50,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "is_local": true,
+                    "location": 34,
+                    "typeName": {
+                      "location": 38,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 366 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_no_rewrite",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 136,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+  RAISE NOTICE 'Table ''%'' is being rewritten (reason = %)',
+               pg_event_trigger_table_rewrite_oid()::regclass,
+               pg_event_trigger_table_rewrite_reason();
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 153,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 122,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 376 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "onemore",
+                    "constraints": [
+                      {
+                        "Constraint": {
+                          "contype": "CONSTR_DEFAULT",
+                          "location": 48,
+                          "raw_expr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 56,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "is_local": true,
+                    "location": 36,
+                    "typeName": {
+                      "location": 44,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "colname": "another",
+                    "constraints": [
+                      {
+                        "Constraint": {
+                          "contype": "CONSTR_DEFAULT",
+                          "location": 83,
+                          "raw_expr": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 91,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "is_local": true,
+                    "location": 71,
+                    "typeName": {
+                      "location": 79,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "subtype": "AT_AddColumn",
+              },
+            },
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 109,
+                    "typeName": {
+                      "location": 118,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                      "typmods": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 10,
+                            },
+                            "location": 126,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 4,
+                            },
+                            "location": 129,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+                "name": "foo",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 381 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateTableAsStmt": {
+          "into": {
+            "accessMethod": "heap",
+            "onCommit": "ONCOMMIT_NOOP",
+            "rel": {
+              "inh": true,
+              "location": 74,
+              "relname": "heapmv",
+              "relpersistence": "p",
+            },
+          },
+          "objtype": "OBJECT_MATVIEW",
+          "query": {
+            "SelectStmt": {
+              "limitOption": "LIMIT_OPTION_DEFAULT",
+              "op": "SETOP_NONE",
+              "targetList": [
+                {
+                  "ResTarget": {
+                    "location": 102,
+                    "name": "a",
+                    "val": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 102,
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 384 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "name": "heap2",
+                "subtype": "AT_SetAccessMethod",
+              },
+            },
+          ],
+          "objtype": "OBJECT_MATVIEW",
+          "relation": {
+            "inh": true,
+            "location": 25,
+            "relname": "heapmv",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 385 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "heapmv",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_MATVIEW",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 386 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 80,
+                    "typeName": {
+                      "location": 89,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "numeric",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                      "typmods": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 12,
+                            },
+                            "location": 97,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 4,
+                            },
+                            "location": 100,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+                "name": "foo",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 57,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 389 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_BEGIN",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 390 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 17,
+                "sval": {
+                  "sval": "UTC",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "timezone",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 391 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 36,
+                    "typeName": {
+                      "location": 45,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "timestamp",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "bar",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 392 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 17,
+                "sval": {
+                  "sval": "0",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "timezone",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 393 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 36,
+                    "typeName": {
+                      "location": 45,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "timestamptz",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "bar",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 394 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "args": [
+            {
+              "A_Const": {
+                "location": 17,
+                "sval": {
+                  "sval": "Europe/London",
+                },
+              },
+            },
+          ],
+          "kind": "VAR_SET_VALUE",
+          "name": "timezone",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 395 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_RESTRICT",
+                "def": {
+                  "ColumnDef": {
+                    "location": 36,
+                    "typeName": {
+                      "location": 45,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "timestamp",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "bar",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TABLE",
+          "relation": {
+            "inh": true,
+            "location": 13,
+            "relname": "rewriteme",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 395 2`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "TransactionStmt": {
+          "kind": "TRANS_STMT_ROLLBACK",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 397 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "test_evtrig_no_rewrite",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 194,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+  RAISE NOTICE 'Table is being rewritten (reason = %)',
+               pg_event_trigger_table_rewrite_reason();
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 211,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 180,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 407 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CompositeTypeStmt": {
+          "coldeflist": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 30,
+                "typeName": {
+                  "location": 32,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+          "typevar": {
+            "location": 14,
+            "relname": "rewritetype",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 409 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 31,
+            "names": [
+              {
+                "String": {
+                  "sval": "rewritetype",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "rewritemetoo1",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 410 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "ofTypename": {
+            "location": 31,
+            "names": [
+              {
+                "String": {
+                  "sval": "rewritetype",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "rewritemetoo2",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 411 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_CASCADE",
+                "def": {
+                  "ColumnDef": {
+                    "location": 40,
+                    "typeName": {
+                      "location": 47,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TYPE",
+          "relation": {
+            "location": 12,
+            "relname": "rewritetype",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 412 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 40,
+            "relname": "rewritemetoo3",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 55,
+                "typeName": {
+                  "location": 57,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "rewritetype",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 415 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterTableStmt": {
+          "cmds": [
+            {
+              "AlterTableCmd": {
+                "behavior": "DROP_CASCADE",
+                "def": {
+                  "ColumnDef": {
+                    "location": 40,
+                    "typeName": {
+                      "location": 47,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "varchar",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+                "name": "a",
+                "subtype": "AT_AlterColumnType",
+              },
+            },
+          ],
+          "objtype": "OBJECT_TYPE",
+          "relation": {
+            "location": 12,
+            "relname": "rewritetype",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 416 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "rewriteme",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_TABLE",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 418 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "no_rewrite_allowed",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 419 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "ObjectWithArgs": {
+                "objname": [
+                  {
+                    "String": {
+                      "sval": "test_evtrig_no_rewrite",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_FUNCTION",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 420 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "VariableSetStmt": {
+          "kind": "VAR_RESET",
+          "name": "session_authorization",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 423 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateStmt": {
+          "oncommit": "ONCOMMIT_NOOP",
+          "relation": {
+            "inh": true,
+            "location": 14,
+            "relname": "event_trigger_test",
+            "relpersistence": "p",
+          },
+          "tableElts": [
+            {
+              "ColumnDef": {
+                "colname": "a",
+                "is_local": true,
+                "location": 34,
+                "typeName": {
+                  "location": 36,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "pg_catalog",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "int4",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+            {
+              "ColumnDef": {
+                "colname": "b",
+                "is_local": true,
+                "location": 45,
+                "typeName": {
+                  "location": 47,
+                  "names": [
+                    {
+                      "String": {
+                        "sval": "text",
+                      },
+                    },
+                  ],
+                  "typemod": -1,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 424 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "start_command",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+RAISE NOTICE '% - ddl_command_start', tg_tag;
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 67,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 133,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 53,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 431 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "end_command",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+RAISE NOTICE '% - ddl_command_end', tg_tag;
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 65,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 129,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 51,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 438 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateFunctionStmt": {
+          "funcname": [
+            {
+              "String": {
+                "sval": "drop_sql_command",
+              },
+            },
+          ],
+          "options": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "
+BEGIN
+RAISE NOTICE '% - sql_drop', tg_tag;
+END;
+",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "as",
+                "location": 70,
+              },
+            },
+            {
+              "DefElem": {
+                "arg": {
+                  "String": {
+                    "sval": "plpgsql",
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "language",
+                "location": 127,
+              },
+            },
+          ],
+          "replace": true,
+          "returnType": {
+            "location": 56,
+            "names": [
+              {
+                "String": {
+                  "sval": "event_trigger",
+                },
+              },
+            ],
+            "typemod": -1,
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 445 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_start",
+          "funcname": [
+            {
+              "String": {
+                "sval": "start_command",
+              },
+            },
+          ],
+          "trigname": "start_rls_command",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE POLICY",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ALTER POLICY",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "DROP POLICY",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 71,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 448 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "ddl_command_end",
+          "funcname": [
+            {
+              "String": {
+                "sval": "end_command",
+              },
+            },
+          ],
+          "trigname": "end_rls_command",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "CREATE POLICY",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "ALTER POLICY",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "DROP POLICY",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 67,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 451 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreateEventTrigStmt": {
+          "eventname": "sql_drop",
+          "funcname": [
+            {
+              "String": {
+                "sval": "drop_sql_command",
+              },
+            },
+          ],
+          "trigname": "sql_drop_command",
+          "whenclause": [
+            {
+              "DefElem": {
+                "arg": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "sval": "DROP POLICY",
+                        },
+                      },
+                    ],
+                  },
+                },
+                "defaction": "DEFELEM_UNSPEC",
+                "defname": "tag",
+                "location": 61,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 454 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "CreatePolicyStmt": {
+          "cmd_name": "all",
+          "permissive": true,
+          "policy_name": "p1",
+          "qual": {
+            "A_Const": {
+              "boolval": {},
+              "location": 48,
+            },
+          },
+          "roles": [
+            {
+              "RoleSpec": {
+                "location": -1,
+                "roletype": "ROLESPEC_PUBLIC",
+              },
+            },
+          ],
+          "table": {
+            "inh": true,
+            "location": 22,
+            "relname": "event_trigger_test",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 456 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "AlterPolicyStmt": {
+          "policy_name": "p1",
+          "qual": {
+            "A_Const": {
+              "boolval": {
+                "boolval": true,
+              },
+              "location": 46,
+            },
+          },
+          "table": {
+            "inh": true,
+            "location": 20,
+            "relname": "event_trigger_test",
+            "relpersistence": "p",
+          },
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 457 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "RenameStmt": {
+          "behavior": "DROP_RESTRICT",
+          "newname": "p2",
+          "relation": {
+            "inh": true,
+            "location": 20,
+            "relname": "event_trigger_test",
+            "relpersistence": "p",
+          },
+          "relationType": "OBJECT_ACCESS_METHOD",
+          "renameType": "OBJECT_POLICY",
+          "subname": "p1",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 458 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "event_trigger_test",
+                    },
+                  },
+                  {
+                    "String": {
+                      "sval": "p2",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+          "removeType": "OBJECT_POLICY",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 459 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "SelectStmt": {
+          "fromClause": [
+            {
+              "RangeVar": {
+                "alias": {
+                  "aliasname": "e",
+                },
+                "inh": true,
+                "location": 268,
+                "relname": "pg_event_trigger",
+                "relpersistence": "p",
+              },
+            },
+            {
+              "RangeFunction": {
+                "alias": {
+                  "aliasname": "b",
+                },
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "TypeCast": {
+                                  "arg": {
+                                    "A_Const": {
+                                      "location": 333,
+                                      "sval": {
+                                        "sval": "pg_event_trigger",
+                                      },
+                                    },
+                                  },
+                                  "location": 351,
+                                  "typeName": {
+                                    "location": 353,
+                                    "names": [
+                                      {
+                                        "String": {
+                                          "sval": "regclass",
+                                        },
+                                      },
+                                    ],
+                                    "typemod": -1,
+                                  },
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "e",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "oid",
+                                      },
+                                    },
+                                  ],
+                                  "location": 363,
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {},
+                                  "location": 370,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "pg_identify_object_as_address",
+                                },
+                              },
+                            ],
+                            "location": 303,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+                "lateral": true,
+              },
+            },
+            {
+              "RangeFunction": {
+                "alias": {
+                  "aliasname": "a",
+                },
+                "functions": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "b",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "type",
+                                      },
+                                    },
+                                  ],
+                                  "location": 413,
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "b",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "object_names",
+                                      },
+                                    },
+                                  ],
+                                  "location": 421,
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "b",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "object_args",
+                                      },
+                                    },
+                                  ],
+                                  "location": 437,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "pg_get_object_address",
+                                },
+                              },
+                            ],
+                            "location": 391,
+                          },
+                        },
+                        {},
+                      ],
+                    },
+                  },
+                ],
+                "lateral": true,
+              },
+            },
+          ],
+          "limitOption": "LIMIT_OPTION_DEFAULT",
+          "op": "SETOP_NONE",
+          "sortClause": [
+            {
+              "SortBy": {
+                "location": -1,
+                "node": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "e",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "evtname",
+                        },
+                      },
+                    ],
+                    "location": 468,
+                  },
+                },
+                "sortby_dir": "SORTBY_DEFAULT",
+                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+              },
+            },
+          ],
+          "targetList": [
+            {
+              "ResTarget": {
+                "location": 70,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "e",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "evtname",
+                        },
+                      },
+                    ],
+                    "location": 70,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 85,
+                "name": "descr",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 104,
+                              "sval": {
+                                "sval": "pg_event_trigger",
+                              },
+                            },
+                          },
+                          "location": 122,
+                          "typeName": {
+                            "location": 124,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "regclass",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "e",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "oid",
+                              },
+                            },
+                          ],
+                          "location": 134,
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 141,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_describe_object",
+                        },
+                      },
+                    ],
+                    "location": 85,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 158,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "type",
+                        },
+                      },
+                    ],
+                    "location": 158,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 166,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "object_names",
+                        },
+                      },
+                    ],
+                    "location": 166,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 182,
+                "val": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "object_args",
+                        },
+                      },
+                    ],
+                    "location": 182,
+                  },
+                },
+              },
+            },
+            {
+              "ResTarget": {
+                "location": 201,
+                "name": "ident",
+                "val": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "classid",
+                              },
+                            },
+                          ],
+                          "location": 220,
+                        },
+                      },
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "objid",
+                              },
+                            },
+                          ],
+                          "location": 231,
+                        },
+                      },
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "objsubid",
+                              },
+                            },
+                          ],
+                          "location": 240,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "pg_identify_object",
+                        },
+                      },
+                    ],
+                    "location": 201,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 470 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "start_rls_command",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 472 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "end_rls_command",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
+
+exports[`event_trigger.sql > line 473 1`] = `
+{
+  "stmts": [
+    {
+      "stmt": {
+        "DropStmt": {
+          "behavior": "DROP_RESTRICT",
+          "objects": [
+            {
+              "String": {
+                "sval": "sql_drop_command",
+              },
+            },
+          ],
+          "removeType": "OBJECT_EVENT_TRIGGER",
+        },
+      },
+    },
+  ],
+  "version": 160001,
+}
+`;
