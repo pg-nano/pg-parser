@@ -1,119 +1,172 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`select_views.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 79,
-                "relname": "street",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 72,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 72,
-                  },
+exports[`select_views.sql > line 8 1`] = `
+[
+  "SELECT name, #thepath FROM iexit ORDER BY name COLLATE "C", 2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "iexit",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 29,
-                "relname": "iexit",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "CollateClause": {
-                    "arg": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "name",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "CollateClause": {
+                      "arg": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "name",
+                              },
                             },
-                          },
-                        ],
-                        "location": 44,
-                      },
-                    },
-                    "collname": [
-                      {
-                        "String": {
-                          "sval": "C",
+                          ],
+                          "location": 42,
                         },
                       },
-                    ],
-                    "location": 49,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 2,
+                      "collname": [
+                        {
+                          "String": {
+                            "sval": "C",
+                          },
+                        },
+                      ],
+                      "location": 47,
                     },
-                    "location": 62,
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 2,
+                      },
+                      "location": 60,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "name",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
+              {
+                "ResTarget": {
+                  "location": 13,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "location": 13,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "#",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "thepath",
+                              },
+                            },
+                          ],
+                          "location": 14,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 10 1`] = `
+[
+  "SELECT * FROM toyemp WHERE name = 'sharon'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "toyemp",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -122,4067 +175,2304 @@ exports[`select_views.sql > line 7 1`] = `
                         },
                       },
                     ],
-                    "location": 9,
+                    "location": 27,
+                  },
+                },
+                "location": 32,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 34,
+                    "sval": {
+                      "sval": "sharon",
+                    },
                   },
                 },
               },
             },
-            {
-              "ResTarget": {
-                "location": 15,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "location": 15,
-                    "name": [
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 15 1`] = `
+[
+  "CREATE ROLE regress_alice",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateRoleStmt": {
+            "role": "regress_alice",
+            "stmt_type": "ROLESTMT_ROLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 17 1`] = `
+[
+  "CREATE FUNCTION f_leak (text)
+       RETURNS bool LANGUAGE 'plpgsql' COST 0.0000001
+       AS 'BEGIN RAISE NOTICE ''f_leak => %'', $1; RETURN true; END'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "f_leak",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "plpgsql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 50,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "Float": {
+                      "fval": "0.0000001",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "cost",
+                  "location": 69,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "BEGIN RAISE NOTICE 'f_leak => %', $1; RETURN true; END",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 91,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 24,
+                    "names": [
                       {
                         "String": {
-                          "sval": "#",
+                          "sval": "text",
                         },
                       },
                     ],
-                    "rexpr": {
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                },
+              },
+            ],
+            "returnType": {
+              "location": 45,
+              "names": [
+                {
+                  "String": {
+                    "sval": "bool",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 21 1`] = `
+[
+  "CREATE TABLE customer (
+       cid      int primary key,
+       name     text not null,
+       tel      text,
+       passwd	text
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "customer",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "cid",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_PRIMARY",
+                        "location": 44,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 40,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "name",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 78,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 64,
+                  "typeName": {
+                    "location": 73,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "tel",
+                  "is_local": true,
+                  "location": 95,
+                  "typeName": {
+                    "location": 104,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "passwd",
+                  "is_local": true,
+                  "location": 117,
+                  "typeName": {
+                    "location": 124,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 28 1`] = `
+[
+  "CREATE TABLE credit_card (
+       cid      int references customer(cid),
+       cnum     text,
+       climit   int
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "credit_card",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "cid",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_FOREIGN",
+                        "fk_del_action": "a",
+                        "fk_matchtype": "s",
+                        "fk_upd_action": "a",
+                        "initially_valid": true,
+                        "location": 47,
+                        "pk_attrs": [
+                          {
+                            "String": {
+                              "sval": "cid",
+                            },
+                          },
+                        ],
+                        "pktable": {
+                          "inh": true,
+                          "location": 58,
+                          "relname": "customer",
+                          "relpersistence": "p",
+                        },
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 34,
+                  "typeName": {
+                    "location": 43,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "cnum",
+                  "is_local": true,
+                  "location": 80,
+                  "typeName": {
+                    "location": 89,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "climit",
+                  "is_local": true,
+                  "location": 102,
+                  "typeName": {
+                    "location": 111,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 34 1`] = `
+[
+  "CREATE TABLE credit_usage (
+       cid      int references customer(cid),
+       ymd      date,
+       usage    int
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "credit_usage",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "cid",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_FOREIGN",
+                        "fk_del_action": "a",
+                        "fk_matchtype": "s",
+                        "fk_upd_action": "a",
+                        "initially_valid": true,
+                        "location": 48,
+                        "pk_attrs": [
+                          {
+                            "String": {
+                              "sval": "cid",
+                            },
+                          },
+                        ],
+                        "pktable": {
+                          "inh": true,
+                          "location": 59,
+                          "relname": "customer",
+                          "relpersistence": "p",
+                        },
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 35,
+                  "typeName": {
+                    "location": 44,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "ymd",
+                  "is_local": true,
+                  "location": 81,
+                  "typeName": {
+                    "location": 90,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "date",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "usage",
+                  "is_local": true,
+                  "location": 103,
+                  "typeName": {
+                    "location": 112,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 40 1`] = `
+[
+  "INSERT INTO customer
+       VALUES (101, 'regress_alice', '+81-12-3456-7890', 'passwd123'),
+              (102, 'regress_bob',   '+01-234-567-8901', 'beafsteak'),
+              (103, 'regress_eve',   '+49-8765-43210',   'hamburger')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "customer",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 101,
+                            },
+                            "location": 36,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 41,
+                            "sval": {
+                              "sval": "regress_alice",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 58,
+                            "sval": {
+                              "sval": "+81-12-3456-7890",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 78,
+                            "sval": {
+                              "sval": "passwd123",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 102,
+                            },
+                            "location": 107,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 112,
+                            "sval": {
+                              "sval": "regress_bob",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 129,
+                            "sval": {
+                              "sval": "+01-234-567-8901",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 149,
+                            "sval": {
+                              "sval": "beafsteak",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 103,
+                            },
+                            "location": 178,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 183,
+                            "sval": {
+                              "sval": "regress_eve",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 200,
+                            "sval": {
+                              "sval": "+49-8765-43210",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 220,
+                            "sval": {
+                              "sval": "hamburger",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 45 1`] = `
+[
+  "       VALUES (101, '1111-2222-3333-4444', 4000),
+              (102, '5555-6666-7777-8888', 3000),
+              (103, '9801-2345-6789-0123', 2000)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "valuesLists": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 101,
+                        },
+                        "location": 15,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 20,
+                        "sval": {
+                          "sval": "1111-2222-3333-4444",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 4000,
+                        },
+                        "location": 43,
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 102,
+                        },
+                        "location": 65,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 70,
+                        "sval": {
+                          "sval": "5555-6666-7777-8888",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 3000,
+                        },
+                        "location": 93,
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 103,
+                        },
+                        "location": 115,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 120,
+                        "sval": {
+                          "sval": "9801-2345-6789-0123",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2000,
+                        },
+                        "location": 143,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 59 1`] = `
+[
+  "CREATE VIEW my_property_normal AS
+       SELECT * FROM customer WHERE name = current_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 55,
+                      "relname": "customer",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 48,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 48,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
                       "ColumnRef": {
                         "fields": [
                           {
                             "String": {
-                              "sval": "thepath",
+                              "sval": "name",
                             },
                           },
                         ],
-                        "location": 16,
+                        "location": 70,
                       },
                     },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "toyemp",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "name",
-                      },
-                    },
-                  ],
-                  "location": 29,
-                },
-              },
-              "location": 34,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 36,
-                  "sval": {
-                    "sval": "sharon",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_alice",
-          "stmt_type": "ROLESTMT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "f_leak",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "plpgsql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 52,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Float": {
-                    "fval": "0.0000001",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "cost",
-                "location": 71,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+                    "location": 75,
+                    "name": [
                       {
                         "String": {
-                          "sval": "BEGIN RAISE NOTICE 'f_leak => %', $1; RETURN true; END",
+                          "sval": "=",
                         },
                       },
                     ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 93,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 26,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
+                    "rexpr": {
+                      "SQLValueFunction": {
+                        "location": 77,
+                        "op": "SVFOP_CURRENT_USER",
+                        "typmod": -1,
                       },
                     },
-                  ],
-                  "typemod": -1,
+                  },
                 },
-                "mode": "FUNC_PARAM_DEFAULT",
               },
             },
-          ],
-          "returnType": {
-            "location": 47,
-            "names": [
-              {
-                "String": {
-                  "sval": "bool",
-                },
-              },
-            ],
-            "typemod": -1,
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "my_property_normal",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_views.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "customer",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "cid",
-                "constraints": [
+exports[`select_views.sql > line 62 1`] = `
+[
+  "       SELECT * FROM customer WHERE name = current_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 21,
+                  "relname": "customer",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 14,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 36,
+                  },
+                },
+                "location": 41,
+                "name": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "SQLValueFunction": {
+                    "location": 43,
+                    "op": "SVFOP_CURRENT_USER",
+                    "typmod": -1,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 64 1`] = `
+[
+  "CREATE VIEW my_credit_card_normal AS
+       SELECT * FROM customer l NATURAL JOIN credit_card r
+       WHERE l.name = current_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "JoinExpr": {
+                      "isNatural": true,
+                      "jointype": "JOIN_INNER",
+                      "larg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "l",
+                          },
+                          "inh": true,
+                          "location": 58,
+                          "relname": "customer",
+                          "relpersistence": "p",
+                        },
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "r",
+                          },
+                          "inh": true,
+                          "location": 82,
+                          "relname": "credit_card",
+                          "relpersistence": "p",
+                        },
+                      },
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 51,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 51,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "l",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "name",
+                            },
+                          },
+                        ],
+                        "location": 109,
+                      },
+                    },
+                    "location": 116,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "SQLValueFunction": {
+                        "location": 118,
+                        "op": "SVFOP_CURRENT_USER",
+                        "typmod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "my_credit_card_normal",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 68 1`] = `
+[
+  "       SELECT * FROM customer l NATURAL JOIN credit_card r
+       WHERE l.name = current_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "JoinExpr": {
+                  "isNatural": true,
+                  "jointype": "JOIN_INNER",
+                  "larg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "l",
+                      },
+                      "inh": true,
+                      "location": 21,
+                      "relname": "customer",
+                      "relpersistence": "p",
+                    },
+                  },
+                  "rarg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "r",
+                      },
+                      "inh": true,
+                      "location": 45,
+                      "relname": "credit_card",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 14,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "l",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "location": 72,
+                  },
+                },
+                "location": 79,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "SQLValueFunction": {
+                    "location": 81,
+                    "op": "SVFOP_CURRENT_USER",
+                    "typmod": -1,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 71 1`] = `
+[
+  "CREATE VIEW my_credit_card_usage_normal AS
+       SELECT * FROM my_credit_card_secure l NATURAL JOIN credit_usage r",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "JoinExpr": {
+                      "isNatural": true,
+                      "jointype": "JOIN_INNER",
+                      "larg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "l",
+                          },
+                          "inh": true,
+                          "location": 64,
+                          "relname": "my_credit_card_secure",
+                          "relpersistence": "p",
+                        },
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "r",
+                          },
+                          "inh": true,
+                          "location": 101,
+                          "relname": "credit_usage",
+                          "relpersistence": "p",
+                        },
+                      },
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 57,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 57,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "my_credit_card_usage_normal",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 74 1`] = `
+[
+  "       SELECT * FROM my_credit_card_secure l NATURAL JOIN credit_usage r",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "JoinExpr": {
+                  "isNatural": true,
+                  "jointype": "JOIN_INNER",
+                  "larg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "l",
+                      },
+                      "inh": true,
+                      "location": 21,
+                      "relname": "my_credit_card_secure",
+                      "relpersistence": "p",
+                    },
+                  },
+                  "rarg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "r",
+                      },
+                      "inh": true,
+                      "location": 58,
+                      "relname": "credit_usage",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 14,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 76 1`] = `
+[
+  "GRANT SELECT ON my_property_normal TO public",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 38,
+                  "roletype": "ROLESPEC_PUBLIC",
+                },
+              },
+            ],
+            "is_grant": true,
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 16,
+                  "relname": "my_property_normal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "select",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 86 1`] = `
+[
+  "SET SESSION AUTHORIZATION regress_alice",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 26,
+                  "sval": {
+                    "sval": "regress_alice",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "session_authorization",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 92 1`] = `
+[
+  "SELECT * FROM my_property_normal WHERE f_leak(passwd)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_property_normal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "passwd",
+                          },
+                        },
+                      ],
                       "location": 46,
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 33,
-                "typeName": {
-                  "location": 42,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "name",
-                "constraints": [
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 80,
+                    "String": {
+                      "sval": "f_leak",
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 66,
-                "typeName": {
-                  "location": 75,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
+                "location": 39,
               },
             },
-            {
-              "ColumnDef": {
-                "colname": "tel",
-                "is_local": true,
-                "location": 97,
-                "typeName": {
-                  "location": 106,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "passwd",
-                "is_local": true,
-                "location": 119,
-                "typeName": {
-                  "location": 126,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_views.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "credit_card",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "cid",
-                "constraints": [
+exports[`select_views.sql > line 95 1`] = `
+[
+  "SELECT * FROM my_property_secure WHERE f_leak(passwd)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_property_secure",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "FuncCall": {
+                "args": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_FOREIGN",
-                      "fk_del_action": "a",
-                      "fk_matchtype": "s",
-                      "fk_upd_action": "a",
-                      "initially_valid": true,
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "passwd",
+                          },
+                        },
+                      ],
+                      "location": 46,
+                    },
+                  },
+                ],
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "f_leak",
+                    },
+                  },
+                ],
+                "location": 39,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 102 1`] = `
+[
+  "SELECT * FROM my_property_normal v
+		WHERE f_leak('passwd') AND f_leak(passwd)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "v",
+                  },
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_property_normal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 50,
+                            "sval": {
+                              "sval": "passwd",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 43,
+                    },
+                  },
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "passwd",
+                                },
+                              },
+                            ],
+                            "location": 71,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 64,
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 60,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 107 1`] = `
+[
+  "SELECT * FROM my_property_secure v
+		WHERE f_leak('passwd') AND f_leak(passwd)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "v",
+                  },
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_property_secure",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 50,
+                            "sval": {
+                              "sval": "passwd",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 43,
+                    },
+                  },
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "passwd",
+                                },
+                              },
+                            ],
+                            "location": 71,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 64,
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 60,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 117 1`] = `
+[
+  "SELECT * FROM my_credit_card_normal WHERE f_leak(cnum)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_credit_card_normal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "cnum",
+                          },
+                        },
+                      ],
                       "location": 49,
-                      "pk_attrs": [
-                        {
-                          "String": {
-                            "sval": "cid",
-                          },
-                        },
-                      ],
-                      "pktable": {
-                        "inh": true,
-                        "location": 60,
-                        "relname": "customer",
-                        "relpersistence": "p",
-                      },
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 36,
-                "typeName": {
-                  "location": 45,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "cnum",
-                "is_local": true,
-                "location": 82,
-                "typeName": {
-                  "location": 91,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "climit",
-                "is_local": true,
-                "location": 104,
-                "typeName": {
-                  "location": 113,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "credit_usage",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "cid",
-                "constraints": [
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_FOREIGN",
-                      "fk_del_action": "a",
-                      "fk_matchtype": "s",
-                      "fk_upd_action": "a",
-                      "initially_valid": true,
-                      "location": 50,
-                      "pk_attrs": [
-                        {
-                          "String": {
-                            "sval": "cid",
-                          },
-                        },
-                      ],
-                      "pktable": {
-                        "inh": true,
-                        "location": 61,
-                        "relname": "customer",
-                        "relpersistence": "p",
-                      },
+                    "String": {
+                      "sval": "f_leak",
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 37,
-                "typeName": {
-                  "location": 46,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
+                "location": 42,
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "ymd",
-                "is_local": true,
-                "location": 83,
-                "typeName": {
-                  "location": 92,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "date",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "usage",
-                "is_local": true,
-                "location": 105,
-                "typeName": {
-                  "location": 114,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "customer",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 38,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 43,
-                          "sval": {
-                            "sval": "regress_alice",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 60,
-                          "sval": {
-                            "sval": "+81-12-3456-7890",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 80,
-                          "sval": {
-                            "sval": "passwd123",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 102,
-                          },
-                          "location": 109,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 114,
-                          "sval": {
-                            "sval": "regress_bob",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 131,
-                          "sval": {
-                            "sval": "+01-234-567-8901",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 151,
-                          "sval": {
-                            "sval": "beafsteak",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 103,
-                          },
-                          "location": 180,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 185,
-                          "sval": {
-                            "sval": "regress_eve",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 202,
-                          "sval": {
-                            "sval": "+49-8765-43210",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 222,
-                          "sval": {
-                            "sval": "hamburger",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_views.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "credit_card",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 40,
+exports[`select_views.sql > line 120 1`] = `
+[
+  "SELECT * FROM my_credit_card_secure WHERE f_leak(cnum)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_credit_card_secure",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 45,
-                          "sval": {
-                            "sval": "1111-2222-3333-4444",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4000,
-                          },
-                          "location": 68,
-                        },
-                      },
-                    ],
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 102,
-                          },
-                          "location": 90,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 95,
-                          "sval": {
-                            "sval": "5555-6666-7777-8888",
+              },
+            ],
+            "whereClause": {
+              "FuncCall": {
+                "args": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "cnum",
                           },
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3000,
-                          },
-                          "location": 118,
-                        },
-                      },
-                    ],
+                      ],
+                      "location": 49,
+                    },
                   },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 103,
-                          },
-                          "location": 140,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 145,
-                          "sval": {
-                            "sval": "9801-2345-6789-0123",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2000,
-                          },
-                          "location": 168,
-                        },
-                      },
-                    ],
+                ],
+                "funcformat": "COERCE_EXPLICIT_CALL",
+                "funcname": [
+                  {
+                    "String": {
+                      "sval": "f_leak",
+                    },
                   },
-                },
-              ],
+                ],
+                "location": 42,
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_views.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "credit_usage",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 41,
+exports[`select_views.sql > line 128 1`] = `
+[
+  "SELECT * FROM my_credit_card_usage_normal
+       WHERE f_leak(cnum) AND ymd >= '2011-10-01' AND ymd < '2011-11-01'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_credit_card_usage_normal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 46,
-                          "sval": {
-                            "sval": "2011-09-15",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 120,
-                          },
-                          "location": 60,
-                        },
-                      },
-                    ],
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "cnum",
+                                },
+                              },
+                            ],
+                            "location": 62,
                           },
-                          "location": 74,
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 55,
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ymd",
+                              },
+                            },
+                          ],
+                          "location": 72,
                         },
                       },
-                      {
+                      "location": 76,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
                         "A_Const": {
                           "location": 79,
                           "sval": {
-                            "sval": "2011-10-05",
+                            "sval": "2011-10-01",
                           },
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 90,
-                          },
-                          "location": 94,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 107,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 112,
-                          "sval": {
-                            "sval": "2011-10-18",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 110,
-                          },
-                          "location": 126,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 140,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 145,
-                          "sval": {
-                            "sval": "2011-10-21",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 200,
-                          },
-                          "location": 159,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 101,
-                          },
-                          "location": 173,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 178,
-                          "sval": {
-                            "sval": "2011-11-10",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 80,
-                          },
-                          "location": 193,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 102,
-                          },
-                          "location": 206,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 211,
-                          "sval": {
-                            "sval": "2011-09-22",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 300,
-                          },
-                          "location": 225,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 102,
-                          },
-                          "location": 239,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 244,
-                          "sval": {
-                            "sval": "2011-10-12",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 120,
-                          },
-                          "location": 258,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 102,
-                          },
-                          "location": 272,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 277,
-                          "sval": {
-                            "sval": "2011-10-28",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 200,
-                          },
-                          "location": 291,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 103,
-                          },
-                          "location": 305,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 310,
-                          "sval": {
-                            "sval": "2011-10-15",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 480,
-                          },
-                          "location": 324,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 57,
-                    "relname": "customer",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 50,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 50,
                       },
                     },
                   },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ymd",
+                              },
+                            },
+                          ],
+                          "location": 96,
+                        },
+                      },
+                      "location": 100,
+                      "name": [
                         {
                           "String": {
-                            "sval": "name",
+                            "sval": "<",
                           },
                         },
                       ],
-                      "location": 72,
-                    },
-                  },
-                  "location": 77,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 102,
+                          "sval": {
+                            "sval": "2011-11-01",
+                          },
+                        },
                       },
                     },
-                  ],
-                  "rexpr": {
-                    "SQLValueFunction": {
-                      "location": 79,
-                      "op": "SVFOP_CURRENT_USER",
-                      "typmod": -1,
-                    },
                   },
-                },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 68,
               },
             },
           },
-          "view": {
-            "inh": true,
-            "location": 14,
-            "relname": "my_property_normal",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_views.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "security_barrier",
-                "location": 38,
+exports[`select_views.sql > line 133 1`] = `
+[
+  "SELECT * FROM my_credit_card_usage_secure
+       WHERE f_leak(cnum) AND ymd >= '2011-10-01' AND ymd < '2011-11-01'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "my_credit_card_usage_secure",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 80,
-                    "relname": "customer",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 73,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 73,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
-                          "String": {
-                            "sval": "name",
-                          },
+                          "A_Star": {},
                         },
                       ],
-                      "location": 95,
-                    },
-                  },
-                  "location": 100,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "SQLValueFunction": {
-                      "location": 102,
-                      "op": "SVFOP_CURRENT_USER",
-                      "typmod": -1,
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "my_property_secure",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "JoinExpr": {
-                    "isNatural": true,
-                    "jointype": "JOIN_INNER",
-                    "larg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "l",
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "cnum",
+                                },
+                              },
+                            ],
+                            "location": 62,
+                          },
                         },
-                        "inh": true,
-                        "location": 60,
-                        "relname": "customer",
-                        "relpersistence": "p",
-                      },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "f_leak",
+                          },
+                        },
+                      ],
+                      "location": 55,
                     },
-                    "rarg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "r",
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ymd",
+                              },
+                            },
+                          ],
+                          "location": 72,
                         },
-                        "inh": true,
-                        "location": 84,
-                        "relname": "credit_card",
-                        "relpersistence": "p",
+                      },
+                      "location": 76,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 79,
+                          "sval": {
+                            "sval": "2011-10-01",
+                          },
+                        },
                       },
                     },
                   },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ymd",
+                              },
+                            },
+                          ],
+                          "location": 96,
+                        },
+                      },
+                      "location": 100,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 102,
+                          "sval": {
+                            "sval": "2011-11-01",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 68,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_views.sql > line 142 1`] = `
+[
+  "PREPARE p1 AS SELECT * FROM my_property_normal WHERE f_leak(passwd)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "PrepareStmt": {
+            "name": "p1",
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 28,
+                      "relname": "my_property_normal",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 21,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 21,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "passwd",
+                              },
+                            },
+                          ],
+                          "location": 60,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "f_leak",
+                        },
+                      },
+                    ],
                     "location": 53,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 53,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "l",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "name",
-                          },
-                        },
-                      ],
-                      "location": 111,
-                    },
-                  },
-                  "location": 118,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "SQLValueFunction": {
-                      "location": 120,
-                      "op": "SVFOP_CURRENT_USER",
-                      "typmod": -1,
-                    },
                   },
                 },
               },
             },
           },
-          "view": {
-            "inh": true,
-            "location": 14,
-            "relname": "my_credit_card_normal",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "security_barrier",
-                "location": 41,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "JoinExpr": {
-                    "isNatural": true,
-                    "jointype": "JOIN_INNER",
-                    "larg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "l",
-                        },
-                        "inh": true,
-                        "location": 83,
-                        "relname": "customer",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "rarg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "r",
-                        },
-                        "inh": true,
-                        "location": 107,
-                        "relname": "credit_card",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 76,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 76,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "l",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "name",
-                          },
-                        },
-                      ],
-                      "location": 134,
-                    },
-                  },
-                  "location": 141,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "SQLValueFunction": {
-                      "location": 143,
-                      "op": "SVFOP_CURRENT_USER",
-                      "typmod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "my_credit_card_secure",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "JoinExpr": {
-                    "isNatural": true,
-                    "jointype": "JOIN_INNER",
-                    "larg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "l",
-                        },
-                        "inh": true,
-                        "location": 66,
-                        "relname": "my_credit_card_secure",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "rarg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "r",
-                        },
-                        "inh": true,
-                        "location": 103,
-                        "relname": "credit_usage",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 59,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 59,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 14,
-            "relname": "my_credit_card_usage_normal",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "security_barrier",
-                "location": 47,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "JoinExpr": {
-                    "isNatural": true,
-                    "jointype": "JOIN_INNER",
-                    "larg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "l",
-                        },
-                        "inh": true,
-                        "location": 89,
-                        "relname": "my_credit_card_secure",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "rarg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "r",
-                        },
-                        "inh": true,
-                        "location": 126,
-                        "relname": "credit_usage",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 82,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 82,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "my_credit_card_usage_secure",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 75 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "my_property_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 39,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "my_property_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 42,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "my_credit_card_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 42,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "my_credit_card_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 48,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "my_credit_card_usage_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 48,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "my_credit_card_usage_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 82 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 62,
-                "sval": {
-                  "sval": "regress_alice",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 151,
-                "relname": "my_property_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 144,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 144,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "FuncCall": {
-              "args": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "passwd",
-                        },
-                      },
-                    ],
-                    "location": 183,
-                  },
-                },
-              ],
-              "funcformat": "COERCE_EXPLICIT_CALL",
-              "funcname": [
-                {
-                  "String": {
-                    "sval": "f_leak",
-                  },
-                },
-              ],
-              "location": 176,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_property_normal",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "passwd",
-                            },
-                          },
-                        ],
-                        "location": 67,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 60,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "my_property_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "FuncCall": {
-              "args": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "passwd",
-                        },
-                      },
-                    ],
-                    "location": 48,
-                  },
-                },
-              ],
-              "funcformat": "COERCE_EXPLICIT_CALL",
-              "funcname": [
-                {
-                  "String": {
-                    "sval": "f_leak",
-                  },
-                },
-              ],
-              "location": 41,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 96 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_property_secure",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "passwd",
-                            },
-                          },
-                        ],
-                        "location": 67,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 60,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "v",
-                },
-                "inh": true,
-                "location": 166,
-                "relname": "my_property_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 159,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 159,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 202,
-                          "sval": {
-                            "sval": "passwd",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 195,
-                  },
-                },
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "passwd",
-                              },
-                            },
-                          ],
-                          "location": 223,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 216,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 212,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 104 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "v",
-                    },
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_property_normal",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 71,
-                              "sval": {
-                                "sval": "passwd",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 64,
-                      },
-                    },
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "passwd",
-                                  },
-                                },
-                              ],
-                              "location": 92,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 85,
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 81,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "v",
-                },
-                "inh": true,
-                "location": 16,
-                "relname": "my_property_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 52,
-                          "sval": {
-                            "sval": "passwd",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 45,
-                  },
-                },
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "passwd",
-                              },
-                            },
-                          ],
-                          "location": 73,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 66,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 62,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "v",
-                    },
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_property_secure",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 71,
-                              "sval": {
-                                "sval": "passwd",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 64,
-                      },
-                    },
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "passwd",
-                                  },
-                                },
-                              ],
-                              "location": 92,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 85,
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 81,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 203,
-                "relname": "my_credit_card_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 196,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 196,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "FuncCall": {
-              "args": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "cnum",
-                        },
-                      },
-                    ],
-                    "location": 238,
-                  },
-                },
-              ],
-              "funcformat": "COERCE_EXPLICIT_CALL",
-              "funcname": [
-                {
-                  "String": {
-                    "sval": "f_leak",
-                  },
-                },
-              ],
-              "location": 231,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 118 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_credit_card_normal",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "cnum",
-                            },
-                          },
-                        ],
-                        "location": 70,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 63,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 119 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "my_credit_card_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "FuncCall": {
-              "args": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "cnum",
-                        },
-                      },
-                    ],
-                    "location": 51,
-                  },
-                },
-              ],
-              "funcformat": "COERCE_EXPLICIT_CALL",
-              "funcname": [
-                {
-                  "String": {
-                    "sval": "f_leak",
-                  },
-                },
-              ],
-              "location": 44,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 121 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_credit_card_secure",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "cnum",
-                            },
-                          },
-                        ],
-                        "location": 70,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 63,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 122 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 221,
-                "relname": "my_credit_card_usage_normal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 214,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 214,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "cnum",
-                              },
-                            },
-                          ],
-                          "location": 269,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 262,
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ymd",
-                            },
-                          },
-                        ],
-                        "location": 279,
-                      },
-                    },
-                    "location": 283,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 286,
-                        "sval": {
-                          "sval": "2011-10-01",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ymd",
-                            },
-                          },
-                        ],
-                        "location": 303,
-                      },
-                    },
-                    "location": 307,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 309,
-                        "sval": {
-                          "sval": "2011-11-01",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 275,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 130 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_credit_card_usage_normal",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "cnum",
-                                  },
-                                },
-                              ],
-                              "location": 83,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 76,
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ymd",
-                                },
-                              },
-                            ],
-                            "location": 93,
-                          },
-                        },
-                        "location": 97,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 100,
-                            "sval": {
-                              "sval": "2011-10-01",
-                            },
-                          },
-                        },
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ymd",
-                                },
-                              },
-                            ],
-                            "location": 117,
-                          },
-                        },
-                        "location": 121,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "<",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 123,
-                            "sval": {
-                              "sval": "2011-11-01",
-                            },
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 89,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 132 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "my_credit_card_usage_secure",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "cnum",
-                              },
-                            },
-                          ],
-                          "location": 64,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "f_leak",
-                        },
-                      },
-                    ],
-                    "location": 57,
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ymd",
-                            },
-                          },
-                        ],
-                        "location": 74,
-                      },
-                    },
-                    "location": 78,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 81,
-                        "sval": {
-                          "sval": "2011-10-01",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ymd",
-                            },
-                          },
-                        ],
-                        "location": 98,
-                      },
-                    },
-                    "location": 102,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 104,
-                        "sval": {
-                          "sval": "2011-11-01",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 70,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 135 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "my_credit_card_usage_secure",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "cnum",
-                                  },
-                                },
-                              ],
-                              "location": 83,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "f_leak",
-                            },
-                          },
-                        ],
-                        "location": 76,
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ymd",
-                                },
-                              },
-                            ],
-                            "location": 93,
-                          },
-                        },
-                        "location": 97,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 100,
-                            "sval": {
-                              "sval": "2011-10-01",
-                            },
-                          },
-                        },
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ymd",
-                                },
-                              },
-                            ],
-                            "location": 117,
-                          },
-                        },
-                        "location": 121,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "<",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 123,
-                            "sval": {
-                              "sval": "2011-11-01",
-                            },
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 89,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 137 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "PrepareStmt": {
-          "name": "p1",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 131,
-                    "relname": "my_property_normal",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 124,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 124,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "passwd",
-                            },
-                          },
-                        ],
-                        "location": 163,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 156,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 143 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "PrepareStmt": {
-          "name": "p2",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 29,
-                    "relname": "my_property_secure",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 22,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 22,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "passwd",
-                            },
-                          },
-                        ],
-                        "location": 61,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "f_leak",
-                      },
-                    },
-                  ],
-                  "location": 54,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExecuteStmt": {
-          "name": "p1",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExecuteStmt": {
-          "name": "p2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 146 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 147 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "List": {
-                    "items": [
-                      {
-                        "DefElem": {
-                          "arg": {
-                            "String": {
-                              "sval": "true",
-                            },
-                          },
-                          "defaction": "DEFELEM_UNSPEC",
-                          "defname": "security_barrier",
-                          "location": 36,
-                        },
-                      },
-                    ],
-                  },
-                },
-                "subtype": "AT_SetRelOptions",
-              },
-            },
-          ],
-          "objtype": "OBJECT_VIEW",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "my_property_normal",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 148 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "List": {
-                    "items": [
-                      {
-                        "DefElem": {
-                          "arg": {
-                            "String": {
-                              "sval": "false",
-                            },
-                          },
-                          "defaction": "DEFELEM_UNSPEC",
-                          "defname": "security_barrier",
-                          "location": 36,
-                        },
-                      },
-                    ],
-                  },
-                },
-                "subtype": "AT_SetRelOptions",
-              },
-            },
-          ],
-          "objtype": "OBJECT_VIEW",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "my_property_secure",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 149 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_alice",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`select_views.sql > line 150 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExecuteStmt": {
-          "name": "p1",
+[
+  "		-- To be perform as a view with security-barrier
+EXECUTE p2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExecuteStmt": {
+            "name": "p2",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_views.sql > line 150 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExecuteStmt": {
-          "name": "p2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`select_views.sql > line 151 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
+[
+  "		-- To be perform as a view without security-barrier
 
-exports[`select_views.sql > line 155 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_alice",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
+-- Cleanup.
+RESET SESSION AUTHORIZATION",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "session_authorization",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

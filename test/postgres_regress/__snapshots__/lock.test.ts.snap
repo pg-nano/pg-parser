@@ -1,4896 +1,574 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`lock.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
+exports[`lock.sql > line 27 1`] = `
+[
+  "BEGIN TRANSACTION",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
-exports[`lock.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 19,
-                "sval": {
-                  "sval": "lock_schema1",
+exports[`lock.sql > line 54 1`] = `
+[
+  "select relname from pg_locks l, pg_class c
+ where l.relation = c.oid and relname like '%lock_%' and mode = 'ExclusiveLock'
+ order by relname",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "l",
+                  },
+                  "inh": true,
+                  "location": 20,
+                  "relname": "pg_locks",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "lock_tbl1",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 25,
-                "typeName": {
-                  "location": 27,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "c",
+                  },
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_class",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "lock_tbl1a",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 26,
-                "typeName": {
-                  "location": 28,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 41,
-                    "relname": "lock_tbl1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 34,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view1",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "aliases": [
-            {
-              "String": {
-                "sval": "a",
-              },
-            },
-            {
-              "String": {
-                "sval": "b",
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 46,
-                    "relname": "lock_tbl1",
-                    "relpersistence": "p",
-                  },
-                },
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 57,
-                    "relname": "lock_tbl1a",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 39,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 39,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view2",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 41,
-                    "relname": "lock_view2",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 34,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view3",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 74,
-                    "relname": "lock_tbl1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "SubLink": {
-                        "location": 34,
-                        "subLinkType": "EXPR_SUBLINK",
-                        "subselect": {
-                          "SelectStmt": {
-                            "fromClause": [
-                              {
-                                "RangeVar": {
-                                  "inh": true,
-                                  "location": 49,
-                                  "relname": "lock_tbl1a",
-                                  "relpersistence": "p",
-                                },
-                              },
-                            ],
-                            "limitCount": {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1,
-                                },
-                                "location": 66,
-                              },
-                            },
-                            "limitOption": "LIMIT_OPTION_COUNT",
-                            "op": "SETOP_NONE",
-                            "targetList": [
-                              {
-                                "ResTarget": {
-                                  "location": 42,
-                                  "val": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "a",
-                                          },
-                                        },
-                                      ],
-                                      "location": 42,
-                                    },
-                                  },
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view4",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 41,
-                    "relname": "lock_tbl1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 34,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "SubLink": {
-                  "location": 59,
-                  "subLinkType": "ANY_SUBLINK",
-                  "subselect": {
-                    "SelectStmt": {
-                      "fromClause": [
-                        {
-                          "RangeVar": {
-                            "inh": true,
-                            "location": 77,
-                            "relname": "lock_tbl1a",
-                            "relpersistence": "p",
-                          },
-                        },
-                      ],
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
-                        {
-                          "ResTarget": {
-                            "location": 70,
-                            "val": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "A_Star": {},
-                                  },
-                                ],
-                                "location": 70,
-                              },
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  "testexpr": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
                     "ColumnRef": {
                       "fields": [
                         {
                           "String": {
-                            "sval": "a",
+                            "sval": "relname",
                           },
                         },
                       ],
-                      "location": 57,
+                      "location": 133,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view5",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeSubselect": {
-                    "alias": {
-                      "aliasname": "sub",
-                    },
-                    "subquery": {
-                      "SelectStmt": {
-                        "fromClause": [
-                          {
-                            "RangeVar": {
-                              "inh": true,
-                              "location": 56,
-                              "relname": "lock_tbl1",
-                              "relpersistence": "p",
-                            },
-                          },
-                        ],
-                        "limitOption": "LIMIT_OPTION_DEFAULT",
-                        "op": "SETOP_NONE",
-                        "targetList": [
-                          {
-                            "ResTarget": {
-                              "location": 49,
-                              "val": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "A_Star": {},
-                                    },
-                                  ],
-                                  "location": 49,
-                                },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "l",
                               },
                             },
+                            {
+                              "String": {
+                                "sval": "relation",
+                              },
+                            },
+                          ],
+                          "location": 50,
+                        },
+                      },
+                      "location": 61,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
                           },
-                        ],
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "oid",
+                              },
+                            },
+                          ],
+                          "location": 63,
+                        },
                       },
                     },
                   },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_LIKE",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "relname",
+                              },
+                            },
+                          ],
+                          "location": 73,
+                        },
+                      },
+                      "location": 81,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "~~",
                           },
-                        ],
-                        "location": 34,
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 86,
+                          "sval": {
+                            "sval": "%lock_%",
+                          },
+                        },
                       },
                     },
                   },
-                },
-              ],
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "mode",
+                              },
+                            },
+                          ],
+                          "location": 100,
+                        },
+                      },
+                      "location": 105,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 107,
+                          "sval": {
+                            "sval": "ExclusiveLock",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 69,
+              },
             },
           },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view6",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`lock.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_rol_lock1",
-          "stmt_type": "ROLESTMT_ROLE",
+exports[`lock.sql > line 94 1`] = `
+[
+  "CREATE OR REPLACE VIEW lock_view2 AS SELECT * from lock_view3",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 51,
+                      "relname": "lock_view3",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 44,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 44,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            "replace": true,
+            "view": {
+              "inh": true,
+              "location": 23,
+              "relname": "lock_view2",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`lock.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterRoleSetStmt": {
-          "role": {
-            "location": 12,
-            "rolename": "regress_rol_lock1",
-            "roletype": "ROLESPEC_CSTRING",
+exports[`lock.sql > line 104 1`] = `
+[
+  "CREATE TABLE lock_tbl2 (b BIGINT) INHERITS (lock_tbl1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "inhRelations": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 44,
+                  "relname": "lock_tbl1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "lock_tbl2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 24,
+                  "typeName": {
+                    "location": 26,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "setstmt": {
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`lock.sql > line 112 1`] = `
+[
+  "GRANT UPDATE ON TABLE lock_tbl1 TO regress_rol_lock1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 35,
+                  "rolename": "regress_rol_lock1",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "is_grant": true,
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 22,
+                  "relname": "lock_tbl1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "update",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`lock.sql > line 129 1`] = `
+[
+  "SET ROLE regress_rol_lock1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
             "args": [
               {
                 "A_Const": {
-                  "location": 48,
+                  "location": 9,
                   "sval": {
-                    "sval": "lock_schema1",
+                    "sval": "regress_rol_lock1",
                   },
                 },
               },
             ],
             "kind": "VAR_SET_VALUE",
+            "name": "role",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`lock.sql > line 149 1`] = `
+[
+  "CREATE VIEW lock_view8 WITH (security_invoker) AS SELECT * FROM lock_tbl1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "security_invoker",
+                  "location": 29,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 64,
+                      "relname": "lock_tbl1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 57,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 57,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "lock_view8",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`lock.sql > line 177 1`] = `
+[
+  "DROP VIEW lock_view8",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "lock_view8",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_VIEW",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`lock.sql > line 193 1`] = `
+[
+  "RESET search_path",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
             "name": "search_path",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`lock.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 39,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "String": {
-                "sval": "lock_schema1",
-              },
-            },
-          ],
-          "objtype": "OBJECT_SCHEMA",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "usage",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 1,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 2,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 6,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 3,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 4,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 5,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 6,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 6,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 1,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 2,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 3,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 4,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 5,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 6,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "nowait": true,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 61,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 73,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
+exports[`lock.sql > line 200 1`] = `
+[
+  "SELECT test_atomic_ops()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "test_atomic_ops",
+                          },
                         },
-                      },
-                    ],
-                    "location": 174,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 48,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 48,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 91,
-                      },
-                    },
-                    "location": 102,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 104,
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 114,
-                      },
-                    },
-                    "location": 122,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 127,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 141,
-                      },
-                    },
-                    "location": 146,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 148,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 110,
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 74,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 86,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 187,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 61,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 61,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 104,
-                      },
-                    },
-                    "location": 115,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 117,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 127,
-                      },
-                    },
-                    "location": 135,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 140,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 154,
-                      },
-                    },
-                    "location": 159,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 161,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 123,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 98,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 110,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 211,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 85,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 85,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 128,
-                      },
-                    },
-                    "location": 139,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 141,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 151,
-                      },
-                    },
-                    "location": 159,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 164,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 178,
-                      },
-                    },
-                    "location": 183,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 185,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 147,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 72 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view4",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 74 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 74,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 86,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 187,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 61,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 61,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 104,
-                      },
-                    },
-                    "location": 115,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 117,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 127,
-                      },
-                    },
-                    "location": 135,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 140,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 154,
-                      },
-                    },
-                    "location": 159,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 161,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 123,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view5",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 74,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 86,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 187,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 61,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 61,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 104,
-                      },
-                    },
-                    "location": 115,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 117,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 127,
-                      },
-                    },
-                    "location": 135,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 140,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 154,
-                      },
-                    },
-                    "location": 159,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 161,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 123,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 85 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 86 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view6",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 60,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 72,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 173,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 47,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 47,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 90,
-                      },
-                    },
-                    "location": 101,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 103,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 113,
-                      },
-                    },
-                    "location": 121,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 126,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 140,
-                      },
-                    },
-                    "location": 145,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 147,
-                        "sval": {
-                          "sval": "ExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 109,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 120,
-                    "relname": "lock_view3",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 113,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 113,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "replace": true,
-          "view": {
-            "inh": true,
-            "location": 92,
-            "relname": "lock_view2",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 96 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 41,
-                    "relname": "lock_view2",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 34,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 34,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "lock_view7",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 99 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 7,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view7",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 101 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 108,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 77,
-            "relname": "lock_tbl2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 88,
-                "typeName": {
-                  "location": 90,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 105 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 37,
-                "relname": "lock_tbl2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "lock_tbl3",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 107 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 163,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 150,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 113 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_rol_lock1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 114 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 116 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 117 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 118 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 119 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 120 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 121 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 122 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "location": 17,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 123 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 124 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 125 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 39,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 126 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 148,
-                "sval": {
-                  "sval": "regress_rol_lock1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 130 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 132 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 134 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 135 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 37,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 23,
-                "relname": "lock_view1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 136 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_rol_lock1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 137 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 138 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 139 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 101,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 113,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 220,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 88,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 88,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 131,
-                      },
-                    },
-                    "location": 142,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 144,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 154,
-                      },
-                    },
-                    "location": 162,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 167,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 181,
-                      },
-                    },
-                    "location": 186,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 188,
-                        "sval": {
-                          "sval": "AccessExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 150,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 143 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "lock_view1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 146 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "security_invoker",
-                "location": 124,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 159,
-                    "relname": "lock_tbl1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 152,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 152,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 107,
-            "relname": "lock_view8",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 150 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_rol_lock1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 151 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 153 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view8",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 154 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 155 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 156 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 37,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 23,
-                "relname": "lock_view8",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 157 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_rol_lock1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 158 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 160 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view8",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 161 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 162 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 163 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 36,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 23,
-                "relname": "lock_tbl1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 164 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 165 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 12,
-                "relname": "lock_view8",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 166 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "l",
-                },
-                "inh": true,
-                "location": 101,
-                "relname": "pg_locks",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "c",
-                },
-                "inh": true,
-                "location": 113,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 220,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 88,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 88,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "l",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "relation",
-                            },
-                          },
-                        ],
-                        "location": 131,
-                      },
-                    },
-                    "location": 142,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 144,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_LIKE",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relname",
-                            },
-                          },
-                        ],
-                        "location": 154,
-                      },
-                    },
-                    "location": 162,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 167,
-                        "sval": {
-                          "sval": "%lock_%",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "mode",
-                            },
-                          },
-                        ],
-                        "location": 181,
-                      },
-                    },
-                    "location": 186,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 188,
-                        "sval": {
-                          "sval": "AccessExclusiveLock",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 150,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 170 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 171 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 172 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "lock_view8",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 173 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view8",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 178 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view7",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 179 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view6",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 180 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view5",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 181 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view4",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 182 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view3",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 183 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_view1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 184 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_tbl3",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 185 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_tbl2",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 186 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_tbl1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 187 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "lock_tbl1a",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 188 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "String": {
-                "sval": "lock_schema1",
-              },
-            },
-          ],
-          "removeType": "OBJECT_SCHEMA",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 189 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_rol_lock1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 190 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`lock.sql > line 194 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`lock.sql > line 199 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "test_atomic_ops",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

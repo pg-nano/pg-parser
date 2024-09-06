@@ -1,2228 +1,62 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`tidrangescan.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 50,
-                "sval": {
-                  "sval": "off",
+exports[`tidrangescan.sql > line 7 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE ctid < '(1, 0)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_seqscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 4 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "tidrangescan",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 27,
-                "typeName": {
-                  "location": 30,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "data",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 44,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 26,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 54,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 44,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 44,
-                      },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
                     },
                   },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 73,
-                    },
-                  },
-                  "location": 78,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 80,
-                      "sval": {
-                        "sval": "(1, 0)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(1, 0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 58,
-                    },
-                  },
-                  "location": 63,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": ">",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 65,
-                      "sval": {
-                        "sval": "(9, 0)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(9, 0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 65,
-            "relname": "tidrangescan",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "s",
-                      "colnames": [
-                        {
-                          "String": {
-                            "sval": "i",
-                          },
-                        },
-                      ],
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 125,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 200,
-                                      },
-                                      "location": 127,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 109,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 85,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "i",
-                            },
-                          },
-                        ],
-                        "location": 85,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 87,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 94,
-                              "sval": {
-                                "sval": "x",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "ival": {
-                                "ival": 100,
-                              },
-                              "location": 99,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "repeat",
-                            },
-                          },
-                        ],
-                        "location": 87,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeleteStmt": {
-          "relation": {
-            "inh": true,
-            "location": 182,
-            "relname": "tidrangescan",
-            "relpersistence": "p",
-          },
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "TypeCast": {
-                        "arg": {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "TypeCast": {
-                                  "arg": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "ctid",
-                                          },
-                                        },
-                                      ],
-                                      "location": 211,
-                                    },
-                                  },
-                                  "location": 215,
-                                  "typeName": {
-                                    "location": 217,
-                                    "names": [
-                                      {
-                                        "String": {
-                                          "sval": "text",
-                                        },
-                                      },
-                                    ],
-                                    "typemod": -1,
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 227,
-                                  "sval": {
-                                    "sval": ",(\\d+)\\)",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_SQL_SYNTAX",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "substring",
-                                },
-                              },
-                            ],
-                            "location": 201,
-                          },
-                        },
-                        "location": 238,
-                        "typeName": {
-                          "location": 240,
-                          "names": [
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
                             {
                               "String": {
-                                "sval": "pg_catalog",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "int4",
+                                "sval": "ctid",
                               },
                             },
                           ],
-                          "typemod": -1,
+                          "location": 27,
                         },
                       },
                     },
-                    "location": 248,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 10,
-                        },
-                        "location": 250,
-                      },
-                    },
                   },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "TypeCast": {
-                        "arg": {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "TypeCast": {
-                                  "arg": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "ctid",
-                                          },
-                                        },
-                                      ],
-                                      "location": 266,
-                                    },
-                                  },
-                                  "location": 270,
-                                  "typeName": {
-                                    "location": 272,
-                                    "names": [
-                                      {
-                                        "String": {
-                                          "sval": "text",
-                                        },
-                                      },
-                                    ],
-                                    "typemod": -1,
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 282,
-                                  "sval": {
-                                    "sval": "\\((\\d+),",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_SQL_SYNTAX",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "substring",
-                                },
-                              },
-                            ],
-                            "location": 256,
-                          },
-                        },
-                        "location": 293,
-                        "typeName": {
-                          "location": 295,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "pg_catalog",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "int4",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                    "location": 303,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 305,
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "OR_EXPR",
-              "location": 253,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 8,
-                  "relname": "tidrangescan",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 43,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 71,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 61,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 61,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 90,
-                    },
-                  },
-                  "location": 95,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 97,
-                      "sval": {
-                        "sval": "(1,0)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(1,0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 58,
-                    },
-                  },
-                  "location": 63,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 66,
-                      "sval": {
-                        "sval": "(1,5)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 45,
-                  "sval": {
-                    "sval": "(1,5)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 58,
-                    },
-                  },
-                  "location": 63,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 65,
-                      "sval": {
-                        "sval": "(0,0)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(0,0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 43,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 71,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 61,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 61,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 90,
-                    },
-                  },
-                  "location": 95,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": ">",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 97,
-                      "sval": {
-                        "sval": "(2,8)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(2,8)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "A_Const": {
-                      "location": 58,
-                      "sval": {
-                        "sval": "(2,8)",
-                      },
-                    },
-                  },
-                  "location": 66,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 68,
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Const": {
-                  "location": 37,
-                  "sval": {
-                    "sval": "(2,8)",
-                  },
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 47,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 58,
-                    },
-                  },
-                  "location": 63,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": ">=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 66,
-                      "sval": {
-                        "sval": "(2,8)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 45,
-                  "sval": {
-                    "sval": "(2,8)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
-                          },
-                        },
-                      ],
-                      "location": 58,
-                    },
-                  },
-                  "location": 63,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": ">=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 66,
-                      "sval": {
-                        "sval": "(100,0)",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 45,
-                  "sval": {
-                    "sval": "(100,0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 43,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 71,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 61,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 61,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 90,
-                          },
-                        },
-                        "location": 95,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 97,
-                            "sval": {
-                              "sval": "(1,4)",
-                            },
-                          },
-                        },
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "A_Const": {
-                            "location": 109,
-                            "sval": {
-                              "sval": "(1,7)",
-                            },
-                          },
-                        },
-                        "location": 117,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 120,
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 105,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
+                ],
+                "whereClause": {
                   "A_Expr": {
                     "kind": "AEXPR_OP",
                     "lexpr": {
@@ -2234,426 +68,10 @@ exports[`tidrangescan.sql > line 58 1`] = `
                             },
                           },
                         ],
-                        "location": 37,
-                      },
-                    },
-                    "location": 42,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 44,
-                        "sval": {
-                          "sval": "(1,4)",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "A_Const": {
                         "location": 56,
-                        "sval": {
-                          "sval": "(1,7)",
-                        },
                       },
                     },
-                    "location": 64,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 67,
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 52,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 39,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 29,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 29,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "A_Const": {
-                            "location": 58,
-                            "sval": {
-                              "sval": "(1,7)",
-                            },
-                          },
-                        },
-                        "location": 66,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 69,
-                          },
-                        },
-                      },
-                    },
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 78,
-                          },
-                        },
-                        "location": 83,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": ">",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 85,
-                            "sval": {
-                              "sval": "(1,4)",
-                            },
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 74,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "A_Const": {
-                        "location": 37,
-                        "sval": {
-                          "sval": "(1,7)",
-                        },
-                      },
-                    },
-                    "location": 45,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 48,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 57,
-                      },
-                    },
-                    "location": 62,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 64,
-                        "sval": {
-                          "sval": "(1,4)",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 53,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 38,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitCount": {
-            "A_Const": {
-              "ival": {
-                "ival": 1,
-              },
-              "location": 101,
-            },
-          },
-          "limitOption": "LIMIT_OPTION_COUNT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 28,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 28,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 57,
-                      },
-                    },
-                    "location": 62,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 64,
-                        "sval": {
-                          "sval": "(0,65535)",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "ctid",
-                            },
-                          },
-                        ],
-                        "location": 80,
-                      },
-                    },
-                    "location": 85,
+                    "location": 61,
                     "name": [
                       {
                         "String": {
@@ -2663,100 +81,12 @@ exports[`tidrangescan.sql > line 63 1`] = `
                     ],
                     "rexpr": {
                       "A_Const": {
-                        "location": 87,
+                        "location": 63,
                         "sval": {
-                          "sval": "(1,0)",
+                          "sval": "(1, 0)",
                         },
                       },
                     },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 76,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitCount": {
-            "A_Const": {
-              "ival": {
-                "ival": 1,
-              },
-              "location": 58,
-            },
-          },
-          "limitOption": "LIMIT_OPTION_COUNT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(0,0)",
                   },
                 },
               },
@@ -2764,77 +94,99 @@ exports[`tidrangescan.sql > line 66 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 19,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
+exports[`tidrangescan.sql > line 11 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE ctid > '(9, 0)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 56,
+                      },
+                    },
+                    "location": 61,
+                    "name": [
                       {
                         "String": {
-                          "sval": "ctid",
+                          "sval": ">",
                         },
                       },
                     ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 63,
+                        "sval": {
+                          "sval": "(9, 0)",
+                        },
                       },
                     },
-                  ],
-                  "location": 38,
-                },
-              },
-              "location": 43,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 45,
-                  "sval": {
-                    "sval": "(4294967295,65535)",
                   },
                 },
               },
@@ -2842,323 +194,1275 @@ exports[`tidrangescan.sql > line 67 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
+exports[`tidrangescan.sql > line 16 1`] = `
+[
+  "INSERT INTO tidrangescan SELECT i,repeat('x', 100) FROM generate_series(1,200) AS s(i)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "tidrangescan",
+              "relpersistence": "p",
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeFunction": {
+                      "alias": {
+                        "aliasname": "s",
+                        "colnames": [
+                          {
+                            "String": {
+                              "sval": "i",
+                            },
+                          },
+                        ],
                       },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "(0,0)",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 62,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 52,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 52,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 81,
-                },
-              },
-              "location": 86,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "SubLink": {
-                  "location": 89,
-                  "subLinkType": "EXPR_SUBLINK",
-                  "subselect": {
-                    "SelectStmt": {
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
+                      "functions": [
                         {
-                          "ResTarget": {
-                            "location": 97,
-                            "val": {
-                              "TypeCast": {
-                                "arg": {
-                                  "A_Const": {
-                                    "isnull": true,
-                                    "location": 97,
-                                  },
-                                },
-                                "location": 101,
-                                "typeName": {
-                                  "location": 103,
-                                  "names": [
+                          "List": {
+                            "items": [
+                              {
+                                "FuncCall": {
+                                  "args": [
                                     {
-                                      "String": {
-                                        "sval": "tid",
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 1,
+                                        },
+                                        "location": 72,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 200,
+                                        },
+                                        "location": 74,
                                       },
                                     },
                                   ],
-                                  "typemod": -1,
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "generate_series",
+                                      },
+                                    },
+                                  ],
+                                  "location": 56,
                                 },
                               },
-                            },
+                              {},
+                            ],
                           },
                         },
                       ],
                     },
                   },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 32,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "i",
+                              },
+                            },
+                          ],
+                          "location": 32,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 34,
+                      "val": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "A_Const": {
+                                "location": 41,
+                                "sval": {
+                                  "sval": "x",
+                                },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 100,
+                                },
+                                "location": 46,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "repeat",
+                              },
+                            },
+                          ],
+                          "location": 34,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 21 1`] = `
+[
+  "DELETE FROM tidrangescan
+WHERE substring(ctid::text FROM ',(\\d+)\\)')::integer > 10 OR substring(ctid::text FROM '\\((\\d+),')::integer > 2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DeleteStmt": {
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "tidrangescan",
+              "relpersistence": "p",
+            },
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "TypeCast": {
+                          "arg": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "TypeCast": {
+                                    "arg": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "ctid",
+                                            },
+                                          },
+                                        ],
+                                        "location": 41,
+                                      },
+                                    },
+                                    "location": 45,
+                                    "typeName": {
+                                      "location": 47,
+                                      "names": [
+                                        {
+                                          "String": {
+                                            "sval": "text",
+                                          },
+                                        },
+                                      ],
+                                      "typemod": -1,
+                                    },
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "location": 57,
+                                    "sval": {
+                                      "sval": ",(\\d+)\\)",
+                                    },
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_SQL_SYNTAX",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "pg_catalog",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "substring",
+                                  },
+                                },
+                              ],
+                              "location": 31,
+                            },
+                          },
+                          "location": 68,
+                          "typeName": {
+                            "location": 70,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      "location": 78,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 10,
+                          },
+                          "location": 80,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "TypeCast": {
+                          "arg": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "TypeCast": {
+                                    "arg": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "ctid",
+                                            },
+                                          },
+                                        ],
+                                        "location": 96,
+                                      },
+                                    },
+                                    "location": 100,
+                                    "typeName": {
+                                      "location": 102,
+                                      "names": [
+                                        {
+                                          "String": {
+                                            "sval": "text",
+                                          },
+                                        },
+                                      ],
+                                      "typemod": -1,
+                                    },
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "location": 112,
+                                    "sval": {
+                                      "sval": "\\((\\d+),",
+                                    },
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_SQL_SYNTAX",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "pg_catalog",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "substring",
+                                  },
+                                },
+                              ],
+                              "location": 86,
+                            },
+                          },
+                          "location": 123,
+                          "typeName": {
+                            "location": 125,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      "location": 133,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 135,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "OR_EXPR",
+                "location": 83,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 30 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE ctid <= '(1,5)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 56,
+                      },
+                    },
+                    "location": 61,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 64,
+                        "sval": {
+                          "sval": "(1,5)",
+                        },
+                      },
+                    },
+                  },
                 },
               },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
+exports[`tidrangescan.sql > line 43 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE '(2,8)' < ctid",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 22,
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t",
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
                     },
-                    "inh": true,
-                    "location": 57,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
                   },
-                },
-                {
-                  "RangeSubselect": {
-                    "alias": {
-                      "aliasname": "t2",
-                    },
-                    "lateral": true,
-                    "subquery": {
-                      "SelectStmt": {
-                        "fromClause": [
-                          {
-                            "RangeVar": {
-                              "alias": {
-                                "aliasname": "t2",
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
                               },
-                              "inh": true,
-                              "location": 105,
-                              "relname": "tidrangescan",
-                              "relpersistence": "p",
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "location": 56,
+                        "sval": {
+                          "sval": "(2,8)",
+                        },
+                      },
+                    },
+                    "location": 64,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
                             },
                           },
                         ],
+                        "location": 66,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 47 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE ctid >= '(2,8)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "ctid",
+                            },
+                          },
+                        ],
+                        "location": 56,
+                      },
+                    },
+                    "location": 61,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": ">=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 64,
+                        "sval": {
+                          "sval": "(2,8)",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 56 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT ctid FROM tidrangescan WHERE ctid > '(1,4)' AND '(1,7)' >= ctid",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 56,
+                            },
+                          },
+                          "location": 61,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "location": 63,
+                              "sval": {
+                                "sval": "(1,4)",
+                              },
+                            },
+                          },
+                        },
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "A_Const": {
+                              "location": 75,
+                              "sval": {
+                                "sval": "(1,7)",
+                              },
+                            },
+                          },
+                          "location": 83,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": ">=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 86,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "boolop": "AND_EXPR",
+                    "location": 71,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 65 1`] = `
+[
+  "SELECT ctid FROM tidrangescan WHERE ctid > '(0,65535)' AND ctid < '(1,0)' LIMIT 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "tidrangescan",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitCount": {
+              "A_Const": {
+                "ival": {
+                  "ival": 1,
+                },
+                "location": 80,
+              },
+            },
+            "limitOption": "LIMIT_OPTION_COUNT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 36,
+                        },
+                      },
+                      "location": 41,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 43,
+                          "sval": {
+                            "sval": "(0,65535)",
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 59,
+                        },
+                      },
+                      "location": 64,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 66,
+                          "sval": {
+                            "sval": "(1,0)",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 55,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 68 1`] = `
+[
+  "SELECT ctid FROM tidrangescan WHERE ctid > '(4294967295,65535)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "tidrangescan",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 36,
+                  },
+                },
+                "location": 41,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 43,
+                    "sval": {
+                      "sval": "(4294967295,65535)",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 72 1`] = `
+[
+  "SELECT ctid FROM tidrangescan WHERE ctid >= (SELECT NULL::tid)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "tidrangescan",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "ctid",
+                        },
+                      },
+                    ],
+                    "location": 36,
+                  },
+                },
+                "location": 41,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "SubLink": {
+                    "location": 44,
+                    "subLinkType": "EXPR_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
                         "limitOption": "LIMIT_OPTION_DEFAULT",
                         "op": "SETOP_NONE",
                         "targetList": [
                           {
                             "ResTarget": {
-                              "location": 89,
-                              "name": "c",
+                              "location": 52,
                               "val": {
-                                "FuncCall": {
-                                  "agg_star": true,
-                                  "funcformat": "COERCE_EXPLICIT_CALL",
-                                  "funcname": [
-                                    {
-                                      "String": {
-                                        "sval": "count",
-                                      },
+                                "TypeCast": {
+                                  "arg": {
+                                    "A_Const": {
+                                      "isnull": true,
+                                      "location": 52,
                                     },
-                                  ],
-                                  "location": 89,
+                                  },
+                                  "location": 56,
+                                  "typeName": {
+                                    "location": 58,
+                                    "names": [
+                                      {
+                                        "String": {
+                                          "sval": "tid",
+                                        },
+                                      },
+                                    ],
+                                    "typemod": -1,
+                                  },
                                 },
                               },
                             },
                           },
                         ],
-                        "whereClause": {
-                          "A_Expr": {
-                            "kind": "AEXPR_OP",
-                            "lexpr": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "t2",
-                                    },
-                                  },
-                                  {
-                                    "String": {
-                                      "sval": "ctid",
-                                    },
-                                  },
-                                ],
-                                "location": 127,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 75 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT t.ctid,t2.c FROM tidrangescan t,
+LATERAL (SELECT count(*) c FROM tidrangescan t2 WHERE t2.ctid <= t.ctid) t2
+WHERE t.ctid < '(1,0)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t",
+                      },
+                      "inh": true,
+                      "location": 44,
+                      "relname": "tidrangescan",
+                      "relpersistence": "p",
+                    },
+                  },
+                  {
+                    "RangeSubselect": {
+                      "alias": {
+                        "aliasname": "t2",
+                      },
+                      "lateral": true,
+                      "subquery": {
+                        "SelectStmt": {
+                          "fromClause": [
+                            {
+                              "RangeVar": {
+                                "alias": {
+                                  "aliasname": "t2",
+                                },
+                                "inh": true,
+                                "location": 92,
+                                "relname": "tidrangescan",
+                                "relpersistence": "p",
                               },
                             },
-                            "location": 135,
-                            "name": [
-                              {
-                                "String": {
-                                  "sval": "<=",
+                          ],
+                          "limitOption": "LIMIT_OPTION_DEFAULT",
+                          "op": "SETOP_NONE",
+                          "targetList": [
+                            {
+                              "ResTarget": {
+                                "location": 76,
+                                "name": "c",
+                                "val": {
+                                  "FuncCall": {
+                                    "agg_star": true,
+                                    "funcformat": "COERCE_EXPLICIT_CALL",
+                                    "funcname": [
+                                      {
+                                        "String": {
+                                          "sval": "count",
+                                        },
+                                      },
+                                    ],
+                                    "location": 76,
+                                  },
                                 },
                               },
-                            ],
-                            "rexpr": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "t",
+                            },
+                          ],
+                          "whereClause": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "t2",
+                                      },
                                     },
-                                  },
-                                  {
-                                    "String": {
-                                      "sval": "ctid",
+                                    {
+                                      "String": {
+                                        "sval": "ctid",
+                                      },
                                     },
+                                  ],
+                                  "location": 114,
+                                },
+                              },
+                              "location": 122,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "<=",
                                   },
-                                ],
-                                "location": 138,
+                                },
+                              ],
+                              "rexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "t",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "ctid",
+                                      },
+                                    },
+                                  ],
+                                  "location": 125,
+                                },
                               },
                             },
                           },
@@ -3166,15 +1470,59 @@ exports[`tidrangescan.sql > line 73 1`] = `
                       },
                     },
                   },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 40,
-                    "val": {
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "ctid",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 34,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t2",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 34,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
                       "ColumnRef": {
                         "fields": [
                           {
@@ -3188,38 +1536,164 @@ exports[`tidrangescan.sql > line 73 1`] = `
                             },
                           },
                         ],
-                        "location": 40,
+                        "location": 142,
+                      },
+                    },
+                    "location": 149,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "<",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 151,
+                        "sval": {
+                          "sval": "(1,0)",
+                        },
                       },
                     },
                   },
                 },
-                {
-                  "ResTarget": {
-                    "location": 47,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "t2",
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tidrangescan.sql > line 80 1`] = `
+[
+  "SELECT t.ctid,t2.c FROM tidrangescan t,
+LATERAL (SELECT count(*) c FROM tidrangescan t2 WHERE t2.ctid <= t.ctid) t2
+WHERE t.ctid < '(1,0)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "t",
+                  },
+                  "inh": true,
+                  "location": 24,
+                  "relname": "tidrangescan",
+                  "relpersistence": "p",
+                },
+              },
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "t2",
+                  },
+                  "lateral": true,
+                  "subquery": {
+                    "SelectStmt": {
+                      "fromClause": [
+                        {
+                          "RangeVar": {
+                            "alias": {
+                              "aliasname": "t2",
+                            },
+                            "inh": true,
+                            "location": 72,
+                            "relname": "tidrangescan",
+                            "relpersistence": "p",
+                          },
+                        },
+                      ],
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "targetList": [
+                        {
+                          "ResTarget": {
+                            "location": 56,
+                            "name": "c",
+                            "val": {
+                              "FuncCall": {
+                                "agg_star": true,
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
+                                  {
+                                    "String": {
+                                      "sval": "count",
+                                    },
+                                  },
+                                ],
+                                "location": 56,
+                              },
                             },
                           },
-                          {
-                            "String": {
-                              "sval": "c",
+                        },
+                      ],
+                      "whereClause": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t2",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 94,
                             },
                           },
-                        ],
-                        "location": 47,
+                          "location": 102,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "<=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 105,
+                            },
+                          },
+                        },
                       },
                     },
                   },
                 },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
@@ -3233,159 +1707,38 @@ exports[`tidrangescan.sql > line 73 1`] = `
                           },
                         },
                       ],
-                      "location": 155,
-                    },
-                  },
-                  "location": 162,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 164,
-                      "sval": {
-                        "sval": "(1,0)",
-                      },
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "t",
-                },
-                "inh": true,
-                "location": 26,
-                "relname": "tidrangescan",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "t2",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "alias": {
-                            "aliasname": "t2",
-                          },
-                          "inh": true,
-                          "location": 74,
-                          "relname": "tidrangescan",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 58,
-                          "name": "c",
-                          "val": {
-                            "FuncCall": {
-                              "agg_star": true,
-                              "funcformat": "COERCE_EXPLICIT_CALL",
-                              "funcname": [
-                                {
-                                  "String": {
-                                    "sval": "count",
-                                  },
-                                },
-                              ],
-                              "location": 58,
-                            },
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "t2",
                           },
                         },
-                      },
-                    ],
-                    "whereClause": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t2",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 96,
+                        {
+                          "String": {
+                            "sval": "c",
                           },
                         },
-                        "location": 104,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "<=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "ctid",
-                                },
-                              },
-                            ],
-                            "location": 107,
-                          },
-                        },
-                      },
+                      ],
+                      "location": 14,
                     },
                   },
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -3399,67 +1752,23 @@ exports[`tidrangescan.sql > line 79 1`] = `
                         },
                       },
                     ],
-                    "location": 9,
+                    "location": 122,
                   },
                 },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "t2",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 16,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "t",
-                      },
+                "location": 129,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
                     },
-                    {
-                      "String": {
-                        "sval": "ctid",
-                      },
-                    },
-                  ],
-                  "location": 124,
-                },
-              },
-              "location": 131,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 133,
-                  "sval": {
-                    "sval": "(1,0)",
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 131,
+                    "sval": {
+                      "sval": "(1,0)",
+                    },
                   },
                 },
               },
@@ -3467,55 +1776,76 @@ exports[`tidrangescan.sql > line 79 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 85,
-              },
-            },
-          ],
-          "query": {
-            "DeclareCursorStmt": {
-              "options": 258,
-              "portalname": "c",
-              "query": {
-                "SelectStmt": {
-                  "fromClause": [
-                    {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 141,
-                        "relname": "tidrangescan",
-                        "relpersistence": "p",
-                      },
+exports[`tidrangescan.sql > line 87 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+DECLARE c SCROLL CURSOR FOR SELECT ctid FROM tidrangescan WHERE ctid < '(1,0)'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
                     },
-                  ],
-                  "limitOption": "LIMIT_OPTION_DEFAULT",
-                  "op": "SETOP_NONE",
-                  "targetList": [
-                    {
-                      "ResTarget": {
-                        "location": 131,
-                        "val": {
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "DeclareCursorStmt": {
+                "options": 258,
+                "portalname": "c",
+                "query": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeVar": {
+                          "inh": true,
+                          "location": 65,
+                          "relname": "tidrangescan",
+                          "relpersistence": "p",
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 55,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "ctid",
+                                  },
+                                },
+                              ],
+                              "location": 55,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "whereClause": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
                           "ColumnRef": {
                             "fields": [
                               {
@@ -3524,141 +1854,25 @@ exports[`tidrangescan.sql > line 83 1`] = `
                                 },
                               },
                             ],
-                            "location": 131,
+                            "location": 84,
                           },
                         },
-                      },
-                    },
-                  ],
-                  "whereClause": {
-                    "A_Expr": {
-                      "kind": "AEXPR_OP",
-                      "lexpr": {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "ctid",
-                              },
-                            },
-                          ],
-                          "location": 160,
-                        },
-                      },
-                      "location": 165,
-                      "name": [
-                        {
-                          "String": {
-                            "sval": "<",
-                          },
-                        },
-                      ],
-                      "rexpr": {
-                        "A_Const": {
-                          "location": 167,
-                          "sval": {
-                            "sval": "(1,0)",
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 89 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 91 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeclareCursorStmt": {
-          "options": 258,
-          "portalname": "c",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 46,
-                    "relname": "tidrangescan",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 36,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
+                        "location": 89,
+                        "name": [
                           {
                             "String": {
-                              "sval": "ctid",
+                              "sval": "<",
                             },
                           },
                         ],
-                        "location": 36,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "ctid",
+                        "rexpr": {
+                          "A_Const": {
+                            "location": 91,
+                            "sval": {
+                              "sval": "(1,0)",
+                            },
                           },
                         },
-                      ],
-                      "location": 65,
-                    },
-                  },
-                  "location": 70,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 72,
-                      "sval": {
-                        "sval": "(1,0)",
                       },
                     },
                   },
@@ -3668,153 +1882,77 @@ exports[`tidrangescan.sql > line 91 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "c",
+exports[`tidrangescan.sql > line 90 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_BACKWARD",
-          "howMany": 1,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_ABSOLUTE",
-          "howMany": 1,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 96 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_ABSOLUTE",
-          "howMany": -1,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tidrangescan.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "tidrangescan",
+exports[`tidrangescan.sql > line 99 1`] = `
+[
+  "DROP TABLE tidrangescan",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "tidrangescan",
+                      },
                     },
-                  },
-                ],
+                  ],
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tidrangescan.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_seqscan",
+exports[`tidrangescan.sql > line 101 1`] = `
+[
+  "RESET enable_seqscan",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "enable_seqscan",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

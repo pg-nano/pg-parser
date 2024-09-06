@@ -1,3927 +1,1639 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`compression.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 62,
-            "relname": "cmdata",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 69,
-                "typeName": {
-                  "location": 72,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "f1",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 21,
-            "relname": "cmdata",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 34,
-                                "sval": {
-                                  "sval": "1234567890",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1000,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 27,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 10 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 35,
-                                "sval": {
-                                  "sval": "1234567890",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1004,
-                                },
-                                "location": 49,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 28,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 13 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 58,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 34,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 41,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 200,
-                          },
-                          "location": 45,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 50,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "substr",
-                        },
-                      },
-                    ],
-                    "location": 34,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 34,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2000,
-                          },
-                          "location": 19,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 50,
-                          },
-                          "location": 25,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "substr",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 57,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "intoClause": {
-            "onCommit": "ONCOMMIT_NOOP",
-            "rel": {
+exports[`compression.sql > line 7 1`] = `
+[
+  "CREATE TABLE cmdata(f1 text COMPRESSION pglz)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
               "inh": true,
-              "location": 44,
-              "relname": "cmmove1",
+              "location": 13,
+              "relname": "cmdata",
               "relpersistence": "p",
             },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 37,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 37,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 25 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 41,
-            "relname": "cmmove3",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 49,
-                "typeName": {
-                  "location": 52,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmmove3",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "cmdata",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmmove3",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "cmdata1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmmove3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 50,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "TableLikeClause": {
-                "options": 2,
-                "relation": {
-                  "inh": true,
-                  "location": 64,
-                  "relname": "cmdata1",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 36 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 71,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 80,
-                "typeName": {
-                  "location": 83,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 58,
-            "relname": "cmmove2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 66,
-                "typeName": {
-                  "location": 69,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmmove2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 36,
-                                "sval": {
-                                  "sval": "1234567890",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1004,
-                                },
-                                "location": 50,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 29,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmmove2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 41,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 8,
-            "relname": "cmmove2",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "f1",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "cmdata1",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                    "location": 25,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmmove2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "large_val",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 96,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "select array_agg(fipshash(g::text))::text from generate_series(1, 256) g",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 109,
-              },
-            },
-          ],
-          "replace": true,
-          "returnType": {
-            "location": 91,
-            "names": [
+            "tableElts": [
               {
-                "String": {
-                  "sval": "text",
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "pglz",
+                  "is_local": true,
+                  "location": 20,
+                  "typeName": {
+                    "location": 23,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
             ],
-            "typemod": -1,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 23,
-                "typeName": {
-                  "location": 26,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "FuncCall": {
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "large_val",
-                                },
-                              },
-                            ],
-                            "location": 28,
-                          },
-                        },
-                        "location": 40,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "||",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 50,
-                                  "sval": {
-                                    "sval": "a",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 4000,
-                                  },
-                                  "location": 55,
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "repeat",
-                                },
-                              },
-                            ],
-                            "location": 43,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmdata2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "FuncCall": {
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "large_val",
-                                },
-                              },
-                            ],
-                            "location": 28,
-                          },
-                        },
-                        "location": 40,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "||",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 50,
-                                  "sval": {
-                                    "sval": "a",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 4000,
-                                  },
-                                  "location": 55,
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "repeat",
-                                },
-                              },
-                            ],
-                            "location": 43,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 56 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 32,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 200,
-                          },
-                          "location": 19,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 24,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "substr",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 32,
-                "relname": "cmdata2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 200,
-                          },
-                          "location": 19,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 24,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "substr",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "cmdata2",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 61,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 70,
-                "typeName": {
-                  "location": 73,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 63 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 65 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 67 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 72 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "String": {
-                    "sval": "pglz",
-                  },
-                },
-                "name": "f1",
-                "subtype": "AT_SetCompression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 73 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 75 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmdata2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTableAsStmt": {
-          "into": {
-            "colNames": [
-              {
-                "String": {
-                  "sval": "x",
-                },
-              },
-            ],
-            "onCommit": "ONCOMMIT_NOOP",
-            "rel": {
+exports[`compression.sql > line 11 1`] = `
+[
+  "CREATE TABLE cmdata1(f1 TEXT COMPRESSION lz4)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
               "inh": true,
-              "location": 70,
-              "relname": "compressmv",
+              "location": 13,
+              "relname": "cmdata1",
               "relpersistence": "p",
             },
-          },
-          "objtype": "OBJECT_MATVIEW",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 101,
-                    "relname": "cmdata1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 94,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 94,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 81 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 38,
-                "relname": "compressmv",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "x",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "lz4",
+                  "is_local": true,
+                  "location": 21,
+                  "typeName": {
+                    "location": 24,
+                    "names": [
                       {
                         "String": {
-                          "sval": "pg_column_compression",
+                          "sval": "text",
                         },
                       },
                     ],
-                    "location": 8,
+                    "typemod": -1,
                   },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "partspec": {
-            "location": 82,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 100,
-                  "name": "f1",
                 },
               },
             ],
-            "strategy": "PARTITION_STRATEGY_HASH",
-          },
-          "relation": {
-            "inh": true,
-            "location": 50,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "lz4",
-                "is_local": true,
-                "location": 57,
-                "typeName": {
-                  "location": 60,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 35,
-                "relname": "cmpart",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "partbound": {
-            "location": 53,
-            "modulus": 2,
-            "strategy": "h",
-          },
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmpart1",
-            "relpersistence": "p",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmpart2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 22,
-                "typeName": {
-                  "location": 25,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 89 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "PartitionCmd": {
-                    "bound": {
-                      "location": 57,
-                      "modulus": 2,
-                      "remainder": 1,
-                      "strategy": "h",
-                    },
-                    "name": {
-                      "inh": true,
-                      "location": 38,
-                      "relname": "cmpart2",
-                      "relpersistence": "p",
-                    },
-                  },
-                },
-                "subtype": "AT_AttachPartition",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 91 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 35,
-                                "sval": {
-                                  "sval": "123456789",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1004,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 28,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 35,
-                                "sval": {
-                                  "sval": "123456789",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 4004,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 28,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmpart1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmpart2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 76,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 84,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 59,
-            "relname": "cminh",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 54,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cminh",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "lz4",
-                "is_local": true,
-                "location": 20,
-                "typeName": {
-                  "location": 23,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 99 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 72,
-                "sval": {
-                  "sval": "",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "default_toast_compression",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 33,
-                "sval": {
-                  "sval": "I do not exist compression",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "default_toast_compression",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 103 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 33,
-                "sval": {
-                  "sval": "lz4",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "default_toast_compression",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 104 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 33,
-                "sval": {
-                  "sval": "pglz",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "default_toast_compression",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 105 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "String": {
-                    "sval": "lz4",
-                  },
-                },
-                "name": "f1",
-                "subtype": "AT_SetCompression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 47,
-            "relname": "cmdata",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 35,
-                                "sval": {
-                                  "sval": "123456789",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 4004,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 28,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 109 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "String": {
-                    "sval": "default",
-                  },
-                },
-                "name": "f1",
-                "subtype": "AT_SetCompression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 113 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 117 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`compression.sql > line 121 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "String": {
-                    "sval": "lz4",
-                  },
-                },
-                "name": "f1",
-                "subtype": "AT_SetCompression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmpart2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 122 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 83,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 105,
-                                "sval": {
-                                  "sval": "123456789",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1004,
-                                },
-                                "location": 118,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 98,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 125 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmpart",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "A_Const": {
-                                "location": 35,
-                                "sval": {
-                                  "sval": "123456789",
-                                },
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 4004,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 28,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 126 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmpart1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 127 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmpart2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 128 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 75,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 44,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 66,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 44,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 131 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "full",
-                "location": 8,
-              },
-            },
-          ],
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
+exports[`compression.sql > line 16 1`] = `
+[
+  "SELECT pg_column_compression(f1) FROM cmdata",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
                   "inh": true,
-                  "location": 13,
+                  "location": 38,
                   "relname": "cmdata",
                   "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 132 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "cmdata",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 30,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_column_compression",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "cmdata2",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 136 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "compression": "pglz",
-                "is_local": true,
-                "location": 23,
-                "typeName": {
-                  "location": 26,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "f2",
-                "compression": "lz4",
-                "is_local": true,
-                "location": 49,
-                "typeName": {
-                  "location": 52,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 137 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "idx1",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "expr": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "f1",
-                            },
-                          },
-                        ],
-                        "location": 39,
-                      },
-                    },
-                    "location": 42,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "||",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "f2",
-                            },
-                          },
-                        ],
-                        "location": 45,
-                      },
-                    },
-                  },
-                },
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 29,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 138 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "cmdata2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "SubLink": {
-                          "location": 28,
-                          "subLinkType": "EXPR_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeFunction": {
-                                    "alias": {
-                                      "aliasname": "g",
-                                    },
-                                    "functions": [
-                                      {
-                                        "List": {
-                                          "items": [
-                                            {
-                                              "FuncCall": {
-                                                "args": [
-                                                  {
-                                                    "A_Const": {
-                                                      "ival": {
-                                                        "ival": 1,
-                                                      },
-                                                      "location": 92,
-                                                    },
-                                                  },
-                                                  {
-                                                    "A_Const": {
-                                                      "ival": {
-                                                        "ival": 50,
-                                                      },
-                                                      "location": 95,
-                                                    },
-                                                  },
-                                                ],
-                                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                                "funcname": [
-                                                  {
-                                                    "String": {
-                                                      "sval": "generate_series",
-                                                    },
-                                                  },
-                                                ],
-                                                "location": 76,
-                                              },
-                                            },
-                                            {},
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
                                 },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 36,
-                                    "val": {
-                                      "TypeCast": {
-                                        "arg": {
-                                          "FuncCall": {
-                                            "args": [
-                                              {
-                                                "FuncCall": {
-                                                  "args": [
-                                                    {
-                                                      "TypeCast": {
-                                                        "arg": {
-                                                          "ColumnRef": {
-                                                            "fields": [
-                                                              {
-                                                                "String": {
-                                                                  "sval": "g",
-                                                                },
-                                                              },
-                                                            ],
-                                                            "location": 55,
-                                                          },
-                                                        },
-                                                        "location": 56,
-                                                        "typeName": {
-                                                          "location": 58,
-                                                          "names": [
-                                                            {
-                                                              "String": {
-                                                                "sval": "text",
-                                                              },
-                                                            },
-                                                          ],
-                                                          "typemod": -1,
-                                                        },
-                                                      },
-                                                    },
-                                                  ],
-                                                  "funcformat": "COERCE_EXPLICIT_CALL",
-                                                  "funcname": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "fipshash",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 46,
-                                                },
-                                              },
-                                            ],
-                                            "funcformat": "COERCE_EXPLICIT_CALL",
-                                            "funcname": [
-                                              {
-                                                "String": {
-                                                  "sval": "array_agg",
-                                                },
-                                              },
-                                            ],
-                                            "location": 36,
-                                          },
-                                        },
-                                        "location": 64,
-                                        "typeName": {
-                                          "location": 66,
-                                          "names": [
-                                            {
-                                              "String": {
-                                                "sval": "text",
-                                              },
-                                            },
-                                          ],
-                                          "typemod": -1,
-                                        },
-                                      },
-                                    },
-                                  },
-                                },
-                              ],
-                            },
+                              },
+                            ],
+                            "location": 29,
                           },
                         },
-                      },
-                      {
-                        "FuncCall": {
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "version",
-                              },
-                            },
-                          ],
-                          "location": 103,
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_column_compression",
+                          },
                         },
-                      },
-                    ],
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
-              ],
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 140 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 45,
-                "relname": "cmdata",
-                "relpersistence": "p",
+exports[`compression.sql > line 20 1`] = `
+[
+  "SELECT SUBSTR(f1, 200, 5) FROM cmdata",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "cmdata",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 29,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
                               },
+                            ],
+                            "location": 14,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 200,
                             },
-                          ],
-                          "location": 36,
+                            "location": 18,
+                          },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "length",
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 5,
+                            },
+                            "location": 23,
+                          },
                         },
-                      },
-                    ],
-                    "location": 29,
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "substr",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 143 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "cmdata1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "length",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
+exports[`compression.sql > line 24 1`] = `
+[
+  "SELECT * INTO cmmove1 FROM cmdata",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "cmdata",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
+            ],
+            "intoClause": {
+              "onCommit": "ONCOMMIT_NOOP",
+              "rel": {
                 "inh": true,
-                "location": 24,
+                "location": 14,
                 "relname": "cmmove1",
                 "relpersistence": "p",
               },
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "length",
-                        },
-                      },
-                    ],
-                    "location": 8,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "cmmove2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "length",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 146 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "cmmove3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "f1",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "length",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 147 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "badcompresstbl",
-            "relpersistence": "p",
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "compression": "i_do_not_exist_compression",
-                "is_local": true,
-                "location": 31,
-                "typeName": {
-                  "location": 33,
-                  "names": [
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 26 1`] = `
+[
+  "SELECT pg_column_compression(f1) FROM cmmove1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 38,
+                  "relname": "cmmove1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 29,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_column_compression",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 29 1`] = `
+[
+  "CREATE TABLE cmmove3(f1 text COMPRESSION pglz)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmmove3",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "pglz",
+                  "is_local": true,
+                  "location": 21,
+                  "typeName": {
+                    "location": 24,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 35 1`] = `
+[
+  "CREATE TABLE cmdata2 (LIKE cmdata1 INCLUDING COMPRESSION)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "TableLikeClause": {
+                  "options": 2,
+                  "relation": {
+                    "inh": true,
+                    "location": 27,
+                    "relname": "cmdata1",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 37 1`] = `
+[
+  "DROP TABLE cmdata2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
                     {
                       "String": {
-                        "sval": "text",
+                        "sval": "cmdata2",
                       },
                     },
                   ],
-                  "typemod": -1,
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`compression.sql > line 148 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 23,
-            "relname": "badcompresstbl",
-            "relpersistence": "p",
+            ],
+            "removeType": "OBJECT_TABLE",
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 150 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "String": {
-                    "sval": "i_do_not_exist_compression",
+exports[`compression.sql > line 40 1`] = `
+[
+  "CREATE TABLE cmdata2 (f1 int COMPRESSION pglz)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "pglz",
+                  "is_local": true,
+                  "location": 22,
+                  "typeName": {
+                    "location": 25,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
                 },
-                "name": "a",
-                "subtype": "AT_SetCompression",
               },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "badcompresstbl",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 150 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
+exports[`compression.sql > line 43 1`] = `
+[
+  "CREATE TABLE cmmove2(f1 text COMPRESSION pglz)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmmove2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "pglz",
+                  "is_local": true,
+                  "location": 21,
+                  "typeName": {
+                    "location": 24,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 50 1`] = `
+[
+  "CREATE OR REPLACE FUNCTION large_val() RETURNS TEXT LANGUAGE SQL AS
+'select array_agg(fipshash(g::text))::text from generate_series(1, 256) g'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "large_val",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
                     "String": {
-                      "sval": "badcompresstbl",
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 52,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "select array_agg(fipshash(g::text))::text from generate_series(1, 256) g",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 65,
+                },
+              },
+            ],
+            "replace": true,
+            "returnType": {
+              "location": 47,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 62 1`] = `
+[
+  "CREATE TABLE cmdata2 (f1 int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "is_local": true,
+                  "location": 22,
+                  "typeName": {
+                    "location": 25,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 64 1`] = `
+[
+  "ALTER TABLE cmdata2 ALTER COLUMN f1 TYPE varchar",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ColumnDef": {
+                      "location": 33,
+                      "typeName": {
+                        "location": 41,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "varchar",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_AlterColumnType",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 66 1`] = `
+[
+  "ALTER TABLE cmdata2 ALTER COLUMN f1 TYPE int USING f1::integer",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ColumnDef": {
+                      "location": 33,
+                      "raw_default": {
+                        "TypeCast": {
+                          "arg": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "f1",
+                                  },
+                                },
+                              ],
+                              "location": 51,
+                            },
+                          },
+                          "location": 53,
+                          "typeName": {
+                            "location": 55,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "pg_catalog",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      "typeName": {
+                        "location": 41,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_AlterColumnType",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 74 1`] = `
+[
+  "ALTER TABLE cmdata2 ALTER COLUMN f1 SET STORAGE plain",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "String": {
+                      "sval": "plain",
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_SetStorage",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 76 1`] = `
+[
+  "INSERT INTO cmdata2 VALUES (repeat('123456789', 800))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "location": 35,
+                                  "sval": {
+                                    "sval": "123456789",
+                                  },
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 800,
+                                  },
+                                  "location": 48,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "repeat",
+                                },
+                              },
+                            ],
+                            "location": 28,
+                          },
+                        },
+                      ],
                     },
                   },
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`compression.sql > line 152 1`] = `[Error: syntax error at or near "\\"]`;
+exports[`compression.sql > line 80 1`] = `
+[
+  "CREATE MATERIALIZED VIEW compressmv(x) AS SELECT * FROM cmdata1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateTableAsStmt": {
+            "into": {
+              "colNames": [
+                {
+                  "String": {
+                    "sval": "x",
+                  },
+                },
+              ],
+              "onCommit": "ONCOMMIT_NOOP",
+              "rel": {
+                "inh": true,
+                "location": 25,
+                "relname": "compressmv",
+                "relpersistence": "p",
+              },
+            },
+            "objtype": "OBJECT_MATVIEW",
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 56,
+                      "relname": "cmdata1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 49,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 49,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 82 1`] = `
+[
+  "SELECT pg_column_compression(f1) FROM cmdata1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 38,
+                  "relname": "cmdata1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 29,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_column_compression",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 86 1`] = `
+[
+  "CREATE TABLE cmpart(f1 text COMPRESSION lz4) PARTITION BY HASH(f1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "partspec": {
+              "location": 45,
+              "partParams": [
+                {
+                  "PartitionElem": {
+                    "location": 63,
+                    "name": "f1",
+                  },
+                },
+              ],
+              "strategy": "PARTITION_STRATEGY_HASH",
+            },
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cmpart",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "compression": "lz4",
+                  "is_local": true,
+                  "location": 20,
+                  "typeName": {
+                    "location": 23,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 90 1`] = `
+[
+  "ALTER TABLE cmpart ATTACH PARTITION cmpart2 FOR VALUES WITH (MODULUS 2, REMAINDER 1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "PartitionCmd": {
+                      "bound": {
+                        "location": 55,
+                        "modulus": 2,
+                        "remainder": 1,
+                        "strategy": "h",
+                      },
+                      "name": {
+                        "inh": true,
+                        "location": 36,
+                        "relname": "cmpart2",
+                        "relpersistence": "p",
+                      },
+                    },
+                  },
+                  "subtype": "AT_AttachPartition",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmpart",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 97 1`] = `
+[
+  "CREATE TABLE cminh() INHERITS(cmdata, cmdata1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "inhRelations": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 30,
+                  "relname": "cmdata",
+                  "relpersistence": "p",
+                },
+              },
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 38,
+                  "relname": "cmdata1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cminh",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 101 1`] = `
+[
+  "SET default_toast_compression = ''",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 32,
+                  "sval": {
+                    "sval": "",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "default_toast_compression",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 107 1`] = `
+[
+  "ALTER TABLE cmdata ALTER COLUMN f1 SET COMPRESSION lz4",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "String": {
+                      "sval": "lz4",
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_SetCompression",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 112 1`] = `
+[
+  "ALTER TABLE cmdata2 ALTER COLUMN f1 SET COMPRESSION default",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "String": {
+                      "sval": "default",
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_SetCompression",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmdata2",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 116 1`] = `
+[
+  "ALTER MATERIALIZED VIEW compressmv ALTER COLUMN x SET COMPRESSION lz4",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "String": {
+                      "sval": "lz4",
+                    },
+                  },
+                  "name": "x",
+                  "subtype": "AT_SetCompression",
+                },
+              },
+            ],
+            "objtype": "OBJECT_MATVIEW",
+            "relation": {
+              "inh": true,
+              "location": 24,
+              "relname": "compressmv",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 120 1`] = `
+[
+  "ALTER TABLE cmpart1 ALTER COLUMN f1 SET COMPRESSION pglz",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "String": {
+                      "sval": "pglz",
+                    },
+                  },
+                  "name": "f1",
+                  "subtype": "AT_SetCompression",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmpart1",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 124 1`] = `
+[
+  "INSERT INTO cmpart VALUES (repeat('123456789', 1004))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "cmpart",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Const": {
+                                  "location": 34,
+                                  "sval": {
+                                    "sval": "123456789",
+                                  },
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1004,
+                                  },
+                                  "location": 47,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "repeat",
+                                },
+                              },
+                            ],
+                            "location": 27,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 142 1`] = `
+[
+  "SELECT length(f1) FROM cmdata",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 23,
+                  "relname": "cmdata",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "f1",
+                                },
+                              },
+                            ],
+                            "location": 14,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "length",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 148 1`] = `
+[
+  "CREATE TABLE badcompresstbl (a text COMPRESSION I_Do_Not_Exist_Compression)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "badcompresstbl",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "compression": "i_do_not_exist_compression",
+                  "is_local": true,
+                  "location": 29,
+                  "typeName": {
+                    "location": 31,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 148 2`] = `
+[
+  " -- fails
+CREATE TABLE badcompresstbl (a text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 23,
+              "relname": "badcompresstbl",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 39,
+                  "typeName": {
+                    "location": 41,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`compression.sql > line 150 1`] = `
+[
+  " -- fails
+DROP TABLE badcompresstbl",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "badcompresstbl",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;

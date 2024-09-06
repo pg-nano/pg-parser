@@ -1,558 +1,95 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`time.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 28,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 38,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "time",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                  "typmods": [
-                    {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
+exports[`time.sql > line 7 1`] = `
+[
+  "INSERT INTO TIME_TBL VALUES ('00:00')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "time_tbl",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "location": 29,
+                            "sval": {
+                              "sval": "00:00",
+                            },
+                          },
                         },
-                        "location": 46,
-                      },
+                      ],
                     },
-                  ],
-                },
+                  },
+                ],
               },
             },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`time.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "00:00",
-                          },
-                        },
-                      },
-                    ],
-                  },
+exports[`time.sql > line 25 1`] = `
+[
+  "SELECT f1 AS "Three" FROM TIME_TBL WHERE f1 < '05:06:07'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 26,
+                  "relname": "time_tbl",
+                  "relpersistence": "p",
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "01:00",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 72,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 89,
-                          "sval": {
-                            "sval": "02:03 PST",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "11:59 EDT",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "12:00",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "12:01",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "23:59",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "11:59:59.99 PM",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "2003-03-07 15:36:39 America/New_York",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "2003-07-07 15:36:39 America/New_York",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 68,
-            "relname": "time_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 85,
-                          "sval": {
-                            "sval": "15:36:39 America/New_York",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 28,
-                "relname": "time_tbl",
-                "relpersistence": "p",
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "name": "Time",
-                "val": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "Three",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "f1",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -561,2176 +98,472 @@ exports[`time.sql > line 21 1`] = `
                         },
                       },
                     ],
-                    "location": 10,
+                    "location": 41,
                   },
                 },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 28,
-                "relname": "time_tbl",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "Three",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "f1",
-                      },
+                "location": 44,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
                     },
-                  ],
-                  "location": 43,
-                },
-              },
-              "location": 46,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 48,
-                  "sval": {
-                    "sval": "05:06:07",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 26 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 27,
-                "relname": "time_tbl",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "Five",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "f1",
-                      },
-                    },
-                  ],
-                  "location": 42,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 47,
-                  "sval": {
-                    "sval": "05:06:07",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 27,
-                "relname": "time_tbl",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "None",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "f1",
-                      },
-                    },
-                  ],
-                  "location": 42,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 47,
-                  "sval": {
-                    "sval": "00:00",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 28,
-                "relname": "time_tbl",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "Eight",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "f1",
-                      },
-                    },
-                  ],
-                  "location": 43,
-                },
-              },
-              "location": 46,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 49,
-                  "sval": {
-                    "sval": "00:00",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 29,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 29,
-                        "sval": {
-                          "sval": "23:59:59.999999",
-                        },
-                      },
-                    },
+                ],
+                "rexpr": {
+                  "A_Const": {
                     "location": 46,
-                    "typeName": {
-                      "location": 48,
-                      "names": [
+                    "sval": {
+                      "sval": "05:06:07",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`time.sql > line 27 1`] = `
+[
+  "SELECT f1 AS "Five" FROM TIME_TBL WHERE f1 > '05:06:07'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 25,
+                  "relname": "time_tbl",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "Five",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
                         {
                           "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
+                            "sval": "f1",
                           },
                         },
                       ],
-                      "typemod": -1,
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 8,
-                        "sval": {
-                          "sval": "23:59:59.9999999",
-                        },
-                      },
-                    },
-                    "location": 26,
-                    "typeName": {
-                      "location": 28,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 35 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 22,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 22,
-                        "sval": {
-                          "sval": "23:59:60",
-                        },
-                      },
-                    },
-                    "location": 32,
-                    "typeName": {
-                      "location": 34,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 22,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 22,
-                        "sval": {
-                          "sval": "24:00:00",
-                        },
-                      },
-                    },
-                    "location": 32,
-                    "typeName": {
-                      "location": 34,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 20,
-                        "sval": {
-                          "sval": "24:00:00.01",
-                        },
-                      },
-                    },
-                    "location": 33,
-                    "typeName": {
-                      "location": 35,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 24,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 24,
-                        "sval": {
-                          "sval": "23:59:60.01",
-                        },
-                      },
-                    },
-                    "location": 37,
-                    "typeName": {
-                      "location": 39,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 24,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 24,
-                        "sval": {
-                          "sval": "24:01:00",
-                        },
-                      },
-                    },
-                    "location": 34,
-                    "typeName": {
-                      "location": 36,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 24,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 24,
-                        "sval": {
-                          "sval": "25:00:00",
-                        },
-                      },
-                    },
-                    "location": 34,
-                    "typeName": {
-                      "location": 36,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "time",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 56,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 74,
-                          "sval": {
-                            "sval": "12:00:00",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 86,
-                          "sval": {
-                            "sval": "time",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_input_is_valid",
-                        },
-                      },
-                    ],
-                    "location": 56,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "25:00:00",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "time",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_input_is_valid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "15:36:39 America/New_York",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 55,
-                          "sval": {
-                            "sval": "time",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_input_is_valid",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeFunction": {
-                "functions": [
-                  {
-                    "List": {
-                      "items": [
-                        {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 35,
-                                  "sval": {
-                                    "sval": "25:00:00",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 47,
-                                  "sval": {
-                                    "sval": "time",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_input_error_info",
-                                },
-                              },
-                            ],
-                            "location": 15,
-                          },
-                        },
-                        {},
-                      ],
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
-                        "A_Star": {},
+                        "String": {
+                          "sval": "f1",
+                        },
                       },
                     ],
-                    "location": 8,
+                    "location": 40,
                   },
                 },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeFunction": {
-                "functions": [
+                "location": 43,
+                "name": [
                   {
-                    "List": {
-                      "items": [
-                        {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 35,
-                                  "sval": {
-                                    "sval": "15:36:39 America/New_York",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 64,
-                                  "sval": {
-                                    "sval": "time",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_input_error_info",
-                                },
-                              },
-                            ],
-                            "location": 15,
-                          },
-                        },
-                        {},
-                      ],
+                    "String": {
+                      "sval": ">",
                     },
                   },
                 ],
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
+                "rexpr": {
+                  "A_Const": {
+                    "location": 45,
+                    "sval": {
+                      "sval": "05:06:07",
+                    },
                   },
                 },
               },
             },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`time.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 344,
-                "relname": "time_tbl",
-                "relpersistence": "p",
+exports[`time.sql > line 31 1`] = `
+[
+  "SELECT f1 AS "Eight" FROM TIME_TBL WHERE f1 >= '00:00'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 26,
+                  "relname": "time_tbl",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "Eight",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "f1",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "f1",
+                        },
+                      },
+                    ],
+                    "location": 41,
+                  },
+                },
+                "location": 44,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 47,
+                    "sval": {
+                      "sval": "00:00",
+                    },
+                  },
+                },
               },
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 308,
-                "name": "Illegal",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`time.sql > line 34 1`] = `
+[
+  "SELECT '23:59:59.999999'::time",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_Const": {
+                          "location": 7,
+                          "sval": {
+                            "sval": "23:59:59.999999",
+                          },
+                        },
+                      },
+                      "location": 24,
+                      "typeName": {
+                        "location": 26,
+                        "names": [
                           {
                             "String": {
-                              "sval": "f1",
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "time",
                             },
                           },
                         ],
-                        "location": 308,
+                        "typemod": -1,
                       },
                     },
-                    "location": 311,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "+",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "TypeCast": {
-                        "arg": {
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`time.sql > line 41 1`] = `
+[
+  "  -- not allowed
+
+-- Test non-error-throwing API
+SELECT pg_input_is_valid('12:00:00', 'time')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 56,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
                           "A_Const": {
-                            "location": 318,
+                            "location": 74,
                             "sval": {
-                              "sval": "00:01",
+                              "sval": "12:00:00",
                             },
                           },
                         },
-                        "location": -1,
-                        "typeName": {
-                          "location": 313,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "pg_catalog",
-                              },
+                        {
+                          "A_Const": {
+                            "location": 86,
+                            "sval": {
+                              "sval": "time",
                             },
-                            {
-                              "String": {
-                                "sval": "time",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
+                          },
                         },
-                      },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_input_is_valid",
+                          },
+                        },
+                      ],
+                      "location": 56,
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`time.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "microsecond",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 61,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
+exports[`time.sql > line 64 1`] = `
+[
+  "SELECT EXTRACT(MICROSECOND FROM TIME '2020-05-26 13:30:25.575401')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 15,
+                            "sval": {
+                              "sval": "microsecond",
                             },
                           },
-                          "location": -1,
-                          "typeName": {
-                            "location": 56,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
+                        },
+                        {
+                          "TypeCast": {
+                            "arg": {
+                              "A_Const": {
+                                "location": 37,
+                                "sval": {
+                                  "sval": "2020-05-26 13:30:25.575401",
                                 },
                               },
-                              {
-                                "String": {
-                                  "sval": "time",
+                            },
+                            "location": -1,
+                            "typeName": {
+                              "location": 32,
+                              "names": [
+                                {
+                                  "String": {
+                                    "sval": "pg_catalog",
+                                  },
                                 },
-                              },
-                            ],
-                            "typemod": -1,
+                                {
+                                  "String": {
+                                    "sval": "time",
+                                  },
+                                },
+                              ],
+                              "typemod": -1,
+                            },
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
+                        {
+                          "String": {
+                            "sval": "extract",
+                          },
                         },
-                      },
-                    ],
-                    "location": 31,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`time.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 16,
-                          "sval": {
-                            "sval": "millisecond",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
+exports[`time.sql > line 76 1`] = `
+[
+  "SELECT date_part('microsecond', TIME '2020-05-26 13:30:25.575401')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 17,
+                            "sval": {
+                              "sval": "microsecond",
                             },
                           },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
+                        },
+                        {
+                          "TypeCast": {
+                            "arg": {
+                              "A_Const": {
+                                "location": 37,
+                                "sval": {
+                                  "sval": "2020-05-26 13:30:25.575401",
                                 },
                               },
-                              {
-                                "String": {
-                                  "sval": "time",
+                            },
+                            "location": -1,
+                            "typeName": {
+                              "location": 32,
+                              "names": [
+                                {
+                                  "String": {
+                                    "sval": "pg_catalog",
+                                  },
                                 },
-                              },
-                            ],
-                            "typemod": -1,
+                                {
+                                  "String": {
+                                    "sval": "time",
+                                  },
+                                },
+                              ],
+                              "typemod": -1,
+                            },
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "date_part",
+                          },
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 8,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 16,
-                          "sval": {
-                            "sval": "second",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 16,
-                          "sval": {
-                            "sval": "minute",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 16,
-                          "sval": {
-                            "sval": "hour",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 16,
-                          "sval": {
-                            "sval": "day",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 69 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 18,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "fortnight",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 48,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 43,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 18,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 18,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "timezone",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 48,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 43,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 18,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 18,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "epoch",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 48,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 43,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "extract",
-                        },
-                      },
-                    ],
-                    "location": 18,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 121,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 131,
-                          "sval": {
-                            "sval": "microsecond",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 151,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 146,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "date_part",
-                        },
-                      },
-                    ],
-                    "location": 121,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 18,
-                          "sval": {
-                            "sval": "millisecond",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "date_part",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 18,
-                          "sval": {
-                            "sval": "second",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "date_part",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`time.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 18,
-                          "sval": {
-                            "sval": "epoch",
-                          },
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 38,
-                              "sval": {
-                                "sval": "2020-05-26 13:30:25.575401",
-                              },
-                            },
-                          },
-                          "location": -1,
-                          "typeName": {
-                            "location": 33,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "time",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "date_part",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

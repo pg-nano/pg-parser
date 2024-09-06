@@ -1,1529 +1,487 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`hash_index.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`hash_index.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "hash_name_heap",
-            "relpersistence": "p",
+exports[`hash_index.sql > line 13 1`] = `
+[
+  "CREATE TABLE hash_name_heap (
+	seqno 		int4,
+	random 		name
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "hash_name_heap",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "seqno",
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 39,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "random",
+                  "is_local": true,
+                  "location": 46,
+                  "typeName": {
+                    "location": 55,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "seqno",
-                "is_local": true,
-                "location": 33,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "random",
-                "is_local": true,
-                "location": 48,
-                "typeName": {
-                  "location": 57,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "name",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "hash_txt_heap",
-            "relpersistence": "p",
+exports[`hash_index.sql > line 18 1`] = `
+[
+  "CREATE TABLE hash_txt_heap (
+	seqno 		int4,
+	random 		text
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "hash_txt_heap",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "seqno",
+                  "is_local": true,
+                  "location": 30,
+                  "typeName": {
+                    "location": 38,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "random",
+                  "is_local": true,
+                  "location": 45,
+                  "typeName": {
+                    "location": 54,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "seqno",
-                "is_local": true,
-                "location": 32,
-                "typeName": {
-                  "location": 40,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "random",
-                "is_local": true,
-                "location": 47,
-                "typeName": {
-                  "location": 56,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
+exports[`hash_index.sql > line 23 1`] = `
+[
+  "CREATE TABLE hash_f8_heap (
+	seqno		int4,
+	random 		float8
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "seqno",
+                  "is_local": true,
+                  "location": 29,
+                  "typeName": {
+                    "location": 36,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "random",
+                  "is_local": true,
+                  "location": 43,
+                  "typeName": {
+                    "location": 52,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "float8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "seqno",
-                "is_local": true,
-                "location": 31,
-                "typeName": {
-                  "location": 38,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "random",
-                "is_local": true,
-                "location": 45,
-                "typeName": {
-                  "location": 54,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "float8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 27 1`] = `[Error: syntax error at or near "\\"]`;
+exports[`hash_index.sql > line 47 1`] = `
+[
+  "CREATE INDEX hash_i4_index ON hash_i4_heap USING hash (random int4_ops)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "hash",
+            "idxname": "hash_i4_index",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "random",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "opclass": [
+                    {
+                      "String": {
+                        "sval": "int4_ops",
+                      },
+                    },
+                  ],
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 30,
+              "relname": "hash_i4_heap",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
-exports[`hash_index.sql > line 30 1`] = `[Error: syntax error at or near ":"]`;
+exports[`hash_index.sql > line 49 1`] = `
+[
+  "CREATE INDEX hash_name_index ON hash_name_heap USING hash (random name_ops)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "hash",
+            "idxname": "hash_name_index",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "random",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "opclass": [
+                    {
+                      "String": {
+                        "sval": "name_ops",
+                      },
+                    },
+                  ],
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 32,
+              "relname": "hash_name_heap",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
-exports[`hash_index.sql > line 31 1`] = `[Error: syntax error at or near ":"]`;
+exports[`hash_index.sql > line 51 1`] = `
+[
+  "CREATE INDEX hash_txt_index ON hash_txt_heap USING hash (random text_ops)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "hash",
+            "idxname": "hash_txt_index",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "random",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "opclass": [
+                    {
+                      "String": {
+                        "sval": "text_ops",
+                      },
+                    },
+                  ],
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 31,
+              "relname": "hash_txt_heap",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
-exports[`hash_index.sql > line 32 1`] = `[Error: syntax error at or near ":"]`;
+exports[`hash_index.sql > line 53 1`] = `
+[
+  "CREATE INDEX hash_f8_index ON hash_f8_heap USING hash (random float8_ops)
+  WITH (fillfactor=60)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "hash",
+            "idxname": "hash_f8_index",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "random",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "opclass": [
+                    {
+                      "String": {
+                        "sval": "float8_ops",
+                      },
+                    },
+                  ],
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Integer": {
+                      "ival": 60,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "fillfactor",
+                  "location": 82,
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 30,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
-exports[`hash_index.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
+exports[`hash_index.sql > line 60 1`] = `
+[
+  "create unique index hash_f8_index_1 on hash_f8_heap(abs(random))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "idxname": "hash_f8_index_1",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "expr": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "random",
+                                },
+                              },
+                            ],
+                            "location": 56,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "abs",
+                          },
+                        },
+                      ],
+                      "location": 52,
+                    },
+                  },
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 39,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
+            },
+            "unique": true,
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 68 1`] = `
+[
+  "SELECT * FROM hash_i4_heap
+   WHERE hash_i4_heap.random = 843938989",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
                   "inh": true,
-                  "location": 369,
+                  "location": 14,
                   "relname": "hash_i4_heap",
                   "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "hash_name_heap",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "hash_txt_heap",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "hash_f8_heap",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_i4_index",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "int4_ops",
-                    },
-                  },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 32,
-            "relname": "hash_i4_heap",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_name_index",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "name_ops",
-                    },
-                  },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "hash_name_heap",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_txt_index",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "text_ops",
-                    },
-                  },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "hash_txt_heap",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_f8_index",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "float8_ops",
-                    },
-                  },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 60,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 84,
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 32,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "hash_f8_index_1",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "expr": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "random",
-                              },
-                            },
-                          ],
-                          "location": 171,
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "abs",
-                        },
-                      },
-                    ],
-                    "location": 167,
-                  },
-                },
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 154,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "hash_f8_index_2",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "expr": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "seqno",
-                            },
-                          },
-                        ],
-                        "location": 54,
-                      },
-                    },
-                    "location": 60,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "+",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 62,
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
               },
-            },
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 40,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "hash_f8_index_3",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 40,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-          "unique": true,
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "seqno",
-                      },
-                    },
-                  ],
-                  "location": 67,
-                },
-              },
-              "location": 73,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1000,
-                  },
-                  "location": 75,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 64,
-                "relname": "hash_i4_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 57,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 57,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_i4_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 86,
-                },
-              },
-              "location": 106,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 843938989,
-                  },
-                  "location": 108,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 63,
-                "relname": "hash_i4_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 56,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 56,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_i4_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 85,
-                },
-              },
-              "location": 105,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 66766766,
-                  },
-                  "location": 107,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 65,
-                "relname": "hash_name_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 58,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 58,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_name_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 89,
-                },
-              },
-              "location": 111,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 113,
-                      "sval": {
-                        "sval": "1505703298",
-                      },
-                    },
-                  },
-                  "location": 125,
-                  "typeName": {
-                    "location": 127,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "name",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 62,
-                "relname": "hash_name_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 55,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 55,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_name_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 86,
-                },
-              },
-              "location": 108,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 110,
-                      "sval": {
-                        "sval": "7777777",
-                      },
-                    },
-                  },
-                  "location": 119,
-                  "typeName": {
-                    "location": 121,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "name",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 91 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 65,
-                "relname": "hash_txt_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 58,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 58,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_txt_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 88,
-                },
-              },
-              "location": 109,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 111,
-                      "sval": {
-                        "sval": "1351610853",
-                      },
-                    },
-                  },
-                  "location": 123,
-                  "typeName": {
-                    "location": 125,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 79,
-                "relname": "hash_txt_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 72,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 72,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_txt_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 102,
-                },
-              },
-              "location": 123,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 125,
-                      "sval": {
-                        "sval": "111111112222222233333333",
-                      },
-                    },
-                  },
-                  "location": 151,
-                  "typeName": {
-                    "location": 153,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 105 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 64,
-                "relname": "hash_f8_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 57,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 57,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_f8_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 86,
-                },
-              },
-              "location": 106,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 108,
-                      "sval": {
-                        "sval": "444705537",
-                      },
-                    },
-                  },
-                  "location": 119,
-                  "typeName": {
-                    "location": 121,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "float8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 112 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 63,
-                "relname": "hash_f8_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 56,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 56,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_f8_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 85,
-                },
-              },
-              "location": 105,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 107,
-                      "sval": {
-                        "sval": "88888888",
-                      },
-                    },
-                  },
-                  "location": 117,
-                  "typeName": {
-                    "location": 119,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "float8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 119 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 269,
-            "relname": "hash_i4_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 289,
-                "name": "random",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 298,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_i4_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "seqno",
-                      },
-                    },
-                  ],
-                  "location": 309,
-                },
-              },
-              "location": 328,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1492,
-                  },
-                  "location": 330,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 140 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
-                },
-                "inh": true,
-                "location": 50,
-                "relname": "hash_i4_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "i1492",
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "h",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "seqno",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "i1",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "h",
+                          "sval": "hash_i4_heap",
                         },
                       },
                       {
@@ -1532,254 +490,115 @@ exports[`hash_index.sql > line 140 1`] = `
                         },
                       },
                     ],
-                    "location": 27,
+                    "location": 36,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
+                "location": 56,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 74,
-                },
-              },
-              "location": 83,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 85,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_i4_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 29,
-                "name": "seqno",
-                "val": {
+                ],
+                "rexpr": {
                   "A_Const": {
                     "ival": {
-                      "ival": 20000,
+                      "ival": 843938989,
                     },
-                    "location": 37,
+                    "location": 58,
                   },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_i4_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 52,
-                },
-              },
-              "location": 72,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1492795354,
-                  },
-                  "location": 74,
                 },
               },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 148 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
+exports[`hash_index.sql > line 82 1`] = `
+[
+  "SELECT * FROM hash_name_heap
+   WHERE hash_name_heap.random = '1505703298'::name",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "hash_name_heap",
+                  "relpersistence": "p",
                 },
-                "inh": true,
-                "location": 35,
-                "relname": "hash_i4_heap",
-                "relpersistence": "p",
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "i20000",
-                "val": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "h",
+                          "sval": "hash_name_heap",
                         },
                       },
                       {
                         "String": {
-                          "sval": "seqno",
+                          "sval": "random",
                         },
                       },
                     ],
-                    "location": 9,
+                    "location": 38,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
+                "location": 60,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 59,
-                },
-              },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1492795354,
-                  },
-                  "location": 70,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 152 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_name_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "name": "random",
-                "val": {
+                ],
+                "rexpr": {
                   "TypeCast": {
                     "arg": {
                       "A_Const": {
-                        "location": 40,
+                        "location": 62,
                         "sval": {
-                          "sval": "0123456789abcdef",
+                          "sval": "1505703298",
                         },
                       },
                     },
-                    "location": 58,
+                    "location": 74,
                     "typeName": {
-                      "location": 60,
+                      "location": 76,
                       "names": [
                         {
                           "String": {
@@ -1793,108 +612,62 @@ exports[`hash_index.sql > line 152 1`] = `
                 },
               },
             },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_name_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "seqno",
-                      },
-                    },
-                  ],
-                  "location": 74,
-                },
-              },
-              "location": 95,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 6543,
-                  },
-                  "location": 97,
-                },
-              },
-            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 156 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
+exports[`hash_index.sql > line 96 1`] = `
+[
+  "SELECT * FROM hash_txt_heap
+   WHERE hash_txt_heap.random = '1351610853'::text",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "hash_txt_heap",
+                  "relpersistence": "p",
                 },
-                "inh": true,
-                "location": 55,
-                "relname": "hash_name_heap",
-                "relpersistence": "p",
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "i6543",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "h",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "seqno",
-                        },
-                      },
-                    ],
-                    "location": 9,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "c0_to_f",
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "h",
+                          "sval": "hash_txt_heap",
                         },
                       },
                       {
@@ -1903,302 +676,30 @@ exports[`hash_index.sql > line 156 1`] = `
                         },
                       },
                     ],
-                    "location": 27,
+                    "location": 37,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 81,
-                },
-              },
-              "location": 90,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 92,
-                      "sval": {
-                        "sval": "0123456789abcdef",
-                      },
+                "location": 58,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
-                  "location": 110,
-                  "typeName": {
-                    "location": 112,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "name",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 160 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_name_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "name": "seqno",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 20000,
-                    },
-                    "location": 39,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_name_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 54,
-                },
-              },
-              "location": 76,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 78,
-                      "sval": {
-                        "sval": "76652222",
-                      },
-                    },
-                  },
-                  "location": 88,
-                  "typeName": {
-                    "location": 90,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "name",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 164 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
-                },
-                "inh": true,
-                "location": 115,
-                "relname": "hash_name_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 87,
-                "name": "emptyset",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "h",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "seqno",
-                        },
-                      },
-                    ],
-                    "location": 87,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 141,
-                },
-              },
-              "location": 150,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 152,
-                      "sval": {
-                        "sval": "76652222",
-                      },
-                    },
-                  },
-                  "location": 162,
-                  "typeName": {
-                    "location": 164,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "name",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 171 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_txt_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 30,
-                "name": "random",
-                "val": {
+                ],
+                "rexpr": {
                   "TypeCast": {
                     "arg": {
                       "A_Const": {
-                        "location": 39,
+                        "location": 60,
                         "sval": {
-                          "sval": "0123456789abcdefghijklmnop",
+                          "sval": "1351610853",
                         },
                       },
                     },
-                    "location": 67,
+                    "location": 72,
                     "typeName": {
-                      "location": 69,
+                      "location": 74,
                       "names": [
                         {
                           "String": {
@@ -2212,108 +713,62 @@ exports[`hash_index.sql > line 171 1`] = `
                 },
               },
             },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_txt_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "seqno",
-                      },
-                    },
-                  ],
-                  "location": 83,
-                },
-              },
-              "location": 103,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 4002,
-                  },
-                  "location": 105,
-                },
-              },
-            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 175 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
+exports[`hash_index.sql > line 110 1`] = `
+[
+  "SELECT * FROM hash_f8_heap
+   WHERE hash_f8_heap.random = '444705537'::float8",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "hash_f8_heap",
+                  "relpersistence": "p",
                 },
-                "inh": true,
-                "location": 55,
-                "relname": "hash_txt_heap",
-                "relpersistence": "p",
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "i4002",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "h",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "seqno",
-                        },
-                      },
-                    ],
-                    "location": 9,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "c0_to_p",
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "h",
+                          "sval": "hash_f8_heap",
                         },
                       },
                       {
@@ -2322,302 +777,30 @@ exports[`hash_index.sql > line 175 1`] = `
                         },
                       },
                     ],
-                    "location": 27,
+                    "location": 36,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 80,
-                },
-              },
-              "location": 89,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 91,
-                      "sval": {
-                        "sval": "0123456789abcdefghijklmnop",
-                      },
+                "location": 56,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
-                  "location": 119,
-                  "typeName": {
-                    "location": 121,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 179 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_txt_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 30,
-                "name": "seqno",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 20000,
-                    },
-                    "location": 38,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_txt_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 53,
-                },
-              },
-              "location": 74,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 76,
-                      "sval": {
-                        "sval": "959363399",
-                      },
-                    },
-                  },
-                  "location": 87,
-                  "typeName": {
-                    "location": 89,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 183 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
-                },
-                "inh": true,
-                "location": 35,
-                "relname": "hash_txt_heap",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "t20000",
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "h",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "seqno",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 60,
-                },
-              },
-              "location": 69,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 71,
-                      "sval": {
-                        "sval": "959363399",
-                      },
-                    },
-                  },
-                  "location": 82,
-                  "typeName": {
-                    "location": 84,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 187 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 29,
-                "name": "random",
-                "val": {
+                ],
+                "rexpr": {
                   "TypeCast": {
                     "arg": {
                       "A_Const": {
-                        "location": 38,
+                        "location": 58,
                         "sval": {
-                          "sval": "-1234.1234",
+                          "sval": "444705537",
                         },
                       },
                     },
-                    "location": 50,
+                    "location": 69,
                     "typeName": {
-                      "location": 52,
+                      "location": 71,
                       "names": [
                         {
                           "String": {
@@ -2631,85 +814,56 @@ exports[`hash_index.sql > line 187 1`] = `
                 },
               },
             },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_f8_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "seqno",
-                      },
-                    },
-                  ],
-                  "location": 68,
-                },
-              },
-              "location": 87,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 8906,
-                  },
-                  "location": 89,
-                },
-              },
-            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 191 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
-                },
-                "inh": true,
-                "location": 58,
-                "relname": "hash_f8_heap",
-                "relpersistence": "p",
-              },
+exports[`hash_index.sql > line 137 1`] = `
+[
+  "UPDATE hash_i4_heap
+   SET random = 1
+   WHERE hash_i4_heap.seqno = 1492",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_i4_heap",
+              "relpersistence": "p",
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "i8096",
-                "val": {
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 27,
+                  "name": "random",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 36,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "h",
+                          "sval": "hash_i4_heap",
                         },
                       },
                       {
@@ -2718,16 +872,113 @@ exports[`hash_index.sql > line 191 1`] = `
                         },
                       },
                     ],
-                    "location": 9,
+                    "location": 47,
+                  },
+                },
+                "location": 66,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1492,
+                    },
+                    "location": 68,
                   },
                 },
               },
             },
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "f1234_1234",
-                "val": {
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 141 1`] = `
+[
+  "SELECT h.seqno AS i1492, h.random AS i1
+   FROM hash_i4_heap h
+   WHERE h.random = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 48,
+                  "relname": "hash_i4_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "i1492",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 25,
+                  "name": "i1",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "random",
+                          },
+                        },
+                      ],
+                      "location": 25,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -2741,151 +992,23 @@ exports[`hash_index.sql > line 191 1`] = `
                         },
                       },
                     ],
-                    "location": 27,
+                    "location": 72,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 82,
-                },
-              },
-              "location": 91,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 93,
-                      "sval": {
-                        "sval": "-1234.1234",
-                      },
+                "location": 81,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
-                  "location": 105,
-                  "typeName": {
-                    "location": 107,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "float8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 195 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "UpdateStmt": {
-          "relation": {
-            "inh": true,
-            "location": 9,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
-          },
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 29,
-                "name": "seqno",
-                "val": {
+                ],
+                "rexpr": {
                   "A_Const": {
                     "ival": {
-                      "ival": 20000,
+                      "ival": 1,
                     },
-                    "location": 37,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "hash_f8_heap",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 52,
-                },
-              },
-              "location": 72,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 74,
-                      "sval": {
-                        "sval": "488912369",
-                      },
-                    },
-                  },
-                  "location": 85,
-                  "typeName": {
-                    "location": 87,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "float8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
+                    "location": 83,
                   },
                 },
               },
@@ -2893,39 +1016,145 @@ exports[`hash_index.sql > line 195 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 199 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "h",
+exports[`hash_index.sql > line 145 1`] = `
+[
+  "UPDATE hash_i4_heap
+   SET seqno = 20000
+   WHERE hash_i4_heap.random = 1492795354",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_i4_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 27,
+                  "name": "seqno",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 20000,
+                      },
+                      "location": 35,
+                    },
+                  },
                 },
-                "inh": true,
-                "location": 35,
-                "relname": "hash_f8_heap",
-                "relpersistence": "p",
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_i4_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 50,
+                  },
+                },
+                "location": 70,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1492795354,
+                    },
+                    "location": 72,
+                  },
+                },
               },
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "f20000",
-                "val": {
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 149 1`] = `
+[
+  "SELECT h.seqno AS i20000
+   FROM hash_i4_heap h
+   WHERE h.random = 1492795354",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 33,
+                  "relname": "hash_i4_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "i20000",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -2935,61 +1164,1389 @@ exports[`hash_index.sql > line 199 1`] = `
                       },
                       {
                         "String": {
-                          "sval": "seqno",
+                          "sval": "random",
                         },
                       },
                     ],
-                    "location": 9,
+                    "location": 57,
+                  },
+                },
+                "location": 66,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1492795354,
+                    },
+                    "location": 68,
                   },
                 },
               },
             },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "h",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 153 1`] = `
+[
+  "UPDATE hash_name_heap
+   SET random = '0123456789abcdef'::name
+   WHERE hash_name_heap.seqno = 6543",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_name_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 29,
+                  "name": "random",
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_Const": {
+                          "location": 38,
+                          "sval": {
+                            "sval": "0123456789abcdef",
+                          },
+                        },
+                      },
+                      "location": 56,
+                      "typeName": {
+                        "location": 58,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "name",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
                       },
                     },
-                    {
-                      "String": {
-                        "sval": "random",
-                      },
-                    },
-                  ],
-                  "location": 59,
+                  },
                 },
               },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_name_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "seqno",
+                        },
+                      },
+                    ],
+                    "location": 72,
                   },
                 },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
+                "location": 93,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 6543,
+                    },
+                    "location": 95,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 157 1`] = `
+[
+  "SELECT h.seqno AS i6543, h.random AS c0_to_f
+   FROM hash_name_heap h
+   WHERE h.random = '0123456789abcdef'::name",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 53,
+                  "relname": "hash_name_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "i6543",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 25,
+                  "name": "c0_to_f",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "random",
+                          },
+                        },
+                      ],
+                      "location": 25,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 79,
+                  },
+                },
+                "location": 88,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 90,
+                        "sval": {
+                          "sval": "0123456789abcdef",
+                        },
+                      },
+                    },
+                    "location": 108,
+                    "typeName": {
+                      "location": 110,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "name",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 161 1`] = `
+[
+  "UPDATE hash_name_heap
+   SET seqno = 20000
+   WHERE hash_name_heap.random = '76652222'::name",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_name_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 29,
+                  "name": "seqno",
+                  "val": {
                     "A_Const": {
-                      "location": 70,
-                      "sval": {
-                        "sval": "488912369",
+                      "ival": {
+                        "ival": 20000,
+                      },
+                      "location": 37,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_name_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 52,
+                  },
+                },
+                "location": 74,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 76,
+                        "sval": {
+                          "sval": "76652222",
+                        },
+                      },
+                    },
+                    "location": 86,
+                    "typeName": {
+                      "location": 88,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "name",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 168 1`] = `
+[
+  "SELECT h.seqno AS emptyset
+   FROM hash_name_heap h
+   WHERE h.random = '76652222'::name",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 35,
+                  "relname": "hash_name_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "emptyset",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 61,
+                  },
+                },
+                "location": 70,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 72,
+                        "sval": {
+                          "sval": "76652222",
+                        },
+                      },
+                    },
+                    "location": 82,
+                    "typeName": {
+                      "location": 84,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "name",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 172 1`] = `
+[
+  "UPDATE hash_txt_heap
+   SET random = '0123456789abcdefghijklmnop'::text
+   WHERE hash_txt_heap.seqno = 4002",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_txt_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 28,
+                  "name": "random",
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_Const": {
+                          "location": 37,
+                          "sval": {
+                            "sval": "0123456789abcdefghijklmnop",
+                          },
+                        },
+                      },
+                      "location": 65,
+                      "typeName": {
+                        "location": 67,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
                       },
                     },
                   },
-                  "location": 81,
-                  "typeName": {
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_txt_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "seqno",
+                        },
+                      },
+                    ],
+                    "location": 81,
+                  },
+                },
+                "location": 101,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 4002,
+                    },
+                    "location": 103,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 176 1`] = `
+[
+  "SELECT h.seqno AS i4002, h.random AS c0_to_p
+   FROM hash_txt_heap h
+   WHERE h.random = '0123456789abcdefghijklmnop'::text",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 53,
+                  "relname": "hash_txt_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "i4002",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 25,
+                  "name": "c0_to_p",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "random",
+                          },
+                        },
+                      ],
+                      "location": 25,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 78,
+                  },
+                },
+                "location": 87,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 89,
+                        "sval": {
+                          "sval": "0123456789abcdefghijklmnop",
+                        },
+                      },
+                    },
+                    "location": 117,
+                    "typeName": {
+                      "location": 119,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 180 1`] = `
+[
+  "UPDATE hash_txt_heap
+   SET seqno = 20000
+   WHERE hash_txt_heap.random = '959363399'::text",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_txt_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 28,
+                  "name": "seqno",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 20000,
+                      },
+                      "location": 36,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_txt_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 51,
+                  },
+                },
+                "location": 72,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 74,
+                        "sval": {
+                          "sval": "959363399",
+                        },
+                      },
+                    },
+                    "location": 85,
+                    "typeName": {
+                      "location": 87,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 184 1`] = `
+[
+  "SELECT h.seqno AS t20000
+   FROM hash_txt_heap h
+   WHERE h.random = '959363399'::text",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 33,
+                  "relname": "hash_txt_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "t20000",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 58,
+                  },
+                },
+                "location": 67,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 69,
+                        "sval": {
+                          "sval": "959363399",
+                        },
+                      },
+                    },
+                    "location": 80,
+                    "typeName": {
+                      "location": 82,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 188 1`] = `
+[
+  "UPDATE hash_f8_heap
+   SET random = '-1234.1234'::float8
+   WHERE hash_f8_heap.seqno = 8906",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 27,
+                  "name": "random",
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
+                        "A_Const": {
+                          "location": 36,
+                          "sval": {
+                            "sval": "-1234.1234",
+                          },
+                        },
+                      },
+                      "location": 48,
+                      "typeName": {
+                        "location": 50,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "float8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_f8_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "seqno",
+                        },
+                      },
+                    ],
+                    "location": 66,
+                  },
+                },
+                "location": 85,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 8906,
+                    },
+                    "location": 87,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 192 1`] = `
+[
+  "SELECT h.seqno AS i8096, h.random AS f1234_1234
+   FROM hash_f8_heap h
+   WHERE h.random = '-1234.1234'::float8",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 56,
+                  "relname": "hash_f8_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "i8096",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 25,
+                  "name": "f1234_1234",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "random",
+                          },
+                        },
+                      ],
+                      "location": 25,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 80,
+                  },
+                },
+                "location": 89,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 91,
+                        "sval": {
+                          "sval": "-1234.1234",
+                        },
+                      },
+                    },
+                    "location": 103,
+                    "typeName": {
+                      "location": 105,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "float8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 196 1`] = `
+[
+  "UPDATE hash_f8_heap
+   SET seqno = 20000
+   WHERE hash_f8_heap.random = '488912369'::float8",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "inh": true,
+              "location": 7,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
+            },
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 27,
+                  "name": "seqno",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 20000,
+                      },
+                      "location": 35,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "hash_f8_heap",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 50,
+                  },
+                },
+                "location": 70,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 72,
+                        "sval": {
+                          "sval": "488912369",
+                        },
+                      },
+                    },
                     "location": 83,
+                    "typeName": {
+                      "location": 85,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "float8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 200 1`] = `
+[
+  "SELECT h.seqno AS f20000
+   FROM hash_f8_heap h
+   WHERE h.random = '488912369'::float8",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "h",
+                  },
+                  "inh": true,
+                  "location": 33,
+                  "relname": "hash_f8_heap",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "f20000",
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "h",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "seqno",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "h",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "random",
+                        },
+                      },
+                    ],
+                    "location": 57,
+                  },
+                },
+                "location": 66,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 68,
+                        "sval": {
+                          "sval": "488912369",
+                        },
+                      },
+                    },
+                    "location": 79,
+                    "typeName": {
+                      "location": 81,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "float8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 220 1`] = `
+[
+  "CREATE TABLE hash_split_heap (keycol INT)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "hash_split_heap",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "keycol",
+                  "is_local": true,
+                  "location": 30,
+                  "typeName": {
+                    "location": 37,
                     "names": [
                       {
                         "String": {
-                          "sval": "float8",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
@@ -2997,1256 +2554,478 @@ exports[`hash_index.sql > line 199 1`] = `
                   },
                 },
               },
-            },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 203 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 321,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
+exports[`hash_index.sql > line 226 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "keycol",
-                "is_local": true,
-                "location": 338,
-                "typeName": {
-                  "location": 345,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 221 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "a",
+exports[`hash_index.sql > line 230 1`] = `
+[
+  "DECLARE c CURSOR FOR SELECT * from hash_split_heap WHERE keycol = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DeclareCursorStmt": {
+            "options": 256,
+            "portalname": "c",
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 35,
+                      "relname": "hash_split_heap",
+                      "relpersistence": "p",
                     },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 28,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
                             {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 59,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 500,
-                                      },
-                                      "location": 62,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 43,
-                              },
+                              "A_Star": {},
                             },
-                            {},
                           ],
+                          "location": 28,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "keycol",
+                            },
+                          },
+                        ],
+                        "location": 57,
+                      },
+                    },
+                    "location": 64,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
                         },
                       },
                     ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 36,
-                    "val": {
+                    "rexpr": {
                       "A_Const": {
                         "ival": {
                           "ival": 1,
                         },
-                        "location": 36,
+                        "location": 66,
                       },
                     },
                   },
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 222 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_split_index",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keycol",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
               },
             },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 223 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "a",
-                    },
-                    "functions": [
+exports[`hash_index.sql > line 238 1`] = `
+[
+  "DELETE FROM hash_split_heap WHERE keycol = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DeleteStmt": {
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "hash_split_heap",
+              "relpersistence": "p",
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 59,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5000,
-                                      },
-                                      "location": 62,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 43,
-                              },
-                            },
-                            {},
-                          ],
+                        "String": {
+                          "sval": "keycol",
                         },
                       },
                     ],
+                    "location": 34,
                   },
                 },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 36,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 36,
-                      },
+                "location": 41,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 43,
+                  },
                 },
-              ],
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 224 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 227 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 22,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_seqscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 228 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 25,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_bitmapscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 229 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeclareCursorStmt": {
-          "options": 256,
-          "portalname": "c",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
+exports[`hash_index.sql > line 241 1`] = `
+[
+  "VACUUM hash_split_heap",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VacuumStmt": {
+            "is_vacuumcmd": true,
+            "rels": [
+              {
+                "VacuumRelation": {
+                  "relation": {
                     "inh": true,
-                    "location": 37,
+                    "location": 7,
                     "relname": "hash_split_heap",
                     "relpersistence": "p",
                   },
                 },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 30,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 30,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`hash_index.sql > line 244 1`] = `
+[
+  "ALTER INDEX hash_split_index SET (fillfactor = 10)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "List": {
+                      "items": [
                         {
-                          "String": {
-                            "sval": "keycol",
+                          "DefElem": {
+                            "arg": {
+                              "Integer": {
+                                "ival": 10,
+                              },
+                            },
+                            "defaction": "DEFELEM_UNSPEC",
+                            "defname": "fillfactor",
+                            "location": 34,
                           },
                         },
                       ],
-                      "location": 59,
                     },
                   },
-                  "location": 66,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 68,
-                    },
-                  },
+                  "subtype": "AT_SetRelOptions",
                 },
               },
+            ],
+            "objtype": "OBJECT_INDEX",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "hash_split_index",
+              "relpersistence": "p",
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 231 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 9223372036854776000,
-          "ismove": true,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 232 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_BACKWARD",
-          "howMany": 10000,
-          "ismove": true,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 233 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_BACKWARD",
-          "howMany": 9223372036854776000,
-          "ismove": true,
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 234 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ClosePortalStmt": {
-          "portalname": "c",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 235 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 236 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeleteStmt": {
-          "relation": {
-            "inh": true,
-            "location": 41,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
-          },
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
+exports[`hash_index.sql > line 248 1`] = `
+[
+  "DROP TABLE hash_split_heap",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
                     {
                       "String": {
-                        "sval": "keycol",
+                        "sval": "hash_split_heap",
                       },
                     },
                   ],
-                  "location": 63,
                 },
               },
-              "location": 70,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 72,
-                },
-              },
-            },
+            ],
+            "removeType": "OBJECT_TABLE",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 239 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "hash_split_heap",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "a",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 61,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 25000,
-                                      },
-                                      "location": 64,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 45,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
+exports[`hash_index.sql > line 251 1`] = `
+[
+  "CREATE TEMP TABLE hash_temp_heap (x int, y int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "hash_temp_heap",
+              "relpersistence": "t",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "x",
+                  "is_local": true,
+                  "location": 34,
+                  "typeName": {
                     "location": 36,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "a",
-                                },
-                              },
-                            ],
-                            "location": 36,
-                          },
-                        },
-                        "location": 37,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "/",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 2,
-                            },
-                            "location": 38,
-                          },
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
                         },
                       },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 240 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "hash_split_heap",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 242 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "List": {
-                    "items": [
                       {
-                        "DefElem": {
-                          "arg": {
-                            "Integer": {
-                              "ival": 10,
-                            },
-                          },
-                          "defaction": "DEFELEM_UNSPEC",
-                          "defname": "fillfactor",
-                          "location": 86,
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-                "subtype": "AT_SetRelOptions",
               },
-            },
-          ],
-          "objtype": "OBJECT_INDEX",
-          "relation": {
-            "inh": true,
-            "location": 64,
-            "relname": "hash_split_index",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 245 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ReindexStmt": {
-          "kind": "REINDEX_OBJECT_INDEX",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "hash_split_index",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 246 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "hash_split_heap",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 249 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 44,
-            "relname": "hash_temp_heap",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "x",
-                "is_local": true,
-                "location": 60,
-                "typeName": {
-                  "location": 62,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "y",
-                "is_local": true,
-                "location": 67,
-                "typeName": {
-                  "location": 69,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 252 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "hash_temp_heap",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+              {
+                "ColumnDef": {
+                  "colname": "y",
+                  "is_local": true,
+                  "location": 41,
+                  "typeName": {
+                    "location": 43,
+                    "names": [
                       {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 36,
+                        "String": {
+                          "sval": "pg_catalog",
                         },
                       },
                       {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 38,
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 253 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "x",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
+exports[`hash_index.sql > line 257 1`] = `
+[
+  "CREATE TABLE hash_heap_float4 (x float4, y int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "hash_heap_float4",
+              "relpersistence": "p",
             },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 26,
-            "relname": "hash_temp_heap",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 254 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "hash_temp_heap",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 255 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 31,
-            "relname": "hash_heap_float4",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "x",
-                "is_local": true,
-                "location": 49,
-                "typeName": {
-                  "location": 51,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "float4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "y",
-                "is_local": true,
-                "location": 59,
-                "typeName": {
-                  "location": 61,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 258 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "hash_heap_float4",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "x",
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 33,
+                    "names": [
                       {
-                        "A_Const": {
-                          "fval": {
-                            "fval": "1.1",
-                          },
-                          "location": 38,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 42,
+                        "String": {
+                          "sval": "float4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 259 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "x",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
               },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 26,
-            "relname": "hash_heap_float4",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 260 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "hash_heap_float4",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`hash_index.sql > line 261 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_f8_index2",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "float8_ops",
-                    },
-                  },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 9,
+              {
+                "ColumnDef": {
+                  "colname": "y",
+                  "is_local": true,
+                  "location": 41,
+                  "typeName": {
+                    "location": 43,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 123,
               },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 72,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`hash_index.sql > line 265 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "hash_f8_index2",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "random",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "opclass": [
-                  {
-                    "String": {
-                      "sval": "float8_ops",
+exports[`hash_index.sql > line 263 1`] = `
+[
+  "CREATE INDEX hash_f8_index2 ON hash_f8_heap USING hash (random float8_ops)
+	WITH (fillfactor=9)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "hash",
+            "idxname": "hash_f8_index2",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "random",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "opclass": [
+                    {
+                      "String": {
+                        "sval": "float8_ops",
+                      },
+                    },
+                  ],
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Integer": {
+                      "ival": 9,
                     },
                   },
-                ],
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 101,
-                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "fillfactor",
+                  "location": 82,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 83,
               },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 31,
+              "relname": "hash_f8_heap",
+              "relpersistence": "p",
             },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 32,
-            "relname": "hash_f8_heap",
-            "relpersistence": "p",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

@@ -1,753 +1,589 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`namespace.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 172,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 194,
-                          "sval": {
-                            "sval": "search_path",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 209,
-                          "sval": {
-                            "sval": " ",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 214,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "set_config",
-                        },
-                      },
-                    ],
-                    "location": 172,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaElts": [
-            {
-              "IndexStmt": {
-                "accessMethod": "btree",
-                "idxname": "abc_a_idx",
-                "indexParams": [
-                  {
-                    "IndexElem": {
-                      "name": "a",
-                      "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                      "ordering": "SORTBY_DEFAULT",
-                    },
-                  },
-                ],
-                "relation": {
-                  "inh": true,
-                  "location": 73,
-                  "relname": "abc",
-                  "relpersistence": "p",
-                },
-                "unique": true,
-              },
-            },
-            {
-              "ViewStmt": {
-                "query": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "inh": true,
-                          "location": 158,
-                          "relname": "abc",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 134,
-                          "name": "a",
-                          "val": {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "a",
-                                      },
-                                    },
-                                  ],
-                                  "location": 134,
-                                },
-                              },
-                              "location": 135,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "+",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 1,
-                                  },
-                                  "location": 136,
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                      {
-                        "ResTarget": {
-                          "location": 144,
-                          "name": "b",
-                          "val": {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "b",
-                                      },
-                                    },
-                                  ],
-                                  "location": 144,
-                                },
-                              },
-                              "location": 145,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "+",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 1,
-                                  },
-                                  "location": 146,
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                "view": {
-                  "inh": true,
-                  "location": 101,
-                  "relname": "abc_view",
-                  "relpersistence": "p",
-                },
-                "withCheckOption": "NO_CHECK_OPTION",
-              },
-            },
-            {
-              "CreateStmt": {
-                "oncommit": "ONCOMMIT_NOOP",
-                "relation": {
-                  "inh": true,
-                  "location": 183,
-                  "relname": "abc",
-                  "relpersistence": "p",
-                },
-                "tableElts": [
-                  {
-                    "ColumnDef": {
-                      "colname": "a",
-                      "is_local": true,
-                      "location": 203,
-                      "typeName": {
-                        "location": 205,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "serial",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                    },
-                  },
-                  {
-                    "ColumnDef": {
-                      "colname": "b",
-                      "constraints": [
+exports[`namespace.sql > line 7 1`] = `
+[
+  "SELECT pg_catalog.set_config('search_path', ' ', false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
                         {
-                          "Constraint": {
-                            "contype": "CONSTR_UNIQUE",
-                            "location": 233,
+                          "A_Const": {
+                            "location": 29,
+                            "sval": {
+                              "sval": "search_path",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 44,
+                            "sval": {
+                              "sval": " ",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "boolval": {},
+                            "location": 49,
                           },
                         },
                       ],
-                      "is_local": true,
-                      "location": 227,
-                      "typeName": {
-                        "location": 229,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "set_config",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 9 1`] = `
+[
+  "CREATE SCHEMA test_ns_schema_1
+       CREATE UNIQUE INDEX abc_a_idx ON abc (a)
+
+       CREATE VIEW abc_view AS
+              SELECT a+1 AS a, b+1 AS b FROM abc
+
+       CREATE TABLE abc (
+              a serial,
+              b int UNIQUE
+       )",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSchemaStmt": {
+            "schemaElts": [
+              {
+                "IndexStmt": {
+                  "accessMethod": "btree",
+                  "idxname": "abc_a_idx",
+                  "indexParams": [
+                    {
+                      "IndexElem": {
+                        "name": "a",
+                        "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                        "ordering": "SORTBY_DEFAULT",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "inh": true,
+                    "location": 71,
+                    "relname": "abc",
+                    "relpersistence": "p",
+                  },
+                  "unique": true,
+                },
+              },
+              {
+                "ViewStmt": {
+                  "query": {
+                    "SelectStmt": {
+                      "fromClause": [
+                        {
+                          "RangeVar": {
+                            "inh": true,
+                            "location": 156,
+                            "relname": "abc",
+                            "relpersistence": "p",
+                          },
+                        },
+                      ],
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "targetList": [
+                        {
+                          "ResTarget": {
+                            "location": 132,
+                            "name": "a",
+                            "val": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "a",
+                                        },
+                                      },
+                                    ],
+                                    "location": 132,
+                                  },
+                                },
+                                "location": 133,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "+",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 134,
+                                  },
+                                },
+                              },
                             },
                           },
+                        },
+                        {
+                          "ResTarget": {
+                            "location": 142,
+                            "name": "b",
+                            "val": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "b",
+                                        },
+                                      },
+                                    ],
+                                    "location": 142,
+                                  },
+                                },
+                                "location": 143,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "+",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 144,
+                                  },
+                                },
+                              },
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "view": {
+                    "inh": true,
+                    "location": 99,
+                    "relname": "abc_view",
+                    "relpersistence": "p",
+                  },
+                  "withCheckOption": "NO_CHECK_OPTION",
+                },
+              },
+              {
+                "CreateStmt": {
+                  "oncommit": "ONCOMMIT_NOOP",
+                  "relation": {
+                    "inh": true,
+                    "location": 181,
+                    "relname": "abc",
+                    "relpersistence": "p",
+                  },
+                  "tableElts": [
+                    {
+                      "ColumnDef": {
+                        "colname": "a",
+                        "is_local": true,
+                        "location": 201,
+                        "typeName": {
+                          "location": 203,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "serial",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                    {
+                      "ColumnDef": {
+                        "colname": "b",
+                        "constraints": [
                           {
-                            "String": {
-                              "sval": "int4",
+                            "Constraint": {
+                              "contype": "CONSTR_UNIQUE",
+                              "location": 231,
                             },
                           },
                         ],
-                        "typemod": -1,
+                        "is_local": true,
+                        "location": 225,
+                        "typeName": {
+                          "location": 227,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "schemaname": "test_ns_schema_1",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 21 1`] = `
+[
+  "SET search_path to public",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 19,
+                  "sval": {
+                    "sval": "public",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "search_path",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 25 1`] = `
+[
+  "       CREATE VIEW abc_view AS SELECT c FROM abc",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 45,
+                      "relname": "abc",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 38,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                          ],
+                          "location": 38,
+                        },
                       },
                     },
                   },
                 ],
               },
             },
-          ],
-          "schemaname": "test_ns_schema_1",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 78,
-                "sval": {
-                  "sval": "public",
-                },
-              },
+            "view": {
+              "inh": true,
+              "location": 19,
+              "relname": "abc_view",
+              "relpersistence": "p",
             },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`namespace.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
+exports[`namespace.sql > line 31 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`namespace.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 20,
-                "sval": {
-                  "sval": "public",
-                },
-              },
-            },
-            {
-              "A_Const": {
-                "location": 28,
-                "sval": {
-                  "sval": "test_ns_schema_1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaElts": [
-            {
-              "ViewStmt": {
-                "query": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "inh": true,
-                          "location": 77,
-                          "relname": "abc",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 70,
-                          "val": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "c",
-                                  },
-                                },
-                              ],
-                              "location": 70,
-                            },
-                          },
-                        },
-                      },
-                    ],
+exports[`namespace.sql > line 34 1`] = `
+[
+  "       CREATE VIEW abc_view AS SELECT a FROM abc",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 45,
+                      "relname": "abc",
+                      "relpersistence": "p",
+                    },
                   },
-                },
-                "view": {
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 38,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                          ],
+                          "location": 38,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            "view": {
+              "inh": true,
+              "location": 19,
+              "relname": "abc_view",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 41 1`] = `
+[
+  "SELECT COUNT(*) FROM pg_class WHERE relnamespace =
+    (SELECT oid FROM pg_namespace WHERE nspname = 'test_ns_schema_1')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
                   "inh": true,
-                  "location": 51,
-                  "relname": "abc_view",
+                  "location": 21,
+                  "relname": "pg_class",
                   "relpersistence": "p",
                 },
-                "withCheckOption": "NO_CHECK_OPTION",
               },
-            },
-          ],
-          "schemaname": "test_ns_schema_2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 26 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableShowStmt": {
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 20,
-                "sval": {
-                  "sval": "public",
-                },
-              },
-            },
-            {
-              "A_Const": {
-                "location": 28,
-                "sval": {
-                  "sval": "test_ns_schema_1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaElts": [
-            {
-              "ViewStmt": {
-                "query": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "inh": true,
-                          "location": 77,
-                          "relname": "abc",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 70,
-                          "val": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "a",
-                                  },
-                                },
-                              ],
-                              "location": 70,
-                            },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
                           },
                         },
-                      },
-                    ],
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
-                "view": {
-                  "inh": true,
-                  "location": 51,
-                  "relname": "abc_view",
-                  "relpersistence": "p",
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "relnamespace",
+                        },
+                      },
+                    ],
+                    "location": 36,
+                  },
                 },
-                "withCheckOption": "NO_CHECK_OPTION",
-              },
-            },
-          ],
-          "schemaname": "test_ns_schema_2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableShowStmt": {
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableShowStmt": {
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "String": {
-                "sval": "test_ns_schema_2",
-              },
-            },
-          ],
-          "removeType": "OBJECT_SCHEMA",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 63,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
                 "location": 49,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 49,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relnamespace",
-                      },
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
-                  ],
-                  "location": 78,
-                },
-              },
-              "location": 91,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
                   },
-                },
-              ],
-              "rexpr": {
-                "SubLink": {
-                  "location": 97,
-                  "subLinkType": "EXPR_SUBLINK",
-                  "subselect": {
-                    "SelectStmt": {
-                      "fromClause": [
-                        {
-                          "RangeVar": {
-                            "inh": true,
-                            "location": 114,
-                            "relname": "pg_namespace",
-                            "relpersistence": "p",
+                ],
+                "rexpr": {
+                  "SubLink": {
+                    "location": 55,
+                    "subLinkType": "EXPR_SUBLINK",
+                    "subselect": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 72,
+                              "relname": "pg_namespace",
+                              "relpersistence": "p",
+                            },
                           },
-                        },
-                      ],
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
-                        {
-                          "ResTarget": {
-                            "location": 105,
-                            "val": {
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 63,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "oid",
+                                      },
+                                    },
+                                  ],
+                                  "location": 63,
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "whereClause": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
                               "ColumnRef": {
                                 "fields": [
                                   {
                                     "String": {
-                                      "sval": "oid",
+                                      "sval": "nspname",
                                     },
                                   },
                                 ],
-                                "location": 105,
+                                "location": 91,
                               },
                             },
-                          },
-                        },
-                      ],
-                      "whereClause": {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "nspname",
-                                  },
+                            "location": 99,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "=",
                                 },
-                              ],
-                              "location": 133,
-                            },
-                          },
-                          "location": 141,
-                          "name": [
-                            {
-                              "String": {
-                                "sval": "=",
                               },
-                            },
-                          ],
-                          "rexpr": {
-                            "A_Const": {
-                              "location": 143,
-                              "sval": {
-                                "sval": "test_ns_schema_1",
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "location": 101,
+                                "sval": {
+                                  "sval": "test_ns_schema_1",
+                                },
                               },
                             },
                           },
@@ -761,317 +597,173 @@ exports[`namespace.sql > line 39 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`namespace.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "abc",
-            "relpersistence": "p",
-            "schemaname": "test_ns_schema_1",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "abc",
-            "relpersistence": "p",
-            "schemaname": "test_ns_schema_1",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "abc",
-            "relpersistence": "p",
-            "schemaname": "test_ns_schema_1",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "abc",
-                "relpersistence": "p",
-                "schemaname": "test_ns_schema_1",
-              },
+exports[`namespace.sql > line 44 1`] = `
+[
+  "INSERT INTO test_ns_schema_1.abc DEFAULT VALUES",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "abc",
+              "relpersistence": "p",
+              "schemaname": "test_ns_schema_1",
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 48 1`] = `
+[
+  "SELECT * FROM test_ns_schema_1.abc",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "abc",
+                  "relpersistence": "p",
+                  "schemaname": "test_ns_schema_1",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`namespace.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "abc_view",
-                "relpersistence": "p",
-                "schemaname": "test_ns_schema_1",
+exports[`namespace.sql > line 51 1`] = `
+[
+  "ALTER SCHEMA test_ns_schema_1 RENAME TO test_ns_schema_renamed",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RenameStmt": {
+            "behavior": "DROP_RESTRICT",
+            "newname": "test_ns_schema_renamed",
+            "relationType": "OBJECT_ACCESS_METHOD",
+            "renameType": "OBJECT_SCHEMA",
+            "subname": "test_ns_schema_1",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 53 1`] = `
+[
+  "    (SELECT oid FROM pg_namespace WHERE nspname = 'test_ns_schema_1')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 21,
+                  "relname": "pg_namespace",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 12,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "oid",
+                          },
+                        },
+                      ],
+                      "location": 12,
+                    },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "test_ns_schema_renamed",
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SCHEMA",
-          "subname": "test_ns_schema_1",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 22,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
                         "String": {
-                          "sval": "count",
+                          "sval": "nspname",
                         },
                       },
                     ],
-                    "location": 8,
+                    "location": 40,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relnamespace",
-                      },
+                "location": 48,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
-                  ],
-                  "location": 37,
-                },
-              },
-              "location": 50,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
                   },
-                },
-              ],
-              "rexpr": {
-                "SubLink": {
-                  "location": 56,
-                  "subLinkType": "EXPR_SUBLINK",
-                  "subselect": {
-                    "SelectStmt": {
-                      "fromClause": [
-                        {
-                          "RangeVar": {
-                            "inh": true,
-                            "location": 73,
-                            "relname": "pg_namespace",
-                            "relpersistence": "p",
-                          },
-                        },
-                      ],
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
-                        {
-                          "ResTarget": {
-                            "location": 64,
-                            "val": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "oid",
-                                    },
-                                  },
-                                ],
-                                "location": 64,
-                              },
-                            },
-                          },
-                        },
-                      ],
-                      "whereClause": {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "nspname",
-                                  },
-                                },
-                              ],
-                              "location": 92,
-                            },
-                          },
-                          "location": 100,
-                          "name": [
-                            {
-                              "String": {
-                                "sval": "=",
-                              },
-                            },
-                          ],
-                          "rexpr": {
-                            "A_Const": {
-                              "location": 102,
-                              "sval": {
-                                "sval": "test_ns_schema_1",
-                              },
-                            },
-                          },
-                        },
-                      },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 50,
+                    "sval": {
+                      "sval": "test_ns_schema_1",
                     },
                   },
                 },
@@ -1080,210 +772,72 @@ exports[`namespace.sql > line 52 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaname": "test_ns_schema_renamed",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`namespace.sql > line 56 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "if_not_exists": true,
-          "schemaname": "test_ns_schema_renamed",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 57 1`] = `[Error: CREATE SCHEMA IF NOT EXISTS cannot include schema elements]`;
-
-exports[`namespace.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "String": {
-                "sval": "test_ns_schema_renamed",
-              },
-            },
-          ],
-          "removeType": "OBJECT_SCHEMA",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`namespace.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 63,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 49,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 49,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relnamespace",
-                      },
-                    },
-                  ],
-                  "location": 78,
-                },
-              },
-              "location": 91,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "SubLink": {
-                  "location": 97,
-                  "subLinkType": "EXPR_SUBLINK",
-                  "subselect": {
-                    "SelectStmt": {
-                      "fromClause": [
-                        {
-                          "RangeVar": {
-                            "inh": true,
-                            "location": 114,
-                            "relname": "pg_namespace",
-                            "relpersistence": "p",
-                          },
-                        },
-                      ],
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
-                        {
-                          "ResTarget": {
-                            "location": 105,
-                            "val": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "oid",
-                                    },
-                                  },
-                                ],
-                                "location": 105,
-                              },
-                            },
-                          },
-                        },
-                      ],
-                      "whereClause": {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "nspname",
-                                  },
-                                },
-                              ],
-                              "location": 133,
-                            },
-                          },
-                          "location": 141,
-                          "name": [
-                            {
-                              "String": {
-                                "sval": "=",
-                              },
-                            },
-                          ],
-                          "rexpr": {
-                            "A_Const": {
-                              "location": 143,
-                              "sval": {
-                                "sval": "test_ns_schema_renamed",
-                              },
-                            },
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
+[
+  "CREATE SCHEMA test_ns_schema_renamed",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSchemaStmt": {
+            "schemaname": "test_ns_schema_renamed",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 56 2`] = `
+[
+  " -- fail, already exists
+CREATE SCHEMA IF NOT EXISTS test_ns_schema_renamed",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSchemaStmt": {
+            "if_not_exists": true,
+            "schemaname": "test_ns_schema_renamed",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`namespace.sql > line 64 1`] = `
+[
+  "DROP SCHEMA test_ns_schema_renamed CASCADE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_CASCADE",
+            "objects": [
+              {
+                "String": {
+                  "sval": "test_ns_schema_renamed",
+                },
+              },
+            ],
+            "removeType": "OBJECT_SCHEMA",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

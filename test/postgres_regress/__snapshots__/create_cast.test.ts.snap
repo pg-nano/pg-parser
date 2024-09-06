@@ -1,1141 +1,113 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`create_cast.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "defnames": [
-            {
-              "String": {
-                "sval": "casttesttype",
-              },
-            },
-          ],
-          "kind": "OBJECT_TYPE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "casttesttype_in",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "textin",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 70,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "internal",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 85,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "strict",
-                "location": 103,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "immutable",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "volatility",
-                "location": 110,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 34,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "cstring",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 54,
-            "names": [
+exports[`create_cast.sql > line 6 1`] = `
+[
+  "CREATE TYPE casttesttype",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "defnames": [
               {
                 "String": {
                   "sval": "casttesttype",
                 },
               },
             ],
-            "typemod": -1,
+            "kind": "OBJECT_TYPE",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_cast.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "casttesttype_out",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "textout",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 70,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "internal",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 86,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "strict",
-                "location": 104,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "immutable",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "volatility",
-                "location": 111,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 34,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "casttesttype",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 59,
-            "names": [
+exports[`create_cast.sql > line 8 1`] = `
+[
+  "CREATE FUNCTION casttesttype_in(cstring)
+   RETURNS casttesttype
+   AS 'textin'
+   LANGUAGE internal STRICT IMMUTABLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
               {
                 "String": {
-                  "sval": "cstring",
+                  "sval": "casttesttype_in",
                 },
               },
             ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 49,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "variable",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "internallength",
-                "location": 32,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 70,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "casttesttype_in",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "input",
-                "location": 62,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 99,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "casttesttype_out",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "output",
-                "location": 90,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 132,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "alignment",
-                "location": 120,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "casttesttype",
-              },
-            },
-          ],
-          "kind": "OBJECT_TYPE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "casttestfunc",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 91,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT 1; ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 104,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 64,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "casttesttype",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 86,
-            "names": [
+            "options": [
               {
-                "String": {
-                  "sval": "int4",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 22,
-                              "sval": {
-                                "sval": "foo",
-                              },
-                            },
-                          },
-                          "location": 27,
-                          "typeName": {
-                            "location": 29,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "text",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "casttestfunc",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateCastStmt": {
-          "context": "COERCION_EXPLICIT",
-          "sourcetype": {
-            "location": 72,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-          "targettype": {
-            "location": 80,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 21,
-                              "sval": {
-                                "sval": "foo",
-                              },
-                            },
-                          },
-                          "location": 26,
-                          "typeName": {
-                            "location": 28,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "text",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "casttestfunc",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 32 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 49,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "TypeCast": {
-                              "arg": {
-                                "A_Const": {
-                                  "location": 62,
-                                  "sval": {
-                                    "sval": "foo",
-                                  },
-                                },
-                              },
-                              "location": 67,
-                              "typeName": {
-                                "location": 69,
-                                "names": [
-                                  {
-                                    "String": {
-                                      "sval": "text",
-                                    },
-                                  },
-                                ],
-                                "typemod": -1,
-                              },
-                            },
-                          },
-                          "location": 73,
-                          "typeName": {
-                            "location": 75,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "casttesttype",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "casttestfunc",
-                        },
-                      },
-                    ],
-                    "location": 49,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "TypeName": {
-                      "location": 27,
-                      "names": [
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
                         {
                           "String": {
-                            "sval": "text",
+                            "sval": "textin",
                           },
                         },
                       ],
-                      "typemod": -1,
                     },
                   },
-                  {
-                    "TypeName": {
-                      "location": 35,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "casttesttype",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 68,
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_CAST",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateCastStmt": {
-          "context": "COERCION_IMPLICIT",
-          "sourcetype": {
-            "location": 63,
-            "names": [
               {
-                "String": {
-                  "sval": "text",
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "internal",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 83,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "strict",
+                  "location": 101,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "immutable",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "volatility",
+                  "location": 108,
                 },
               },
             ],
-            "typemod": -1,
-          },
-          "targettype": {
-            "location": 71,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 21,
-                              "sval": {
-                                "sval": "foo",
-                              },
-                            },
-                          },
-                          "location": 26,
-                          "typeName": {
-                            "location": 28,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "text",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "casttestfunc",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 38 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 56,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 1234,
-                            },
-                            "location": 56,
-                          },
-                        },
-                        "location": 60,
-                        "typeName": {
-                          "location": 62,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "int4",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                    "location": 66,
-                    "typeName": {
-                      "location": 68,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "casttesttype",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateCastStmt": {
-          "context": "COERCION_EXPLICIT",
-          "inout": true,
-          "sourcetype": {
-            "location": 43,
-            "names": [
-              {
-                "String": {
-                  "sval": "int4",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-          "targettype": {
-            "location": 51,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 1234,
-                            },
-                            "location": 8,
-                          },
-                        },
-                        "location": 12,
-                        "typeName": {
-                          "location": 14,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "int4",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                    "location": 18,
-                    "typeName": {
-                      "location": 20,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "casttesttype",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 44 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "TypeName": {
-                      "location": 32,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 40,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "casttesttype",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_CAST",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "int4_casttesttype",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 92,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT ('foo'::text || $1::text)::casttesttype; ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 105,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 65,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 79,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateCastStmt": {
-          "context": "COERCION_IMPLICIT",
-          "func": {
-            "objargs": [
-              {
-                "TypeName": {
-                  "location": 69,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            ],
-            "objfuncargs": [
+            "parameters": [
               {
                 "FunctionParameter": {
                   "argType": {
-                    "location": 69,
+                    "location": 32,
                     "names": [
                       {
                         "String": {
-                          "sval": "int4",
+                          "sval": "cstring",
                         },
                       },
                     ],
@@ -1145,121 +117,105 @@ exports[`create_cast.sql > line 52 1`] = `
                 },
               },
             ],
-            "objname": [
-              {
-                "String": {
-                  "sval": "int4_casttesttype",
+            "returnType": {
+              "location": 52,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
                 },
-              },
-            ],
-          },
-          "sourcetype": {
-            "location": 15,
-            "names": [
-              {
-                "String": {
-                  "sval": "int4",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-          "targettype": {
-            "location": 23,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
+              ],
+              "typemod": -1,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_cast.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 1234,
-                            },
-                            "location": 8,
-                          },
-                        },
-                        "location": 12,
-                        "typeName": {
-                          "location": 14,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "int4",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                    "location": 18,
-                    "typeName": {
-                      "location": 20,
+exports[`create_cast.sql > line 17 1`] = `
+[
+  "CREATE TYPE casttesttype (
+   internallength = variable,
+   input = casttesttype_in,
+   output = casttesttype_out,
+   alignment = int4
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "definition": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 47,
                       "names": [
                         {
                           "String": {
-                            "sval": "casttesttype",
+                            "sval": "variable",
                           },
                         },
                       ],
                       "typemod": -1,
                     },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "internallength",
+                  "location": 30,
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 54 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_CASCADE",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
+              {
+                "DefElem": {
+                  "arg": {
                     "TypeName": {
-                      "location": 53,
+                      "location": 68,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "casttesttype_in",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "input",
+                  "location": 60,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 97,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "casttesttype_out",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "output",
+                  "location": 88,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 130,
                       "names": [
                         {
                           "String": {
@@ -1270,11 +226,668 @@ exports[`create_cast.sql > line 54 2`] = `
                       "typemod": -1,
                     },
                   },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "alignment",
+                  "location": 118,
+                },
+              },
+            ],
+            "defnames": [
+              {
+                "String": {
+                  "sval": "casttesttype",
+                },
+              },
+            ],
+            "kind": "OBJECT_TYPE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 25 1`] = `
+[
+  "CREATE FUNCTION casttestfunc(casttesttype) RETURNS int4 LANGUAGE SQL AS
+$$ SELECT 1; $$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "casttestfunc",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 56,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " SELECT 1; ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 69,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 29,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "casttesttype",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                },
+              },
+            ],
+            "returnType": {
+              "location": 51,
+              "names": [
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 28 1`] = `
+[
+  "SELECT casttestfunc('foo'::text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "TypeCast": {
+                            "arg": {
+                              "A_Const": {
+                                "location": 20,
+                                "sval": {
+                                  "sval": "foo",
+                                },
+                              },
+                            },
+                            "location": 25,
+                            "typeName": {
+                              "location": 27,
+                              "names": [
+                                {
+                                  "String": {
+                                    "sval": "text",
+                                  },
+                                },
+                              ],
+                              "typemod": -1,
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "casttestfunc",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 28 2`] = `
+[
+  " -- fails, as there's no cast
+
+-- Try binary coercion cast
+CREATE CAST (text AS casttesttype) WITHOUT FUNCTION",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateCastStmt": {
+            "context": "COERCION_EXPLICIT",
+            "sourcetype": {
+              "location": 72,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+            "targettype": {
+              "location": 80,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 32 1`] = `
+[
+  " -- doesn't work, as the cast is explicit
+SELECT casttestfunc('foo'::text::casttesttype)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 49,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "TypeCast": {
+                            "arg": {
+                              "TypeCast": {
+                                "arg": {
+                                  "A_Const": {
+                                    "location": 62,
+                                    "sval": {
+                                      "sval": "foo",
+                                    },
+                                  },
+                                },
+                                "location": 67,
+                                "typeName": {
+                                  "location": 69,
+                                  "names": [
+                                    {
+                                      "String": {
+                                        "sval": "text",
+                                      },
+                                    },
+                                  ],
+                                  "typemod": -1,
+                                },
+                              },
+                            },
+                            "location": 73,
+                            "typeName": {
+                              "location": 75,
+                              "names": [
+                                {
+                                  "String": {
+                                    "sval": "casttesttype",
+                                  },
+                                },
+                              ],
+                              "typemod": -1,
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "casttestfunc",
+                          },
+                        },
+                      ],
+                      "location": 49,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 33 1`] = `
+[
+  " -- should work
+DROP CAST (text AS casttesttype)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "TypeName": {
+                        "location": 27,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                    {
+                      "TypeName": {
+                        "location": 35,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "casttesttype",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_CAST",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 34 1`] = `
+[
+  " -- cleanup
+
+-- Try IMPLICIT binary coercion cast
+CREATE CAST (text AS casttesttype) WITHOUT FUNCTION AS IMPLICIT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateCastStmt": {
+            "context": "COERCION_IMPLICIT",
+            "sourcetype": {
+              "location": 63,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+            "targettype": {
+              "location": 71,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 38 1`] = `
+[
+  " -- Should work now
+
+-- Try I/O conversion cast.
+SELECT 1234::int4::casttesttype",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 56,
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 1234,
+                              },
+                              "location": 56,
+                            },
+                          },
+                          "location": 60,
+                          "typeName": {
+                            "location": 62,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "int4",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      "location": 66,
+                      "typeName": {
+                        "location": 68,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "casttesttype",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 41 1`] = `
+[
+  " -- No cast yet, should fail
+
+CREATE CAST (int4 AS casttesttype) WITH INOUT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateCastStmt": {
+            "context": "COERCION_EXPLICIT",
+            "inout": true,
+            "sourcetype": {
+              "location": 43,
+              "names": [
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+            "targettype": {
+              "location": 51,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 44 1`] = `
+[
+  " -- Should work now
+
+DROP CAST (int4 AS casttesttype)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "TypeName": {
+                        "location": 32,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                    {
+                      "TypeName": {
+                        "location": 40,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "casttesttype",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_CAST",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 53 1`] = `
+[
+  "CREATE CAST (int4 AS casttesttype) WITH FUNCTION int4_casttesttype(int4) AS IMPLICIT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateCastStmt": {
+            "context": "COERCION_IMPLICIT",
+            "func": {
+              "objargs": [
+                {
+                  "TypeName": {
+                    "location": 67,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              ],
+              "objfuncargs": [
+                {
+                  "FunctionParameter": {
+                    "argType": {
+                      "location": 67,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int4",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                    "mode": "FUNC_PARAM_DEFAULT",
+                  },
+                },
+              ],
+              "objname": [
+                {
+                  "String": {
+                    "sval": "int4_casttesttype",
+                  },
+                },
+              ],
+            },
+            "sourcetype": {
+              "location": 13,
+              "names": [
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+            "targettype": {
+              "location": 21,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 54 1`] = `
+[
+  " -- Should work now
+
+DROP FUNCTION int4_casttesttype(int4) CASCADE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_CASCADE",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
                         "location": 53,
                         "names": [
                           {
@@ -1285,217 +898,13 @@ exports[`create_cast.sql > line 54 2`] = `
                         ],
                         "typemod": -1,
                       },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "int4_casttesttype",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "bar_int4_text",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 109,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT ('bar'::text || $1::text); ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 122,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 90,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
                     },
                   ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 104,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateCastStmt": {
-          "context": "COERCION_IMPLICIT",
-          "func": {
-            "objargs": [
-              {
-                "TypeName": {
-                  "location": 65,
-                  "names": [
+                  "objfuncargs": [
                     {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            ],
-            "objfuncargs": [
-              {
-                "FunctionParameter": {
-                  "argType": {
-                    "location": 65,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                  "mode": "FUNC_PARAM_DEFAULT",
-                },
-              },
-            ],
-            "objname": [
-              {
-                "String": {
-                  "sval": "bar_int4_text",
-                },
-              },
-            ],
-          },
-          "sourcetype": {
-            "location": 15,
-            "names": [
-              {
-                "String": {
-                  "sval": "int4",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-          "targettype": {
-            "location": 23,
-            "names": [
-              {
-                "String": {
-                  "sval": "casttesttype",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_cast.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 1234,
-                            },
-                            "location": 8,
-                          },
-                        },
-                        "location": 12,
-                        "typeName": {
-                          "location": 14,
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 53,
                           "names": [
                             {
                               "String": {
@@ -1505,81 +914,304 @@ exports[`create_cast.sql > line 64 1`] = `
                           ],
                           "typemod": -1,
                         },
+                        "mode": "FUNC_PARAM_DEFAULT",
                       },
                     },
-                    "location": 18,
-                    "typeName": {
-                      "location": 20,
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "int4_casttesttype",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_FUNCTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_cast.sql > line 63 1`] = `
+[
+  "CREATE CAST (int4 AS casttesttype) WITH FUNCTION bar_int4_text(int4) AS IMPLICIT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateCastStmt": {
+            "context": "COERCION_IMPLICIT",
+            "func": {
+              "objargs": [
+                {
+                  "TypeName": {
+                    "location": 63,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              ],
+              "objfuncargs": [
+                {
+                  "FunctionParameter": {
+                    "argType": {
+                      "location": 63,
                       "names": [
                         {
                           "String": {
-                            "sval": "casttesttype",
+                            "sval": "int4",
                           },
                         },
                       ],
                       "typemod": -1,
                     },
+                    "mode": "FUNC_PARAM_DEFAULT",
                   },
                 },
-              },
+              ],
+              "objname": [
+                {
+                  "String": {
+                    "sval": "bar_int4_text",
+                  },
+                },
+              ],
             },
-          ],
+            "sourcetype": {
+              "location": 13,
+              "names": [
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+            "targettype": {
+              "location": 21,
+              "names": [
+                {
+                  "String": {
+                    "sval": "casttesttype",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_cast.sql > line 64 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 214,
-                "relname": "pg_depend",
-                "relpersistence": "p",
+exports[`create_cast.sql > line 64 1`] = `
+[
+  " -- Should work now
+
+-- check dependencies generated for that
+SELECT pg_describe_object(classid, objid, objsubid) as obj,
+       pg_describe_object(refclassid, refobjid, refobjsubid) as objref,
+       deptype
+FROM pg_depend
+WHERE classid = 'pg_cast'::regclass AND
+      objid = (SELECT oid FROM pg_cast
+               WHERE castsource = 'int4'::regtype
+                 AND casttarget = 'casttesttype'::regtype)
+ORDER BY refclassid",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 214,
+                  "relname": "pg_depend",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "refclassid",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "refclassid",
+                          },
                         },
-                      },
-                    ],
-                    "location": 421,
+                      ],
+                      "location": 421,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 69,
+                  "name": "obj",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "classid",
+                                },
+                              },
+                            ],
+                            "location": 88,
+                          },
+                        },
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "objid",
+                                },
+                              },
+                            ],
+                            "location": 97,
+                          },
+                        },
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "objsubid",
+                                },
+                              },
+                            ],
+                            "location": 104,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_describe_object",
+                          },
+                        },
+                      ],
+                      "location": 69,
+                    },
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 69,
-                "name": "obj",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
+              {
+                "ResTarget": {
+                  "location": 129,
+                  "name": "objref",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "refclassid",
+                                },
+                              },
+                            ],
+                            "location": 148,
+                          },
+                        },
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "refobjid",
+                                },
+                              },
+                            ],
+                            "location": 160,
+                          },
+                        },
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "refobjsubid",
+                                },
+                              },
+                            ],
+                            "location": 170,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_describe_object",
+                          },
+                        },
+                      ],
+                      "location": 129,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 201,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "deptype",
+                          },
+                        },
+                      ],
+                      "location": 201,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
                         "ColumnRef": {
                           "fields": [
                             {
@@ -1588,10 +1220,47 @@ exports[`create_cast.sql > line 64 2`] = `
                               },
                             },
                           ],
-                          "location": 88,
+                          "location": 230,
                         },
                       },
-                      {
+                      "location": 238,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 240,
+                              "sval": {
+                                "sval": "pg_cast",
+                              },
+                            },
+                          },
+                          "location": 249,
+                          "typeName": {
+                            "location": 251,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "regclass",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
                         "ColumnRef": {
                           "fields": [
                             {
@@ -1600,326 +1269,159 @@ exports[`create_cast.sql > line 64 2`] = `
                               },
                             },
                           ],
-                          "location": 97,
+                          "location": 270,
                         },
                       },
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "objsubid",
-                              },
-                            },
-                          ],
-                          "location": 104,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_describe_object",
-                        },
-                      },
-                    ],
-                    "location": 69,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 129,
-                "name": "objref",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "refclassid",
-                              },
-                            },
-                          ],
-                          "location": 148,
-                        },
-                      },
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "refobjid",
-                              },
-                            },
-                          ],
-                          "location": 160,
-                        },
-                      },
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "refobjsubid",
-                              },
-                            },
-                          ],
-                          "location": 170,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_describe_object",
-                        },
-                      },
-                    ],
-                    "location": 129,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 201,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "deptype",
-                        },
-                      },
-                    ],
-                    "location": 201,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "classid",
-                            },
-                          },
-                        ],
-                        "location": 230,
-                      },
-                    },
-                    "location": 238,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 240,
-                            "sval": {
-                              "sval": "pg_cast",
-                            },
+                      "location": 276,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
                           },
                         },
-                        "location": 249,
-                        "typeName": {
-                          "location": 251,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "regclass",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "objid",
-                            },
-                          },
-                        ],
-                        "location": 270,
-                      },
-                    },
-                    "location": 276,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "SubLink": {
-                        "location": 278,
-                        "subLinkType": "EXPR_SUBLINK",
-                        "subselect": {
-                          "SelectStmt": {
-                            "fromClause": [
-                              {
-                                "RangeVar": {
-                                  "inh": true,
-                                  "location": 295,
-                                  "relname": "pg_cast",
-                                  "relpersistence": "p",
+                      ],
+                      "rexpr": {
+                        "SubLink": {
+                          "location": 278,
+                          "subLinkType": "EXPR_SUBLINK",
+                          "subselect": {
+                            "SelectStmt": {
+                              "fromClause": [
+                                {
+                                  "RangeVar": {
+                                    "inh": true,
+                                    "location": 295,
+                                    "relname": "pg_cast",
+                                    "relpersistence": "p",
+                                  },
                                 },
-                              },
-                            ],
-                            "limitOption": "LIMIT_OPTION_DEFAULT",
-                            "op": "SETOP_NONE",
-                            "targetList": [
-                              {
-                                "ResTarget": {
-                                  "location": 286,
-                                  "val": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "oid",
+                              ],
+                              "limitOption": "LIMIT_OPTION_DEFAULT",
+                              "op": "SETOP_NONE",
+                              "targetList": [
+                                {
+                                  "ResTarget": {
+                                    "location": 286,
+                                    "val": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "oid",
+                                            },
                                           },
-                                        },
-                                      ],
-                                      "location": 286,
+                                        ],
+                                        "location": 286,
+                                      },
                                     },
                                   },
                                 },
-                              },
-                            ],
-                            "whereClause": {
-                              "BoolExpr": {
-                                "args": [
-                                  {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "castsource",
-                                              },
-                                            },
-                                          ],
-                                          "location": 324,
-                                        },
-                                      },
-                                      "location": 335,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "=",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "TypeCast": {
-                                          "arg": {
-                                            "A_Const": {
-                                              "location": 337,
-                                              "sval": {
-                                                "sval": "int4",
-                                              },
-                                            },
-                                          },
-                                          "location": 343,
-                                          "typeName": {
-                                            "location": 345,
-                                            "names": [
+                              ],
+                              "whereClause": {
+                                "BoolExpr": {
+                                  "args": [
+                                    {
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
                                               {
                                                 "String": {
-                                                  "sval": "regtype",
+                                                  "sval": "castsource",
                                                 },
                                               },
                                             ],
-                                            "typemod": -1,
+                                            "location": 324,
+                                          },
+                                        },
+                                        "location": 335,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "=",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "TypeCast": {
+                                            "arg": {
+                                              "A_Const": {
+                                                "location": 337,
+                                                "sval": {
+                                                  "sval": "int4",
+                                                },
+                                              },
+                                            },
+                                            "location": 343,
+                                            "typeName": {
+                                              "location": 345,
+                                              "names": [
+                                                {
+                                                  "String": {
+                                                    "sval": "regtype",
+                                                  },
+                                                },
+                                              ],
+                                              "typemod": -1,
+                                            },
                                           },
                                         },
                                       },
                                     },
-                                  },
-                                  {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "casttarget",
-                                              },
-                                            },
-                                          ],
-                                          "location": 374,
-                                        },
-                                      },
-                                      "location": 385,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "=",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "TypeCast": {
-                                          "arg": {
-                                            "A_Const": {
-                                              "location": 387,
-                                              "sval": {
-                                                "sval": "casttesttype",
-                                              },
-                                            },
-                                          },
-                                          "location": 401,
-                                          "typeName": {
-                                            "location": 403,
-                                            "names": [
+                                    {
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
                                               {
                                                 "String": {
-                                                  "sval": "regtype",
+                                                  "sval": "casttarget",
                                                 },
                                               },
                                             ],
-                                            "typemod": -1,
+                                            "location": 374,
+                                          },
+                                        },
+                                        "location": 385,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "=",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "TypeCast": {
+                                            "arg": {
+                                              "A_Const": {
+                                                "location": 387,
+                                                "sval": {
+                                                  "sval": "casttesttype",
+                                                },
+                                              },
+                                            },
+                                            "location": 401,
+                                            "typeName": {
+                                              "location": 403,
+                                              "names": [
+                                                {
+                                                  "String": {
+                                                    "sval": "regtype",
+                                                  },
+                                                },
+                                              ],
+                                              "typemod": -1,
+                                            },
                                           },
                                         },
                                       },
                                     },
-                                  },
-                                ],
-                                "boolop": "AND_EXPR",
-                                "location": 370,
+                                  ],
+                                  "boolop": "AND_EXPR",
+                                  "location": 370,
+                                },
                               },
                             },
                           },
@@ -1927,16 +1429,16 @@ exports[`create_cast.sql > line 64 2`] = `
                       },
                     },
                   },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 260,
+                ],
+                "boolop": "AND_EXPR",
+                "location": 260,
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

@@ -1,3529 +1,1109 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`tablesample.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 10,
+[
+  "CREATE TABLE test_tablesample (id int, name text) WITH (fillfactor=10)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Integer": {
+                      "ival": 10,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "fillfactor",
+                  "location": 56,
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_tablesample",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 34,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 56,
               },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_tablesample",
-            "relpersistence": "p",
+              {
+                "ColumnDef": {
+                  "colname": "name",
+                  "is_local": true,
+                  "location": 39,
+                  "typeName": {
+                    "location": 44,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 31,
-                "typeName": {
-                  "location": 34,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "name",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 44,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 2 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 93,
-            "relname": "test_tablesample",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "s",
-                      "colnames": [
+exports[`tablesample.sql > line 5 1`] = `
+[
+  "  SELECT i, repeat(i::text, 200) FROM generate_series(0, 9) s(i)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "s",
+                    "colnames": [
+                      {
+                        "String": {
+                          "sval": "i",
+                        },
+                      },
+                    ],
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {},
+                                    "location": 54,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 9,
+                                    },
+                                    "location": 57,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 38,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
                         {
                           "String": {
                             "sval": "i",
                           },
                         },
                       ],
+                      "location": 9,
                     },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {},
-                                      "location": 164,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 9,
-                                      },
-                                      "location": 167,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 148,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 119,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "i",
-                            },
-                          },
-                        ],
-                        "location": 119,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 122,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "TypeCast": {
-                              "arg": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "i",
-                                      },
-                                    },
-                                  ],
-                                  "location": 129,
-                                },
-                              },
-                              "location": 130,
-                              "typeName": {
-                                "location": 132,
-                                "names": [
-                                  {
-                                    "String": {
-                                      "sval": "text",
-                                    },
-                                  },
-                                ],
-                                "typemod": -1,
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "ival": {
-                                "ival": 200,
-                              },
-                              "location": 138,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "repeat",
-                            },
-                          },
-                        ],
-                        "location": 122,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 50,
-                      },
-                      "location": 61,
-                    },
-                  },
-                ],
-                "location": 53,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t",
-                    },
-                    "inh": true,
-                    "location": 19,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 77,
                   },
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "t",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Expr": {
-                      "kind": "AEXPR_OP",
-                      "lexpr": {
-                        "A_Const": {
-                          "fval": {
-                            "fval": "100.0",
-                          },
-                          "location": 53,
-                        },
-                      },
-                      "location": 58,
-                      "name": [
+              {
+                "ResTarget": {
+                  "location": 12,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
                         {
-                          "String": {
-                            "sval": "/",
+                          "TypeCast": {
+                            "arg": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "i",
+                                    },
+                                  },
+                                ],
+                                "location": 19,
+                              },
+                            },
+                            "location": 20,
+                            "typeName": {
+                              "location": 22,
+                              "names": [
+                                {
+                                  "String": {
+                                    "sval": "text",
+                                  },
+                                },
+                              ],
+                              "typemod": -1,
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 200,
+                            },
+                            "location": 28,
                           },
                         },
                       ],
-                      "rexpr": {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 11,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "repeat",
                           },
-                          "location": 59,
                         },
-                      },
+                      ],
+                      "location": 12,
                     },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 75,
                   },
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 50,
-                      },
-                      "location": 53,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 69,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 50,
-                      },
-                      "location": 56,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 72,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "fval": {
-                        "fval": "5.5",
-                      },
-                      "location": 56,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 73,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 100,
-                      },
-                      "location": 132,
-                    },
-                  },
-                ],
-                "location": 124,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 95,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 81,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 81,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 100,
-                      },
-                      "location": 59,
-                    },
-                  },
-                ],
-                "location": 51,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 22,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
+exports[`tablesample.sql > line 7 1`] = `
+[
+  "SELECT t.id FROM test_tablesample AS t TABLESAMPLE SYSTEM (50) REPEATABLE (0)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
                       "A_Const": {
                         "ival": {
-                          "ival": 1,
+                          "ival": 50,
                         },
-                        "location": 76,
+                        "location": 59,
                       },
                     },
-                    "location": 77,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "+",
-                        },
+                  ],
+                  "location": 51,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "system",
                       },
-                    ],
-                    "rexpr": {
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t",
+                      },
+                      "inh": true,
+                      "location": 17,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
+                    },
+                  },
+                  "repeatable": {
+                    "A_Const": {
+                      "ival": {},
+                      "location": 75,
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "t",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 14 1`] = `
+[
+  "SELECT count(*) FROM test_tablesample TABLESAMPLE SYSTEM (100)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
                       "A_Const": {
                         "ival": {
-                          "ival": 2,
+                          "ival": 100,
                         },
-                        "location": 78,
+                        "location": 58,
                       },
+                    },
+                  ],
+                  "location": 50,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "system",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 21,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
                     },
                   },
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
                         },
-                      },
-                    ],
-                    "location": 8,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
+exports[`tablesample.sql > line 18 1`] = `
+[
+  "CREATE VIEW test_tablesample_v1 AS
+  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (10*2) REPEATABLE (2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
                   {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 100,
-                      },
-                      "location": 59,
-                    },
-                  },
-                ],
-                "location": 51,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 22,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "fval": {
-                      "fval": "0.4",
-                    },
-                    "location": 76,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "A_Const": {
-                              "ival": {
-                                "ival": 10,
+                    "RangeTableSample": {
+                      "args": [
+                        {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 10,
+                                },
+                                "location": 89,
                               },
-                              "location": 91,
+                            },
+                            "location": 91,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "*",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 2,
+                                },
+                                "location": 92,
+                              },
                             },
                           },
-                          "location": 93,
-                          "name": [
+                        },
+                      ],
+                      "location": 81,
+                      "method": [
+                        {
+                          "String": {
+                            "sval": "system",
+                          },
+                        },
+                      ],
+                      "relation": {
+                        "RangeVar": {
+                          "inh": true,
+                          "location": 52,
+                          "relname": "test_tablesample",
+                          "relpersistence": "p",
+                        },
+                      },
+                      "repeatable": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 107,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 44,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
                             {
                               "String": {
-                                "sval": "*",
+                                "sval": "id",
                               },
                             },
                           ],
-                          "rexpr": {
-                            "A_Const": {
-                              "ival": {
-                                "ival": 2,
-                              },
-                              "location": 94,
-                            },
-                          },
+                          "location": 44,
                         },
-                      },
-                    ],
-                    "location": 83,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "system",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 54,
-                        "relname": "test_tablesample",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "repeatable": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 109,
                       },
                     },
                   },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 46,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 46,
-                      },
-                    },
-                  },
-                },
-              ],
+                ],
+              },
             },
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_tablesample_v1",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
           },
-          "view": {
-            "inh": true,
-            "location": 14,
-            "relname": "test_tablesample_v1",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
+exports[`tablesample.sql > line 21 1`] = `
+[
+  "  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (99)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 99,
+                        },
+                        "location": 54,
+                      },
+                    },
+                  ],
+                  "location": 46,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "system",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 17,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 9,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 30 1`] = `
+[
+  "FETCH FIRST FROM tablesample_cur",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "FetchStmt": {
+            "direction": "FETCH_ABSOLUTE",
+            "howMany": 1,
+            "portalname": "tablesample_cur",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 36 1`] = `
+[
+  "FETCH NEXT FROM tablesample_cur",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "FetchStmt": {
+            "direction": "FETCH_FORWARD",
+            "howMany": 1,
+            "portalname": "tablesample_cur",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 47 1`] = `
+[
+  "CLOSE tablesample_cur",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ClosePortalStmt": {
+            "portalname": "tablesample_cur",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 50 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeTableSample": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 50,
+                            },
+                            "location": 74,
+                          },
+                        },
+                      ],
+                      "location": 66,
+                      "method": [
+                        {
+                          "String": {
+                            "sval": "system",
+                          },
+                        },
+                      ],
+                      "relation": {
+                        "RangeVar": {
+                          "inh": true,
+                          "location": 37,
+                          "relname": "test_tablesample",
+                          "relpersistence": "p",
+                        },
+                      },
+                      "repeatable": {
                         "A_Const": {
                           "ival": {
-                            "ival": 99,
+                            "ival": 2,
                           },
                           "location": 90,
                         },
                       },
-                    ],
-                    "location": 82,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "system",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 53,
-                        "relname": "test_tablesample",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 45,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 45,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_tablesample_v2",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 22 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`tablesample.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeclareCursorStmt": {
-          "options": 258,
-          "portalname": "tablesample_cur",
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 50,
-                          },
-                          "location": 97,
-                        },
-                      },
-                    ],
-                    "location": 89,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "system",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 60,
-                        "relname": "test_tablesample",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "repeatable": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 113,
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 52,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 52,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_ABSOLUTE",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 50,
-                      },
-                      "location": 54,
                     },
                   },
                 ],
-                "location": 46,
-                "method": [
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
                   {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 17,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {},
-                    "location": 70,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_ABSOLUTE",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "FetchStmt": {
-          "direction": "FETCH_FORWARD",
-          "howMany": 1,
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ClosePortalStmt": {
-          "portalname": "tablesample_cur",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 11,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 50,
-                          },
-                          "location": 76,
-                        },
-                      },
-                    ],
-                    "location": 68,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "system",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 39,
-                        "relname": "test_tablesample",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "repeatable": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 92,
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 31,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 37,
-                    "relname": "test_tablesample_v1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 30,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 30,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 41,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 100,
-                          },
-                          "location": 105,
-                        },
-                      },
-                    ],
-                    "location": 94,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "bernoulli",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 75,
-                        "relname": "person",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 61,
-                    "val": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 61,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 100,
-                      },
-                      "location": 52,
-                    },
-                  },
-                ],
-                "location": 41,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 22,
-                    "relname": "person",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 22,
-                "relname": "person",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "TypeCast": {
-                      "arg": {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "TypeCast": {
-                              "arg": {
-                                "A_Const": {
-                                  "location": 135,
-                                  "sval": {
-                                    "sval": "1",
-                                  },
-                                },
-                              },
-                              "location": 138,
-                              "typeName": {
-                                "location": 140,
-                                "names": [
-                                  {
-                                    "String": {
-                                      "sval": "text",
-                                    },
-                                  },
-                                ],
-                                "typemod": -1,
-                              },
-                            },
-                          },
-                          "location": 145,
-                          "name": [
+                    "ResTarget": {
+                      "location": 29,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
                             {
                               "String": {
-                                "sval": "<",
+                                "sval": "id",
                               },
                             },
                           ],
-                          "rexpr": {
-                            "TypeCast": {
-                              "arg": {
-                                "A_Const": {
-                                  "location": 147,
-                                  "sval": {
-                                    "sval": "0",
-                                  },
-                                },
-                              },
-                              "location": 150,
-                              "typeName": {
-                                "location": 152,
-                                "names": [
-                                  {
-                                    "String": {
-                                      "sval": "text",
-                                    },
-                                  },
-                                ],
-                                "typemod": -1,
-                              },
-                            },
-                          },
+                          "location": 29,
                         },
-                      },
-                      "location": 157,
-                      "typeName": {
-                        "location": 159,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
                       },
                     },
                   },
                 ],
-                "location": 123,
-                "method": [
-                  {
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 53 1`] = `
+[
+  "  SELECT * FROM test_tablesample_v1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 16,
+                  "relname": "test_tablesample_v1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 9,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 56 1`] = `
+[
+  "explain (costs off)
+  select count(*) from person tablesample bernoulli (100)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
                     "String": {
-                      "sval": "bernoulli",
+                      "sval": "off",
                     },
                   },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 94,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 80,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 80,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "v",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "pct",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {},
-                                "location": 104,
-                              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeTableSample": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 100,
                             },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 100,
-                                },
-                                "location": 108,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "ss",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeTableSample": {
-                          "args": [
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "pct",
-                                    },
-                                  },
-                                ],
-                                "location": 183,
-                              },
-                            },
-                          ],
-                          "location": 172,
-                          "method": [
-                            {
-                              "String": {
-                                "sval": "bernoulli",
-                              },
-                            },
-                          ],
-                          "relation": {
-                            "RangeVar": {
-                              "inh": true,
-                              "location": 154,
-                              "relname": "tenk1",
-                              "relpersistence": "p",
-                            },
+                            "location": 73,
                           },
                         },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 140,
-                          "val": {
-                            "FuncCall": {
-                              "agg_star": true,
-                              "funcformat": "COERCE_EXPLICIT_CALL",
-                              "funcname": [
-                                {
-                                  "String": {
-                                    "sval": "count",
-                                  },
-                                },
-                              ],
-                              "location": 140,
-                            },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 86,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 86,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "v",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "pct",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {},
-                                "location": 26,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 100,
-                                },
-                                "location": 30,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "ss",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeTableSample": {
-                          "args": [
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "pct",
-                                    },
-                                  },
-                                ],
-                                "location": 102,
-                              },
-                            },
-                          ],
-                          "location": 94,
-                          "method": [
-                            {
-                              "String": {
-                                "sval": "system",
-                              },
-                            },
-                          ],
-                          "relation": {
-                            "RangeVar": {
-                              "inh": true,
-                              "location": 76,
-                              "relname": "tenk1",
-                              "relpersistence": "p",
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 62,
-                          "val": {
-                            "FuncCall": {
-                              "agg_star": true,
-                              "funcformat": "COERCE_EXPLICIT_CALL",
-                              "funcname": [
-                                {
-                                  "String": {
-                                    "sval": "count",
-                                  },
-                                },
-                              ],
-                              "location": 62,
-                            },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeSubselect": {
-                    "alias": {
-                      "aliasname": "v",
-                      "colnames": [
+                      ],
+                      "location": 62,
+                      "method": [
                         {
                           "String": {
-                            "sval": "pct",
+                            "sval": "bernoulli",
+                          },
+                        },
+                      ],
+                      "relation": {
+                        "RangeVar": {
+                          "inh": true,
+                          "location": 43,
+                          "relname": "person",
+                          "relpersistence": "p",
+                        },
+                      },
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 29,
+                      "val": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 29,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 62 1`] = `
+[
+  "SELECT count(*) FROM test_tablesample TABLESAMPLE bernoulli (('1'::text < '0'::text)::int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "TypeCast": {
+                                "arg": {
+                                  "A_Const": {
+                                    "location": 62,
+                                    "sval": {
+                                      "sval": "1",
+                                    },
+                                  },
+                                },
+                                "location": 65,
+                                "typeName": {
+                                  "location": 67,
+                                  "names": [
+                                    {
+                                      "String": {
+                                        "sval": "text",
+                                      },
+                                    },
+                                  ],
+                                  "typemod": -1,
+                                },
+                              },
+                            },
+                            "location": 72,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "<",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "TypeCast": {
+                                "arg": {
+                                  "A_Const": {
+                                    "location": 74,
+                                    "sval": {
+                                      "sval": "0",
+                                    },
+                                  },
+                                },
+                                "location": 77,
+                                "typeName": {
+                                  "location": 79,
+                                  "names": [
+                                    {
+                                      "String": {
+                                        "sval": "text",
+                                      },
+                                    },
+                                  ],
+                                  "typemod": -1,
+                                },
+                              },
+                            },
+                          },
+                        },
+                        "location": 84,
+                        "typeName": {
+                          "location": 86,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  ],
+                  "location": 50,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "bernoulli",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 21,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 65 1`] = `
+[
+  "select * from
+  (values (0),(100)) v(pct),
+  lateral (select count(*) from tenk1 tablesample bernoulli (pct)) ss",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "v",
+                    "colnames": [
+                      {
+                        "String": {
+                          "sval": "pct",
+                        },
+                      },
+                    ],
+                  },
+                  "subquery": {
+                    "SelectStmt": {
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "valuesLists": [
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {},
+                                  "location": 25,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 100,
+                                  },
+                                  "location": 29,
+                                },
+                              },
+                            ],
                           },
                         },
                       ],
                     },
-                    "subquery": {
-                      "SelectStmt": {
-                        "limitOption": "LIMIT_OPTION_DEFAULT",
-                        "op": "SETOP_NONE",
-                        "valuesLists": [
-                          {
-                            "List": {
-                              "items": [
-                                {
-                                  "A_Const": {
-                                    "ival": {},
-                                    "location": 64,
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                          {
-                            "List": {
-                              "items": [
-                                {
-                                  "A_Const": {
-                                    "ival": {
-                                      "ival": 100,
-                                    },
-                                    "location": 68,
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  },
-                },
-                {
-                  "RangeSubselect": {
-                    "alias": {
-                      "aliasname": "ss",
-                    },
-                    "lateral": true,
-                    "subquery": {
-                      "SelectStmt": {
-                        "fromClause": [
-                          {
-                            "RangeTableSample": {
-                              "args": [
-                                {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "pct",
-                                        },
-                                      },
-                                    ],
-                                    "location": 136,
-                                  },
-                                },
-                              ],
-                              "location": 125,
-                              "method": [
-                                {
-                                  "String": {
-                                    "sval": "bernoulli",
-                                  },
-                                },
-                              ],
-                              "relation": {
-                                "RangeVar": {
-                                  "inh": true,
-                                  "location": 107,
-                                  "relname": "tenk1",
-                                  "relpersistence": "p",
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "limitOption": "LIMIT_OPTION_DEFAULT",
-                        "op": "SETOP_NONE",
-                        "targetList": [
-                          {
-                            "ResTarget": {
-                              "location": 100,
-                              "val": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "A_Star": {},
-                                    },
-                                  ],
-                                  "location": 100,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  },
-                },
-              ],
-              "groupClause": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "pct",
-                        },
-                      },
-                    ],
-                    "location": 156,
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "pct",
-                            },
-                          },
-                        ],
-                        "location": 28,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "unique1",
-                                  },
-                                },
-                              ],
-                              "location": 39,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 33,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 76 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "v",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "pct",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {},
-                                "location": 44,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 100,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
                   },
                 },
               },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "ss",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeTableSample": {
-                          "args": [
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "pct",
-                                    },
-                                  },
-                                ],
-                                "location": 116,
-                              },
-                            },
-                          ],
-                          "location": 105,
-                          "method": [
-                            {
-                              "String": {
-                                "sval": "bernoulli",
-                              },
-                            },
-                          ],
-                          "relation": {
-                            "RangeVar": {
-                              "inh": true,
-                              "location": 87,
-                              "relname": "tenk1",
-                              "relpersistence": "p",
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 80,
-                          "val": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "A_Star": {},
-                                },
-                              ],
-                              "location": 80,
-                            },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "pct",
-                    },
-                  },
-                ],
-                "location": 136,
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "pct",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 13,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "unique1",
-                              },
-                            },
-                          ],
-                          "location": 19,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 13,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "v",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "pct",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {},
-                                "location": 44,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 100,
-                                },
-                                "location": 48,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "ss",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeTableSample": {
-                          "args": [
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "pct",
-                                    },
-                                  },
-                                ],
-                                "location": 113,
-                              },
-                            },
-                          ],
-                          "location": 105,
-                          "method": [
-                            {
-                              "String": {
-                                "sval": "system",
-                              },
-                            },
-                          ],
-                          "relation": {
-                            "RangeVar": {
-                              "inh": true,
-                              "location": 87,
-                              "relname": "tenk1",
-                              "relpersistence": "p",
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 80,
-                          "val": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "A_Star": {},
-                                },
-                              ],
-                              "location": 80,
-                            },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "pct",
-                    },
-                  },
-                ],
-                "location": 133,
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "pct",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 13,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "unique1",
-                              },
-                            },
-                          ],
-                          "location": 19,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 13,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 64,
-                    },
-                  },
-                ],
-                "location": 56,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "foobar",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 27,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 19,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 19,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "isnull": true,
-                      "location": 54,
-                    },
-                  },
-                ],
-                "location": 46,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 17,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 89 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 50,
-                      },
-                      "location": 53,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "isnull": true,
-                    "location": 69,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 90 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 57,
-                    },
-                  },
-                ],
-                "location": 46,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 17,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 200,
-                      },
-                      "location": 56,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 53,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 200,
-                      },
-                      "location": 53,
-                    },
-                  },
-                ],
-                "location": 45,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "system",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 16,
-                    "relname": "test_tablesample",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 60,
-                    },
-                  },
-                ],
-                "location": 49,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 17,
-                    "relname": "test_tablesample_v1",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "id",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_tablesample_v1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 40,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeTableSample": {
-                "args": [
-                  {
-                    "A_Const": {
-                      "fval": {
-                        "fval": "5.5",
-                      },
-                      "location": 106,
-                    },
-                  },
-                ],
-                "location": 95,
-                "method": [
-                  {
-                    "String": {
-                      "sval": "bernoulli",
-                    },
-                  },
-                ],
-                "relation": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 70,
-                    "relname": "query_select",
-                    "relpersistence": "p",
-                  },
-                },
-                "repeatable": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 123,
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 63,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 63,
-                  },
-                },
-              },
-            },
-          ],
-          "withClause": {
-            "ctes": [
               {
-                "CommonTableExpr": {
-                  "ctematerialized": "CTEMaterializeDefault",
-                  "ctename": "query_select",
-                  "ctequery": {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "ss",
+                  },
+                  "lateral": true,
+                  "subquery": {
                     "SelectStmt": {
                       "fromClause": [
                         {
-                          "RangeVar": {
-                            "inh": true,
-                            "location": 38,
-                            "relname": "test_tablesample",
-                            "relpersistence": "p",
+                          "RangeTableSample": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "pct",
+                                      },
+                                    },
+                                  ],
+                                  "location": 104,
+                                },
+                              },
+                            ],
+                            "location": 93,
+                            "method": [
+                              {
+                                "String": {
+                                  "sval": "bernoulli",
+                                },
+                              },
+                            ],
+                            "relation": {
+                              "RangeVar": {
+                                "inh": true,
+                                "location": 75,
+                                "relname": "tenk1",
+                                "relpersistence": "p",
+                              },
+                            },
                           },
                         },
                       ],
@@ -3532,15 +1112,19 @@ exports[`tablesample.sql > line 98 1`] = `
                       "targetList": [
                         {
                           "ResTarget": {
-                            "location": 31,
+                            "location": 61,
                             "val": {
-                              "ColumnRef": {
-                                "fields": [
+                              "FuncCall": {
+                                "agg_star": true,
+                                "funcformat": "COERCE_EXPLICIT_CALL",
+                                "funcname": [
                                   {
-                                    "A_Star": {},
+                                    "String": {
+                                      "sval": "count",
+                                    },
                                   },
                                 ],
-                                "location": 31,
+                                "location": 61,
                               },
                             },
                           },
@@ -3548,240 +1132,557 @@ exports[`tablesample.sql > line 98 1`] = `
                       ],
                     },
                   },
-                  "location": 7,
                 },
               },
             ],
-            "location": 2,
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 101 1`] = `[Error: syntax error at or near "TABLESAMPLE"]`;
-
-exports[`tablesample.sql > line 103 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "partspec": {
-            "location": 85,
-            "partParams": [
+exports[`tablesample.sql > line 72 1`] = `
+[
+  "select pct, count(unique1) from
+  (values (0),(100)) v(pct),
+  lateral (select * from tenk1 tablesample bernoulli (pct)) ss
+  group by pct",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
               {
-                "PartitionElem": {
-                  "location": 104,
-                  "name": "a",
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "v",
+                    "colnames": [
+                      {
+                        "String": {
+                          "sval": "pct",
+                        },
+                      },
+                    ],
+                  },
+                  "subquery": {
+                    "SelectStmt": {
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "valuesLists": [
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {},
+                                  "location": 43,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 100,
+                                  },
+                                  "location": 47,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "ss",
+                  },
+                  "lateral": true,
+                  "subquery": {
+                    "SelectStmt": {
+                      "fromClause": [
+                        {
+                          "RangeTableSample": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "pct",
+                                      },
+                                    },
+                                  ],
+                                  "location": 115,
+                                },
+                              },
+                            ],
+                            "location": 104,
+                            "method": [
+                              {
+                                "String": {
+                                  "sval": "bernoulli",
+                                },
+                              },
+                            ],
+                            "relation": {
+                              "RangeVar": {
+                                "inh": true,
+                                "location": 86,
+                                "relname": "tenk1",
+                                "relpersistence": "p",
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "targetList": [
+                        {
+                          "ResTarget": {
+                            "location": 79,
+                            "val": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "A_Star": {},
+                                  },
+                                ],
+                                "location": 79,
+                              },
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
                 },
               },
             ],
-            "strategy": "PARTITION_STRATEGY_LIST",
-          },
-          "relation": {
-            "inh": true,
-            "location": 63,
-            "relname": "parted_sample",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 78,
-                "typeName": {
-                  "location": 80,
-                  "names": [
+            "groupClause": [
+              {
+                "ColumnRef": {
+                  "fields": [
                     {
                       "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                        "sval": "pct",
                       },
                     },
                   ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 43,
-                "relname": "parted_sample",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "partbound": {
-            "listdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 72,
+                  "location": 135,
                 },
               },
             ],
-            "location": 68,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "parted_sample_1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 107 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 43,
-                "relname": "parted_sample",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "partbound": {
-            "listdatums": [
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
               {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 72,
-                },
-              },
-            ],
-            "location": 68,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "parted_sample_2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`tablesample.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeTableSample": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 100,
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "pct",
                           },
-                          "location": 74,
                         },
-                      },
-                    ],
-                    "location": 63,
-                    "method": [
-                      {
-                        "String": {
-                          "sval": "bernoulli",
-                        },
-                      },
-                    ],
-                    "relation": {
-                      "RangeVar": {
-                        "inh": true,
-                        "location": 37,
-                        "relname": "parted_sample",
-                        "relpersistence": "p",
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
+              },
+              {
+                "ResTarget": {
+                  "location": 12,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "unique1",
+                                },
+                              },
+                            ],
+                            "location": 18,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 12,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 86 1`] = `
+[
+  "SELECT id FROM test_tablesample TABLESAMPLE FOOBAR (1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 52,
+                      },
+                    },
+                  ],
+                  "location": 44,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "foobar",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 15,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 91 1`] = `
+[
+  "SELECT id FROM test_tablesample TABLESAMPLE BERNOULLI (-1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 55,
+                      },
+                    },
+                  ],
+                  "location": 44,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "bernoulli",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 15,
+                      "relname": "test_tablesample",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 96 1`] = `
+[
+  "SELECT id FROM test_tablesample_v1 TABLESAMPLE BERNOULLI (1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 58,
+                      },
+                    },
+                  ],
+                  "location": 47,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "bernoulli",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 15,
+                      "relname": "test_tablesample_v1",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "id",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 99 1`] = `
+[
+  "WITH query_select AS (SELECT * FROM test_tablesample)
+SELECT * FROM query_select TABLESAMPLE BERNOULLI (5.5) REPEATABLE (1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "fval": {
+                          "fval": "5.5",
+                        },
+                        "location": 104,
+                      },
+                    },
+                  ],
+                  "location": 93,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "bernoulli",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 68,
+                      "relname": "query_select",
+                      "relpersistence": "p",
+                    },
+                  },
+                  "repeatable": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 121,
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 61,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 61,
+                    },
+                  },
+                },
+              },
+            ],
+            "withClause": {
+              "ctes": [
                 {
-                  "ResTarget": {
-                    "location": 30,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
+                  "CommonTableExpr": {
+                    "ctematerialized": "CTEMaterializeDefault",
+                    "ctename": "query_select",
+                    "ctequery": {
+                      "SelectStmt": {
+                        "fromClause": [
                           {
-                            "A_Star": {},
+                            "RangeVar": {
+                              "inh": true,
+                              "location": 36,
+                              "relname": "test_tablesample",
+                              "relpersistence": "p",
+                            },
                           },
                         ],
-                        "location": 30,
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 29,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "A_Star": {},
+                                    },
+                                  ],
+                                  "location": 29,
+                                },
+                              },
+                            },
+                          },
+                        ],
                       },
                     },
+                    "location": 5,
                   },
                 },
               ],
@@ -3789,59 +1690,137 @@ exports[`tablesample.sql > line 108 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`tablesample.sql > line 110 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "parted_sample",
-                    },
+exports[`tablesample.sql > line 105 1`] = `
+[
+  "create table parted_sample (a int) partition by list (a)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "partspec": {
+              "location": 35,
+              "partParams": [
+                {
+                  "PartitionElem": {
+                    "location": 54,
+                    "name": "a",
                   },
-                ],
-              },
+                },
+              ],
+              "strategy": "PARTITION_STRATEGY_LIST",
             },
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "parted_sample_1",
-                    },
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "parted_sample",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 28,
+                  "typeName": {
+                    "location": 30,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
-                ],
+                },
               },
-            },
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "parted_sample_2",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`tablesample.sql > line 109 1`] = `
+[
+  "  select * from parted_sample tablesample bernoulli (100)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeTableSample": {
+                  "args": [
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 100,
+                        },
+                        "location": 53,
+                      },
+                    },
+                  ],
+                  "location": 42,
+                  "method": [
+                    {
+                      "String": {
+                        "sval": "bernoulli",
+                      },
+                    },
+                  ],
+                  "relation": {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 16,
+                      "relname": "parted_sample",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 9,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 9,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

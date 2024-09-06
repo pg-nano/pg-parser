@@ -1,2492 +1,529 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`advisory_lock.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`advisory_lock.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+exports[`advisory_lock.sql > line 9 1`] = `
+[
+  "SELECT
+	pg_advisory_xact_lock(1), pg_advisory_xact_lock_shared(2),
+	pg_advisory_xact_lock(1, 1), pg_advisory_xact_lock_shared(2, 2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 8,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 30,
                           },
-                          "location": 32,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_xact_lock",
+                          },
                         },
-                      },
-                    ],
-                    "location": 10,
+                      ],
+                      "location": 8,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 36,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+              {
+                "ResTarget": {
+                  "location": 34,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 63,
                           },
-                          "location": 65,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_xact_lock_shared",
+                          },
                         },
-                      },
-                    ],
-                    "location": 36,
+                      ],
+                      "location": 34,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 70,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+              {
+                "ResTarget": {
+                  "location": 68,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 90,
                           },
-                          "location": 92,
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 93,
                           },
-                          "location": 95,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_xact_lock",
+                          },
                         },
-                      },
-                    ],
-                    "location": 70,
+                      ],
+                      "location": 68,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 99,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+              {
+                "ResTarget": {
+                  "location": 97,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 126,
                           },
-                          "location": 128,
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 129,
                           },
-                          "location": 131,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_xact_lock_shared",
+                          },
                         },
-                      },
-                    ],
-                    "location": 99,
+                      ],
+                      "location": 97,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`advisory_lock.sql > line 12 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 67,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_all",
+exports[`advisory_lock.sql > line 19 1`] = `
+[
+  "SELECT pg_advisory_unlock_all()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_unlock_all",
+                          },
                         },
-                      },
-                    ],
-                    "location": 67,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`advisory_lock.sql > line 20 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 38,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+exports[`advisory_lock.sql > line 25 1`] = `
+[
+  "SELECT
+	pg_advisory_unlock(1), pg_advisory_unlock_shared(2),
+	pg_advisory_unlock(1, 1), pg_advisory_unlock_shared(2, 2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 8,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 27,
                           },
-                          "location": 57,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_unlock",
+                          },
                         },
-                      },
-                    ],
-                    "location": 38,
+                      ],
+                      "location": 8,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 61,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+              {
+                "ResTarget": {
+                  "location": 31,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 57,
                           },
-                          "location": 87,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_unlock_shared",
+                          },
                         },
-                      },
-                    ],
-                    "location": 61,
+                      ],
+                      "location": 31,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 92,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+              {
+                "ResTarget": {
+                  "location": 62,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 81,
                           },
-                          "location": 111,
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 84,
                           },
-                          "location": 114,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_unlock",
+                          },
                         },
-                      },
-                    ],
-                    "location": 92,
+                      ],
+                      "location": 62,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 118,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+              {
+                "ResTarget": {
+                  "location": 88,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 114,
                           },
-                          "location": 144,
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 117,
                           },
-                          "location": 147,
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_unlock_shared",
+                          },
                         },
-                      },
-                    ],
-                    "location": 118,
+                      ],
+                      "location": 88,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`advisory_lock.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
+exports[`advisory_lock.sql > line 31 1`] = `
+[
+  "COMMIT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_COMMIT",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`advisory_lock.sql > line 32 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
+exports[`advisory_lock.sql > line 47 1`] = `
+[
+  "SELECT
+	pg_advisory_lock(1), pg_advisory_lock_shared(2),
+	pg_advisory_lock(1, 1), pg_advisory_lock_shared(2, 2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 8,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 25,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_lock",
+                          },
+                        },
+                      ],
+                      "location": 8,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 29,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 53,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_lock_shared",
+                          },
+                        },
+                      ],
+                      "location": 29,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 58,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 75,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 78,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_lock",
+                          },
+                        },
+                      ],
+                      "location": 58,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 82,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 106,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 109,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_advisory_lock_shared",
+                          },
+                        },
+                      ],
+                      "location": 82,
+                    },
+                  },
+                },
+              },
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`advisory_lock.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 81,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 103,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 81,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 107,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 136,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 107,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 141,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 163,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 166,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 141,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 170,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 199,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 202,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 170,
-                  },
-                },
-              },
-            },
-          ],
+exports[`advisory_lock.sql > line 51 1`] = `
+[
+  "ROLLBACK",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_ROLLBACK",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
-
-exports[`advisory_lock.sql > line 42 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 27,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 31,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 55,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 31,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 60,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 77,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 80,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 60,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 84,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 108,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 111,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 84,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 52 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 56 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 38,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 57,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 38,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 61,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 80,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 61,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 85,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 111,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 85,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 115,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 141,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 115,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 146,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 165,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 168,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 146,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 172,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 191,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 194,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 172,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 199,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 225,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 228,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 199,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 232,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 258,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 261,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 232,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 64 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 84,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 101,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 84,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 105,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 129,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 105,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 134,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 151,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 154,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 134,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 158,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 182,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 185,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 158,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 74 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 32,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 36,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 65,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 36,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 70,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 92,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 95,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 70,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 99,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 128,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 131,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 99,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 82 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 84 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 41,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_all",
-                        },
-                      },
-                    ],
-                    "location": 41,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 92 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 48,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 70,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 48,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 74,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 96,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 74,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 101,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 130,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 101,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 134,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 163,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 134,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 168,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 190,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 193,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 168,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 197,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 219,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 222,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock",
-                        },
-                      },
-                    ],
-                    "location": 197,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 227,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 256,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 259,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 227,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 263,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 292,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 295,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_xact_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 263,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 105 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 111 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 113 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 52,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 69,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 52,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 73,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 90,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 73,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 95,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 119,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 95,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 123,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 147,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 123,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 152,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 169,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 172,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 152,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 176,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 193,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 196,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 176,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 201,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 225,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 228,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 201,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 232,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 256,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 259,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 232,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 121 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 125 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 29,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 33,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 52,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 33,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 57,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 83,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 57,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 87,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 113,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 87,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 118,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 137,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 140,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 118,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 144,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 163,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 166,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock",
-                        },
-                      },
-                    ],
-                    "location": 144,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 171,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 197,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 200,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 171,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 204,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 230,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 233,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_shared",
-                        },
-                      },
-                    ],
-                    "location": 204,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 131 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 48,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 65,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 48,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 69,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 86,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 69,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 91,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 115,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 91,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 119,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 143,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 119,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 148,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 165,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 168,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 148,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 172,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 189,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 192,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock",
-                        },
-                      },
-                    ],
-                    "location": 172,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 197,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 221,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 224,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 197,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 228,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 252,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 255,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_lock_shared",
-                        },
-                      },
-                    ],
-                    "location": 228,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 141 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`advisory_lock.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_advisory_unlock_all",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`advisory_lock.sql > line 147 1`] = `[Error: syntax error at or near ":"]`;

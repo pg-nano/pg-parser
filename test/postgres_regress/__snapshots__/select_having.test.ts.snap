@@ -1,1017 +1,164 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`select_having.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 55,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 68,
-                "typeName": {
-                  "location": 70,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
+exports[`select_having.sql > line 6 1`] = `
+[
+  "CREATE TABLE test_having (a int, b int, c char(8), d char)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_having",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 26,
+                  "typeName": {
+                    "location": 28,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
                       },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
                       },
-                    },
-                  ],
-                  "typemod": -1,
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 75,
-                "typeName": {
-                  "location": 77,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 33,
+                  "typeName": {
+                    "location": 35,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
                       },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
                       },
-                    },
-                  ],
-                  "typemod": -1,
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "c",
-                "is_local": true,
-                "location": 82,
-                "typeName": {
-                  "location": 84,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "bpchar",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                  "typmods": [
-                    {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 8,
-                        },
-                        "location": 89,
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "d",
-                "is_local": true,
-                "location": 93,
-                "typeName": {
-                  "location": 95,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "bpchar",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                  "typmods": [
-                    {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": -1,
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+              {
+                "ColumnDef": {
+                  "colname": "c",
+                  "is_local": true,
+                  "location": 40,
+                  "typeName": {
+                    "location": 42,
+                    "names": [
                       {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 33,
+                        "String": {
+                          "sval": "pg_catalog",
                         },
                       },
                       {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "XXXX",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "A",
-                          },
+                        "String": {
+                          "sval": "bpchar",
                         },
                       },
                     ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "AAAA",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "b",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "AAAA",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "c",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "BBBB",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "D",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "BBBB",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "e",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "bbbb",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "F",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 6,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "cccc",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "g",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 7,
-                          },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "cccc",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "h",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+                    "typemod": -1,
+                    "typmods": [
                       {
                         "A_Const": {
                           "ival": {
                             "ival": 8,
                           },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "CCCC",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
                           "location": 47,
-                          "sval": {
-                            "sval": "I",
-                          },
                         },
                       },
                     ],
                   },
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_having",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+              },
+              {
+                "ColumnDef": {
+                  "colname": "d",
+                  "is_local": true,
+                  "location": 51,
+                  "typeName": {
+                    "location": 53,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "bpchar",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                    "typmods": [
                       {
                         "A_Const": {
                           "ival": {
-                            "ival": 9,
+                            "ival": 1,
                           },
-                          "location": 33,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "CCCC",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "j",
-                          },
+                          "location": -1,
                         },
                       },
                     ],
                   },
                 },
-              ],
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_having.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 19,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "b",
-                    },
-                  },
-                ],
-                "location": 41,
-              },
-            },
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "c",
-                    },
-                  },
-                ],
-                "location": 44,
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "FuncCall": {
-                  "agg_star": true,
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "count",
-                      },
-                    },
-                  ],
-                  "location": 53,
+exports[`select_having.sql > line 18 1`] = `
+[
+  "SELECT b, c FROM test_having
+	GROUP BY b, c HAVING count(*) = 1 ORDER BY b, c",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "test_having",
+                  "relpersistence": "p",
                 },
               },
-              "location": 62,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 64,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 75,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 78,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 12,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 12,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 77,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "b",
-                    },
-                  },
-                ],
-                "location": 99,
-              },
-            },
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "c",
-                    },
-                  },
-                ],
-                "location": 102,
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
+            ],
+            "groupClause": [
+              {
                 "ColumnRef": {
                   "fields": [
                     {
@@ -1020,358 +167,28 @@ exports[`select_having.sql > line 20 1`] = `
                       },
                     },
                   ],
-                  "location": 111,
+                  "location": 39,
                 },
               },
-              "location": 113,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 3,
-                  },
-                  "location": 115,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 126,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 129,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 67,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 67,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 70,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 70,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 33,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "FuncCall": {
-                "args": [
-                  {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "c",
-                          },
-                        },
-                      ],
-                      "location": 61,
-                    },
-                  },
-                ],
-                "funcformat": "COERCE_EXPLICIT_CALL",
-                "funcname": [
-                  {
-                    "String": {
-                      "sval": "lower",
-                    },
-                  },
-                ],
-                "location": 55,
-              },
-            },
-          ],
-          "havingClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 71,
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "c",
                       },
                     },
-                    "location": 80,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 82,
-                      },
-                    },
-                  },
+                  ],
+                  "location": 42,
                 },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "a",
-                                  },
-                                },
-                              ],
-                              "location": 91,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "min",
-                            },
-                          },
-                        ],
-                        "location": 87,
-                      },
-                    },
-                    "location": 94,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "a",
-                                  },
-                                },
-                              ],
-                              "location": 100,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "max",
-                            },
-                          },
-                        ],
-                        "location": 96,
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "OR_EXPR",
-              "location": 84,
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
+              },
+            ],
+            "havingClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "c",
-                              },
-                            },
-                          ],
-                          "location": 119,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "lower",
-                        },
-                      },
-                    ],
-                    "location": 113,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "c",
-                              },
-                            },
-                          ],
-                          "location": 15,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "lower",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 19,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "c",
-                              },
-                            },
-                          ],
-                          "location": 25,
-                        },
-                      },
-                    ],
+                    "agg_star": true,
                     "funcformat": "COERCE_EXPLICIT_CALL",
                     "funcname": [
                       {
@@ -1380,975 +197,870 @@ exports[`select_having.sql > line 24 1`] = `
                         },
                       },
                     ],
-                    "location": 19,
+                    "location": 51,
                   },
                 },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "ColumnRef": {
-                "fields": [
+                "location": 60,
+                "name": [
                   {
                     "String": {
-                      "sval": "c",
+                      "sval": "=",
                     },
                   },
                 ],
-                "location": 46,
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 62,
+                  },
+                },
               },
             },
-          ],
-          "havingClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
                           },
-                        ],
-                        "location": 55,
-                      },
+                        },
+                      ],
+                      "location": 73,
                     },
-                    "location": 64,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
+                      ],
+                      "location": 76,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
                         },
-                        "location": 66,
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "a",
-                                  },
-                                },
-                              ],
-                              "location": 75,
-                            },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
                           },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "min",
-                            },
-                          },
-                        ],
-                        "location": 71,
-                      },
-                    },
-                    "location": 78,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "a",
-                                  },
-                                },
-                              ],
-                              "location": 84,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "max",
-                            },
-                          },
-                        ],
-                        "location": 80,
-                      },
+                      ],
+                      "location": 10,
                     },
                   },
                 },
-              ],
-              "boolop": "OR_EXPR",
-              "location": 68,
-            },
+              },
+            ],
           },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 97,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "c",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 12,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "a",
-                              },
-                            },
-                          ],
-                          "location": 16,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "max",
-                        },
-                      },
-                    ],
-                    "location": 12,
-                  },
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_having.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 164,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 187,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "min",
-                      },
-                    },
-                  ],
-                  "location": 183,
+exports[`select_having.sql > line 22 1`] = `
+[
+  "SELECT b, c FROM test_having
+	GROUP BY b, c HAVING b = 3 ORDER BY b, c",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "test_having",
+                  "relpersistence": "p",
                 },
               },
-              "location": 190,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 196,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "max",
-                      },
-                    },
-                  ],
-                  "location": 192,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 144,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "a",
-                              },
-                            },
-                          ],
-                          "location": 148,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "min",
-                        },
-                      },
-                    ],
-                    "location": 144,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 152,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "a",
-                              },
-                            },
-                          ],
-                          "location": 156,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "max",
-                        },
-                      },
-                    ],
-                    "location": 152,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 28,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 51,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "min",
-                      },
-                    },
-                  ],
-                  "location": 47,
-                },
-              },
-              "location": 54,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 60,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "max",
-                      },
-                    },
-                  ],
-                  "location": 56,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "a",
-                              },
-                            },
-                          ],
-                          "location": 12,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "min",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "a",
-                              },
-                            },
-                          ],
-                          "location": 20,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "max",
-                        },
-                      },
-                    ],
-                    "location": 16,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 55,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 78,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "min",
-                      },
-                    },
-                  ],
-                  "location": 74,
-                },
-              },
-              "location": 81,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "a",
-                            },
-                          },
-                        ],
-                        "location": 87,
-                      },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "max",
-                      },
-                    },
-                  ],
-                  "location": 83,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 48,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 48,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 22,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
+            ],
+            "groupClause": [
+              {
                 "ColumnRef": {
                   "fields": [
                     {
                       "String": {
-                        "sval": "a",
+                        "sval": "b",
                       },
                     },
                   ],
-                  "location": 41,
+                  "location": 39,
                 },
               },
-              "location": 43,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 45,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "one",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 81,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 100,
-                },
-              },
-              "location": 102,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 104,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 67,
-                "name": "one",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 67,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 22,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 41,
-                },
-              },
-              "location": 43,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 45,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "one",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_having.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 79,
-                "relname": "test_having",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "havingClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 112,
-                },
-              },
-              "location": 114,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 116,
-                },
-              },
-            },
-          },
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 65,
-                "name": "one",
-                "val": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 65,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 97,
-                    },
-                  },
-                  "location": 98,
-                  "name": [
+              {
+                "ColumnRef": {
+                  "fields": [
                     {
                       "String": {
-                        "sval": "/",
+                        "sval": "c",
                       },
                     },
                   ],
-                  "rexpr": {
+                  "location": 42,
+                },
+              },
+            ],
+            "havingClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 51,
+                  },
+                },
+                "location": 53,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 3,
+                    },
+                    "location": 55,
+                  },
+                },
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 66,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 69,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_having.sql > line 25 1`] = `
+[
+  "SELECT lower(c), count(c) FROM test_having
+	GROUP BY lower(c) HAVING count(*) > 2 OR min(a) = max(a)
+	ORDER BY lower(c)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "test_having",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "groupClause": [
+              {
+                "FuncCall": {
+                  "args": [
+                    {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "c",
+                            },
+                          },
+                        ],
+                        "location": 59,
+                      },
+                    },
+                  ],
+                  "funcformat": "COERCE_EXPLICIT_CALL",
+                  "funcname": [
+                    {
+                      "String": {
+                        "sval": "lower",
+                      },
+                    },
+                  ],
+                  "location": 53,
+                },
+              },
+            ],
+            "havingClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 69,
+                        },
+                      },
+                      "location": 78,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 80,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "a",
+                                    },
+                                  },
+                                ],
+                                "location": 89,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "min",
+                              },
+                            },
+                          ],
+                          "location": 85,
+                        },
+                      },
+                      "location": 92,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "a",
+                                    },
+                                  },
+                                ],
+                                "location": 98,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "max",
+                              },
+                            },
+                          ],
+                          "location": 94,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "OR_EXPR",
+                "location": 82,
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "c",
+                                },
+                              },
+                            ],
+                            "location": 117,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "lower",
+                          },
+                        },
+                      ],
+                      "location": 111,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "c",
+                                },
+                              },
+                            ],
+                            "location": 13,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "lower",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 17,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "c",
+                                },
+                              },
+                            ],
+                            "location": 23,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 17,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_having.sql > line 29 1`] = `
+[
+  "SELECT c, max(a) FROM test_having
+	GROUP BY c HAVING count(*) > 2 OR min(a) = max(a)
+	ORDER BY c",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 22,
+                  "relname": "test_having",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "groupClause": [
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "c",
+                      },
+                    },
+                  ],
+                  "location": 44,
+                },
+              },
+            ],
+            "havingClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 53,
+                        },
+                      },
+                      "location": 62,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 64,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "a",
+                                    },
+                                  },
+                                ],
+                                "location": 73,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "min",
+                              },
+                            },
+                          ],
+                          "location": 69,
+                        },
+                      },
+                      "location": 76,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "a",
+                                    },
+                                  },
+                                ],
+                                "location": 82,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "max",
+                              },
+                            },
+                          ],
+                          "location": 78,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "OR_EXPR",
+                "location": 66,
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 95,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "c",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "a",
+                                },
+                              },
+                            ],
+                            "location": 14,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "max",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_having.sql > line 40 1`] = `
+[
+  "SELECT a FROM test_having HAVING min(a) < max(a)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "test_having",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "havingClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                          ],
+                          "location": 37,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "min",
+                        },
+                      },
+                    ],
+                    "location": 33,
+                  },
+                },
+                "location": 40,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "a",
+                              },
+                            },
+                          ],
+                          "location": 46,
+                        },
+                      },
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "max",
+                        },
+                      },
+                    ],
+                    "location": 42,
+                  },
+                },
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
@@ -2357,62 +1069,251 @@ exports[`select_having.sql > line 46 1`] = `
                           },
                         },
                       ],
-                      "location": 99,
+                      "location": 7,
                     },
                   },
                 },
               },
-              "location": 101,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_having.sql > line 44 1`] = `
+[
+  "SELECT 1 AS one FROM test_having HAVING 1 > 2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 21,
+                  "relname": "test_having",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "havingClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 40,
                   },
                 },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
+                "location": 42,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">",
+                    },
                   },
-                  "location": 103,
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 44,
+                  },
+                },
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "one",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_having.sql > line 48 1`] = `
+[
+  "SELECT 1 AS one FROM test_having WHERE 1/a = 1 HAVING 1 < 2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 21,
+                  "relname": "test_having",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "havingClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 54,
+                  },
+                },
+                "location": 56,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 58,
+                  },
+                },
+              },
+            },
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "one",
+                  "val": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 39,
+                      },
+                    },
+                    "location": 40,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "a",
+                            },
+                          },
+                        ],
+                        "location": 41,
+                      },
+                    },
+                  },
+                },
+                "location": 43,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 45,
+                  },
                 },
               },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_having.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "test_having",
+exports[`select_having.sql > line 50 1`] = `
+[
+  "DROP TABLE test_having",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "test_having",
+                      },
                     },
-                  },
-                ],
+                  ],
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

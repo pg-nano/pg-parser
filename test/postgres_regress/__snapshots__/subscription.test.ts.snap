@@ -1,4371 +1,1968 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`subscription.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "canlogin",
-                "location": 61,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "superuser",
-                "location": 67,
-              },
-            },
-          ],
-          "role": "regress_subscription_user",
-          "stmt_type": "ROLESTMT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_subscription_user2",
-          "stmt_type": "ROLESTMT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "RoleSpec": {
-                          "location": 48,
-                          "rolename": "pg_create_subscription",
-                          "roletype": "ROLESPEC_CSTRING",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "addroleto",
-                "location": 40,
-              },
-            },
-          ],
-          "role": "regress_subscription_user3",
-          "stmt_type": "ROLESTMT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "canlogin",
-                "location": 45,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": false,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "superuser",
-                "location": 51,
-              },
-            },
-          ],
-          "role": "regress_subscription_user_dummy",
-          "stmt_type": "ROLESTMT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 10 1`] = `[Error: syntax error at end of input]`;
-
-exports[`subscription.sql > line 13 1`] = `[Error: syntax error at or near "PUBLICATION"]`;
-
-exports[`subscription.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "testconn",
-          "options": [
-            {
-              "DefElem": {
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 85,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "testconn",
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 148,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "foo",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-            {
-              "String": {
-                "sval": "foo",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 111,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CommentStmt": {
-          "comment": "test subscription",
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "objtype": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "s",
-                },
-                "inh": true,
-                "location": 55,
-                "relname": "pg_subscription",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "s",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "oid",
-                              },
-                            },
-                          ],
-                          "location": 24,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "pg_subscription",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "obj_description",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 179,
-                "relname": "pg_stat_subscription_stats",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 125,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "subname",
-                        },
-                      },
-                    ],
-                    "location": 125,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 134,
-                "name": "stats_reset_is_null",
-                "val": {
-                  "NullTest": {
-                    "arg": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "stats_reset",
-                            },
-                          },
-                        ],
-                        "location": 134,
-                      },
-                    },
-                    "location": 146,
-                    "nulltesttype": "IS_NULL",
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "subname",
-                      },
-                    },
-                  ],
-                  "location": 212,
-                },
-              },
-              "location": 220,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 222,
-                  "sval": {
-                    "sval": "regress_testsub",
-                  },
-                },
-              },
-            },
+exports[`subscription.sql > line 18 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 51,
-                "relname": "pg_subscription",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "oid",
-                              },
-                            },
-                          ],
-                          "location": 41,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_stat_reset_subscription_stats",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "subname",
-                      },
-                    },
-                  ],
-                  "location": 73,
-                },
-              },
-              "location": 81,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 83,
-                  "sval": {
-                    "sval": "regress_testsub",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 62,
-                "relname": "pg_stat_subscription_stats",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "subname",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 17,
-                "name": "stats_reset_is_null",
-                "val": {
-                  "NullTest": {
-                    "arg": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "stats_reset",
-                            },
-                          },
-                        ],
-                        "location": 17,
-                      },
-                    },
-                    "location": 29,
-                    "nulltesttype": "IS_NULL",
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "subname",
-                      },
-                    },
-                  ],
-                  "location": 95,
-                },
-              },
-              "location": 103,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 105,
-                  "sval": {
-                    "sval": "regress_testsub",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 39 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 43 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`subscription.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 135,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 56,
-                "sval": {
-                  "sval": "regress_subscription_user2",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 101,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "foo",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 51 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 144,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "copy_data",
-                "location": 161,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 122,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 56 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 122,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 123,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 123,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 140,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 105,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 123,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 105,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 123,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub2",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 136,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 154,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub3",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ENABLED",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 9,
-              },
-            },
-          ],
-          "subname": "regress_testsub3",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_REFRESH",
-          "subname": "regress_testsub3",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 150,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 168,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 194,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foo",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "origin",
-                "location": 185,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub4",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 122,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 140,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "origin",
-                "location": 157,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub4",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 74 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 76 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub4",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "i_dont_exist=param",
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub5",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "port=-1",
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub5",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "conninfo": "foobar",
-          "kind": "ALTER_SUBSCRIPTION_CONNECTION",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 90 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist2",
-          "kind": "ALTER_SUBSCRIPTION_CONNECTION",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "newname",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 96 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "password_required",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "run_as_owner",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 98 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 101 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "run_as_owner",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 50,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 105 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist2",
-          "kind": "ALTER_SUBSCRIPTION_CONNECTION",
-          "subname": "regress_doesnotexist",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_SKIP",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "0/12345",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "lsn",
-                "location": 49,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 112 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 117 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_SKIP",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "0/0",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "lsn",
-                "location": 51,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 120 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 124 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ENABLED",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 1,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 125 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 129 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 51,
-                "sval": {
-                  "sval": "regress_subscription_user_dummy",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 136 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "regress_testsub_dummy",
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 137 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 138 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "regress_testsub_foo",
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 140 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 66,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "local",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "synchronous_commit",
-                "location": 45,
-              },
-            },
-          ],
-          "subname": "regress_testsub_foo",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 141 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 66,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foobar",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "synchronous_commit",
-                "location": 45,
-              },
-            },
-          ],
-          "subname": "regress_testsub_foo",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 142 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 147 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterOwnerStmt": {
-          "newowner": {
-            "location": 71,
-            "rolename": "regress_subscription_user2",
-            "roletype": "ROLESPEC_CSTRING",
-          },
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "objectType": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 150 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 153 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 154 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 155 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 42,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 157 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 160 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 161 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 162 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "missing_ok": true,
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 164 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 164 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 147,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 173,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foo",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "binary",
-                "location": 164,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 168 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 121,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "binary",
-                "location": 138,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 171 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 175 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 176 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 180 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 155,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 184,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foo",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "streaming",
-                "location": 172,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 183 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 121,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "streaming",
-                "location": 138,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 186 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 190 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 194 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 195 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 200 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 120,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 203 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 125,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub2",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 206 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 115,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub2",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 209 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 214 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 127,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub2",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 217 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 122,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub3",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 220 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 107,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub1",
-              },
-            },
-            {
-              "String": {
-                "sval": "testpub2",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 223 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 227 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 110,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "create_slot",
-                "location": 127,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "copy_data",
-                "location": 148,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "mypub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 230 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ENABLED",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 2,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 232 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 236 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_SET_PUBLICATION",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "refresh",
-                "location": 64,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "mypub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 237 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 238 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 240 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_REFRESH",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 241 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 242 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "func",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " ALTER SUBSCRIPTION regress_testsub SET PUBLICATION mypub WITH (refresh = true) ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 38,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 126,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 33,
-            "names": [
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 23 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'testconn' PUBLICATION testpub",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "testconn",
+            "publication": [
               {
                 "String": {
-                  "sval": "void",
+                  "sval": "testpub",
                 },
               },
             ],
-            "typemod": -1,
+            "subname": "regress_testsub",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 245 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+exports[`subscription.sql > line 26 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION foo, testpub, foo WITH (connect = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 113,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "foo",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+              {
+                "String": {
+                  "sval": "foo",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 29 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 31 1`] = `
+[
+  "COMMENT ON SUBSCRIPTION regress_testsub IS 'test subscription'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CommentStmt": {
+            "comment": "test subscription",
+            "object": {
+              "String": {
+                "sval": "regress_testsub",
+              },
+            },
+            "objtype": "OBJECT_SUBSCRIPTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 36 1`] = `
+[
+  "SELECT subname, stats_reset IS NULL stats_reset_is_null FROM pg_stat_subscription_stats WHERE subname = 'regress_testsub'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 61,
+                  "relname": "pg_stat_subscription_stats",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "subname",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "name": "stats_reset_is_null",
+                  "val": {
+                    "NullTest": {
+                      "arg": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "stats_reset",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      "location": 28,
+                      "nulltesttype": "IS_NULL",
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
                         "String": {
-                          "sval": "func",
+                          "sval": "subname",
                         },
                       },
                     ],
-                    "location": 8,
+                    "location": 94,
                   },
                 },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 246 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_ENABLED",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": false,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "enabled",
-                "location": 2,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 248 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 41,
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 249 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 250 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "args_unspecified": true,
-                "objname": [
+                "location": 102,
+                "name": [
                   {
                     "String": {
-                      "sval": "func",
+                      "sval": "=",
                     },
                   },
                 ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 251 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
+                "rexpr": {
+                  "A_Const": {
+                    "location": 104,
+                    "sval": {
+                      "sval": "regress_testsub",
+                    },
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 141,
               },
             },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 170,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foo",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 49 1`] = `
+[
+  "SET SESSION AUTHORIZATION 'regress_subscription_user2'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 26,
+                  "sval": {
+                    "sval": "regress_subscription_user2",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "session_authorization",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 54 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub2 CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, copy_data = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 104,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "copy_data",
+                  "location": 121,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub2",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 64 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub3 CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (slot_name = NONE, connect = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "none",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "slot_name",
+                  "location": 104,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 122,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub3",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 66 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub3 ENABLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_ENABLED",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "enabled",
+                },
+              },
+            ],
+            "subname": "regress_testsub3",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 70 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub4 CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (slot_name = NONE, connect = false, origin = foo)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "none",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "slot_name",
+                  "location": 104,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 122,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 148,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
                         },
-                      },
-                    ],
-                    "typemod": -1,
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "origin",
+                  "location": 139,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub4",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 73 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub4 CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (slot_name = NONE, connect = false, origin = none)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "none",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "slot_name",
+                  "location": 104,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 122,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "none",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "origin",
+                  "location": 139,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub4",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 75 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub4 SET (origin = any)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_OPTIONS",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "any",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "origin",
+                  "location": 41,
+                },
+              },
+            ],
+            "subname": "regress_testsub4",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 82 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub5 CONNECTION 'i_dont_exist=param' PUBLICATION testpub",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "i_dont_exist=param",
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub5",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 86 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub5 CONNECTION 'port=-1' PUBLICATION testpub",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "port=-1",
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub5",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 89 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub CONNECTION 'foobar'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "conninfo": "foobar",
+            "kind": "ALTER_SUBSCRIPTION_CONNECTION",
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 104 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub SET (slot_name = '')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_OPTIONS",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "slot_name",
+                  "location": 40,
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 107 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_doesnotexist CONNECTION 'dbname=regress_doesnotexist2'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist2",
+            "kind": "ALTER_SUBSCRIPTION_CONNECTION",
+            "subname": "regress_doesnotexist",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 111 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub SKIP (lsn = '0/12345')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_SKIP",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "0/12345",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "lsn",
+                  "location": 41,
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 119 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub SKIP (lsn = '0/0')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_SKIP",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "0/0",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "lsn",
+                  "location": 41,
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 135 1`] = `
+[
+  "SET ROLE regress_subscription_user_dummy",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 9,
+                  "sval": {
+                    "sval": "regress_subscription_user_dummy",
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "two_phase",
-                "location": 158,
               },
-            },
-          ],
-          "publication": [
-            {
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "role",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 139 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub RENAME TO regress_testsub_foo",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RenameStmt": {
+            "behavior": "DROP_RESTRICT",
+            "newname": "regress_testsub_foo",
+            "object": {
               "String": {
-                "sval": "testpub",
+                "sval": "regress_testsub",
               },
             },
-          ],
-          "subname": "regress_testsub",
+            "relationType": "OBJECT_ACCESS_METHOD",
+            "renameType": "OBJECT_SUBSCRIPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 254 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 121,
-              },
+exports[`subscription.sql > line 149 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub OWNER TO regress_subscription_user2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterOwnerStmt": {
+            "newowner": {
+              "location": 44,
+              "rolename": "regress_subscription_user2",
+              "roletype": "ROLESPEC_CSTRING",
             },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "two_phase",
-                "location": 138,
-              },
-            },
-          ],
-          "publication": [
-            {
+            "object": {
               "String": {
-                "sval": "testpub",
+                "sval": "regress_testsub",
               },
             },
-          ],
-          "subname": "regress_testsub",
+            "objectType": "OBJECT_SUBSCRIPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 257 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 261 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
+exports[`subscription.sql > line 156 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub SET (slot_name = NONE)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_OPTIONS",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "none",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "slot_name",
+                  "location": 40,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "streaming",
-                "location": 92,
               },
-            },
-          ],
-          "subname": "regress_testsub",
+            ],
+            "subname": "regress_testsub",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 264 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 268 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
+exports[`subscription.sql > line 163 1`] = `
+[
+  "DROP SUBSCRIPTION IF EXISTS regress_testsub",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropSubscriptionStmt": {
+            "behavior": "DROP_RESTRICT",
+            "missing_ok": true,
+            "subname": "regress_testsub",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 269 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 148,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "streaming",
-                "location": 165,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "true",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "two_phase",
-                "location": 183,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
+exports[`subscription.sql > line 164 1`] = `
+[
+  "  -- fail
 
-exports[`subscription.sql > line 272 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 276 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 277 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
+-- fail - binary must be boolean
+CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, binary = foo)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 147,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 148,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 184,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "foo",
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 173,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
                         },
-                      },
-                    ],
-                    "typemod": -1,
+                      ],
+                      "typemod": -1,
+                    },
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "disable_on_error",
-                "location": 165,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 280 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 121,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "disable_on_error",
-                "location": 138,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 283 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 287 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`subscription.sql > line 291 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 292 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 101,
-                "sval": {
-                  "sval": "regress_subscription_user3",
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "binary",
+                  "location": 164,
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 295 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 136,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 298 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 301 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "String": {
-                "sval": "regression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_DATABASE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "create",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 302 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user3",
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 303 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 104,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 304 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 307 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "String": {
-                "sval": "regression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_DATABASE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "create",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 308 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user3",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 309 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 104,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "password_required",
-                "location": 121,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 310 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 313 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "String": {
-                "sval": "regression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_DATABASE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "create",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 314 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user3",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 315 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSubscriptionStmt": {
-          "conninfo": "dbname=regress_doesnotexist password=regress_fakepassword",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "false",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "connect",
-                "location": 134,
-              },
-            },
-          ],
-          "publication": [
-            {
-              "String": {
-                "sval": "testpub",
-              },
-            },
-          ],
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 316 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterOwnerStmt": {
-          "newowner": {
-            "location": 106,
-            "rolename": "regress_subscription_user",
-            "roletype": "ROLESPEC_CSTRING",
+            ],
+            "subname": "regress_testsub",
           },
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "objectType": "OBJECT_SUBSCRIPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 319 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "regress_testsub2",
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 322 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 325 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantRoleStmt": {
-          "behavior": "DROP_RESTRICT",
-          "granted_roles": [
-            {
-              "AccessPriv": {
-                "priv_name": "pg_create_subscription",
-              },
-            },
-          ],
-          "grantee_roles": [
-            {
-              "RoleSpec": {
-                "location": 36,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 326 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user3",
+exports[`subscription.sql > line 170 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, binary = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "binary",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 327 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "regress_testsub",
-          "object": {
-            "String": {
-              "sval": "regress_testsub2",
+exports[`subscription.sql > line 182 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, streaming = foo)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 132,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "streaming",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 185 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, streaming = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "streaming",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 202 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub ADD PUBLICATION testpub1, testpub1 WITH (refresh = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "refresh",
+                  "location": 76,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub1",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub1",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 205 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub ADD PUBLICATION testpub1, testpub2 WITH (refresh = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "refresh",
+                  "location": 76,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub1",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub2",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 216 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub DROP PUBLICATION testpub, testpub1, testpub2 WITH (refresh = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "refresh",
+                  "location": 86,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub1",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub2",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 219 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub DROP PUBLICATION testpub3 WITH (refresh = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "refresh",
+                  "location": 67,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub3",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 222 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub DROP PUBLICATION testpub1, testpub2 WITH (refresh = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "refresh",
+                  "location": 77,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub1",
+                },
+              },
+              {
+                "String": {
+                  "sval": "testpub2",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 228 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION mypub
+       WITH (connect = false, create_slot = false, copy_data = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 108,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "create_slot",
+                  "location": 125,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "copy_data",
+                  "location": 146,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "mypub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 231 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub ENABLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_ENABLED",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "enabled",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 243 1`] = `
+[
+  "CREATE FUNCTION func() RETURNS VOID AS
+$$ ALTER SUBSCRIPTION regress_testsub SET PUBLICATION mypub WITH (refresh = true) $$ LANGUAGE SQL",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "func",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " ALTER SUBSCRIPTION regress_testsub SET PUBLICATION mypub WITH (refresh = true) ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 36,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 124,
+                },
+              },
+            ],
+            "returnType": {
+              "location": 31,
+              "names": [
+                {
+                  "String": {
+                    "sval": "void",
+                  },
+                },
+              ],
+              "typemod": -1,
             },
           },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SUBSCRIPTION",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 328 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 331 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 43,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "String": {
-                "sval": "regression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_DATABASE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "create",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 332 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_subscription_user3",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 333 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "regress_testsub2",
-          "object": {
-            "String": {
-              "sval": "regress_testsub",
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_SUBSCRIPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 334 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSubscriptionStmt": {
-          "kind": "ALTER_SUBSCRIPTION_OPTIONS",
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "none",
+exports[`subscription.sql > line 247 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub DISABLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_ENABLED",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": false,
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "enabled",
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "slot_name",
-                "location": 84,
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 253 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, two_phase = foo)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 132,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "two_phase",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 256 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, two_phase = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "two_phase",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 263 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub SET (streaming = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterSubscriptionStmt": {
+            "kind": "ALTER_SUBSCRIPTION_OPTIONS",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "streaming",
+                  "location": 40,
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 271 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, streaming = true, two_phase = true)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "streaming",
+                  "location": 120,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "true",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "two_phase",
+                  "location": 138,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 279 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, disable_on_error = foo)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 139,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "foo",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "disable_on_error",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 282 1`] = `
+[
+  "CREATE SUBSCRIPTION regress_testsub CONNECTION 'dbname=regress_doesnotexist' PUBLICATION testpub WITH (connect = false, disable_on_error = false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSubscriptionStmt": {
+            "conninfo": "dbname=regress_doesnotexist",
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "connect",
+                  "location": 103,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "false",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "disable_on_error",
+                  "location": 120,
+                },
+              },
+            ],
+            "publication": [
+              {
+                "String": {
+                  "sval": "testpub",
+                },
+              },
+            ],
+            "subname": "regress_testsub",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 300 1`] = `
+[
+  "RESET SESSION AUTHORIZATION",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "session_authorization",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`subscription.sql > line 318 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub OWNER TO regress_subscription_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterOwnerStmt": {
+            "newowner": {
+              "location": 44,
+              "rolename": "regress_subscription_user",
+              "roletype": "ROLESPEC_CSTRING",
+            },
+            "object": {
+              "String": {
+                "sval": "regress_testsub",
               },
             },
-          ],
-          "subname": "regress_testsub",
+            "objectType": "OBJECT_SUBSCRIPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`subscription.sql > line 337 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropSubscriptionStmt": {
-          "behavior": "DROP_RESTRICT",
-          "subname": "regress_testsub",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 338 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 340 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_subscription_user",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`subscription.sql > line 321 1`] = `
+[
+  "ALTER SUBSCRIPTION regress_testsub RENAME TO regress_testsub2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RenameStmt": {
+            "behavior": "DROP_RESTRICT",
+            "newname": "regress_testsub2",
+            "object": {
+              "String": {
+                "sval": "regress_testsub",
               },
             },
-          ],
+            "relationType": "OBJECT_ACCESS_METHOD",
+            "renameType": "OBJECT_SUBSCRIPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 341 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_subscription_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 342 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_subscription_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`subscription.sql > line 343 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_subscription_user_dummy",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

@@ -1,980 +1,296 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`macaddr.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 31,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 45,
-                "typeName": {
-                  "location": 47,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
+exports[`macaddr.sql > line 7 1`] = `
+[
+  "INSERT INTO macaddr_data VALUES (1, '08:00:2b:01:02:03')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "macaddr_data",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 33,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 36,
+                            "sval": {
+                              "sval": "08:00:2b:01:02:03",
+                            },
+                          },
+                        },
+                      ],
                     },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 23 1`] = `
+[
+  "SELECT * FROM macaddr_data",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
                     },
-                  ],
-                  "typemod": -1,
+                  },
                 },
               },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 25 1`] = `
+[
+  "CREATE INDEX macaddr_data_btree ON macaddr_data USING btree (b)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "idxname": "macaddr_data_btree",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "b",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 35,
+              "relname": "macaddr_data",
+              "relpersistence": "p",
             },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 52,
-                "typeName": {
-                  "location": 54,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "macaddr",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 28 1`] = `
+[
+  "SELECT a, b, trunc(b) FROM macaddr_data ORDER BY 2, 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 27,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 2,
                       },
+                      "location": 49,
                     },
-                  ],
-                  "typemod": -1,
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 35,
-                        },
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
                       },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "08:00:2b:01:02:03",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "08-00-2b-01-02-03",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "08002b:010203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "08002b-010203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "0800.2b01.0203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 6,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "0800-2b01-0203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 7,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "08002b010203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 8,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "0800:2b01:0203",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 14 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 24,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 9,
-                          },
-                          "location": 45,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 48,
-                          "sval": {
-                            "sval": "not even close",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 25,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 10,
-                          },
-                          "location": 46,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 50,
-                          "sval": {
-                            "sval": "08:00:2b:01:02:04",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 11,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "08:00:2b:01:02:02",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 12,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "08:00:2a:01:02:03",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 13,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "08:00:2c:01:02:03",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 14,
-                          },
-                          "location": 34,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "08:00:2a:01:02:04",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "macaddr_data_btree",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "b",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 37,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 26 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "macaddr_data_hash",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "b",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 35,
-            "relname": "macaddr_data",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 29,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 2,
+                      "location": 52,
                     },
-                    "location": 51,
                   },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
                     },
-                    "location": 54,
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
                         },
-                      },
-                    ],
-                    "location": 9,
+                      ],
+                      "location": 10,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 12,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
+              {
+                "ResTarget": {
+                  "location": 13,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "b",
+                                },
+                              },
+                            ],
+                            "location": 19,
+                          },
                         },
-                      },
-                    ],
-                    "location": 12,
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "trunc",
+                          },
+                        },
+                      ],
+                      "location": 13,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 15,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 30 1`] = `
+[
+  "SELECT b <  '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 37,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
                         "ColumnRef": {
                           "fields": [
                             {
@@ -983,1305 +299,735 @@ exports[`macaddr.sql > line 27 1`] = `
                               },
                             },
                           ],
-                          "location": 21,
+                          "location": 7,
                         },
                       },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "trunc",
-                        },
-                      },
-                    ],
-                    "location": 15,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 39,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
+                      "location": 9,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<",
                           },
-                        ],
-                        "location": 9,
-                      },
-                    },
-                    "location": 11,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<",
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 14,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:04",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 58,
-                },
-              },
-              "location": 60,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 62,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 46,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 12,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:04",
                           },
-                        ],
-                        "location": 16,
+                        },
                       },
                     },
-                    "location": 18,
-                    "name": [
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
                         "String": {
-                          "sval": ">",
+                          "sval": "a",
                         },
                       },
                     ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 21,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:04",
-                        },
-                      },
-                    },
+                    "location": 56,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 65,
-                },
-              },
-              "location": 67,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 69,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 47,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 17,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 17,
-                      },
-                    },
-                    "location": 19,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 22,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:03",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 66,
-                },
-              },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 70,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 47,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 17,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 17,
-                      },
-                    },
-                    "location": 19,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 22,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:04",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 66,
-                },
-              },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 70,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 46,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 16,
-                      },
-                    },
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 21,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:04",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 65,
-                },
-              },
-              "location": 67,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 69,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 47,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 17,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 17,
-                      },
-                    },
-                    "location": 19,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 22,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:03",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 66,
-                },
-              },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 70,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 46,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 16,
-                      },
-                    },
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 21,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:04",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 65,
-                },
-              },
-              "location": 67,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 69,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 46,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 16,
-                      },
-                    },
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 21,
-                        "sval": {
-                          "sval": "08:00:2b:01:02:03",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "a",
-                      },
-                    },
-                  ],
-                  "location": 65,
-                },
-              },
-              "location": 67,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 69,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 48,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 18,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 19,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 38,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 9,
-                      },
-                    },
-                    "location": 11,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "&",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 13,
-                        "sval": {
-                          "sval": "00:00:00:ff:ff:ff",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 38,
-                "relname": "macaddr_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 9,
-                      },
-                    },
-                    "location": 11,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "|",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 13,
-                        "sval": {
-                          "sval": "01:02:03:04:05:06",
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
+                "location": 58,
+                "name": [
                   {
                     "String": {
-                      "sval": "macaddr_data",
+                      "sval": "=",
                     },
                   },
                 ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 60,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 78,
-                          "sval": {
-                            "sval": "08:00:2b:01:02:ZZ",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 99,
-                          "sval": {
-                            "sval": "macaddr",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_input_is_valid",
-                        },
-                      },
-                    ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
                     "location": 60,
                   },
                 },
               },
             },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`macaddr.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeFunction": {
-                "functions": [
-                  {
-                    "List": {
-                      "items": [
+exports[`macaddr.sql > line 30 2`] = `
+[
+  " -- true
+SELECT b >  '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 46,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      "location": 18,
+                      "name": [
                         {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 35,
-                                  "sval": {
-                                    "sval": "08:00:2b:01:02:ZZ",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 56,
-                                  "sval": {
-                                    "sval": "macaddr",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_input_error_info",
-                                },
-                              },
-                            ],
-                            "location": 15,
+                          "String": {
+                            "sval": ">",
                           },
                         },
-                        {},
                       ],
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:04",
+                          },
+                        },
                       },
-                    ],
-                    "location": 8,
+                    },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 26,
-                          "sval": {
-                            "sval": "08:00:2b:01:02:",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 45,
-                          "sval": {
-                            "sval": "macaddr",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
                         "String": {
-                          "sval": "pg_input_is_valid",
+                          "sval": "a",
                         },
                       },
                     ],
-                    "location": 8,
+                    "location": 65,
                   },
                 },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`macaddr.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeFunction": {
-                "functions": [
+                "location": 67,
+                "name": [
                   {
-                    "List": {
-                      "items": [
-                        {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "A_Const": {
-                                  "location": 35,
-                                  "sval": {
-                                    "sval": "08:00:2b:01:02:",
-                                  },
-                                },
-                              },
-                              {
-                                "A_Const": {
-                                  "location": 54,
-                                  "sval": {
-                                    "sval": "macaddr",
-                                  },
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "pg_input_error_info",
-                                },
-                              },
-                            ],
-                            "location": 15,
-                          },
-                        },
-                        {},
-                      ],
+                    "String": {
+                      "sval": "=",
                     },
                   },
                 ],
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 69,
                   },
                 },
               },
             },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 32 1`] = `
+[
+  " -- false
+SELECT b <= '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 47,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 17,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      "location": 19,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:04",
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 66,
+                  },
+                },
+                "location": 68,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 70,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 33 1`] = `
+[
+  " -- true
+SELECT b >= '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 46,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      "location": 18,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:04",
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 65,
+                  },
+                },
+                "location": 67,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 69,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 34 1`] = `
+[
+  " -- false
+SELECT b =  '08:00:2b:01:02:03' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 47,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 17,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 17,
+                        },
+                      },
+                      "location": 19,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 22,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:03",
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 66,
+                  },
+                },
+                "location": 68,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 70,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 35 1`] = `
+[
+  " -- true
+SELECT b <> '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 46,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 16,
+                        },
+                      },
+                      "location": 18,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<>",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 21,
+                          "sval": {
+                            "sval": "08:00:2b:01:02:04",
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "a",
+                        },
+                      },
+                    ],
+                    "location": 65,
+                  },
+                },
+                "location": 67,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 69,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 37 1`] = `
+[
+  " -- false
+
+SELECT ~b                       FROM macaddr_data",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 48,
+                  "relname": "macaddr_data",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 18,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "location": 18,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "~",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
+                            },
+                          ],
+                          "location": 19,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 43 1`] = `
+[
+  "DROP TABLE macaddr_data",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "macaddr_data",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`macaddr.sql > line 46 1`] = `
+[
+  "SELECT pg_input_is_valid('08:00:2b:01:02:ZZ', 'macaddr')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 25,
+                            "sval": {
+                              "sval": "08:00:2b:01:02:ZZ",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 46,
+                            "sval": {
+                              "sval": "macaddr",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_input_is_valid",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

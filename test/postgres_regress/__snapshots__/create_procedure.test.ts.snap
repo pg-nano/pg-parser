@@ -1,309 +1,239 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`create_procedure.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "nonexistent",
+[
+  "CALL nonexistent()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "nonexistent",
+                  },
                 },
-              },
-            ],
-            "location": 5,
+              ],
+              "location": 5,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 1 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "random",
+[
+  "  -- error
+CALL random()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "random",
+                  },
                 },
-              },
-            ],
-            "location": 16,
+              ],
+              "location": 16,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 2 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "cp_testfunc1",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 60,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT a ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 73,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 43,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "a",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 56,
-            "names": [
+[
+  "  -- error
+
+CREATE FUNCTION cp_testfunc1(a int) RETURNS int LANGUAGE SQL AS $$ SELECT a $$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
               {
                 "String": {
-                  "sval": "pg_catalog",
-                },
-              },
-              {
-                "String": {
-                  "sval": "int4",
+                  "sval": "cp_testfunc1",
                 },
               },
             ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "cp_test",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 24,
-                "typeName": {
-                  "location": 26,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
                     },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 31,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest1",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 60,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 34,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " SELECT a ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 73,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 43,
+                    "names": [
                       {
                         "String": {
-                          "sval": "
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "a",
+                },
+              },
+            ],
+            "returnType": {
+              "location": 56,
+              "names": [
+                {
+                  "String": {
+                    "sval": "pg_catalog",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 6 1`] = `
+[
+  "CREATE TABLE cp_test (a int, b text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "cp_test",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 22,
+                  "typeName": {
+                    "location": 24,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 29,
+                  "typeName": {
+                    "location": 31,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 8 1`] = `
+[
+  "CREATE PROCEDURE ptest1(x text)
+LANGUAGE SQL
+AS $$
 INSERT INTO cp_test VALUES (1, x);
-",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 47,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 28,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "x",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 13 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 16 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "location": 23,
-                  "sval": {
-                    "sval": "a",
-                  },
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+$$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
@@ -311,621 +241,486 @@ exports[`create_procedure.sql > line 23 1`] = `
                 },
               },
             ],
-            "location": 16,
+            "is_procedure": true,
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 32,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "
+INSERT INTO cp_test VALUES (1, x);
+",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 45,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 26,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "x",
+                },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 23 1`] = `
+[
+  "  -- error
+CALL ptest1('a')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "location": 23,
+                    "sval": {
+                      "sval": "a",
+                    },
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest1",
+                  },
+                },
+              ],
+              "location": 16,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "A_Const": {
-                      "location": 20,
-                      "sval": {
-                        "sval": "xy",
+[
+  "  -- ok
+CALL ptest1('xy' || 'zzy')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "location": 20,
+                        "sval": {
+                          "sval": "xy",
+                        },
                       },
                     },
-                  },
-                  "location": 25,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "||",
+                    "location": 25,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "||",
+                        },
                       },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 28,
-                      "sval": {
-                        "sval": "zzy",
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "location": 28,
+                        "sval": {
+                          "sval": "zzy",
+                        },
                       },
                     },
                   },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest1",
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest1",
+                  },
                 },
-              },
-            ],
-            "location": 13,
+              ],
+              "location": 13,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "FuncCall": {
-                  "args": [
-                    {
-                      "TypeCast": {
-                        "arg": {
-                          "TypeCast": {
-                            "arg": {
-                              "FuncCall": {
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
+[
+  "  -- ok, constant-folded arg
+CALL ptest1(substring(random()::numeric(20,15)::text, 1, 1))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "FuncCall": {
+                    "args": [
+                      {
+                        "TypeCast": {
+                          "arg": {
+                            "TypeCast": {
+                              "arg": {
+                                "FuncCall": {
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "random",
+                                      },
+                                    },
+                                  ],
+                                  "location": 51,
+                                },
+                              },
+                              "location": 59,
+                              "typeName": {
+                                "location": 61,
+                                "names": [
                                   {
                                     "String": {
-                                      "sval": "random",
+                                      "sval": "pg_catalog",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "numeric",
                                     },
                                   },
                                 ],
-                                "location": 51,
+                                "typemod": -1,
+                                "typmods": [
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 20,
+                                      },
+                                      "location": 69,
+                                    },
+                                  },
+                                  {
+                                    "A_Const": {
+                                      "ival": {
+                                        "ival": 15,
+                                      },
+                                      "location": 72,
+                                    },
+                                  },
+                                ],
                               },
-                            },
-                            "location": 59,
-                            "typeName": {
-                              "location": 61,
-                              "names": [
-                                {
-                                  "String": {
-                                    "sval": "pg_catalog",
-                                  },
-                                },
-                                {
-                                  "String": {
-                                    "sval": "numeric",
-                                  },
-                                },
-                              ],
-                              "typemod": -1,
-                              "typmods": [
-                                {
-                                  "A_Const": {
-                                    "ival": {
-                                      "ival": 20,
-                                    },
-                                    "location": 69,
-                                  },
-                                },
-                                {
-                                  "A_Const": {
-                                    "ival": {
-                                      "ival": 15,
-                                    },
-                                    "location": 72,
-                                  },
-                                },
-                              ],
                             },
                           },
-                        },
-                        "location": 75,
-                        "typeName": {
-                          "location": 77,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "text",
+                          "location": 75,
+                          "typeName": {
+                            "location": 77,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "text",
+                                },
                               },
-                            },
-                          ],
-                          "typemod": -1,
+                            ],
+                            "typemod": -1,
+                          },
                         },
                       },
-                    },
-                    {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 83,
                         },
-                        "location": 83,
                       },
-                    },
-                    {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
+                      {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 86,
                         },
-                        "location": 86,
                       },
-                    },
-                  ],
-                  "funcformat": "COERCE_EXPLICIT_CALL",
-                  "funcname": [
-                    {
-                      "String": {
-                        "sval": "substring",
+                    ],
+                    "funcformat": "COERCE_EXPLICIT_CALL",
+                    "funcname": [
+                      {
+                        "String": {
+                          "sval": "substring",
+                        },
                       },
-                    },
-                  ],
-                  "location": 41,
+                    ],
+                    "location": 41,
+                  },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest1",
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest1",
+                  },
                 },
-              },
-            ],
-            "location": 34,
+              ],
+              "location": 34,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 26 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 37,
-                "relname": "cp_test",
-                "relpersistence": "p",
+[
+  "  -- ok, volatile arg
+
+SELECT * FROM cp_test ORDER BY b COLLATE "C"",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 37,
+                  "relname": "cp_test",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "CollateClause": {
-                    "arg": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "CollateClause": {
+                      "arg": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "b",
+                              },
                             },
-                          },
-                        ],
-                        "location": 54,
-                      },
-                    },
-                    "collname": [
-                      {
-                        "String": {
-                          "sval": "C",
+                          ],
+                          "location": 54,
                         },
                       },
-                    ],
-                    "location": 56,
+                      "collname": [
+                        {
+                          "String": {
+                            "sval": "C",
+                          },
+                        },
+                      ],
+                      "location": 56,
+                    },
                   },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 30,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 30,
-                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 29 1`] = `[Error: syntax error at end of input]`;
-
-exports[`create_procedure.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 37 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
+            ],
+            "targetList": [
               {
-                "A_Const": {
-                  "location": 15,
-                  "sval": {
-                    "sval": "b",
+                "ResTarget": {
+                  "location": 30,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 30,
+                    },
                   },
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest1s",
-                },
-              },
-            ],
-            "location": 7,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "CollateClause": {
-                    "arg": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "b",
-                            },
-                          },
-                        ],
-                        "location": 33,
-                      },
+exports[`create_procedure.sql > line 41 1`] = `
+[
+  "CALL ptest1s('b')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "location": 13,
+                    "sval": {
+                      "sval": "b",
                     },
-                    "collname": [
-                      {
-                        "String": {
-                          "sval": "C",
-                        },
-                      },
-                    ],
-                    "location": 35,
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 44 1`] = `[Error: syntax error at end of input]`;
-
-exports[`create_procedure.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 51 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest2",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
                   "String": {
-                    "sval": "sql",
+                    "sval": "ptest1s",
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 29,
-              },
+              ],
+              "location": 5,
             },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
-SELECT 5;
-",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 42,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest2",
-                },
-              },
-            ],
-            "location": 7,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TruncateStmt": {
-          "behavior": "DROP_RESTRICT",
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 27,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest3",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
+exports[`create_procedure.sql > line 59 1`] = `
+[
+  "CALL ptest2()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
                   "String": {
-                    "sval": "sql",
+                    "sval": "ptest2",
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 34,
-              },
+              ],
+              "location": 5,
             },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 63 1`] = `
+[
+  "TRUNCATE cp_test",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TruncateStmt": {
+            "behavior": "DROP_RESTRICT",
+            "relations": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 9,
+                  "relname": "cp_test",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 65 1`] = `
+[
+  "CREATE PROCEDURE ptest3(y text)
+LANGUAGE SQL
+AS $$
 CALL ptest1(y);
 CALL ptest1($1);
-",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 47,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 28,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "y",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "location": 14,
-                  "sval": {
-                    "sval": "b",
-                  },
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+$$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
@@ -933,1089 +728,510 @@ exports[`create_procedure.sql > line 71 1`] = `
                 },
               },
             ],
-            "location": 7,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
+            "is_procedure": true,
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 32,
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 75 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest4a",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "
+CALL ptest1(y);
+CALL ptest1($1);
+",
+                          },
+                        },
+                      ],
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 45,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 75,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 26,
+                    "names": [
                       {
                         "String": {
-                          "sval": "
-SELECT 1, 2;
-",
+                          "sval": "text",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 88,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 57,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_INOUT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 70,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_INOUT",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 15,
-                },
-              },
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 21,
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "y",
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest4a",
-                },
-              },
-            ],
-            "location": 7,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 86 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest4b",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
+exports[`create_procedure.sql > line 72 1`] = `
+[
+  "CALL ptest3('b')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "location": 12,
+                    "sval": {
+                      "sval": "b",
+                    },
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 53,
-              },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest3",
+                  },
+                },
+              ],
+              "location": 5,
             },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 74 1`] = `
+[
+  "SELECT * FROM cp_test",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "cp_test",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 85 1`] = `
+[
+  "CALL ptest4a(NULL, NULL)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "isnull": true,
+                    "location": 13,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "isnull": true,
+                    "location": 19,
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest4a",
+                  },
+                },
+              ],
+              "location": 5,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 87 1`] = `
+[
+  "CREATE PROCEDURE ptest4b(INOUT b int, INOUT a int)
+LANGUAGE SQL
+AS $$
+CALL ptest4a(a, b);  -- error, not supported
+$$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "ptest4b",
+                },
+              },
+            ],
+            "is_procedure": true,
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 51,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "
 CALL ptest4a(a, b);  -- error, not supported
 ",
+                          },
                         },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 66,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 35,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_INOUT",
-                "name": "b",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 48,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_INOUT",
-                "name": "a",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "args_unspecified": true,
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest4a",
+                      ],
                     },
                   },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest5",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 64,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 105,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 33,
+                    "names": [
                       {
                         "String": {
-                          "sval": "
-INSERT INTO cp_test VALUES(a, b);
-INSERT INTO cp_test VALUES(c, b);
-",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 118,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 73,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 80,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "b",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 88,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "defexpr": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 100,
-                    },
-                    "location": 100,
-                  },
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "c",
-              },
-            },
-          ],
-          "replace": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 104 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TruncateStmt": {
-          "behavior": "DROP_RESTRICT",
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 11,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10,
-                  },
-                  "location": 14,
-                },
-              },
-              {
-                "A_Const": {
-                  "location": 18,
-                  "sval": {
-                    "sval": "Hello",
-                  },
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 20,
-                  },
-                  "location": 27,
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest5",
-                },
-              },
-            ],
-            "location": 7,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10,
-                  },
-                  "location": 13,
-                },
-              },
-              {
-                "A_Const": {
-                  "location": 17,
-                  "sval": {
-                    "sval": "Hello",
-                  },
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest5",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10,
-                  },
-                  "location": 13,
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 22,
-                      "sval": {
-                        "sval": "Hello",
-                      },
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 17,
-                  "name": "b",
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest5",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 110 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 18,
-                      "sval": {
-                        "sval": "Hello",
-                      },
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 13,
+                  "mode": "FUNC_PARAM_INOUT",
                   "name": "b",
                 },
               },
               {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 10,
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 46,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
                       },
-                      "location": 32,
-                    },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
-                  "argnumber": -1,
-                  "location": 27,
+                  "mode": "FUNC_PARAM_INOUT",
                   "name": "a",
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest5",
-                },
-              },
-            ],
-            "location": 6,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 113 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest6",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 70,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
-SELECT NULL::int;
-",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 83,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 51,
-                  "names": [
+exports[`create_procedure.sql > line 93 1`] = `
+[
+  "DROP PROCEDURE ptest4a",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "args_unspecified": true,
+                  "objname": [
                     {
                       "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                        "sval": "ptest4a",
                       },
                     },
                   ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 58,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "anyelement",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 122 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 14,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 17,
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest6",
-                },
-              },
-            ],
-            "location": 7,
+            "removeType": "OBJECT_PROCEDURE",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 124 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest7",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
+exports[`create_procedure.sql > line 107 1`] = `
+[
+  "CALL ptest5(10, 'Hello', 20)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 10,
+                    },
+                    "location": 12,
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 68,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
-SELECT a = b;
-",
-                        },
-                      },
-                    ],
+                {
+                  "A_Const": {
+                    "location": 16,
+                    "sval": {
+                      "sval": "Hello",
+                    },
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 81,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 54,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 20,
                     },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 62,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "MinMaxExpr": {
-                  "args": [
-                    {
-                      "A_Const": {
-                        "location": 20,
-                        "sval": {
-                          "sval": "a",
-                        },
-                      },
-                    },
-                    {
-                      "A_Const": {
-                        "location": 25,
-                        "sval": {
-                          "sval": "b",
-                        },
-                      },
-                    },
-                  ],
-                  "location": 14,
-                  "op": "IS_LEAST",
-                },
-              },
-              {
-                "A_Const": {
-                  "location": 31,
-                  "sval": {
-                    "sval": "a",
+                    "location": 25,
                   },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest7",
-                },
-              },
-            ],
-            "location": 7,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 135 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest8",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 43,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "x",
-              },
-            },
-          ],
-          "sql_body": {
-            "List": {
-              "items": [
-                {},
               ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest5",
+                  },
+                },
+              ],
+              "location": 5,
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 141 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "location": 13,
-                  "sval": {
-                    "sval": "",
+exports[`create_procedure.sql > line 123 1`] = `
+[
+  "CALL ptest6(1, 2)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 12,
                   },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 2,
+                    },
+                    "location": 15,
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest6",
+                  },
+                },
+              ],
+              "location": 5,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 134 1`] = `
+[
+  "CALL ptest7(least('a', 'b'), 'a')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "MinMaxExpr": {
+                    "args": [
+                      {
+                        "A_Const": {
+                          "location": 18,
+                          "sval": {
+                            "sval": "a",
+                          },
+                        },
+                      },
+                      {
+                        "A_Const": {
+                          "location": 23,
+                          "sval": {
+                            "sval": "b",
+                          },
+                        },
+                      },
+                    ],
+                    "location": 12,
+                    "op": "IS_LEAST",
+                  },
+                },
+                {
+                  "A_Const": {
+                    "location": 29,
+                    "sval": {
+                      "sval": "a",
+                    },
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest7",
+                  },
+                },
+              ],
+              "location": 5,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 138 1`] = `
+[
+  "CREATE PROCEDURE ptest8(x text)
+BEGIN ATOMIC
+END",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
@@ -2023,394 +1239,147 @@ exports[`create_procedure.sql > line 144 1`] = `
                 },
               },
             ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest9",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 57,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+            "is_procedure": true,
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 26,
+                    "names": [
                       {
                         "String": {
-                          "sval": "
-INSERT INTO cp_test VALUES (1, 'a');
-SELECT 1;
-",
+                          "sval": "text",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 70,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 52,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_OUT",
-                "name": "a",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 155 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 44,
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "x",
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest9",
-                },
+            "sql_body": {
+              "List": {
+                "items": [
+                  {},
+                ],
               },
-            ],
-            "location": 37,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 158 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 68,
-                    },
-                  },
-                  "location": 69,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "/",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 70,
-                    },
+exports[`create_procedure.sql > line 157 1`] = `
+[
+  "CALL ptest9(NULL)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "isnull": true,
+                    "location": 12,
                   },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest9",
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest9",
+                  },
                 },
-              },
-            ],
-            "location": 61,
+              ],
+              "location": 5,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 159 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "A_Const": {
-                      "fval": {
-                        "fval": "1.",
-                      },
-                      "location": 83,
-                    },
-                  },
-                  "location": 85,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "/",
+[
+  "CALL ptest9(1/0)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 12,
                       },
                     },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "fval": {
-                        "fval": "0.",
+                    "location": 13,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "/",
+                        },
                       },
-                      "location": 86,
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 14,
+                      },
                     },
                   },
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest9",
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest9",
+                  },
                 },
-              },
-            ],
-            "location": 76,
+              ],
+              "location": 5,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 161 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest10",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 102,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT b - c ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 115,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 77,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_OUT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 87,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_IN",
-                "name": "b",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 97,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_IN",
-                "name": "c",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
+[
+  "  -- error
 
-exports[`create_procedure.sql > line 166 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 15,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 7,
-                  },
-                  "location": 21,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 4,
-                  },
-                  "location": 24,
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+-- check named-parameter matching
+CREATE PROCEDURE ptest10(OUT a int, IN b int, IN c int)
+LANGUAGE SQL AS $$ SELECT b - c $$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
@@ -2418,420 +1387,177 @@ exports[`create_procedure.sql > line 166 1`] = `
                 },
               },
             ],
-            "location": 7,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 168 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
+            "is_procedure": true,
+            "options": [
               {
-                "NamedArgExpr": {
+                "DefElem": {
                   "arg": {
-                    "A_Const": {
-                      "isnull": true,
-                      "location": 19,
+                    "String": {
+                      "sval": "sql",
                     },
                   },
-                  "argnumber": -1,
-                  "location": 14,
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 102,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " SELECT b - c ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 115,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 77,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_OUT",
                   "name": "a",
                 },
               },
               {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 8,
-                      },
-                      "location": 30,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 25,
-                  "name": "b",
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 2,
-                      },
-                      "location": 38,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 33,
-                  "name": "c",
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest10",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 169 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 14,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 7,
-                  },
-                  "location": 20,
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 2,
-                      },
-                      "location": 28,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 23,
-                  "name": "c",
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest10",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 170 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 14,
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 4,
-                      },
-                      "location": 25,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 20,
-                  "name": "c",
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 11,
-                      },
-                      "location": 33,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 28,
-                  "name": "b",
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest10",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 171 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 8,
-                      },
-                      "location": 19,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 14,
-                  "name": "b",
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 2,
-                      },
-                      "location": 27,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 22,
-                  "name": "c",
-                },
-              },
-              {
-                "NamedArgExpr": {
-                  "arg": {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 35,
-                    },
-                  },
-                  "argnumber": -1,
-                  "location": 30,
-                  "name": "a",
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "ptest10",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 172 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest11",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 56,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 87,
+                    "names": [
                       {
                         "String": {
-                          "sval": " SELECT b[1] + b[2] ",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 71,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_OUT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "arrayBounds": [
-                    {
-                      "Integer": {},
-                    },
-                  ],
-                  "location": 49,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_VARIADIC",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 175 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "isnull": true,
-                  "location": 15,
+                  "mode": "FUNC_PARAM_IN",
+                  "name": "b",
                 },
               },
               {
-                "A_Const": {
-                  "ival": {
-                    "ival": 11,
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 97,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
-                  "location": 21,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 12,
-                  },
-                  "location": 25,
-                },
-              },
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 13,
-                  },
-                  "location": 29,
+                  "mode": "FUNC_PARAM_IN",
+                  "name": "c",
                 },
               },
             ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 167 1`] = `
+[
+  "CALL ptest10(null, 7, 4)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "isnull": true,
+                    "location": 13,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 7,
+                    },
+                    "location": 19,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 4,
+                    },
+                    "location": 22,
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest10",
+                  },
+                },
+              ],
+              "location": 5,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 173 1`] = `
+[
+  "CREATE PROCEDURE ptest11(a OUT int, VARIADIC b int[]) LANGUAGE SQL
+  AS $$ SELECT b[1] + b[2] $$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
@@ -2839,210 +1565,175 @@ exports[`create_procedure.sql > line 175 1`] = `
                 },
               },
             ],
-            "location": 7,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 177 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptest10",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
+            "is_procedure": true,
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 54,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 105,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " SELECT b[1] + b[2] ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 69,
+                },
+              },
+            ],
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 31,
+                    "names": [
                       {
                         "String": {
-                          "sval": " SELECT a + b - c ",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
+                  "mode": "FUNC_PARAM_OUT",
+                  "name": "a",
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 118,
               },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 80,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "arrayBounds": [
+                      {
+                        "Integer": {},
                       },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                    ],
+                    "location": 47,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
                       },
-                    },
-                  ],
-                  "typemod": -1,
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_VARIADIC",
+                  "name": "b",
                 },
-                "mode": "FUNC_PARAM_IN",
-                "name": "a",
               },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 90,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_IN",
-                "name": "b",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 100,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_IN",
-                "name": "c",
-              },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 182 1`] = `[Error: syntax error at or near "\\"]`;
+exports[`create_procedure.sql > line 176 1`] = `
+[
+  "CALL ptest11(null, 11, 12, 13)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "isnull": true,
+                    "location": 13,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 11,
+                    },
+                    "location": 19,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 12,
+                    },
+                    "location": 23,
+                  },
+                },
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 13,
+                    },
+                    "location": 27,
+                  },
+                },
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "ptest11",
+                  },
+                },
+              ],
+              "location": 5,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
 exports[`create_procedure.sql > line 185 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 33,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 38,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 43,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
+[
+  "  -- fail
+drop procedure ptest10(int, int, int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
                         "location": 33,
                         "names": [
                           {
@@ -3058,12 +1749,9 @@ exports[`create_procedure.sql > line 185 1`] = `
                         ],
                         "typemod": -1,
                       },
-                      "mode": "FUNC_PARAM_DEFAULT",
                     },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
+                    {
+                      "TypeName": {
                         "location": 38,
                         "names": [
                           {
@@ -3079,12 +1767,9 @@ exports[`create_procedure.sql > line 185 1`] = `
                         ],
                         "typemod": -1,
                       },
-                      "mode": "FUNC_PARAM_DEFAULT",
                     },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
+                    {
+                      "TypeName": {
                         "location": 43,
                         "names": [
                           {
@@ -3100,1688 +1785,264 @@ exports[`create_procedure.sql > line 185 1`] = `
                         ],
                         "typemod": -1,
                       },
-                      "mode": "FUNC_PARAM_DEFAULT",
                     },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest10",
+                  ],
+                  "objfuncargs": [
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 33,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
                     },
-                  },
-                ],
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 38,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
+                    },
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 43,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "ptest10",
+                      },
+                    },
+                  ],
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
+            ],
+            "removeType": "OBJECT_PROCEDURE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 186 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 188 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 33,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 38,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 28,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_OUT",
-                    },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 33,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 38,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest10",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 189 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 190 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 192 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 193 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 27,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 32,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 37,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 27,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_IN",
-                    },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 32,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 37,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest10",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 194 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`create_procedure.sql > line 195 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 197 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "version",
-                },
-              },
-            ],
-            "location": 31,
+[
+  "  -- fail
+begin",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 190 1`] = `
+[
+  "  -- now this would work
+rollback",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_ROLLBACK",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 200 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
+[
+  "  -- error: not a procedure
+CALL sum(1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CallStmt": {
+            "funccall": {
+              "args": [
+                {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 37,
                   },
-                  "location": 37,
                 },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
-              {
-                "String": {
-                  "sval": "sum",
+              ],
+              "funcformat": "COERCE_EXPLICIT_CALL",
+              "funcname": [
+                {
+                  "String": {
+                    "sval": "sum",
+                  },
                 },
-              },
-            ],
-            "location": 33,
+              ],
+              "location": 33,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`create_procedure.sql > line 201 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptestx",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 55,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "window",
-                "location": 68,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " INSERT INTO cp_test VALUES (1, 'a') ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 75,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
+[
+  "  -- error: not a procedure
 
-exports[`create_procedure.sql > line 204 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptestx",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 27,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "strict",
-                "location": 40,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " INSERT INTO cp_test VALUES (1, 'a') ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 47,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 205 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptestx",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 54,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT a[1] ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 69,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "arrayBounds": [
-                    {
-                      "Integer": {},
-                    },
-                  ],
-                  "location": 36,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_VARIADIC",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 49,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_OUT",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 207 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "ptestx",
-              },
-            },
-          ],
-          "is_procedure": true,
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 54,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " SELECT a ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 69,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 27,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "defexpr": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 42,
-                    },
-                    "location": 39,
-                  },
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "a",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 49,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_OUT",
-                "name": "b",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 209 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterFunctionStmt": {
-          "actions": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "strict",
-                "location": 31,
-              },
-            },
-          ],
-          "func": {
-            "objargs": [
-              {
-                "TypeName": {
-                  "location": 25,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            ],
-            "objfuncargs": [
-              {
-                "FunctionParameter": {
-                  "argType": {
-                    "location": 25,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                  "mode": "FUNC_PARAM_DEFAULT",
-                },
-              },
-            ],
-            "objname": [
-              {
-                "String": {
-                  "sval": "ptest1",
-                },
-              },
-            ],
-          },
-          "objtype": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 211 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterFunctionStmt": {
-          "actions": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "volatile",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "volatility",
-                "location": 29,
-              },
-            },
-          ],
-          "func": {
-            "objargs": [
-              {
-                "TypeName": {
-                  "location": 23,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            ],
-            "objfuncargs": [
-              {
-                "FunctionParameter": {
-                  "argType": {
-                    "location": 23,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "text",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                  "mode": "FUNC_PARAM_DEFAULT",
-                },
-              },
-            ],
-            "objname": [
-              {
-                "String": {
-                  "sval": "ptest1",
-                },
-              },
-            ],
-          },
-          "objtype": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 211 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterFunctionStmt": {
-          "actions": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "volatile",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "volatility",
-                "location": 61,
-              },
-            },
-          ],
-          "func": {
-            "objargs": [
-              {
-                "TypeName": {
-                  "location": 56,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            ],
-            "objfuncargs": [
-              {
-                "FunctionParameter": {
-                  "argType": {
-                    "location": 56,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                  "mode": "FUNC_PARAM_DEFAULT",
-                },
-              },
-            ],
-            "objname": [
-              {
-                "String": {
-                  "sval": "cp_testfunc1",
-                },
-              },
-            ],
-          },
-          "objtype": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 212 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterFunctionStmt": {
-          "actions": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "volatile",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "volatility",
-                "location": 58,
-              },
-            },
-          ],
-          "func": {
-            "objname": [
-              {
-                "String": {
-                  "sval": "nonexistent",
-                },
-              },
-            ],
-          },
-          "objtype": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 214 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 23,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "text",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 23,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "text",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 215 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 55,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 55,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "int4",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "cp_testfunc1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 216 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "nonexistent",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 218 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_cp_user1",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 223 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 28,
-                "rolename": "regress_cp_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "cp_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "insert",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 224 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 47,
-                "roletype": "ROLESPEC_PUBLIC",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 36,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "text",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 36,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "text",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "objtype": "OBJECT_PROCEDURE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "execute",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 225 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_cp_user1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 226 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
-              {
-                "A_Const": {
-                  "location": 13,
-                  "sval": {
-                    "sval": "a",
-                  },
-                },
-              },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
+CREATE PROCEDURE ptestx() LANGUAGE SQL WINDOW AS $$ INSERT INTO cp_test VALUES (1, 'a') $$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
             "funcname": [
               {
                 "String": {
-                  "sval": "ptest1",
+                  "sval": "ptestx",
                 },
               },
             ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 226 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 228 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 44,
-                "rolename": "regress_cp_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 35,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "text",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 35,
-                        "names": [
-                          {
-                            "String": {
-                              "sval": "text",
-                            },
-                          },
-                        ],
-                        "typemod": -1,
-                      },
-                      "mode": "FUNC_PARAM_DEFAULT",
-                    },
-                  },
-                ],
-                "objname": [
-                  {
+            "is_procedure": true,
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
                     "String": {
-                      "sval": "ptest1",
+                      "sval": "sql",
                     },
                   },
-                ],
-              },
-            },
-          ],
-          "objtype": "OBJECT_PROCEDURE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "execute",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 229 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 10,
-                "sval": {
-                  "sval": "regress_cp_user1",
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 55,
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 230 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CallStmt": {
-          "funccall": {
-            "args": [
               {
-                "A_Const": {
-                  "location": 13,
-                  "sval": {
-                    "sval": "a",
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "window",
+                  "location": 68,
                 },
               },
-            ],
-            "funcformat": "COERCE_EXPLICIT_CALL",
-            "funcname": [
               {
-                "String": {
-                  "sval": "ptest1",
-                },
-              },
-            ],
-            "location": 6,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 230 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "role",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 232 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "cp_testfunc1a",
-          "object": {
-            "ObjectWithArgs": {
-              "objargs": [
-                {
-                  "TypeName": {
-                    "location": 49,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              ],
-              "objfuncargs": [
-                {
-                  "FunctionParameter": {
-                    "argType": {
-                      "location": 49,
-                      "names": [
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
                         {
                           "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int4",
+                            "sval": " INSERT INTO cp_test VALUES (1, 'a') ",
                           },
                         },
                       ],
-                      "typemod": -1,
                     },
-                    "mode": "FUNC_PARAM_DEFAULT",
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 75,
                 },
-              ],
-              "objname": [
-                {
-                  "String": {
-                    "sval": "cp_testfunc1",
-                  },
-                },
-              ],
-            },
+              },
+            ],
           },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_ROUTINE",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 237 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "cp_testfunc1",
-          "object": {
-            "ObjectWithArgs": {
-              "args_unspecified": true,
-              "objname": [
-                {
-                  "String": {
-                    "sval": "cp_testfunc1a",
+exports[`create_procedure.sql > line 210 1`] = `
+[
+  "ALTER PROCEDURE ptest1(text) STRICT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterFunctionStmt": {
+            "actions": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "strict",
+                  "location": 29,
                 },
-              ],
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_ROUTINE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 238 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "ptest1a",
-          "object": {
-            "ObjectWithArgs": {
+              },
+            ],
+            "func": {
               "objargs": [
                 {
                   "TypeName": {
@@ -4823,61 +2084,65 @@ exports[`create_procedure.sql > line 238 1`] = `
                 },
               ],
             },
+            "objtype": "OBJECT_PROCEDURE",
           },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_ROUTINE",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 240 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RenameStmt": {
-          "behavior": "DROP_RESTRICT",
-          "newname": "ptest1",
-          "object": {
-            "ObjectWithArgs": {
-              "args_unspecified": true,
-              "objname": [
+exports[`create_procedure.sql > line 211 1`] = `
+[
+  "  -- error: not a function
+ALTER PROCEDURE cp_testfunc1(int) VOLATILE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterFunctionStmt": {
+            "actions": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "volatile",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "volatility",
+                  "location": 61,
+                },
+              },
+            ],
+            "func": {
+              "objargs": [
                 {
-                  "String": {
-                    "sval": "ptest1a",
+                  "TypeName": {
+                    "location": 56,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
                 },
               ],
-            },
-          },
-          "relationType": "OBJECT_ACCESS_METHOD",
-          "renameType": "OBJECT_ROUTINE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 241 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 28,
+              "objfuncargs": [
+                {
+                  "FunctionParameter": {
+                    "argType": {
+                      "location": 56,
                       "names": [
                         {
                           "String": {
@@ -4892,13 +2157,152 @@ exports[`create_procedure.sql > line 241 1`] = `
                       ],
                       "typemod": -1,
                     },
+                    "mode": "FUNC_PARAM_DEFAULT",
                   },
-                ],
-                "objfuncargs": [
-                  {
-                    "FunctionParameter": {
-                      "argType": {
-                        "location": 28,
+                },
+              ],
+              "objname": [
+                {
+                  "String": {
+                    "sval": "cp_testfunc1",
+                  },
+                },
+              ],
+            },
+            "objtype": "OBJECT_PROCEDURE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 212 1`] = `
+[
+  "  -- error: not a procedure
+ALTER PROCEDURE nonexistent() VOLATILE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterFunctionStmt": {
+            "actions": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "volatile",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "volatility",
+                  "location": 58,
+                },
+              },
+            ],
+            "func": {
+              "objname": [
+                {
+                  "String": {
+                    "sval": "nonexistent",
+                  },
+                },
+              ],
+            },
+            "objtype": "OBJECT_PROCEDURE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 215 1`] = `
+[
+  "DROP FUNCTION ptest1(text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 21,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                  "objfuncargs": [
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 21,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "text",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "ptest1",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_FUNCTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 215 2`] = `
+[
+  "  -- error: not a function
+DROP PROCEDURE cp_testfunc1(int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 55,
                         "names": [
                           {
                             "String": {
@@ -4913,40 +2317,149 @@ exports[`create_procedure.sql > line 241 1`] = `
                         ],
                         "typemod": -1,
                       },
+                    },
+                  ],
+                  "objfuncargs": [
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 55,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "cp_testfunc1",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_PROCEDURE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 216 1`] = `
+[
+  "  -- error: not a procedure
+DROP PROCEDURE nonexistent()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "nonexistent",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_PROCEDURE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 226 1`] = `
+[
+  "  -- error
+RESET ROLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "role",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 239 1`] = `
+[
+  "ALTER ROUTINE ptest1(text) RENAME TO ptest1a",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RenameStmt": {
+            "behavior": "DROP_RESTRICT",
+            "newname": "ptest1a",
+            "object": {
+              "ObjectWithArgs": {
+                "objargs": [
+                  {
+                    "TypeName": {
+                      "location": 21,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "text",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                ],
+                "objfuncargs": [
+                  {
+                    "FunctionParameter": {
+                      "argType": {
+                        "location": 21,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "text",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
                       "mode": "FUNC_PARAM_DEFAULT",
                     },
                   },
                 ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "cp_testfunc1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_ROUTINE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 243 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "args_unspecified": true,
                 "objname": [
                   {
                     "String": {
@@ -4956,124 +2469,146 @@ exports[`create_procedure.sql > line 243 1`] = `
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
+            "relationType": "OBJECT_ACCESS_METHOD",
+            "renameType": "OBJECT_ROUTINE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 248 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "args_unspecified": true,
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest1s",
+exports[`create_procedure.sql > line 242 1`] = `
+[
+  "DROP ROUTINE cp_testfunc1(int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 26,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int4",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
                     },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 249 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "args_unspecified": true,
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "ptest2",
+                  ],
+                  "objfuncargs": [
+                    {
+                      "FunctionParameter": {
+                        "argType": {
+                          "location": 26,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "pg_catalog",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "int4",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                        "mode": "FUNC_PARAM_DEFAULT",
+                      },
                     },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_PROCEDURE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`create_procedure.sql > line 250 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "cp_test",
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "cp_testfunc1",
+                      },
                     },
-                  },
-                ],
+                  ],
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
+            ],
+            "removeType": "OBJECT_ROUTINE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`create_procedure.sql > line 252 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 12,
-                "rolename": "regress_cp_user1",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`create_procedure.sql > line 251 1`] = `
+[
+  "DROP TABLE cp_test",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "cp_test",
+                      },
+                    },
+                  ],
+                },
               },
-            },
-          ],
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`create_procedure.sql > line 253 1`] = `
+[
+  "DROP USER regress_cp_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropRoleStmt": {
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 10,
+                  "rolename": "regress_cp_user1",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

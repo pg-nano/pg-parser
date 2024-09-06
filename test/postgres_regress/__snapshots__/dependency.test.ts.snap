@@ -1,1376 +1,492 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`dependency.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user2",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user3",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_group",
-          "stmt_type": "ROLESTMT_GROUP",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "deptest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 34,
+exports[`dependency.sql > line 10 1`] = `
+[
+  "CREATE TABLE deptest (f1 serial primary key, f2 text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "deptest",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_PRIMARY",
+                        "location": 32,
+                      },
                     },
+                  ],
+                  "is_local": true,
+                  "location": 22,
+                  "typeName": {
+                    "location": 25,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "serial",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
-                ],
-                "is_local": true,
-                "location": 24,
-                "typeName": {
-                  "location": 27,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "f2",
+                  "is_local": true,
+                  "location": 45,
+                  "typeName": {
+                    "location": 48,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
                       },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "f2",
-                "is_local": true,
-                "location": 47,
-                "typeName": {
-                  "location": 50,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 41,
-                "rolename": "regress_dep_group",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 24,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 31,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-            {
-              "RoleSpec": {
-                "location": 49,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 20,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 73,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 12,
-                "rolename": "regress_dep_group",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 91,
-                "rolename": "regress_dep_group",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 72,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 12,
-                "rolename": "regress_dep_group",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 139,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 126,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "select",
-              },
-            },
-            {
-              "AccessPriv": {
-                "priv_name": "insert",
-              },
-            },
-            {
-              "AccessPriv": {
-                "priv_name": "update",
-              },
-            },
-            {
-              "AccessPriv": {
-                "priv_name": "delete",
-              },
-            },
-            {
-              "AccessPriv": {
-                "priv_name": "truncate",
-              },
-            },
-            {
-              "AccessPriv": {
-                "priv_name": "references",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 26 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 62,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 49,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "trigger",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 84,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 71,
-                "relname": "deptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 34 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`dependency.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 41 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`dependency.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user3",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user0",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user1",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_dep_user2",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 51 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 27,
-                "sval": {
-                  "sval": "regress_dep_user0",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropOwnedStmt": {
-          "behavior": "DROP_RESTRICT",
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 36,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropOwnedStmt": {
-          "behavior": "DROP_RESTRICT",
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 15,
-                "rolename": "regress_dep_user0",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-            {
-              "RoleSpec": {
-                "location": 34,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ReassignOwnedStmt": {
-          "newrole": {
-            "location": 40,
-            "rolename": "regress_dep_user1",
-            "roletype": "ROLESPEC_CSTRING",
-          },
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 19,
-                "rolename": "regress_dep_user0",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 56 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ReassignOwnedStmt": {
-          "newrole": {
-            "location": 40,
-            "rolename": "regress_dep_user0",
-            "roletype": "ROLESPEC_CSTRING",
-          },
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 19,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropOwnedStmt": {
-          "behavior": "DROP_RESTRICT",
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 38,
-                "rolename": "regress_dep_user0",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "deptest1",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_UNIQUE",
-                      "location": 32,
-                    },
+                    ],
+                    "typemod": -1,
                   },
-                ],
-                "is_local": true,
-                "location": 25,
-                "typeName": {
-                  "location": 28,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grant_option": true,
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 26,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "deptest1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 28,
-                "sval": {
-                  "sval": "regress_dep_user1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "deptest",
-            "relpersistence": "p",
+            ],
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 32,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 23,
-                "typeName": {
-                  "location": 25,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 45,
-                "typeName": {
-                  "location": 47,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 26,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "deptest1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 67 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`dependency.sql > line 70 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`dependency.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "GrantStmt": {
-          "behavior": "DROP_RESTRICT",
-          "grantees": [
-            {
-              "RoleSpec": {
-                "location": 40,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-          "is_grant": true,
-          "objects": [
-            {
-              "String": {
-                "sval": "regression",
-              },
-            },
-          ],
-          "objtype": "OBJECT_DATABASE",
-          "privileges": [
-            {
-              "AccessPriv": {
-                "priv_name": "create",
-              },
-            },
-          ],
-          "targtype": "ACL_TARGET_OBJECT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 28,
-                "sval": {
-                  "sval": "regress_dep_user1",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaname": "deptest",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "deptest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 32,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 23,
-                "typeName": {
-                  "location": 25,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 45,
-                "typeName": {
-                  "location": 47,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 82 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterDefaultPrivilegesStmt": {
-          "action": {
+exports[`dependency.sql > line 12 1`] = `
+[
+  "GRANT SELECT ON TABLE deptest TO GROUP regress_dep_group",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
             "behavior": "DROP_RESTRICT",
             "grantees": [
               {
                 "RoleSpec": {
-                  "location": 96,
-                  "rolename": "regress_dep_user2",
+                  "location": 39,
+                  "rolename": "regress_dep_group",
                   "roletype": "ROLESPEC_CSTRING",
                 },
               },
             ],
             "is_grant": true,
-            "objtype": "OBJECT_TABLE",
-            "targtype": "ACL_TARGET_DEFAULTS",
-          },
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "RoleSpec": {
-                          "location": 35,
-                          "rolename": "regress_dep_user1",
-                          "roletype": "ROLESPEC_CSTRING",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "roles",
-                "location": 26,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "deptest",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "schemas",
-                "location": 53,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "deptest_func",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "plpgsql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 45,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " BEGIN END; ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 64,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 40,
-            "names": [
+            "objects": [
               {
-                "String": {
-                  "sval": "void",
+                "RangeVar": {
+                  "inh": true,
+                  "location": 22,
+                  "relname": "deptest",
+                  "relpersistence": "p",
                 },
               },
             ],
-            "typemod": -1,
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "select",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 86 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateEnumStmt": {
-          "typeName": [
-            {
-              "String": {
-                "sval": "deptest_enum",
+exports[`dependency.sql > line 16 1`] = `
+[
+  "DROP USER regress_dep_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropRoleStmt": {
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 10,
+                  "rolename": "regress_dep_user",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
               },
-            },
-          ],
-          "vals": [
-            {
-              "String": {
-                "sval": "red",
-              },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRangeStmt": {
-          "params": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 47,
+exports[`dependency.sql > line 20 1`] = `
+[
+  "REVOKE SELECT ON deptest FROM GROUP regress_dep_group",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 36,
+                  "rolename": "regress_dep_group",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "deptest",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "select",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 24 1`] = `
+[
+  "REVOKE SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES ON deptest FROM regress_dep_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 76,
+                  "rolename": "regress_dep_user",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 63,
+                  "relname": "deptest",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "select",
+                },
+              },
+              {
+                "AccessPriv": {
+                  "priv_name": "insert",
+                },
+              },
+              {
+                "AccessPriv": {
+                  "priv_name": "update",
+                },
+              },
+              {
+                "AccessPriv": {
+                  "priv_name": "delete",
+                },
+              },
+              {
+                "AccessPriv": {
+                  "priv_name": "truncate",
+                },
+              },
+              {
+                "AccessPriv": {
+                  "priv_name": "references",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 28 1`] = `
+[
+  "REVOKE TRIGGER ON deptest FROM regress_dep_user",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 31,
+                  "rolename": "regress_dep_user",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 18,
+                  "relname": "deptest",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "privileges": [
+              {
+                "AccessPriv": {
+                  "priv_name": "trigger",
+                },
+              },
+            ],
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 32 1`] = `
+[
+  "REVOKE ALL ON deptest FROM regress_dep_user2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 27,
+                  "rolename": "regress_dep_user2",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "deptest",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 44 1`] = `
+[
+  "DROP TABLE deptest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "deptest",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 48 1`] = `
+[
+  "CREATE USER regress_dep_user0",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateRoleStmt": {
+            "role": "regress_dep_user0",
+            "stmt_type": "ROLESTMT_USER",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 53 1`] = `
+[
+  "DROP OWNED BY regress_dep_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropOwnedStmt": {
+            "behavior": "DROP_RESTRICT",
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 14,
+                  "rolename": "regress_dep_user1",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 58 1`] = `
+[
+  "DROP OWNED BY regress_dep_user0",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropOwnedStmt": {
+            "behavior": "DROP_RESTRICT",
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 14,
+                  "rolename": "regress_dep_user0",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 60 1`] = `
+[
+  "CREATE TABLE deptest1 (f1 int unique)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "deptest1",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_UNIQUE",
+                        "location": 30,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 23,
+                  "typeName": {
+                    "location": 26,
                     "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
                       {
                         "String": {
                           "sval": "int4",
@@ -1380,608 +496,272 @@ exports[`dependency.sql > line 87 1`] = `
                     "typemod": -1,
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "subtype",
-                "location": 37,
               },
-            },
-          ],
-          "typeName": [
-            {
-              "String": {
-                "sval": "deptest_range",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "deptest2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 25,
-                "typeName": {
-                  "location": 28,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 90 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSeqStmt": {
-          "sequence": {
-            "inh": true,
-            "location": 54,
-            "relname": "ss1",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 51,
-                          "sval": {
-                            "sval": "ss1",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "nextval",
-                        },
-                      },
-                    ],
-                    "location": 43,
-                  },
-                },
-                "name": "f1",
-                "subtype": "AT_ColumnDefault",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "deptest2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterSeqStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "deptest2",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "f1",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "owned_by",
-                "location": 20,
-              },
-            },
-          ],
-          "sequence": {
-            "inh": true,
-            "location": 16,
-            "relname": "ss1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CompositeTypeStmt": {
-          "coldeflist": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 114,
-                "typeName": {
-                  "location": 116,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-          "typevar": {
-            "location": 100,
-            "relname": "deptest_t",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "JoinExpr": {
-                "jointype": "JOIN_INNER",
-                "larg": {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 33,
-                    "relname": "pg_type",
-                    "relpersistence": "p",
-                  },
-                },
-                "quals": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "typrelid",
-                            },
-                          },
-                        ],
-                        "location": 60,
-                      },
-                    },
-                    "location": 69,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 71,
-                      },
-                    },
-                  },
-                },
-                "rarg": {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "c",
-                    },
-                    "inh": true,
-                    "location": 46,
-                    "relname": "pg_class",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "typowner",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 17,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relowner",
-                            },
-                          },
-                        ],
-                        "location": 19,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "typname",
-                      },
-                    },
-                  ],
-                  "location": 83,
-                },
-              },
-              "location": 91,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
+exports[`dependency.sql > line 63 1`] = `
+[
+  "SET SESSION AUTHORIZATION regress_dep_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
                 "A_Const": {
-                  "location": 93,
+                  "location": 26,
                   "sval": {
-                    "sval": "deptest_t",
+                    "sval": "regress_dep_user1",
                   },
                 },
               },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "session_authorization",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 83 1`] = `
+[
+  "  GRANT ALL ON TABLES TO regress_dep_user2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "GrantStmt": {
+            "behavior": "DROP_RESTRICT",
+            "grantees": [
+              {
+                "RoleSpec": {
+                  "location": 25,
+                  "rolename": "regress_dep_user2",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
+              },
+            ],
+            "is_grant": true,
+            "objects": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 15,
+                  "relname": "tables",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "targtype": "ACL_TARGET_OBJECT",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 89 1`] = `
+[
+  "CREATE TABLE deptest2 (f1 int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "deptest2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "is_local": true,
+                  "location": 23,
+                  "typeName": {
+                    "location": 26,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`dependency.sql > line 91 1`] = `
+[
+  "CREATE SEQUENCE ss1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSeqStmt": {
+            "sequence": {
+              "inh": true,
+              "location": 16,
+              "relname": "ss1",
+              "relpersistence": "p",
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "session_authorization",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ReassignOwnedStmt": {
-          "newrole": {
-            "location": 40,
-            "rolename": "regress_dep_user2",
-            "roletype": "ROLESPEC_CSTRING",
+exports[`dependency.sql > line 97 1`] = `
+[
+  "CREATE TYPE deptest_t AS (a int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CompositeTypeStmt": {
+            "coldeflist": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 26,
+                  "typeName": {
+                    "location": 28,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+            "typevar": {
+              "location": 12,
+              "relname": "deptest_t",
+              "relpersistence": "p",
+            },
           },
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 19,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 103 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`dependency.sql > line 107 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 48,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
+exports[`dependency.sql > line 101 1`] = `
+[
+  "RESET SESSION AUTHORIZATION",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "session_authorization",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 110 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropOwnedStmt": {
-          "behavior": "DROP_RESTRICT",
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 15,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`dependency.sql > line 109 1`] = `
+[
+  "DROP USER regress_dep_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropRoleStmt": {
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 10,
+                  "rolename": "regress_dep_user1",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`dependency.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user1",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`dependency.sql > line 113 1`] = `
+[
+  "DROP USER regress_dep_user2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropRoleStmt": {
+            "roles": [
+              {
+                "RoleSpec": {
+                  "location": 10,
+                  "rolename": "regress_dep_user2",
+                  "roletype": "ROLESPEC_CSTRING",
+                },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 112 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 12,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 114 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropOwnedStmt": {
-          "behavior": "DROP_RESTRICT",
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 15,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-            {
-              "RoleSpec": {
-                "location": 34,
-                "rolename": "regress_dep_user0",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 115 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`dependency.sql > line 116 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_dep_user0",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

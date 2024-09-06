@@ -1,561 +1,208 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`replica_identity.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 54,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 44,
-                "typeName": {
-                  "location": 47,
-                  "names": [
+[
+  "CREATE TABLE test_replica_identity (
+       id serial primary key,
+       keya text not null,
+       keyb text not null,
+       nonkey text,
+       CONSTRAINT test_replica_identity_unique_defer UNIQUE (keya, keyb) DEFERRABLE,
+       CONSTRAINT test_replica_identity_unique_nondefer UNIQUE (keya, keyb)
+) ",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "constraints": [
                     {
-                      "String": {
-                        "sval": "serial",
+                      "Constraint": {
+                        "contype": "CONSTR_PRIMARY",
+                        "location": 54,
                       },
                     },
                   ],
-                  "typemod": -1,
+                  "is_local": true,
+                  "location": 44,
+                  "typeName": {
+                    "location": 47,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "serial",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "keya",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 84,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 74,
-                "typeName": {
-                  "location": 79,
-                  "names": [
+              {
+                "ColumnDef": {
+                  "colname": "keya",
+                  "constraints": [
                     {
-                      "String": {
-                        "sval": "text",
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 84,
                       },
                     },
                   ],
-                  "typemod": -1,
+                  "is_local": true,
+                  "location": 74,
+                  "typeName": {
+                    "location": 79,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "keyb",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 111,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 101,
-                "typeName": {
-                  "location": 106,
-                  "names": [
+              {
+                "ColumnDef": {
+                  "colname": "keyb",
+                  "constraints": [
                     {
-                      "String": {
-                        "sval": "text",
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 111,
                       },
                     },
                   ],
-                  "typemod": -1,
+                  "is_local": true,
+                  "location": 101,
+                  "typeName": {
+                    "location": 106,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "nonkey",
-                "is_local": true,
-                "location": 128,
-                "typeName": {
-                  "location": 135,
-                  "names": [
+              {
+                "ColumnDef": {
+                  "colname": "nonkey",
+                  "is_local": true,
+                  "location": 128,
+                  "typeName": {
+                    "location": 135,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "Constraint": {
+                  "conname": "test_replica_identity_unique_defer",
+                  "contype": "CONSTR_UNIQUE",
+                  "deferrable": true,
+                  "keys": [
                     {
                       "String": {
-                        "sval": "text",
+                        "sval": "keya",
                       },
                     },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "Constraint": {
-                "conname": "test_replica_identity_unique_defer",
-                "contype": "CONSTR_UNIQUE",
-                "deferrable": true,
-                "keys": [
-                  {
-                    "String": {
-                      "sval": "keya",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "keyb",
-                    },
-                  },
-                ],
-                "location": 148,
-              },
-            },
-            {
-              "Constraint": {
-                "conname": "test_replica_identity_unique_nondefer",
-                "contype": "CONSTR_UNIQUE",
-                "keys": [
-                  {
-                    "String": {
-                      "sval": "keya",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "keyb",
-                    },
-                  },
-                ],
-                "location": 233,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "test_replica_identity_othertable",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 59,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 49,
-                "typeName": {
-                  "location": 52,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity_keyab",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keya",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "name": "keyb",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 46,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity_keyab_key",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keya",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "name": "keyb",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 56,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity_nonkey",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keya",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "name": "nonkey",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 53,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "hash",
-          "idxname": "test_replica_identity_hash",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "nonkey",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 44,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity_expr",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keya",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "name": "keyb",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "expr": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 3,
-                    },
-                    "location": 87,
-                  },
-                },
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 51,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity_partial",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "keya",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-            {
-              "IndexElem": {
-                "name": "keyb",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 54,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-          "unique": true,
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
                     {
                       "String": {
                         "sval": "keyb",
                       },
                     },
                   ],
-                  "location": 95,
+                  "location": 148,
                 },
               },
-              "location": 100,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<>",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 103,
-                  "sval": {
-                    "sval": "3",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 77,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 59,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 59,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
+              {
+                "Constraint": {
+                  "conname": "test_replica_identity_unique_nondefer",
+                  "contype": "CONSTR_UNIQUE",
+                  "keys": [
                     {
                       "String": {
-                        "sval": "oid",
+                        "sval": "keya",
+                      },
+                    },
+                    {
+                      "String": {
+                        "sval": "keyb",
                       },
                     },
                   ],
-                  "location": 92,
+                  "location": 233,
                 },
               },
-              "location": 96,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 98,
-                      "sval": {
-                        "sval": "test_replica_identity",
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 10 1`] = `
+[
+  "CREATE TABLE test_replica_identity_othertable (id serial primary key)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_replica_identity_othertable",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_PRIMARY",
+                        "location": 57,
                       },
                     },
-                  },
-                  "location": 121,
+                  ],
+                  "is_local": true,
+                  "location": 47,
                   "typeName": {
-                    "location": 123,
+                    "location": 50,
                     "names": [
                       {
                         "String": {
-                          "sval": "regclass",
+                          "sval": "serial",
                         },
                       },
                     ],
@@ -563,1884 +210,1133 @@ exports[`replica_identity.sql > line 18 1`] = `
                   },
                 },
               },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 12 1`] = `
+[
+  "CREATE INDEX test_replica_identity_keyab ON test_replica_identity (keya, keyb)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "idxname": "test_replica_identity_keyab",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "name": "keya",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+              {
+                "IndexElem": {
+                  "name": "keyb",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
+                },
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 44,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 58,
-                "relname": "pg_class",
-                "relpersistence": "p",
+exports[`replica_identity.sql > line 20 1`] = `
+[
+  "SELECT relreplident FROM pg_class WHERE oid = 'test_replica_identity'::regclass",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 25,
+                  "relname": "pg_class",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 40,
-                "val": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relreplident",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
                         "String": {
-                          "sval": "relreplident",
+                          "sval": "oid",
                         },
                       },
                     ],
                     "location": 40,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 73,
-                },
-              },
-              "location": 77,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 79,
-                      "sval": {
-                        "sval": "pg_class",
-                      },
-                    },
-                  },
-                  "location": 89,
-                  "typeName": {
-                    "location": 91,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "pg_constraint",
-                      },
-                    },
-                  },
-                  "location": 62,
-                  "typeName": {
-                    "location": 64,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_keyab",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 87,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_nonkey",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 59,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_hash",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 56,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_expr",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 39,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_partial",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 36,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_othertable_pkey",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 36,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_unique_defer",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 27,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 42,
-                },
-              },
-              "location": 46,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 48,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 71,
-                  "typeName": {
-                    "location": 73,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_pkey",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 82,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 70,
-                  "typeName": {
-                    "location": 72,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 53 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_keyab_key",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 60,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity_keyab_key",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 70,
-                  "typeName": {
-                    "location": 72,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 62 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "d",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 58,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 70,
-                  "typeName": {
-                    "location": 72,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 22,
-                "relname": "pg_index",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "indrelid",
-                            },
-                          },
-                        ],
-                        "location": 37,
-                      },
-                    },
-                    "location": 46,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "TypeCast": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 48,
-                            "sval": {
-                              "sval": "test_replica_identity",
-                            },
-                          },
-                        },
-                        "location": 71,
-                        "typeName": {
-                          "location": 73,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "regclass",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "indisreplident",
-                        },
-                      },
-                    ],
-                    "location": 86,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 82,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "f",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "test_replica_identity",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 70,
-                  "typeName": {
-                    "location": 72,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 74 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 76 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 26,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relreplident",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "oid",
-                      },
-                    },
-                  ],
-                  "location": 41,
-                },
-              },
-              "location": 45,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "TypeCast": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 47,
-                      "sval": {
-                        "sval": "test_replica_identity",
-                      },
-                    },
-                  },
-                  "location": 70,
-                  "typeName": {
-                    "location": 72,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "regclass",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 117,
-            "relname": "test_replica_identity2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "constraints": [
+                "location": 44,
+                "name": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_UNIQUE",
-                      "location": 148,
-                    },
-                  },
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 155,
+                    "String": {
+                      "sval": "=",
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 141,
-                "typeName": {
-                  "location": 144,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
+                "rexpr": {
+                  "TypeCast": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 46,
+                        "sval": {
+                          "sval": "test_replica_identity",
+                        },
                       },
                     },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 84 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity2_id_key",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_replica_identity2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 85 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 87 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 91 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "test_replica_identity3_id_key",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "id",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 54,
-            "relname": "test_replica_identity3",
-            "relpersistence": "p",
-          },
-          "unique": true,
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity3_id_key",
-                  },
-                },
-                "subtype": "AT_ReplicaIdentity",
-              },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test_replica_identity3",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 93 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 95 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "partspec": {
-            "location": 212,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 231,
-                  "name": "id",
-                },
-              },
-            ],
-            "strategy": "PARTITION_STRATEGY_LIST",
-          },
-          "relation": {
-            "inh": true,
-            "location": 168,
-            "relname": "test_replica_identity4",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 202,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 191,
-                "typeName": {
-                  "location": 194,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "test_replica_identity4_1",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 50,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 42,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`replica_identity.sql > line 107 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "PartitionCmd": {
-                    "bound": {
-                      "listdatums": [
+                    "location": 69,
+                    "typeName": {
+                      "location": 71,
+                      "names": [
                         {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 1,
-                            },
-                            "location": 100,
+                          "String": {
+                            "sval": "regclass",
                           },
                         },
                       ],
-                      "location": 96,
-                      "strategy": "l",
-                    },
-                    "name": {
-                      "inh": true,
-                      "location": 60,
-                      "relname": "test_replica_identity4_1",
-                      "relpersistence": "p",
+                      "typemod": -1,
                     },
                   },
                 },
-                "subtype": "AT_AttachPartition",
               },
             },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "location": 18,
-            "relname": "test_replica_identity4",
-            "relpersistence": "p",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 109 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "Constraint": {
-                    "conname": "test_replica_identity4_pkey",
-                    "contype": "CONSTR_PRIMARY",
-                    "keys": [
+exports[`replica_identity.sql > line 30 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_keyab",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_keyab",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 32 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_nonkey",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_nonkey",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 34 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_hash",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_hash",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 36 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_expr",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_expr",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 38 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_partial",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_partial",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 40 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_othertable_pkey",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_othertable_pkey",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 42 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_unique_defer",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_unique_defer",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 51 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_pkey",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_pkey",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 56 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_unique_nondefer",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_unique_nondefer",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 59 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_keyab_key",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "i",
+                      "name": "test_replica_identity_keyab_key",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 63 1`] = `
+[
+  "SELECT count(*) FROM pg_index WHERE indrelid = 'test_replica_identity'::regclass AND indisreplident",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 21,
+                  "relname": "pg_index",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "indrelid",
+                              },
+                            },
+                          ],
+                          "location": 36,
+                        },
+                      },
+                      "location": 45,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "TypeCast": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 47,
+                              "sval": {
+                                "sval": "test_replica_identity",
+                              },
+                            },
+                          },
+                          "location": 70,
+                          "typeName": {
+                            "location": 72,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "regclass",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "indisreplident",
+                          },
+                        },
+                      ],
+                      "location": 85,
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 81,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 68 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY DEFAULT",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "d",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 72 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY FULL",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "f",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 75 1`] = `
+[
+  "ALTER TABLE test_replica_identity REPLICA IDENTITY NOTHING",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ReplicaIdentityStmt": {
+                      "identity_type": "n",
+                    },
+                  },
+                  "subtype": "AT_ReplicaIdentity",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`replica_identity.sql > line 83 1`] = `
+[
+  "CREATE TABLE test_replica_identity2 (id int UNIQUE NOT NULL)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_replica_identity2",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_UNIQUE",
+                        "location": 44,
+                      },
+                    },
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 51,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 37,
+                  "typeName": {
+                    "location": 40,
+                    "names": [
                       {
                         "String": {
-                          "sval": "id",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
-                    "location": 47,
+                    "typemod": -1,
                   },
                 },
-                "subtype": "AT_AddConstraint",
               },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "location": 18,
-            "relname": "test_replica_identity4",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "ReplicaIdentityStmt": {
-                    "identity_type": "i",
-                    "name": "test_replica_identity4_pkey",
+exports[`replica_identity.sql > line 86 1`] = `
+[
+  "ALTER TABLE test_replica_identity2 ALTER COLUMN id TYPE bigint",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ColumnDef": {
+                      "location": 48,
+                      "typeName": {
+                        "location": 56,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
                   },
+                  "name": "id",
+                  "subtype": "AT_AlterColumnType",
                 },
-                "subtype": "AT_ReplicaIdentity",
               },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity2",
+              "relpersistence": "p",
             },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "location": 18,
-            "relname": "test_replica_identity4",
-            "relpersistence": "p",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 113 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "Constraint": {
-                    "conname": "test_replica_identity4_1_pkey",
-                    "contype": "CONSTR_PRIMARY",
-                    "keys": [
+exports[`replica_identity.sql > line 90 1`] = `
+[
+  "CREATE TABLE test_replica_identity3 (id int NOT NULL)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_replica_identity3",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 44,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 37,
+                  "typeName": {
+                    "location": 40,
+                    "names": [
                       {
                         "String": {
-                          "sval": "id",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
-                    "location": 49,
+                    "typemod": -1,
                   },
                 },
-                "subtype": "AT_AddConstraint",
               },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "location": 18,
-            "relname": "test_replica_identity4_1",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 115 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 118 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`replica_identity.sql > line 121 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "test_replica_identity2",
+exports[`replica_identity.sql > line 94 1`] = `
+[
+  "ALTER TABLE test_replica_identity3 ALTER COLUMN id TYPE bigint",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "ColumnDef": {
+                      "location": 48,
+                      "typeName": {
+                        "location": 56,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
                     },
                   },
-                ],
+                  "name": "id",
+                  "subtype": "AT_AlterColumnType",
+                },
               },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity3",
+              "relpersistence": "p",
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 122 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "test_replica_identity3",
-                    },
-                  },
-                ],
+exports[`replica_identity.sql > line 99 1`] = `
+[
+  "ALTER TABLE test_replica_identity3 ALTER COLUMN id DROP NOT NULL",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "name": "id",
+                  "subtype": "AT_DropNotNull",
+                },
               },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity3",
+              "relpersistence": "p",
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 123 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "test_replica_identity4",
-                    },
+exports[`replica_identity.sql > line 105 1`] = `
+[
+  "CREATE TABLE test_replica_identity4(id integer NOT NULL) PARTITION BY LIST (id)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "partspec": {
+              "location": 57,
+              "partParams": [
+                {
+                  "PartitionElem": {
+                    "location": 76,
+                    "name": "id",
                   },
-                ],
-              },
+                },
+              ],
+              "strategy": "PARTITION_STRATEGY_LIST",
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test_replica_identity4",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "constraints": [
+                    {
+                      "Constraint": {
+                        "contype": "CONSTR_NOTNULL",
+                        "location": 47,
+                      },
+                    },
+                  ],
+                  "is_local": true,
+                  "location": 36,
+                  "typeName": {
+                    "location": 39,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`replica_identity.sql > line 124 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "test_replica_identity_othertable",
+exports[`replica_identity.sql > line 116 1`] = `
+[
+  "ALTER INDEX test_replica_identity4_pkey
+  ATTACH PARTITION test_replica_identity4_1_pkey",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "PartitionCmd": {
+                      "name": {
+                        "inh": true,
+                        "location": 59,
+                        "relname": "test_replica_identity4_1_pkey",
+                        "relpersistence": "p",
+                      },
                     },
                   },
-                ],
+                  "subtype": "AT_AttachPartition",
+                },
               },
+            ],
+            "objtype": "OBJECT_INDEX",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "test_replica_identity4_pkey",
+              "relpersistence": "p",
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

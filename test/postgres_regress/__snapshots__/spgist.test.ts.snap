@@ -1,1839 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`spgist.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 151,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 168,
-                "typeName": {
-                  "location": 171,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
+exports[`spgist.sql > line 12 1`] = `
+[
+  "insert into spgist_point_tbl (id, p)
+select g, point(g*10, g*10) from generate_series(1, 10) g",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "cols": [
+              {
+                "ResTarget": {
+                  "location": 30,
+                  "name": "id",
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "colname": "p",
-                "is_local": true,
-                "location": 177,
-                "typeName": {
-                  "location": 179,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "point",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
+              {
+                "ResTarget": {
+                  "location": 34,
+                  "name": "p",
                 },
               },
+            ],
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_point_tbl",
+              "relpersistence": "p",
             },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_point_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "p",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 75,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 73,
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 142,
-                "name": "id",
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 146,
-                "name": "p",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 124,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "g",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 198,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 201,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 182,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 156,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "g",
-                            },
-                          },
-                        ],
-                        "location": 156,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 159,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "g",
-                                      },
-                                    },
-                                  ],
-                                  "location": 165,
-                                },
-                              },
-                              "location": 166,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "*",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 10,
-                                  },
-                                  "location": 167,
-                                },
-                              },
-                            },
-                          },
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "g",
-                                      },
-                                    },
-                                  ],
-                                  "location": 171,
-                                },
-                              },
-                              "location": 172,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "*",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 10,
-                                  },
-                                  "location": 173,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "point",
-                            },
-                          },
-                        ],
-                        "location": 159,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeleteStmt": {
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "id",
-                      },
-                    },
-                  ],
-                  "location": 36,
-                },
-              },
-              "location": 39,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 5,
-                  },
-                  "location": 41,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 8,
-                  "relname": "spgist_point_tbl",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 90,
-                "name": "id",
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 94,
-                "name": "p",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 72,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "g",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 151,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10000,
-                                      },
-                                      "location": 154,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 135,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 104,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "g",
-                            },
-                          },
-                        ],
-                        "location": 104,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 112,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "g",
-                                      },
-                                    },
-                                  ],
-                                  "location": 118,
-                                },
-                              },
-                              "location": 119,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "*",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 10,
-                                  },
-                                  "location": 120,
-                                },
-                              },
-                            },
-                          },
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "g",
-                                      },
-                                    },
-                                  ],
-                                  "location": 124,
-                                },
-                              },
-                              "location": 125,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "*",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 10,
-                                  },
-                                  "location": 126,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "point",
-                            },
-                          },
-                        ],
-                        "location": 112,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "name": "id",
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 35,
-                "name": "p",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "g",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 98,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10000,
-                                      },
-                                      "location": 101,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 82,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 45,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "g",
-                                },
-                              },
-                            ],
-                            "location": 45,
-                          },
-                        },
-                        "location": 46,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "+",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 100000,
-                            },
-                            "location": 47,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 55,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "g",
-                                          },
-                                        },
-                                      ],
-                                      "location": 61,
-                                    },
-                                  },
-                                  "location": 62,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "*",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 63,
-                                    },
-                                  },
-                                },
-                              },
-                              "location": 65,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "+",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 1,
-                                  },
-                                  "location": 66,
-                                },
-                              },
-                            },
-                          },
-                          {
-                            "A_Expr": {
-                              "kind": "AEXPR_OP",
-                              "lexpr": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "g",
-                                          },
-                                        },
-                                      ],
-                                      "location": 69,
-                                    },
-                                  },
-                                  "location": 70,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "*",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 71,
-                                    },
-                                  },
-                                },
-                              },
-                              "location": 73,
-                              "name": [
-                                {
-                                  "String": {
-                                    "sval": "+",
-                                  },
-                                },
-                              ],
-                              "rexpr": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 1,
-                                  },
-                                  "location": 74,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "point",
-                            },
-                          },
-                        ],
-                        "location": 55,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeleteStmt": {
-          "relation": {
-            "inh": true,
-            "location": 78,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "id",
-                          },
-                        },
-                      ],
-                      "location": 101,
-                    },
-                  },
-                  "location": 104,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "%",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 2,
-                      },
-                      "location": 106,
-                    },
-                  },
-                },
-              },
-              "location": 108,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 110,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DeleteStmt": {
-          "relation": {
-            "inh": true,
-            "location": 188,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "id",
-                      },
-                    },
-                  ],
-                  "location": 211,
-                },
-              },
-              "location": 214,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10000,
-                  },
-                  "location": 216,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "spgist_point_tbl",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 154,
-            "relname": "spgist_box_tbl",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 169,
-                "typeName": {
-                  "location": 172,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 180,
-                "typeName": {
-                  "location": 182,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "box",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 28,
-                "name": "b",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "spgist_box_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "i",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 92,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 100,
-                                      },
-                                      "location": 94,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 98,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 76,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "j",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 127,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 100,
-                                      },
-                                      "location": 129,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 133,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 111,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "s",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 162,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 164,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 146,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 38,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "FuncCall": {
-                              "args": [
-                                {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "i",
-                                        },
-                                      },
-                                    ],
-                                    "location": 48,
-                                  },
-                                },
-                                {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "j",
-                                        },
-                                      },
-                                    ],
-                                    "location": 50,
-                                  },
-                                },
-                              ],
-                              "funcformat": "COERCE_EXPLICIT_CALL",
-                              "funcname": [
-                                {
-                                  "String": {
-                                    "sval": "point",
-                                  },
-                                },
-                              ],
-                              "location": 42,
-                            },
-                          },
-                          {
-                            "FuncCall": {
-                              "args": [
-                                {
-                                  "A_Expr": {
-                                    "kind": "AEXPR_OP",
-                                    "lexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "i",
-                                            },
-                                          },
-                                        ],
-                                        "location": 59,
-                                      },
-                                    },
-                                    "location": 60,
-                                    "name": [
-                                      {
-                                        "String": {
-                                          "sval": "+",
-                                        },
-                                      },
-                                    ],
-                                    "rexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "s",
-                                            },
-                                          },
-                                        ],
-                                        "location": 61,
-                                      },
-                                    },
-                                  },
-                                },
-                                {
-                                  "A_Expr": {
-                                    "kind": "AEXPR_OP",
-                                    "lexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "j",
-                                            },
-                                          },
-                                        ],
-                                        "location": 63,
-                                      },
-                                    },
-                                    "location": 64,
-                                    "name": [
-                                      {
-                                        "String": {
-                                          "sval": "+",
-                                        },
-                                      },
-                                    ],
-                                    "rexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "s",
-                                            },
-                                          },
-                                        ],
-                                        "location": 65,
-                                      },
-                                    },
-                                  },
-                                },
-                              ],
-                              "funcformat": "COERCE_EXPLICIT_CALL",
-                              "funcname": [
-                                {
-                                  "String": {
-                                    "sval": "point",
-                                  },
-                                },
-                              ],
-                              "location": 53,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "box",
-                            },
-                          },
-                        ],
-                        "location": 38,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_box_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "b",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 32,
-            "relname": "spgist_box_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "v",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "p",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 40,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 42,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "point",
-                                    },
-                                  },
-                                ],
-                                "location": 34,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 8,
-                                      },
-                                      "location": 53,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 8,
-                                      },
-                                      "location": 55,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "point",
-                                    },
-                                  },
-                                ],
-                                "location": 47,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 12,
-                                      },
-                                      "location": 66,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 12,
-                                      },
-                                      "location": 69,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "point",
-                                    },
-                                  },
-                                ],
-                                "location": 60,
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "SubLink": {
-              "location": 87,
-              "subLinkType": "EXISTS_SUBLINK",
-              "subselect": {
-                "SelectStmt": {
-                  "fromClause": [
-                    {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "b",
-                        },
-                        "inh": true,
-                        "location": 108,
-                        "relname": "spgist_box_tbl",
-                        "relpersistence": "p",
-                      },
-                    },
-                  ],
-                  "limitOption": "LIMIT_OPTION_DEFAULT",
-                  "op": "SETOP_NONE",
-                  "targetList": [
-                    {
-                      "ResTarget": {
-                        "location": 101,
-                        "val": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "A_Star": {},
-                              },
-                            ],
-                            "location": 101,
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "whereClause": {
-                    "A_Expr": {
-                      "kind": "AEXPR_OP",
-                      "lexpr": {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "b",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "b",
-                              },
-                            },
-                          ],
-                          "location": 131,
-                        },
-                      },
-                      "location": 135,
-                      "name": [
-                        {
-                          "String": {
-                            "sval": "&&",
-                          },
-                        },
-                      ],
-                      "rexpr": {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "v",
-                                    },
-                                  },
-                                  {
-                                    "String": {
-                                      "sval": "p",
-                                    },
-                                  },
-                                ],
-                                "location": 142,
-                              },
-                            },
-                            {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "v",
-                                    },
-                                  },
-                                  {
-                                    "String": {
-                                      "sval": "p",
-                                    },
-                                  },
-                                ],
-                                "location": 146,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "box",
-                              },
-                            },
-                          ],
-                          "location": 138,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 211,
-            "relname": "spgist_text_tbl",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 227,
-                "typeName": {
-                  "location": 230,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "t",
-                "is_local": true,
-                "location": 236,
-                "typeName": {
-                  "location": 238,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_text_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "t",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "spgist_text_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "name": "id",
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 35,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "spgist_text_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "all": true,
-              "larg": {
+            "selectStmt": {
+              "SelectStmt": {
                 "fromClause": [
                   {
                     "RangeFunction": {
@@ -1852,15 +50,15 @@ exports[`spgist.sql > line 55 1`] = `
                                         "ival": {
                                           "ival": 1,
                                         },
-                                        "location": 98,
+                                        "location": 86,
                                       },
                                     },
                                     {
                                       "A_Const": {
                                         "ival": {
-                                          "ival": 10000,
+                                          "ival": 10,
                                         },
-                                        "location": 101,
+                                        "location": 89,
                                       },
                                     },
                                   ],
@@ -1872,7 +70,7 @@ exports[`spgist.sql > line 55 1`] = `
                                       },
                                     },
                                   ],
-                                  "location": 82,
+                                  "location": 70,
                                 },
                               },
                               {},
@@ -1888,7 +86,7 @@ exports[`spgist.sql > line 55 1`] = `
                 "targetList": [
                   {
                     "ResTarget": {
-                      "location": 45,
+                      "location": 44,
                       "val": {
                         "ColumnRef": {
                           "fields": [
@@ -1898,14 +96,1566 @@ exports[`spgist.sql > line 55 1`] = `
                               },
                             },
                           ],
-                          "location": 45,
+                          "location": 44,
                         },
                       },
                     },
                   },
                   {
                     "ResTarget": {
-                      "location": 48,
+                      "location": 47,
+                      "val": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "g",
+                                        },
+                                      },
+                                    ],
+                                    "location": 53,
+                                  },
+                                },
+                                "location": 54,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "*",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 55,
+                                  },
+                                },
+                              },
+                            },
+                            {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "g",
+                                        },
+                                      },
+                                    ],
+                                    "location": 59,
+                                  },
+                                },
+                                "location": 60,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "*",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 61,
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "point",
+                              },
+                            },
+                          ],
+                          "location": 47,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 21 1`] = `
+[
+  "select g+100000, point(g*10+1, g*10+1) from generate_series(1, 10000) g",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "g",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 60,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10000,
+                                    },
+                                    "location": 63,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 44,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "g",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 8,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "+",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 100000,
+                          },
+                          "location": 9,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 17,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "g",
+                                        },
+                                      },
+                                    ],
+                                    "location": 23,
+                                  },
+                                },
+                                "location": 24,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "*",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 25,
+                                  },
+                                },
+                              },
+                            },
+                            "location": 27,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "+",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 1,
+                                },
+                                "location": 28,
+                              },
+                            },
+                          },
+                        },
+                        {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "g",
+                                        },
+                                      },
+                                    ],
+                                    "location": 31,
+                                  },
+                                },
+                                "location": 32,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "*",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 33,
+                                  },
+                                },
+                              },
+                            },
+                            "location": 35,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "+",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "ival": {
+                                  "ival": 1,
+                                },
+                                "location": 36,
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "point",
+                          },
+                        },
+                      ],
+                      "location": 17,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 24 1`] = `
+[
+  "delete from spgist_point_tbl where id % 2 = 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DeleteStmt": {
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_point_tbl",
+              "relpersistence": "p",
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "id",
+                            },
+                          },
+                        ],
+                        "location": 35,
+                      },
+                    },
+                    "location": 38,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "%",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 2,
+                        },
+                        "location": 40,
+                      },
+                    },
+                  },
+                },
+                "location": 42,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1,
+                    },
+                    "location": 44,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 29 1`] = `
+[
+  "delete from spgist_point_tbl where id < 10000",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DeleteStmt": {
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_point_tbl",
+              "relpersistence": "p",
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "id",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+                "location": 38,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 10000,
+                    },
+                    "location": 40,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 31 1`] = `
+[
+  "vacuum spgist_point_tbl",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VacuumStmt": {
+            "is_vacuumcmd": true,
+            "rels": [
+              {
+                "VacuumRelation": {
+                  "relation": {
+                    "inh": true,
+                    "location": 7,
+                    "relname": "spgist_point_tbl",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 39 1`] = `
+[
+  "select box(point(i,j),point(i+s,j+s))
+  from generate_series(1,100,5) i,
+       generate_series(1,100,5) j,
+       generate_series(1,10) s",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "i",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 61,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 100,
+                                    },
+                                    "location": 63,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 5,
+                                    },
+                                    "location": 67,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 45,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "j",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 96,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 100,
+                                    },
+                                    "location": 98,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 5,
+                                    },
+                                    "location": 102,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 80,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "s",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 131,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 133,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 115,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "i",
+                                      },
+                                    },
+                                  ],
+                                  "location": 17,
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "j",
+                                      },
+                                    },
+                                  ],
+                                  "location": 19,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "point",
+                                },
+                              },
+                            ],
+                            "location": 11,
+                          },
+                        },
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "i",
+                                          },
+                                        },
+                                      ],
+                                      "location": 28,
+                                    },
+                                  },
+                                  "location": 29,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "+",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "s",
+                                          },
+                                        },
+                                      ],
+                                      "location": 30,
+                                    },
+                                  },
+                                },
+                              },
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "j",
+                                          },
+                                        },
+                                      ],
+                                      "location": 32,
+                                    },
+                                  },
+                                  "location": 33,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "+",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "s",
+                                          },
+                                        },
+                                      ],
+                                      "location": 34,
+                                    },
+                                  },
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "point",
+                                },
+                              },
+                            ],
+                            "location": 22,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "box",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 45 1`] = `
+[
+  "select count(*)
+  from (values (point(5,5)),(point(8,8)),(point(12,12))) v(p)
+ where exists(select * from spgist_box_tbl b where b.b && box(v.p,v.p))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "v",
+                    "colnames": [
+                      {
+                        "String": {
+                          "sval": "p",
+                        },
+                      },
+                    ],
+                  },
+                  "subquery": {
+                    "SelectStmt": {
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "valuesLists": [
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "FuncCall": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 5,
+                                        },
+                                        "location": 38,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 5,
+                                        },
+                                        "location": 40,
+                                      },
+                                    },
+                                  ],
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "point",
+                                      },
+                                    },
+                                  ],
+                                  "location": 32,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "FuncCall": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 8,
+                                        },
+                                        "location": 51,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 8,
+                                        },
+                                        "location": 53,
+                                      },
+                                    },
+                                  ],
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "point",
+                                      },
+                                    },
+                                  ],
+                                  "location": 45,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "FuncCall": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 12,
+                                        },
+                                        "location": 64,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 12,
+                                        },
+                                        "location": 67,
+                                      },
+                                    },
+                                  ],
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "point",
+                                      },
+                                    },
+                                  ],
+                                  "location": 58,
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "SubLink": {
+                "location": 85,
+                "subLinkType": "EXISTS_SUBLINK",
+                "subselect": {
+                  "SelectStmt": {
+                    "fromClause": [
+                      {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "b",
+                          },
+                          "inh": true,
+                          "location": 106,
+                          "relname": "spgist_box_tbl",
+                          "relpersistence": "p",
+                        },
+                      },
+                    ],
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "targetList": [
+                      {
+                        "ResTarget": {
+                          "location": 99,
+                          "val": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "A_Star": {},
+                                },
+                              ],
+                              "location": 99,
+                            },
+                          },
+                        },
+                      },
+                    ],
+                    "whereClause": {
+                      "A_Expr": {
+                        "kind": "AEXPR_OP",
+                        "lexpr": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "b",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "b",
+                                },
+                              },
+                            ],
+                            "location": 129,
+                          },
+                        },
+                        "location": 133,
+                        "name": [
+                          {
+                            "String": {
+                              "sval": "&&",
+                            },
+                          },
+                        ],
+                        "rexpr": {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "v",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "p",
+                                      },
+                                    },
+                                  ],
+                                  "location": 140,
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "v",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "p",
+                                      },
+                                    },
+                                  ],
+                                  "location": 144,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "box",
+                                },
+                              },
+                            ],
+                            "location": 136,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 56 1`] = `
+[
+  "insert into spgist_text_tbl (id, t)
+select g, 'f' || repeat('o', 100) || g from generate_series(1, 10000) g
+union all
+select g, 'baaaaaaaaaaaaaar' || g from generate_series(1, 1000) g",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "cols": [
+              {
+                "ResTarget": {
+                  "location": 29,
+                  "name": "id",
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 33,
+                  "name": "t",
+                },
+              },
+            ],
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_text_tbl",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "all": true,
+                "larg": {
+                  "fromClause": [
+                    {
+                      "RangeFunction": {
+                        "alias": {
+                          "aliasname": "g",
+                        },
+                        "functions": [
+                          {
+                            "List": {
+                              "items": [
+                                {
+                                  "FuncCall": {
+                                    "args": [
+                                      {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1,
+                                          },
+                                          "location": 96,
+                                        },
+                                      },
+                                      {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 10000,
+                                          },
+                                          "location": 99,
+                                        },
+                                      },
+                                    ],
+                                    "funcformat": "COERCE_EXPLICIT_CALL",
+                                    "funcname": [
+                                      {
+                                        "String": {
+                                          "sval": "generate_series",
+                                        },
+                                      },
+                                    ],
+                                    "location": 80,
+                                  },
+                                },
+                                {},
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 43,
+                        "val": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "g",
+                                },
+                              },
+                            ],
+                            "location": 43,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 46,
+                        "val": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "A_Expr": {
+                                "kind": "AEXPR_OP",
+                                "lexpr": {
+                                  "A_Const": {
+                                    "location": 46,
+                                    "sval": {
+                                      "sval": "f",
+                                    },
+                                  },
+                                },
+                                "location": 50,
+                                "name": [
+                                  {
+                                    "String": {
+                                      "sval": "||",
+                                    },
+                                  },
+                                ],
+                                "rexpr": {
+                                  "FuncCall": {
+                                    "args": [
+                                      {
+                                        "A_Const": {
+                                          "location": 60,
+                                          "sval": {
+                                            "sval": "o",
+                                          },
+                                        },
+                                      },
+                                      {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 100,
+                                          },
+                                          "location": 65,
+                                        },
+                                      },
+                                    ],
+                                    "funcformat": "COERCE_EXPLICIT_CALL",
+                                    "funcname": [
+                                      {
+                                        "String": {
+                                          "sval": "repeat",
+                                        },
+                                      },
+                                    ],
+                                    "location": 53,
+                                  },
+                                },
+                              },
+                            },
+                            "location": 70,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "||",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "g",
+                                    },
+                                  },
+                                ],
+                                "location": 73,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_UNION",
+                "rarg": {
+                  "fromClause": [
+                    {
+                      "RangeFunction": {
+                        "alias": {
+                          "aliasname": "g",
+                        },
+                        "functions": [
+                          {
+                            "List": {
+                              "items": [
+                                {
+                                  "FuncCall": {
+                                    "args": [
+                                      {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1,
+                                          },
+                                          "location": 173,
+                                        },
+                                      },
+                                      {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1000,
+                                          },
+                                          "location": 176,
+                                        },
+                                      },
+                                    ],
+                                    "funcformat": "COERCE_EXPLICIT_CALL",
+                                    "funcname": [
+                                      {
+                                        "String": {
+                                          "sval": "generate_series",
+                                        },
+                                      },
+                                    ],
+                                    "location": 157,
+                                  },
+                                },
+                                {},
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                  "limitOption": "LIMIT_OPTION_DEFAULT",
+                  "op": "SETOP_NONE",
+                  "targetList": [
+                    {
+                      "ResTarget": {
+                        "location": 125,
+                        "val": {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "g",
+                                },
+                              },
+                            ],
+                            "location": 125,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      "ResTarget": {
+                        "location": 128,
+                        "val": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
+                              "A_Const": {
+                                "location": 128,
+                                "sval": {
+                                  "sval": "baaaaaaaaaaaaaar",
+                                },
+                              },
+                            },
+                            "location": 147,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "||",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "g",
+                                    },
+                                  },
+                                ],
+                                "location": 150,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 64 1`] = `
+[
+  "insert into spgist_text_tbl (id, t)
+select -g, 'f' || repeat('o', 100-g) || 'surprise' from generate_series(1, 100) g",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "cols": [
+              {
+                "ResTarget": {
+                  "location": 29,
+                  "name": "id",
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 33,
+                  "name": "t",
+                },
+              },
+            ],
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_text_tbl",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeFunction": {
+                      "alias": {
+                        "aliasname": "g",
+                      },
+                      "functions": [
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "FuncCall": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 1,
+                                        },
+                                        "location": 108,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 100,
+                                        },
+                                        "location": 111,
+                                      },
+                                    },
+                                  ],
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "generate_series",
+                                      },
+                                    },
+                                  ],
+                                  "location": 92,
+                                },
+                              },
+                              {},
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 43,
+                      "val": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "location": 43,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "-",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "g",
+                                  },
+                                },
+                              ],
+                              "location": 44,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 47,
                       "val": {
                         "A_Expr": {
                           "kind": "AEXPR_OP",
@@ -1914,13 +1664,13 @@ exports[`spgist.sql > line 55 1`] = `
                               "kind": "AEXPR_OP",
                               "lexpr": {
                                 "A_Const": {
-                                  "location": 48,
+                                  "location": 47,
                                   "sval": {
                                     "sval": "f",
                                   },
                                 },
                               },
-                              "location": 52,
+                              "location": 51,
                               "name": [
                                 {
                                   "String": {
@@ -1933,18 +1683,43 @@ exports[`spgist.sql > line 55 1`] = `
                                   "args": [
                                     {
                                       "A_Const": {
-                                        "location": 62,
+                                        "location": 61,
                                         "sval": {
                                           "sval": "o",
                                         },
                                       },
                                     },
                                     {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 100,
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "A_Const": {
+                                            "ival": {
+                                              "ival": 100,
+                                            },
+                                            "location": 66,
+                                          },
                                         },
-                                        "location": 67,
+                                        "location": 69,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "-",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "g",
+                                                },
+                                              },
+                                            ],
+                                            "location": 70,
+                                          },
+                                        },
                                       },
                                     },
                                   ],
@@ -1956,12 +1731,12 @@ exports[`spgist.sql > line 55 1`] = `
                                       },
                                     },
                                   ],
-                                  "location": 55,
+                                  "location": 54,
                                 },
                               },
                             },
                           },
-                          "location": 72,
+                          "location": 73,
                           "name": [
                             {
                               "String": {
@@ -1970,127 +1745,11 @@ exports[`spgist.sql > line 55 1`] = `
                             },
                           ],
                           "rexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "g",
-                                  },
-                                },
-                              ],
-                              "location": 75,
-                            },
-                          },
-                        },
-                      },
-                    },
-                  },
-                ],
-              },
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_UNION",
-              "rarg": {
-                "fromClause": [
-                  {
-                    "RangeFunction": {
-                      "alias": {
-                        "aliasname": "g",
-                      },
-                      "functions": [
-                        {
-                          "List": {
-                            "items": [
-                              {
-                                "FuncCall": {
-                                  "args": [
-                                    {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
-                                        },
-                                        "location": 175,
-                                      },
-                                    },
-                                    {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1000,
-                                        },
-                                        "location": 178,
-                                      },
-                                    },
-                                  ],
-                                  "funcformat": "COERCE_EXPLICIT_CALL",
-                                  "funcname": [
-                                    {
-                                      "String": {
-                                        "sval": "generate_series",
-                                      },
-                                    },
-                                  ],
-                                  "location": 159,
-                                },
-                              },
-                              {},
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                ],
-                "limitOption": "LIMIT_OPTION_DEFAULT",
-                "op": "SETOP_NONE",
-                "targetList": [
-                  {
-                    "ResTarget": {
-                      "location": 127,
-                      "val": {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "g",
-                              },
-                            },
-                          ],
-                          "location": 127,
-                        },
-                      },
-                    },
-                  },
-                  {
-                    "ResTarget": {
-                      "location": 130,
-                      "val": {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
                             "A_Const": {
-                              "location": 130,
+                              "location": 76,
                               "sval": {
-                                "sval": "baaaaaaaaaaaaaar",
+                                "sval": "surprise",
                               },
-                            },
-                          },
-                          "location": 149,
-                          "name": [
-                            {
-                              "String": {
-                                "sval": "||",
-                              },
-                            },
-                          ],
-                          "rexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "g",
-                                  },
-                                },
-                              ],
-                              "location": 152,
                             },
                           },
                         },
@@ -2103,1018 +1762,336 @@ exports[`spgist.sql > line 55 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`spgist.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 217,
-                "name": "id",
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 221,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 200,
-            "relname": "spgist_text_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "g",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 296,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 100,
-                                      },
-                                      "location": 299,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 280,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 231,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "location": 231,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "-",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "g",
-                                },
-                              },
-                            ],
-                            "location": 232,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 235,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "A_Expr": {
-                            "kind": "AEXPR_OP",
-                            "lexpr": {
-                              "A_Const": {
-                                "location": 235,
-                                "sval": {
-                                  "sval": "f",
-                                },
-                              },
-                            },
-                            "location": 239,
-                            "name": [
-                              {
-                                "String": {
-                                  "sval": "||",
-                                },
-                              },
-                            ],
-                            "rexpr": {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "location": 249,
-                                      "sval": {
-                                        "sval": "o",
-                                      },
-                                    },
-                                  },
-                                  {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "A_Const": {
-                                          "ival": {
-                                            "ival": 100,
-                                          },
-                                          "location": 254,
-                                        },
-                                      },
-                                      "location": 257,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "-",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "g",
-                                              },
-                                            },
-                                          ],
-                                          "location": 258,
-                                        },
-                                      },
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "repeat",
-                                    },
-                                  },
-                                ],
-                                "location": 242,
-                              },
-                            },
-                          },
-                        },
-                        "location": 261,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "||",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 264,
-                            "sval": {
-                              "sval": "surprise",
-                            },
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_point_idx2",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "p",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 9,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 114,
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 75,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_point_idx2",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "p",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Integer": {
-                    "ival": 101,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "fillfactor",
-                "location": 74,
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 35,
-            "relname": "spgist_point_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "def": {
-                  "List": {
-                    "items": [
-                      {
-                        "DefElem": {
-                          "arg": {
-                            "Integer": {
-                              "ival": 90,
-                            },
-                          },
-                          "defaction": "DEFELEM_UNSPEC",
-                          "defname": "fillfactor",
-                          "location": 75,
-                        },
-                      },
-                    ],
-                  },
-                },
-                "subtype": "AT_SetRelOptions",
-              },
-            },
-          ],
-          "objtype": "OBJECT_INDEX",
-          "relation": {
-            "inh": true,
-            "location": 53,
-            "relname": "spgist_point_idx",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ReindexStmt": {
-          "kind": "REINDEX_OBJECT_INDEX",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "spgist_point_idx",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 74 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateDomainStmt": {
-          "domainname": [
-            {
-              "String": {
-                "sval": "spgist_text",
-              },
-            },
-          ],
-          "typeName": {
-            "location": 59,
-            "names": [
+exports[`spgist.sql > line 68 1`] = `
+[
+  "create index spgist_point_idx2 on spgist_point_tbl using spgist(p) with (fillfactor = 9)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "spgist",
+            "idxname": "spgist_point_idx2",
+            "indexParams": [
               {
-                "String": {
-                  "sval": "pg_catalog",
-                },
-              },
-              {
-                "String": {
-                  "sval": "varchar",
+                "IndexElem": {
+                  "name": "p",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
                 },
               },
             ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "spgist_domain_tbl",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 33,
-                "typeName": {
-                  "location": 36,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "spgist_text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_domain_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "f1",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 35,
-            "relname": "spgist_domain_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "spgist_domain_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "fee",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 47,
-                          "sval": {
-                            "sval": "fi",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 55,
-                          "sval": {
-                            "sval": "fo",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 63,
-                          "sval": {
-                            "sval": "fum",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 10,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 35,
-                    "relname": "spgist_domain_tbl",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 28,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 28,
-                      },
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Integer": {
+                      "ival": 9,
                     },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "fillfactor",
+                  "location": 73,
                 },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
+              },
+            ],
+            "relation": {
+              "inh": true,
+              "location": 34,
+              "relname": "spgist_point_tbl",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 72 1`] = `
+[
+  "alter index spgist_point_idx set (fillfactor = 90)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "def": {
+                    "List": {
+                      "items": [
                         {
-                          "String": {
-                            "sval": "f1",
+                          "DefElem": {
+                            "arg": {
+                              "Integer": {
+                                "ival": 90,
+                              },
+                            },
+                            "defaction": "DEFELEM_UNSPEC",
+                            "defname": "fillfactor",
+                            "location": 34,
                           },
                         },
                       ],
-                      "location": 59,
                     },
                   },
-                  "location": 62,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 64,
-                      "sval": {
-                        "sval": "fo",
-                      },
-                    },
-                  },
+                  "subtype": "AT_SetRelOptions",
                 },
               },
+            ],
+            "objtype": "OBJECT_INDEX",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "spgist_point_idx",
+              "relpersistence": "p",
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`spgist.sql > line 82 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "spgist_domain_tbl",
-                "relpersistence": "p",
+exports[`spgist.sql > line 76 1`] = `
+[
+  "create domain spgist_text as varchar",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateDomainStmt": {
+            "domainname": [
+              {
+                "String": {
+                  "sval": "spgist_text",
+                },
               },
+            ],
+            "typeName": {
+              "location": 29,
+              "names": [
+                {
+                  "String": {
+                    "sval": "pg_catalog",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "varchar",
+                  },
+                },
+              ],
+              "typemod": -1,
             },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 81 1`] = `
+[
+  "select * from spgist_domain_tbl where f1 = 'fo'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "spgist_domain_tbl",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "f1",
-                      },
-                    },
-                  ],
-                  "location": 39,
-                },
-              },
-              "location": 42,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 44,
-                  "sval": {
-                    "sval": "fo",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 94,
-            "relname": "spgist_unlogged_tbl",
-            "relpersistence": "u",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 114,
-                "typeName": {
-                  "location": 117,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 125,
-                "typeName": {
-                  "location": 127,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "box",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 86 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "spgist",
-          "idxname": "spgist_unlogged_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "b",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 37,
-            "relname": "spgist_unlogged_tbl",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`spgist.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 33,
-                "name": "b",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "spgist_unlogged_tbl",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "i",
-                    },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 82,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 100,
-                                      },
-                                      "location": 84,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 88,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 66,
-                              },
-                            },
-                            {},
-                          ],
+                        "String": {
+                          "sval": "f1",
                         },
                       },
                     ],
+                    "location": 38,
                   },
                 },
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "j",
+                "location": 41,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
-                    "functions": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 117,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 119,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 5,
-                                      },
-                                      "location": 122,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 101,
-                              },
-                            },
-                            {},
-                          ],
-                        },
-                      },
-                    ],
                   },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
+                ],
+                "rexpr": {
+                  "A_Const": {
                     "location": 43,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
+                    "sval": {
+                      "sval": "fo",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 85 1`] = `
+[
+  "create unlogged table spgist_unlogged_tbl(id serial, b box)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 22,
+              "relname": "spgist_unlogged_tbl",
+              "relpersistence": "u",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "is_local": true,
+                  "location": 42,
+                  "typeName": {
+                    "location": 45,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "serial",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 53,
+                  "typeName": {
+                    "location": 55,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "box",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`spgist.sql > line 88 1`] = `
+[
+  "select box(point(i,j))
+  from generate_series(1,100,5) i,
+       generate_series(1,10,5) j",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "i",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
                           {
                             "FuncCall": {
                               "args": [
                                 {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "i",
-                                        },
-                                      },
-                                    ],
-                                    "location": 53,
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 46,
                                   },
                                 },
                                 {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "j",
-                                        },
-                                      },
-                                    ],
-                                    "location": 55,
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 100,
+                                    },
+                                    "location": 48,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 5,
+                                    },
+                                    "location": 52,
                                   },
                                 },
                               ],
@@ -3122,34 +2099,144 @@ exports[`spgist.sql > line 87 1`] = `
                               "funcname": [
                                 {
                                   "String": {
-                                    "sval": "point",
+                                    "sval": "generate_series",
                                   },
                                 },
                               ],
-                              "location": 47,
+                              "location": 30,
                             },
                           },
+                          {},
                         ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "box",
-                            },
-                          },
-                        ],
-                        "location": 43,
                       },
+                    },
+                  ],
+                },
+              },
+              {
+                "RangeFunction": {
+                  "alias": {
+                    "aliasname": "j",
+                  },
+                  "functions": [
+                    {
+                      "List": {
+                        "items": [
+                          {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 81,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 10,
+                                    },
+                                    "location": 83,
+                                  },
+                                },
+                                {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 5,
+                                    },
+                                    "location": 86,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "generate_series",
+                                  },
+                                },
+                              ],
+                              "location": 65,
+                            },
+                          },
+                          {},
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "FuncCall": {
+                            "args": [
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "i",
+                                      },
+                                    },
+                                  ],
+                                  "location": 17,
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "j",
+                                      },
+                                    },
+                                  ],
+                                  "location": 19,
+                                },
+                              },
+                            ],
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "point",
+                                },
+                              },
+                            ],
+                            "location": 11,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "box",
+                          },
+                        },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
-              ],
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

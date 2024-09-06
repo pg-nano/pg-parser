@@ -1,5844 +1,1315 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`temp.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 97,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 106,
-                "typeName": {
-                  "location": 110,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "i_temptest",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "col",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 29,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 20,
-            "relname": "temptest",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "tcol",
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 34,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "i_temptest",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "tcol",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 29,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "i_temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_INDEX",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "i_temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_INDEX",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 43,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 52,
-                "typeName": {
-                  "location": 56,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 20,
-            "relname": "temptest",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "tcol",
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 34,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "float8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "fval": {
-                            "fval": "2.1",
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 49,
-            "relname": "temptest",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 58,
-                "typeName": {
-                  "location": 62,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 49 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`temp.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 51,
-            "relname": "temptest",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 60,
-                "typeName": {
-                  "location": 64,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "expr": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 115,
-                          "sval": {
-                            "sval": "",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "bit_length",
-                        },
-                      },
-                    ],
-                    "location": 104,
-                  },
-                },
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 95,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 30,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 30,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTableAsStmt": {
-          "into": {
-            "colNames": [
+exports[`temp.sql > line 10 1`] = `
+[
+  "CREATE INDEX i_temptest ON temptest(col)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "idxname": "i_temptest",
+            "indexParams": [
               {
-                "String": {
-                  "sval": "col",
+                "IndexElem": {
+                  "name": "col",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
                 },
               },
             ],
-            "onCommit": "ONCOMMIT_DELETE_ROWS",
-            "rel": {
+            "relation": {
               "inh": true,
-              "location": 19,
-              "relname": "temptest",
-              "relpersistence": "t",
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-          "query": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 65,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 65,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 74 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 76 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 77 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 79 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temptest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 85 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DROP",
-          "relation": {
-            "inh": true,
-            "location": 20,
-            "relname": "temptest",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 89 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 30,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 90 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTableAsStmt": {
-          "into": {
-            "colNames": [
-              {
-                "String": {
-                  "sval": "col",
-                },
-              },
-            ],
-            "onCommit": "ONCOMMIT_DROP",
-            "rel": {
-              "inh": true,
-              "location": 19,
-              "relname": "temptest",
-              "relpersistence": "t",
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-          "query": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 58,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 58,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 101 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 103 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DoStmt": {
-          "args": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "
-begin
-  execute format($cmd$
-    CREATE TEMP TABLE temptest (col text CHECK (col < %L)) ON COMMIT DROP
-  $cmd$,
-    (SELECT string_agg(g.i::text || ':' || random()::text, '|')
-     FROM generate_series(1, 100) g(i)));
-end",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 4,
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 114 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 116 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 117 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 16,
-                "relname": "temptest",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 119 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 54,
-            "relname": "temptest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "is_local": true,
-                "location": 63,
-                "typeName": {
-                  "location": 67,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 123 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTableAsStmt": {
-          "into": {
-            "colNames": [
-              {
-                "String": {
-                  "sval": "col",
-                },
-              },
-            ],
-            "onCommit": "ONCOMMIT_DELETE_ROWS",
-            "rel": {
-              "inh": true,
-              "location": 14,
+              "location": 27,
               "relname": "temptest",
               "relpersistence": "p",
             },
           },
-          "objtype": "OBJECT_TABLE",
-          "query": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 60,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 60,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 124 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 127 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temptest1",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 37,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
+exports[`temp.sql > line 12 1`] = `
+[
+  "CREATE TEMP TABLE temptest(tcol int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "temptest",
+              "relpersistence": "t",
             },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 128 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temptest2",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_FOREIGN",
-                      "fk_del_action": "a",
-                      "fk_matchtype": "s",
-                      "fk_upd_action": "a",
-                      "initially_valid": true,
-                      "location": 37,
-                      "pktable": {
-                        "inh": true,
-                        "location": 48,
-                        "relname": "temptest1",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 130 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temptest1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 131 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temptest2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 132 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "temptest1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 134 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "temptest2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 135 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 137 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temptest3",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_PRIMARY",
-                      "location": 37,
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 138 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temptest4",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "col",
-                "constraints": [
-                  {
-                    "Constraint": {
-                      "contype": "CONSTR_FOREIGN",
-                      "fk_del_action": "a",
-                      "fk_matchtype": "s",
-                      "fk_upd_action": "a",
-                      "initially_valid": true,
-                      "location": 37,
-                      "pktable": {
-                        "inh": true,
-                        "location": 48,
-                        "relname": "temptest3",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                ],
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 139 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 140 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 79,
-            "relname": "whereami",
-            "relpersistence": "p",
-            "schemaname": "public",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 96,
-                "typeName": {
-                  "location": 99,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 144 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "whereami",
-            "relpersistence": "p",
-            "schemaname": "public",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 37,
-                          "sval": {
-                            "sval": "public",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 145 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 20,
-            "relname": "whereami",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f1",
-                "is_local": true,
-                "location": 30,
-                "typeName": {
-                  "location": 33,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 147 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "whereami",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "temp",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 148 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "public",
-              },
-            },
-            {
-              "String": {
-                "sval": "whoami",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "tcol",
+                  "is_local": true,
+                  "location": 27,
+                  "typeName": {
+                    "location": 32,
+                    "names": [
                       {
                         "String": {
-                          "sval": "select 'public'::text",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 49,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 78,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 42,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
                 },
               },
             ],
-            "typemod": -1,
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 151 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "pg_temp",
-              },
-            },
-            {
-              "String": {
-                "sval": "whoami",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "select 'temp'::text",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 50,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 77,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 43,
-            "names": [
+exports[`temp.sql > line 14 1`] = `
+[
+  "CREATE INDEX i_temptest ON temptest(tcol)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "idxname": "i_temptest",
+            "indexParams": [
               {
-                "String": {
-                  "sval": "text",
+                "IndexElem": {
+                  "name": "tcol",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
                 },
               },
             ],
-            "typemod": -1,
+            "relation": {
+              "inh": true,
+              "location": 27,
+              "relname": "temptest",
+              "relpersistence": "p",
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 154 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 85,
-                "relname": "whereami",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 78,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 78,
-                  },
+exports[`temp.sql > line 16 1`] = `
+[
+  "SELECT * FROM temptest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "temptest",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 157 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "whoami",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 158 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 93,
-                "sval": {
-                  "sval": "pg_temp",
-                },
-              },
-            },
-            {
-              "A_Const": {
-                "location": 102,
-                "sval": {
-                  "sval": "public",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 161 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "whereami",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 162 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "whoami",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 163 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 51,
-                "sval": {
-                  "sval": "public",
-                },
-              },
-            },
-            {
-              "A_Const": {
-                "location": 59,
-                "sval": {
-                  "sval": "pg_temp",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 166 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "whereami",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 167 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "whoami",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 168 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 62,
-                "val": {
-                  "FuncCall": {
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_temp",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "whoami",
-                        },
-                      },
-                    ],
-                    "location": 62,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 171 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "public",
+                      ],
+                      "location": 7,
                     },
                   },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 18 1`] = `
+[
+  "DROP INDEX i_temptest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "i_temptest",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_INDEX",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 20 1`] = `
+[
+  "DROP TABLE temptest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "temptest",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 32 1`] = `
+[
+  "INSERT INTO temptest VALUES (1)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "temptest",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
                   {
-                    "String": {
-                      "sval": "whereami",
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 29,
+                          },
+                        },
+                      ],
                     },
                   },
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 173 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 44,
-                "sval": {
-                  "sval": "pg_temp",
+exports[`temp.sql > line 34 1`] = `
+[
+  "CREATE TEMP TABLE temptest(tcol float)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "temptest",
+              "relpersistence": "t",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "tcol",
+                  "is_local": true,
+                  "location": 27,
+                  "typeName": {
+                    "location": 32,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "float8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "A_Const": {
-                "location": 53,
-                "sval": {
-                  "sval": "public",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 176 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateDomainStmt": {
-          "constraints": [
-            {
-              "Constraint": {
-                "contype": "CONSTR_CHECK",
-                "initially_valid": true,
-                "location": 40,
-                "raw_expr": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "value",
+exports[`temp.sql > line 59 1`] = `
+[
+  "CREATE INDEX ON temptest(bit_length(''))",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "IndexStmt": {
+            "accessMethod": "btree",
+            "indexParams": [
+              {
+                "IndexElem": {
+                  "expr": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 36,
+                            "sval": {
+                              "sval": "",
                             },
                           },
-                        ],
-                        "location": 47,
-                      },
-                    },
-                    "location": 53,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 56,
-                        "sval": {
-                          "sval": "",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "bit_length",
+                          },
                         },
-                      },
+                      ],
+                      "location": 25,
                     },
                   },
-                },
-              },
-            },
-          ],
-          "domainname": [
-            {
-              "String": {
-                "sval": "pg_temp",
-              },
-            },
-            {
-              "String": {
-                "sval": "nonempty",
-              },
-            },
-          ],
-          "typeName": {
-            "location": 35,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
+                  "nulls_ordering": "SORTBY_NULLS_DEFAULT",
+                  "ordering": "SORTBY_DEFAULT",
                 },
               },
             ],
-            "typemod": -1,
+            "relation": {
+              "inh": true,
+              "location": 16,
+              "relname": "temptest",
+              "relpersistence": "p",
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 177 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 75,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 84,
-                          "sval": {
-                            "sval": "",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+exports[`temp.sql > line 61 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 86 1`] = `
+[
+  "CREATE TEMP TABLE temptest(col int) ON COMMIT DROP",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_DROP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "temptest",
+              "relpersistence": "t",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "col",
+                  "is_local": true,
+                  "location": 27,
+                  "typeName": {
+                    "location": 31,
+                    "names": [
                       {
                         "String": {
-                          "sval": "nonempty",
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
-                    "location": 75,
+                    "typemod": -1,
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 179 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "FuncCall": {
-                    "args": [
+exports[`temp.sql > line 146 1`] = `
+[
+  "create temp table whereami (f1 text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "whereami",
+              "relpersistence": "t",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f1",
+                  "is_local": true,
+                  "location": 28,
+                  "typeName": {
+                    "location": 31,
+                    "names": [
                       {
-                        "A_Const": {
-                          "location": 25,
-                          "sval": {
-                            "sval": "",
-                          },
+                        "String": {
+                          "sval": "text",
                         },
                       },
                     ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_temp",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "nonempty",
-                        },
-                      },
-                    ],
-                    "location": 8,
+                    "typemod": -1,
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 180 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 49,
-                "val": {
-                  "TypeCast": {
-                    "arg": {
-                      "A_Const": {
-                        "location": 49,
-                        "sval": {
-                          "sval": "",
+exports[`temp.sql > line 149 1`] = `
+[
+  "create function public.whoami() returns text
+  as $$select 'public'::text$$ language sql",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "public",
+                },
+              },
+              {
+                "String": {
+                  "sval": "whoami",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "select 'public'::text",
+                          },
                         },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 47,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 76,
+                },
+              },
+            ],
+            "returnType": {
+              "location": 40,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 152 1`] = `
+[
+  "create function pg_temp.whoami() returns text
+  as $$select 'temp'::text$$ language sql",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "pg_temp",
+                },
+              },
+              {
+                "String": {
+                  "sval": "whoami",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "select 'temp'::text",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 48,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 75,
+                },
+              },
+            ],
+            "returnType": {
+              "location": 41,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 156 1`] = `
+[
+  "select * from whereami",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "whereami",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 160 1`] = `
+[
+  "set search_path = pg_temp, public",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 18,
+                  "sval": {
+                    "sval": "pg_temp",
+                  },
+                },
+              },
+              {
+                "A_Const": {
+                  "location": 27,
+                  "sval": {
+                    "sval": "public",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "search_path",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 170 1`] = `
+[
+  "select pg_temp.whoami()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_temp",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "whoami",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 172 1`] = `
+[
+  "drop table public.whereami",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "public",
                       },
                     },
-                    "location": 51,
-                    "typeName": {
-                      "location": 53,
-                      "names": [
+                    {
+                      "String": {
+                        "sval": "whereami",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 178 1`] = `
+[
+  "select nonempty('')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 16,
+                            "sval": {
+                              "sval": "",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
                         {
                           "String": {
                             "sval": "nonempty",
                           },
                         },
                       ],
-                      "typemod": -1,
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 182 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 184 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 188 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "partspec": {
-            "location": 50,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 69,
-                  "name": "a",
-                },
-              },
             ],
-            "strategy": "PARTITION_STRATEGY_LIST",
           },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 41,
-                "typeName": {
-                  "location": 43,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 190 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 57,
-                "relname": "temp_parted_oncommit",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "partbound": {
-            "listdatums": [
+exports[`temp.sql > line 181 1`] = `
+[
+  "select ''::nonempty",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
               {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 95,
-                },
-              },
-            ],
-            "location": 91,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_1",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 193 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_parted_oncommit",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "TypeCast": {
+                      "arg": {
                         "A_Const": {
-                          "ival": {
-                            "ival": 1,
+                          "location": 7,
+                          "sval": {
+                            "sval": "",
                           },
-                          "location": 42,
                         },
                       },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 194 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 195 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 64,
-                "relname": "temp_parted_oncommit",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 57,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 57,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 197 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temp_parted_oncommit",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 198 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 203 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DROP",
-          "partspec": {
-            "location": 55,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 74,
-                  "name": "a",
-                },
-              },
-            ],
-            "strategy": "PARTITION_STRATEGY_LIST",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 46,
-                "typeName": {
-                  "location": 48,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 205 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 61,
-                "relname": "temp_parted_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "partbound": {
-            "listdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 104,
-                },
-              },
-            ],
-            "location": 100,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test1",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 208 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 61,
-                "relname": "temp_parted_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DROP",
-          "partbound": {
-            "listdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 104,
-                },
-              },
-            ],
-            "location": 100,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test2",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 211 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_parted_oncommit_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 47,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 52,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 212 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 213 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 58,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 45,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 45,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relname",
-                      },
-                    },
-                  ],
-                  "location": 73,
-                },
-              },
-              "location": 81,
-              "name": [
-                {
-                  "String": {
-                    "sval": "~",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 83,
-                  "sval": {
-                    "sval": "^temp_parted_oncommit_test",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 215 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 218 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "partspec": {
-            "location": 55,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 74,
-                  "name": "a",
-                },
-              },
-            ],
-            "strategy": "PARTITION_STRATEGY_LIST",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 46,
-                "typeName": {
-                  "location": 48,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 220 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 61,
-                "relname": "temp_parted_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_PRESERVE_ROWS",
-          "partbound": {
-            "listdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1,
-                  },
-                  "location": 104,
-                },
-              },
-            ],
-            "location": 100,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test1",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 223 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 61,
-                "relname": "temp_parted_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DROP",
-          "partbound": {
-            "listdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 2,
-                  },
-                  "location": 104,
-                },
-              },
-            ],
-            "location": 100,
-            "strategy": "l",
-          },
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_parted_oncommit_test2",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 226 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_parted_oncommit_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 47,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 52,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 227 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 228 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 96,
-                "relname": "temp_parted_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 89,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 89,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 231 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 59,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 124,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 46,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 46,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relname",
-                      },
-                    },
-                  ],
-                  "location": 74,
-                },
-              },
-              "location": 82,
-              "name": [
-                {
-                  "String": {
-                    "sval": "~",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 84,
-                  "sval": {
-                    "sval": "^temp_parted_oncommit_test",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 234 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temp_parted_oncommit_test",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 235 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 239 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DROP",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_inh_oncommit_test",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 43,
-                "typeName": {
-                  "location": 45,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 240 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 57,
-                "relname": "temp_inh_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_inh_oncommit_test1",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 242 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_inh_oncommit_test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 45,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 243 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 244 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 57,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 44,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 44,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relname",
-                      },
-                    },
-                  ],
-                  "location": 72,
-                },
-              },
-              "location": 80,
-              "name": [
-                {
-                  "String": {
-                    "sval": "~",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 82,
-                  "sval": {
-                    "sval": "^temp_inh_oncommit_test",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 246 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 248 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_DELETE_ROWS",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_inh_oncommit_test",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 43,
-                "typeName": {
-                  "location": 45,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 249 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 57,
-                "relname": "temp_inh_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_DROP",
-          "relation": {
-            "inh": true,
-            "location": 19,
-            "relname": "temp_inh_oncommit_test1",
-            "relpersistence": "t",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 251 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_inh_oncommit_test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 45,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 252 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "temp_inh_oncommit_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 44,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 253 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_COMMIT",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 254 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "temp_inh_oncommit_test",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 255 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 45,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 32,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 32,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "relname",
-                      },
-                    },
-                  ],
-                  "location": 60,
-                },
-              },
-              "location": 68,
-              "name": [
-                {
-                  "String": {
-                    "sval": "~",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 70,
-                  "sval": {
-                    "sval": "^temp_inh_oncommit_test",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 257 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "temp_inh_oncommit_test",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 258 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 266 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "pg_temp",
-              },
-            },
-            {
-              "String": {
-                "sval": "twophase_func",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " select '2pc_func'::text ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 54,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 89,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 49,
-            "names": [
-              {
-                "String": {
-                  "sval": "void",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 268 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_func",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 269 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "pg_temp",
-              },
-            },
-            {
-              "String": {
-                "sval": "twophase_func",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": " select '2pc_func'::text ",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 71,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 106,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 66,
-            "names": [
-              {
-                "String": {
-                  "sval": "void",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 272 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 273 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "pg_temp",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "twophase_func",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 274 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_func",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 275 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 277 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 39,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "leftarg",
-                "location": 29,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 56,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int4",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "rightarg",
-                "location": 45,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 74,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int4mi",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "procedure",
-                "location": 62,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "pg_temp",
-              },
-            },
-            {
-              "String": {
-                "sval": "@@",
-              },
-            },
-          ],
-          "kind": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 278 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_operator",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 279 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 282 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CompositeTypeStmt": {
-          "coldeflist": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-          "typevar": {
-            "location": 13,
-            "relname": "twophase_type",
-            "relpersistence": "p",
-            "schemaname": "pg_temp",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 283 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_type",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 284 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 285 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 45,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 45,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "twophase_view",
-            "relpersistence": "p",
-            "schemaname": "pg_temp",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 286 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_view",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 287 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 288 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSeqStmt": {
-          "sequence": {
-            "inh": true,
-            "location": 17,
-            "relname": "twophase_seq",
-            "relpersistence": "p",
-            "schemaname": "pg_temp",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 289 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_sequence",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 290 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 78,
-            "relname": "twophase_tab",
-            "relpersistence": "t",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 92,
-                "typeName": {
-                  "location": 94,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 293 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 294 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "twophase_tab",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 295 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_tab",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 296 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 297 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "twophase_tab",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 34,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 298 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_tab",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 299 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 300 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "LockStmt": {
-          "mode": 8,
-          "relations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 6,
-                "relname": "twophase_tab",
-                "relpersistence": "p",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 301 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_tab",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 302 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 303 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "twophase_tab",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 304 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_tab",
-          "kind": "TRANS_STMT_PREPARE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 305 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`temp.sql > line 311 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`temp.sql > line 312 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "is_temp_schema",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
+                      "location": 9,
+                      "typeName": {
+                        "location": 11,
+                        "names": [
                           {
                             "String": {
-                              "sval": "current_schema",
+                              "sval": "nonempty",
                             },
                           },
                         ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 25,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "~",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 27,
-                        "sval": {
-                          "sval": "pg_temp",
-                        },
+                        "typemod": -1,
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`temp.sql > line 313 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "gid": "twophase_search",
-          "kind": "TRANS_STMT_PREPARE",
+exports[`temp.sql > line 183 1`] = `
+[
+  "reset search_path",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "search_path",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 196 1`] = `
+[
+  "select * from temp_parted_oncommit",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "temp_parted_oncommit",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 214 1`] = `
+[
+  "select relname from pg_class where relname ~ '^temp_parted_oncommit_test'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 20,
+                  "relname": "pg_class",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "relname",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+                "location": 43,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "~",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 45,
+                    "sval": {
+                      "sval": "^temp_parted_oncommit_test",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 230 1`] = `
+[
+  "select * from temp_parted_oncommit_test",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "temp_parted_oncommit_test",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 232 1`] = `
+[
+  "select relname from pg_class where relname ~ '^temp_parted_oncommit_test'
+  order by relname",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 20,
+                  "relname": "pg_class",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 85,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "relname",
+                        },
+                      },
+                    ],
+                    "location": 35,
+                  },
+                },
+                "location": 43,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "~",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 45,
+                    "sval": {
+                      "sval": "^temp_parted_oncommit_test",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 270 1`] = `
+[
+  "create function pg_temp.twophase_func() returns void as
+  $$ select '2pc_func'::text $$ language sql",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "pg_temp",
+                },
+              },
+              {
+                "String": {
+                  "sval": "twophase_func",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": " select '2pc_func'::text ",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 53,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "sql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 88,
+                },
+              },
+            ],
+            "returnType": {
+              "location": 48,
+              "names": [
+                {
+                  "String": {
+                    "sval": "void",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`temp.sql > line 292 1`] = `
+[
+  "create temp table twophase_tab (a int)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 18,
+              "relname": "twophase_tab",
+              "relpersistence": "t",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 32,
+                  "typeName": {
+                    "location": 34,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

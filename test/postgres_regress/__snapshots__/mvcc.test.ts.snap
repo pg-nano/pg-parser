@@ -1,274 +1,134 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`mvcc.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_BEGIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`mvcc.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 29,
-                "sval": {
-                  "sval": "false",
-                },
-              },
-            },
-          ],
-          "is_local": true,
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_seqscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`mvcc.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 34,
-                "sval": {
-                  "sval": "false",
-                },
-              },
-            },
-          ],
-          "is_local": true,
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_indexonlyscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`mvcc.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 31,
-                "sval": {
-                  "sval": "false",
-                },
-              },
-            },
-          ],
-          "is_local": true,
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_bitmapscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`mvcc.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 136,
-            "relname": "clean_aborted_self",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "key",
-                "is_local": true,
-                "location": 155,
-                "typeName": {
-                  "location": 159,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "data",
-                "is_local": true,
-                "location": 164,
-                "typeName": {
-                  "location": 169,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`mvcc.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "clean_aborted_self_key",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "key",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 40,
-            "relname": "clean_aborted_self",
-            "relpersistence": "p",
+exports[`mvcc.sql > line 9 1`] = `
+[
+  "BEGIN",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_BEGIN",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`mvcc.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 33,
-                "name": "key",
+exports[`mvcc.sql > line 11 1`] = `
+[
+  "SET LOCAL enable_seqscan = false",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 27,
+                  "sval": {
+                    "sval": "false",
+                  },
+                },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 38,
-                "name": "data",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "clean_aborted_self",
-            "relpersistence": "p",
+            ],
+            "is_local": true,
+            "kind": "VAR_SET_VALUE",
+            "name": "enable_seqscan",
           },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`mvcc.sql > line 17 1`] = `
+[
+  "CREATE TABLE clean_aborted_self(key int, data text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "clean_aborted_self",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "key",
+                  "is_local": true,
+                  "location": 32,
+                  "typeName": {
+                    "location": 36,
+                    "names": [
                       {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 52,
+                        "String": {
+                          "sval": "pg_catalog",
                         },
                       },
                       {
-                        "A_Const": {
-                          "location": 56,
-                          "sval": {
-                            "sval": "just to allocate metapage",
-                          },
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "data",
+                  "is_local": true,
+                  "location": 41,
+                  "typeName": {
+                    "location": 46,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`mvcc.sql > line 20 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`mvcc.sql > line 39 1`] = `[Error: syntax error at or near ":"]`;
-
-exports[`mvcc.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "TransactionStmt": {
-          "kind": "TRANS_STMT_ROLLBACK",
+exports[`mvcc.sql > line 44 1`] = `
+[
+  "ROLLBACK",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": "TRANS_STMT_ROLLBACK",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

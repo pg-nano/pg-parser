@@ -1,39 +1,65 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`memoize.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "explain_memoize",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "plpgsql",
-                  },
+exports[`memoize.sql > line 7 1`] = `
+[
+  "create function explain_memoize(query text, hide_hitmiss bool) returns setof text
+language plpgsql as
+$$
+declare
+    ln text;
+begin
+    for ln in
+        execute format('explain (analyze, costs off, summary off, timing off) %s',
+            query)
+    loop
+        if hide_hitmiss = true then
+                ln := regexp_replace(ln, 'Hits: 0', 'Hits: Zero');
+                ln := regexp_replace(ln, 'Hits: \\d+', 'Hits: N');
+                ln := regexp_replace(ln, 'Misses: 0', 'Misses: Zero');
+                ln := regexp_replace(ln, 'Misses: \\d+', 'Misses: N');
+        end if;
+        ln := regexp_replace(ln, 'Evictions: 0', 'Evictions: Zero');
+        ln := regexp_replace(ln, 'Evictions: \\d+', 'Evictions: N');
+        ln := regexp_replace(ln, 'Memory Usage: \\d+', 'Memory Usage: N');
+	ln := regexp_replace(ln, 'Heap Fetches: \\d+', 'Heap Fetches: N');
+	ln := regexp_replace(ln, 'loops=\\d+', 'loops=N');
+        return next ln;
+    end loop;
+end;
+$$",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "explain_memoize",
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 408,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "plpgsql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 82,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "
 declare
     ln text;
 begin
@@ -56,202 +82,1903 @@ begin
     end loop;
 end;
 ",
+                          },
                         },
-                      },
-                    ],
+                      ],
+                    },
                   },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 425,
-              },
-            },
-          ],
-          "parameters": [
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 364,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "query",
-              },
-            },
-            {
-              "FunctionParameter": {
-                "argType": {
-                  "location": 383,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "bool",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-                "mode": "FUNC_PARAM_DEFAULT",
-                "name": "hide_hitmiss",
-              },
-            },
-          ],
-          "returnType": {
-            "location": 403,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 99,
                 },
               },
             ],
-            "setof": true,
-            "typemod": -1,
+            "parameters": [
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 38,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "query",
+                },
+              },
+              {
+                "FunctionParameter": {
+                  "argType": {
+                    "location": 57,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "bool",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                  "mode": "FUNC_PARAM_DEFAULT",
+                  "name": "hide_hitmiss",
+                },
+              },
+            ],
+            "returnType": {
+              "location": 77,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "setof": true,
+              "typemod": -1,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`memoize.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 94,
-                "sval": {
-                  "sval": "off",
+exports[`memoize.sql > line 34 1`] = `
+[
+  "SET enable_hashjoin TO off",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 23,
+                  "sval": {
+                    "sval": "off",
+                  },
                 },
               },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_hashjoin",
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "enable_hashjoin",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`memoize.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 26,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_bitmapscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 25,
-                          "sval": {
-                            "sval": "
+exports[`memoize.sql > line 37 1`] = `
+[
+  "SELECT explain_memoize('
+SELECT COUNT(*),AVG(t1.unique1) FROM tenk1 t1
+INNER JOIN tenk1 t2 ON t1.unique1 = t2.twenty
+WHERE t2.unique1 < 1000;', false)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 23,
+                            "sval": {
+                              "sval": "
 SELECT COUNT(*),AVG(t1.unique1) FROM tenk1 t1
 INNER JOIN tenk1 t2 ON t1.unique1 = t2.twenty
 WHERE t2.unique1 < 1000;",
+                            },
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "boolval": {},
+                            "location": 144,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "explain_memoize",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 43 1`] = `
+[
+  "SELECT COUNT(*),AVG(t1.unique1) FROM tenk1 t1
+INNER JOIN tenk1 t2 ON t1.unique1 = t2.twenty
+WHERE t2.unique1 < 1000",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "JoinExpr": {
+                  "jointype": "JOIN_INNER",
+                  "larg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t1",
+                      },
+                      "inh": true,
+                      "location": 37,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                  "quals": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t1",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "unique1",
+                              },
+                            },
+                          ],
+                          "location": 69,
+                        },
+                      },
+                      "location": 80,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t2",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "twenty",
+                              },
+                            },
+                          ],
+                          "location": 82,
+                        },
+                      },
+                    },
+                  },
+                  "rarg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t2",
+                      },
+                      "inh": true,
+                      "location": 57,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t1",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "unique1",
+                                },
+                              },
+                            ],
+                            "location": 20,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "avg",
+                          },
+                        },
+                      ],
+                      "location": 16,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t2",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "unique1",
+                        },
+                      },
+                    ],
+                    "location": 98,
+                  },
+                },
+                "location": 109,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1000,
+                    },
+                    "location": 111,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 55 1`] = `
+[
+  "SELECT COUNT(*),AVG(t2.unique1) FROM tenk1 t1,
+LATERAL (SELECT t2.unique1 FROM tenk1 t2
+         WHERE t1.twenty = t2.unique1 OFFSET 0) t2
+WHERE t1.unique1 < 1000",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "t1",
+                  },
+                  "inh": true,
+                  "location": 37,
+                  "relname": "tenk1",
+                  "relpersistence": "p",
+                },
+              },
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "t2",
+                  },
+                  "lateral": true,
+                  "subquery": {
+                    "SelectStmt": {
+                      "fromClause": [
+                        {
+                          "RangeVar": {
+                            "alias": {
+                              "aliasname": "t2",
+                            },
+                            "inh": true,
+                            "location": 79,
+                            "relname": "tenk1",
+                            "relpersistence": "p",
+                          },
+                        },
+                      ],
+                      "limitOffset": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 133,
+                        },
+                      },
+                      "limitOption": "LIMIT_OPTION_COUNT",
+                      "op": "SETOP_NONE",
+                      "targetList": [
+                        {
+                          "ResTarget": {
+                            "location": 63,
+                            "val": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "t2",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "unique1",
+                                    },
+                                  },
+                                ],
+                                "location": 63,
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      "whereClause": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t1",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "twenty",
+                                  },
+                                },
+                              ],
+                              "location": 103,
+                            },
+                          },
+                          "location": 113,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t2",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "unique1",
+                                  },
+                                },
+                              ],
+                              "location": 115,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "t2",
+                                },
+                              },
+                              {
+                                "String": {
+                                  "sval": "unique1",
+                                },
+                              },
+                            ],
+                            "location": 20,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "avg",
+                          },
+                        },
+                      ],
+                      "location": 16,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "t1",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "unique1",
+                        },
+                      },
+                    ],
+                    "location": 145,
+                  },
+                },
+                "location": 156,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1000,
+                    },
+                    "location": 158,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 61 1`] = `
+[
+  "SET work_mem TO '64kB'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 16,
+                  "sval": {
+                    "sval": "64kB",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "work_mem",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 72 1`] = `
+[
+  "CREATE TABLE flt (f float)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "flt",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "f",
+                  "is_local": true,
+                  "location": 18,
+                  "typeName": {
+                    "location": 20,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "float8",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 77 1`] = `
+[
+  "SET enable_seqscan TO off",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 22,
+                  "sval": {
+                    "sval": "off",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "enable_seqscan",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 87 1`] = `
+[
+  "DROP TABLE flt",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "flt",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 91 1`] = `
+[
+  "CREATE TABLE strtest (n name, t text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "strtest",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "n",
+                  "is_local": true,
+                  "location": 22,
+                  "typeName": {
+                    "location": 24,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "name",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "t",
+                  "is_local": true,
+                  "location": 30,
+                  "typeName": {
+                    "location": 32,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 96 1`] = `
+[
+  "INSERT INTO strtest SELECT * FROM strtest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "strtest",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 34,
+                      "relname": "strtest",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 107 1`] = `
+[
+  "DROP TABLE strtest",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "strtest",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 110 1`] = `
+[
+  "SET enable_partitionwise_join TO on",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 33,
+                  "sval": {
+                    "sval": "on",
+                  },
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "enable_partitionwise_join",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 112 1`] = `
+[
+  "CREATE TABLE prt (a int) PARTITION BY RANGE(a)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "partspec": {
+              "location": 25,
+              "partParams": [
+                {
+                  "PartitionElem": {
+                    "location": 44,
+                    "name": "a",
+                  },
+                },
+              ],
+              "strategy": "PARTITION_STRATEGY_RANGE",
+            },
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "prt",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 18,
+                  "typeName": {
+                    "location": 20,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 132 1`] = `
+[
+  "DROP TABLE prt",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
+                    {
+                      "String": {
+                        "sval": "prt",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_TABLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 134 1`] = `
+[
+  "RESET enable_partitionwise_join",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "enable_partitionwise_join",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 140 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT unique1 FROM tenk1 t0
+WHERE unique1 < 3
+  AND EXISTS (
+	SELECT 1 FROM tenk1 t1
+	INNER JOIN tenk1 t2 ON t1.unique1 = t2.hundred
+	WHERE t0.ten = t1.twenty AND t0.two <> t2.four OFFSET 0)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t0",
+                      },
+                      "inh": true,
+                      "location": 40,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "unique1",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "BoolExpr": {
+                    "args": [
+                      {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "unique1",
+                                  },
+                                },
+                              ],
+                              "location": 55,
+                            },
+                          },
+                          "location": 63,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "<",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 3,
+                              },
+                              "location": 65,
+                            },
                           },
                         },
                       },
                       {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 146,
+                        "SubLink": {
+                          "location": 73,
+                          "subLinkType": "EXISTS_SUBLINK",
+                          "subselect": {
+                            "SelectStmt": {
+                              "fromClause": [
+                                {
+                                  "JoinExpr": {
+                                    "jointype": "JOIN_INNER",
+                                    "larg": {
+                                      "RangeVar": {
+                                        "alias": {
+                                          "aliasname": "t1",
+                                        },
+                                        "inh": true,
+                                        "location": 97,
+                                        "relname": "tenk1",
+                                        "relpersistence": "p",
+                                      },
+                                    },
+                                    "quals": {
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t1",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "unique1",
+                                                },
+                                              },
+                                            ],
+                                            "location": 130,
+                                          },
+                                        },
+                                        "location": 141,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "=",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t2",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "hundred",
+                                                },
+                                              },
+                                            ],
+                                            "location": 143,
+                                          },
+                                        },
+                                      },
+                                    },
+                                    "rarg": {
+                                      "RangeVar": {
+                                        "alias": {
+                                          "aliasname": "t2",
+                                        },
+                                        "inh": true,
+                                        "location": 118,
+                                        "relname": "tenk1",
+                                        "relpersistence": "p",
+                                      },
+                                    },
+                                  },
+                                },
+                              ],
+                              "limitOffset": {
+                                "A_Const": {
+                                  "ival": {},
+                                  "location": 209,
+                                },
+                              },
+                              "limitOption": "LIMIT_OPTION_COUNT",
+                              "op": "SETOP_NONE",
+                              "targetList": [
+                                {
+                                  "ResTarget": {
+                                    "location": 90,
+                                    "val": {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 1,
+                                        },
+                                        "location": 90,
+                                      },
+                                    },
+                                  },
+                                },
+                              ],
+                              "whereClause": {
+                                "BoolExpr": {
+                                  "args": [
+                                    {
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t0",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "ten",
+                                                },
+                                              },
+                                            ],
+                                            "location": 161,
+                                          },
+                                        },
+                                        "location": 168,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "=",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t1",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "twenty",
+                                                },
+                                              },
+                                            ],
+                                            "location": 170,
+                                          },
+                                        },
+                                      },
+                                    },
+                                    {
+                                      "A_Expr": {
+                                        "kind": "AEXPR_OP",
+                                        "lexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t0",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "two",
+                                                },
+                                              },
+                                            ],
+                                            "location": 184,
+                                          },
+                                        },
+                                        "location": 191,
+                                        "name": [
+                                          {
+                                            "String": {
+                                              "sval": "<>",
+                                            },
+                                          },
+                                        ],
+                                        "rexpr": {
+                                          "ColumnRef": {
+                                            "fields": [
+                                              {
+                                                "String": {
+                                                  "sval": "t2",
+                                                },
+                                              },
+                                              {
+                                                "String": {
+                                                  "sval": "four",
+                                                },
+                                              },
+                                            ],
+                                            "location": 194,
+                                          },
+                                        },
+                                      },
+                                    },
+                                  ],
+                                  "boolop": "AND_EXPR",
+                                  "location": 180,
+                                },
+                              },
+                            },
+                          },
                         },
                       },
                     ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 9,
+                    "boolop": "AND_EXPR",
+                    "location": 69,
                   },
                 },
               },
             },
-          ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`memoize.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "JoinExpr": {
-                "jointype": "JOIN_INNER",
-                "larg": {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t1",
+exports[`memoize.sql > line 149 1`] = `
+[
+  "SELECT unique1 FROM tenk1 t0
+WHERE unique1 < 3
+  AND EXISTS (
+	SELECT 1 FROM tenk1 t1
+	INNER JOIN tenk1 t2 ON t1.unique1 = t2.hundred
+	WHERE t0.ten = t1.twenty AND t0.two <> t2.four OFFSET 0)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "t0",
+                  },
+                  "inh": true,
+                  "location": 20,
+                  "relname": "tenk1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "unique1",
+                          },
+                        },
+                      ],
+                      "location": 7,
                     },
-                    "inh": true,
-                    "location": 81,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
                   },
                 },
-                "quals": {
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "unique1",
+                              },
+                            },
+                          ],
+                          "location": 35,
+                        },
+                      },
+                      "location": 43,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 3,
+                          },
+                          "location": 45,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "SubLink": {
+                      "location": 53,
+                      "subLinkType": "EXISTS_SUBLINK",
+                      "subselect": {
+                        "SelectStmt": {
+                          "fromClause": [
+                            {
+                              "JoinExpr": {
+                                "jointype": "JOIN_INNER",
+                                "larg": {
+                                  "RangeVar": {
+                                    "alias": {
+                                      "aliasname": "t1",
+                                    },
+                                    "inh": true,
+                                    "location": 77,
+                                    "relname": "tenk1",
+                                    "relpersistence": "p",
+                                  },
+                                },
+                                "quals": {
+                                  "A_Expr": {
+                                    "kind": "AEXPR_OP",
+                                    "lexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t1",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "unique1",
+                                            },
+                                          },
+                                        ],
+                                        "location": 110,
+                                      },
+                                    },
+                                    "location": 121,
+                                    "name": [
+                                      {
+                                        "String": {
+                                          "sval": "=",
+                                        },
+                                      },
+                                    ],
+                                    "rexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t2",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "hundred",
+                                            },
+                                          },
+                                        ],
+                                        "location": 123,
+                                      },
+                                    },
+                                  },
+                                },
+                                "rarg": {
+                                  "RangeVar": {
+                                    "alias": {
+                                      "aliasname": "t2",
+                                    },
+                                    "inh": true,
+                                    "location": 98,
+                                    "relname": "tenk1",
+                                    "relpersistence": "p",
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          "limitOffset": {
+                            "A_Const": {
+                              "ival": {},
+                              "location": 189,
+                            },
+                          },
+                          "limitOption": "LIMIT_OPTION_COUNT",
+                          "op": "SETOP_NONE",
+                          "targetList": [
+                            {
+                              "ResTarget": {
+                                "location": 70,
+                                "val": {
+                                  "A_Const": {
+                                    "ival": {
+                                      "ival": 1,
+                                    },
+                                    "location": 70,
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          "whereClause": {
+                            "BoolExpr": {
+                              "args": [
+                                {
+                                  "A_Expr": {
+                                    "kind": "AEXPR_OP",
+                                    "lexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t0",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "ten",
+                                            },
+                                          },
+                                        ],
+                                        "location": 141,
+                                      },
+                                    },
+                                    "location": 148,
+                                    "name": [
+                                      {
+                                        "String": {
+                                          "sval": "=",
+                                        },
+                                      },
+                                    ],
+                                    "rexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t1",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "twenty",
+                                            },
+                                          },
+                                        ],
+                                        "location": 150,
+                                      },
+                                    },
+                                  },
+                                },
+                                {
+                                  "A_Expr": {
+                                    "kind": "AEXPR_OP",
+                                    "lexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t0",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "two",
+                                            },
+                                          },
+                                        ],
+                                        "location": 164,
+                                      },
+                                    },
+                                    "location": 171,
+                                    "name": [
+                                      {
+                                        "String": {
+                                          "sval": "<>",
+                                        },
+                                      },
+                                    ],
+                                    "rexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "t2",
+                                            },
+                                          },
+                                          {
+                                            "String": {
+                                              "sval": "four",
+                                            },
+                                          },
+                                        ],
+                                        "location": 174,
+                                      },
+                                    },
+                                  },
+                                },
+                              ],
+                              "boolop": "AND_EXPR",
+                              "location": 160,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 49,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 156 1`] = `
+[
+  "RESET enable_seqscan",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "enable_seqscan",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 164 1`] = `
+[
+  "SET min_parallel_table_scan_size TO 0",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "ival": {},
+                  "location": 36,
+                },
+              },
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "min_parallel_table_scan_size",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`memoize.sql > line 170 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT COUNT(*),AVG(t2.unique1) FROM tenk1 t1,
+LATERAL (SELECT t2.unique1 FROM tenk1 t2 WHERE t1.twenty = t2.unique1) t2
+WHERE t1.unique1 < 1000",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "t1",
+                      },
+                      "inh": true,
+                      "location": 57,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                  {
+                    "RangeSubselect": {
+                      "alias": {
+                        "aliasname": "t2",
+                      },
+                      "lateral": true,
+                      "subquery": {
+                        "SelectStmt": {
+                          "fromClause": [
+                            {
+                              "RangeVar": {
+                                "alias": {
+                                  "aliasname": "t2",
+                                },
+                                "inh": true,
+                                "location": 99,
+                                "relname": "tenk1",
+                                "relpersistence": "p",
+                              },
+                            },
+                          ],
+                          "limitOption": "LIMIT_OPTION_DEFAULT",
+                          "op": "SETOP_NONE",
+                          "targetList": [
+                            {
+                              "ResTarget": {
+                                "location": 83,
+                                "val": {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "t2",
+                                        },
+                                      },
+                                      {
+                                        "String": {
+                                          "sval": "unique1",
+                                        },
+                                      },
+                                    ],
+                                    "location": 83,
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          "whereClause": {
+                            "A_Expr": {
+                              "kind": "AEXPR_OP",
+                              "lexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "t1",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "twenty",
+                                      },
+                                    },
+                                  ],
+                                  "location": 114,
+                                },
+                              },
+                              "location": 124,
+                              "name": [
+                                {
+                                  "String": {
+                                    "sval": "=",
+                                  },
+                                },
+                              ],
+                              "rexpr": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "t2",
+                                      },
+                                    },
+                                    {
+                                      "String": {
+                                        "sval": "unique1",
+                                      },
+                                    },
+                                  ],
+                                  "location": 126,
+                                },
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 27,
+                      "val": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 27,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 36,
+                      "val": {
+                        "FuncCall": {
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "t2",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "unique1",
+                                    },
+                                  },
+                                ],
+                                "location": 40,
+                              },
+                            },
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "avg",
+                              },
+                            },
+                          ],
+                          "location": 36,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
                   "A_Expr": {
                     "kind": "AEXPR_OP",
                     "lexpr": {
@@ -268,2406 +1995,10 @@ exports[`memoize.sql > line 41 1`] = `
                             },
                           },
                         ],
-                        "location": 113,
+                        "location": 147,
                       },
                     },
-                    "location": 124,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "t2",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "twenty",
-                            },
-                          },
-                        ],
-                        "location": 126,
-                      },
-                    },
-                  },
-                },
-                "rarg": {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t2",
-                    },
-                    "inh": true,
-                    "location": 101,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 51,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 51,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 60,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "t1",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "unique1",
-                              },
-                            },
-                          ],
-                          "location": 64,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "avg",
-                        },
-                      },
-                    ],
-                    "location": 60,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "t2",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "unique1",
-                      },
-                    },
-                  ],
-                  "location": 142,
-                },
-              },
-              "location": 153,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1000,
-                  },
-                  "location": 155,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 35,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 51,
-                          "sval": {
-                            "sval": "
-SELECT COUNT(*),AVG(t2.unique1) FROM tenk1 t1,
-LATERAL (SELECT t2.unique1 FROM tenk1 t2
-         WHERE t1.twenty = t2.unique1 OFFSET 0) t2
-WHERE t1.unique1 < 1000;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 219,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 35,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "t1",
-                },
-                "inh": true,
-                "location": 81,
-                "relname": "tenk1",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "t2",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "alias": {
-                            "aliasname": "t2",
-                          },
-                          "inh": true,
-                          "location": 123,
-                          "relname": "tenk1",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOffset": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 177,
-                      },
-                    },
-                    "limitOption": "LIMIT_OPTION_COUNT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 107,
-                          "val": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "t2",
-                                  },
-                                },
-                                {
-                                  "String": {
-                                    "sval": "unique1",
-                                  },
-                                },
-                              ],
-                              "location": 107,
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "whereClause": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t1",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "twenty",
-                                },
-                              },
-                            ],
-                            "location": 147,
-                          },
-                        },
-                        "location": 157,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t2",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "unique1",
-                                },
-                              },
-                            ],
-                            "location": 159,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 51,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "count",
-                        },
-                      },
-                    ],
-                    "location": 51,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 60,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "t2",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "unique1",
-                              },
-                            },
-                          ],
-                          "location": 64,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "avg",
-                        },
-                      },
-                    ],
-                    "location": 60,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "t1",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "unique1",
-                      },
-                    },
-                  ],
-                  "location": 189,
-                },
-              },
-              "location": 200,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1000,
-                  },
-                  "location": 202,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 97,
-                "sval": {
-                  "sval": "64kB",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "work_mem",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "fval": {
-                  "fval": "1.0",
-                },
-                "location": 28,
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "hash_mem_multiplier",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 25,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_mergejoin",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 191,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 207,
-                          "sval": {
-                            "sval": "
-SELECT COUNT(*),AVG(t1.unique1) FROM tenk1 t1
-INNER JOIN tenk1 t2 ON t1.unique1 = t2.thousand
-WHERE t2.unique1 < 1200;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {
-                            "boolval": true,
-                          },
-                          "location": 330,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 191,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "flt",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "f",
-                "is_local": true,
-                "location": 20,
-                "typeName": {
-                  "location": 22,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "float8",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "flt_f_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "f",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 27,
-            "relname": "flt",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 74 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "flt",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 24,
-                              "sval": {
-                                "sval": "-0.0",
-                              },
-                            },
-                          },
-                          "location": 30,
-                          "typeName": {
-                            "location": 32,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "float8",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 40,
-                              "sval": {
-                                "sval": "+0.0",
-                              },
-                            },
-                          },
-                          "location": 46,
-                          "typeName": {
-                            "location": 48,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "pg_catalog",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "float8",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 75 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "flt",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 76 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 24,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_seqscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 78 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 52,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 68,
-                          "sval": {
-                            "sval": "
-SELECT * FROM flt f1 INNER JOIN flt f2 ON f1.f = f2.f;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 127,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 52,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 82 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 51,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 67,
-                          "sval": {
-                            "sval": "
-SELECT * FROM flt f1 INNER JOIN flt f2 ON f1.f >= f2.f;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 127,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 51,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 86 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "flt",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 103,
-            "relname": "strtest",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "n",
-                "is_local": true,
-                "location": 112,
-                "typeName": {
-                  "location": 114,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "name",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "t",
-                "is_local": true,
-                "location": 120,
-                "typeName": {
-                  "location": 122,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "strtest_n_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "n",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 31,
-            "relname": "strtest",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "strtest_t_idx",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "t",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 31,
-            "relname": "strtest",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 94 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "strtest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 28,
-                          "sval": {
-                            "sval": "one",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 34,
-                          "sval": {
-                            "sval": "one",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 42,
-                          "sval": {
-                            "sval": "two",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 48,
-                          "sval": {
-                            "sval": "two",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 56,
-                          "sval": {
-                            "sval": "three",
-                          },
-                        },
-                      },
-                      {
-                        "FuncCall": {
-                          "args": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "location": 80,
-                                      "sval": {
-                                        "sval": "three",
-                                      },
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "fipshash",
-                                    },
-                                  },
-                                ],
-                                "location": 71,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 100,
-                                },
-                                "location": 89,
-                              },
-                            },
-                          ],
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "repeat",
-                              },
-                            },
-                          ],
-                          "location": 64,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 57,
-            "relname": "strtest",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 79,
-                    "relname": "strtest",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 72,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 72,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "strtest",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 98 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 46,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 62,
-                          "sval": {
-                            "sval": "
-SELECT * FROM strtest s1 INNER JOIN strtest s2 ON s1.n >= s2.n;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 130,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 46,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 46,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 62,
-                          "sval": {
-                            "sval": "
-SELECT * FROM strtest s1 INNER JOIN strtest s2 ON s1.t >= s2.t;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 130,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 46,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 106 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "strtest",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 108 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 83,
-                "sval": {
-                  "sval": "on",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_partitionwise_join",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 111 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "partspec": {
-            "location": 27,
-            "partParams": [
-              {
-                "PartitionElem": {
-                  "location": 46,
-                  "name": "a",
-                },
-              },
-            ],
-            "strategy": "PARTITION_STRATEGY_RANGE",
-          },
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "prt",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 20,
-                "typeName": {
-                  "location": 22,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 113 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 34,
-                "relname": "prt",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "partbound": {
-            "location": 49,
-            "lowerdatums": [
-              {
-                "A_Const": {
-                  "ival": {},
-                  "location": 55,
-                },
-              },
-            ],
-            "strategy": "r",
-            "upperdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10,
-                  },
-                  "location": 62,
-                },
-              },
-            ],
-          },
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "prt_p1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 114 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "inhRelations": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 34,
-                "relname": "prt",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "oncommit": "ONCOMMIT_NOOP",
-          "partbound": {
-            "location": 49,
-            "lowerdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 10,
-                  },
-                  "location": 55,
-                },
-              },
-            ],
-            "strategy": "r",
-            "upperdatums": [
-              {
-                "A_Const": {
-                  "ival": {
-                    "ival": 20,
-                  },
-                  "location": 63,
-                },
-              },
-            ],
-          },
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "prt_p2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 115 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "prt",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 25,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 30,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 35,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 40,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 116 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "prt",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 10,
-                          },
-                          "location": 25,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 10,
-                          },
-                          "location": 31,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 10,
-                          },
-                          "location": 37,
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 10,
-                          },
-                          "location": 43,
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 117 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "iprt_p1_a",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "a",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 27,
-            "relname": "prt_p1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 118 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "IndexStmt": {
-          "accessMethod": "btree",
-          "idxname": "iprt_p2_a",
-          "indexParams": [
-            {
-              "IndexElem": {
-                "name": "a",
-                "nulls_ordering": "SORTBY_NULLS_DEFAULT",
-                "ordering": "SORTBY_DEFAULT",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 27,
-            "relname": "prt_p2",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 119 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
-                  "inh": true,
-                  "location": 9,
-                  "relname": "prt",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 120 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 25,
-                          "sval": {
-                            "sval": "
-SELECT * FROM prt t1 INNER JOIN prt t2 ON t1.a = t2.a;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 84,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 123 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 100,
-                "sval": {
-                  "sval": "off",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "enable_partitionwise_join",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 126 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 25,
-                          "sval": {
-                            "sval": "
-SELECT * FROM prt_p1 t1 INNER JOIN
-(SELECT * FROM prt_p1 UNION ALL SELECT * FROM prt_p2) t2
-ON t1.a = t2.a;",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "boolval": {},
-                          "location": 137,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "explain_memoize",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 131 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "prt",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 133 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_partitionwise_join",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 135 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 156,
-              },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t0",
-                    },
-                    "inh": true,
-                    "location": 187,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 174,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "unique1",
-                            },
-                          },
-                        ],
-                        "location": 174,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "BoolExpr": {
-                  "args": [
-                    {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "unique1",
-                                },
-                              },
-                            ],
-                            "location": 202,
-                          },
-                        },
-                        "location": 210,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "<",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 3,
-                            },
-                            "location": 212,
-                          },
-                        },
-                      },
-                    },
-                    {
-                      "SubLink": {
-                        "location": 220,
-                        "subLinkType": "EXISTS_SUBLINK",
-                        "subselect": {
-                          "SelectStmt": {
-                            "fromClause": [
-                              {
-                                "JoinExpr": {
-                                  "jointype": "JOIN_INNER",
-                                  "larg": {
-                                    "RangeVar": {
-                                      "alias": {
-                                        "aliasname": "t1",
-                                      },
-                                      "inh": true,
-                                      "location": 244,
-                                      "relname": "tenk1",
-                                      "relpersistence": "p",
-                                    },
-                                  },
-                                  "quals": {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t1",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "unique1",
-                                              },
-                                            },
-                                          ],
-                                          "location": 277,
-                                        },
-                                      },
-                                      "location": 288,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "=",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t2",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "hundred",
-                                              },
-                                            },
-                                          ],
-                                          "location": 290,
-                                        },
-                                      },
-                                    },
-                                  },
-                                  "rarg": {
-                                    "RangeVar": {
-                                      "alias": {
-                                        "aliasname": "t2",
-                                      },
-                                      "inh": true,
-                                      "location": 265,
-                                      "relname": "tenk1",
-                                      "relpersistence": "p",
-                                    },
-                                  },
-                                },
-                              },
-                            ],
-                            "limitOffset": {
-                              "A_Const": {
-                                "ival": {},
-                                "location": 356,
-                              },
-                            },
-                            "limitOption": "LIMIT_OPTION_COUNT",
-                            "op": "SETOP_NONE",
-                            "targetList": [
-                              {
-                                "ResTarget": {
-                                  "location": 237,
-                                  "val": {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 237,
-                                    },
-                                  },
-                                },
-                              },
-                            ],
-                            "whereClause": {
-                              "BoolExpr": {
-                                "args": [
-                                  {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t0",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "ten",
-                                              },
-                                            },
-                                          ],
-                                          "location": 308,
-                                        },
-                                      },
-                                      "location": 315,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "=",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t1",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "twenty",
-                                              },
-                                            },
-                                          ],
-                                          "location": 317,
-                                        },
-                                      },
-                                    },
-                                  },
-                                  {
-                                    "A_Expr": {
-                                      "kind": "AEXPR_OP",
-                                      "lexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t0",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "two",
-                                              },
-                                            },
-                                          ],
-                                          "location": 331,
-                                        },
-                                      },
-                                      "location": 338,
-                                      "name": [
-                                        {
-                                          "String": {
-                                            "sval": "<>",
-                                          },
-                                        },
-                                      ],
-                                      "rexpr": {
-                                        "ColumnRef": {
-                                          "fields": [
-                                            {
-                                              "String": {
-                                                "sval": "t2",
-                                              },
-                                            },
-                                            {
-                                              "String": {
-                                                "sval": "four",
-                                              },
-                                            },
-                                          ],
-                                          "location": 341,
-                                        },
-                                      },
-                                    },
-                                  },
-                                ],
-                                "boolop": "AND_EXPR",
-                                "location": 327,
-                              },
-                            },
-                          },
-                        },
-                      },
-                    },
-                  ],
-                  "boolop": "AND_EXPR",
-                  "location": 216,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 147 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "t0",
-                },
-                "inh": true,
-                "location": 75,
-                "relname": "tenk1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 62,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "unique1",
-                        },
-                      },
-                    ],
-                    "location": 62,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "unique1",
-                            },
-                          },
-                        ],
-                        "location": 90,
-                      },
-                    },
-                    "location": 98,
+                    "location": 158,
                     "name": [
                       {
                         "String": {
@@ -2678,541 +2009,74 @@ exports[`memoize.sql > line 147 1`] = `
                     "rexpr": {
                       "A_Const": {
                         "ival": {
-                          "ival": 3,
+                          "ival": 1000,
                         },
-                        "location": 100,
+                        "location": 160,
                       },
                     },
                   },
                 },
-                {
-                  "SubLink": {
-                    "location": 108,
-                    "subLinkType": "EXISTS_SUBLINK",
-                    "subselect": {
-                      "SelectStmt": {
-                        "fromClause": [
-                          {
-                            "JoinExpr": {
-                              "jointype": "JOIN_INNER",
-                              "larg": {
-                                "RangeVar": {
-                                  "alias": {
-                                    "aliasname": "t1",
-                                  },
-                                  "inh": true,
-                                  "location": 132,
-                                  "relname": "tenk1",
-                                  "relpersistence": "p",
-                                },
-                              },
-                              "quals": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t1",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "unique1",
-                                          },
-                                        },
-                                      ],
-                                      "location": 165,
-                                    },
-                                  },
-                                  "location": 176,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t2",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "hundred",
-                                          },
-                                        },
-                                      ],
-                                      "location": 178,
-                                    },
-                                  },
-                                },
-                              },
-                              "rarg": {
-                                "RangeVar": {
-                                  "alias": {
-                                    "aliasname": "t2",
-                                  },
-                                  "inh": true,
-                                  "location": 153,
-                                  "relname": "tenk1",
-                                  "relpersistence": "p",
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "limitOffset": {
-                          "A_Const": {
-                            "ival": {},
-                            "location": 244,
-                          },
-                        },
-                        "limitOption": "LIMIT_OPTION_COUNT",
-                        "op": "SETOP_NONE",
-                        "targetList": [
-                          {
-                            "ResTarget": {
-                              "location": 125,
-                              "val": {
-                                "A_Const": {
-                                  "ival": {
-                                    "ival": 1,
-                                  },
-                                  "location": 125,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "whereClause": {
-                          "BoolExpr": {
-                            "args": [
-                              {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t0",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "ten",
-                                          },
-                                        },
-                                      ],
-                                      "location": 196,
-                                    },
-                                  },
-                                  "location": 203,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t1",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "twenty",
-                                          },
-                                        },
-                                      ],
-                                      "location": 205,
-                                    },
-                                  },
-                                },
-                              },
-                              {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t0",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "two",
-                                          },
-                                        },
-                                      ],
-                                      "location": 219,
-                                    },
-                                  },
-                                  "location": 226,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "<>",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "t2",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "four",
-                                          },
-                                        },
-                                      ],
-                                      "location": 229,
-                                    },
-                                  },
-                                },
-                              },
-                            ],
-                            "boolop": "AND_EXPR",
-                            "location": 215,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 104,
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`memoize.sql > line 155 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_seqscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 157 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_mergejoin",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 158 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "work_mem",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 159 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "hash_mem_multiplier",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 160 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_bitmapscan",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 161 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "enable_hashjoin",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 162 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "ival": {},
-                "location": 74,
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "min_parallel_table_scan_size",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 165 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "ival": {},
-                "location": 28,
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "parallel_setup_cost",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 166 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "ival": {},
-                "location": 28,
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "parallel_tuple_cost",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 167 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "ival": {
-                  "ival": 2,
-                },
-                "location": 40,
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "max_parallel_workers_per_gather",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 168 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
+exports[`memoize.sql > line 176 1`] = `
+[
+  "SELECT COUNT(*),AVG(t2.unique1) FROM tenk1 t1,
+LATERAL (SELECT t2.unique1 FROM tenk1 t2 WHERE t1.twenty = t2.unique1) t2
+WHERE t1.unique1 < 1000",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "t1",
                   },
+                  "inh": true,
+                  "location": 37,
+                  "relname": "tenk1",
+                  "relpersistence": "p",
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 45,
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "t1",
-                    },
-                    "inh": true,
-                    "location": 93,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "t2",
                   },
-                },
-                {
-                  "RangeSubselect": {
-                    "alias": {
-                      "aliasname": "t2",
-                    },
-                    "lateral": true,
-                    "subquery": {
-                      "SelectStmt": {
-                        "fromClause": [
-                          {
-                            "RangeVar": {
-                              "alias": {
-                                "aliasname": "t2",
-                              },
-                              "inh": true,
-                              "location": 135,
-                              "relname": "tenk1",
-                              "relpersistence": "p",
+                  "lateral": true,
+                  "subquery": {
+                    "SelectStmt": {
+                      "fromClause": [
+                        {
+                          "RangeVar": {
+                            "alias": {
+                              "aliasname": "t2",
                             },
+                            "inh": true,
+                            "location": 79,
+                            "relname": "tenk1",
+                            "relpersistence": "p",
                           },
-                        ],
-                        "limitOption": "LIMIT_OPTION_DEFAULT",
-                        "op": "SETOP_NONE",
-                        "targetList": [
-                          {
-                            "ResTarget": {
-                              "location": 119,
-                              "val": {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "t2",
-                                      },
-                                    },
-                                    {
-                                      "String": {
-                                        "sval": "unique1",
-                                      },
-                                    },
-                                  ],
-                                  "location": 119,
-                                },
-                              },
-                            },
-                          },
-                        ],
-                        "whereClause": {
-                          "A_Expr": {
-                            "kind": "AEXPR_OP",
-                            "lexpr": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "t1",
-                                    },
-                                  },
-                                  {
-                                    "String": {
-                                      "sval": "twenty",
-                                    },
-                                  },
-                                ],
-                                "location": 150,
-                              },
-                            },
-                            "location": 160,
-                            "name": [
-                              {
-                                "String": {
-                                  "sval": "=",
-                                },
-                              },
-                            ],
-                            "rexpr": {
+                        },
+                      ],
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "targetList": [
+                        {
+                          "ResTarget": {
+                            "location": 63,
+                            "val": {
                               "ColumnRef": {
                                 "fields": [
                                   {
@@ -3226,170 +2090,41 @@ exports[`memoize.sql > line 168 1`] = `
                                     },
                                   },
                                 ],
-                                "location": 162,
+                                "location": 63,
                               },
                             },
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 63,
-                    "val": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 63,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 72,
-                    "val": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "t2",
-                                  },
-                                },
-                                {
-                                  "String": {
-                                    "sval": "unique1",
-                                  },
-                                },
-                              ],
-                              "location": 76,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "avg",
-                            },
-                          },
-                        ],
-                        "location": 72,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "t1",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "unique1",
                           },
                         },
                       ],
-                      "location": 183,
-                    },
-                  },
-                  "location": 194,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "<",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1000,
-                      },
-                      "location": 196,
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 174 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "t1",
-                },
-                "inh": true,
-                "location": 101,
-                "relname": "tenk1",
-                "relpersistence": "p",
-              },
-            },
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "t2",
-                },
-                "lateral": true,
-                "subquery": {
-                  "SelectStmt": {
-                    "fromClause": [
-                      {
-                        "RangeVar": {
-                          "alias": {
-                            "aliasname": "t2",
+                      "whereClause": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t1",
+                                  },
+                                },
+                                {
+                                  "String": {
+                                    "sval": "twenty",
+                                  },
+                                },
+                              ],
+                              "location": 94,
+                            },
                           },
-                          "inh": true,
-                          "location": 143,
-                          "relname": "tenk1",
-                          "relpersistence": "p",
-                        },
-                      },
-                    ],
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "targetList": [
-                      {
-                        "ResTarget": {
-                          "location": 127,
-                          "val": {
+                          "location": 104,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "=",
+                              },
+                            },
+                          ],
+                          "rexpr": {
                             "ColumnRef": {
                               "fields": [
                                 {
@@ -3403,41 +2138,45 @@ exports[`memoize.sql > line 174 1`] = `
                                   },
                                 },
                               ],
-                              "location": 127,
+                              "location": 106,
                             },
                           },
                         },
                       },
-                    ],
-                    "whereClause": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t1",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "twenty",
-                                },
-                              },
-                            ],
-                            "location": 158,
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
                           },
                         },
-                        "location": 168,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
                           "ColumnRef": {
                             "fields": [
                               {
@@ -3451,182 +2190,86 @@ exports[`memoize.sql > line 174 1`] = `
                                 },
                               },
                             ],
-                            "location": 170,
+                            "location": 20,
                           },
                         },
-                      },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "avg",
+                          },
+                        },
+                      ],
+                      "location": 16,
                     },
                   },
                 },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 71,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
                       {
                         "String": {
-                          "sval": "count",
+                          "sval": "t1",
                         },
                       },
-                    ],
-                    "location": 71,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 80,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "t2",
-                              },
-                            },
-                            {
-                              "String": {
-                                "sval": "unique1",
-                              },
-                            },
-                          ],
-                          "location": 84,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
                       {
                         "String": {
-                          "sval": "avg",
+                          "sval": "unique1",
                         },
                       },
                     ],
-                    "location": 80,
+                    "location": 127,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "t1",
-                      },
+                "location": 138,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "<",
                     },
-                    {
-                      "String": {
-                        "sval": "unique1",
-                      },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {
+                      "ival": 1000,
                     },
-                  ],
-                  "location": 191,
-                },
-              },
-              "location": 202,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<",
+                    "location": 140,
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {
-                    "ival": 1000,
-                  },
-                  "location": 204,
                 },
               },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`memoize.sql > line 179 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "max_parallel_workers_per_gather",
+exports[`memoize.sql > line 180 1`] = `
+[
+  "RESET max_parallel_workers_per_gather",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "max_parallel_workers_per_gather",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 181 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "parallel_tuple_cost",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 182 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "parallel_setup_cost",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`memoize.sql > line 183 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "min_parallel_table_scan_size",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

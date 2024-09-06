@@ -1,1083 +1,524 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`copyselect.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 54,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 61,
-                "typeName": {
-                  "location": 64,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
+exports[`copyselect.sql > line 4 1`] = `
+[
+  "create table test1 (id serial, t text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test1",
+              "relpersistence": "p",
             },
-            {
-              "ColumnDef": {
-                "colname": "t",
-                "is_local": true,
-                "location": 72,
-                "typeName": {
-                  "location": 74,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "is_local": true,
+                  "location": 20,
+                  "typeName": {
+                    "location": 23,
+                    "names": [
                       {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "a",
-                          },
+                        "String": {
+                          "sval": "serial",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
               },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+              {
+                "ColumnDef": {
+                  "colname": "t",
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 33,
+                    "names": [
                       {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "b",
-                          },
+                        "String": {
+                          "sval": "text",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
+              },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`copyselect.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
+exports[`copyselect.sql > line 11 1`] = `
+[
+  "create table test2 (id serial, t text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "test2",
+              "relpersistence": "p",
             },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "is_local": true,
+                  "location": 20,
+                  "typeName": {
+                    "location": 23,
+                    "names": [
                       {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "c",
-                          },
+                        "String": {
+                          "sval": "serial",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
               },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
+              {
+                "ColumnDef": {
+                  "colname": "t",
+                  "is_local": true,
+                  "location": 31,
+                  "typeName": {
+                    "location": 33,
+                    "names": [
                       {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "d",
-                          },
+                        "String": {
+                          "sval": "text",
                         },
                       },
                     ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "e",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 22,
-                "typeName": {
-                  "location": 25,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "t",
-                "is_local": true,
-                "location": 33,
-                "typeName": {
-                  "location": 35,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "A",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "B",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "C",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "D",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 20,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 31,
-                          "sval": {
-                            "sval": "E",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 45,
-                    "relname": "test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 32,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "A_Const": {
-                            "location": 32,
-                            "sval": {
-                              "sval": "v_",
-                            },
-                          },
-                        },
-                        "location": 36,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "||",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "t",
-                                },
-                              },
-                            ],
-                            "location": 38,
-                          },
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 14,
-            "relname": "v_test1",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "relation": {
-            "inh": true,
-            "location": 35,
-            "relname": "test1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "relation": {
-            "inh": true,
-            "location": 32,
-            "relname": "v_test1",
-            "relpersistence": "p",
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 52,
-                    "relname": "test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 45,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "t",
-                            },
-                          },
-                        ],
-                        "location": 45,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "id",
-                          },
-                        },
-                      ],
-                      "location": 64,
-                    },
-                  },
-                  "location": 66,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 1,
-                      },
-                      "location": 67,
-                    },
+                    "typemod": -1,
                   },
                 },
               },
-            },
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`copyselect.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 63,
-                    "relname": "test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "lockingClause": [
-                {
-                  "LockingClause": {
-                    "strength": "LCS_FORUPDATE",
-                    "waitPolicy": "LockWaitBlock",
-                  },
-                },
-              ],
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 56,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "t",
-                            },
-                          },
-                        ],
-                        "location": 56,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "id",
-                          },
-                        },
-                      ],
-                      "location": 75,
-                    },
-                  },
-                  "location": 77,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 3,
-                      },
-                      "location": 78,
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 63,
-                    "relname": "test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "intoClause": {
-                "onCommit": "ONCOMMIT_NOOP",
-                "rel": {
-                  "inh": true,
-                  "location": 52,
-                  "relname": "test3",
-                  "relpersistence": "t",
-                },
-              },
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 40,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "t",
-                            },
-                          },
-                        ],
-                        "location": 40,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "id",
-                          },
-                        },
-                      ],
-                      "location": 75,
-                    },
-                  },
-                  "location": 77,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {
-                        "ival": 3,
-                      },
-                      "location": 78,
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 41 1`] = `[Error: syntax error at or near "FROM"]`;
-
-exports[`copyselect.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "test3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copyselect.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
+exports[`copyselect.sql > line 18 1`] = `
+[
+  "create view v_test1
+as select 'v_'||t from test1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ViewStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
                   {
-                    "String": {
-                      "sval": "test3",
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 43,
+                      "relname": "test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 30,
+                      "val": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "A_Const": {
+                              "location": 30,
+                              "sval": {
+                                "sval": "v_",
+                              },
+                            },
+                          },
+                          "location": 34,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "||",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "t",
+                                  },
+                                },
+                              ],
+                              "location": 36,
+                            },
+                          },
+                        },
+                      },
                     },
                   },
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+            "view": {
+              "inh": true,
+              "location": 12,
+              "relname": "v_test1",
+              "relpersistence": "p",
+            },
+            "withCheckOption": "NO_CHECK_OPTION",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copyselect.sql > line 24 1`] = `
+[
+  "copy test1 to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "relation": {
+              "inh": true,
+              "location": 5,
+              "relname": "test1",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copyselect.sql > line 28 1`] = `
+[
+  "copy v_test1 to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "relation": {
+              "inh": true,
+              "location": 5,
+              "relname": "v_test1",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copyselect.sql > line 32 1`] = `
+[
+  "copy (select t from test1 where id=1) to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 20,
+                      "relname": "test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 13,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t",
+                              },
+                            },
+                          ],
+                          "location": 13,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "id",
+                            },
+                          },
+                        ],
+                        "location": 32,
+                      },
+                    },
+                    "location": 34,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 1,
+                        },
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copyselect.sql > line 36 1`] = `
+[
+  "copy (select t from test1 where id=3 for update) to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 20,
+                      "relname": "test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "lockingClause": [
+                  {
+                    "LockingClause": {
+                      "strength": "LCS_FORUPDATE",
+                      "waitPolicy": "LockWaitBlock",
+                    },
+                  },
+                ],
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 13,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t",
+                              },
+                            },
+                          ],
+                          "location": 13,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "id",
+                            },
+                          },
+                        ],
+                        "location": 32,
+                      },
+                    },
+                    "location": 34,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 3,
+                        },
+                        "location": 35,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copyselect.sql > line 40 1`] = `
+[
+  "copy (select t into temp test3 from test1 where id=3) to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "query": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 36,
+                      "relname": "test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "intoClause": {
+                  "onCommit": "ONCOMMIT_NOOP",
+                  "rel": {
+                    "inh": true,
+                    "location": 25,
+                    "relname": "test3",
+                    "relpersistence": "t",
+                  },
+                },
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 13,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "t",
+                              },
+                            },
+                          ],
+                          "location": 13,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "id",
+                            },
+                          },
+                        ],
+                        "location": 48,
+                      },
+                    },
+                    "location": 50,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 3,
+                        },
+                        "location": 51,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

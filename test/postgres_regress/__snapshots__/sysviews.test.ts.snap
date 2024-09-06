@@ -1,213 +1,212 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sysviews.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 438,
-                "relname": "pg_available_extension_versions",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 13 1`] = `
+[
+  "select count(*) >= 0 as ok from pg_available_extensions",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_available_extensions",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 413,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 413,
-                      },
-                    },
-                    "location": 422,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 425,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 19,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 34,
-                "relname": "pg_available_extensions",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 17 1`] = `
+[
+  "select name, ident, parent, level, total_bytes >= free_bytes
+  from pg_backend_memory_contexts where level = 0",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 68,
+                  "relname": "pg_backend_memory_contexts",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "name",
                           },
-                        ],
-                        "location": 9,
-                      },
-                    },
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 21,
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 207,
-                "relname": "pg_backend_memory_contexts",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 146,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "name",
+              {
+                "ResTarget": {
+                  "location": 13,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ident",
+                          },
                         },
-                      },
-                    ],
-                    "location": 146,
+                      ],
+                      "location": 13,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 152,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ident",
+              {
+                "ResTarget": {
+                  "location": 20,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "parent",
+                          },
                         },
-                      },
-                    ],
-                    "location": 152,
+                      ],
+                      "location": 20,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 159,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "parent",
+              {
+                "ResTarget": {
+                  "location": 28,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "level",
+                          },
                         },
-                      },
-                    ],
-                    "location": 159,
+                      ],
+                      "location": 28,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 167,
-                "val": {
+              {
+                "ResTarget": {
+                  "location": 35,
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "total_bytes",
+                              },
+                            },
+                          ],
+                          "location": 35,
+                        },
+                      },
+                      "location": 47,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "free_bytes",
+                              },
+                            },
+                          ],
+                          "location": 50,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -216,971 +215,984 @@ exports[`sysviews.sql > line 14 1`] = `
                         },
                       },
                     ],
-                    "location": 167,
+                    "location": 101,
                   },
                 },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 174,
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "total_bytes",
-                            },
-                          },
-                        ],
-                        "location": 174,
-                      },
-                    },
-                    "location": 186,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "free_bytes",
-                            },
-                          },
-                        ],
-                        "location": 189,
-                      },
+                "location": 107,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "level",
-                      },
-                    },
-                  ],
-                  "location": 240,
-                },
-              },
-              "location": 246,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {},
+                    "location": 109,
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {},
-                  "location": 248,
                 },
               },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 92,
-                "relname": "pg_config",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 67,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 67,
-                      },
-                    },
-                    "location": 76,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 20,
-                        },
-                        "location": 78,
-                      },
-                    },
-                  },
+exports[`sysviews.sql > line 21 1`] = `
+[
+  "select count(*) > 20 as ok from pg_config",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_config",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 92,
-                "relname": "pg_cursors",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 68,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 68,
-                      },
-                    },
-                    "location": 77,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 79,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 25 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 34,
-                "relname": "pg_file_settings",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 9,
-                      },
-                    },
-                    "location": 18,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 21,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 151,
-                "relname": "pg_hba_file_rules",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 68,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 68,
-                      },
-                    },
-                    "location": 77,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 79,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 88,
-                "name": "no_err",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_filter": {
-                          "NullTest": {
-                            "arg": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "error",
-                                    },
-                                  },
-                                ],
-                                "location": 111,
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
                               },
                             },
-                            "location": 117,
-                            "nulltesttype": "IS_NOT_NULL",
-                          },
-                        },
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 88,
-                      },
-                    },
-                    "location": 130,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 132,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 20,
+                          },
+                          "location": 18,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 150,
-                "relname": "pg_ident_file_mappings",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 66,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 66,
-                      },
-                    },
-                    "location": 75,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 78,
-                      },
-                    },
-                  },
+exports[`sysviews.sql > line 24 1`] = `
+[
+  "select count(*) = 0 as ok from pg_cursors",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_cursors",
+                  "relpersistence": "p",
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 87,
-                "name": "no_err",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_filter": {
-                          "NullTest": {
-                            "arg": {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "error",
-                                    },
-                                  },
-                                ],
-                                "location": 110,
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
                               },
                             },
-                            "location": 116,
-                            "nulltesttype": "IS_NOT_NULL",
-                          },
-                        },
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 87,
-                      },
-                    },
-                    "location": 129,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 131,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 82,
-                "relname": "pg_locks",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 26 1`] = `
+[
+  "select count(*) >= 0 as ok from pg_file_settings",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_file_settings",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 58,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 58,
-                      },
-                    },
-                    "location": 67,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 69,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 19,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 104,
-                "relname": "pg_prepared_statements",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 29 1`] = `
+[
+  "select count(*) > 0 as ok, count(*) FILTER (WHERE error IS NOT NULL) = 0 AS no_err
+  from pg_hba_file_rules",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 90,
+                  "relname": "pg_hba_file_rules",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 80,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 80,
-                      },
-                    },
-                    "location": 89,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 91,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 65,
-                "relname": "pg_prepared_xacts",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 40,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+              {
+                "ResTarget": {
+                  "location": 27,
+                  "name": "no_err",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_filter": {
+                            "NullTest": {
+                              "arg": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "error",
+                                      },
+                                    },
+                                  ],
+                                  "location": 50,
+                                },
+                              },
+                              "location": 56,
+                              "nulltesttype": "IS_NOT_NULL",
                             },
                           },
-                        ],
-                        "location": 40,
-                      },
-                    },
-                    "location": 49,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 27,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 52,
+                      "location": 69,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 71,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 81,
-                "relname": "pg_stat_slru",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 33 1`] = `
+[
+  "select count(*) >= 0 as ok, count(*) FILTER (WHERE error IS NOT NULL) = 0 AS no_err
+  from pg_ident_file_mappings",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 91,
+                  "relname": "pg_ident_file_mappings",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 57,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 57,
-                      },
-                    },
-                    "location": 66,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 68,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 19,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 66,
-                "relname": "pg_stat_wal",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 42,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+              {
+                "ResTarget": {
+                  "location": 28,
+                  "name": "no_err",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_filter": {
+                            "NullTest": {
+                              "arg": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "error",
+                                      },
+                                    },
+                                  ],
+                                  "location": 51,
+                                },
+                              },
+                              "location": 57,
+                              "nulltesttype": "IS_NOT_NULL",
                             },
                           },
-                        ],
-                        "location": 42,
-                      },
-                    },
-                    "location": 51,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 28,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
+                      "location": 70,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
                         },
-                        "location": 53,
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 72,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 82,
-                "relname": "pg_stat_wal_receiver",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 37 1`] = `
+[
+  "select count(*) > 0 as ok from pg_locks",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_locks",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 58,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_star": true,
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 58,
-                      },
-                    },
-                    "location": 67,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 69,
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 125,
-                "relname": "pg_settings",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 40 1`] = `
+[
+  "select count(*) = 0 as ok from pg_prepared_statements",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_prepared_statements",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 106,
-                "val": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sysviews.sql > line 43 1`] = `
+[
+  "select count(*) >= 0 as ok from pg_prepared_xacts",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_prepared_xacts",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 19,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sysviews.sql > line 46 1`] = `
+[
+  "select count(*) > 0 as ok from pg_stat_slru",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_stat_slru",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sysviews.sql > line 49 1`] = `
+[
+  "select count(*) = 1 as ok from pg_stat_wal",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_stat_wal",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 18,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sysviews.sql > line 52 1`] = `
+[
+  "select count(*) = 0 as ok from pg_stat_wal_receiver",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_stat_wal_receiver",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_star": true,
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
+                            },
+                          ],
+                          "location": 7,
+                        },
+                      },
+                      "location": 16,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 18,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sysviews.sql > line 56 1`] = `
+[
+  "select name, setting from pg_settings where name like 'enable%'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 26,
+                  "relname": "pg_settings",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "name",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 13,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "setting",
+                          },
+                        },
+                      ],
+                      "location": 13,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_LIKE",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -1189,57 +1201,23 @@ exports[`sysviews.sql > line 53 1`] = `
                         },
                       },
                     ],
-                    "location": 106,
+                    "location": 44,
                   },
                 },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 112,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "setting",
-                        },
-                      },
-                    ],
-                    "location": 112,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_LIKE",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "name",
-                      },
+                "location": 49,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "~~",
                     },
-                  ],
-                  "location": 143,
-                },
-              },
-              "location": 148,
-              "name": [
-                {
-                  "String": {
-                    "sval": "~~",
                   },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 153,
-                  "sval": {
-                    "sval": "enable%",
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 54,
+                    "sval": {
+                      "sval": "enable%",
+                    },
                   },
                 },
               },
@@ -1247,392 +1225,123 @@ exports[`sysviews.sql > line 53 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 490,
-                "relname": "pg_timezone_names",
-                "relpersistence": "p",
+exports[`sysviews.sql > line 64 1`] = `
+[
+  "select count(distinct utc_offset) >= 24 as ok from pg_timezone_names",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 51,
+                  "relname": "pg_timezone_names",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 446,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_distinct": true,
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "utc_offset",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "ok",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "FuncCall": {
+                          "agg_distinct": true,
+                          "args": [
+                            {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "utc_offset",
+                                    },
                                   },
-                                },
-                              ],
-                              "location": 461,
+                                ],
+                                "location": 22,
+                              },
                             },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
+                          ],
+                          "funcformat": "COERCE_EXPLICIT_CALL",
+                          "funcname": [
+                            {
+                              "String": {
+                                "sval": "count",
+                              },
                             },
-                          },
-                        ],
-                        "location": 446,
-                      },
-                    },
-                    "location": 473,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
+                          ],
+                          "location": 7,
                         },
                       },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 24,
+                      "location": 34,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">=",
+                          },
                         },
-                        "location": 476,
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 24,
+                          },
+                          "location": 37,
+                        },
                       },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sysviews.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 52,
-                "relname": "pg_timezone_abbrevs",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_distinct": true,
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "utc_offset",
-                                  },
-                                },
-                              ],
-                              "location": 23,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 35,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 24,
-                        },
-                        "location": 38,
-                      },
-                    },
+exports[`sysviews.sql > line 67 1`] = `
+[
+  "set timezone_abbreviations = 'Australia'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 29,
+                  "sval": {
+                    "sval": "Australia",
                   },
                 },
               },
-            },
-          ],
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "timezone_abbreviations",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 93,
-                "sval": {
-                  "sval": "Australia",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "timezone_abbreviations",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 52,
-                "relname": "pg_timezone_abbrevs",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_distinct": true,
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "utc_offset",
-                                  },
-                                },
-                              ],
-                              "location": 23,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 35,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 24,
-                        },
-                        "location": 38,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 30,
-                "sval": {
-                  "sval": "India",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "timezone_abbreviations",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sysviews.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 52,
-                "relname": "pg_timezone_abbrevs",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "ok",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "agg_distinct": true,
-                        "args": [
-                          {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "utc_offset",
-                                  },
-                                },
-                              ],
-                              "location": 23,
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_EXPLICIT_CALL",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "count",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 35,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 24,
-                        },
-                        "location": 38,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

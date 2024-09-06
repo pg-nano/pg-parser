@@ -1,2089 +1,831 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`collate.linux.utf8.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`collate.linux.utf8.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateSchemaStmt": {
-          "schemaname": "collate_tests",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 19,
-                "sval": {
-                  "sval": "collate_tests",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "search_path",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 16,
-            "relname": "collate_test1",
-            "relpersistence": "p",
+exports[`collate.linux.utf8.sql > line 17 1`] = `
+[
+  "CREATE SCHEMA collate_tests",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateSchemaStmt": {
+            "schemaname": "collate_tests",
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 36,
-                "typeName": {
-                  "location": 38,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 33 1`] = `
+[
+  "CREATE TABLE collate_test_fail (
+    a int,
+    b text COLLATE "foo"
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "collate_test_fail",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 37,
+                  "typeName": {
+                    "location": 39,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
                       },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
                       },
-                    },
-                  ],
-                  "typemod": -1,
+                    ],
+                    "typemod": -1,
+                  },
                 },
               },
-            },
-            {
-              "ColumnDef": {
-                "collClause": {
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "en_US",
+              {
+                "ColumnDef": {
+                  "collClause": {
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "foo",
+                        },
                       },
-                    },
-                  ],
-                  "location": 54,
+                    ],
+                    "location": 55,
+                  },
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 48,
+                  "typeName": {
+                    "location": 50,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
                 },
-                "colname": "b",
-                "constraints": [
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 38 1`] = `
+[
+  "CREATE TABLE collate_test_fail (
+    a int COLLATE "en_US",
+    b text
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "collate_test_fail",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "collClause": {
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "en_US",
+                        },
+                      },
+                    ],
+                    "location": 43,
+                  },
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 37,
+                  "typeName": {
+                    "location": 39,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 64,
+                  "typeName": {
+                    "location": 66,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 43 1`] = `
+[
+  "CREATE TABLE collate_test_like (
+    LIKE collate_test1
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "collate_test_like",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "TableLikeClause": {
+                  "relation": {
+                    "inh": true,
+                    "location": 42,
+                    "relname": "collate_test1",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 54 1`] = `
+[
+  "CREATE TABLE collate_test3 (
+    a int,
+    b text COLLATE "C"
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "collate_test3",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 33,
+                  "typeName": {
+                    "location": 35,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "collClause": {
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "C",
+                        },
+                      },
+                    ],
+                    "location": 51,
+                  },
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 44,
+                  "typeName": {
+                    "location": 46,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 59 1`] = `
+[
+  "INSERT INTO collate_test1 VALUES (1, 'abc'), (2, 'äbc'), (3, 'bbc'), (4, 'ABC');",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "collate_test1",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "valuesLists": [
                   {
-                    "Constraint": {
-                      "contype": "CONSTR_NOTNULL",
-                      "location": 70,
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 1,
+                            },
+                            "location": 34,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 37,
+                            "sval": {
+                              "sval": "abc",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 2,
+                            },
+                            "location": 46,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 49,
+                            "sval": {
+                              "sval": "äbc",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 3,
+                            },
+                            "location": 59,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 62,
+                            "sval": {
+                              "sval": "bbc",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "A_Const": {
+                            "ival": {
+                              "ival": 4,
+                            },
+                            "location": 71,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 74,
+                            "sval": {
+                              "sval": "ABC",
+                            },
+                          },
+                        },
+                      ],
                     },
                   },
                 ],
-                "is_local": true,
-                "location": 47,
-                "typeName": {
-                  "location": 49,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
               },
             },
-          ],
+          },
         },
+        "stmt_len": 80,
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`collate.linux.utf8.sql > line 25 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`collate.linux.utf8.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "collate_test_fail",
-            "relpersistence": "p",
+exports[`collate.linux.utf8.sql > line 60 1`] = `
+[
+  "INSERT INTO collate_test2 SELECT * FROM collate_test1;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "collate_test2",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 40,
+                      "relname": "collate_test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 33,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 33,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "collClause": {
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "foo",
-                      },
-                    },
-                  ],
-                  "location": 57,
-                },
-                "colname": "b",
-                "is_local": true,
-                "location": 50,
-                "typeName": {
-                  "location": 52,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
+        "stmt_len": 53,
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`collate.linux.utf8.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "collate_test_fail",
-            "relpersistence": "p",
+exports[`collate.linux.utf8.sql > line 61 1`] = `
+[
+  "INSERT INTO collate_test3 SELECT * FROM collate_test1;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "collate_test3",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 40,
+                      "relname": "collate_test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 33,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 33,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
           },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "collClause": {
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "en_US",
-                      },
-                    },
-                  ],
-                  "location": 45,
-                },
-                "colname": "a",
-                "is_local": true,
-                "location": 39,
-                "typeName": {
-                  "location": 41,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 66,
-                "typeName": {
-                  "location": 68,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
         },
+        "stmt_len": 53,
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`collate.linux.utf8.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "collate_test_like",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "TableLikeClause": {
-                "relation": {
+exports[`collate.linux.utf8.sql > line 64 1`] = `
+[
+  "SELECT * FROM collate_test2 WHERE b >= 'bbc';",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
                   "inh": true,
-                  "location": 44,
+                  "location": 14,
+                  "relname": "collate_test2",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 34,
+                  },
+                },
+                "location": 36,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 39,
+                    "sval": {
+                      "sval": "bbc",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        "stmt_len": 44,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 65 1`] = `
+[
+  "SELECT * FROM collate_test3 WHERE b >= 'bbc';",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test3",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": [
+                      {
+                        "String": {
+                          "sval": "b",
+                        },
+                      },
+                    ],
+                    "location": 34,
+                  },
+                },
+                "location": 36,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "location": 39,
+                    "sval": {
+                      "sval": "bbc",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        "stmt_len": 44,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 69 1`] = `
+[
+  "SELECT * FROM collate_test1 WHERE b >= 'bbc' COLLATE "C";",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
                   "relname": "collate_test1",
                   "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 46 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`collate.linux.utf8.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "collate_test3",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 35,
-                "typeName": {
-                  "location": 37,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "collClause": {
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
-                      },
-                    },
-                  ],
-                  "location": 53,
-                },
-                "colname": "b",
-                "is_local": true,
-                "location": 46,
-                "typeName": {
-                  "location": 48,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "collate_test1",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 1,
-                          },
-                          "location": 36,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 39,
-                          "sval": {
-                            "sval": "abc",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 2,
-                          },
-                          "location": 48,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 51,
-                          "sval": {
-                            "sval": "äbc",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 61,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 64,
-                          "sval": {
-                            "sval": "bbc",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 73,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 76,
-                          "sval": {
-                            "sval": "ABC",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      "stmt_len": 82,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "collate_test2",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 40,
-                    "relname": "collate_test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 33,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      "stmt_len": 53,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "collate_test3",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 40,
-                    "relname": "collate_test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 33,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      "stmt_len": 53,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "b",
-                      },
-                    },
-                  ],
-                  "location": 35,
-                },
-              },
-              "location": 37,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 40,
-                  "sval": {
-                    "sval": "bbc",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 45,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "b",
-                      },
-                    },
-                  ],
-                  "location": 34,
-                },
-              },
-              "location": 36,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 39,
-                  "sval": {
-                    "sval": "bbc",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 44,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "b",
-                      },
-                    },
-                  ],
-                  "location": 34,
-                },
-              },
-              "location": 36,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 39,
-                  "sval": {
-                    "sval": "bbc",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 44,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "b",
-                      },
-                    },
-                  ],
-                  "location": 34,
-                },
-              },
-              "location": 36,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 39,
-                  "sval": {
-                    "sval": "BBC",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 44,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 15,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 8,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "CollateClause": {
-                  "arg": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
-                          "String": {
-                            "sval": "b",
-                          },
+                          "A_Star": {},
                         },
                       ],
-                      "location": 35,
+                      "location": 7,
                     },
                   },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
-                      },
-                    },
-                  ],
-                  "location": 37,
                 },
               },
-              "location": 49,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 52,
-                  "sval": {
-                    "sval": "bbc",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 57,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 69 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
-                        "A_Star": {},
+                        "String": {
+                          "sval": "b",
+                        },
                       },
                     ],
-                    "location": 7,
+                    "location": 34,
                   },
                 },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "b",
-                      },
-                    },
-                  ],
-                  "location": 34,
-                },
-              },
-              "location": 36,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "CollateClause": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 39,
-                      "sval": {
-                        "sval": "bbc",
-                      },
+                "location": 36,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
                     },
                   },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
+                ],
+                "rexpr": {
+                  "CollateClause": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 39,
+                        "sval": {
+                          "sval": "bbc",
+                        },
                       },
                     },
-                  ],
-                  "location": 45,
+                    "collname": [
+                      {
+                        "String": {
+                          "sval": "C",
+                        },
+                      },
+                    ],
+                    "location": 45,
+                  },
                 },
               },
             },
           },
         },
+        "stmt_len": 56,
       },
-      "stmt_len": 56,
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`collate.linux.utf8.sql > line 70 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
+[
+  "SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "C";",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "CollateClause": {
-                  "arg": {
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
-                          "String": {
-                            "sval": "b",
-                          },
+                          "A_Star": {},
                         },
                       ],
-                      "location": 34,
+                      "location": 7,
                     },
                   },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
-                      },
-                    },
-                  ],
-                  "location": 36,
-                },
-              },
-              "location": 48,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "CollateClause": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 51,
-                      "sval": {
-                        "sval": "bbc",
-                      },
-                    },
-                  },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
-                      },
-                    },
-                  ],
-                  "location": 57,
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 68,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 71 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "CollateClause": {
-                  "arg": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "b",
-                          },
-                        },
-                      ],
-                      "location": 34,
-                    },
-                  },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "C",
-                      },
-                    },
-                  ],
-                  "location": 36,
-                },
-              },
-              "location": 48,
-              "name": [
-                {
-                  "String": {
-                    "sval": ">=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "CollateClause": {
-                  "arg": {
-                    "A_Const": {
-                      "location": 51,
-                      "sval": {
-                        "sval": "bbc",
-                      },
-                    },
-                  },
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "en_US",
-                      },
-                    },
-                  ],
-                  "location": 57,
-                },
-              },
-            },
-          },
-        },
-      },
-      "stmt_len": 72,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 73 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateDomainStmt": {
-          "collClause": {
-            "collname": [
-              {
-                "String": {
-                  "sval": "sv_SE",
                 },
               },
             ],
-            "location": 38,
-          },
-          "domainname": [
-            {
-              "String": {
-                "sval": "testdomain_sv",
-              },
-            },
-          ],
-          "typeName": {
-            "location": 33,
-            "names": [
-              {
-                "String": {
-                  "sval": "text",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-      "stmt_len": 53,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 75 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateDomainStmt": {
-          "collClause": {
-            "collname": [
-              {
-                "String": {
-                  "sval": "sv_SE",
-                },
-              },
-            ],
-            "location": 34,
-          },
-          "domainname": [
-            {
-              "String": {
-                "sval": "testdomain_i",
-              },
-            },
-          ],
-          "typeName": {
-            "location": 30,
-            "names": [
-              {
-                "String": {
-                  "sval": "pg_catalog",
-                },
-              },
-              {
-                "String": {
-                  "sval": "int4",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-      "stmt_len": 49,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 75 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 22,
-            "relname": "collate_test4",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 42,
-                "typeName": {
-                  "location": 44,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 53,
-                "typeName": {
-                  "location": 55,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "testdomain_sv",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 70,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 80 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "collate_test4",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 40,
-                    "relname": "collate_test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 33,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      "stmt_len": 53,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "collate_test4",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 40,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 41,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "collate_test5",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 34,
-                "typeName": {
-                  "location": 36,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "collClause": {
-                  "collname": [
-                    {
-                      "String": {
-                        "sval": "en_US",
-                      },
-                    },
-                  ],
-                  "location": 61,
-                },
-                "colname": "b",
-                "is_local": true,
-                "location": 45,
-                "typeName": {
-                  "location": 47,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "testdomain_sv",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 78,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 12,
-            "relname": "collate_test5",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 40,
-                    "relname": "collate_test1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 33,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      "stmt_len": 53,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "collate_test5",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 40,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 41,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 90 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 19,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 42,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 12,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 12,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 43,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 92 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "collate_test2",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 40,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 41,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 93 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 17,
-                "relname": "collate_test3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 40,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "a",
-                        },
-                      },
-                    ],
-                    "location": 7,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-      "stmt_len": 41,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 95 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 18,
-                "relname": "collate_test1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "CollateClause": {
                     "arg": {
                       "ColumnRef": {
@@ -2094,7 +836,7 @@ exports[`collate.linux.utf8.sql > line 95 1`] = `
                             },
                           },
                         ],
-                        "location": 41,
+                        "location": 34,
                       },
                     },
                     "collname": [
@@ -2104,709 +846,1213 @@ exports[`collate.linux.utf8.sql > line 95 1`] = `
                         },
                       },
                     ],
-                    "location": 43,
+                    "location": 36,
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
+                "location": 48,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "CollateClause": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 51,
+                        "sval": {
+                          "sval": "bbc",
+                        },
+                      },
+                    },
+                    "collname": [
                       {
                         "String": {
-                          "sval": "a",
+                          "sval": "C",
                         },
                       },
                     ],
-                    "location": 8,
+                    "location": 57,
                   },
                 },
               },
             },
-            {
-              "ResTarget": {
-                "location": 11,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 11,
-                  },
-                },
-              },
-            },
-          ],
+          },
         },
+        "stmt_len": 68,
       },
-      "stmt_len": 54,
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`collate.linux.utf8.sql > line 97 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 33,
-                "relname": "collate_test1",
-                "relpersistence": "p",
+exports[`collate.linux.utf8.sql > line 71 1`] = `
+[
+  "SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "en_US";",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
+                  "CollateClause": {
+                    "arg": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "b",
+                            },
+                          },
+                        ],
+                        "location": 34,
+                      },
+                    },
+                    "collname": [
                       {
                         "String": {
-                          "sval": "b",
+                          "sval": "C",
                         },
                       },
                     ],
-                    "location": 56,
+                    "location": 36,
                   },
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 26,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
+                "location": 48,
+                "name": [
+                  {
+                    "String": {
+                      "sval": ">=",
+                    },
+                  },
+                ],
+                "rexpr": {
+                  "CollateClause": {
+                    "arg": {
+                      "A_Const": {
+                        "location": 51,
+                        "sval": {
+                          "sval": "bbc",
+                        },
+                      },
+                    },
+                    "collname": [
                       {
-                        "A_Star": {},
+                        "String": {
+                          "sval": "en_US",
+                        },
                       },
                     ],
-                    "location": 26,
+                    "location": 57,
                   },
                 },
               },
             },
-          ],
+          },
         },
+        "stmt_len": 72,
       },
-      "stmt_len": 57,
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 74 1`] = `
+[
+  "CREATE DOMAIN testdomain_sv AS text COLLATE "sv_SE";",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateDomainStmt": {
+            "collClause": {
+              "collname": [
+                {
+                  "String": {
+                    "sval": "sv_SE",
+                  },
+                },
+              ],
+              "location": 36,
+            },
+            "domainname": [
+              {
+                "String": {
+                  "sval": "testdomain_sv",
+                },
+              },
+            ],
+            "typeName": {
+              "location": 31,
+              "names": [
+                {
+                  "String": {
+                    "sval": "text",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+        "stmt_len": 51,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 75 1`] = `
+[
+  "CREATE DOMAIN testdomain_i AS int COLLATE "sv_SE";",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateDomainStmt": {
+            "collClause": {
+              "collname": [
+                {
+                  "String": {
+                    "sval": "sv_SE",
+                  },
+                },
+              ],
+              "location": 34,
+            },
+            "domainname": [
+              {
+                "String": {
+                  "sval": "testdomain_i",
+                },
+              },
+            ],
+            "typeName": {
+              "location": 30,
+              "names": [
+                {
+                  "String": {
+                    "sval": "pg_catalog",
+                  },
+                },
+                {
+                  "String": {
+                    "sval": "int4",
+                  },
+                },
+              ],
+              "typemod": -1,
+            },
+          },
+        },
+        "stmt_len": 49,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 76 1`] = `
+[
+  "CREATE TABLE collate_test4 (
+    a int,
+    b testdomain_sv
+);",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "collate_test4",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 33,
+                  "typeName": {
+                    "location": 35,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 44,
+                  "typeName": {
+                    "location": 46,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "testdomain_sv",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 61,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 80 1`] = `
+[
+  "INSERT INTO collate_test4 SELECT * FROM collate_test1;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "collate_test4",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 40,
+                      "relname": "collate_test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 33,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 33,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+        "stmt_len": 53,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 81 1`] = `
+[
+  "SELECT a, b FROM collate_test4 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "collate_test4",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 41,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 87 1`] = `
+[
+  "INSERT INTO collate_test5 SELECT * FROM collate_test1;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "collate_test5",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 40,
+                      "relname": "collate_test1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 33,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "A_Star": {},
+                            },
+                          ],
+                          "location": 33,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+        "stmt_len": 53,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 88 1`] = `
+[
+  "SELECT a, b FROM collate_test5 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "collate_test5",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 41,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 91 1`] = `
+[
+  "SELECT a, b FROM collate_test1 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 41,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 92 1`] = `
+[
+  "SELECT a, b FROM collate_test2 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "collate_test2",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 41,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 93 1`] = `
+[
+  "SELECT a, b FROM collate_test3 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 17,
+                  "relname": "collate_test3",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "a",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 41,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`collate.linux.utf8.sql > line 98 1`] = `
+[
+  "SELECT * FROM collate_test1 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test1",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
+                        },
+                      ],
+                      "location": 37,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 38,
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`collate.linux.utf8.sql > line 99 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test2",
-                "relpersistence": "p",
+[
+  "SELECT * FROM collate_test2 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test2",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
+                          },
                         },
-                      },
-                    ],
-                    "location": 37,
+                      ],
+                      "location": 37,
+                    },
                   },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
               },
-            },
-          ],
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+            ],
+          },
         },
+        "stmt_len": 38,
       },
-      "stmt_len": 38,
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`collate.linux.utf8.sql > line 100 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 14,
-                "relname": "collate_test3",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "b",
-                        },
-                      },
-                    ],
-                    "location": 37,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 7,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "A_Star": {},
-                      },
-                    ],
-                    "location": 7,
-                  },
+[
+  "SELECT * FROM collate_test3 ORDER BY b;",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 14,
+                  "relname": "collate_test3",
+                  "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-      "stmt_len": 38,
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`collate.linux.utf8.sql > line 102 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 39,
-                "name": "true",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 39,
-                            "sval": {
-                              "sval": "bbc",
-                            },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "b",
                           },
                         },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "en_US",
-                            },
-                          },
-                        ],
-                        "location": 45,
-                      },
+                      ],
+                      "location": 37,
                     },
-                    "location": 61,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": ">",
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "A_Star": {},
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 63,
-                            "sval": {
-                              "sval": "äbc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "en_US",
-                            },
-                          },
-                        ],
-                        "location": 70,
-                      },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
+        "stmt_len": 38,
       },
-      "stmt_len": 95,
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`collate.linux.utf8.sql > line 104 1`] = `[Error: syntax error at or near "ELECT"]`;
-
-exports[`collate.linux.utf8.sql > line 106 1`] = `[Error: syntax error at or near "-"]`;
-
-exports[`collate.linux.utf8.sql > line 114 1`] = `[Error: syntax error at or near "NSERT"]`;
-
-exports[`collate.linux.utf8.sql > line 116 1`] = `[Error: syntax error at or near "ELECT"]`;
-
-exports[`collate.linux.utf8.sql > line 117 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 119 1`] = `[Error: syntax error at or near "ELECT"]`;
-
-exports[`collate.linux.utf8.sql > line 121 1`] = `[Error: syntax error at or near "-"]`;
-
-exports[`collate.linux.utf8.sql > line 124 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 125 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 126 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 127 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 128 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 130 1`] = `[Error: syntax error at or near "ELECT"]`;
-
-exports[`collate.linux.utf8.sql > line 131 1`] = `[Error: syntax error at or near "ECT"]`;
-
-exports[`collate.linux.utf8.sql > line 133 1`] = `[Error: syntax error at or near "ECT"]`;
-
-exports[`collate.linux.utf8.sql > line 134 1`] = `[Error: syntax error at or near "T"]`;
-
-exports[`collate.linux.utf8.sql > line 136 1`] = `[Error: syntax error at or near "e"]`;
-
-exports[`collate.linux.utf8.sql > line 139 1`] = `[Error: syntax error at or near "gular"]`;
-
-exports[`collate.linux.utf8.sql > line 142 1`] = `[Error: syntax error at or near "*"]`;
-
-exports[`collate.linux.utf8.sql > line 143 1`] = `[Error: syntax error at or near "*"]`;
-
-exports[`collate.linux.utf8.sql > line 144 1`] = `[Error: syntax error at or near "*"]`;
-
-exports[`collate.linux.utf8.sql > line 145 1`] = `[Error: syntax error at or near "*"]`;
-
-exports[`collate.linux.utf8.sql > line 146 1`] = `[Error: syntax error at or near "*"]`;
-
-exports[`collate.linux.utf8.sql > line 148 1`] = `[Error: syntax error at or near "E"]`;
-
-exports[`collate.linux.utf8.sql > line 152 1`] = `[Error: syntax error at or near "INTO"]`;
-
-exports[`collate.linux.utf8.sql > line 156 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 167 1`] = `[Error: syntax error at or near "ürkiye"]`;
-
-exports[`collate.linux.utf8.sql > line 168 1`] = `[Error: syntax error at or near "kiye"]`;
-
-exports[`collate.linux.utf8.sql > line 170 1`] = `[Error: syntax error at or near "' ~* '"]`;
-
-exports[`collate.linux.utf8.sql > line 171 1`] = `[Error: syntax error at or near "~*"]`;
-
-exports[`collate.linux.utf8.sql > line 173 1`] = `[Error: syntax error at or near "ing"]`;
+exports[`collate.linux.utf8.sql > line 103 1`] = `
+[
+  "SELECT 'bbc' COLLATE "en_US" > 'äbc' COLLATE "en_US" AS "true";
+",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "name": "true",
+                  "val": {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "CollateClause": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 7,
+                              "sval": {
+                                "sval": "bbc",
+                              },
+                            },
+                          },
+                          "collname": [
+                            {
+                              "String": {
+                                "sval": "en_US",
+                              },
+                            },
+                          ],
+                          "location": 13,
+                        },
+                      },
+                      "location": 29,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": ">",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "CollateClause": {
+                          "arg": {
+                            "A_Const": {
+                              "location": 31,
+                              "sval": {
+                                "sval": "äbc",
+                              },
+                            },
+                          },
+                          "collname": [
+                            {
+                              "String": {
+                                "sval": "en_US",
+                              },
+                            },
+                          ],
+                          "location": 38,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_len": 63,
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
 
 exports[`collate.linux.utf8.sql > line 179 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 15,
-                "sval": {
-                  "sval": "tr_TR",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "lc_time",
-        },
-      },
-      "stmt_len": 22,
-    },
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 31,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "to_cha",
-                        },
-                      },
-                    ],
-                    "location": 31,
+[
+  "SET lc_time TO 'tr_TR';
+SELECT to_cha",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
+              {
+                "A_Const": {
+                  "location": 15,
+                  "sval": {
+                    "sval": "tr_TR",
                   },
                 },
               },
-            },
-          ],
+            ],
+            "kind": "VAR_SET_VALUE",
+            "name": "lc_time",
+          },
         },
+        "stmt_len": 22,
       },
-      "stmt_location": 23,
-    },
-  ],
-  "version": 160001,
-}
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 31,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "to_cha",
+                          },
+                        },
+                      ],
+                      "location": 31,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "stmt_location": 23,
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
-
-exports[`collate.linux.utf8.sql > line 180 1`] = `[Error: syntax error at or near "date"]`;
-
-exports[`collate.linux.utf8.sql > line 181 1`] = `[Error: syntax error at or near "date"]`;
-
-exports[`collate.linux.utf8.sql > line 182 1`] = `[Error: syntax error at or near "date"]`;
-
-exports[`collate.linux.utf8.sql > line 183 1`] = `[Error: syntax error at or near "date"]`;
-
-exports[`collate.linux.utf8.sql > line 187 1`] = `[Error: syntax error at or near "ELECT"]`;
-
-exports[`collate.linux.utf8.sql > line 188 1`] = `[Error: syntax error at or near "'01 Şub 2010'"]`;
-
-exports[`collate.linux.utf8.sql > line 189 1`] = `[Error: trailing junk after numeric literal at or near "1234567890a"]`;
-
-exports[`collate.linux.utf8.sql > line 192 1`] = `[Error: syntax error at or near "kwards"]`;
-
-exports[`collate.linux.utf8.sql > line 195 1`] = `[Error: syntax error at or near "view2"]`;
-
-exports[`collate.linux.utf8.sql > line 196 1`] = `[Error: syntax error at or near "view3"]`;
-
-exports[`collate.linux.utf8.sql > line 198 1`] = `[Error: syntax error at or near "me"]`;
-
-exports[`collate.linux.utf8.sql > line 202 1`] = `[Error: syntax error at or near "ropagation"]`;
-
-exports[`collate.linux.utf8.sql > line 205 1`] = `[Error: syntax error at or near "ce"]`;
-
-exports[`collate.linux.utf8.sql > line 206 1`] = `[Error: syntax error at or near "ce"]`;
-
-exports[`collate.linux.utf8.sql > line 207 1`] = `[Error: syntax error at or near "coalesce"]`;
-
-exports[`collate.linux.utf8.sql > line 209 1`] = `[Error: syntax error at or near "eatest"]`;
-
-exports[`collate.linux.utf8.sql > line 210 1`] = `[Error: syntax error at or near "atest"]`;
-
-exports[`collate.linux.utf8.sql > line 211 1`] = `[Error: syntax error at or near "atest"]`;
-
-exports[`collate.linux.utf8.sql > line 212 1`] = `[Error: syntax error at or near "lower"]`;
-
-exports[`collate.linux.utf8.sql > line 214 1`] = `[Error: syntax error at or near "f"]`;
-
-exports[`collate.linux.utf8.sql > line 215 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 216 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 217 1`] = `[Error: syntax error at or near "nullif"]`;
-
-exports[`collate.linux.utf8.sql > line 219 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 220 1`] = `[Error: syntax error at or near "WHEN"]`;
-
-exports[`collate.linux.utf8.sql > line 221 1`] = `[Error: syntax error at or near "WHEN"]`;
-
-exports[`collate.linux.utf8.sql > line 223 1`] = `[Error: syntax error at or near "estdomain"]`;
-
-exports[`collate.linux.utf8.sql > line 224 1`] = `[Error: syntax error at or near "tdomain"]`;
-
-exports[`collate.linux.utf8.sql > line 225 1`] = `[Error: syntax error at or near "tdomain"]`;
-
-exports[`collate.linux.utf8.sql > line 226 1`] = `[Error: syntax error at or near "tdomain"]`;
-
-exports[`collate.linux.utf8.sql > line 227 1`] = `[Error: syntax error at or near "tdomain_sv"]`;
-
-exports[`collate.linux.utf8.sql > line 228 1`] = `[Error: syntax error at or near "x"]`;
-
-exports[`collate.linux.utf8.sql > line 230 1`] = `[Error: syntax error at or near "max"]`;
-
-exports[`collate.linux.utf8.sql > line 231 1`] = `[Error: syntax error at or near "ax"]`;
-
-exports[`collate.linux.utf8.sql > line 232 1`] = `[Error: syntax error at or near "ax"]`;
-
-exports[`collate.linux.utf8.sql > line 234 1`] = `[Error: syntax error at or near "g"]`;
-
-exports[`collate.linux.utf8.sql > line 235 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 236 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 238 1`] = `[Error: syntax error at or near "M"]`;
-
-exports[`collate.linux.utf8.sql > line 239 1`] = `[Error: syntax error at or near "collate_test2"]`;
-
-exports[`collate.linux.utf8.sql > line 240 1`] = `[Error: syntax error at or near "collate_test3"]`;
-
-exports[`collate.linux.utf8.sql > line 241 1`] = `[Error: syntax error at or near "collate_test3"]`;
-
-exports[`collate.linux.utf8.sql > line 243 1`] = `[Error: syntax error at or near "M"]`;
-
-exports[`collate.linux.utf8.sql > line 244 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 245 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 246 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 247 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 248 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 250 1`] = `[Error: syntax error at or near "AS"]`;
-
-exports[`collate.linux.utf8.sql > line 252 1`] = `[Error: syntax error at or near "lly"]`;
-
-exports[`collate.linux.utf8.sql > line 254 1`] = `[Error: syntax error at or near "||"]`;
-
-exports[`collate.linux.utf8.sql > line 254 2`] = `[Error: syntax error at or near "|"]`;
-
-exports[`collate.linux.utf8.sql > line 257 1`] = `[Error: syntax error at or near "collation"]`;
-
-exports[`collate.linux.utf8.sql > line 267 1`] = `[Error: syntax error at or near "LECT"]`;
-
-exports[`collate.linux.utf8.sql > line 269 1`] = `[Error: syntax error at or near "b"]`;
-
-exports[`collate.linux.utf8.sql > line 270 1`] = `[Error: syntax error at or near "AS"]`;
-
-exports[`collate.linux.utf8.sql > line 271 1`] = `[Error: syntax error at or near "AS"]`;
-
-exports[`collate.linux.utf8.sql > line 274 1`] = `[Error: syntax error at or near "of"]`;
-
-exports[`collate.linux.utf8.sql > line 280 1`] = `[Error: syntax error at or near "mylt_noninline"]`;
-
-exports[`collate.linux.utf8.sql > line 283 1`] = `[Error: syntax error at or near "mylt_plpgsql"]`;
-
-exports[`collate.linux.utf8.sql > line 286 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 291 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 298 1`] = `[Error: syntax error at or near "verride"]`;
-
-exports[`collate.linux.utf8.sql > line 309 1`] = `[Error: syntax error at or near "', '"]`;
-
-exports[`collate.linux.utf8.sql > line 311 1`] = `[Error: syntax error at or near "CE"]`;
-
-exports[`collate.linux.utf8.sql > line 321 1`] = `[Error: syntax error at or near "', '"]`;
-
-exports[`collate.linux.utf8.sql > line 322 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 322 2`] = `[Error: syntax error at or near "ollations"]`;
-
-exports[`collate.linux.utf8.sql > line 326 1`] = `[Error: syntax error at or near "m"]`;
-
-exports[`collate.linux.utf8.sql > line 329 1`] = `[Error: syntax error at or near "nest"]`;
-
-exports[`collate.linux.utf8.sql > line 330 1`] = `[Error: syntax error at or near "nest"]`;
-
-exports[`collate.linux.utf8.sql > line 332 1`] = `[Error: syntax error at or near "dup"]`;
-
-exports[`collate.linux.utf8.sql > line 335 1`] = `[Error: syntax error at or near ")"]`;
-
-exports[`collate.linux.utf8.sql > line 336 1`] = `[Error: syntax error at or near "FROM"]`;
-
-exports[`collate.linux.utf8.sql > line 337 1`] = `[Error: syntax error at or near "FROM"]`;
-
-exports[`collate.linux.utf8.sql > line 342 1`] = `[Error: syntax error at or near "EATE"]`;
-
-exports[`collate.linux.utf8.sql > line 343 1`] = `[Error: syntax error at or near "late_test1_idx2"]`;
-
-exports[`collate.linux.utf8.sql > line 344 1`] = `[Error: syntax error at or near "late_test1_idx3"]`;
-
-exports[`collate.linux.utf8.sql > line 344 2`] = `[Error: syntax error at or near "rent"]`;
-
-exports[`collate.linux.utf8.sql > line 347 1`] = `[Error: syntax error at or near "llate_test1_idx5"]`;
-
-exports[`collate.linux.utf8.sql > line 348 1`] = `[Error: syntax error at or near "NDEX"]`;
-
-exports[`collate.linux.utf8.sql > line 350 1`] = `[Error: syntax error at or near "relname"]`;
-
-exports[`collate.linux.utf8.sql > line 353 1`] = `[Error: syntax error at or near "pulation"]`;
-
-exports[`collate.linux.utf8.sql > line 356 1`] = `[Error: syntax error at or near "st_schema"]`;
-
-exports[`collate.linux.utf8.sql > line 358 1`] = `[Error: syntax error at or near "o"]`;
-
-exports[`collate.linux.utf8.sql > line 365 1`] = `[Error: syntax error at or near "test0"]`;
-
-exports[`collate.linux.utf8.sql > line 365 2`] = `[Error: syntax error at or near "te"]`;
-
-exports[`collate.linux.utf8.sql > line 367 1`] = `[Error: syntax error at or near "REATE"]`;
-
-exports[`collate.linux.utf8.sql > line 368 1`] = `[Error: syntax error at or near "o"]`;
-
-exports[`collate.linux.utf8.sql > line 376 1`] = `[Error: syntax error at or near "test3"]`;
-
-exports[`collate.linux.utf8.sql > line 376 2`] = `[Error: syntax error at or near "_ctype"]`;
-
-exports[`collate.linux.utf8.sql > line 379 1`] = `[Error: syntax error at or near "COLLATION"]`;
-
-exports[`collate.linux.utf8.sql > line 380 1`] = `[Error: syntax error at or near "test5"]`;
-
-exports[`collate.linux.utf8.sql > line 382 1`] = `[Error: syntax error at or near "FROM"]`;
-
-exports[`collate.linux.utf8.sql > line 384 1`] = `[Error: syntax error at or near "test1"]`;
-
-exports[`collate.linux.utf8.sql > line 385 1`] = `[Error: syntax error at or near "test0"]`;
-
-exports[`collate.linux.utf8.sql > line 386 1`] = `[Error: syntax error at or near "LLATION"]`;
-
-exports[`collate.linux.utf8.sql > line 388 1`] = `[Error: syntax error at or near "OLLATION"]`;
-
-exports[`collate.linux.utf8.sql > line 389 1`] = `[Error: syntax error at or near "test11"]`;
-
-exports[`collate.linux.utf8.sql > line 390 1`] = `[Error: syntax error at or near "test11"]`;
-
-exports[`collate.linux.utf8.sql > line 392 1`] = `[Error: syntax error at or near "ATION"]`;
-
-exports[`collate.linux.utf8.sql > line 394 1`] = `[Error: syntax error at or near ","]`;
-
-exports[`collate.linux.utf8.sql > line 399 1`] = `[Error: syntax error at or near "test0"]`;
-
-exports[`collate.linux.utf8.sql > line 400 1`] = `[Error: syntax error at or near "est0"]`;
-
-exports[`collate.linux.utf8.sql > line 401 1`] = `[Error: syntax error at or near "LATION"]`;
-
-exports[`collate.linux.utf8.sql > line 403 1`] = `[Error: syntax error at or near "FROM"]`;
-
-exports[`collate.linux.utf8.sql > line 405 1`] = `[Error: syntax error at or near "t_schema"]`;
-
-exports[`collate.linux.utf8.sql > line 406 1`] = `[Error: syntax error at or near "s_test_role"]`;
-
-exports[`collate.linux.utf8.sql > line 411 1`] = `[Error: syntax error at or near "R"]`;
-
-exports[`collate.linux.utf8.sql > line 413 1`] = `[Error: syntax error at or near "r"]`;
-
-exports[`collate.linux.utf8.sql > line 418 1`] = `[Error: syntax error at or near "s"]`;
-
-exports[`collate.linux.utf8.sql > line 422 1`] = `[Error: syntax error at or near "llate_dep_test1"]`;
-
-exports[`collate.linux.utf8.sql > line 423 1`] = `[Error: syntax error at or near "llate_dep_dom1"]`;
-
-exports[`collate.linux.utf8.sql > line 424 1`] = `[Error: syntax error at or near "ate_dep_test2"]`;
-
-exports[`collate.linux.utf8.sql > line 425 1`] = `[Error: syntax error at or near "ate_dep_test3"]`;
-
-exports[`collate.linux.utf8.sql > line 426 1`] = `[Error: syntax error at or near "late_dep_test4t"]`;
-
-exports[`collate.linux.utf8.sql > line 427 1`] = `[Error: syntax error at or near "late_dep_test4i"]`;
-
-exports[`collate.linux.utf8.sql > line 429 1`] = `[Error: syntax error at or near "test0"]`;
-
-exports[`collate.linux.utf8.sql > line 430 1`] = `[Error: syntax error at or near "LATION"]`;
-
-exports[`collate.linux.utf8.sql > line 432 1`] = `[Error: syntax error at or near "test1"]`;
-
-exports[`collate.linux.utf8.sql > line 436 1`] = `[Error: syntax error at or near "e_dep_test2"]`;
-
-exports[`collate.linux.utf8.sql > line 438 1`] = `[Error: syntax error at or near "ypes"]`;
-
-exports[`collate.linux.utf8.sql > line 441 1`] = `[Error: syntax error at or near "range_en_us"]`;
-
-exports[`collate.linux.utf8.sql > line 443 1`] = `[Error: syntax error at or near "e_c"]`;
-
-exports[`collate.linux.utf8.sql > line 444 1`] = `[Error: syntax error at or near "_en_us"]`;
-
-exports[`collate.linux.utf8.sql > line 446 1`] = `[Error: syntax error at or near "ange_c"]`;
-
-exports[`collate.linux.utf8.sql > line 447 1`] = `[Error: syntax error at or near "nge_en_us"]`;
-
-exports[`collate.linux.utf8.sql > line 450 1`] = `[Error: syntax error at or near "llations"]`;
-
-exports[`collate.linux.utf8.sql > line 455 1`] = `[Error: syntax error at or near "istic"]`;
-
-exports[`collate.linux.utf8.sql > line 459 1`] = `[Error: syntax error at or near "ctest_nondet"]`;
-
-exports[`collate.linux.utf8.sql > line 463 1`] = `[Error: syntax error at or near "client_min_messages"]`;
-
-exports[`collate.linux.utf8.sql > line 464 1`] = `[Error: syntax error at or near "ate_tests"]`;

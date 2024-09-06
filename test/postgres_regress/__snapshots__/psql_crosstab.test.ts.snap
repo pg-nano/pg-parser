@@ -1,537 +1,583 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`psql_crosstab.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTableAsStmt": {
-          "into": {
-            "colNames": [
+exports[`psql_crosstab.sql > line 6 1`] = `
+[
+  "VALUES
+   ('v1','h2','foo', 3, '2015-04-01'::date),
+   ('v2','h1','bar', 3, '2015-01-02'),
+   ('v1','h0','baz', NULL, '2015-07-12'),
+   ('v0','h4','qux', 4, '2015-07-15'),
+   ('v0','h4','dbl', -3, '2014-12-15'),
+   ('v0',NULL,'qux', 5, '2014-07-15'),
+   ('v1','h2','quux',7, '2015-04-04')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "valuesLists": [
               {
-                "String": {
-                  "sval": "v",
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 11,
+                        "sval": {
+                          "sval": "v1",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 16,
+                        "sval": {
+                          "sval": "h2",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 21,
+                        "sval": {
+                          "sval": "foo",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 3,
+                        },
+                        "location": 28,
+                      },
+                    },
+                    {
+                      "TypeCast": {
+                        "arg": {
+                          "A_Const": {
+                            "location": 31,
+                            "sval": {
+                              "sval": "2015-04-01",
+                            },
+                          },
+                        },
+                        "location": 43,
+                        "typeName": {
+                          "location": 45,
+                          "names": [
+                            {
+                              "String": {
+                                "sval": "date",
+                              },
+                            },
+                          ],
+                          "typemod": -1,
+                        },
+                      },
+                    },
+                  ],
                 },
               },
               {
-                "String": {
-                  "sval": "h",
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 56,
+                        "sval": {
+                          "sval": "v2",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 61,
+                        "sval": {
+                          "sval": "h1",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 66,
+                        "sval": {
+                          "sval": "bar",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 3,
+                        },
+                        "location": 73,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 76,
+                        "sval": {
+                          "sval": "2015-01-02",
+                        },
+                      },
+                    },
+                  ],
                 },
               },
               {
-                "String": {
-                  "sval": "c",
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 95,
+                        "sval": {
+                          "sval": "v1",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 100,
+                        "sval": {
+                          "sval": "h0",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 105,
+                        "sval": {
+                          "sval": "baz",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "isnull": true,
+                        "location": 112,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 118,
+                        "sval": {
+                          "sval": "2015-07-12",
+                        },
+                      },
+                    },
+                  ],
                 },
               },
               {
-                "String": {
-                  "sval": "i",
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 137,
+                        "sval": {
+                          "sval": "v0",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 142,
+                        "sval": {
+                          "sval": "h4",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 147,
+                        "sval": {
+                          "sval": "qux",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 4,
+                        },
+                        "location": 154,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 157,
+                        "sval": {
+                          "sval": "2015-07-15",
+                        },
+                      },
+                    },
+                  ],
                 },
               },
               {
-                "String": {
-                  "sval": "d",
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 176,
+                        "sval": {
+                          "sval": "v0",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 181,
+                        "sval": {
+                          "sval": "h4",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 186,
+                        "sval": {
+                          "sval": "dbl",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 193,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 197,
+                        "sval": {
+                          "sval": "2014-12-15",
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 216,
+                        "sval": {
+                          "sval": "v0",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "isnull": true,
+                        "location": 221,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 226,
+                        "sval": {
+                          "sval": "qux",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 5,
+                        },
+                        "location": 233,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 236,
+                        "sval": {
+                          "sval": "2014-07-15",
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+              {
+                "List": {
+                  "items": [
+                    {
+                      "A_Const": {
+                        "location": 255,
+                        "sval": {
+                          "sval": "v1",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 260,
+                        "sval": {
+                          "sval": "h2",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 265,
+                        "sval": {
+                          "sval": "quux",
+                        },
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "ival": {
+                          "ival": 7,
+                        },
+                        "location": 272,
+                      },
+                    },
+                    {
+                      "A_Const": {
+                        "location": 275,
+                        "sval": {
+                          "sval": "2015-04-04",
+                        },
+                      },
+                    },
+                  ],
                 },
               },
             ],
-            "onCommit": "ONCOMMIT_NOOP",
-            "rel": {
-              "inh": true,
-              "location": 37,
-              "relname": "ctv_data",
-              "relpersistence": "p",
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-          "query": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 76,
-                          "sval": {
-                            "sval": "v1",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 81,
-                          "sval": {
-                            "sval": "h2",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 86,
-                          "sval": {
-                            "sval": "foo",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 93,
-                        },
-                      },
-                      {
-                        "TypeCast": {
-                          "arg": {
-                            "A_Const": {
-                              "location": 96,
-                              "sval": {
-                                "sval": "2015-04-01",
-                              },
-                            },
-                          },
-                          "location": 108,
-                          "typeName": {
-                            "location": 110,
-                            "names": [
-                              {
-                                "String": {
-                                  "sval": "date",
-                                },
-                              },
-                            ],
-                            "typemod": -1,
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 121,
-                          "sval": {
-                            "sval": "v2",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 126,
-                          "sval": {
-                            "sval": "h1",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 131,
-                          "sval": {
-                            "sval": "bar",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 3,
-                          },
-                          "location": 138,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 141,
-                          "sval": {
-                            "sval": "2015-01-02",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 160,
-                          "sval": {
-                            "sval": "v1",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 165,
-                          "sval": {
-                            "sval": "h0",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 170,
-                          "sval": {
-                            "sval": "baz",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "isnull": true,
-                          "location": 177,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 183,
-                          "sval": {
-                            "sval": "2015-07-12",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 202,
-                          "sval": {
-                            "sval": "v0",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 207,
-                          "sval": {
-                            "sval": "h4",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 212,
-                          "sval": {
-                            "sval": "qux",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 4,
-                          },
-                          "location": 219,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 222,
-                          "sval": {
-                            "sval": "2015-07-15",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 241,
-                          "sval": {
-                            "sval": "v0",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 246,
-                          "sval": {
-                            "sval": "h4",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 251,
-                          "sval": {
-                            "sval": "dbl",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {},
-                          "location": 258,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 262,
-                          "sval": {
-                            "sval": "2014-12-15",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 281,
-                          "sval": {
-                            "sval": "v0",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "isnull": true,
-                          "location": 286,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 291,
-                          "sval": {
-                            "sval": "qux",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 5,
-                          },
-                          "location": 298,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 301,
-                          "sval": {
-                            "sval": "2014-07-15",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 320,
-                          "sval": {
-                            "sval": "v1",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 325,
-                          "sval": {
-                            "sval": "h2",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 330,
-                          "sval": {
-                            "sval": "quux",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "ival": {
-                            "ival": 7,
-                          },
-                          "location": 337,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 340,
-                          "sval": {
-                            "sval": "2015-04-04",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`psql_crosstab.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "rels": [
-            {
-              "VacuumRelation": {
-                "relation": {
+exports[`psql_crosstab.sql > line 16 1`] = `
+[
+  "ANALYZE ctv_data",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VacuumStmt": {
+            "rels": [
+              {
+                "VacuumRelation": {
+                  "relation": {
+                    "inh": true,
+                    "location": 8,
+                    "relname": "ctv_data",
+                    "relpersistence": "p",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`psql_crosstab.sql > line 19 1`] = `
+[
+  "SELECT v, EXTRACT(year FROM d), count(*)
+ FROM ctv_data
+ GROUP BY 1, 2
+ ORDER BY 1, 2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
                   "inh": true,
-                  "location": 36,
+                  "location": 47,
                   "relname": "ctv_data",
                   "relpersistence": "p",
                 },
               },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`psql_crosstab.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 107,
-                "relname": "ctv_data",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "groupClause": [
-            {
-              "A_Const": {
-                "ival": {
-                  "ival": 1,
-                },
-                "location": 126,
-              },
-            },
-            {
-              "A_Const": {
-                "ival": {
-                  "ival": 2,
-                },
-                "location": 129,
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 141,
+            ],
+            "groupClause": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
                   },
+                  "location": 66,
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 2,
-                    },
-                    "location": 144,
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 2,
                   },
+                  "location": 69,
                 },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 67,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "v",
-                        },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
                       },
-                    ],
-                    "location": 67,
+                      "location": 81,
+                    },
                   },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 70,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 78,
-                          "sval": {
-                            "sval": "year",
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 2,
+                      },
+                      "location": 84,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "v",
                           },
                         },
-                      },
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "d",
-                              },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 10,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 18,
+                            "sval": {
+                              "sval": "year",
                             },
-                          ],
-                          "location": 88,
+                          },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "d",
+                                },
+                              },
+                            ],
+                            "location": 28,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "extract",
+                          },
+                        },
+                      ],
+                      "location": 10,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 32,
+                  "val": {
+                    "FuncCall": {
+                      "agg_star": true,
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "count",
+                          },
+                        },
+                      ],
+                      "location": 32,
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`psql_crosstab.sql > line 116 1`] = `
+[
+  "CREATE TABLE ctv_data (x int, y int, v text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "ctv_data",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "x",
+                  "is_local": true,
+                  "location": 23,
+                  "typeName": {
+                    "location": 25,
+                    "names": [
                       {
                         "String": {
                           "sval": "pg_catalog",
@@ -539,278 +585,210 @@ exports[`psql_crosstab.sql > line 17 1`] = `
                       },
                       {
                         "String": {
-                          "sval": "extract",
+                          "sval": "int4",
                         },
                       },
                     ],
-                    "location": 70,
+                    "typemod": -1,
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 92,
-                "val": {
-                  "FuncCall": {
-                    "agg_star": true,
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
+              {
+                "ColumnDef": {
+                  "colname": "y",
+                  "is_local": true,
+                  "location": 30,
+                  "typeName": {
+                    "location": 32,
+                    "names": [
                       {
                         "String": {
-                          "sval": "count",
+                          "sval": "pg_catalog",
                         },
                       },
-                    ],
-                    "location": 92,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`psql_crosstab.sql > line 23 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`psql_crosstab.sql > line 114 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 53,
-            "relname": "ctv_data",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "x",
-                "is_local": true,
-                "location": 63,
-                "typeName": {
-                  "location": 65,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "y",
-                "is_local": true,
-                "location": 70,
-                "typeName": {
-                  "location": 72,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "v",
-                "is_local": true,
-                "location": 77,
-                "typeName": {
-                  "location": 79,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`psql_crosstab.sql > line 117 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "ctv_data",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeFunction": {
-                    "alias": {
-                      "aliasname": "x",
-                    },
-                    "functions": [
                       {
-                        "List": {
-                          "items": [
-                            {
-                              "FuncCall": {
-                                "args": [
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 1,
-                                      },
-                                      "location": 66,
-                                    },
-                                  },
-                                  {
-                                    "A_Const": {
-                                      "ival": {
-                                        "ival": 10,
-                                      },
-                                      "location": 68,
-                                    },
-                                  },
-                                ],
-                                "funcformat": "COERCE_EXPLICIT_CALL",
-                                "funcname": [
-                                  {
-                                    "String": {
-                                      "sval": "generate_series",
-                                    },
-                                  },
-                                ],
-                                "location": 50,
-                              },
-                            },
-                            {},
-                          ],
+                        "String": {
+                          "sval": "int4",
                         },
                       },
                     ],
+                    "typemod": -1,
                   },
                 },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 30,
-                    "val": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
+              },
+              {
+                "ColumnDef": {
+                  "colname": "v",
+                  "is_local": true,
+                  "location": 37,
+                  "typeName": {
+                    "location": 39,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
                         },
-                        "location": 30,
                       },
-                    },
+                    ],
+                    "typemod": -1,
                   },
                 },
-                {
-                  "ResTarget": {
-                    "location": 33,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "x",
-                            },
-                          },
-                        ],
-                        "location": 33,
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`psql_crosstab.sql > line 118 1`] = `
+[
+  "INSERT INTO ctv_data SELECT 1, x, '*' || x FROM generate_series(1,10) x",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "InsertStmt": {
+            "override": "OVERRIDING_NOT_SET",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "ctv_data",
+              "relpersistence": "p",
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "fromClause": [
+                  {
+                    "RangeFunction": {
+                      "alias": {
+                        "aliasname": "x",
                       },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 36,
-                    "val": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "A_Const": {
-                            "location": 36,
-                            "sval": {
-                              "sval": "*",
-                            },
-                          },
-                        },
-                        "location": 40,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "||",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
+                      "functions": [
+                        {
+                          "List": {
+                            "items": [
                               {
-                                "String": {
-                                  "sval": "x",
+                                "FuncCall": {
+                                  "args": [
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 1,
+                                        },
+                                        "location": 64,
+                                      },
+                                    },
+                                    {
+                                      "A_Const": {
+                                        "ival": {
+                                          "ival": 10,
+                                        },
+                                        "location": 66,
+                                      },
+                                    },
+                                  ],
+                                  "funcformat": "COERCE_EXPLICIT_CALL",
+                                  "funcname": [
+                                    {
+                                      "String": {
+                                        "sval": "generate_series",
+                                      },
+                                    },
+                                  ],
+                                  "location": 48,
                                 },
                               },
+                              {},
                             ],
-                            "location": 43,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 28,
+                      "val": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 28,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 31,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "x",
+                              },
+                            },
+                          ],
+                          "location": 31,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 34,
+                      "val": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "A_Const": {
+                              "location": 34,
+                              "sval": {
+                                "sval": "*",
+                              },
+                            },
+                          },
+                          "location": 38,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "||",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "x",
+                                  },
+                                },
+                              ],
+                              "location": 41,
+                            },
                           },
                         },
                       },
                     },
                   },
-                },
-              ],
+                ],
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
-
-exports[`psql_crosstab.sql > line 119 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`psql_crosstab.sql > line 121 1`] = `[Error: syntax error at or near "\\"]`;

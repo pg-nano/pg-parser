@@ -1,261 +1,44 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`drop_operator.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 42,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int8eq",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "procedure",
-                "location": 30,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 68,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "leftarg",
-                "location": 58,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 95,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "rightarg",
-                "location": 84,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "===",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "commutator",
-                "location": 111,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "===",
-              },
-            },
-          ],
-          "kind": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 44,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int8ne",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "procedure",
-                "location": 32,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 70,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "leftarg",
-                "location": 60,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 97,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "rightarg",
-                "location": 86,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "===",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "negator",
-                "location": 113,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "!==",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "commutator",
-                "location": 136,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "!==",
-              },
-            },
-          ],
-          "kind": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
+[
+  "CREATE OPERATOR === (
+        PROCEDURE = int8eq,
+        LEFTARG = bigint,
+        RIGHTARG = bigint,
+        COMMUTATOR = ===
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "definition": [
+              {
+                "DefElem": {
+                  "arg": {
                     "TypeName": {
-                      "location": 20,
+                      "location": 42,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8eq",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "procedure",
+                  "location": 30,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 68,
                       "names": [
                         {
                           "String": {
@@ -271,9 +54,16 @@ exports[`drop_operator.sql > line 15 1`] = `
                       "typemod": -1,
                     },
                   },
-                  {
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "leftarg",
+                  "location": 58,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
                     "TypeName": {
-                      "location": 28,
+                      "location": 95,
                       "names": [
                         {
                           "String": {
@@ -289,201 +79,437 @@ exports[`drop_operator.sql > line 15 1`] = `
                       "typemod": -1,
                     },
                   },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "!==",
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "rightarg",
+                  "location": 84,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "===",
+                          },
+                        },
+                      ],
                     },
                   },
-                ],
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "commutator",
+                  "location": 111,
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_OPERATOR",
+            ],
+            "defnames": [
+              {
+                "String": {
+                  "sval": "===",
+                },
+              },
+            ],
+            "kind": "OBJECT_OPERATOR",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`drop_operator.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "fk",
-                },
-                "inh": true,
-                "location": 31,
-                "relname": "pg_operator",
-                "relpersistence": "p",
-                "schemaname": "pg_catalog",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
+exports[`drop_operator.sql > line 8 1`] = `
+[
+  "CREATE OPERATOR !== (
+        PROCEDURE = int8ne,
+        LEFTARG = bigint,
+        RIGHTARG = bigint,
+        NEGATOR = ===,
+        COMMUTATOR = !==
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "definition": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 42,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8ne",
+                          },
                         },
-                      },
-                    ],
-                    "location": 10,
+                      ],
+                      "typemod": -1,
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "procedure",
+                  "location": 30,
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "oprcom",
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 68,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
                         },
-                      },
-                    ],
-                    "location": 16,
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "leftarg",
+                  "location": 58,
                 },
               },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 95,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "rightarg",
+                  "location": 84,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "===",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "negator",
+                  "location": 111,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "!==",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "commutator",
+                  "location": 134,
+                },
+              },
+            ],
+            "defnames": [
+              {
+                "String": {
+                  "sval": "!==",
+                },
+              },
+            ],
+            "kind": "OBJECT_OPERATOR",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`drop_operator.sql > line 16 1`] = `
+[
+  "DROP OPERATOR !==(bigint, bigint)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 18,
+                        "names": [
                           {
                             "String": {
-                              "sval": "oprcom",
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
                             },
                           },
                         ],
-                        "location": 65,
+                        "typemod": -1,
                       },
                     },
-                    "location": 72,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
+                    {
+                      "TypeName": {
+                        "location": 26,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "!==",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_OPERATOR",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`drop_operator.sql > line 18 1`] = `
+[
+  "SELECT  ctid, oprcom
+FROM    pg_catalog.pg_operator fk
+WHERE   oprcom != 0 AND
+        NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.oprcom)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "fk",
+                  },
+                  "inh": true,
+                  "location": 29,
+                  "relname": "pg_operator",
+                  "relpersistence": "p",
+                  "schemaname": "pg_catalog",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 8,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
+                          },
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 75,
-                      },
+                      ],
+                      "location": 8,
                     },
                   },
                 },
-                {
-                  "BoolExpr": {
-                    "args": [
-                      {
-                        "SubLink": {
-                          "location": 93,
-                          "subLinkType": "EXISTS_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "pk",
+              },
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "oprcom",
+                          },
+                        },
+                      ],
+                      "location": 14,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "oprcom",
+                              },
+                            },
+                          ],
+                          "location": 63,
+                        },
+                      },
+                      "location": 70,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<>",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 73,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "BoolExpr": {
+                      "args": [
+                        {
+                          "SubLink": {
+                            "location": 91,
+                            "subLinkType": "EXISTS_SUBLINK",
+                            "subselect": {
+                              "SelectStmt": {
+                                "fromClause": [
+                                  {
+                                    "RangeVar": {
+                                      "alias": {
+                                        "aliasname": "pk",
+                                      },
+                                      "inh": true,
+                                      "location": 112,
+                                      "relname": "pg_operator",
+                                      "relpersistence": "p",
+                                      "schemaname": "pg_catalog",
                                     },
-                                    "inh": true,
-                                    "location": 114,
-                                    "relname": "pg_operator",
-                                    "relpersistence": "p",
-                                    "schemaname": "pg_catalog",
                                   },
-                                },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 107,
-                                    "val": {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
+                                ],
+                                "limitOption": "LIMIT_OPTION_DEFAULT",
+                                "op": "SETOP_NONE",
+                                "targetList": [
+                                  {
+                                    "ResTarget": {
+                                      "location": 105,
+                                      "val": {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1,
+                                          },
+                                          "location": 105,
                                         },
-                                        "location": 107,
                                       },
                                     },
                                   },
-                                },
-                              ],
-                              "whereClause": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "pk",
+                                ],
+                                "whereClause": {
+                                  "A_Expr": {
+                                    "kind": "AEXPR_OP",
+                                    "lexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "pk",
+                                            },
                                           },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oid",
+                                          {
+                                            "String": {
+                                              "sval": "oid",
+                                            },
                                           },
-                                        },
-                                      ],
-                                      "location": 146,
-                                    },
-                                  },
-                                  "location": 153,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
+                                        ],
+                                        "location": 144,
                                       },
                                     },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "fk",
-                                          },
+                                    "location": 151,
+                                    "name": [
+                                      {
+                                        "String": {
+                                          "sval": "=",
                                         },
-                                        {
-                                          "String": {
-                                            "sval": "oprcom",
+                                      },
+                                    ],
+                                    "rexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "fk",
+                                            },
                                           },
-                                        },
-                                      ],
-                                      "location": 155,
+                                          {
+                                            "String": {
+                                              "sval": "oprcom",
+                                            },
+                                          },
+                                        ],
+                                        "location": 153,
+                                      },
                                     },
                                   },
                                 },
@@ -491,200 +517,206 @@ exports[`drop_operator.sql > line 17 1`] = `
                             },
                           },
                         },
-                      },
-                    ],
-                    "boolop": "NOT_EXPR",
-                    "location": 89,
+                      ],
+                      "boolop": "NOT_EXPR",
+                      "location": 87,
+                    },
                   },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 77,
+                ],
+                "boolop": "AND_EXPR",
+                "location": 75,
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`drop_operator.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "fk",
-                },
-                "inh": true,
-                "location": 34,
-                "relname": "pg_operator",
-                "relpersistence": "p",
-                "schemaname": "pg_catalog",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 10,
+exports[`drop_operator.sql > line 23 1`] = `
+[
+  "SELECT  ctid, oprnegate
+FROM    pg_catalog.pg_operator fk
+WHERE   oprnegate != 0 AND
+        NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.oprnegate)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "alias": {
+                    "aliasname": "fk",
                   },
+                  "inh": true,
+                  "location": 32,
+                  "relname": "pg_operator",
+                  "relpersistence": "p",
+                  "schemaname": "pg_catalog",
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "oprnegate",
-                        },
-                      },
-                    ],
-                    "location": 16,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "oprnegate",
-                            },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 8,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ctid",
                           },
-                        ],
-                        "location": 68,
-                      },
-                    },
-                    "location": 78,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
                         },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 81,
-                      },
+                      ],
+                      "location": 8,
                     },
                   },
                 },
-                {
-                  "BoolExpr": {
-                    "args": [
-                      {
-                        "SubLink": {
-                          "location": 99,
-                          "subLinkType": "EXISTS_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "pk",
+              },
+              {
+                "ResTarget": {
+                  "location": 14,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "oprnegate",
+                          },
+                        },
+                      ],
+                      "location": 14,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "oprnegate",
+                              },
+                            },
+                          ],
+                          "location": 66,
+                        },
+                      },
+                      "location": 76,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<>",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 79,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "BoolExpr": {
+                      "args": [
+                        {
+                          "SubLink": {
+                            "location": 97,
+                            "subLinkType": "EXISTS_SUBLINK",
+                            "subselect": {
+                              "SelectStmt": {
+                                "fromClause": [
+                                  {
+                                    "RangeVar": {
+                                      "alias": {
+                                        "aliasname": "pk",
+                                      },
+                                      "inh": true,
+                                      "location": 118,
+                                      "relname": "pg_operator",
+                                      "relpersistence": "p",
+                                      "schemaname": "pg_catalog",
                                     },
-                                    "inh": true,
-                                    "location": 120,
-                                    "relname": "pg_operator",
-                                    "relpersistence": "p",
-                                    "schemaname": "pg_catalog",
                                   },
-                                },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 113,
-                                    "val": {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
+                                ],
+                                "limitOption": "LIMIT_OPTION_DEFAULT",
+                                "op": "SETOP_NONE",
+                                "targetList": [
+                                  {
+                                    "ResTarget": {
+                                      "location": 111,
+                                      "val": {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1,
+                                          },
+                                          "location": 111,
                                         },
-                                        "location": 113,
                                       },
                                     },
                                   },
-                                },
-                              ],
-                              "whereClause": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "pk",
+                                ],
+                                "whereClause": {
+                                  "A_Expr": {
+                                    "kind": "AEXPR_OP",
+                                    "lexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "pk",
+                                            },
                                           },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oid",
+                                          {
+                                            "String": {
+                                              "sval": "oid",
+                                            },
                                           },
-                                        },
-                                      ],
-                                      "location": 152,
-                                    },
-                                  },
-                                  "location": 159,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
+                                        ],
+                                        "location": 150,
                                       },
                                     },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "fk",
-                                          },
+                                    "location": 157,
+                                    "name": [
+                                      {
+                                        "String": {
+                                          "sval": "=",
                                         },
-                                        {
-                                          "String": {
-                                            "sval": "oprnegate",
+                                      },
+                                    ],
+                                    "rexpr": {
+                                      "ColumnRef": {
+                                        "fields": [
+                                          {
+                                            "String": {
+                                              "sval": "fk",
+                                            },
                                           },
-                                        },
-                                      ],
-                                      "location": 161,
+                                          {
+                                            "String": {
+                                              "sval": "oprnegate",
+                                            },
+                                          },
+                                        ],
+                                        "location": 159,
+                                      },
                                     },
                                   },
                                 },
@@ -692,848 +724,471 @@ exports[`drop_operator.sql > line 22 1`] = `
                             },
                           },
                         },
-                      },
-                    ],
-                    "boolop": "NOT_EXPR",
-                    "location": 95,
+                      ],
+                      "boolop": "NOT_EXPR",
+                      "location": 93,
+                    },
                   },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 83,
+                ],
+                "boolop": "AND_EXPR",
+                "location": 81,
+              },
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`drop_operator.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 20,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 28,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "===",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 43,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int8lt",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "procedure",
-                "location": 31,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 69,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "leftarg",
-                "location": 59,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 96,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "rightarg",
-                "location": 85,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "<|",
-              },
-            },
-          ],
-          "kind": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DefineStmt": {
-          "definition": [
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 43,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "int8gt",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "procedure",
-                "location": 31,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 69,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "leftarg",
-                "location": 59,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "TypeName": {
-                    "location": 96,
-                    "names": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "int8",
-                        },
-                      },
-                    ],
-                    "typemod": -1,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "rightarg",
-                "location": 85,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "<|",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "negator",
-                "location": 112,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "<|",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "commutator",
-                "location": 134,
-              },
-            },
-          ],
-          "defnames": [
-            {
-              "String": {
-                "sval": "|>",
-              },
-            },
-          ],
-          "kind": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
-                    "TypeName": {
-                      "location": 19,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                  {
-                    "TypeName": {
-                      "location": 27,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "|>",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_OPERATOR",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "fk",
-                },
-                "inh": true,
-                "location": 31,
-                "relname": "pg_operator",
-                "relpersistence": "p",
-                "schemaname": "pg_catalog",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "oprcom",
-                        },
-                      },
-                    ],
-                    "location": 16,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
+exports[`drop_operator.sql > line 28 1`] = `
+[
+  "DROP OPERATOR ===(bigint, bigint)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 18,
+                        "names": [
                           {
                             "String": {
-                              "sval": "oprcom",
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
                             },
                           },
                         ],
-                        "location": 65,
+                        "typemod": -1,
                       },
                     },
-                    "location": 72,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 75,
-                      },
-                    },
-                  },
-                },
-                {
-                  "BoolExpr": {
-                    "args": [
-                      {
-                        "SubLink": {
-                          "location": 93,
-                          "subLinkType": "EXISTS_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "pk",
-                                    },
-                                    "inh": true,
-                                    "location": 114,
-                                    "relname": "pg_operator",
-                                    "relpersistence": "p",
-                                    "schemaname": "pg_catalog",
-                                  },
-                                },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 107,
-                                    "val": {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
-                                        },
-                                        "location": 107,
-                                      },
-                                    },
-                                  },
-                                },
-                              ],
-                              "whereClause": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "pk",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oid",
-                                          },
-                                        },
-                                      ],
-                                      "location": 146,
-                                    },
-                                  },
-                                  "location": 153,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "fk",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oprcom",
-                                          },
-                                        },
-                                      ],
-                                      "location": 155,
-                                    },
-                                  },
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "boolop": "NOT_EXPR",
-                    "location": 89,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 77,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`drop_operator.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "alias": {
-                  "aliasname": "fk",
-                },
-                "inh": true,
-                "location": 34,
-                "relname": "pg_operator",
-                "relpersistence": "p",
-                "schemaname": "pg_catalog",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 10,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ctid",
-                        },
-                      },
-                    ],
-                    "location": 10,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 16,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "oprnegate",
-                        },
-                      },
-                    ],
-                    "location": 16,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
+                    {
+                      "TypeName": {
+                        "location": 26,
+                        "names": [
                           {
                             "String": {
-                              "sval": "oprnegate",
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
                             },
                           },
                         ],
-                        "location": 68,
+                        "typemod": -1,
                       },
                     },
-                    "location": 78,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 81,
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "===",
                       },
                     },
-                  },
+                  ],
                 },
-                {
-                  "BoolExpr": {
-                    "args": [
-                      {
-                        "SubLink": {
-                          "location": 99,
-                          "subLinkType": "EXISTS_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "pk",
-                                    },
-                                    "inh": true,
-                                    "location": 120,
-                                    "relname": "pg_operator",
-                                    "relpersistence": "p",
-                                    "schemaname": "pg_catalog",
-                                  },
-                                },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 113,
-                                    "val": {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
-                                        },
-                                        "location": 113,
-                                      },
-                                    },
-                                  },
-                                },
-                              ],
-                              "whereClause": {
-                                "A_Expr": {
-                                  "kind": "AEXPR_OP",
-                                  "lexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "pk",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oid",
-                                          },
-                                        },
-                                      ],
-                                      "location": 152,
-                                    },
-                                  },
-                                  "location": 159,
-                                  "name": [
-                                    {
-                                      "String": {
-                                        "sval": "=",
-                                      },
-                                    },
-                                  ],
-                                  "rexpr": {
-                                    "ColumnRef": {
-                                      "fields": [
-                                        {
-                                          "String": {
-                                            "sval": "fk",
-                                          },
-                                        },
-                                        {
-                                          "String": {
-                                            "sval": "oprnegate",
-                                          },
-                                        },
-                                      ],
-                                      "location": 161,
-                                    },
-                                  },
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "boolop": "NOT_EXPR",
-                    "location": 95,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 83,
-            },
+              },
+            ],
+            "removeType": "OBJECT_OPERATOR",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`drop_operator.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objargs": [
-                  {
+exports[`drop_operator.sql > line 30 1`] = `
+[
+  "CREATE OPERATOR <| (
+        PROCEDURE = int8lt,
+        LEFTARG = bigint,
+        RIGHTARG = bigint
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "definition": [
+              {
+                "DefElem": {
+                  "arg": {
                     "TypeName": {
-                      "location": 19,
+                      "location": 41,
                       "names": [
                         {
                           "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
+                            "sval": "int8lt",
                           },
                         },
                       ],
                       "typemod": -1,
                     },
                   },
-                  {
-                    "TypeName": {
-                      "location": 27,
-                      "names": [
-                        {
-                          "String": {
-                            "sval": "pg_catalog",
-                          },
-                        },
-                        {
-                          "String": {
-                            "sval": "int8",
-                          },
-                        },
-                      ],
-                      "typemod": -1,
-                    },
-                  },
-                ],
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "<|",
-                    },
-                  },
-                ],
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "procedure",
+                  "location": 29,
+                },
               },
-            },
-          ],
-          "removeType": "OBJECT_OPERATOR",
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 67,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "leftarg",
+                  "location": 57,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 94,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "rightarg",
+                  "location": 83,
+                },
+              },
+            ],
+            "defnames": [
+              {
+                "String": {
+                  "sval": "<|",
+                },
+              },
+            ],
+            "kind": "OBJECT_OPERATOR",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`drop_operator.sql > line 36 1`] = `
+[
+  "CREATE OPERATOR |> (
+        PROCEDURE = int8gt,
+        LEFTARG = bigint,
+        RIGHTARG = bigint,
+        NEGATOR = <|,
+        COMMUTATOR = <|
+)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DefineStmt": {
+            "definition": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 41,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "int8gt",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "procedure",
+                  "location": 29,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 67,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "leftarg",
+                  "location": 57,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "TypeName": {
+                      "location": 94,
+                      "names": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "int8",
+                          },
+                        },
+                      ],
+                      "typemod": -1,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "rightarg",
+                  "location": 83,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "<|",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "negator",
+                  "location": 110,
+                },
+              },
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "<|",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "commutator",
+                  "location": 132,
+                },
+              },
+            ],
+            "defnames": [
+              {
+                "String": {
+                  "sval": "|>",
+                },
+              },
+            ],
+            "kind": "OBJECT_OPERATOR",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`drop_operator.sql > line 44 1`] = `
+[
+  "DROP OPERATOR |>(bigint, bigint)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 17,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                    {
+                      "TypeName": {
+                        "location": 25,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "|>",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_OPERATOR",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`drop_operator.sql > line 56 1`] = `
+[
+  "DROP OPERATOR <|(bigint, bigint)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objargs": [
+                    {
+                      "TypeName": {
+                        "location": 17,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                    {
+                      "TypeName": {
+                        "location": 25,
+                        "names": [
+                          {
+                            "String": {
+                              "sval": "pg_catalog",
+                            },
+                          },
+                          {
+                            "String": {
+                              "sval": "int8",
+                            },
+                          },
+                        ],
+                        "typemod": -1,
+                      },
+                    },
+                  ],
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "<|",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_OPERATOR",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

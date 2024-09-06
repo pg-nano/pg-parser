@@ -1,1220 +1,636 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`unicode.sql > line 1 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`unicode.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 19,
-                          "sval": {
-                            "sval": "",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "normalize",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_default",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äⓑc",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 40,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
+exports[`unicode.sql > line 8 1`] = `
+[
+  "SELECT normalize('')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
                           "A_Const": {
-                            "location": 42,
+                            "location": 17,
                             "sval": {
-                              "sval": "äⓑc",
+                              "sval": "",
                             },
                           },
                         },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
                           },
-                        ],
-                        "location": 58,
-                      },
+                        },
+                        {
+                          "String": {
+                            "sval": "normalize",
+                          },
+                        },
+                      ],
+                      "location": 7,
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfc",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äⓑc",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 40,
-                              "sval": {
-                                "sval": "NFC",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 45,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 47,
-                            "sval": {
-                              "sval": "äⓑc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
-                          },
-                        ],
-                        "location": 63,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 11 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfc_idem",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äbc",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 31,
-                              "sval": {
-                                "sval": "NFC",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 36,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 38,
-                            "sval": {
-                              "sval": "äbc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
-                          },
-                        ],
-                        "location": 50,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfd",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äⓑc",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 35,
-                              "sval": {
-                                "sval": "NFD",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 40,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 42,
-                            "sval": {
-                              "sval": "äⓑc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
-                          },
-                        ],
-                        "location": 63,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfkc",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äⓑc",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 40,
-                              "sval": {
-                                "sval": "NFKC",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 46,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 48,
-                            "sval": {
-                              "sval": "äbc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
-                          },
-                        ],
-                        "location": 60,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfkd",
-                "val": {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "FuncCall": {
-                        "args": [
-                          {
-                            "A_Const": {
-                              "location": 18,
-                              "sval": {
-                                "sval": "äⓑc",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 35,
-                              "sval": {
-                                "sval": "NFKD",
-                              },
-                            },
-                          },
-                        ],
-                        "funcformat": "COERCE_SQL_SYNTAX",
-                        "funcname": [
-                          {
-                            "String": {
-                              "sval": "pg_catalog",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "normalize",
-                            },
-                          },
-                        ],
-                        "location": 8,
-                      },
-                    },
-                    "location": 41,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "CollateClause": {
-                        "arg": {
-                          "A_Const": {
-                            "location": 43,
-                            "sval": {
-                              "sval": "äbc",
-                            },
-                          },
-                        },
-                        "collname": [
-                          {
-                            "String": {
-                              "sval": "C",
-                            },
-                          },
-                        ],
-                        "location": 60,
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`unicode.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 21,
-                          "sval": {
-                            "sval": "abc",
-                          },
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 28,
-                          "sval": {
-                            "sval": "def",
-                          },
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "normalize",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`unicode.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 28,
-                "name": "test_default",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 28,
-                          "sval": {
-                            "sval": "äⓑc",
+[
+  "SELECT "normalize"('abc', 'def')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 19,
+                            "sval": {
+                              "sval": "abc",
+                            },
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
+                        {
+                          "A_Const": {
+                            "location": 26,
+                            "sval": {
+                              "sval": "def",
+                            },
+                          },
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "normalize",
+                          },
                         },
-                      },
-                    ],
-                    "location": 44,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`unicode.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 8,
-                "name": "test_nfc",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 8,
-                          "sval": {
-                            "sval": "äⓑc",
+exports[`unicode.sql > line 16 2`] = `
+[
+  "  -- run-time error
+
+SELECT U&'\\00E4\\24D1c' IS NORMALIZED AS test_default",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 28,
+                  "name": "test_default",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 28,
+                            "sval": {
+                              "sval": "äⓑc",
+                            },
                           },
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 27,
-                          "sval": {
-                            "sval": "NFC",
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
-                        },
-                      },
-                    ],
-                    "location": 24,
+                      ],
+                      "location": 44,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`unicode.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeSubselect": {
-                "alias": {
-                  "aliasname": "vals",
-                  "colnames": [
-                    {
-                      "String": {
-                        "sval": "num",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "val",
-                      },
-                    },
-                  ],
-                },
-                "subquery": {
-                  "SelectStmt": {
-                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                    "op": "SETOP_NONE",
-                    "valuesLists": [
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 1,
-                                },
-                                "location": 174,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "location": 177,
-                                "sval": {
-                                  "sval": "äbc",
-                                },
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 2,
-                                },
-                                "location": 202,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "location": 205,
-                                "sval": {
-                                  "sval": "äbc",
-                                },
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 3,
-                                },
-                                "location": 235,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "location": 238,
-                                "sval": {
-                                  "sval": "äⓑc",
-                                },
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 4,
-                                },
-                                "location": 267,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "location": 270,
-                                "sval": {
-                                  "sval": "äⓑc",
-                                },
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        "List": {
-                          "items": [
-                            {
-                              "A_Const": {
-                                "ival": {
-                                  "ival": 5,
-                                },
-                                "location": 304,
-                              },
-                            },
-                            {
-                              "A_Const": {
-                                "location": 307,
-                                "sval": {
-                                  "sval": "",
-                                },
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
+exports[`unicode.sql > line 21 1`] = `
+[
+  "SELECT num, val,
+    val IS NFC NORMALIZED AS NFC,
+    val IS NFD NORMALIZED AS NFD,
+    val IS NFKC NORMALIZED AS NFKC,
+    val IS NFKD NORMALIZED AS NFKD
+FROM
+  (VALUES (1, U&'\\00E4bc'),
+          (2, U&'\\0061\\0308bc'),
+          (3, U&'\\00E4\\24D1c'),
+          (4, U&'\\0061\\0308\\24D1c'),
+          (5, '')) vals (num, val)
+ORDER BY num",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeSubselect": {
+                  "alias": {
+                    "aliasname": "vals",
+                    "colnames": [
                       {
                         "String": {
                           "sval": "num",
                         },
                       },
-                    ],
-                    "location": 337,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "num",
-                        },
-                      },
-                    ],
-                    "location": 9,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 14,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
                       {
                         "String": {
                           "sval": "val",
                         },
                       },
                     ],
-                    "location": 14,
                   },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 23,
-                "name": "nfc",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "val",
+                  "subquery": {
+                    "SelectStmt": {
+                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                      "op": "SETOP_NONE",
+                      "valuesLists": [
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 1,
+                                  },
+                                  "location": 172,
+                                },
                               },
-                            },
-                          ],
-                          "location": 23,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "NFC",
+                              {
+                                "A_Const": {
+                                  "location": 175,
+                                  "sval": {
+                                    "sval": "äbc",
+                                  },
+                                },
+                              },
+                            ],
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
-                        },
-                      },
-                    ],
-                    "location": 27,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 57,
-                "name": "nfd",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "val",
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 2,
+                                  },
+                                  "location": 200,
+                                },
                               },
-                            },
-                          ],
-                          "location": 57,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 64,
-                          "sval": {
-                            "sval": "NFD",
+                              {
+                                "A_Const": {
+                                  "location": 203,
+                                  "sval": {
+                                    "sval": "äbc",
+                                  },
+                                },
+                              },
+                            ],
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
-                        },
-                      },
-                    ],
-                    "location": 61,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 91,
-                "name": "nfkc",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "val",
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 3,
+                                  },
+                                  "location": 233,
+                                },
                               },
-                            },
-                          ],
-                          "location": 91,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 98,
-                          "sval": {
-                            "sval": "NFKC",
+                              {
+                                "A_Const": {
+                                  "location": 236,
+                                  "sval": {
+                                    "sval": "äⓑc",
+                                  },
+                                },
+                              },
+                            ],
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
-                        },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
-                        },
-                      },
-                    ],
-                    "location": 95,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 127,
-                "name": "nfkd",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "val",
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 4,
+                                  },
+                                  "location": 265,
+                                },
                               },
-                            },
-                          ],
-                          "location": 127,
-                        },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 134,
-                          "sval": {
-                            "sval": "NFKD",
+                              {
+                                "A_Const": {
+                                  "location": 268,
+                                  "sval": {
+                                    "sval": "äⓑc",
+                                  },
+                                },
+                              },
+                            ],
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_SQL_SYNTAX",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "pg_catalog",
+                        {
+                          "List": {
+                            "items": [
+                              {
+                                "A_Const": {
+                                  "ival": {
+                                    "ival": 5,
+                                  },
+                                  "location": 302,
+                                },
+                              },
+                              {
+                                "A_Const": {
+                                  "location": 305,
+                                  "sval": {
+                                    "sval": "",
+                                  },
+                                },
+                              },
+                            ],
+                          },
                         },
-                      },
-                      {
-                        "String": {
-                          "sval": "is_normalized",
-                        },
-                      },
-                    ],
-                    "location": 131,
+                      ],
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "num",
+                          },
+                        },
+                      ],
+                      "location": 335,
+                    },
+                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                },
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "num",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 12,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "val",
+                          },
+                        },
+                      ],
+                      "location": 12,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 21,
+                  "name": "nfc",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "val",
+                                },
+                              },
+                            ],
+                            "location": 21,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 28,
+                            "sval": {
+                              "sval": "NFC",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
+                        },
+                      ],
+                      "location": 25,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 55,
+                  "name": "nfd",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "val",
+                                },
+                              },
+                            ],
+                            "location": 55,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 62,
+                            "sval": {
+                              "sval": "NFD",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
+                        },
+                      ],
+                      "location": 59,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 89,
+                  "name": "nfkc",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "val",
+                                },
+                              },
+                            ],
+                            "location": 89,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 96,
+                            "sval": {
+                              "sval": "NFKC",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
+                        },
+                      ],
+                      "location": 93,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 125,
+                  "name": "nfkd",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "val",
+                                },
+                              },
+                            ],
+                            "location": 125,
+                          },
+                        },
+                        {
+                          "A_Const": {
+                            "location": 132,
+                            "sval": {
+                              "sval": "NFKD",
+                            },
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_SQL_SYNTAX",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "pg_catalog",
+                          },
+                        },
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
+                        },
+                      ],
+                      "location": 129,
+                    },
+                  },
+                },
+              },
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`unicode.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 9,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "A_Const": {
-                          "location": 23,
-                          "sval": {
-                            "sval": "abc",
+exports[`unicode.sql > line 34 1`] = `
+[
+  "SELECT is_normalized('abc', 'def')",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "A_Const": {
+                            "location": 21,
+                            "sval": {
+                              "sval": "abc",
+                            },
                           },
                         },
-                      },
-                      {
-                        "A_Const": {
-                          "location": 30,
-                          "sval": {
-                            "sval": "def",
+                        {
+                          "A_Const": {
+                            "location": 28,
+                            "sval": {
+                              "sval": "def",
+                            },
                           },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "is_normalized",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "is_normalized",
+                          },
                         },
-                      },
-                    ],
-                    "location": 9,
+                      ],
+                      "location": 7,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

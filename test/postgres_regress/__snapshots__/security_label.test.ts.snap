@@ -1,784 +1,227 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`security_label.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "args": [
-            {
-              "A_Const": {
-                "location": 93,
-                "sval": {
-                  "sval": "warning",
-                },
-              },
-            },
-          ],
-          "kind": "VAR_SET_VALUE",
-          "name": "client_min_messages",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "missing_ok": true,
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 22,
-                "rolename": "regress_seclabel_user1",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "missing_ok": true,
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 21,
-                "rolename": "regress_seclabel_user2",
-                "roletype": "ROLESPEC_CSTRING",
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VariableSetStmt": {
-          "kind": "VAR_RESET",
-          "name": "client_min_messages",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 12 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "Boolean": {
-                    "boolval": true,
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "createrole",
-                "location": 42,
-              },
-            },
-          ],
-          "role": "regress_seclabel_user1",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateRoleStmt": {
-          "role": "regress_seclabel_user2",
-          "stmt_type": "ROLESTMT_USER",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 15,
-            "relname": "seclabel_tbl1",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "a",
-                "is_local": true,
-                "location": 30,
-                "typeName": {
-                  "location": 32,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "b",
-                "is_local": true,
-                "location": 37,
-                "typeName": {
-                  "location": 39,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "seclabel_tbl2",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "x",
-                "is_local": true,
-                "location": 29,
-                "typeName": {
-                  "location": 31,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "pg_catalog",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "int4",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-            {
-              "ColumnDef": {
-                "colname": "y",
-                "is_local": true,
-                "location": 36,
-                "typeName": {
-                  "location": 38,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 18 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ViewStmt": {
-          "query": {
-            "SelectStmt": {
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 45,
-                    "relname": "seclabel_tbl2",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 38,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "A_Star": {},
-                          },
-                        ],
-                        "location": 38,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-          "view": {
-            "inh": true,
-            "location": 13,
-            "relname": "seclabel_view1",
-            "relpersistence": "p",
-          },
-          "withCheckOption": "NO_CHECK_OPTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 19 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "seclabel_four",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
-                      {
-                        "String": {
-                          "sval": "SELECT 4",
-                        },
-                      },
-                    ],
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 49,
-              },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "sql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 65,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 41,
-            "names": [
+exports[`security_label.sql > line 6 1`] = `
+[
+  "SET client_min_messages TO 'warning'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "args": [
               {
-                "String": {
-                  "sval": "pg_catalog",
-                },
-              },
-              {
-                "String": {
-                  "sval": "int4",
+                "A_Const": {
+                  "location": 27,
+                  "sval": {
+                    "sval": "warning",
+                  },
                 },
               },
             ],
-            "typemod": -1,
+            "kind": "VAR_SET_VALUE",
+            "name": "client_min_messages",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateDomainStmt": {
-          "domainname": [
-            {
-              "String": {
-                "sval": "seclabel_domain",
-              },
-            },
-          ],
-          "typeName": {
-            "location": 34,
-            "names": [
+exports[`security_label.sql > line 8 1`] = `
+[
+  "DROP ROLE IF EXISTS regress_seclabel_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropRoleStmt": {
+            "missing_ok": true,
+            "roles": [
               {
-                "String": {
-                  "sval": "text",
-                },
-              },
-            ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 21 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "newowner": {
-                  "location": 37,
+                "RoleSpec": {
+                  "location": 20,
                   "rolename": "regress_seclabel_user1",
                   "roletype": "ROLESPEC_CSTRING",
                 },
-                "subtype": "AT_ChangeOwner",
               },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 14,
-            "relname": "seclabel_tbl1",
-            "relpersistence": "p",
+            ],
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 23 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "AlterTableStmt": {
-          "cmds": [
-            {
-              "AlterTableCmd": {
-                "behavior": "DROP_RESTRICT",
-                "newowner": {
-                  "location": 36,
-                  "rolename": "regress_seclabel_user2",
-                  "roletype": "ROLESPEC_CSTRING",
+exports[`security_label.sql > line 11 1`] = `
+[
+  "RESET client_min_messages",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VariableSetStmt": {
+            "kind": "VAR_RESET",
+            "name": "client_min_messages",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 13 1`] = `
+[
+  "CREATE USER regress_seclabel_user1 WITH CREATEROLE",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateRoleStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "Boolean": {
+                      "boolval": true,
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "createrole",
+                  "location": 40,
                 },
-                "subtype": "AT_ChangeOwner",
               },
-            },
-          ],
-          "objtype": "OBJECT_TABLE",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "seclabel_tbl2",
-            "relpersistence": "p",
+            ],
+            "role": "regress_seclabel_user1",
+            "stmt_type": "ROLESTMT_USER",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "classified",
-          "object": {
-            "List": {
-              "items": [
-                {
-                  "String": {
-                    "sval": "seclabel_tbl1",
+exports[`security_label.sql > line 16 1`] = `
+[
+  "CREATE TABLE seclabel_tbl1 (a int, b text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "seclabel_tbl1",
+              "relpersistence": "p",
+            },
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "a",
+                  "is_local": true,
+                  "location": 28,
+                  "typeName": {
+                    "location": 30,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "pg_catalog",
+                        },
+                      },
+                      {
+                        "String": {
+                          "sval": "int4",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
                   },
                 },
-              ],
-            },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "b",
+                  "is_local": true,
+                  "location": 35,
+                  "typeName": {
+                    "location": 37,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
           },
-          "objtype": "OBJECT_TABLE",
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 22 1`] = `
+[
+  "ALTER TABLE seclabel_tbl1 OWNER TO regress_seclabel_user1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "AlterTableStmt": {
+            "cmds": [
+              {
+                "AlterTableCmd": {
+                  "behavior": "DROP_RESTRICT",
+                  "newowner": {
+                    "location": 35,
+                    "rolename": "regress_seclabel_user1",
+                    "roletype": "ROLESPEC_CSTRING",
+                  },
+                  "subtype": "AT_ChangeOwner",
+                },
+              },
+            ],
+            "objtype": "OBJECT_TABLE",
+            "relation": {
+              "inh": true,
+              "location": 12,
+              "relname": "seclabel_tbl1",
+              "relpersistence": "p",
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
 
 exports[`security_label.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "classified",
-          "object": {
-            "List": {
-              "items": [
-                {
-                  "String": {
-                    "sval": "seclabel_tbl1",
-                  },
-                },
-              ],
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-          "provider": "dummy",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "...invalid label...",
-          "object": {
-            "List": {
-              "items": [
-                {
-                  "String": {
-                    "sval": "seclabel_tbl1",
-                  },
-                },
-              ],
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "unclassified",
-          "object": {
-            "List": {
-              "items": [
-                {
-                  "String": {
-                    "sval": "seclabel_tbl3",
-                  },
-                },
-              ],
-            },
-          },
-          "objtype": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "classified",
-          "object": {
-            "String": {
-              "sval": "regress_seclabel_user1",
-            },
-          },
-          "objtype": "OBJECT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "classified",
-          "object": {
-            "String": {
-              "sval": "regress_seclabel_user1",
-            },
-          },
-          "objtype": "OBJECT_ROLE",
-          "provider": "dummy",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "...invalid label...",
-          "object": {
-            "String": {
-              "sval": "regress_seclabel_user1",
-            },
-          },
-          "objtype": "OBJECT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SecLabelStmt": {
-          "label": "unclassified",
-          "object": {
-            "String": {
-              "sval": "regress_seclabel_user3",
-            },
-          },
-          "objtype": "OBJECT_ROLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "seclabel_four",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "TypeName": {
-                "location": 13,
-                "names": [
-                  {
-                    "String": {
-                      "sval": "seclabel_domain",
-                    },
-                  },
-                ],
-                "typemod": -1,
-              },
-            },
-          ],
-          "removeType": "OBJECT_DOMAIN",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "seclabel_view1",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_VIEW",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`security_label.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
+[
+  "SECURITY LABEL ON TABLE seclabel_tbl1 IS 'classified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "classified",
+            "object": {
               "List": {
                 "items": [
                   {
@@ -789,87 +232,243 @@ exports[`security_label.sql > line 42 1`] = `
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+            "objtype": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 43 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
+exports[`security_label.sql > line 28 2`] = `
+[
+  "			-- fail
+SECURITY LABEL FOR 'dummy' ON TABLE seclabel_tbl1 IS 'classified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "classified",
+            "object": {
               "List": {
                 "items": [
                   {
                     "String": {
-                      "sval": "seclabel_tbl2",
+                      "sval": "seclabel_tbl1",
                     },
                   },
                 ],
               },
             },
-          ],
-          "removeType": "OBJECT_TABLE",
+            "objtype": "OBJECT_TABLE",
+            "provider": "dummy",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_seclabel_user1",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`security_label.sql > line 29 1`] = `
+[
+  "		-- fail
+SECURITY LABEL ON TABLE seclabel_tbl1 IS '...invalid label...'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "...invalid label...",
+            "object": {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "seclabel_tbl1",
+                    },
+                  },
+                ],
               },
             },
-          ],
+            "objtype": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`security_label.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropRoleStmt": {
-          "roles": [
-            {
-              "RoleSpec": {
-                "location": 11,
-                "rolename": "regress_seclabel_user2",
-                "roletype": "ROLESPEC_CSTRING",
+exports[`security_label.sql > line 30 1`] = `
+[
+  "		-- fail
+SECURITY LABEL ON TABLE seclabel_tbl3 IS 'unclassified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "unclassified",
+            "object": {
+              "List": {
+                "items": [
+                  {
+                    "String": {
+                      "sval": "seclabel_tbl3",
+                    },
+                  },
+                ],
               },
             },
-          ],
+            "objtype": "OBJECT_TABLE",
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 31 1`] = `
+[
+  "			-- fail
+
+SECURITY LABEL ON ROLE regress_seclabel_user1 IS 'classified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "classified",
+            "object": {
+              "String": {
+                "sval": "regress_seclabel_user1",
+              },
+            },
+            "objtype": "OBJECT_ROLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 33 1`] = `
+[
+  "			-- fail
+SECURITY LABEL FOR 'dummy' ON ROLE regress_seclabel_user1 IS 'classified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "classified",
+            "object": {
+              "String": {
+                "sval": "regress_seclabel_user1",
+              },
+            },
+            "objtype": "OBJECT_ROLE",
+            "provider": "dummy",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 34 1`] = `
+[
+  "		-- fail
+SECURITY LABEL ON ROLE regress_seclabel_user1 IS '...invalid label...'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "...invalid label...",
+            "object": {
+              "String": {
+                "sval": "regress_seclabel_user1",
+              },
+            },
+            "objtype": "OBJECT_ROLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 35 1`] = `
+[
+  "		-- fail
+SECURITY LABEL ON ROLE regress_seclabel_user3 IS 'unclassified'",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SecLabelStmt": {
+            "label": "unclassified",
+            "object": {
+              "String": {
+                "sval": "regress_seclabel_user3",
+              },
+            },
+            "objtype": "OBJECT_ROLE",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`security_label.sql > line 36 1`] = `
+[
+  "			-- fail
+
+-- clean up objects
+DROP FUNCTION seclabel_four()",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "ObjectWithArgs": {
+                  "objname": [
+                    {
+                      "String": {
+                        "sval": "seclabel_four",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "removeType": "OBJECT_FUNCTION",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

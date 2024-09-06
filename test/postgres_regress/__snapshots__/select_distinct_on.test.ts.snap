@@ -1,774 +1,537 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`select_distinct_on.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "distinctClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "string4",
+exports[`select_distinct_on.sql > line 10 1`] = `
+[
+  "SELECT DISTINCT ON (string4, ten) string4, two, ten
+   FROM onek
+   ORDER BY string4 using <, two using <, ten using <",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": [
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "string4",
+                      },
+                    },
+                  ],
+                  "location": 20,
+                },
+              },
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ten",
+                      },
+                    },
+                  ],
+                  "location": 29,
+                },
+              },
+            ],
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 60,
+                  "relname": "onek",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": 91,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "string4",
+                          },
+                        },
+                      ],
+                      "location": 77,
                     },
                   },
-                ],
-                "location": 49,
-              },
-            },
-          ],
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 84,
-                "relname": "onek",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": 115,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
-                        },
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": "<",
                       },
-                    ],
-                    "location": 101,
-                  },
+                    },
+                  ],
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+              },
+              {
+                "SortBy": {
+                  "location": 104,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "two",
+                          },
+                        },
+                      ],
+                      "location": 94,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 128,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": "<",
                       },
-                    ],
-                    "location": 118,
-                  },
+                    },
+                  ],
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": ">",
+              },
+              {
+                "SortBy": {
+                  "location": 117,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ten",
+                          },
+                        },
+                      ],
+                      "location": 107,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 141,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": "<",
                       },
-                    ],
-                    "location": 131,
-                  },
+                    },
+                  ],
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 34,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "string4",
+                          },
+                        },
+                      ],
+                      "location": 34,
                     },
                   },
-                ],
+                },
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 58,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
+              {
+                "ResTarget": {
+                  "location": 43,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "two",
+                          },
                         },
-                      },
-                    ],
-                    "location": 58,
+                      ],
+                      "location": 43,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 67,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
+              {
+                "ResTarget": {
+                  "location": 48,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ten",
+                          },
                         },
-                      },
-                    ],
-                    "location": 67,
+                      ],
+                      "location": 48,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 72,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
-                      },
-                    ],
-                    "location": 72,
-                  },
-                },
-              },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_distinct_on.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "distinctClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "string4",
+exports[`select_distinct_on.sql > line 14 1`] = `
+[
+  "SELECT DISTINCT ON (string4, ten) string4, ten, two
+   FROM onek
+   ORDER BY string4 using <, ten using >, two using <",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": [
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "string4",
+                      },
+                    },
+                  ],
+                  "location": 20,
+                },
+              },
+              {
+                "ColumnRef": {
+                  "fields": [
+                    {
+                      "String": {
+                        "sval": "ten",
+                      },
+                    },
+                  ],
+                  "location": 29,
+                },
+              },
+            ],
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 60,
+                  "relname": "onek",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": 91,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "string4",
+                          },
+                        },
+                      ],
+                      "location": 77,
                     },
                   },
-                ],
-                "location": 81,
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": "<",
+                      },
+                    },
+                  ],
+                },
               },
-            },
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "ten",
+              {
+                "SortBy": {
+                  "location": 104,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ten",
+                          },
+                        },
+                      ],
+                      "location": 94,
                     },
                   },
-                ],
-                "location": 90,
-              },
-            },
-          ],
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 121,
-                "relname": "onek",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": 152,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
-                        },
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": ">",
                       },
-                    ],
-                    "location": 138,
-                  },
+                    },
+                  ],
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+              },
+              {
+                "SortBy": {
+                  "location": 117,
+                  "node": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "two",
+                          },
+                        },
+                      ],
+                      "location": 107,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 165,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
+                  "sortby_dir": "SORTBY_USING",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                  "useOp": [
+                    {
+                      "String": {
+                        "sval": "<",
                       },
-                    ],
-                    "location": 155,
-                  },
+                    },
+                  ],
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+              },
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 34,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "string4",
+                          },
+                        },
+                      ],
+                      "location": 34,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 178,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
-                      },
-                    ],
-                    "location": 168,
-                  },
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+              },
+              {
+                "ResTarget": {
+                  "location": 43,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "ten",
+                          },
+                        },
+                      ],
+                      "location": 43,
                     },
                   },
-                ],
+                },
               },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 95,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
+              {
+                "ResTarget": {
+                  "location": 48,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "two",
+                          },
                         },
-                      },
-                    ],
-                    "location": 95,
+                      ],
+                      "location": 48,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 104,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
-                      },
-                    ],
-                    "location": 104,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 109,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
-                      },
-                    ],
-                    "location": 109,
-                  },
-                },
-              },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_distinct_on.sql > line 13 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "distinctClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "string4",
-                    },
+exports[`select_distinct_on.sql > line 19 1`] = `
+[
+  "select distinct on (1) floor(random()) as r, f1 from int4_tbl order by 1,2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": [
+              {
+                "A_Const": {
+                  "ival": {
+                    "ival": 1,
                   },
-                ],
-                "location": 22,
+                  "location": 20,
+                },
               },
-            },
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "ten",
-                    },
-                  },
-                ],
-                "location": 31,
+            ],
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 53,
+                  "relname": "int4_tbl",
+                  "relpersistence": "p",
+                },
               },
-            },
-          ],
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 62,
-                "relname": "onek",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": 93,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
-                        },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
                       },
-                    ],
-                    "location": 79,
-                  },
-                },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
+                      "location": 71,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 106,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
-                      },
-                    ],
-                    "location": 96,
-                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": ">",
+              },
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 2,
+                      },
+                      "location": 73,
                     },
                   },
-                ],
-              },
-            },
-            {
-              "SortBy": {
-                "location": 119,
-                "node": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
-                      },
-                    ],
-                    "location": 109,
-                  },
-                },
-                "sortby_dir": "SORTBY_USING",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                "useOp": [
-                  {
-                    "String": {
-                      "sval": "<",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 36,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "string4",
-                        },
-                      },
-                    ],
-                    "location": 36,
-                  },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 45,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "ten",
-                        },
-                      },
-                    ],
-                    "location": 45,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 50,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
-                      },
-                    ],
-                    "location": 50,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_distinct_on.sql > line 17 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "distinctClause": [
-            {
-              "A_Const": {
-                "ival": {
-                  "ival": 1,
-                },
-                "location": 87,
-              },
-            },
-          ],
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 120,
-                "relname": "int4_tbl",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 138,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 2,
-                    },
-                    "location": 140,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 90,
-                "name": "r",
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "FuncCall": {
-                          "funcformat": "COERCE_EXPLICIT_CALL",
-                          "funcname": [
-                            {
-                              "String": {
-                                "sval": "random",
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 23,
+                  "name": "r",
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "FuncCall": {
+                            "funcformat": "COERCE_EXPLICIT_CALL",
+                            "funcname": [
+                              {
+                                "String": {
+                                  "sval": "random",
+                                },
                               },
-                            },
-                          ],
-                          "location": 96,
+                            ],
+                            "location": 29,
+                          },
                         },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "floor",
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "floor",
+                          },
                         },
-                      },
-                    ],
-                    "location": 90,
+                      ],
+                      "location": 23,
+                    },
                   },
                 },
               },
-            },
-            {
-              "ResTarget": {
-                "location": 112,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "f1",
+              {
+                "ResTarget": {
+                  "location": 45,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "f1",
+                          },
                         },
-                      },
-                    ],
-                    "location": 112,
+                      ],
+                      "location": 45,
+                    },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_distinct_on.sql > line 20 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
+exports[`select_distinct_on.sql > line 27 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT DISTINCT ON (four) four,two
+   FROM tenk1 WHERE four = 0 ORDER BY 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 209,
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "distinctClause": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "four",
-                        },
-                      },
-                    ],
-                    "location": 240,
-                  },
-                },
-              ],
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 263,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "sortClause": [
-                {
-                  "SortBy": {
-                    "location": -1,
-                    "node": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 293,
-                      },
-                    },
-                    "sortby_dir": "SORTBY_DEFAULT",
-                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                  },
-                },
-              ],
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 246,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "four",
-                            },
-                          },
-                        ],
-                        "location": 246,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 251,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "two",
-                            },
-                          },
-                        ],
-                        "location": 251,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
+            ],
+            "query": {
+              "SelectStmt": {
+                "distinctClause": [
+                  {
                     "ColumnRef": {
                       "fields": [
                         {
@@ -777,21 +540,103 @@ exports[`select_distinct_on.sql > line 20 1`] = `
                           },
                         },
                       ],
-                      "location": 275,
+                      "location": 40,
                     },
                   },
-                  "location": 280,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
+                ],
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 63,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "sortClause": [
+                  {
+                    "SortBy": {
+                      "location": -1,
+                      "node": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 93,
+                        },
+                      },
+                      "sortby_dir": "SORTBY_DEFAULT",
+                      "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                    },
+                  },
+                ],
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 46,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "four",
+                              },
+                            },
+                          ],
+                          "location": 46,
+                        },
                       },
                     },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 282,
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 51,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "two",
+                              },
+                            },
+                          ],
+                          "location": 51,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "four",
+                            },
+                          },
+                        ],
+                        "location": 75,
+                      },
+                    },
+                    "location": 80,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 82,
+                      },
                     },
                   },
                 },
@@ -800,101 +645,23 @@ exports[`select_distinct_on.sql > line 20 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`select_distinct_on.sql > line 30 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "distinctClause": [
-            {
-              "ColumnRef": {
-                "fields": [
-                  {
-                    "String": {
-                      "sval": "four",
-                    },
-                  },
-                ],
-                "location": 76,
-              },
-            },
-          ],
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 99,
-                "relname": "tenk1",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "sortClause": [
-            {
-              "SortBy": {
-                "location": -1,
-                "node": {
-                  "A_Const": {
-                    "ival": {
-                      "ival": 1,
-                    },
-                    "location": 129,
-                  },
-                },
-                "sortby_dir": "SORTBY_DEFAULT",
-                "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-              },
-            },
-          ],
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 82,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "four",
-                        },
-                      },
-                    ],
-                    "location": 82,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 87,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "two",
-                        },
-                      },
-                    ],
-                    "location": 87,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
+exports[`select_distinct_on.sql > line 32 1`] = `
+[
+  "SELECT DISTINCT ON (four) four,two
+   FROM tenk1 WHERE four = 0 ORDER BY 1",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": [
+              {
                 "ColumnRef": {
                   "fields": [
                     {
@@ -903,153 +670,44 @@ exports[`select_distinct_on.sql > line 30 1`] = `
                       },
                     },
                   ],
-                  "location": 111,
+                  "location": 20,
                 },
               },
-              "location": 116,
-              "name": [
-                {
-                  "String": {
-                    "sval": "=",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "ival": {},
-                  "location": 118,
+            ],
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 43,
+                  "relname": "tenk1",
+                  "relpersistence": "p",
                 },
               },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_distinct_on.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "sortClause": [
+              {
+                "SortBy": {
+                  "location": -1,
+                  "node": {
+                    "A_Const": {
+                      "ival": {
+                        "ival": 1,
+                      },
+                      "location": 73,
+                    },
                   },
+                  "sortby_dir": "SORTBY_DEFAULT",
+                  "sortby_nulls": "SORTBY_NULLS_DEFAULT",
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 88,
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "distinctClause": [
-                {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "four",
-                        },
-                      },
-                    ],
-                    "location": 119,
-                  },
-                },
-              ],
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 142,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "sortClause": [
-                {
-                  "SortBy": {
-                    "location": -1,
-                    "node": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 172,
-                      },
-                    },
-                    "sortby_dir": "SORTBY_DEFAULT",
-                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                  },
-                },
-                {
-                  "SortBy": {
-                    "location": -1,
-                    "node": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 174,
-                      },
-                    },
-                    "sortby_dir": "SORTBY_DEFAULT",
-                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                  },
-                },
-              ],
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 125,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "four",
-                            },
-                          },
-                        ],
-                        "location": 125,
-                      },
-                    },
-                  },
-                },
-                {
-                  "ResTarget": {
-                    "location": 130,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "two",
-                            },
-                          },
-                        ],
-                        "location": 130,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
+            ],
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 26,
+                  "val": {
                     "ColumnRef": {
                       "fields": [
                         {
@@ -1058,59 +716,33 @@ exports[`select_distinct_on.sql > line 34 1`] = `
                           },
                         },
                       ],
-                      "location": 154,
-                    },
-                  },
-                  "location": 159,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 161,
+                      "location": 26,
                     },
                   },
                 },
               },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`select_distinct_on.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "ExplainStmt": {
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "off",
+              {
+                "ResTarget": {
+                  "location": 31,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "two",
+                          },
+                        },
+                      ],
+                      "location": 31,
+                    },
                   },
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "costs",
-                "location": 103,
               },
-            },
-          ],
-          "query": {
-            "SelectStmt": {
-              "distinctClause": [
-                {
+            ],
+            "whereClause": {
+              "A_Expr": {
+                "kind": "AEXPR_OP",
+                "lexpr": {
                   "ColumnRef": {
                     "fields": [
                       {
@@ -1119,94 +751,62 @@ exports[`select_distinct_on.sql > line 39 1`] = `
                         },
                       },
                     ],
-                    "location": 134,
+                    "location": 55,
                   },
                 },
-              ],
-              "fromClause": [
-                {
-                  "RangeVar": {
-                    "inh": true,
-                    "location": 161,
-                    "relname": "tenk1",
-                    "relpersistence": "p",
-                  },
-                },
-              ],
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "sortClause": [
-                {
-                  "SortBy": {
-                    "location": -1,
-                    "node": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 1,
-                        },
-                        "location": 191,
-                      },
-                    },
-                    "sortby_dir": "SORTBY_DEFAULT",
-                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                  },
-                },
-                {
-                  "SortBy": {
-                    "location": -1,
-                    "node": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 2,
-                        },
-                        "location": 193,
-                      },
-                    },
-                    "sortby_dir": "SORTBY_DEFAULT",
-                    "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                  },
-                },
-              ],
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 140,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "four",
-                            },
-                          },
-                        ],
-                        "location": 140,
-                      },
+                "location": 60,
+                "name": [
+                  {
+                    "String": {
+                      "sval": "=",
                     },
                   },
-                },
-                {
-                  "ResTarget": {
-                    "location": 145,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "hundred",
-                            },
-                          },
-                        ],
-                        "location": 145,
-                      },
-                    },
+                ],
+                "rexpr": {
+                  "A_Const": {
+                    "ival": {},
+                    "location": 62,
                   },
                 },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_distinct_on.sql > line 36 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT DISTINCT ON (four) four,two
+   FROM tenk1 WHERE four = 0 ORDER BY 1,2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "distinctClause": [
+                  {
                     "ColumnRef": {
                       "fields": [
                         {
@@ -1215,21 +815,118 @@ exports[`select_distinct_on.sql > line 39 1`] = `
                           },
                         },
                       ],
-                      "location": 173,
+                      "location": 40,
                     },
                   },
-                  "location": 178,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
+                ],
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 63,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "sortClause": [
+                  {
+                    "SortBy": {
+                      "location": -1,
+                      "node": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 93,
+                        },
+                      },
+                      "sortby_dir": "SORTBY_DEFAULT",
+                      "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                    },
+                  },
+                  {
+                    "SortBy": {
+                      "location": -1,
+                      "node": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 95,
+                        },
+                      },
+                      "sortby_dir": "SORTBY_DEFAULT",
+                      "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                    },
+                  },
+                ],
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 46,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "four",
+                              },
+                            },
+                          ],
+                          "location": 46,
+                        },
                       },
                     },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "ival": {},
-                      "location": 180,
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 51,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "two",
+                              },
+                            },
+                          ],
+                          "location": 51,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "four",
+                            },
+                          },
+                        ],
+                        "location": 75,
+                      },
+                    },
+                    "location": 80,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 82,
+                      },
                     },
                   },
                 },
@@ -1238,8 +935,170 @@ exports[`select_distinct_on.sql > line 39 1`] = `
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`select_distinct_on.sql > line 42 1`] = `
+[
+  "EXPLAIN (COSTS OFF)
+SELECT DISTINCT ON (four) four,hundred
+   FROM tenk1 WHERE four = 0 ORDER BY 1,2",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "ExplainStmt": {
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "off",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "costs",
+                  "location": 9,
+                },
+              },
+            ],
+            "query": {
+              "SelectStmt": {
+                "distinctClause": [
+                  {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "four",
+                          },
+                        },
+                      ],
+                      "location": 40,
+                    },
+                  },
+                ],
+                "fromClause": [
+                  {
+                    "RangeVar": {
+                      "inh": true,
+                      "location": 67,
+                      "relname": "tenk1",
+                      "relpersistence": "p",
+                    },
+                  },
+                ],
+                "limitOption": "LIMIT_OPTION_DEFAULT",
+                "op": "SETOP_NONE",
+                "sortClause": [
+                  {
+                    "SortBy": {
+                      "location": -1,
+                      "node": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 1,
+                          },
+                          "location": 97,
+                        },
+                      },
+                      "sortby_dir": "SORTBY_DEFAULT",
+                      "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                    },
+                  },
+                  {
+                    "SortBy": {
+                      "location": -1,
+                      "node": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 2,
+                          },
+                          "location": 99,
+                        },
+                      },
+                      "sortby_dir": "SORTBY_DEFAULT",
+                      "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                    },
+                  },
+                ],
+                "targetList": [
+                  {
+                    "ResTarget": {
+                      "location": 46,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "four",
+                              },
+                            },
+                          ],
+                          "location": 46,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "ResTarget": {
+                      "location": 51,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "hundred",
+                              },
+                            },
+                          ],
+                          "location": 51,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "whereClause": {
+                  "A_Expr": {
+                    "kind": "AEXPR_OP",
+                    "lexpr": {
+                      "ColumnRef": {
+                        "fields": [
+                          {
+                            "String": {
+                              "sval": "four",
+                            },
+                          },
+                        ],
+                        "location": 79,
+                      },
+                    },
+                    "location": 84,
+                    "name": [
+                      {
+                        "String": {
+                          "sval": "=",
+                        },
+                      },
+                    ],
+                    "rexpr": {
+                      "A_Const": {
+                        "ival": {},
+                        "location": 86,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;

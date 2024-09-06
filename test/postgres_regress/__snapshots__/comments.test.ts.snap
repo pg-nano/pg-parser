@@ -1,193 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`comments.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 26,
-                "name": "first",
-                "val": {
-                  "A_Const": {
-                    "location": 26,
-                    "sval": {
-                      "sval": "trailing",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
 exports[`comments.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 59,
-                "name": "second",
-                "val": {
-                  "A_Const": {
-                    "location": 59,
-                    "sval": {
-                      "sval": "embedded",
+[
+  " -- trailing single line
+SELECT /* embedded single line */ 'embedded' AS second",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 59,
+                  "name": "second",
+                  "val": {
+                    "A_Const": {
+                      "location": 59,
+                      "sval": {
+                        "sval": "embedded",
+                      },
                     },
                   },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`comments.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 53,
-                "name": "third",
-                "val": {
-                  "A_Const": {
-                    "location": 53,
-                    "sval": {
-                      "sval": "both",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`comments.sql > line 7 2`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 33,
-                "name": "fourth",
-                "val": {
-                  "A_Const": {
-                    "location": 33,
-                    "sval": {
-                      "sval": "before multi-line",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`comments.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 91,
-                "name": "fifth",
-                "val": {
-                  "A_Const": {
-                    "location": 91,
-                    "sval": {
-                      "sval": "after multi-line",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`comments.sql > line 14 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 591,
-                "name": "sixth",
-                "val": {
-                  "A_Const": {
-                    "location": 591,
-                    "sval": {
-                      "sval": "deeply nested example",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

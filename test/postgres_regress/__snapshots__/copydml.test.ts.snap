@@ -1,1971 +1,284 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`copydml.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateStmt": {
-          "oncommit": "ONCOMMIT_NOOP",
-          "relation": {
-            "inh": true,
-            "location": 68,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "tableElts": [
-            {
-              "ColumnDef": {
-                "colname": "id",
-                "is_local": true,
-                "location": 82,
-                "typeName": {
-                  "location": 85,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "serial",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
+exports[`copydml.sql > line 4 1`] = `
+[
+  "create table copydml_test (id serial, t text)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateStmt": {
+            "oncommit": "ONCOMMIT_NOOP",
+            "relation": {
+              "inh": true,
+              "location": 13,
+              "relname": "copydml_test",
+              "relpersistence": "p",
             },
-            {
-              "ColumnDef": {
-                "colname": "t",
-                "is_local": true,
-                "location": 93,
-                "typeName": {
-                  "location": 95,
-                  "names": [
-                    {
-                      "String": {
-                        "sval": "text",
-                      },
-                    },
-                  ],
-                  "typemod": -1,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 5 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "a",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 6 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "b",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 7 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "c",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 8 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "d",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 9 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "InsertStmt": {
-          "cols": [
-            {
-              "ResTarget": {
-                "location": 27,
-                "name": "t",
-              },
-            },
-          ],
-          "override": "OVERRIDING_NOT_SET",
-          "relation": {
-            "inh": true,
-            "location": 13,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "selectStmt": {
-            "SelectStmt": {
-              "limitOption": "LIMIT_OPTION_DEFAULT",
-              "op": "SETOP_NONE",
-              "valuesLists": [
-                {
-                  "List": {
-                    "items": [
-                      {
-                        "A_Const": {
-                          "location": 38,
-                          "sval": {
-                            "sval": "e",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 10 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "cols": [
-                {
-                  "ResTarget": {
-                    "location": 80,
-                    "name": "t",
-                  },
-                },
-              ],
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 66,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 106,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 106,
-                      },
-                    },
-                  },
-                },
-              ],
-              "selectStmt": {
-                "SelectStmt": {
-                  "limitOption": "LIMIT_OPTION_DEFAULT",
-                  "op": "SETOP_NONE",
-                  "valuesLists": [
-                    {
-                      "List": {
-                        "items": [
-                          {
-                            "A_Const": {
-                              "location": 91,
-                              "sval": {
-                                "sval": "f",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 15 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 63,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 63,
-                      },
-                    },
-                  },
-                },
-              ],
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "g",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "t",
-                          },
-                        },
-                      ],
-                      "location": 45,
-                    },
-                  },
-                  "location": 47,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 49,
-                      "sval": {
-                        "sval": "f",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 56,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 56,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "t",
-                          },
-                        },
-                      ],
-                      "location": 38,
-                    },
-                  },
-                  "location": 40,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 42,
-                      "sval": {
-                        "sval": "g",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 17 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`copydml.sql > line 22 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`copydml.sql > line 23 1`] = `[Error: syntax error at or near "\\"]`;
-
-exports[`copydml.sql > line 24 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 35,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 27 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "g",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 28 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 29 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "event": "CMD_INSERT",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 31 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 32 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 33 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 66,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_INSERT",
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 34 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 35 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 36 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 70,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 96,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_INSERT",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 37 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 38 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 39 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 88,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_INSERT",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "new",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "t",
-                      },
-                    },
-                  ],
-                  "location": 52,
-                },
-              },
-              "location": 58,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<>",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 61,
-                  "sval": {
-                    "sval": "f",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 40 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 41 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 42 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "event": "CMD_UPDATE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 44 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "f",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 45 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 46 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 66,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_UPDATE",
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 47 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "f",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 48 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 49 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 70,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 96,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_UPDATE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 50 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "f",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 51 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 52 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "DeleteStmt": {
-                "relation": {
-                  "inh": true,
-                  "location": 88,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_UPDATE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "new",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "t",
-                      },
-                    },
-                  ],
-                  "location": 52,
-                },
-              },
-              "location": 58,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<>",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 61,
-                  "sval": {
-                    "sval": "f",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 53 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "f",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 54 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 55 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "event": "CMD_DELETE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 34,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 57 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 58 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 59 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "InsertStmt": {
-                "override": "OVERRIDING_NOT_SET",
-                "relation": {
-                  "inh": true,
-                  "location": 66,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_DELETE",
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 60 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 61 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 62 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "InsertStmt": {
-                "override": "OVERRIDING_NOT_SET",
-                "relation": {
-                  "inh": true,
-                  "location": 70,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-            {
-              "InsertStmt": {
-                "override": "OVERRIDING_NOT_SET",
-                "relation": {
-                  "inh": true,
-                  "location": 111,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_DELETE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 63 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 64 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 65 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "RuleStmt": {
-          "actions": [
-            {
-              "InsertStmt": {
-                "override": "OVERRIDING_NOT_SET",
-                "relation": {
-                  "inh": true,
-                  "location": 88,
-                  "relname": "copydml_test",
-                  "relpersistence": "p",
-                },
-              },
-            },
-          ],
-          "event": "CMD_DELETE",
-          "instead": true,
-          "relation": {
-            "inh": true,
-            "location": 33,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "rulename": "qqq",
-          "whereClause": {
-            "A_Expr": {
-              "kind": "AEXPR_OP",
-              "lexpr": {
-                "ColumnRef": {
-                  "fields": [
-                    {
-                      "String": {
-                        "sval": "old",
-                      },
-                    },
-                    {
-                      "String": {
-                        "sval": "t",
-                      },
-                    },
-                  ],
-                  "location": 52,
-                },
-              },
-              "location": 58,
-              "name": [
-                {
-                  "String": {
-                    "sval": "<>",
-                  },
-                },
-              ],
-              "rexpr": {
-                "A_Const": {
-                  "location": 61,
-                  "sval": {
-                    "sval": "f",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 66 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 67 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                  {
-                    "String": {
-                      "sval": "qqq",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_RULE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 68 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateFunctionStmt": {
-          "funcname": [
-            {
-              "String": {
-                "sval": "qqq_trig",
-              },
-            },
-          ],
-          "options": [
-            {
-              "DefElem": {
-                "arg": {
-                  "List": {
-                    "items": [
+            "tableElts": [
+              {
+                "ColumnDef": {
+                  "colname": "id",
+                  "is_local": true,
+                  "location": 27,
+                  "typeName": {
+                    "location": 30,
+                    "names": [
                       {
                         "String": {
-                          "sval": "
+                          "sval": "serial",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+              {
+                "ColumnDef": {
+                  "colname": "t",
+                  "is_local": true,
+                  "location": 38,
+                  "typeName": {
+                    "location": 40,
+                    "names": [
+                      {
+                        "String": {
+                          "sval": "text",
+                        },
+                      },
+                    ],
+                    "typemod": -1,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 14 1`] = `
+[
+  "copy (insert into copydml_test (t) values ('f') returning id) to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "query": {
+              "InsertStmt": {
+                "cols": [
+                  {
+                    "ResTarget": {
+                      "location": 32,
+                      "name": "t",
+                    },
+                  },
+                ],
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 18,
+                  "relname": "copydml_test",
+                  "relpersistence": "p",
+                },
+                "returningList": [
+                  {
+                    "ResTarget": {
+                      "location": 58,
+                      "val": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "id",
+                              },
+                            },
+                          ],
+                          "location": 58,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "selectStmt": {
+                  "SelectStmt": {
+                    "limitOption": "LIMIT_OPTION_DEFAULT",
+                    "op": "SETOP_NONE",
+                    "valuesLists": [
+                      {
+                        "List": {
+                          "items": [
+                            {
+                              "A_Const": {
+                                "location": 43,
+                                "sval": {
+                                  "sval": "f",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 26 1`] = `
+[
+  "copy (insert into copydml_test default values) to stdout",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CopyStmt": {
+            "query": {
+              "InsertStmt": {
+                "override": "OVERRIDING_NOT_SET",
+                "relation": {
+                  "inh": true,
+                  "location": 18,
+                  "relname": "copydml_test",
+                  "relpersistence": "p",
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 30 1`] = `
+[
+  "create rule qqq as on insert to copydml_test do instead nothing",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RuleStmt": {
+            "event": "CMD_INSERT",
+            "instead": true,
+            "relation": {
+              "inh": true,
+              "location": 32,
+              "relname": "copydml_test",
+              "relpersistence": "p",
+            },
+            "rulename": "qqq",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 43 1`] = `
+[
+  "create rule qqq as on update to copydml_test do instead nothing",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RuleStmt": {
+            "event": "CMD_UPDATE",
+            "instead": true,
+            "relation": {
+              "inh": true,
+              "location": 32,
+              "relname": "copydml_test",
+              "relpersistence": "p",
+            },
+            "rulename": "qqq",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 56 1`] = `
+[
+  "create rule qqq as on delete to copydml_test do instead nothing",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "RuleStmt": {
+            "event": "CMD_DELETE",
+            "instead": true,
+            "relation": {
+              "inh": true,
+              "location": 32,
+              "relname": "copydml_test",
+              "relpersistence": "p",
+            },
+            "rulename": "qqq",
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`copydml.sql > line 70 1`] = `
+[
+  "create function qqq_trig() returns trigger as $$
+begin
+if tg_op in ('INSERT', 'UPDATE') then
+    raise notice '% % %', tg_when, tg_op, new.id;
+    return new;
+else
+    raise notice '% % %', tg_when, tg_op, old.id;
+    return old;
+end if;
+end
+$$ language plpgsql",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "CreateFunctionStmt": {
+            "funcname": [
+              {
+                "String": {
+                  "sval": "qqq_trig",
+                },
+              },
+            ],
+            "options": [
+              {
+                "DefElem": {
+                  "arg": {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "sval": "
 begin
 if tg_op in ('INSERT', 'UPDATE') then
     raise notice '% % %', tg_when, tg_op, new.id;
@@ -1976,405 +289,77 @@ else
 end if;
 end
 ",
+                          },
                         },
-                      },
-                    ],
+                      ],
+                    },
                   },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "as",
+                  "location": 43,
                 },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "as",
-                "location": 57,
               },
-            },
-            {
-              "DefElem": {
-                "arg": {
-                  "String": {
-                    "sval": "plpgsql",
-                  },
-                },
-                "defaction": "DEFELEM_UNSPEC",
-                "defname": "language",
-                "location": 259,
-              },
-            },
-          ],
-          "returnType": {
-            "location": 49,
-            "names": [
               {
-                "String": {
-                  "sval": "trigger",
+                "DefElem": {
+                  "arg": {
+                    "String": {
+                      "sval": "plpgsql",
+                    },
+                  },
+                  "defaction": "DEFELEM_UNSPEC",
+                  "defname": "language",
+                  "location": 245,
                 },
               },
             ],
-            "typemod": -1,
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 81 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTrigStmt": {
-          "events": 28,
-          "funcname": [
-            {
-              "String": {
-                "sval": "qqq_trig",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 60,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "row": true,
-          "timing": 2,
-          "trigname": "qqqbef",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 83 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CreateTrigStmt": {
-          "events": 28,
-          "funcname": [
-            {
-              "String": {
-                "sval": "qqq_trig",
-              },
-            },
-          ],
-          "relation": {
-            "inh": true,
-            "location": 58,
-            "relname": "copydml_test",
-            "relpersistence": "p",
-          },
-          "row": true,
-          "trigname": "qqqaf",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 85 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "InsertStmt": {
-              "cols": [
+            "returnType": {
+              "location": 35,
+              "names": [
                 {
-                  "ResTarget": {
-                    "location": 34,
-                    "name": "t",
+                  "String": {
+                    "sval": "trigger",
                   },
                 },
               ],
-              "override": "OVERRIDING_NOT_SET",
-              "relation": {
-                "inh": true,
-                "location": 20,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 60,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 60,
-                      },
-                    },
-                  },
-                },
-              ],
-              "selectStmt": {
-                "SelectStmt": {
-                  "limitOption": "LIMIT_OPTION_DEFAULT",
-                  "op": "SETOP_NONE",
-                  "valuesLists": [
-                    {
-                      "List": {
-                        "items": [
-                          {
-                            "A_Const": {
-                              "location": 45,
-                              "sval": {
-                                "sval": "f",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
+              "typemod": -1,
             },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`copydml.sql > line 87 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "UpdateStmt": {
-              "relation": {
-                "inh": true,
-                "location": 14,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 63,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 63,
-                      },
-                    },
-                  },
-                },
-              ],
-              "targetList": [
-                {
-                  "ResTarget": {
-                    "location": 31,
-                    "name": "t",
-                    "val": {
-                      "A_Const": {
-                        "location": 35,
-                        "sval": {
-                          "sval": "g",
-                        },
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "t",
-                          },
-                        },
-                      ],
-                      "location": 45,
-                    },
-                  },
-                  "location": 47,
-                  "name": [
+exports[`copydml.sql > line 90 1`] = `
+[
+  "drop table copydml_test",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "DropStmt": {
+            "behavior": "DROP_RESTRICT",
+            "objects": [
+              {
+                "List": {
+                  "items": [
                     {
                       "String": {
-                        "sval": "=",
+                        "sval": "copydml_test",
                       },
                     },
                   ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 49,
-                      "sval": {
-                        "sval": "f",
-                      },
-                    },
-                  },
                 },
               },
-            },
+            ],
+            "removeType": "OBJECT_TABLE",
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 88 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "CopyStmt": {
-          "query": {
-            "DeleteStmt": {
-              "relation": {
-                "inh": true,
-                "location": 19,
-                "relname": "copydml_test",
-                "relpersistence": "p",
-              },
-              "returningList": [
-                {
-                  "ResTarget": {
-                    "location": 56,
-                    "val": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "id",
-                            },
-                          },
-                        ],
-                        "location": 56,
-                      },
-                    },
-                  },
-                },
-              ],
-              "whereClause": {
-                "A_Expr": {
-                  "kind": "AEXPR_OP",
-                  "lexpr": {
-                    "ColumnRef": {
-                      "fields": [
-                        {
-                          "String": {
-                            "sval": "t",
-                          },
-                        },
-                      ],
-                      "location": 38,
-                    },
-                  },
-                  "location": 40,
-                  "name": [
-                    {
-                      "String": {
-                        "sval": "=",
-                      },
-                    },
-                  ],
-                  "rexpr": {
-                    "A_Const": {
-                      "location": 42,
-                      "sval": {
-                        "sval": "g",
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 89 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "List": {
-                "items": [
-                  {
-                    "String": {
-                      "sval": "copydml_test",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_TABLE",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`copydml.sql > line 91 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "DropStmt": {
-          "behavior": "DROP_RESTRICT",
-          "objects": [
-            {
-              "ObjectWithArgs": {
-                "objname": [
-                  {
-                    "String": {
-                      "sval": "qqq_trig",
-                    },
-                  },
-                ],
-              },
-            },
-          ],
-          "removeType": "OBJECT_FUNCTION",
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;

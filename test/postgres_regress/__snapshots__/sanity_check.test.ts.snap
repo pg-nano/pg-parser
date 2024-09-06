@@ -1,103 +1,56 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`sanity_check.sql > line 1 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "VacuumStmt": {
-          "is_vacuumcmd": true,
+[
+  "VACUUM",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "VacuumStmt": {
+            "is_vacuumcmd": true,
+          },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
 `;
 
-exports[`sanity_check.sql > line 2 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "JoinExpr": {
-                "jointype": "JOIN_INNER",
-                "larg": {
-                  "JoinExpr": {
-                    "jointype": "JOIN_LEFT",
-                    "larg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "c",
-                        },
-                        "inh": true,
-                        "location": 286,
-                        "relname": "pg_class",
-                        "relpersistence": "p",
-                      },
-                    },
-                    "quals": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "n",
-                                },
-                              },
-                              {
-                                "String": {
-                                  "sval": "oid",
-                                },
-                              },
-                            ],
-                            "location": 325,
+exports[`sanity_check.sql > line 9 1`] = `
+[
+  "SELECT relname, nspname
+ FROM pg_class c LEFT JOIN pg_namespace n ON n.oid = relnamespace JOIN pg_attribute a ON (attrelid = c.oid AND attname = 'oid')
+ WHERE relkind = 'r' and c.oid < 16384
+     AND ((nspname ~ '^pg_') IS NOT FALSE)
+     AND NOT EXISTS (SELECT 1 FROM pg_index i WHERE indrelid = c.oid
+                     AND indkey[0] = a.attnum AND indnatts = 1
+                     AND indisunique AND indimmediate)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "JoinExpr": {
+                  "jointype": "JOIN_INNER",
+                  "larg": {
+                    "JoinExpr": {
+                      "jointype": "JOIN_LEFT",
+                      "larg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "c",
                           },
-                        },
-                        "location": 331,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "=",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "relnamespace",
-                                },
-                              },
-                            ],
-                            "location": 333,
-                          },
+                          "inh": true,
+                          "location": 30,
+                          "relname": "pg_class",
+                          "relpersistence": "p",
                         },
                       },
-                    },
-                    "rarg": {
-                      "RangeVar": {
-                        "alias": {
-                          "aliasname": "n",
-                        },
-                        "inh": true,
-                        "location": 307,
-                        "relname": "pg_namespace",
-                        "relpersistence": "p",
-                      },
-                    },
-                  },
-                },
-                "quals": {
-                  "BoolExpr": {
-                    "args": [
-                      {
+                      "quals": {
                         "A_Expr": {
                           "kind": "AEXPR_OP",
                           "lexpr": {
@@ -105,27 +58,7 @@ exports[`sanity_check.sql > line 2 1`] = `
                               "fields": [
                                 {
                                   "String": {
-                                    "sval": "attrelid",
-                                  },
-                                },
-                              ],
-                              "location": 370,
-                            },
-                          },
-                          "location": 379,
-                          "name": [
-                            {
-                              "String": {
-                                "sval": "=",
-                              },
-                            },
-                          ],
-                          "rexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "c",
+                                    "sval": "n",
                                   },
                                 },
                                 {
@@ -134,27 +67,10 @@ exports[`sanity_check.sql > line 2 1`] = `
                                   },
                                 },
                               ],
-                              "location": 381,
+                              "location": 69,
                             },
                           },
-                        },
-                      },
-                      {
-                        "A_Expr": {
-                          "kind": "AEXPR_OP",
-                          "lexpr": {
-                            "ColumnRef": {
-                              "fields": [
-                                {
-                                  "String": {
-                                    "sval": "attname",
-                                  },
-                                },
-                              ],
-                              "location": 391,
-                            },
-                          },
-                          "location": 399,
+                          "location": 75,
                           "name": [
                             {
                               "String": {
@@ -163,992 +79,81 @@ exports[`sanity_check.sql > line 2 1`] = `
                             },
                           ],
                           "rexpr": {
-                            "A_Const": {
-                              "location": 401,
-                              "sval": {
-                                "sval": "oid",
-                              },
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "boolop": "AND_EXPR",
-                    "location": 387,
-                  },
-                },
-                "rarg": {
-                  "RangeVar": {
-                    "alias": {
-                      "aliasname": "a",
-                    },
-                    "inh": true,
-                    "location": 351,
-                    "relname": "pg_attribute",
-                    "relpersistence": "p",
-                  },
-                },
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 263,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 263,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 272,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "nspname",
-                        },
-                      },
-                    ],
-                    "location": 272,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relkind",
-                            },
-                          },
-                        ],
-                        "location": 415,
-                      },
-                    },
-                    "location": 423,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "location": 425,
-                        "sval": {
-                          "sval": "r",
-                        },
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "c",
-                            },
-                          },
-                          {
-                            "String": {
-                              "sval": "oid",
-                            },
-                          },
-                        ],
-                        "location": 433,
-                      },
-                    },
-                    "location": 439,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {
-                          "ival": 16384,
-                        },
-                        "location": 441,
-                      },
-                    },
-                  },
-                },
-                {
-                  "BooleanTest": {
-                    "arg": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "ColumnRef": {
-                            "fields": [
-                              {
-                                "String": {
-                                  "sval": "nspname",
-                                },
-                              },
-                            ],
-                            "location": 458,
-                          },
-                        },
-                        "location": 466,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "~",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "location": 468,
-                            "sval": {
-                              "sval": "^pg_",
-                            },
-                          },
-                        },
-                      },
-                    },
-                    "booltesttype": "IS_NOT_FALSE",
-                    "location": 476,
-                  },
-                },
-                {
-                  "BoolExpr": {
-                    "args": [
-                      {
-                        "SubLink": {
-                          "location": 503,
-                          "subLinkType": "EXISTS_SUBLINK",
-                          "subselect": {
-                            "SelectStmt": {
-                              "fromClause": [
-                                {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "i",
-                                    },
-                                    "inh": true,
-                                    "location": 525,
-                                    "relname": "pg_index",
-                                    "relpersistence": "p",
-                                  },
-                                },
-                              ],
-                              "limitOption": "LIMIT_OPTION_DEFAULT",
-                              "op": "SETOP_NONE",
-                              "targetList": [
-                                {
-                                  "ResTarget": {
-                                    "location": 518,
-                                    "val": {
-                                      "A_Const": {
-                                        "ival": {
-                                          "ival": 1,
-                                        },
-                                        "location": 518,
-                                      },
-                                    },
-                                  },
-                                },
-                              ],
-                              "whereClause": {
-                                "BoolExpr": {
-                                  "args": [
-                                    {
-                                      "A_Expr": {
-                                        "kind": "AEXPR_OP",
-                                        "lexpr": {
-                                          "ColumnRef": {
-                                            "fields": [
-                                              {
-                                                "String": {
-                                                  "sval": "indrelid",
-                                                },
-                                              },
-                                            ],
-                                            "location": 542,
-                                          },
-                                        },
-                                        "location": 551,
-                                        "name": [
-                                          {
-                                            "String": {
-                                              "sval": "=",
-                                            },
-                                          },
-                                        ],
-                                        "rexpr": {
-                                          "ColumnRef": {
-                                            "fields": [
-                                              {
-                                                "String": {
-                                                  "sval": "c",
-                                                },
-                                              },
-                                              {
-                                                "String": {
-                                                  "sval": "oid",
-                                                },
-                                              },
-                                            ],
-                                            "location": 553,
-                                          },
-                                        },
-                                      },
-                                    },
-                                    {
-                                      "A_Expr": {
-                                        "kind": "AEXPR_OP",
-                                        "lexpr": {
-                                          "A_Indirection": {
-                                            "arg": {
-                                              "ColumnRef": {
-                                                "fields": [
-                                                  {
-                                                    "String": {
-                                                      "sval": "indkey",
-                                                    },
-                                                  },
-                                                ],
-                                                "location": 584,
-                                              },
-                                            },
-                                            "indirection": [
-                                              {
-                                                "A_Indices": {
-                                                  "uidx": {
-                                                    "A_Const": {
-                                                      "ival": {},
-                                                      "location": 591,
-                                                    },
-                                                  },
-                                                },
-                                              },
-                                            ],
-                                          },
-                                        },
-                                        "location": 594,
-                                        "name": [
-                                          {
-                                            "String": {
-                                              "sval": "=",
-                                            },
-                                          },
-                                        ],
-                                        "rexpr": {
-                                          "ColumnRef": {
-                                            "fields": [
-                                              {
-                                                "String": {
-                                                  "sval": "a",
-                                                },
-                                              },
-                                              {
-                                                "String": {
-                                                  "sval": "attnum",
-                                                },
-                                              },
-                                            ],
-                                            "location": 596,
-                                          },
-                                        },
-                                      },
-                                    },
-                                    {
-                                      "A_Expr": {
-                                        "kind": "AEXPR_OP",
-                                        "lexpr": {
-                                          "ColumnRef": {
-                                            "fields": [
-                                              {
-                                                "String": {
-                                                  "sval": "indnatts",
-                                                },
-                                              },
-                                            ],
-                                            "location": 609,
-                                          },
-                                        },
-                                        "location": 618,
-                                        "name": [
-                                          {
-                                            "String": {
-                                              "sval": "=",
-                                            },
-                                          },
-                                        ],
-                                        "rexpr": {
-                                          "A_Const": {
-                                            "ival": {
-                                              "ival": 1,
-                                            },
-                                            "location": 620,
-                                          },
-                                        },
-                                      },
-                                    },
-                                    {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "indisunique",
-                                            },
-                                          },
-                                        ],
-                                        "location": 647,
-                                      },
-                                    },
-                                    {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "indimmediate",
-                                            },
-                                          },
-                                        ],
-                                        "location": 663,
-                                      },
-                                    },
-                                  ],
-                                  "boolop": "AND_EXPR",
-                                  "location": 580,
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    ],
-                    "boolop": "NOT_EXPR",
-                    "location": 499,
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 429,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sanity_check.sql > line 16 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 96,
-                "relname": "pg_class",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 72,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 72,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 81,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relkind",
-                        },
-                      },
-                    ],
-                    "location": 81,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_IN",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relkind",
-                            },
-                          },
-                        ],
-                        "location": 112,
-                      },
-                    },
-                    "location": 120,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "List": {
-                        "items": [
-                          {
-                            "A_Const": {
-                              "location": 124,
-                              "sval": {
-                                "sval": "v",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 129,
-                              "sval": {
-                                "sval": "c",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 134,
-                              "sval": {
-                                "sval": "f",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 139,
-                              "sval": {
-                                "sval": "p",
-                              },
-                            },
-                          },
-                          {
-                            "A_Const": {
-                              "location": 144,
-                              "sval": {
-                                "sval": "I",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "relfilenode",
-                            },
-                          },
-                        ],
-                        "location": 160,
-                      },
-                    },
-                    "location": 172,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 175,
-                      },
-                    },
-                  },
-                },
-              ],
-              "boolop": "AND_EXPR",
-              "location": 156,
-            },
-          },
-        },
-      },
-    },
-  ],
-  "version": 160001,
-}
-`;
-
-exports[`sanity_check.sql > line 22 1`] = `
-{
-  "stmts": [
-    {
-      "stmt": {
-        "SelectStmt": {
-          "fromClause": [
-            {
-              "RangeVar": {
-                "inh": true,
-                "location": 1018,
-                "relname": "check_columns",
-                "relpersistence": "p",
-              },
-            },
-          ],
-          "limitOption": "LIMIT_OPTION_DEFAULT",
-          "op": "SETOP_NONE",
-          "targetList": [
-            {
-              "ResTarget": {
-                "location": 955,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "relname",
-                        },
-                      },
-                    ],
-                    "location": 955,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 964,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "attname",
-                        },
-                      },
-                    ],
-                    "location": 964,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 973,
-                "val": {
-                  "ColumnRef": {
-                    "fields": [
-                      {
-                        "String": {
-                          "sval": "coltypes",
-                        },
-                      },
-                    ],
-                    "location": 973,
-                  },
-                },
-              },
-            },
-            {
-              "ResTarget": {
-                "location": 983,
-                "val": {
-                  "FuncCall": {
-                    "args": [
-                      {
-                        "ColumnRef": {
-                          "fields": [
-                            {
-                              "String": {
-                                "sval": "coltypes",
-                              },
-                            },
-                          ],
-                          "location": 1002,
-                        },
-                      },
-                    ],
-                    "funcformat": "COERCE_EXPLICIT_CALL",
-                    "funcname": [
-                      {
-                        "String": {
-                          "sval": "get_columns_length",
-                        },
-                      },
-                    ],
-                    "location": 983,
-                  },
-                },
-              },
-            },
-          ],
-          "whereClause": {
-            "BoolExpr": {
-              "args": [
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP",
-                    "lexpr": {
-                      "A_Expr": {
-                        "kind": "AEXPR_OP",
-                        "lexpr": {
-                          "FuncCall": {
-                            "args": [
-                              {
-                                "ColumnRef": {
-                                  "fields": [
-                                    {
-                                      "String": {
-                                        "sval": "coltypes",
-                                      },
-                                    },
-                                  ],
-                                  "location": 1058,
-                                },
-                              },
-                            ],
-                            "funcformat": "COERCE_EXPLICIT_CALL",
-                            "funcname": [
-                              {
-                                "String": {
-                                  "sval": "get_columns_length",
-                                },
-                              },
-                            ],
-                            "location": 1039,
-                          },
-                        },
-                        "location": 1068,
-                        "name": [
-                          {
-                            "String": {
-                              "sval": "%",
-                            },
-                          },
-                        ],
-                        "rexpr": {
-                          "A_Const": {
-                            "ival": {
-                              "ival": 8,
-                            },
-                            "location": 1070,
-                          },
-                        },
-                      },
-                    },
-                    "location": 1072,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "<>",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "A_Const": {
-                        "ival": {},
-                        "location": 1075,
-                      },
-                    },
-                  },
-                },
-                {
-                  "A_Expr": {
-                    "kind": "AEXPR_OP_ANY",
-                    "lexpr": {
-                      "TypeCast": {
-                        "arg": {
-                          "TypeCast": {
-                            "arg": {
-                              "A_Const": {
-                                "location": 1087,
-                                "sval": {
-                                  "sval": "name",
-                                },
-                              },
-                            },
-                            "location": 1093,
-                            "typeName": {
-                              "location": 1095,
-                              "names": [
+                            "ColumnRef": {
+                              "fields": [
                                 {
                                   "String": {
-                                    "sval": "regtype",
+                                    "sval": "relnamespace",
                                   },
                                 },
                               ],
-                              "typemod": -1,
+                              "location": 77,
                             },
                           },
                         },
-                        "location": 1102,
-                        "typeName": {
-                          "location": 1104,
-                          "names": [
-                            {
-                              "String": {
-                                "sval": "oid",
-                              },
-                            },
-                          ],
-                          "typemod": -1,
-                        },
                       },
-                    },
-                    "location": 1108,
-                    "name": [
-                      {
-                        "String": {
-                          "sval": "=",
-                        },
-                      },
-                    ],
-                    "rexpr": {
-                      "ColumnRef": {
-                        "fields": [
-                          {
-                            "String": {
-                              "sval": "coltypes",
-                            },
+                      "rarg": {
+                        "RangeVar": {
+                          "alias": {
+                            "aliasname": "n",
                           },
-                        ],
-                        "location": 1114,
+                          "inh": true,
+                          "location": 51,
+                          "relname": "pg_namespace",
+                          "relpersistence": "p",
+                        },
                       },
                     },
                   },
-                },
-              ],
-              "boolop": "OR_EXPR",
-              "location": 1077,
-            },
-          },
-          "withClause": {
-            "ctes": [
-              {
-                "CommonTableExpr": {
-                  "ctematerialized": "CTEMaterializeDefault",
-                  "ctename": "check_columns",
-                  "ctequery": {
-                    "SelectStmt": {
-                      "fromClause": [
+                  "quals": {
+                    "BoolExpr": {
+                      "args": [
                         {
-                          "JoinExpr": {
-                            "jointype": "JOIN_INNER",
-                            "larg": {
-                              "JoinExpr": {
-                                "jointype": "JOIN_INNER",
-                                "larg": {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "a",
-                                    },
-                                    "inh": true,
-                                    "location": 744,
-                                    "relname": "pg_attribute",
-                                    "relpersistence": "p",
-                                  },
-                                },
-                                "quals": {
-                                  "A_Expr": {
-                                    "kind": "AEXPR_OP",
-                                    "lexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "c",
-                                            },
-                                          },
-                                          {
-                                            "String": {
-                                              "sval": "oid",
-                                            },
-                                          },
-                                        ],
-                                        "location": 778,
-                                      },
-                                    },
-                                    "location": 784,
-                                    "name": [
-                                      {
-                                        "String": {
-                                          "sval": "=",
-                                        },
-                                      },
-                                    ],
-                                    "rexpr": {
-                                      "ColumnRef": {
-                                        "fields": [
-                                          {
-                                            "String": {
-                                              "sval": "attrelid",
-                                            },
-                                          },
-                                        ],
-                                        "location": 786,
-                                      },
-                                    },
-                                  },
-                                },
-                                "rarg": {
-                                  "RangeVar": {
-                                    "alias": {
-                                      "aliasname": "c",
-                                    },
-                                    "inh": true,
-                                    "location": 764,
-                                    "relname": "pg_class",
-                                    "relpersistence": "p",
-                                  },
-                                },
-                              },
-                            },
-                            "quals": {
-                              "A_Expr": {
-                                "kind": "AEXPR_OP",
-                                "lexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "c",
-                                        },
-                                      },
-                                      {
-                                        "String": {
-                                          "sval": "relnamespace",
-                                        },
-                                      },
-                                    ],
-                                    "location": 820,
-                                  },
-                                },
-                                "location": 835,
-                                "name": [
-                                  {
-                                    "String": {
-                                      "sval": "=",
-                                    },
-                                  },
-                                ],
-                                "rexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "n",
-                                        },
-                                      },
-                                      {
-                                        "String": {
-                                          "sval": "oid",
-                                        },
-                                      },
-                                    ],
-                                    "location": 837,
-                                  },
-                                },
-                              },
-                            },
-                            "rarg": {
-                              "RangeVar": {
-                                "alias": {
-                                  "aliasname": "n",
-                                },
-                                "inh": true,
-                                "location": 802,
-                                "relname": "pg_namespace",
-                                "relpersistence": "p",
-                              },
-                            },
-                          },
-                        },
-                      ],
-                      "limitOption": "LIMIT_OPTION_DEFAULT",
-                      "op": "SETOP_NONE",
-                      "targetList": [
-                        {
-                          "ResTarget": {
-                            "location": 508,
-                            "val": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
                               "ColumnRef": {
                                 "fields": [
                                   {
                                     "String": {
-                                      "sval": "relname",
+                                      "sval": "attrelid",
                                     },
                                   },
                                 ],
-                                "location": 508,
+                                "location": 114,
+                              },
+                            },
+                            "location": 123,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "=",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "ColumnRef": {
+                                "fields": [
+                                  {
+                                    "String": {
+                                      "sval": "c",
+                                    },
+                                  },
+                                  {
+                                    "String": {
+                                      "sval": "oid",
+                                    },
+                                  },
+                                ],
+                                "location": 125,
                               },
                             },
                           },
                         },
                         {
-                          "ResTarget": {
-                            "location": 517,
-                            "val": {
+                          "A_Expr": {
+                            "kind": "AEXPR_OP",
+                            "lexpr": {
                               "ColumnRef": {
                                 "fields": [
                                   {
@@ -1157,135 +162,268 @@ exports[`sanity_check.sql > line 22 1`] = `
                                     },
                                   },
                                 ],
-                                "location": 517,
+                                "location": 135,
+                              },
+                            },
+                            "location": 143,
+                            "name": [
+                              {
+                                "String": {
+                                  "sval": "=",
+                                },
+                              },
+                            ],
+                            "rexpr": {
+                              "A_Const": {
+                                "location": 145,
+                                "sval": {
+                                  "sval": "oid",
+                                },
                               },
                             },
                           },
                         },
+                      ],
+                      "boolop": "AND_EXPR",
+                      "location": 131,
+                    },
+                  },
+                  "rarg": {
+                    "RangeVar": {
+                      "alias": {
+                        "aliasname": "a",
+                      },
+                      "inh": true,
+                      "location": 95,
+                      "relname": "pg_attribute",
+                      "relpersistence": "p",
+                    },
+                  },
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
                         {
-                          "ResTarget": {
-                            "location": 528,
-                            "name": "coltypes",
-                            "val": {
-                              "SubLink": {
-                                "location": 528,
-                                "subLinkType": "ARRAY_SUBLINK",
-                                "subselect": {
-                                  "SelectStmt": {
-                                    "fromClause": [
-                                      {
-                                        "JoinExpr": {
-                                          "jointype": "JOIN_INNER",
-                                          "larg": {
-                                            "RangeVar": {
-                                              "alias": {
-                                                "aliasname": "t",
-                                              },
-                                              "inh": true,
-                                              "location": 560,
-                                              "relname": "pg_type",
-                                              "relpersistence": "p",
-                                            },
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "nspname",
+                          },
+                        },
+                      ],
+                      "location": 16,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "relkind",
+                              },
+                            },
+                          ],
+                          "location": 159,
+                        },
+                      },
+                      "location": 167,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "location": 169,
+                          "sval": {
+                            "sval": "r",
+                          },
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "c",
+                              },
+                            },
+                            {
+                              "String": {
+                                "sval": "oid",
+                              },
+                            },
+                          ],
+                          "location": 177,
+                        },
+                      },
+                      "location": 183,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {
+                            "ival": 16384,
+                          },
+                          "location": 185,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "BooleanTest": {
+                      "arg": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": [
+                                {
+                                  "String": {
+                                    "sval": "nspname",
+                                  },
+                                },
+                              ],
+                              "location": 202,
+                            },
+                          },
+                          "location": 210,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "~",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "location": 212,
+                              "sval": {
+                                "sval": "^pg_",
+                              },
+                            },
+                          },
+                        },
+                      },
+                      "booltesttype": "IS_NOT_FALSE",
+                      "location": 220,
+                    },
+                  },
+                  {
+                    "BoolExpr": {
+                      "args": [
+                        {
+                          "SubLink": {
+                            "location": 247,
+                            "subLinkType": "EXISTS_SUBLINK",
+                            "subselect": {
+                              "SelectStmt": {
+                                "fromClause": [
+                                  {
+                                    "RangeVar": {
+                                      "alias": {
+                                        "aliasname": "i",
+                                      },
+                                      "inh": true,
+                                      "location": 269,
+                                      "relname": "pg_index",
+                                      "relpersistence": "p",
+                                    },
+                                  },
+                                ],
+                                "limitOption": "LIMIT_OPTION_DEFAULT",
+                                "op": "SETOP_NONE",
+                                "targetList": [
+                                  {
+                                    "ResTarget": {
+                                      "location": 262,
+                                      "val": {
+                                        "A_Const": {
+                                          "ival": {
+                                            "ival": 1,
                                           },
-                                          "quals": {
-                                            "A_Expr": {
-                                              "kind": "AEXPR_OP",
-                                              "lexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "t",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "oid",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 594,
-                                                },
-                                              },
-                                              "location": 600,
-                                              "name": [
-                                                {
-                                                  "String": {
-                                                    "sval": "=",
-                                                  },
-                                                },
-                                              ],
-                                              "rexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "pa",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "atttypid",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 602,
-                                                },
-                                              },
-                                            },
-                                          },
-                                          "rarg": {
-                                            "RangeVar": {
-                                              "alias": {
-                                                "aliasname": "pa",
-                                              },
-                                              "inh": true,
-                                              "location": 575,
-                                              "relname": "pg_attribute",
-                                              "relpersistence": "p",
-                                            },
-                                          },
+                                          "location": 262,
                                         },
                                       },
-                                    ],
-                                    "limitOption": "LIMIT_OPTION_DEFAULT",
-                                    "op": "SETOP_NONE",
-                                    "sortClause": [
+                                    },
+                                  },
+                                ],
+                                "whereClause": {
+                                  "BoolExpr": {
+                                    "args": [
                                       {
-                                        "SortBy": {
-                                          "location": -1,
-                                          "node": {
+                                        "A_Expr": {
+                                          "kind": "AEXPR_OP",
+                                          "lexpr": {
                                             "ColumnRef": {
                                               "fields": [
                                                 {
                                                   "String": {
-                                                    "sval": "pa",
-                                                  },
-                                                },
-                                                {
-                                                  "String": {
-                                                    "sval": "attnum",
+                                                    "sval": "indrelid",
                                                   },
                                                 },
                                               ],
-                                              "location": 715,
+                                              "location": 286,
                                             },
                                           },
-                                          "sortby_dir": "SORTBY_DEFAULT",
-                                          "sortby_nulls": "SORTBY_NULLS_DEFAULT",
-                                        },
-                                      },
-                                    ],
-                                    "targetList": [
-                                      {
-                                        "ResTarget": {
-                                          "location": 545,
-                                          "val": {
+                                          "location": 295,
+                                          "name": [
+                                            {
+                                              "String": {
+                                                "sval": "=",
+                                              },
+                                            },
+                                          ],
+                                          "rexpr": {
                                             "ColumnRef": {
                                               "fields": [
                                                 {
                                                   "String": {
-                                                    "sval": "t",
+                                                    "sval": "c",
                                                   },
                                                 },
                                                 {
@@ -1294,150 +432,129 @@ exports[`sanity_check.sql > line 22 1`] = `
                                                   },
                                                 },
                                               ],
-                                              "location": 545,
+                                              "location": 297,
                                             },
                                           },
                                         },
                                       },
-                                    ],
-                                    "whereClause": {
-                                      "BoolExpr": {
-                                        "args": [
-                                          {
-                                            "A_Expr": {
-                                              "kind": "AEXPR_OP",
-                                              "lexpr": {
+                                      {
+                                        "A_Expr": {
+                                          "kind": "AEXPR_OP",
+                                          "lexpr": {
+                                            "A_Indirection": {
+                                              "arg": {
                                                 "ColumnRef": {
                                                   "fields": [
                                                     {
                                                       "String": {
-                                                        "sval": "pa",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "attrelid",
+                                                        "sval": "indkey",
                                                       },
                                                     },
                                                   ],
-                                                  "location": 624,
+                                                  "location": 328,
                                                 },
                                               },
-                                              "location": 636,
-                                              "name": [
+                                              "indirection": [
                                                 {
-                                                  "String": {
-                                                    "sval": "=",
+                                                  "A_Indices": {
+                                                    "uidx": {
+                                                      "A_Const": {
+                                                        "ival": {},
+                                                        "location": 335,
+                                                      },
+                                                    },
                                                   },
                                                 },
                                               ],
-                                              "rexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "a",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "attrelid",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 638,
-                                                },
-                                              },
                                             },
                                           },
-                                          {
-                                            "A_Expr": {
-                                              "kind": "AEXPR_OP",
-                                              "lexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "pa",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "attnum",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 663,
-                                                },
+                                          "location": 338,
+                                          "name": [
+                                            {
+                                              "String": {
+                                                "sval": "=",
                                               },
-                                              "location": 673,
-                                              "name": [
+                                            },
+                                          ],
+                                          "rexpr": {
+                                            "ColumnRef": {
+                                              "fields": [
                                                 {
                                                   "String": {
-                                                    "sval": ">",
+                                                    "sval": "a",
+                                                  },
+                                                },
+                                                {
+                                                  "String": {
+                                                    "sval": "attnum",
                                                   },
                                                 },
                                               ],
-                                              "rexpr": {
-                                                "A_Const": {
-                                                  "ival": {},
-                                                  "location": 675,
-                                                },
-                                              },
+                                              "location": 340,
                                             },
                                           },
-                                          {
-                                            "A_Expr": {
-                                              "kind": "AEXPR_OP",
-                                              "lexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "pa",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "attnum",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 681,
-                                                },
-                                              },
-                                              "location": 691,
-                                              "name": [
-                                                {
-                                                  "String": {
-                                                    "sval": "<",
-                                                  },
-                                                },
-                                              ],
-                                              "rexpr": {
-                                                "ColumnRef": {
-                                                  "fields": [
-                                                    {
-                                                      "String": {
-                                                        "sval": "a",
-                                                      },
-                                                    },
-                                                    {
-                                                      "String": {
-                                                        "sval": "attnum",
-                                                      },
-                                                    },
-                                                  ],
-                                                  "location": 693,
-                                                },
-                                              },
-                                            },
-                                          },
-                                        ],
-                                        "boolop": "AND_EXPR",
-                                        "location": 649,
+                                        },
                                       },
-                                    },
+                                      {
+                                        "A_Expr": {
+                                          "kind": "AEXPR_OP",
+                                          "lexpr": {
+                                            "ColumnRef": {
+                                              "fields": [
+                                                {
+                                                  "String": {
+                                                    "sval": "indnatts",
+                                                  },
+                                                },
+                                              ],
+                                              "location": 353,
+                                            },
+                                          },
+                                          "location": 362,
+                                          "name": [
+                                            {
+                                              "String": {
+                                                "sval": "=",
+                                              },
+                                            },
+                                          ],
+                                          "rexpr": {
+                                            "A_Const": {
+                                              "ival": {
+                                                "ival": 1,
+                                              },
+                                              "location": 364,
+                                            },
+                                          },
+                                        },
+                                      },
+                                      {
+                                        "ColumnRef": {
+                                          "fields": [
+                                            {
+                                              "String": {
+                                                "sval": "indisunique",
+                                              },
+                                            },
+                                          ],
+                                          "location": 391,
+                                        },
+                                      },
+                                      {
+                                        "ColumnRef": {
+                                          "fields": [
+                                            {
+                                              "String": {
+                                                "sval": "indimmediate",
+                                              },
+                                            },
+                                          ],
+                                          "location": 407,
+                                        },
+                                      },
+                                    ],
+                                    "boolop": "AND_EXPR",
+                                    "location": 324,
                                   },
                                 },
                               },
@@ -1445,173 +562,1092 @@ exports[`sanity_check.sql > line 22 1`] = `
                           },
                         },
                       ],
-                      "whereClause": {
-                        "BoolExpr": {
-                          "args": [
+                      "boolop": "NOT_EXPR",
+                      "location": 243,
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 173,
+              },
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sanity_check.sql > line 18 1`] = `
+[
+  "SELECT relname, relkind
+  FROM pg_class
+ WHERE relkind IN ('v', 'c', 'f', 'p', 'I')
+       AND relfilenode <> 0",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 31,
+                  "relname": "pg_class",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 7,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 7,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 16,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relkind",
+                          },
+                        },
+                      ],
+                      "location": 16,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_IN",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
                             {
-                              "A_Expr": {
-                                "kind": "AEXPR_OP",
-                                "lexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "attalign",
-                                        },
-                                      },
-                                    ],
-                                    "location": 850,
-                                  },
-                                },
-                                "location": 859,
-                                "name": [
-                                  {
-                                    "String": {
-                                      "sval": "=",
-                                    },
-                                  },
-                                ],
-                                "rexpr": {
-                                  "A_Const": {
-                                    "location": 861,
-                                    "sval": {
-                                      "sval": "d",
-                                    },
-                                  },
+                              "String": {
+                                "sval": "relkind",
+                              },
+                            },
+                          ],
+                          "location": 47,
+                        },
+                      },
+                      "location": 55,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "List": {
+                          "items": [
+                            {
+                              "A_Const": {
+                                "location": 59,
+                                "sval": {
+                                  "sval": "v",
                                 },
                               },
                             },
                             {
-                              "A_Expr": {
-                                "kind": "AEXPR_OP",
-                                "lexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "relkind",
-                                        },
-                                      },
-                                    ],
-                                    "location": 869,
-                                  },
-                                },
-                                "location": 877,
-                                "name": [
-                                  {
-                                    "String": {
-                                      "sval": "=",
-                                    },
-                                  },
-                                ],
-                                "rexpr": {
-                                  "A_Const": {
-                                    "location": 879,
-                                    "sval": {
-                                      "sval": "r",
-                                    },
-                                  },
+                              "A_Const": {
+                                "location": 64,
+                                "sval": {
+                                  "sval": "c",
                                 },
                               },
                             },
                             {
-                              "ColumnRef": {
-                                "fields": [
-                                  {
-                                    "String": {
-                                      "sval": "attnotnull",
-                                    },
-                                  },
-                                ],
-                                "location": 889,
-                              },
-                            },
-                            {
-                              "A_Expr": {
-                                "kind": "AEXPR_OP",
-                                "lexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "attlen",
-                                        },
-                                      },
-                                    ],
-                                    "location": 904,
-                                  },
-                                },
-                                "location": 911,
-                                "name": [
-                                  {
-                                    "String": {
-                                      "sval": "<>",
-                                    },
-                                  },
-                                ],
-                                "rexpr": {
-                                  "A_Const": {
-                                    "ival": {},
-                                    "location": 914,
-                                  },
+                              "A_Const": {
+                                "location": 69,
+                                "sval": {
+                                  "sval": "f",
                                 },
                               },
                             },
                             {
-                              "A_Expr": {
-                                "kind": "AEXPR_OP",
-                                "lexpr": {
-                                  "ColumnRef": {
-                                    "fields": [
-                                      {
-                                        "String": {
-                                          "sval": "n",
-                                        },
-                                      },
-                                      {
-                                        "String": {
-                                          "sval": "nspname",
-                                        },
-                                      },
-                                    ],
-                                    "location": 921,
-                                  },
+                              "A_Const": {
+                                "location": 74,
+                                "sval": {
+                                  "sval": "p",
                                 },
-                                "location": 931,
-                                "name": [
-                                  {
-                                    "String": {
-                                      "sval": "=",
-                                    },
-                                  },
-                                ],
-                                "rexpr": {
-                                  "A_Const": {
-                                    "location": 933,
-                                    "sval": {
-                                      "sval": "pg_catalog",
-                                    },
-                                  },
+                              },
+                            },
+                            {
+                              "A_Const": {
+                                "location": 79,
+                                "sval": {
+                                  "sval": "I",
                                 },
                               },
                             },
                           ],
-                          "boolop": "AND_EXPR",
-                          "location": 865,
                         },
                       },
                     },
                   },
-                  "location": 481,
-                },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "relfilenode",
+                              },
+                            },
+                          ],
+                          "location": 95,
+                        },
+                      },
+                      "location": 107,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<>",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 110,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "AND_EXPR",
+                "location": 91,
               },
-            ],
-            "location": 476,
+            },
           },
         },
       },
-    },
-  ],
-  "version": 160001,
-}
+    ],
+    "version": 160001,
+  },
+]
+`;
+
+exports[`sanity_check.sql > line 31 1`] = `
+[
+  "WITH check_columns AS (
+ SELECT relname, attname,
+  array(
+   SELECT t.oid
+    FROM pg_type t JOIN pg_attribute pa ON t.oid = pa.atttypid
+    WHERE pa.attrelid = a.attrelid AND
+          pa.attnum > 0 AND pa.attnum < a.attnum
+    ORDER BY pa.attnum) AS coltypes
+ FROM pg_attribute a JOIN pg_class c ON c.oid = attrelid
+  JOIN pg_namespace n ON c.relnamespace = n.oid
+ WHERE attalign = 'd' AND relkind = 'r' AND
+  attnotnull AND attlen <> -1 AND n.nspname = 'pg_catalog'
+)
+SELECT relname, attname, coltypes, get_columns_length(coltypes)
+ FROM check_columns
+ WHERE get_columns_length(coltypes) % 8 != 0 OR
+       'name'::regtype::oid = ANY(coltypes)",
+  {
+    "stmts": [
+      {
+        "stmt": {
+          "SelectStmt": {
+            "fromClause": [
+              {
+                "RangeVar": {
+                  "inh": true,
+                  "location": 542,
+                  "relname": "check_columns",
+                  "relpersistence": "p",
+                },
+              },
+            ],
+            "limitOption": "LIMIT_OPTION_DEFAULT",
+            "op": "SETOP_NONE",
+            "targetList": [
+              {
+                "ResTarget": {
+                  "location": 479,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "relname",
+                          },
+                        },
+                      ],
+                      "location": 479,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 488,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "attname",
+                          },
+                        },
+                      ],
+                      "location": 488,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 497,
+                  "val": {
+                    "ColumnRef": {
+                      "fields": [
+                        {
+                          "String": {
+                            "sval": "coltypes",
+                          },
+                        },
+                      ],
+                      "location": 497,
+                    },
+                  },
+                },
+              },
+              {
+                "ResTarget": {
+                  "location": 507,
+                  "val": {
+                    "FuncCall": {
+                      "args": [
+                        {
+                          "ColumnRef": {
+                            "fields": [
+                              {
+                                "String": {
+                                  "sval": "coltypes",
+                                },
+                              },
+                            ],
+                            "location": 526,
+                          },
+                        },
+                      ],
+                      "funcformat": "COERCE_EXPLICIT_CALL",
+                      "funcname": [
+                        {
+                          "String": {
+                            "sval": "get_columns_length",
+                          },
+                        },
+                      ],
+                      "location": 507,
+                    },
+                  },
+                },
+              },
+            ],
+            "whereClause": {
+              "BoolExpr": {
+                "args": [
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP",
+                      "lexpr": {
+                        "A_Expr": {
+                          "kind": "AEXPR_OP",
+                          "lexpr": {
+                            "FuncCall": {
+                              "args": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": [
+                                      {
+                                        "String": {
+                                          "sval": "coltypes",
+                                        },
+                                      },
+                                    ],
+                                    "location": 582,
+                                  },
+                                },
+                              ],
+                              "funcformat": "COERCE_EXPLICIT_CALL",
+                              "funcname": [
+                                {
+                                  "String": {
+                                    "sval": "get_columns_length",
+                                  },
+                                },
+                              ],
+                              "location": 563,
+                            },
+                          },
+                          "location": 592,
+                          "name": [
+                            {
+                              "String": {
+                                "sval": "%",
+                              },
+                            },
+                          ],
+                          "rexpr": {
+                            "A_Const": {
+                              "ival": {
+                                "ival": 8,
+                              },
+                              "location": 594,
+                            },
+                          },
+                        },
+                      },
+                      "location": 596,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "<>",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "A_Const": {
+                          "ival": {},
+                          "location": 599,
+                        },
+                      },
+                    },
+                  },
+                  {
+                    "A_Expr": {
+                      "kind": "AEXPR_OP_ANY",
+                      "lexpr": {
+                        "TypeCast": {
+                          "arg": {
+                            "TypeCast": {
+                              "arg": {
+                                "A_Const": {
+                                  "location": 611,
+                                  "sval": {
+                                    "sval": "name",
+                                  },
+                                },
+                              },
+                              "location": 617,
+                              "typeName": {
+                                "location": 619,
+                                "names": [
+                                  {
+                                    "String": {
+                                      "sval": "regtype",
+                                    },
+                                  },
+                                ],
+                                "typemod": -1,
+                              },
+                            },
+                          },
+                          "location": 626,
+                          "typeName": {
+                            "location": 628,
+                            "names": [
+                              {
+                                "String": {
+                                  "sval": "oid",
+                                },
+                              },
+                            ],
+                            "typemod": -1,
+                          },
+                        },
+                      },
+                      "location": 632,
+                      "name": [
+                        {
+                          "String": {
+                            "sval": "=",
+                          },
+                        },
+                      ],
+                      "rexpr": {
+                        "ColumnRef": {
+                          "fields": [
+                            {
+                              "String": {
+                                "sval": "coltypes",
+                              },
+                            },
+                          ],
+                          "location": 638,
+                        },
+                      },
+                    },
+                  },
+                ],
+                "boolop": "OR_EXPR",
+                "location": 601,
+              },
+            },
+            "withClause": {
+              "ctes": [
+                {
+                  "CommonTableExpr": {
+                    "ctematerialized": "CTEMaterializeDefault",
+                    "ctename": "check_columns",
+                    "ctequery": {
+                      "SelectStmt": {
+                        "fromClause": [
+                          {
+                            "JoinExpr": {
+                              "jointype": "JOIN_INNER",
+                              "larg": {
+                                "JoinExpr": {
+                                  "jointype": "JOIN_INNER",
+                                  "larg": {
+                                    "RangeVar": {
+                                      "alias": {
+                                        "aliasname": "a",
+                                      },
+                                      "inh": true,
+                                      "location": 268,
+                                      "relname": "pg_attribute",
+                                      "relpersistence": "p",
+                                    },
+                                  },
+                                  "quals": {
+                                    "A_Expr": {
+                                      "kind": "AEXPR_OP",
+                                      "lexpr": {
+                                        "ColumnRef": {
+                                          "fields": [
+                                            {
+                                              "String": {
+                                                "sval": "c",
+                                              },
+                                            },
+                                            {
+                                              "String": {
+                                                "sval": "oid",
+                                              },
+                                            },
+                                          ],
+                                          "location": 302,
+                                        },
+                                      },
+                                      "location": 308,
+                                      "name": [
+                                        {
+                                          "String": {
+                                            "sval": "=",
+                                          },
+                                        },
+                                      ],
+                                      "rexpr": {
+                                        "ColumnRef": {
+                                          "fields": [
+                                            {
+                                              "String": {
+                                                "sval": "attrelid",
+                                              },
+                                            },
+                                          ],
+                                          "location": 310,
+                                        },
+                                      },
+                                    },
+                                  },
+                                  "rarg": {
+                                    "RangeVar": {
+                                      "alias": {
+                                        "aliasname": "c",
+                                      },
+                                      "inh": true,
+                                      "location": 288,
+                                      "relname": "pg_class",
+                                      "relpersistence": "p",
+                                    },
+                                  },
+                                },
+                              },
+                              "quals": {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "c",
+                                          },
+                                        },
+                                        {
+                                          "String": {
+                                            "sval": "relnamespace",
+                                          },
+                                        },
+                                      ],
+                                      "location": 344,
+                                    },
+                                  },
+                                  "location": 359,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "=",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "n",
+                                          },
+                                        },
+                                        {
+                                          "String": {
+                                            "sval": "oid",
+                                          },
+                                        },
+                                      ],
+                                      "location": 361,
+                                    },
+                                  },
+                                },
+                              },
+                              "rarg": {
+                                "RangeVar": {
+                                  "alias": {
+                                    "aliasname": "n",
+                                  },
+                                  "inh": true,
+                                  "location": 326,
+                                  "relname": "pg_namespace",
+                                  "relpersistence": "p",
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "limitOption": "LIMIT_OPTION_DEFAULT",
+                        "op": "SETOP_NONE",
+                        "targetList": [
+                          {
+                            "ResTarget": {
+                              "location": 32,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "relname",
+                                      },
+                                    },
+                                  ],
+                                  "location": 32,
+                                },
+                              },
+                            },
+                          },
+                          {
+                            "ResTarget": {
+                              "location": 41,
+                              "val": {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "attname",
+                                      },
+                                    },
+                                  ],
+                                  "location": 41,
+                                },
+                              },
+                            },
+                          },
+                          {
+                            "ResTarget": {
+                              "location": 52,
+                              "name": "coltypes",
+                              "val": {
+                                "SubLink": {
+                                  "location": 52,
+                                  "subLinkType": "ARRAY_SUBLINK",
+                                  "subselect": {
+                                    "SelectStmt": {
+                                      "fromClause": [
+                                        {
+                                          "JoinExpr": {
+                                            "jointype": "JOIN_INNER",
+                                            "larg": {
+                                              "RangeVar": {
+                                                "alias": {
+                                                  "aliasname": "t",
+                                                },
+                                                "inh": true,
+                                                "location": 84,
+                                                "relname": "pg_type",
+                                                "relpersistence": "p",
+                                              },
+                                            },
+                                            "quals": {
+                                              "A_Expr": {
+                                                "kind": "AEXPR_OP",
+                                                "lexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "t",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "oid",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 118,
+                                                  },
+                                                },
+                                                "location": 124,
+                                                "name": [
+                                                  {
+                                                    "String": {
+                                                      "sval": "=",
+                                                    },
+                                                  },
+                                                ],
+                                                "rexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "pa",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "atttypid",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 126,
+                                                  },
+                                                },
+                                              },
+                                            },
+                                            "rarg": {
+                                              "RangeVar": {
+                                                "alias": {
+                                                  "aliasname": "pa",
+                                                },
+                                                "inh": true,
+                                                "location": 99,
+                                                "relname": "pg_attribute",
+                                                "relpersistence": "p",
+                                              },
+                                            },
+                                          },
+                                        },
+                                      ],
+                                      "limitOption": "LIMIT_OPTION_DEFAULT",
+                                      "op": "SETOP_NONE",
+                                      "sortClause": [
+                                        {
+                                          "SortBy": {
+                                            "location": -1,
+                                            "node": {
+                                              "ColumnRef": {
+                                                "fields": [
+                                                  {
+                                                    "String": {
+                                                      "sval": "pa",
+                                                    },
+                                                  },
+                                                  {
+                                                    "String": {
+                                                      "sval": "attnum",
+                                                    },
+                                                  },
+                                                ],
+                                                "location": 239,
+                                              },
+                                            },
+                                            "sortby_dir": "SORTBY_DEFAULT",
+                                            "sortby_nulls": "SORTBY_NULLS_DEFAULT",
+                                          },
+                                        },
+                                      ],
+                                      "targetList": [
+                                        {
+                                          "ResTarget": {
+                                            "location": 69,
+                                            "val": {
+                                              "ColumnRef": {
+                                                "fields": [
+                                                  {
+                                                    "String": {
+                                                      "sval": "t",
+                                                    },
+                                                  },
+                                                  {
+                                                    "String": {
+                                                      "sval": "oid",
+                                                    },
+                                                  },
+                                                ],
+                                                "location": 69,
+                                              },
+                                            },
+                                          },
+                                        },
+                                      ],
+                                      "whereClause": {
+                                        "BoolExpr": {
+                                          "args": [
+                                            {
+                                              "A_Expr": {
+                                                "kind": "AEXPR_OP",
+                                                "lexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "pa",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "attrelid",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 148,
+                                                  },
+                                                },
+                                                "location": 160,
+                                                "name": [
+                                                  {
+                                                    "String": {
+                                                      "sval": "=",
+                                                    },
+                                                  },
+                                                ],
+                                                "rexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "a",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "attrelid",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 162,
+                                                  },
+                                                },
+                                              },
+                                            },
+                                            {
+                                              "A_Expr": {
+                                                "kind": "AEXPR_OP",
+                                                "lexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "pa",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "attnum",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 187,
+                                                  },
+                                                },
+                                                "location": 197,
+                                                "name": [
+                                                  {
+                                                    "String": {
+                                                      "sval": ">",
+                                                    },
+                                                  },
+                                                ],
+                                                "rexpr": {
+                                                  "A_Const": {
+                                                    "ival": {},
+                                                    "location": 199,
+                                                  },
+                                                },
+                                              },
+                                            },
+                                            {
+                                              "A_Expr": {
+                                                "kind": "AEXPR_OP",
+                                                "lexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "pa",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "attnum",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 205,
+                                                  },
+                                                },
+                                                "location": 215,
+                                                "name": [
+                                                  {
+                                                    "String": {
+                                                      "sval": "<",
+                                                    },
+                                                  },
+                                                ],
+                                                "rexpr": {
+                                                  "ColumnRef": {
+                                                    "fields": [
+                                                      {
+                                                        "String": {
+                                                          "sval": "a",
+                                                        },
+                                                      },
+                                                      {
+                                                        "String": {
+                                                          "sval": "attnum",
+                                                        },
+                                                      },
+                                                    ],
+                                                    "location": 217,
+                                                  },
+                                                },
+                                              },
+                                            },
+                                          ],
+                                          "boolop": "AND_EXPR",
+                                          "location": 173,
+                                        },
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                            },
+                          },
+                        ],
+                        "whereClause": {
+                          "BoolExpr": {
+                            "args": [
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "attalign",
+                                          },
+                                        },
+                                      ],
+                                      "location": 374,
+                                    },
+                                  },
+                                  "location": 383,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "=",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "A_Const": {
+                                      "location": 385,
+                                      "sval": {
+                                        "sval": "d",
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "relkind",
+                                          },
+                                        },
+                                      ],
+                                      "location": 393,
+                                    },
+                                  },
+                                  "location": 401,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "=",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "A_Const": {
+                                      "location": 403,
+                                      "sval": {
+                                        "sval": "r",
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                              {
+                                "ColumnRef": {
+                                  "fields": [
+                                    {
+                                      "String": {
+                                        "sval": "attnotnull",
+                                      },
+                                    },
+                                  ],
+                                  "location": 413,
+                                },
+                              },
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "attlen",
+                                          },
+                                        },
+                                      ],
+                                      "location": 428,
+                                    },
+                                  },
+                                  "location": 435,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "<>",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "A_Const": {
+                                      "ival": {},
+                                      "location": 438,
+                                    },
+                                  },
+                                },
+                              },
+                              {
+                                "A_Expr": {
+                                  "kind": "AEXPR_OP",
+                                  "lexpr": {
+                                    "ColumnRef": {
+                                      "fields": [
+                                        {
+                                          "String": {
+                                            "sval": "n",
+                                          },
+                                        },
+                                        {
+                                          "String": {
+                                            "sval": "nspname",
+                                          },
+                                        },
+                                      ],
+                                      "location": 445,
+                                    },
+                                  },
+                                  "location": 455,
+                                  "name": [
+                                    {
+                                      "String": {
+                                        "sval": "=",
+                                      },
+                                    },
+                                  ],
+                                  "rexpr": {
+                                    "A_Const": {
+                                      "location": 457,
+                                      "sval": {
+                                        "sval": "pg_catalog",
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                            ],
+                            "boolop": "AND_EXPR",
+                            "location": 389,
+                          },
+                        },
+                      },
+                    },
+                    "location": 5,
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    ],
+    "version": 160001,
+  },
+]
 `;
