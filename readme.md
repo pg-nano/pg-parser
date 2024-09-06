@@ -8,5 +8,5 @@ Not currently intended for use outside of [pg-nano](https://github.com/pg-nano/p
 
 - Uses `prebuild-install` to avoid bundling every platform's binaries into the package.
 - Added `splitWithScannerSync` for SQL statement splitting.
-- Generated unit tests (see a snapshot of every SQL case supported by `libpg_query`).
-- Generated type definitions!
+- [Generated](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/generateTests.ts) unit tests (see a snapshot of every SQL case supported by `libpg_query`).
+- [Generated](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/generateTypes.ts) type definitions!
