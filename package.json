@@ -16,7 +16,10 @@
     "upload": "prebuild --runtime napi --upload ${GITHUB_TOKEN}",
     "prepare": "tsc -p .",
     "postinstall": "[ -d .git ] && pnpm -s clangd:init || true",
-    "clangd:init": "cd build && compiledb make -f binding.Makefile -n"
+    "clangd:init": "cd build && compiledb make -f binding.Makefile -n",
+    "test": "pnpm dlx vitest@2.0.5",
+    "generate:types": "pnpm -s dlx tsx scripts/inferFieldMetadata.ts && pnpm -s dlx tsx scripts/generateTypes.ts",
+    "generate:tests": "pnpm -s dlx tsx scripts/generateTests.ts"
   },
   "keywords": [
     "postgres",
@@ -36,9 +39,7 @@
     "node-gyp": "^10.0.1",
     "prebuild": "^13.0.1",
     "prettier": "^3.3.3",
-    "tsx": "^4.19.0",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "typescript": "^5.5.4"
   },
   "files": [
     "lib"
