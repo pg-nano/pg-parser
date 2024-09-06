@@ -34,6 +34,8 @@ jobs:
             nodejs_arch: x64
     steps:
       - uses: pnpm/action-setup@v4
+        with:
+          version: 9.7.1
 
       - name: Dependencies (Rocky Linux glibc)
         if: contains(matrix.container, 'rockylinux')
