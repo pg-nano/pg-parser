@@ -55,6 +55,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Dependencies (Node.js - macOS, Windows)
         if: contains(matrix.os, 'macos') || contains(matrix.os, 'windows')
         uses: actions/setup-node@v4
@@ -62,9 +65,6 @@ jobs:
           node-version: ${{ matrix.nodejs_version }}
           architecture: ${{ matrix.nodejs_arch }}
           cache: pnpm
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Clone libpg_query
         run: |
