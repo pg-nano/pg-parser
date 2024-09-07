@@ -10,16 +10,13 @@
     "url": "https://github.com/pg-nano/pg-parser.git"
   },
   "scripts": {
-    "install": "prebuild-install --runtime napi || node-gyp rebuild",
-    "rebuild": "node-gyp rebuild",
-    "prebuild": "prebuild --runtime napi --target 8 --strip --verbose",
-    "upload": "prebuild --runtime napi --upload ${GITHUB_TOKEN}",
-    "prepare": "tsc -p .",
-    "postinstall": "[ -d .git ] && pnpm -s clangd:init || true",
-    "clangd:init": "cd build && compiledb make -f binding.Makefile -n",
-    "test": "pnpm dlx vitest@2.0.5",
-    "generate:types": "pnpm -s dlx tsx scripts/inferFieldMetadata.ts && pnpm -s dlx tsx scripts/generateTypes.ts",
-    "generate:tests": "pnpm -s dlx tsx scripts/generateTests.ts"
+    "test": "pnpm -s dlx vitest@2.0.5",
+    "install": "[ ! -d .git ] && prebuild-install --runtime napi || true",
+    "ci:prebuild": "prebuild --runtime napi --target 8 --strip --verbose",
+    "prepare": "rimraf lib && tsc -p . && node-gyp rebuild && pnpm -s prepare:clangd",
+    "prepare:clangd": "[ -d .git ] && cd build && compiledb make -f binding.Makefile -n || true",
+    "prepare:types": "pnpm -s dlx tsx scripts/inferFieldMetadata.ts && pnpm -s dlx tsx scripts/generateTypes.ts",
+    "prepare:tests": "pnpm -s dlx tsx scripts/generateTests.ts"
   },
   "keywords": [
     "postgres",
@@ -39,6 +36,7 @@
     "node-gyp": "^10.0.1",
     "prebuild": "^13.0.1",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.5.4"
   },
   "files": [

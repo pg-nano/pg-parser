@@ -72,7 +72,7 @@ jobs:
           git submodule update --init --recursive
 
       - name: Install
-        run: pnpm install # --build-from-source --unsafe-perm
+        run: pnpm install --ignore-scripts
 
       # - name: Test
       #   run: pnpm test
@@ -80,4 +80,4 @@ jobs:
       - name: Prebuild
         env:
           prebuild_upload: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm prebuild
+        run: pnpm run ci:prebuild
