@@ -402,6 +402,7 @@ async function main() {
   nodeTypes.add("List")
   nodeTypes.add("A_Const")
   expressionTypes.add("A_Const")
+  expressionTypes.add("ParamRef")
 
   code += "\n"
   code += formatComment(abstractTypes.List?.comment, "")

@@ -2110,7 +2110,7 @@ export type TypeName = {
  */
 export type ColumnRef = {
   /** field names (String nodes) or A_Star */
-  fields: ({ String: String } | { A_Star: A_Star })[]
+  fields: ({ A_Star: A_Star } | { String: String })[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2366,7 +2366,7 @@ export type RangeSubselect = {
   /** does it have LATERAL prefix? */
   lateral?: boolean
   /** the untransformed sub-select clause */
-  subquery: SelectStmt
+  subquery: ({ SelectStmt: SelectStmt })
   /** table alias & optional column aliases */
   alias?: Alias
 }
@@ -2580,7 +2580,7 @@ export type DefElem = {
   defname: string
   /** typically Integer, Float, String, or
 								 * TypeName */
-  arg?: TypeName | String | Integer | Float
+  arg?: ({ A_Const: A_Const } | { Boolean: Boolean } | { Float: Float } | { Integer: Integer } | { List: List } | { String: String } | { TypeName: TypeName } | { VariableSetStmt: VariableSetStmt })
   /** unspecified action, or SET/ADD/DROP */
   defaction: DefElemAction
   /** token location, or -1 if unknown */
@@ -7287,6 +7287,7 @@ export type Expr =
   | { MinMaxExpr: MinMaxExpr }
   | { NamedArgExpr: NamedArgExpr }
   | { NullTest: NullTest }
+  | { ParamRef: ParamRef }
   | { RowExpr: RowExpr }
   | { SQLValueFunction: SQLValueFunction }
   | { SetToDefault: SetToDefault }
