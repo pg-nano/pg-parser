@@ -6,20 +6,33 @@
         {
             "target_name": "libpg_query",
             "type": "none",
-            "actions": [
-                {
-                    "action_name": "build_libpg_query",
-                    "inputs": [],
-                    "outputs": [
-                        "libpg_query/libpg_query.a"
+            "actions": [{
+                "action_name": "build_libpg_query",
+                "inputs": [],
+                "outputs": ["libpg_query/libpg_query.a"],
+                "conditions": [
+                    [
+                        'OS=="win"',
+                        {
+                            "action": [
+                                "cmd",
+                                "/c",
+                                "cd /d libpg_query && MAKEFLAGS=-w nmake /F Makefile.msvc build",
+                            ]
+                        },
                     ],
-                    "action": [
-                        "sh",
-                        "-c",
-                        "echo \"PWD => $(pwd)\" && find . -type f -not -path '*/.*' && cd libpg_query && MAKEFLAGS=-w make build"
-                    ]
-                }
-            ]
+                    [
+                        'OS!="win"',
+                        {
+                            "action": [
+                                "sh",
+                                "-c",
+                                "cd libpg_query && MAKEFLAGS=-w make build",
+                            ]
+                        },
+                    ],
+                ],
+            }],
         },
         {
             "target_name": "queryparser",
@@ -45,7 +58,7 @@
             ],
             "conditions": [
                 [
-                    "OS==\"linux\"",
+                    'OS=="linux"',
                     {
                         "libraries": [
                             "-L<!(pwd)/libpg_query",
@@ -54,7 +67,7 @@
                     }
                 ],
                 [
-                    "OS==\"mac\"",
+                    'OS=="mac"',
                     {
                         "libraries": [
                             "-L<!(pwd)/libpg_query",
@@ -68,7 +81,7 @@
                     }
                 ],
                 [
-                    "OS==\"win\"",
+                    'OS=="win"',
                     {
                         "link_settings": {
                             "library_dirs": [
