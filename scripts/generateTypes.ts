@@ -423,7 +423,7 @@ async function main() {
   fs.writeFileSync("ast.ts", code.trimStart())
 
   const nodeClass = `
-import type { Node } from "./ast"
+import type { Node } from "./ast.js"
 
 /** The tag of every possible node. */
 export type NodeTag<TNode extends Node = Node> = TNode extends any

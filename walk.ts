@@ -1,5 +1,4 @@
-import { Node } from "./ast"
-import { NodeTag, NodeByTag, NodePath } from "./node"
+import { NodeTag, NodeByTag, NodePath } from "./node.js"
 
 export type Walker<TNodePath extends NodePath = NodePath> = (
   node: TNodePath,
