@@ -11,12 +11,12 @@
           "action_name": "build_libpg_query",
           "inputs": [],
           "outputs": [
-            "<(module_root_dir)/libpg_query/libpg_query.a"
+            "libpg_query/libpg_query.a"
           ],
           "action": [
             "sh",
             "-c",
-            "cd <(module_root_dir)/libpg_query && MAKEFLAGS=-w make build"
+            "cd libpg_query && MAKEFLAGS=-w make build"
           ]
         }
       ]
