@@ -57,6 +57,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
 
       - name: Dependencies (Node.js - macOS, Windows)
         if: contains(matrix.os, 'macos') || contains(matrix.os, 'windows')
@@ -65,11 +67,6 @@ jobs:
           node-version: ${{ matrix.nodejs_version }}
           architecture: ${{ matrix.nodejs_arch }}
           cache: pnpm
-
-      - name: Clone libpg_query
-        run: |
-          git config --global --add safe.directory /__w/pg-parser/pg-parser
-          git submodule update --init --recursive
 
       - name: Install
         run: pnpm install --ignore-scripts

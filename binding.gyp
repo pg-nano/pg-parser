@@ -14,9 +14,9 @@
             "libpg_query/libpg_query.a"
           ],
           "action": [
-            "python",
+            "sh",
             "-c",
-            "import os, subprocess; os.chdir('libpg_query'); subprocess.check_call(['make', 'build'], env=dict(os.environ, MAKEFLAGS='-w'))"
+            "cd libpg_query && MAKEFLAGS=-w make build"
           ]
         }
       ]
