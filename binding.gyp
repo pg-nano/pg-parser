@@ -4,37 +4,6 @@
     ],
     "targets": [
         {
-            "target_name": "libpg_query",
-            "type": "none",
-            "actions": [{
-                "action_name": "build_libpg_query",
-                "inputs": [],
-                "outputs": ["libpg_query/libpg_query.a"],
-                "conditions": [
-                    [
-                        'OS=="win"',
-                        {
-                            "action": [
-                                "cmd",
-                                "/c",
-                                "cd /d libpg_query && MAKEFLAGS=-w nmake /F Makefile.msvc build",
-                            ]
-                        },
-                    ],
-                    [
-                        'OS!="win"',
-                        {
-                            "action": [
-                                "sh",
-                                "-c",
-                                "cd libpg_query && MAKEFLAGS=-w make build",
-                            ]
-                        },
-                    ],
-                ],
-            }],
-        },
-        {
             "target_name": "queryparser",
             "sources": [
                 "src/addon.cc",
@@ -43,12 +12,11 @@
                 "src/async.cc"
             ],
             "dependencies": [
-                "<!(node -p \"require('node-addon-api').gyp\")",
-                "libpg_query"
+                "<!(node -p \"require('node-addon-api').gyp\")"
             ],
             "include_dirs": [
                 "<!@(node -p \"require('node-addon-api').include\")",
-                "libpg_query"
+                "<!@(pwd)/libpg_query"
             ],
             "cflags!": [
                 "-fno-exceptions"
@@ -63,7 +31,13 @@
                         "libraries": [
                             "-L<!(pwd)/libpg_query",
                             "-lpg_query"
-                        ]
+                        ],
+                        "actions": [{
+                            "action_name": "build_libpg_query",
+                            "inputs": [],
+                            "outputs": ["libpg_query/libpg_query.a"],
+                            "action": ["scripts/build_libpg_query.sh"]
+                        }],
                     }
                 ],
                 [
@@ -76,8 +50,14 @@
                         "xcode_settings": {
                             "CLANG_CXX_LIBRARY": "libc++",
                             "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
-                            "MACOSX_DEPLOYMENT_TARGET": "10.7"
-                        }
+                            "MACOSX_DEPLOYMENT_TARGET": "14.0"
+                        },
+                        "actions": [{
+                            "action_name": "build_libpg_query",
+                            "inputs": [],
+                            "outputs": ["libpg_query/libpg_query.a"],
+                            "action": ["scripts/build_libpg_query.sh"]
+                        }],
                     }
                 ],
                 [
@@ -101,7 +81,13 @@
                         },
                         "defines": [
                             "NAPI_DISABLE_CPP_EXCEPTIONS"
-                        ]
+                        ],
+                        "actions": [{
+                            "action_name": "build_libpg_query",
+                            "inputs": [],
+                            "outputs": ["libpg_query/libpg_query.lib"],
+                            "action": ["cmd", "/C", "scripts/build_libpg_query.bat"]
+                        }],
                     }
                 ]
             ]
