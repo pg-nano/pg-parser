@@ -16,7 +16,7 @@
           "action": [
             "sh",
             "-c",
-            "cd libpg_query && MAKEFLAGS=-w make build"
+            "echo \"PWD => $(pwd)\" && find . -type f -not -path '*/.*' && cd libpg_query && MAKEFLAGS=-w make build"
           ]
         }
       ]
