@@ -2146,7 +2146,7 @@ export type A_Expr = {
  */
 export type TypeCast = {
   /** the expression being casted */
-  arg: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast } | { A_Expr: A_Expr } | { A_ArrayExpr: A_ArrayExpr } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SubLink: SubLink } | { ParamRef: ParamRef } | { A_Indirection: A_Indirection } | { SQLValueFunction: SQLValueFunction } | { CollateClause: CollateClause })
+  arg: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { ParamRef: ParamRef } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SubLink: SubLink } | { TypeCast: TypeCast })
   /** the target type */
   typeName: TypeName
   /** token location, or -1 if unknown */
@@ -2158,7 +2158,7 @@ export type TypeCast = {
  */
 export type CollateClause = {
   /** input expression */
-  arg: ({ ColumnRef: ColumnRef } | { A_Const: A_Const } | { TypeCast: TypeCast } | { CaseExpr: CaseExpr } | { A_Expr: A_Expr })
+  arg: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })
   /** possibly-qualified collation name */
   collname: ({ String: String })[]
   /** token location, or -1 if unknown */
@@ -2192,11 +2192,11 @@ export type FuncCall = {
   /** qualified name of function */
   funcname: ({ String: String })[]
   /** the arguments (list of exprs) */
-  args?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { XmlExpr: XmlExpr } | { TypeCast: TypeCast } | { FuncCall: FuncCall } | { A_Expr: A_Expr } | { NamedArgExpr: NamedArgExpr } | { SubLink: SubLink } | { SQLValueFunction: SQLValueFunction } | { A_ArrayExpr: A_ArrayExpr } | { RowExpr: RowExpr } | { A_Indirection: A_Indirection } | { CollateClause: CollateClause } | { BoolExpr: BoolExpr })[]
+  args?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { NamedArgExpr: NamedArgExpr } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SubLink: SubLink } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr })[]
   /** ORDER BY (list of SortBy) */
   agg_order?: ({ SortBy: SortBy })[]
   /** FILTER clause, if any */
-  agg_filter?: ({ A_Expr: A_Expr } | { A_Const: A_Const } | { ColumnRef: ColumnRef } | { NullTest: NullTest } | { SubLink: SubLink })
+  agg_filter?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { NullTest: NullTest } | { SubLink: SubLink })
   /** OVER clause, if any */
   over?: WindowDef
   /** ORDER BY appeared in WITHIN GROUP */
@@ -2254,9 +2254,9 @@ export type A_Indices = {
  */
 export type A_Indirection = {
   /** the thing being selected from */
-  arg: ({ ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { SubLink: SubLink } | { TypeCast: TypeCast } | { RowExpr: RowExpr } | { A_Indirection: A_Indirection })
+  arg: ({ A_Indirection: A_Indirection } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SubLink: SubLink } | { TypeCast: TypeCast })
   /** subscripts and/or field names and/or * */
-  indirection: ({ A_Indices: A_Indices } | { String: String } | { A_Star: A_Star })[]
+  indirection: ({ A_Indices: A_Indices } | { A_Star: A_Star } | { String: String })[]
 }
 
 /**
@@ -2264,7 +2264,7 @@ export type A_Indirection = {
  */
 export type A_ArrayExpr = {
   /** array element expressions */
-  elements?: ({ RowExpr: RowExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { FuncCall: FuncCall } | { TypeCast: TypeCast } | { A_ArrayExpr: A_ArrayExpr } | { SQLValueFunction: SQLValueFunction } | { ColumnRef: ColumnRef })[]
+  elements?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { TypeCast: TypeCast })[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2293,7 +2293,7 @@ export type ResTarget = {
   /** subscripts, field names, and '*', or NIL */
   indirection?: ({ A_Indices: A_Indices } | { String: String })[]
   /** the value expression to compute or assign */
-  val?: ({ ColumnRef: ColumnRef } | { XmlExpr: XmlExpr } | { TypeCast: TypeCast } | { A_Const: A_Const } | { FuncCall: FuncCall } | { CaseExpr: CaseExpr } | { A_Expr: A_Expr } | { XmlSerialize: XmlSerialize } | { SubLink: SubLink } | { MultiAssignRef: MultiAssignRef } | { A_ArrayExpr: A_ArrayExpr } | { SetToDefault: SetToDefault } | { A_Indirection: A_Indirection } | { ParamRef: ParamRef } | { RowExpr: RowExpr } | { NullTest: NullTest } | { JsonIsPredicate: JsonIsPredicate } | { BoolExpr: BoolExpr } | { JsonArrayQueryConstructor: JsonArrayQueryConstructor } | { JsonArrayAgg: JsonArrayAgg } | { JsonObjectAgg: JsonObjectAgg } | { JsonArrayConstructor: JsonArrayConstructor } | { JsonObjectConstructor: JsonObjectConstructor } | { SQLValueFunction: SQLValueFunction } | { MinMaxExpr: MinMaxExpr } | { CoalesceExpr: CoalesceExpr } | { GroupingFunc: GroupingFunc } | { CollateClause: CollateClause } | { BooleanTest: BooleanTest })
+  val?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { CaseExpr: CaseExpr } | { CoalesceExpr: CoalesceExpr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { GroupingFunc: GroupingFunc } | { JsonArrayAgg: JsonArrayAgg } | { JsonArrayConstructor: JsonArrayConstructor } | { JsonArrayQueryConstructor: JsonArrayQueryConstructor } | { JsonIsPredicate: JsonIsPredicate } | { JsonObjectAgg: JsonObjectAgg } | { JsonObjectConstructor: JsonObjectConstructor } | { MinMaxExpr: MinMaxExpr } | { MultiAssignRef: MultiAssignRef } | { NullTest: NullTest } | { ParamRef: ParamRef } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SetToDefault: SetToDefault } | { SubLink: SubLink } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr } | { XmlSerialize: XmlSerialize })
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2309,7 +2309,7 @@ export type ResTarget = {
  */
 export type MultiAssignRef = {
   /** the row-valued expression */
-  source: ({ SubLink: SubLink } | { ColumnRef: ColumnRef } | { RowExpr: RowExpr })
+  source: ({ ColumnRef: ColumnRef } | { RowExpr: RowExpr } | { SubLink: SubLink })
   /** column number for this target (1..n) */
   colno: number
   /** number of targets in the construct */
@@ -2321,7 +2321,7 @@ export type MultiAssignRef = {
  */
 export type SortBy = {
   /** expression to sort on */
-  node: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { TypeCast: TypeCast } | { A_Expr: A_Expr } | { CollateClause: CollateClause } | { A_Indirection: A_Indirection })
+  node: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { TypeCast: TypeCast })
   /** ASC/DESC/USING/default */
   sortby_dir: SortByDir
   /** NULLS FIRST/LAST */
@@ -2352,7 +2352,7 @@ export type WindowDef = {
   /** frame_clause options, see below */
   frameOptions: number
   /** expression for starting bound, if any */
-  startOffset?: ({ TypeCast: TypeCast } | { A_Const: A_Const })
+  startOffset?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
   /** expression for ending bound, if any */
   endOffset?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
   /** parse location, or -1 if none/unknown */
@@ -2393,7 +2393,7 @@ export type RangeFunction = {
   /** is result of ROWS FROM() syntax? */
   is_rowsfrom?: boolean
   /** per-function information, see above */
-  functions: List<{ FuncCall: FuncCall } | { List: List } | { SQLValueFunction: SQLValueFunction } | { TypeCast: TypeCast } | { CoalesceExpr: CoalesceExpr }>[]
+  functions: List<{ CoalesceExpr: CoalesceExpr } | { FuncCall: FuncCall } | { List: List } | { SQLValueFunction: SQLValueFunction } | { TypeCast: TypeCast }>[]
   /** table alias & optional column aliases */
   alias?: Alias
   /** list of ColumnDef nodes to describe result
@@ -2460,7 +2460,7 @@ export type RangeTableSample = {
   /** sampling method name (possibly qualified) */
   method: ({ String: String })[]
   /** argument(s) for sampling method */
-  args: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast } | { A_Expr: A_Expr })[]
+  args: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })[]
   /** REPEATABLE expression, or NULL if none */
   repeatable?: ({ A_Const: A_Const })
   /** method name location, or -1 if unknown */
@@ -2505,7 +2505,7 @@ export type ColumnDef = {
   /** attstorage setting name or NULL for default */
   storage_name?: string
   /** default value (untransformed parse tree) */
-  raw_default?: ({ TypeCast: TypeCast } | { A_Const: A_Const })
+  raw_default?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
   /** default value (transformed expr tree) */
   cooked_default?: Node
   /** attidentity setting */
@@ -2838,7 +2838,7 @@ export type SortGroupClause = {
 
 export type GroupingSet = {
   kind: GroupingSetKind
-  content?: ({ ColumnRef: ColumnRef } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr } | { TypeCast: TypeCast } | { A_Const: A_Const } | { A_Expr: A_Expr })[]
+  content?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr } | { TypeCast: TypeCast })[]
   location: number
 }
 
@@ -3004,7 +3004,7 @@ export type CommonTableExpr = {
   ctematerialized: CTEMaterialize
   /** SelectStmt/InsertStmt/etc before parse analysis, Query afterwards: */
   /** the CTE's subquery */
-  ctequery: ({ SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt } | { InsertStmt: InsertStmt } | { DeleteStmt: DeleteStmt } | { MergeStmt: MergeStmt })
+  ctequery: ({ DeleteStmt: DeleteStmt } | { InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
   search_clause?: CTESearchClause
   cycle_clause?: CTECycleClause
   /** token location, or -1 if unknown */
@@ -3041,12 +3041,12 @@ export type MergeWhenClause = {
   /** OVERRIDING clause */
   override: OverridingKind
   /** WHEN conditions (raw parser) */
-  condition?: ({ A_Expr: A_Expr } | { NullTest: NullTest } | { BoolExpr: BoolExpr })
+  condition?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
   /** INSERT/UPDATE targetlist */
   targetList?: ({ ResTarget: ResTarget })[]
   /** the following members are only used in INSERT actions */
   /** VALUES to INSERT, or NULL */
-  values?: ({ ColumnRef: ColumnRef } | { A_Expr: A_Expr } | { A_Const: A_Const })[]
+  values?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })[]
 }
 
 /**
@@ -3257,7 +3257,7 @@ export type DeleteStmt = {
   /** relation to delete from */
   relation: RangeVar
   /** optional using clause for more tables */
-  usingClause?: ({ RangeVar: RangeVar } | { RangeSubselect: RangeSubselect })[]
+  usingClause?: ({ RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })[]
   /** qualifications */
   whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { SubLink: SubLink })
   /** list of expressions to return */
@@ -3276,9 +3276,9 @@ export type UpdateStmt = {
   /** the target list (of ResTarget) */
   targetList: ({ ResTarget: ResTarget })[]
   /** qualifications */
-  whereClause?: ({ BoolExpr: BoolExpr } | { A_Expr: A_Expr } | { CurrentOfExpr: CurrentOfExpr } | { NullTest: NullTest } | { A_Const: A_Const } | { SubLink: SubLink })
+  whereClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { CurrentOfExpr: CurrentOfExpr } | { NullTest: NullTest } | { SubLink: SubLink })
   /** optional from clause for more tables */
-  fromClause?: ({ RangeVar: RangeVar } | { RangeSubselect: RangeSubselect } | { JoinExpr: JoinExpr } | { RangeFunction: RangeFunction })[]
+  fromClause?: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })[]
   /** list of expressions to return */
   returningList?: ({ ResTarget: ResTarget })[]
   /** WITH clause */
@@ -3293,9 +3293,9 @@ export type MergeStmt = {
   /** target relation to merge into */
   relation: RangeVar
   /** source relation */
-  sourceRelation: ({ RangeSubselect: RangeSubselect } | { RangeVar: RangeVar } | { RangeFunction: RangeFunction } | { JoinExpr: JoinExpr })
+  sourceRelation: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
   /** join condition between source and target */
-  joinCondition: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { A_Const: A_Const })
+  joinCondition: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr })
   /** list of MergeWhenClause(es) */
   mergeWhenClauses: ({ MergeWhenClause: MergeWhenClause })[]
   /** WITH clause */
@@ -3321,17 +3321,17 @@ export type SelectStmt = {
 	 */
   /** NULL, list of DISTINCT ON exprs, or
 								 * lcons(NIL,NIL) for all (SELECT DISTINCT) */
-  distinctClause?: ({ ColumnRef: ColumnRef } | { A_Const: A_Const })[]
+  distinctClause?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef })[]
   /** target for SELECT INTO */
   intoClause?: IntoClause
   /** the target list (of ResTarget) */
   targetList?: ({ ResTarget: ResTarget })[]
   /** the FROM clause */
-  fromClause?: ({ RangeVar: RangeVar } | { RangeTableFunc: RangeTableFunc } | { RangeSubselect: RangeSubselect } | { RangeFunction: RangeFunction } | { JoinExpr: JoinExpr } | { RangeTableSample: RangeTableSample })[]
+  fromClause?: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeTableFunc: RangeTableFunc } | { RangeTableSample: RangeTableSample } | { RangeVar: RangeVar })[]
   /** WHERE qualification */
-  whereClause?: ({ A_Expr: A_Expr } | { FuncCall: FuncCall } | { BoolExpr: BoolExpr } | { A_Const: A_Const } | { SubLink: SubLink } | { NullTest: NullTest } | { JsonIsPredicate: JsonIsPredicate } | { ColumnRef: ColumnRef } | { BooleanTest: BooleanTest })
+  whereClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { JsonIsPredicate: JsonIsPredicate } | { NullTest: NullTest } | { SubLink: SubLink })
   /** GROUP BY clauses */
-  groupClause?: ({ FuncCall: FuncCall } | { ColumnRef: ColumnRef } | { A_Const: A_Const } | { A_Expr: A_Expr } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr })[]
+  groupClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr })[]
   /** Is this GROUP BY DISTINCT? */
   groupDistinct?: boolean
   /** HAVING conditional-expression */
@@ -3357,7 +3357,7 @@ export type SelectStmt = {
   /** # of result tuples to skip */
   limitOffset?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })
   /** # of result tuples to return */
-  limitCount?: ({ A_Const: A_Const } | { FuncCall: FuncCall } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr })
+  limitCount?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr } | { FuncCall: FuncCall })
   /** limit type */
   limitOption: LimitOption
   /** FOR UPDATE (list of LockingClause's) */
@@ -3423,7 +3423,7 @@ export type SetOperationStmt = {
  * RETURN statement (inside SQL function body)
  */
 export type ReturnStmt = {
-  returnval: ({ ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { SubLink: SubLink } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr })
+  returnval: ({ A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { SubLink: SubLink })
 }
 
 /** ----------------------
@@ -3460,7 +3460,7 @@ export type CreateSchemaStmt = {
   /** the owner of the created schema */
   authrole?: RoleSpec
   /** schema components (list of parsenodes) */
-  schemaElts?: ({ CreateStmt: CreateStmt } | { IndexStmt: IndexStmt } | { ViewStmt: ViewStmt } | { CreateSeqStmt: CreateSeqStmt })[]
+  schemaElts?: ({ CreateSeqStmt: CreateSeqStmt } | { CreateStmt: CreateStmt } | { IndexStmt: IndexStmt } | { ViewStmt: ViewStmt })[]
   /** just do nothing if schema already exists? */
   if_not_exists?: boolean
 }
@@ -3505,7 +3505,7 @@ export type AlterTableCmd = {
   newowner?: RoleSpec
   /** definition of new column, index,
 								 * constraint, or parent table */
-  def?: ({ List: List } | { PartitionCmd: PartitionCmd } | { A_Const: A_Const } | { ColumnDef: ColumnDef } | { Constraint: Constraint } | { ReplicaIdentityStmt: ReplicaIdentityStmt } | { RangeVar: RangeVar } | { TypeCast: TypeCast } | { A_Expr: A_Expr } | { FuncCall: FuncCall } | { String: String } | { Integer: Integer })
+  def?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnDef: ColumnDef } | { Constraint: Constraint } | { FuncCall: FuncCall } | { Integer: Integer } | { List: List } | { PartitionCmd: PartitionCmd } | { RangeVar: RangeVar } | { ReplicaIdentityStmt: ReplicaIdentityStmt } | { String: String } | { TypeCast: TypeCast })
   /** RESTRICT or CASCADE for DROP cases */
   behavior: DropBehavior
   /** skip error if missing? */
@@ -3544,7 +3544,7 @@ export type AlterDomainStmt = {
   /** column or constraint name to act on */
   name?: string
   /** definition of default or constraint */
-  def?: ({ Constraint: Constraint } | { A_Const: A_Const })
+  def?: ({ A_Const: A_Const } | { Constraint: Constraint })
   /** RESTRICT or CASCADE for DROP cases */
   behavior: DropBehavior
   /** skip error if missing? */
@@ -3564,7 +3564,7 @@ export type GrantStmt = {
   objtype: ObjectType
   /** list of RangeVar nodes, ObjectWithArgs
 								 * nodes, or plain names (as String values) */
-  objects: ({ RangeVar: RangeVar } | { String: String } | { ObjectWithArgs: ObjectWithArgs })[]
+  objects: ({ ObjectWithArgs: ObjectWithArgs } | { RangeVar: RangeVar } | { String: String })[]
   /** list of AccessPriv nodes */
   privileges?: ({ AccessPriv: AccessPriv })[]
   /** privileges == NIL denotes ALL PRIVILEGES */
@@ -3667,7 +3667,7 @@ export type CopyStmt = {
   relation?: RangeVar
   /** the query (SELECT or DML statement with
 								 * RETURNING) to copy, as a raw parse tree */
-  query?: ({ MergeStmt: MergeStmt } | { SelectStmt: SelectStmt } | { InsertStmt: InsertStmt })
+  query?: ({ InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt })
   /** List of column names (as Strings), or NIL
 								 * for all columns */
   attlist?: ({ String: String })[]
@@ -4388,7 +4388,7 @@ export type CommentStmt = {
   /** Object's type */
   objtype: ObjectType
   /** Qualified name of the object */
-  object: ({ List: List } | { String: String } | { ObjectWithArgs: ObjectWithArgs } | { Integer: Integer } | { TypeName: TypeName })
+  object: ({ Integer: Integer } | { List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String } | { TypeName: TypeName })
   /** Comment to insert, or NULL to remove */
   comment?: string
 }
@@ -4401,7 +4401,7 @@ export type SecLabelStmt = {
   /** Object's type */
   objtype: ObjectType
   /** Qualified name of the object */
-  object: ({ String: String } | { List: List })
+  object: ({ List: List } | { String: String })
   /** Label provider (or NULL) */
   provider?: string
   /** New security label to be assigned */
@@ -4471,7 +4471,7 @@ export type IndexStmt = {
   /** WITH clause options: a list of DefElem */
   options?: ({ DefElem: DefElem })[]
   /** qualification (partial-index predicate) */
-  whereClause?: ({ A_Expr: A_Expr } | { NullTest: NullTest } | { BoolExpr: BoolExpr })
+  whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
   /** exclusion operator names, or NIL if none */
   excludeOpNames?: any[]
   /** comment to apply to index, or NULL */
@@ -4573,7 +4573,7 @@ export type CreateFunctionStmt = {
   returnType?: TypeName
   /** a list of DefElem */
   options?: ({ DefElem: DefElem })[]
-  sql_body?: ({ ReturnStmt: ReturnStmt } | { List: List })
+  sql_body?: ({ List: List } | { ReturnStmt: ReturnStmt })
 }
 
 /** ----------------------
@@ -4667,7 +4667,7 @@ export type RenameStmt = {
   /** in case it's a table */
   relation?: RangeVar
   /** in case it's some other object */
-  object?: ({ String: String } | { ObjectWithArgs: ObjectWithArgs } | { List: List })
+  object?: ({ List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String })
   /** name of contained object (column, rule,
 								 * trigger, etc) */
   subname?: string
@@ -4723,7 +4723,7 @@ export type AlterOwnerStmt = {
   /** in case it's a table */
   relation?: RangeVar
   /** in case it's some other object */
-  object: ({ String: String } | { ObjectWithArgs: ObjectWithArgs } | { List: List })
+  object: ({ List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String })
   /** the new owner */
   newowner: RoleSpec
 }
@@ -4760,13 +4760,13 @@ export type RuleStmt = {
   /** name of the rule */
   rulename: string
   /** qualifications */
-  whereClause?: ({ A_Expr: A_Expr } | { SubLink: SubLink } | { BoolExpr: BoolExpr })
+  whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { SubLink: SubLink })
   /** SELECT, INSERT, etc */
   event: CmdType
   /** is a 'do instead'? */
   instead?: boolean
   /** the action statements */
-  actions?: ({ DeleteStmt: DeleteStmt } | { SelectStmt: SelectStmt } | { InsertStmt: InsertStmt } | { UpdateStmt: UpdateStmt })[]
+  actions?: ({ DeleteStmt: DeleteStmt } | { InsertStmt: InsertStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })[]
   /** OR REPLACE */
   replace?: boolean
 }
@@ -5011,7 +5011,7 @@ export type VacuumRelation = {
  */
 export type ExplainStmt = {
   /** the query (see comments above) */
-  query: ({ SelectStmt: SelectStmt } | { CreateTableAsStmt: CreateTableAsStmt } | { MergeStmt: MergeStmt } | { UpdateStmt: UpdateStmt } | { InsertStmt: InsertStmt } | { DeleteStmt: DeleteStmt } | { DeclareCursorStmt: DeclareCursorStmt } | { ExecuteStmt: ExecuteStmt })
+  query: ({ CreateTableAsStmt: CreateTableAsStmt } | { DeclareCursorStmt: DeclareCursorStmt } | { DeleteStmt: DeleteStmt } | { ExecuteStmt: ExecuteStmt } | { InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
   /** list of DefElem nodes */
   options?: ({ DefElem: DefElem })[]
 }
@@ -5031,7 +5031,7 @@ export type ExplainStmt = {
  */
 export type CreateTableAsStmt = {
   /** the query (see comments above) */
-  query: ({ SelectStmt: SelectStmt } | { ExecuteStmt: ExecuteStmt })
+  query: ({ ExecuteStmt: ExecuteStmt } | { SelectStmt: SelectStmt })
   /** destination table */
   into: IntoClause
   /** OBJECT_TABLE or OBJECT_MATVIEW */
@@ -5156,7 +5156,7 @@ export type PrepareStmt = {
   /** Types of parameters (List of TypeName) */
   argtypes?: ({ TypeName: TypeName })[]
   /** The query itself (as a raw parsetree) */
-  query: ({ SelectStmt: SelectStmt } | { InsertStmt: InsertStmt } | { UpdateStmt: UpdateStmt })
+  query: ({ InsertStmt: InsertStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
 }
 
 /** ----------------------
@@ -5167,7 +5167,7 @@ export type ExecuteStmt = {
   /** The name of the plan to execute */
   name: string
   /** Values to assign to parameters */
-  params?: ({ A_Const: A_Const } | { A_ArrayExpr: A_ArrayExpr })[]
+  params?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const })[]
 }
 
 /** ----------------------
@@ -5862,7 +5862,7 @@ export type ScalarArrayOpExpr = {
 export type BoolExpr = {
   boolop: BoolExprType
   /** arguments to this expression */
-  args: ({ A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { BoolExpr: BoolExpr } | { NullTest: NullTest } | { FuncCall: FuncCall } | { SubLink: SubLink } | { JsonIsPredicate: JsonIsPredicate } | { BooleanTest: BooleanTest } | { ParamRef: ParamRef } | { TypeCast: TypeCast })[]
+  args: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { JsonIsPredicate: JsonIsPredicate } | { NullTest: NullTest } | { ParamRef: ParamRef } | { SubLink: SubLink } | { TypeCast: TypeCast })[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -6331,7 +6331,7 @@ export type ArrayExpr = {
  */
 export type RowExpr = {
   /** the fields */
-  args?: ({ ColumnRef: ColumnRef } | { A_Const: A_Const } | { A_Expr: A_Expr } | { SetToDefault: SetToDefault } | { TypeCast: TypeCast } | { RowExpr: RowExpr } | { A_ArrayExpr: A_ArrayExpr } | { FuncCall: FuncCall } | { SubLink: SubLink } | { CollateClause: CollateClause })[]
+  args?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SetToDefault: SetToDefault } | { SubLink: SubLink } | { TypeCast: TypeCast })[]
   /** RECORDOID or a composite type's ID */
   row_typeid?: Oid
   /**
@@ -6392,7 +6392,7 @@ export type CoalesceExpr = {
   /** OID of collation, or InvalidOid if none */
   coalescecollid?: Oid
   /** the arguments */
-  args: ({ TypeCast: TypeCast } | { A_Const: A_Const } | { ColumnRef: ColumnRef })[]
+  args: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -6410,7 +6410,7 @@ export type MinMaxExpr = {
   /** function to execute */
   op: MinMaxOp
   /** the arguments */
-  args: ({ ColumnRef: ColumnRef } | { A_Expr: A_Expr } | { A_Const: A_Const })[]
+  args: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -6438,7 +6438,7 @@ export type XmlExpr = {
   /** parallel list of String values */
   arg_names?: any[]
   /** list of expressions */
-  args?: ({ XmlExpr: XmlExpr } | { FuncCall: FuncCall } | { TypeCast: TypeCast } | { A_Const: A_Const } | { ColumnRef: ColumnRef })[]
+  args?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr })[]
   /** DOCUMENT or CONTENT */
   xmloption: XmlOptionType
   /** INDENT option for XMLSERIALIZE */
@@ -6806,15 +6806,15 @@ export type JoinExpr = {
   /** Natural join? Will need to shape table */
   isNatural?: boolean
   /** left subtree */
-  larg: ({ RangeVar: RangeVar } | { RangeSubselect: RangeSubselect } | { JoinExpr: JoinExpr } | { RangeFunction: RangeFunction })
+  larg: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
   /** right subtree */
-  rarg: ({ RangeVar: RangeVar } | { RangeSubselect: RangeSubselect } | { RangeFunction: RangeFunction } | { JoinExpr: JoinExpr })
+  rarg: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
   /** USING clause, if any (list of String) */
   usingClause?: ({ String: String })[]
   /** alias attached to USING clause, if any */
   join_using_alias?: Alias
   /** qualifiers on join, if any */
-  quals?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { A_Const: A_Const } | { NullTest: NullTest })
+  quals?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
   /** user-written alias clause, if any */
   alias?: Alias
   /** RT index assigned for join, or 0 */
@@ -7254,11 +7254,11 @@ export type BitString = {
 export type List<T = Node> = { items: T[] }
 
 export type A_Const =
-  | Integer
-  | Float
-  | Boolean
-  | String
   | BitString
+  | Boolean
+  | Float
+  | Integer
+  | String
 
 /**
  * Expr - generic superclass for executable-expression nodes
@@ -7269,205 +7269,205 @@ export type A_Const =
  * documentation.  See also the ExprState node types in execnodes.h.
  */
 export type Expr =
-  | { TypeCast: TypeCast }
-  | { FuncCall: FuncCall }
-  | { ColumnRef: ColumnRef }
-  | { A_Expr: A_Expr }
   | { A_ArrayExpr: A_ArrayExpr }
-  | { CommonTableExpr: CommonTableExpr }
-  | { GroupingFunc: GroupingFunc }
-  | { NamedArgExpr: NamedArgExpr }
+  | { A_Const: A_Const }
+  | { A_Expr: A_Expr }
   | { BoolExpr: BoolExpr }
-  | { SubLink: SubLink }
+  | { BooleanTest: BooleanTest }
   | { CaseExpr: CaseExpr }
   | { CaseWhen: CaseWhen }
-  | { RowExpr: RowExpr }
   | { CoalesceExpr: CoalesceExpr }
-  | { MinMaxExpr: MinMaxExpr }
-  | { SQLValueFunction: SQLValueFunction }
-  | { XmlExpr: XmlExpr }
-  | { JsonValueExpr: JsonValueExpr }
-  | { NullTest: NullTest }
-  | { BooleanTest: BooleanTest }
-  | { SetToDefault: SetToDefault }
+  | { ColumnRef: ColumnRef }
+  | { CommonTableExpr: CommonTableExpr }
   | { CurrentOfExpr: CurrentOfExpr }
+  | { FuncCall: FuncCall }
+  | { GroupingFunc: GroupingFunc }
   | { JoinExpr: JoinExpr }
-  | { A_Const: A_Const }
+  | { JsonValueExpr: JsonValueExpr }
+  | { MinMaxExpr: MinMaxExpr }
+  | { NamedArgExpr: NamedArgExpr }
+  | { NullTest: NullTest }
+  | { RowExpr: RowExpr }
+  | { SQLValueFunction: SQLValueFunction }
+  | { SetToDefault: SetToDefault }
+  | { SubLink: SubLink }
+  | { TypeCast: TypeCast }
+  | { XmlExpr: XmlExpr }
 
 export type Node =
-  | { RangeVar: RangeVar }
-  | { GroupingFunc: GroupingFunc }
-  | { NamedArgExpr: NamedArgExpr }
-  | { DistinctExpr: DistinctExpr }
-  | { NullIfExpr: NullIfExpr }
-  | { BoolExpr: BoolExpr }
-  | { SubLink: SubLink }
-  | { CaseExpr: CaseExpr }
-  | { CaseWhen: CaseWhen }
-  | { RowExpr: RowExpr }
-  | { CoalesceExpr: CoalesceExpr }
-  | { MinMaxExpr: MinMaxExpr }
-  | { SQLValueFunction: SQLValueFunction }
-  | { XmlExpr: XmlExpr }
-  | { JsonValueExpr: JsonValueExpr }
-  | { JsonIsPredicate: JsonIsPredicate }
-  | { NullTest: NullTest }
-  | { BooleanTest: BooleanTest }
-  | { SetToDefault: SetToDefault }
-  | { CurrentOfExpr: CurrentOfExpr }
-  | { JoinExpr: JoinExpr }
-  | { TypeName: TypeName }
-  | { ColumnRef: ColumnRef }
-  | { ParamRef: ParamRef }
+  | { A_ArrayExpr: A_ArrayExpr }
+  | { A_Const: A_Const }
   | { A_Expr: A_Expr }
-  | { TypeCast: TypeCast }
-  | { CollateClause: CollateClause }
-  | { RoleSpec: RoleSpec }
-  | { FuncCall: FuncCall }
-  | { A_Star: A_Star }
   | { A_Indices: A_Indices }
   | { A_Indirection: A_Indirection }
-  | { A_ArrayExpr: A_ArrayExpr }
-  | { ResTarget: ResTarget }
+  | { A_Star: A_Star }
+  | { AccessPriv: AccessPriv }
+  | { AlterDefaultPrivilegesStmt: AlterDefaultPrivilegesStmt }
+  | { AlterDomainStmt: AlterDomainStmt }
+  | { AlterEnumStmt: AlterEnumStmt }
+  | { AlterEventTrigStmt: AlterEventTrigStmt }
+  | { AlterFdwStmt: AlterFdwStmt }
+  | { AlterForeignServerStmt: AlterForeignServerStmt }
+  | { AlterFunctionStmt: AlterFunctionStmt }
+  | { AlterObjectSchemaStmt: AlterObjectSchemaStmt }
+  | { AlterOpFamilyStmt: AlterOpFamilyStmt }
+  | { AlterOperatorStmt: AlterOperatorStmt }
+  | { AlterOwnerStmt: AlterOwnerStmt }
+  | { AlterPolicyStmt: AlterPolicyStmt }
+  | { AlterPublicationStmt: AlterPublicationStmt }
+  | { AlterRoleStmt: AlterRoleStmt }
+  | { AlterSeqStmt: AlterSeqStmt }
+  | { AlterStatsStmt: AlterStatsStmt }
+  | { AlterSubscriptionStmt: AlterSubscriptionStmt }
+  | { AlterTSConfigurationStmt: AlterTSConfigurationStmt }
+  | { AlterTSDictionaryStmt: AlterTSDictionaryStmt }
+  | { AlterTableCmd: AlterTableCmd }
+  | { AlterTableMoveAllStmt: AlterTableMoveAllStmt }
+  | { AlterTableSpaceOptionsStmt: AlterTableSpaceOptionsStmt }
+  | { AlterTableStmt: AlterTableStmt }
+  | { AlterTypeStmt: AlterTypeStmt }
+  | { AlterUserMappingStmt: AlterUserMappingStmt }
+  | { BoolExpr: BoolExpr }
+  | { Boolean: Boolean }
+  | { BooleanTest: BooleanTest }
+  | { CallStmt: CallStmt }
+  | { CaseExpr: CaseExpr }
+  | { CaseWhen: CaseWhen }
+  | { CheckPointStmt: CheckPointStmt }
+  | { ClosePortalStmt: ClosePortalStmt }
+  | { ClusterStmt: ClusterStmt }
+  | { CoalesceExpr: CoalesceExpr }
+  | { CollateClause: CollateClause }
+  | { ColumnDef: ColumnDef }
+  | { ColumnRef: ColumnRef }
+  | { CommentStmt: CommentStmt }
+  | { CommonTableExpr: CommonTableExpr }
+  | { CompositeTypeStmt: CompositeTypeStmt }
+  | { Constraint: Constraint }
+  | { ConstraintsSetStmt: ConstraintsSetStmt }
+  | { CopyStmt: CopyStmt }
+  | { CreateAmStmt: CreateAmStmt }
+  | { CreateCastStmt: CreateCastStmt }
+  | { CreateConversionStmt: CreateConversionStmt }
+  | { CreateDomainStmt: CreateDomainStmt }
+  | { CreateEnumStmt: CreateEnumStmt }
+  | { CreateEventTrigStmt: CreateEventTrigStmt }
+  | { CreateFdwStmt: CreateFdwStmt }
+  | { CreateForeignServerStmt: CreateForeignServerStmt }
+  | { CreateForeignTableStmt: CreateForeignTableStmt }
+  | { CreateFunctionStmt: CreateFunctionStmt }
+  | { CreateOpClassItem: CreateOpClassItem }
+  | { CreateOpClassStmt: CreateOpClassStmt }
+  | { CreateOpFamilyStmt: CreateOpFamilyStmt }
+  | { CreatePLangStmt: CreatePLangStmt }
+  | { CreatePolicyStmt: CreatePolicyStmt }
+  | { CreatePublicationStmt: CreatePublicationStmt }
+  | { CreateRangeStmt: CreateRangeStmt }
+  | { CreateRoleStmt: CreateRoleStmt }
+  | { CreateSchemaStmt: CreateSchemaStmt }
+  | { CreateSeqStmt: CreateSeqStmt }
+  | { CreateStatsStmt: CreateStatsStmt }
+  | { CreateStmt: CreateStmt }
+  | { CreateSubscriptionStmt: CreateSubscriptionStmt }
+  | { CreateTableAsStmt: CreateTableAsStmt }
+  | { CreateTableSpaceStmt: CreateTableSpaceStmt }
+  | { CreateTransformStmt: CreateTransformStmt }
+  | { CreateTrigStmt: CreateTrigStmt }
+  | { CreateUserMappingStmt: CreateUserMappingStmt }
+  | { CurrentOfExpr: CurrentOfExpr }
+  | { DeallocateStmt: DeallocateStmt }
+  | { DeclareCursorStmt: DeclareCursorStmt }
+  | { DefElem: DefElem }
+  | { DefineStmt: DefineStmt }
+  | { DeleteStmt: DeleteStmt }
+  | { DiscardStmt: DiscardStmt }
+  | { DistinctExpr: DistinctExpr }
+  | { DoStmt: DoStmt }
+  | { DropOwnedStmt: DropOwnedStmt }
+  | { DropRoleStmt: DropRoleStmt }
+  | { DropStmt: DropStmt }
+  | { DropSubscriptionStmt: DropSubscriptionStmt }
+  | { DropTableSpaceStmt: DropTableSpaceStmt }
+  | { DropUserMappingStmt: DropUserMappingStmt }
+  | { DropdbStmt: DropdbStmt }
+  | { ExecuteStmt: ExecuteStmt }
+  | { ExplainStmt: ExplainStmt }
+  | { FetchStmt: FetchStmt }
+  | { Float: Float }
+  | { FuncCall: FuncCall }
+  | { FunctionParameter: FunctionParameter }
+  | { GrantRoleStmt: GrantRoleStmt }
+  | { GrantStmt: GrantStmt }
+  | { GroupingFunc: GroupingFunc }
+  | { GroupingSet: GroupingSet }
+  | { ImportForeignSchemaStmt: ImportForeignSchemaStmt }
+  | { IndexElem: IndexElem }
+  | { IndexStmt: IndexStmt }
+  | { InsertStmt: InsertStmt }
+  | { Integer: Integer }
+  | { JoinExpr: JoinExpr }
+  | { JsonArrayAgg: JsonArrayAgg }
+  | { JsonArrayConstructor: JsonArrayConstructor }
+  | { JsonArrayQueryConstructor: JsonArrayQueryConstructor }
+  | { JsonIsPredicate: JsonIsPredicate }
+  | { JsonKeyValue: JsonKeyValue }
+  | { JsonObjectAgg: JsonObjectAgg }
+  | { JsonObjectConstructor: JsonObjectConstructor }
+  | { JsonValueExpr: JsonValueExpr }
+  | { List: List }
+  | { LoadStmt: LoadStmt }
+  | { LockingClause: LockingClause }
+  | { MergeStmt: MergeStmt }
+  | { MergeWhenClause: MergeWhenClause }
+  | { MinMaxExpr: MinMaxExpr }
   | { MultiAssignRef: MultiAssignRef }
-  | { SortBy: SortBy }
-  | { WindowDef: WindowDef }
-  | { RangeSubselect: RangeSubselect }
+  | { NamedArgExpr: NamedArgExpr }
+  | { NotifyStmt: NotifyStmt }
+  | { NullIfExpr: NullIfExpr }
+  | { NullTest: NullTest }
+  | { ObjectWithArgs: ObjectWithArgs }
+  | { ParamRef: ParamRef }
+  | { PartitionCmd: PartitionCmd }
+  | { PartitionElem: PartitionElem }
+  | { PartitionRangeDatum: PartitionRangeDatum }
+  | { PrepareStmt: PrepareStmt }
+  | { PublicationObjSpec: PublicationObjSpec }
   | { RangeFunction: RangeFunction }
+  | { RangeSubselect: RangeSubselect }
   | { RangeTableFunc: RangeTableFunc }
   | { RangeTableFuncCol: RangeTableFuncCol }
   | { RangeTableSample: RangeTableSample }
-  | { ColumnDef: ColumnDef }
-  | { TableLikeClause: TableLikeClause }
-  | { IndexElem: IndexElem }
-  | { DefElem: DefElem }
-  | { LockingClause: LockingClause }
-  | { XmlSerialize: XmlSerialize }
-  | { PartitionElem: PartitionElem }
-  | { PartitionRangeDatum: PartitionRangeDatum }
-  | { PartitionCmd: PartitionCmd }
-  | { GroupingSet: GroupingSet }
-  | { CommonTableExpr: CommonTableExpr }
-  | { MergeWhenClause: MergeWhenClause }
-  | { TriggerTransition: TriggerTransition }
-  | { JsonKeyValue: JsonKeyValue }
-  | { JsonObjectConstructor: JsonObjectConstructor }
-  | { JsonArrayConstructor: JsonArrayConstructor }
-  | { JsonArrayQueryConstructor: JsonArrayQueryConstructor }
-  | { JsonObjectAgg: JsonObjectAgg }
-  | { JsonArrayAgg: JsonArrayAgg }
-  | { InsertStmt: InsertStmt }
-  | { DeleteStmt: DeleteStmt }
-  | { UpdateStmt: UpdateStmt }
-  | { MergeStmt: MergeStmt }
-  | { SelectStmt: SelectStmt }
-  | { ReturnStmt: ReturnStmt }
-  | { CreateSchemaStmt: CreateSchemaStmt }
-  | { AlterTableStmt: AlterTableStmt }
+  | { RangeVar: RangeVar }
+  | { ReassignOwnedStmt: ReassignOwnedStmt }
+  | { RefreshMatViewStmt: RefreshMatViewStmt }
+  | { ReindexStmt: ReindexStmt }
+  | { RenameStmt: RenameStmt }
   | { ReplicaIdentityStmt: ReplicaIdentityStmt }
-  | { AlterTableCmd: AlterTableCmd }
-  | { AlterDomainStmt: AlterDomainStmt }
-  | { GrantStmt: GrantStmt }
-  | { ObjectWithArgs: ObjectWithArgs }
-  | { AccessPriv: AccessPriv }
-  | { GrantRoleStmt: GrantRoleStmt }
-  | { AlterDefaultPrivilegesStmt: AlterDefaultPrivilegesStmt }
-  | { CopyStmt: CopyStmt }
+  | { ResTarget: ResTarget }
+  | { ReturnStmt: ReturnStmt }
+  | { RoleSpec: RoleSpec }
+  | { RowExpr: RowExpr }
+  | { RuleStmt: RuleStmt }
+  | { SQLValueFunction: SQLValueFunction }
+  | { SecLabelStmt: SecLabelStmt }
+  | { SelectStmt: SelectStmt }
+  | { SetToDefault: SetToDefault }
+  | { SortBy: SortBy }
+  | { StatsElem: StatsElem }
+  | { String: String }
+  | { SubLink: SubLink }
+  | { TableLikeClause: TableLikeClause }
+  | { TransactionStmt: TransactionStmt }
+  | { TriggerTransition: TriggerTransition }
+  | { TruncateStmt: TruncateStmt }
+  | { TypeCast: TypeCast }
+  | { TypeName: TypeName }
+  | { UpdateStmt: UpdateStmt }
+  | { VacuumRelation: VacuumRelation }
+  | { VacuumStmt: VacuumStmt }
   | { VariableSetStmt: VariableSetStmt }
   | { VariableShowStmt: VariableShowStmt }
-  | { CreateStmt: CreateStmt }
-  | { Constraint: Constraint }
-  | { CreateTableSpaceStmt: CreateTableSpaceStmt }
-  | { DropTableSpaceStmt: DropTableSpaceStmt }
-  | { AlterTableSpaceOptionsStmt: AlterTableSpaceOptionsStmt }
-  | { AlterTableMoveAllStmt: AlterTableMoveAllStmt }
-  | { CreateFdwStmt: CreateFdwStmt }
-  | { AlterFdwStmt: AlterFdwStmt }
-  | { CreateForeignServerStmt: CreateForeignServerStmt }
-  | { AlterForeignServerStmt: AlterForeignServerStmt }
-  | { CreateForeignTableStmt: CreateForeignTableStmt }
-  | { CreateUserMappingStmt: CreateUserMappingStmt }
-  | { AlterUserMappingStmt: AlterUserMappingStmt }
-  | { DropUserMappingStmt: DropUserMappingStmt }
-  | { ImportForeignSchemaStmt: ImportForeignSchemaStmt }
-  | { CreatePolicyStmt: CreatePolicyStmt }
-  | { AlterPolicyStmt: AlterPolicyStmt }
-  | { CreateAmStmt: CreateAmStmt }
-  | { CreateTrigStmt: CreateTrigStmt }
-  | { CreateEventTrigStmt: CreateEventTrigStmt }
-  | { AlterEventTrigStmt: AlterEventTrigStmt }
-  | { CreatePLangStmt: CreatePLangStmt }
-  | { CreateRoleStmt: CreateRoleStmt }
-  | { AlterRoleStmt: AlterRoleStmt }
-  | { DropRoleStmt: DropRoleStmt }
-  | { CreateSeqStmt: CreateSeqStmt }
-  | { AlterSeqStmt: AlterSeqStmt }
-  | { DefineStmt: DefineStmt }
-  | { CreateDomainStmt: CreateDomainStmt }
-  | { CreateOpClassStmt: CreateOpClassStmt }
-  | { CreateOpClassItem: CreateOpClassItem }
-  | { CreateOpFamilyStmt: CreateOpFamilyStmt }
-  | { AlterOpFamilyStmt: AlterOpFamilyStmt }
-  | { DropStmt: DropStmt }
-  | { TruncateStmt: TruncateStmt }
-  | { CommentStmt: CommentStmt }
-  | { SecLabelStmt: SecLabelStmt }
-  | { DeclareCursorStmt: DeclareCursorStmt }
-  | { ClosePortalStmt: ClosePortalStmt }
-  | { FetchStmt: FetchStmt }
-  | { IndexStmt: IndexStmt }
-  | { CreateStatsStmt: CreateStatsStmt }
-  | { StatsElem: StatsElem }
-  | { AlterStatsStmt: AlterStatsStmt }
-  | { CreateFunctionStmt: CreateFunctionStmt }
-  | { FunctionParameter: FunctionParameter }
-  | { AlterFunctionStmt: AlterFunctionStmt }
-  | { DoStmt: DoStmt }
-  | { CallStmt: CallStmt }
-  | { RenameStmt: RenameStmt }
-  | { AlterObjectSchemaStmt: AlterObjectSchemaStmt }
-  | { AlterOwnerStmt: AlterOwnerStmt }
-  | { AlterOperatorStmt: AlterOperatorStmt }
-  | { AlterTypeStmt: AlterTypeStmt }
-  | { RuleStmt: RuleStmt }
-  | { NotifyStmt: NotifyStmt }
-  | { TransactionStmt: TransactionStmt }
-  | { CompositeTypeStmt: CompositeTypeStmt }
-  | { CreateEnumStmt: CreateEnumStmt }
-  | { CreateRangeStmt: CreateRangeStmt }
-  | { AlterEnumStmt: AlterEnumStmt }
   | { ViewStmt: ViewStmt }
-  | { LoadStmt: LoadStmt }
-  | { DropdbStmt: DropdbStmt }
-  | { ClusterStmt: ClusterStmt }
-  | { VacuumStmt: VacuumStmt }
-  | { VacuumRelation: VacuumRelation }
-  | { ExplainStmt: ExplainStmt }
-  | { CreateTableAsStmt: CreateTableAsStmt }
-  | { RefreshMatViewStmt: RefreshMatViewStmt }
-  | { CheckPointStmt: CheckPointStmt }
-  | { DiscardStmt: DiscardStmt }
-  | { ConstraintsSetStmt: ConstraintsSetStmt }
-  | { ReindexStmt: ReindexStmt }
-  | { CreateConversionStmt: CreateConversionStmt }
-  | { CreateCastStmt: CreateCastStmt }
-  | { CreateTransformStmt: CreateTransformStmt }
-  | { PrepareStmt: PrepareStmt }
-  | { ExecuteStmt: ExecuteStmt }
-  | { DeallocateStmt: DeallocateStmt }
-  | { DropOwnedStmt: DropOwnedStmt }
-  | { ReassignOwnedStmt: ReassignOwnedStmt }
-  | { AlterTSDictionaryStmt: AlterTSDictionaryStmt }
-  | { AlterTSConfigurationStmt: AlterTSConfigurationStmt }
-  | { PublicationObjSpec: PublicationObjSpec }
-  | { CreatePublicationStmt: CreatePublicationStmt }
-  | { AlterPublicationStmt: AlterPublicationStmt }
-  | { CreateSubscriptionStmt: CreateSubscriptionStmt }
-  | { AlterSubscriptionStmt: AlterSubscriptionStmt }
-  | { DropSubscriptionStmt: DropSubscriptionStmt }
-  | { Integer: Integer }
-  | { Float: Float }
-  | { Boolean: Boolean }
-  | { String: String }
-  | { List: List }
-  | { A_Const: A_Const }
+  | { WindowDef: WindowDef }
+  | { XmlExpr: XmlExpr }
+  | { XmlSerialize: XmlSerialize }

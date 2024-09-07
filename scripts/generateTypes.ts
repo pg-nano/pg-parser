@@ -321,7 +321,10 @@ async function main() {
                 )
               fieldType =
                 "(" +
-                inferredTags.map((tag) => `{ ${tag}: ${tag} }`).join(" | ") +
+                inferredTags
+                  .sort()
+                  .map((tag) => `{ ${tag}: ${tag} }`)
+                  .join(" | ") +
                 ")"
             }
           } else if (fieldType === "any[]") {
@@ -338,6 +341,7 @@ async function main() {
               fieldType =
                 "List<" +
                 inferredListTags
+                  .sort()
                   .map((tag) => `{ ${tag}: ${tag} }`)
                   .join(" | ") +
                 ">"
@@ -358,7 +362,10 @@ async function main() {
                   )
                 fieldType =
                   "(" +
-                  inferredTags.map((tag) => `{ ${tag}: ${tag} }`).join(" | ") +
+                  inferredTags
+                    .sort()
+                    .map((tag) => `{ ${tag}: ${tag} }`)
+                    .join(" | ") +
                   ")[]"
               }
             }
@@ -402,22 +409,26 @@ async function main() {
 
   code += "\n"
   code += formatComment(abstractTypes.A_Const?.comment, "")
-  code += "export type A_Const =\n  | " + constTypes.join("\n  | ") + "\n"
+  code +=
+    "export type A_Const =\n  | " + constTypes.sort().join("\n  | ") + "\n"
 
   code += "\n"
   code += formatComment(abstractTypes.Expr?.comment, "")
   code +=
     "export type Expr =\n  | " +
-    Array.from(
-      expressionTypes,
-      (name) => `{ ${name}: ${name}${name === "List" ? "<Expr>" : ""} }`,
-    ).join("\n  | ") +
+    [...expressionTypes]
+      .sort()
+      .map((name) => `{ ${name}: ${name}${name === "List" ? "<Expr>" : ""} }`)
+      .join("\n  | ") +
     "\n"
 
   code += "\n"
   code +=
     "export type Node =\n  | " +
-    Array.from(nodeTypes, (name) => `{ ${name}: ${name} }`).join("\n  | ") +
+    [...nodeTypes]
+      .sort()
+      .map((name) => `{ ${name}: ${name} }`)
+      .join("\n  | ") +
     "\n"
 
   fs.writeFileSync("ast.ts", code.trimStart())
