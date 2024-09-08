@@ -369,9 +369,15 @@ async function main() {
                   ")[]"
               }
             }
-            if (fieldType === "any[]") {
-              warnUnknownType(typeName + "." + fieldName, "list type")
-            }
+          }
+
+          if (
+            (fieldType === "any[]" || fieldType === "({ String: String })[]") &&
+            /\bname\b/.test(field.comment ?? "")
+          ) {
+            fieldType = "QualifiedName"
+          } else if (fieldType === "any[]") {
+            warnUnknownType(typeName + "." + fieldName, "list type")
           }
 
           const nullable = fieldMetadata
@@ -403,6 +409,9 @@ async function main() {
   nodeTypes.add("A_Const")
   expressionTypes.add("A_Const")
   expressionTypes.add("ParamRef")
+
+  code += "\n"
+  code += "export type QualifiedName = { String: String }[]\n"
 
   code += "\n"
   code += formatComment(abstractTypes.List?.comment, "")

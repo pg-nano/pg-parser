@@ -2078,7 +2078,7 @@ export enum yytokentype {
  */
 export type TypeName = {
   /** qualified name (list of String nodes) */
-  names: ({ String: String })[]
+  names: QualifiedName
   /** type identified by OID */
   typeOid?: Oid
   /** is a set? */
@@ -2132,7 +2132,7 @@ export type A_Expr = {
   /** see above */
   kind: A_Expr_Kind
   /** possibly-qualified name of operator */
-  name: ({ String: String })[]
+  name: QualifiedName
   /** left argument, or NULL if none */
   lexpr?: Expr
   /** right argument, or NULL if none */
@@ -2160,7 +2160,7 @@ export type CollateClause = {
   /** input expression */
   arg: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })
   /** possibly-qualified collation name */
-  collname: ({ String: String })[]
+  collname: QualifiedName
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2190,7 +2190,7 @@ export type RoleSpec = {
  */
 export type FuncCall = {
   /** qualified name of function */
-  funcname: ({ String: String })[]
+  funcname: QualifiedName
   /** the arguments (list of exprs) */
   args?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { NamedArgExpr: NamedArgExpr } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SubLink: SubLink } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr })[]
   /** ORDER BY (list of SortBy) */
@@ -2327,7 +2327,7 @@ export type SortBy = {
   /** NULLS FIRST/LAST */
   sortby_nulls: SortByNulls
   /** name of op to use, if SORTBY_USING */
-  useOp?: ({ String: String })[]
+  useOp?: QualifiedName
   /** operator location, or -1 if none/unknown */
   location: number
 }
@@ -2458,7 +2458,7 @@ export type RangeTableSample = {
   /** relation to be sampled */
   relation: ({ RangeVar: RangeVar })
   /** sampling method name (possibly qualified) */
-  method: ({ String: String })[]
+  method: QualifiedName
   /** argument(s) for sampling method */
   args: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })[]
   /** REPEATABLE expression, or NULL if none */
@@ -2553,9 +2553,9 @@ export type IndexElem = {
   /** name for index column; NULL = default */
   indexcolname?: string
   /** name of collation; NIL = default */
-  collation?: ({ String: String })[]
+  collation?: QualifiedName
   /** name of desired opclass; NIL = default */
-  opclass?: ({ String: String })[]
+  opclass?: QualifiedName
   /** opclass-specific options, or NIL */
   opclassopts?: ({ DefElem: DefElem })[]
   /** ASC/DESC/default */
@@ -2630,9 +2630,9 @@ export type PartitionElem = {
   /** expression to partition on, or NULL */
   expr?: Expr
   /** name of collation; NIL = default */
-  collation?: ({ String: String })[]
+  collation?: QualifiedName
   /** name of desired opclass; NIL = default */
-  opclass?: ({ String: String })[]
+  opclass?: QualifiedName
   /** token location, or -1 if unknown */
   location: number
 }
@@ -3596,7 +3596,7 @@ export type GrantStmt = {
  */
 export type ObjectWithArgs = {
   /** qualified name of function/operator */
-  objname: ({ String: String })[]
+  objname: QualifiedName
   /** list of Typename nodes (input args only) */
   objargs?: ({ TypeName: TypeName })[]
   /** list of FunctionParameter nodes */
@@ -4058,7 +4058,7 @@ export type CreateAmStmt = {
   /** access method name */
   amname: string
   /** handler function name */
-  handler_name: ({ String: String })[]
+  handler_name: QualifiedName
   /** type of access method */
   amtype: string
 }
@@ -4077,7 +4077,7 @@ export type CreateTrigStmt = {
   /** relation trigger is on */
   relation: RangeVar
   /** qual. name of function to call */
-  funcname: ({ String: String })[]
+  funcname: QualifiedName
   /** list of String or NIL */
   args?: ({ String: String })[]
   /** ROW/STATEMENT */
@@ -4116,7 +4116,7 @@ export type CreateEventTrigStmt = {
   /** list of DefElems indicating filtering */
   whenclause?: ({ DefElem: DefElem })[]
   /** qual. name of function to call */
-  funcname: ({ String: String })[]
+  funcname: QualifiedName
 }
 
 /** ----------------------
@@ -4141,11 +4141,11 @@ export type CreatePLangStmt = {
   /** PL name */
   plname: string
   /** PL call handler function (qual. name) */
-  plhandler: ({ String: String })[]
+  plhandler: QualifiedName
   /** optional inline function (qual. name) */
-  plinline?: any[]
+  plinline?: QualifiedName
   /** optional validator function (qual. name) */
-  plvalidator?: any[]
+  plvalidator?: QualifiedName
   /** PL is trusted */
   pltrusted?: boolean
 }
@@ -4258,7 +4258,7 @@ export type DefineStmt = {
   /** hack to signal old CREATE AGG syntax */
   oldstyle?: boolean
   /** qualified name (list of String) */
-  defnames: ({ String: String })[]
+  defnames: QualifiedName
   /** a list of TypeName (if needed) */
   args?: List<{ FunctionParameter: FunctionParameter }>[]
   /** a list of DefElem */
@@ -4275,7 +4275,7 @@ export type DefineStmt = {
  */
 export type CreateDomainStmt = {
   /** qualified name (list of String) */
-  domainname: ({ String: String })[]
+  domainname: QualifiedName
   /** the base type */
   typeName: TypeName
   /** untransformed COLLATE spec, if any */
@@ -4290,9 +4290,9 @@ export type CreateDomainStmt = {
  */
 export type CreateOpClassStmt = {
   /** qualified name (list of String) */
-  opclassname: ({ String: String })[]
+  opclassname: QualifiedName
   /** qualified name (ditto); NIL if omitted */
-  opfamilyname?: any[]
+  opfamilyname?: QualifiedName
   /** name of index AM opclass is for */
   amname: string
   /** datatype of indexed column */
@@ -4330,7 +4330,7 @@ export type CreateOpClassItem = {
  */
 export type CreateOpFamilyStmt = {
   /** qualified name (list of String) */
-  opfamilyname: ({ String: String })[]
+  opfamilyname: QualifiedName
   /** name of index AM opfamily is for */
   amname: string
 }
@@ -4341,7 +4341,7 @@ export type CreateOpFamilyStmt = {
  */
 export type AlterOpFamilyStmt = {
   /** qualified name (list of String) */
-  opfamilyname: ({ String: String })[]
+  opfamilyname: QualifiedName
   /** name of index AM opfamily is for */
   amname: string
   /** ADD or DROP the items? */
@@ -4514,7 +4514,7 @@ export type IndexStmt = {
  */
 export type CreateStatsStmt = {
   /** qualified name (list of String) */
-  defnames: ({ String: String })[]
+  defnames: QualifiedName
   /** stat types (list of String) */
   stat_types?: ({ String: String })[]
   /** expressions to build statistics on */
@@ -4549,7 +4549,7 @@ export type StatsElem = {
  */
 export type AlterStatsStmt = {
   /** qualified name (list of String) */
-  defnames: ({ String: String })[]
+  defnames: QualifiedName
   /** statistics target */
   stxstattarget?: number
   /** skip error if statistics object is missing */
@@ -4566,7 +4566,7 @@ export type CreateFunctionStmt = {
   /** T => replace if already exists */
   replace?: boolean
   /** qualified name of function to create */
-  funcname: ({ String: String })[]
+  funcname: QualifiedName
   /** a list of FunctionParameter */
   parameters?: ({ FunctionParameter: FunctionParameter })[]
   /** the return type */
@@ -4745,7 +4745,7 @@ export type AlterOperatorStmt = {
  */
 export type AlterTypeStmt = {
   /** type name (possibly qualified) */
-  typeName: ({ String: String })[]
+  typeName: QualifiedName
   /** List of DefElem nodes */
   options: ({ DefElem: DefElem })[]
 }
@@ -4834,7 +4834,7 @@ export type CompositeTypeStmt = {
  */
 export type CreateEnumStmt = {
   /** qualified name (list of String) */
-  typeName: ({ String: String })[]
+  typeName: QualifiedName
   /** enum values (list of String) */
   vals: ({ String: String })[]
 }
@@ -4845,7 +4845,7 @@ export type CreateEnumStmt = {
  */
 export type CreateRangeStmt = {
   /** qualified name (list of String) */
-  typeName: ({ String: String })[]
+  typeName: QualifiedName
   /** range parameters (list of DefElem) */
   params: ({ DefElem: DefElem })[]
 }
@@ -4856,7 +4856,7 @@ export type CreateRangeStmt = {
  */
 export type AlterEnumStmt = {
   /** qualified name (list of String) */
-  typeName: ({ String: String })[]
+  typeName: QualifiedName
   /** old enum value's name, if renaming */
   oldVal?: string
   /** new enum value's name */
@@ -5117,7 +5117,7 @@ export type CreateConversionStmt = {
   /** destination encoding name */
   to_encoding_name: string
   /** qualified conversion function name */
-  func_name: ({ String: String })[]
+  func_name: QualifiedName
   /** is this a default conversion? */
   def?: boolean
 }
@@ -5201,7 +5201,7 @@ export type ReassignOwnedStmt = {
  */
 export type AlterTSDictionaryStmt = {
   /** qualified name (list of String) */
-  dictname: ({ String: String })[]
+  dictname: QualifiedName
   /** List of DefElem nodes */
   options: ({ DefElem: DefElem })[]
 }
@@ -5210,7 +5210,7 @@ export type AlterTSConfigurationStmt = {
   /** ALTER_TSCONFIG_ADD_MAPPING, etc */
   kind: AlterTSConfigType
   /** qualified name (list of String) */
-  cfgname: ({ String: String })[]
+  cfgname: QualifiedName
   /**
 	 * dicts will be non-NIL if ADD/ALTER MAPPING was specified. If dicts is
 	 * NIL, but tokentype isn't, DROP MAPPING was specified.
@@ -5926,7 +5926,7 @@ export type SubLink = {
   /** outer-query test for ALL/ANY/ROWCOMPARE */
   testexpr?: Expr
   /** originally specified operator name */
-  operName?: ({ String: String })[]
+  operName?: QualifiedName
   /** subselect as Query* or raw parsetree */
   subselect: ({ SelectStmt: SelectStmt })
   /** token location, or -1 if unknown */
@@ -7250,6 +7250,8 @@ export type String = {
 export type BitString = {
   bsval: string
 }
+
+export type QualifiedName = { String: String }[]
 
 export type List<T = Node> = { items: T[] }
 
