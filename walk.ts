@@ -1,11 +1,11 @@
-import { NodeTag, NodeByTag, NodePath } from "./node.js"
+import { NodeTag, NodePath } from "./node.js"
 
 export type Walker<TNodePath extends NodePath = NodePath> = (
   node: TNodePath,
 ) => boolean | void
 
 export type Visitor = {
-  [TNodeTag in NodeTag]?: Walker<NodePath & NodeByTag<TNodeTag>>
+  [TNodeTag in NodeTag]?: Walker<NodePath<TNodeTag>>
 }
 
 export function walk(
