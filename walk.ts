@@ -8,6 +8,14 @@ export type Visitor = {
   [TNodeTag in NodeTag]?: Walker<NodePath<TNodeTag>>
 }
 
+/**
+ * Walks the tree of nodes, calling the callback for each node. You may pass a
+ * simple callback (which receives every encountered node) or a visitor object
+ * (which may specify callbacks for particular node types).
+ *
+ * If a callback returns `false`, the walk will continue to the next sibling
+ * node, rather than recurse into the children of the current node.
+ */
 export function walk(
   root: any,
   callback: Walker | Visitor,
