@@ -15,7 +15,7 @@ export type NodeByTag<TNodeTag extends NodeTag> = Node extends infer TNode
   : never
 
 export class NodePath<TNodeTag extends NodeTag = NodeTag> {
-  constructor(readonly tag: TNodeTag, readonly node: NodeByTag<TNodeTag>, readonly parent: NodePath | null) {}
+  constructor(readonly tag: TNodeTag, readonly node: NodeByTag<TNodeTag>, readonly parent: NodePath | null, readonly keyPath: readonly (string | number)[]) {}
   isList(): this is NodePath<"List"> {
     return this.tag === "List"
   }
