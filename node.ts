@@ -16,6 +16,9 @@ export type NodeByTag<TNodeTag extends NodeTag> = Node extends infer TNode
 
 export class NodePath<TNodeTag extends NodeTag = NodeTag> {
   constructor(readonly tag: TNodeTag, readonly node: NodeByTag<TNodeTag>, readonly parent: NodePath | null) {}
+  isList(): this is NodePath<"List"> {
+    return this.tag === "List"
+  }
   isRangeVar(): this is NodePath<"RangeVar"> {
     return this.tag === "RangeVar"
   }
@@ -90,6 +93,9 @@ export class NodePath<TNodeTag extends NodeTag = NodeTag> {
   }
   isA_Expr(): this is NodePath<"A_Expr"> {
     return this.tag === "A_Expr"
+  }
+  isA_Const(): this is NodePath<"A_Const"> {
+    return this.tag === "A_Const"
   }
   isTypeCast(): this is NodePath<"TypeCast"> {
     return this.tag === "TypeCast"
@@ -273,6 +279,15 @@ export class NodePath<TNodeTag extends NodeTag = NodeTag> {
   }
   isAlterTableMoveAllStmt(): this is NodePath<"AlterTableMoveAllStmt"> {
     return this.tag === "AlterTableMoveAllStmt"
+  }
+  isCreateExtensionStmt(): this is NodePath<"CreateExtensionStmt"> {
+    return this.tag === "CreateExtensionStmt"
+  }
+  isAlterExtensionStmt(): this is NodePath<"AlterExtensionStmt"> {
+    return this.tag === "AlterExtensionStmt"
+  }
+  isAlterExtensionContentsStmt(): this is NodePath<"AlterExtensionContentsStmt"> {
+    return this.tag === "AlterExtensionContentsStmt"
   }
   isCreateFdwStmt(): this is NodePath<"CreateFdwStmt"> {
     return this.tag === "CreateFdwStmt"
@@ -538,12 +553,6 @@ export class NodePath<TNodeTag extends NodeTag = NodeTag> {
   isString(): this is NodePath<"String"> {
     return this.tag === "String"
   }
-  isList(): this is NodePath<"List"> {
-    return this.tag === "List"
-  }
-  isA_Const(): this is NodePath<"A_Const"> {
-    return this.tag === "A_Const"
-  }
 }
   
 function isTaggedNode(node: object, tag: string) {
@@ -552,6 +561,9 @@ function isTaggedNode(node: object, tag: string) {
 }
 
 export const NodeTag = {
+  isList(node: object | undefined): node is { List: import("./ast").List } {
+    return node != null && isTaggedNode(node, "List")
+  },
   isRangeVar(node: object | undefined): node is { RangeVar: import("./ast").RangeVar } {
     return node != null && isTaggedNode(node, "RangeVar")
   },
@@ -626,6 +638,9 @@ export const NodeTag = {
   },
   isA_Expr(node: object | undefined): node is { A_Expr: import("./ast").A_Expr } {
     return node != null && isTaggedNode(node, "A_Expr")
+  },
+  isA_Const(node: object | undefined): node is { A_Const: import("./ast").A_Const } {
+    return node != null && isTaggedNode(node, "A_Const")
   },
   isTypeCast(node: object | undefined): node is { TypeCast: import("./ast").TypeCast } {
     return node != null && isTaggedNode(node, "TypeCast")
@@ -809,6 +824,15 @@ export const NodeTag = {
   },
   isAlterTableMoveAllStmt(node: object | undefined): node is { AlterTableMoveAllStmt: import("./ast").AlterTableMoveAllStmt } {
     return node != null && isTaggedNode(node, "AlterTableMoveAllStmt")
+  },
+  isCreateExtensionStmt(node: object | undefined): node is { CreateExtensionStmt: import("./ast").CreateExtensionStmt } {
+    return node != null && isTaggedNode(node, "CreateExtensionStmt")
+  },
+  isAlterExtensionStmt(node: object | undefined): node is { AlterExtensionStmt: import("./ast").AlterExtensionStmt } {
+    return node != null && isTaggedNode(node, "AlterExtensionStmt")
+  },
+  isAlterExtensionContentsStmt(node: object | undefined): node is { AlterExtensionContentsStmt: import("./ast").AlterExtensionContentsStmt } {
+    return node != null && isTaggedNode(node, "AlterExtensionContentsStmt")
   },
   isCreateFdwStmt(node: object | undefined): node is { CreateFdwStmt: import("./ast").CreateFdwStmt } {
     return node != null && isTaggedNode(node, "CreateFdwStmt")
@@ -1073,11 +1097,5 @@ export const NodeTag = {
   },
   isString(node: object | undefined): node is { String: import("./ast").String } {
     return node != null && isTaggedNode(node, "String")
-  },
-  isList(node: object | undefined): node is { List: import("./ast").List } {
-    return node != null && isTaggedNode(node, "List")
-  },
-  isA_Const(node: object | undefined): node is { A_Const: import("./ast").A_Const } {
-    return node != null && isTaggedNode(node, "A_Const")
   }
 }

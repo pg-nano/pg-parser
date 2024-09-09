@@ -102,26 +102,28 @@ async function main() {
     ...Object.values(structsByModule).flatMap((s) => Object.keys(s)),
   ]
 
+  // These are not used anywhere. They're for libpg_query's internal use.
   const skippedEntities = new Set([
+    "BlockId",
+    "BlockIdData",
+    "BlockNumber",
     "NodeTag",
     "ParallelVacuumState",
+    "Query",
     "QuerySource",
+    "RangeTblEntry",
+    "RangeTblFunction",
+    "TableFunc",
     "VacAttrStatsP",
     "pg_wchar",
   ])
 
-  const shouldSkipEntity = (name: string) => {
-    if (skippedEntities.has(name)) {
-      return true
-    }
-    if (name.startsWith("Block")) {
-      return true
-    }
-    return false
-  }
+  const shouldSkipEntity = (name: string) => skippedEntities.has(name)
 
+  // When true, warn about unknown types.
   const debugUnknownTypes = false
 
+  // A type is unknown if it's not found in typeMappings or entityNames.
   const unknownTypes = new Set<string>()
   const warnUnknownType = (name: string, label = "type") => {
     if (debugUnknownTypes && !unknownTypes.has(name)) {
@@ -130,6 +132,7 @@ async function main() {
     }
   }
 
+  // Map a C type to a TypeScript type.
   const applyTypeMapping = (name: string, c_type: string): string => {
     const rawType = c_type.replace(/\*$/, "")
     const mapping = (name && typeMappings[name]) || typeMappings[rawType]
@@ -146,8 +149,11 @@ async function main() {
     return "any"
   }
 
+  // This is the output TypeScript code.
   let code = ""
 
+  // Typedefs are mostly mapped to type aliases, but at least one is a bitmask,
+  // which gets mapped to an enum.
   for (const typeDef of typeDefs) {
     if (shouldSkipEntity(typeDef.new_type_name)) {
       continue
@@ -198,27 +204,27 @@ async function main() {
   delete structsByModule["../backend/parser/gram"]
   delete structsByModule["../backend/parser/gramparse"]
 
+  /** Constant types are included in the "A_Const" union of object types. */
   const constTypes: string[] = []
+
+  /** Expression types are included in the "Expr" union of node types. */
   const expressionTypes = new Set([
     "A_Const",
     "List",
     "TypeCast",
     "FuncCall",
     "ColumnRef",
+    "ParamRef",
   ])
 
   const abstractTypes: Record<string, StructDef | null> = {
     A_Const: null,
     Expr: null,
     List: null,
-    Query: null,
-    RangeTblEntry: null,
-    RangeTblFunction: null,
-    TableFunc: null,
   }
 
-  /** Type aliases are excluded from the Node type */
-  const typeAliases = new Set(Object.keys(abstractTypes))
+  /** Object types do not represent an AST node. */
+  const objectTypes = new Set<string>()
 
   /** Fix structs that do not reflect the AST accurately */
   const fixedStructs: Record<string, string> = {
@@ -238,6 +244,8 @@ async function main() {
         continue
       }
 
+      // Assume any struct with a name ending in "Expr" can be used where an
+      // expression is allowed.
       if (typeName.endsWith("Expr")) {
         expressionTypes.add(typeName)
       }
@@ -266,7 +274,7 @@ async function main() {
       if (!fieldMetadata) {
         // If field metadata could not be inferred from libpg_query's test
         // suite, then it's likely not a node type.
-        typeAliases.add(typeName)
+        objectTypes.add(typeName)
       }
 
       code += "{\n"
@@ -291,6 +299,8 @@ async function main() {
         if (field.name !== undefined) {
           const fieldName = field.name.replace(/\[.+?\]$/, "")
 
+          // The "xpr" field is never actually included in the AST. It exists to
+          // signify that the struct can be used where an expression is allowed.
           if (fieldName === "xpr") {
             expressionTypes.add(typeName)
             continue
@@ -360,6 +370,7 @@ async function main() {
                     fieldName,
                     inferredTags,
                   )
+
                 fieldType =
                   "(" +
                   inferredTags
@@ -394,9 +405,15 @@ async function main() {
     }
   }
 
-  for (const name of typeAliases) {
-    nodeTypes.delete(name)
+  // These are untested by libpg_query's test suite, so they've been incorrectly
+  // marked as object types, even though they are valid node types.
+  objectTypes.delete("CreateExtensionStmt")
+  objectTypes.delete("AlterExtensionStmt")
+  objectTypes.delete("AlterExtensionContentsStmt")
+
+  for (const name of [...objectTypes, ...skippedEntities]) {
     expressionTypes.delete(name)
+    nodeTypes.delete(name)
   }
 
   nodeTypes.forEach((name) => {
@@ -405,12 +422,8 @@ async function main() {
     }
   })
 
-  nodeTypes.add("List")
-  nodeTypes.add("A_Const")
-  expressionTypes.add("A_Const")
-  expressionTypes.add("ParamRef")
-
   code += "\n"
+  code += `/** A qualified name for referencing a database object, e.g. "public.my_table" */\n`
   code += "export type QualifiedName = { String: String }[]\n"
 
   code += "\n"

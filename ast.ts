@@ -7251,6 +7251,7 @@ export type BitString = {
   bsval: string
 }
 
+/** A qualified name for referencing a database object, e.g. "public.my_table" */
 export type QualifiedName = { String: String }[]
 
 export type List<T = Node> = { items: T[] }
@@ -7286,6 +7287,7 @@ export type Expr =
   | { GroupingFunc: GroupingFunc }
   | { JoinExpr: JoinExpr }
   | { JsonValueExpr: JsonValueExpr }
+  | { List: List<Expr> }
   | { MinMaxExpr: MinMaxExpr }
   | { NamedArgExpr: NamedArgExpr }
   | { NullTest: NullTest }
@@ -7309,6 +7311,8 @@ export type Node =
   | { AlterDomainStmt: AlterDomainStmt }
   | { AlterEnumStmt: AlterEnumStmt }
   | { AlterEventTrigStmt: AlterEventTrigStmt }
+  | { AlterExtensionContentsStmt: AlterExtensionContentsStmt }
+  | { AlterExtensionStmt: AlterExtensionStmt }
   | { AlterFdwStmt: AlterFdwStmt }
   | { AlterForeignServerStmt: AlterForeignServerStmt }
   | { AlterFunctionStmt: AlterFunctionStmt }
@@ -7355,6 +7359,7 @@ export type Node =
   | { CreateDomainStmt: CreateDomainStmt }
   | { CreateEnumStmt: CreateEnumStmt }
   | { CreateEventTrigStmt: CreateEventTrigStmt }
+  | { CreateExtensionStmt: CreateExtensionStmt }
   | { CreateFdwStmt: CreateFdwStmt }
   | { CreateForeignServerStmt: CreateForeignServerStmt }
   | { CreateForeignTableStmt: CreateForeignTableStmt }
