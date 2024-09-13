@@ -60,22 +60,6 @@ jobs:
         with:
           submodules: true
 
-      - name: List files (non-Windows)
-        if: runner.os != 'Windows'
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "All files recursively:"
-          find . -type f
-
-      - name: List files (Windows)
-        if: runner.os == 'Windows'
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "All files recursively:"
-          Get-ChildItem -Recurse | ForEach-Object { $_.FullName }
-
       - name: Dependencies (Node.js - macOS, Windows)
         if: contains(matrix.os, 'macos') || contains(matrix.os, 'windows')
         uses: actions/setup-node@v4
