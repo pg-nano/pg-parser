@@ -136,31 +136,31 @@ export type Datum = any
 export type Oid = number
 
 export enum OverridingKind {
-  OVERRIDING_NOT_SET = "OVERRIDING_NOT_SET",
-  OVERRIDING_USER_VALUE = "OVERRIDING_USER_VALUE",
-  OVERRIDING_SYSTEM_VALUE = "OVERRIDING_SYSTEM_VALUE",
+  OVERRIDING_NOT_SET = 'OVERRIDING_NOT_SET',
+  OVERRIDING_USER_VALUE = 'OVERRIDING_USER_VALUE',
+  OVERRIDING_SYSTEM_VALUE = 'OVERRIDING_SYSTEM_VALUE',
 }
 
 /** Sort ordering options for ORDER BY and CREATE INDEX */
 export enum SortByDir {
-  SORTBY_DEFAULT = "SORTBY_DEFAULT",
-  SORTBY_ASC = "SORTBY_ASC",
-  SORTBY_DESC = "SORTBY_DESC",
+  SORTBY_DEFAULT = 'SORTBY_DEFAULT',
+  SORTBY_ASC = 'SORTBY_ASC',
+  SORTBY_DESC = 'SORTBY_DESC',
   /** not allowed in CREATE INDEX ... */
-  SORTBY_USING = "SORTBY_USING",
+  SORTBY_USING = 'SORTBY_USING',
 }
 
 export enum SortByNulls {
-  SORTBY_NULLS_DEFAULT = "SORTBY_NULLS_DEFAULT",
-  SORTBY_NULLS_FIRST = "SORTBY_NULLS_FIRST",
-  SORTBY_NULLS_LAST = "SORTBY_NULLS_LAST",
+  SORTBY_NULLS_DEFAULT = 'SORTBY_NULLS_DEFAULT',
+  SORTBY_NULLS_FIRST = 'SORTBY_NULLS_FIRST',
+  SORTBY_NULLS_LAST = 'SORTBY_NULLS_LAST',
 }
 
 /** Options for [ ALL | DISTINCT ] */
 export enum SetQuantifier {
-  SET_QUANTIFIER_DEFAULT = "SET_QUANTIFIER_DEFAULT",
-  SET_QUANTIFIER_ALL = "SET_QUANTIFIER_ALL",
-  SET_QUANTIFIER_DISTINCT = "SET_QUANTIFIER_DISTINCT",
+  SET_QUANTIFIER_DEFAULT = 'SET_QUANTIFIER_DEFAULT',
+  SET_QUANTIFIER_ALL = 'SET_QUANTIFIER_ALL',
+  SET_QUANTIFIER_DISTINCT = 'SET_QUANTIFIER_DISTINCT',
 }
 
 /**
@@ -168,33 +168,33 @@ export enum SetQuantifier {
  */
 export enum A_Expr_Kind {
   /** normal operator */
-  AEXPR_OP = "AEXPR_OP",
+  AEXPR_OP = 'AEXPR_OP',
   /** scalar op ANY (array) */
-  AEXPR_OP_ANY = "AEXPR_OP_ANY",
+  AEXPR_OP_ANY = 'AEXPR_OP_ANY',
   /** scalar op ALL (array) */
-  AEXPR_OP_ALL = "AEXPR_OP_ALL",
+  AEXPR_OP_ALL = 'AEXPR_OP_ALL',
   /** IS DISTINCT FROM - name must be "=" */
-  AEXPR_DISTINCT = "AEXPR_DISTINCT",
+  AEXPR_DISTINCT = 'AEXPR_DISTINCT',
   /** IS NOT DISTINCT FROM - name must be "=" */
-  AEXPR_NOT_DISTINCT = "AEXPR_NOT_DISTINCT",
+  AEXPR_NOT_DISTINCT = 'AEXPR_NOT_DISTINCT',
   /** NULLIF - name must be "=" */
-  AEXPR_NULLIF = "AEXPR_NULLIF",
+  AEXPR_NULLIF = 'AEXPR_NULLIF',
   /** [NOT] IN - name must be "=" or "<>" */
-  AEXPR_IN = "AEXPR_IN",
+  AEXPR_IN = 'AEXPR_IN',
   /** [NOT] LIKE - name must be "~~" or "!~~" */
-  AEXPR_LIKE = "AEXPR_LIKE",
+  AEXPR_LIKE = 'AEXPR_LIKE',
   /** [NOT] ILIKE - name must be "~~*" or "!~~*" */
-  AEXPR_ILIKE = "AEXPR_ILIKE",
+  AEXPR_ILIKE = 'AEXPR_ILIKE',
   /** [NOT] SIMILAR - name must be "~" or "!~" */
-  AEXPR_SIMILAR = "AEXPR_SIMILAR",
+  AEXPR_SIMILAR = 'AEXPR_SIMILAR',
   /** name must be "BETWEEN" */
-  AEXPR_BETWEEN = "AEXPR_BETWEEN",
+  AEXPR_BETWEEN = 'AEXPR_BETWEEN',
   /** name must be "NOT BETWEEN" */
-  AEXPR_NOT_BETWEEN = "AEXPR_NOT_BETWEEN",
+  AEXPR_NOT_BETWEEN = 'AEXPR_NOT_BETWEEN',
   /** name must be "BETWEEN SYMMETRIC" */
-  AEXPR_BETWEEN_SYM = "AEXPR_BETWEEN_SYM",
+  AEXPR_BETWEEN_SYM = 'AEXPR_BETWEEN_SYM',
   /** name must be "NOT BETWEEN SYMMETRIC" */
-  AEXPR_NOT_BETWEEN_SYM = "AEXPR_NOT_BETWEEN_SYM",
+  AEXPR_NOT_BETWEEN_SYM = 'AEXPR_NOT_BETWEEN_SYM',
 }
 
 /**
@@ -202,28 +202,28 @@ export enum A_Expr_Kind {
  */
 export enum RoleSpecType {
   /** role name is stored as a C string */
-  ROLESPEC_CSTRING = "ROLESPEC_CSTRING",
+  ROLESPEC_CSTRING = 'ROLESPEC_CSTRING',
   /** role spec is CURRENT_ROLE */
-  ROLESPEC_CURRENT_ROLE = "ROLESPEC_CURRENT_ROLE",
+  ROLESPEC_CURRENT_ROLE = 'ROLESPEC_CURRENT_ROLE',
   /** role spec is CURRENT_USER */
-  ROLESPEC_CURRENT_USER = "ROLESPEC_CURRENT_USER",
+  ROLESPEC_CURRENT_USER = 'ROLESPEC_CURRENT_USER',
   /** role spec is SESSION_USER */
-  ROLESPEC_SESSION_USER = "ROLESPEC_SESSION_USER",
+  ROLESPEC_SESSION_USER = 'ROLESPEC_SESSION_USER',
   /** role name is "public" */
-  ROLESPEC_PUBLIC = "ROLESPEC_PUBLIC",
+  ROLESPEC_PUBLIC = 'ROLESPEC_PUBLIC',
 }
 
 export enum TableLikeOption {
-  CREATE_TABLE_LIKE_COMMENTS = "CREATE_TABLE_LIKE_COMMENTS",
-  CREATE_TABLE_LIKE_COMPRESSION = "CREATE_TABLE_LIKE_COMPRESSION",
-  CREATE_TABLE_LIKE_CONSTRAINTS = "CREATE_TABLE_LIKE_CONSTRAINTS",
-  CREATE_TABLE_LIKE_DEFAULTS = "CREATE_TABLE_LIKE_DEFAULTS",
-  CREATE_TABLE_LIKE_GENERATED = "CREATE_TABLE_LIKE_GENERATED",
-  CREATE_TABLE_LIKE_IDENTITY = "CREATE_TABLE_LIKE_IDENTITY",
-  CREATE_TABLE_LIKE_INDEXES = "CREATE_TABLE_LIKE_INDEXES",
-  CREATE_TABLE_LIKE_STATISTICS = "CREATE_TABLE_LIKE_STATISTICS",
-  CREATE_TABLE_LIKE_STORAGE = "CREATE_TABLE_LIKE_STORAGE",
-  CREATE_TABLE_LIKE_ALL = "CREATE_TABLE_LIKE_ALL",
+  CREATE_TABLE_LIKE_COMMENTS = 'CREATE_TABLE_LIKE_COMMENTS',
+  CREATE_TABLE_LIKE_COMPRESSION = 'CREATE_TABLE_LIKE_COMPRESSION',
+  CREATE_TABLE_LIKE_CONSTRAINTS = 'CREATE_TABLE_LIKE_CONSTRAINTS',
+  CREATE_TABLE_LIKE_DEFAULTS = 'CREATE_TABLE_LIKE_DEFAULTS',
+  CREATE_TABLE_LIKE_GENERATED = 'CREATE_TABLE_LIKE_GENERATED',
+  CREATE_TABLE_LIKE_IDENTITY = 'CREATE_TABLE_LIKE_IDENTITY',
+  CREATE_TABLE_LIKE_INDEXES = 'CREATE_TABLE_LIKE_INDEXES',
+  CREATE_TABLE_LIKE_STATISTICS = 'CREATE_TABLE_LIKE_STATISTICS',
+  CREATE_TABLE_LIKE_STORAGE = 'CREATE_TABLE_LIKE_STORAGE',
+  CREATE_TABLE_LIKE_ALL = 'CREATE_TABLE_LIKE_ALL',
 }
 
 /**
@@ -238,16 +238,16 @@ export enum TableLikeOption {
  */
 export enum DefElemAction {
   /** no action given */
-  DEFELEM_UNSPEC = "DEFELEM_UNSPEC",
-  DEFELEM_SET = "DEFELEM_SET",
-  DEFELEM_ADD = "DEFELEM_ADD",
-  DEFELEM_DROP = "DEFELEM_DROP",
+  DEFELEM_UNSPEC = 'DEFELEM_UNSPEC',
+  DEFELEM_SET = 'DEFELEM_SET',
+  DEFELEM_ADD = 'DEFELEM_ADD',
+  DEFELEM_DROP = 'DEFELEM_DROP',
 }
 
 export enum PartitionStrategy {
-  PARTITION_STRATEGY_LIST = "PARTITION_STRATEGY_LIST",
-  PARTITION_STRATEGY_RANGE = "PARTITION_STRATEGY_RANGE",
-  PARTITION_STRATEGY_HASH = "PARTITION_STRATEGY_HASH",
+  PARTITION_STRATEGY_LIST = 'PARTITION_STRATEGY_LIST',
+  PARTITION_STRATEGY_RANGE = 'PARTITION_STRATEGY_RANGE',
+  PARTITION_STRATEGY_HASH = 'PARTITION_STRATEGY_HASH',
 }
 
 /**
@@ -256,11 +256,11 @@ export enum PartitionStrategy {
  * This can be MINVALUE, MAXVALUE or a specific bounded value.
  */
 export enum PartitionRangeDatumKind {
-  PARTITION_RANGE_DATUM_MINVALUE = "PARTITION_RANGE_DATUM_MINVALUE",
+  PARTITION_RANGE_DATUM_MINVALUE = 'PARTITION_RANGE_DATUM_MINVALUE',
   /** a specific (bounded) value */
-  PARTITION_RANGE_DATUM_VALUE = "PARTITION_RANGE_DATUM_VALUE",
+  PARTITION_RANGE_DATUM_VALUE = 'PARTITION_RANGE_DATUM_VALUE',
   /** greater than any other value */
-  PARTITION_RANGE_DATUM_MAXVALUE = "PARTITION_RANGE_DATUM_MAXVALUE",
+  PARTITION_RANGE_DATUM_MAXVALUE = 'PARTITION_RANGE_DATUM_MAXVALUE',
 }
 
 /**--------------------
@@ -327,25 +327,25 @@ export enum PartitionRangeDatumKind {
  */
 export enum RTEKind {
   /** ordinary relation reference */
-  RTE_RELATION = "RTE_RELATION",
+  RTE_RELATION = 'RTE_RELATION',
   /** subquery in FROM */
-  RTE_SUBQUERY = "RTE_SUBQUERY",
+  RTE_SUBQUERY = 'RTE_SUBQUERY',
   /** join */
-  RTE_JOIN = "RTE_JOIN",
+  RTE_JOIN = 'RTE_JOIN',
   /** function in FROM */
-  RTE_FUNCTION = "RTE_FUNCTION",
+  RTE_FUNCTION = 'RTE_FUNCTION',
   /** TableFunc(.., column list) */
-  RTE_TABLEFUNC = "RTE_TABLEFUNC",
+  RTE_TABLEFUNC = 'RTE_TABLEFUNC',
   /** VALUES (<exprlist>), (<exprlist>), ... */
-  RTE_VALUES = "RTE_VALUES",
+  RTE_VALUES = 'RTE_VALUES',
   /** common table expr (WITH list element) */
-  RTE_CTE = "RTE_CTE",
+  RTE_CTE = 'RTE_CTE',
   /** tuplestore, e.g. for AFTER triggers */
-  RTE_NAMEDTUPLESTORE = "RTE_NAMEDTUPLESTORE",
+  RTE_NAMEDTUPLESTORE = 'RTE_NAMEDTUPLESTORE',
   /** RTE represents an empty FROM clause; such
    * RTEs are added by the planner, they're not
    * present during parsing or rewriting */
-  RTE_RESULT = "RTE_RESULT",
+  RTE_RESULT = 'RTE_RESULT',
 }
 
 /**
@@ -356,17 +356,17 @@ export enum RTEKind {
  */
 export enum WCOKind {
   /** WCO on an auto-updatable view */
-  WCO_VIEW_CHECK = "WCO_VIEW_CHECK",
+  WCO_VIEW_CHECK = 'WCO_VIEW_CHECK',
   /** RLS INSERT WITH CHECK policy */
-  WCO_RLS_INSERT_CHECK = "WCO_RLS_INSERT_CHECK",
+  WCO_RLS_INSERT_CHECK = 'WCO_RLS_INSERT_CHECK',
   /** RLS UPDATE WITH CHECK policy */
-  WCO_RLS_UPDATE_CHECK = "WCO_RLS_UPDATE_CHECK",
+  WCO_RLS_UPDATE_CHECK = 'WCO_RLS_UPDATE_CHECK',
   /** RLS ON CONFLICT DO UPDATE USING policy */
-  WCO_RLS_CONFLICT_CHECK = "WCO_RLS_CONFLICT_CHECK",
+  WCO_RLS_CONFLICT_CHECK = 'WCO_RLS_CONFLICT_CHECK',
   /** RLS MERGE UPDATE USING policy */
-  WCO_RLS_MERGE_UPDATE_CHECK = "WCO_RLS_MERGE_UPDATE_CHECK",
+  WCO_RLS_MERGE_UPDATE_CHECK = 'WCO_RLS_MERGE_UPDATE_CHECK',
   /** RLS MERGE DELETE USING policy */
-  WCO_RLS_MERGE_DELETE_CHECK = "WCO_RLS_MERGE_DELETE_CHECK",
+  WCO_RLS_MERGE_DELETE_CHECK = 'WCO_RLS_MERGE_DELETE_CHECK',
 }
 
 /**
@@ -420,11 +420,11 @@ export enum WCOKind {
  * SETS( SIMPLE(1,2), CUBE( SIMPLE(3), SIMPLE(4,5) ) )
  */
 export enum GroupingSetKind {
-  GROUPING_SET_EMPTY = "GROUPING_SET_EMPTY",
-  GROUPING_SET_SIMPLE = "GROUPING_SET_SIMPLE",
-  GROUPING_SET_ROLLUP = "GROUPING_SET_ROLLUP",
-  GROUPING_SET_CUBE = "GROUPING_SET_CUBE",
-  GROUPING_SET_SETS = "GROUPING_SET_SETS",
+  GROUPING_SET_EMPTY = 'GROUPING_SET_EMPTY',
+  GROUPING_SET_SIMPLE = 'GROUPING_SET_SIMPLE',
+  GROUPING_SET_ROLLUP = 'GROUPING_SET_ROLLUP',
+  GROUPING_SET_CUBE = 'GROUPING_SET_CUBE',
+  GROUPING_SET_SETS = 'GROUPING_SET_SETS',
 }
 
 /**
@@ -433,11 +433,11 @@ export enum GroupingSetKind {
  */
 export enum CTEMaterialize {
   /** no option specified */
-  CTEMaterializeDefault = "CTEMaterializeDefault",
+  CTEMaterializeDefault = 'CTEMaterializeDefault',
   /** MATERIALIZED */
-  CTEMaterializeAlways = "CTEMaterializeAlways",
+  CTEMaterializeAlways = 'CTEMaterializeAlways',
   /** NOT MATERIALIZED */
-  CTEMaterializeNever = "CTEMaterializeNever",
+  CTEMaterializeNever = 'CTEMaterializeNever',
 }
 
 /** ----------------------
@@ -454,10 +454,10 @@ export enum CTEMaterialize {
  * ----------------------
  */
 export enum SetOperation {
-  SETOP_NONE = "SETOP_NONE",
-  SETOP_UNION = "SETOP_UNION",
-  SETOP_INTERSECT = "SETOP_INTERSECT",
-  SETOP_EXCEPT = "SETOP_EXCEPT",
+  SETOP_NONE = 'SETOP_NONE',
+  SETOP_UNION = 'SETOP_UNION',
+  SETOP_INTERSECT = 'SETOP_INTERSECT',
+  SETOP_EXCEPT = 'SETOP_EXCEPT',
 }
 
 /**
@@ -466,201 +466,201 @@ export enum SetOperation {
  * object type.  Note that commands typically don't support all the types.
  */
 export enum ObjectType {
-  OBJECT_ACCESS_METHOD = "OBJECT_ACCESS_METHOD",
-  OBJECT_AGGREGATE = "OBJECT_AGGREGATE",
-  OBJECT_AMOP = "OBJECT_AMOP",
-  OBJECT_AMPROC = "OBJECT_AMPROC",
+  OBJECT_ACCESS_METHOD = 'OBJECT_ACCESS_METHOD',
+  OBJECT_AGGREGATE = 'OBJECT_AGGREGATE',
+  OBJECT_AMOP = 'OBJECT_AMOP',
+  OBJECT_AMPROC = 'OBJECT_AMPROC',
   /** type's attribute, when distinct from column */
-  OBJECT_ATTRIBUTE = "OBJECT_ATTRIBUTE",
-  OBJECT_CAST = "OBJECT_CAST",
-  OBJECT_COLUMN = "OBJECT_COLUMN",
-  OBJECT_COLLATION = "OBJECT_COLLATION",
-  OBJECT_CONVERSION = "OBJECT_CONVERSION",
-  OBJECT_DATABASE = "OBJECT_DATABASE",
-  OBJECT_DEFAULT = "OBJECT_DEFAULT",
-  OBJECT_DEFACL = "OBJECT_DEFACL",
-  OBJECT_DOMAIN = "OBJECT_DOMAIN",
-  OBJECT_DOMCONSTRAINT = "OBJECT_DOMCONSTRAINT",
-  OBJECT_EVENT_TRIGGER = "OBJECT_EVENT_TRIGGER",
-  OBJECT_EXTENSION = "OBJECT_EXTENSION",
-  OBJECT_FDW = "OBJECT_FDW",
-  OBJECT_FOREIGN_SERVER = "OBJECT_FOREIGN_SERVER",
-  OBJECT_FOREIGN_TABLE = "OBJECT_FOREIGN_TABLE",
-  OBJECT_FUNCTION = "OBJECT_FUNCTION",
-  OBJECT_INDEX = "OBJECT_INDEX",
-  OBJECT_LANGUAGE = "OBJECT_LANGUAGE",
-  OBJECT_LARGEOBJECT = "OBJECT_LARGEOBJECT",
-  OBJECT_MATVIEW = "OBJECT_MATVIEW",
-  OBJECT_OPCLASS = "OBJECT_OPCLASS",
-  OBJECT_OPERATOR = "OBJECT_OPERATOR",
-  OBJECT_OPFAMILY = "OBJECT_OPFAMILY",
-  OBJECT_PARAMETER_ACL = "OBJECT_PARAMETER_ACL",
-  OBJECT_POLICY = "OBJECT_POLICY",
-  OBJECT_PROCEDURE = "OBJECT_PROCEDURE",
-  OBJECT_PUBLICATION = "OBJECT_PUBLICATION",
-  OBJECT_PUBLICATION_NAMESPACE = "OBJECT_PUBLICATION_NAMESPACE",
-  OBJECT_PUBLICATION_REL = "OBJECT_PUBLICATION_REL",
-  OBJECT_ROLE = "OBJECT_ROLE",
-  OBJECT_ROUTINE = "OBJECT_ROUTINE",
-  OBJECT_RULE = "OBJECT_RULE",
-  OBJECT_SCHEMA = "OBJECT_SCHEMA",
-  OBJECT_SEQUENCE = "OBJECT_SEQUENCE",
-  OBJECT_SUBSCRIPTION = "OBJECT_SUBSCRIPTION",
-  OBJECT_STATISTIC_EXT = "OBJECT_STATISTIC_EXT",
-  OBJECT_TABCONSTRAINT = "OBJECT_TABCONSTRAINT",
-  OBJECT_TABLE = "OBJECT_TABLE",
-  OBJECT_TABLESPACE = "OBJECT_TABLESPACE",
-  OBJECT_TRANSFORM = "OBJECT_TRANSFORM",
-  OBJECT_TRIGGER = "OBJECT_TRIGGER",
-  OBJECT_TSCONFIGURATION = "OBJECT_TSCONFIGURATION",
-  OBJECT_TSDICTIONARY = "OBJECT_TSDICTIONARY",
-  OBJECT_TSPARSER = "OBJECT_TSPARSER",
-  OBJECT_TSTEMPLATE = "OBJECT_TSTEMPLATE",
-  OBJECT_TYPE = "OBJECT_TYPE",
-  OBJECT_USER_MAPPING = "OBJECT_USER_MAPPING",
-  OBJECT_VIEW = "OBJECT_VIEW",
+  OBJECT_ATTRIBUTE = 'OBJECT_ATTRIBUTE',
+  OBJECT_CAST = 'OBJECT_CAST',
+  OBJECT_COLUMN = 'OBJECT_COLUMN',
+  OBJECT_COLLATION = 'OBJECT_COLLATION',
+  OBJECT_CONVERSION = 'OBJECT_CONVERSION',
+  OBJECT_DATABASE = 'OBJECT_DATABASE',
+  OBJECT_DEFAULT = 'OBJECT_DEFAULT',
+  OBJECT_DEFACL = 'OBJECT_DEFACL',
+  OBJECT_DOMAIN = 'OBJECT_DOMAIN',
+  OBJECT_DOMCONSTRAINT = 'OBJECT_DOMCONSTRAINT',
+  OBJECT_EVENT_TRIGGER = 'OBJECT_EVENT_TRIGGER',
+  OBJECT_EXTENSION = 'OBJECT_EXTENSION',
+  OBJECT_FDW = 'OBJECT_FDW',
+  OBJECT_FOREIGN_SERVER = 'OBJECT_FOREIGN_SERVER',
+  OBJECT_FOREIGN_TABLE = 'OBJECT_FOREIGN_TABLE',
+  OBJECT_FUNCTION = 'OBJECT_FUNCTION',
+  OBJECT_INDEX = 'OBJECT_INDEX',
+  OBJECT_LANGUAGE = 'OBJECT_LANGUAGE',
+  OBJECT_LARGEOBJECT = 'OBJECT_LARGEOBJECT',
+  OBJECT_MATVIEW = 'OBJECT_MATVIEW',
+  OBJECT_OPCLASS = 'OBJECT_OPCLASS',
+  OBJECT_OPERATOR = 'OBJECT_OPERATOR',
+  OBJECT_OPFAMILY = 'OBJECT_OPFAMILY',
+  OBJECT_PARAMETER_ACL = 'OBJECT_PARAMETER_ACL',
+  OBJECT_POLICY = 'OBJECT_POLICY',
+  OBJECT_PROCEDURE = 'OBJECT_PROCEDURE',
+  OBJECT_PUBLICATION = 'OBJECT_PUBLICATION',
+  OBJECT_PUBLICATION_NAMESPACE = 'OBJECT_PUBLICATION_NAMESPACE',
+  OBJECT_PUBLICATION_REL = 'OBJECT_PUBLICATION_REL',
+  OBJECT_ROLE = 'OBJECT_ROLE',
+  OBJECT_ROUTINE = 'OBJECT_ROUTINE',
+  OBJECT_RULE = 'OBJECT_RULE',
+  OBJECT_SCHEMA = 'OBJECT_SCHEMA',
+  OBJECT_SEQUENCE = 'OBJECT_SEQUENCE',
+  OBJECT_SUBSCRIPTION = 'OBJECT_SUBSCRIPTION',
+  OBJECT_STATISTIC_EXT = 'OBJECT_STATISTIC_EXT',
+  OBJECT_TABCONSTRAINT = 'OBJECT_TABCONSTRAINT',
+  OBJECT_TABLE = 'OBJECT_TABLE',
+  OBJECT_TABLESPACE = 'OBJECT_TABLESPACE',
+  OBJECT_TRANSFORM = 'OBJECT_TRANSFORM',
+  OBJECT_TRIGGER = 'OBJECT_TRIGGER',
+  OBJECT_TSCONFIGURATION = 'OBJECT_TSCONFIGURATION',
+  OBJECT_TSDICTIONARY = 'OBJECT_TSDICTIONARY',
+  OBJECT_TSPARSER = 'OBJECT_TSPARSER',
+  OBJECT_TSTEMPLATE = 'OBJECT_TSTEMPLATE',
+  OBJECT_TYPE = 'OBJECT_TYPE',
+  OBJECT_USER_MAPPING = 'OBJECT_USER_MAPPING',
+  OBJECT_VIEW = 'OBJECT_VIEW',
 }
 
 export enum DropBehavior {
   /** drop fails if any dependent objects */
-  DROP_RESTRICT = "DROP_RESTRICT",
+  DROP_RESTRICT = 'DROP_RESTRICT',
   /** remove dependent objects too */
-  DROP_CASCADE = "DROP_CASCADE",
+  DROP_CASCADE = 'DROP_CASCADE',
 }
 
 export enum AlterTableType {
   /** add column */
-  AT_AddColumn = "AT_AddColumn",
+  AT_AddColumn = 'AT_AddColumn',
   /** implicitly via CREATE OR REPLACE VIEW */
-  AT_AddColumnToView = "AT_AddColumnToView",
+  AT_AddColumnToView = 'AT_AddColumnToView',
   /** alter column default */
-  AT_ColumnDefault = "AT_ColumnDefault",
+  AT_ColumnDefault = 'AT_ColumnDefault',
   /** add a pre-cooked column default */
-  AT_CookedColumnDefault = "AT_CookedColumnDefault",
+  AT_CookedColumnDefault = 'AT_CookedColumnDefault',
   /** alter column drop not null */
-  AT_DropNotNull = "AT_DropNotNull",
+  AT_DropNotNull = 'AT_DropNotNull',
   /** alter column set not null */
-  AT_SetNotNull = "AT_SetNotNull",
+  AT_SetNotNull = 'AT_SetNotNull',
   /** alter column drop expression */
-  AT_DropExpression = "AT_DropExpression",
+  AT_DropExpression = 'AT_DropExpression',
   /** check column is already marked not null */
-  AT_CheckNotNull = "AT_CheckNotNull",
+  AT_CheckNotNull = 'AT_CheckNotNull',
   /** alter column set statistics */
-  AT_SetStatistics = "AT_SetStatistics",
+  AT_SetStatistics = 'AT_SetStatistics',
   /** alter column set ( options ) */
-  AT_SetOptions = "AT_SetOptions",
+  AT_SetOptions = 'AT_SetOptions',
   /** alter column reset ( options ) */
-  AT_ResetOptions = "AT_ResetOptions",
+  AT_ResetOptions = 'AT_ResetOptions',
   /** alter column set storage */
-  AT_SetStorage = "AT_SetStorage",
+  AT_SetStorage = 'AT_SetStorage',
   /** alter column set compression */
-  AT_SetCompression = "AT_SetCompression",
+  AT_SetCompression = 'AT_SetCompression',
   /** drop column */
-  AT_DropColumn = "AT_DropColumn",
+  AT_DropColumn = 'AT_DropColumn',
   /** add index */
-  AT_AddIndex = "AT_AddIndex",
+  AT_AddIndex = 'AT_AddIndex',
   /** internal to commands/tablecmds.c */
-  AT_ReAddIndex = "AT_ReAddIndex",
+  AT_ReAddIndex = 'AT_ReAddIndex',
   /** add constraint */
-  AT_AddConstraint = "AT_AddConstraint",
+  AT_AddConstraint = 'AT_AddConstraint',
   /** internal to commands/tablecmds.c */
-  AT_ReAddConstraint = "AT_ReAddConstraint",
+  AT_ReAddConstraint = 'AT_ReAddConstraint',
   /** internal to commands/tablecmds.c */
-  AT_ReAddDomainConstraint = "AT_ReAddDomainConstraint",
+  AT_ReAddDomainConstraint = 'AT_ReAddDomainConstraint',
   /** alter constraint */
-  AT_AlterConstraint = "AT_AlterConstraint",
+  AT_AlterConstraint = 'AT_AlterConstraint',
   /** validate constraint */
-  AT_ValidateConstraint = "AT_ValidateConstraint",
+  AT_ValidateConstraint = 'AT_ValidateConstraint',
   /** add constraint using existing index */
-  AT_AddIndexConstraint = "AT_AddIndexConstraint",
+  AT_AddIndexConstraint = 'AT_AddIndexConstraint',
   /** drop constraint */
-  AT_DropConstraint = "AT_DropConstraint",
+  AT_DropConstraint = 'AT_DropConstraint',
   /** internal to commands/tablecmds.c */
-  AT_ReAddComment = "AT_ReAddComment",
+  AT_ReAddComment = 'AT_ReAddComment',
   /** alter column type */
-  AT_AlterColumnType = "AT_AlterColumnType",
+  AT_AlterColumnType = 'AT_AlterColumnType',
   /** alter column OPTIONS (...) */
-  AT_AlterColumnGenericOptions = "AT_AlterColumnGenericOptions",
+  AT_AlterColumnGenericOptions = 'AT_AlterColumnGenericOptions',
   /** change owner */
-  AT_ChangeOwner = "AT_ChangeOwner",
+  AT_ChangeOwner = 'AT_ChangeOwner',
   /** CLUSTER ON */
-  AT_ClusterOn = "AT_ClusterOn",
+  AT_ClusterOn = 'AT_ClusterOn',
   /** SET WITHOUT CLUSTER */
-  AT_DropCluster = "AT_DropCluster",
+  AT_DropCluster = 'AT_DropCluster',
   /** SET LOGGED */
-  AT_SetLogged = "AT_SetLogged",
+  AT_SetLogged = 'AT_SetLogged',
   /** SET UNLOGGED */
-  AT_SetUnLogged = "AT_SetUnLogged",
+  AT_SetUnLogged = 'AT_SetUnLogged',
   /** SET WITHOUT OIDS */
-  AT_DropOids = "AT_DropOids",
+  AT_DropOids = 'AT_DropOids',
   /** SET ACCESS METHOD */
-  AT_SetAccessMethod = "AT_SetAccessMethod",
+  AT_SetAccessMethod = 'AT_SetAccessMethod',
   /** SET TABLESPACE */
-  AT_SetTableSpace = "AT_SetTableSpace",
+  AT_SetTableSpace = 'AT_SetTableSpace',
   /** SET (...) -- AM specific parameters */
-  AT_SetRelOptions = "AT_SetRelOptions",
+  AT_SetRelOptions = 'AT_SetRelOptions',
   /** RESET (...) -- AM specific parameters */
-  AT_ResetRelOptions = "AT_ResetRelOptions",
+  AT_ResetRelOptions = 'AT_ResetRelOptions',
   /** replace reloption list in its entirety */
-  AT_ReplaceRelOptions = "AT_ReplaceRelOptions",
+  AT_ReplaceRelOptions = 'AT_ReplaceRelOptions',
   /** ENABLE TRIGGER name */
-  AT_EnableTrig = "AT_EnableTrig",
+  AT_EnableTrig = 'AT_EnableTrig',
   /** ENABLE ALWAYS TRIGGER name */
-  AT_EnableAlwaysTrig = "AT_EnableAlwaysTrig",
+  AT_EnableAlwaysTrig = 'AT_EnableAlwaysTrig',
   /** ENABLE REPLICA TRIGGER name */
-  AT_EnableReplicaTrig = "AT_EnableReplicaTrig",
+  AT_EnableReplicaTrig = 'AT_EnableReplicaTrig',
   /** DISABLE TRIGGER name */
-  AT_DisableTrig = "AT_DisableTrig",
+  AT_DisableTrig = 'AT_DisableTrig',
   /** ENABLE TRIGGER ALL */
-  AT_EnableTrigAll = "AT_EnableTrigAll",
+  AT_EnableTrigAll = 'AT_EnableTrigAll',
   /** DISABLE TRIGGER ALL */
-  AT_DisableTrigAll = "AT_DisableTrigAll",
+  AT_DisableTrigAll = 'AT_DisableTrigAll',
   /** ENABLE TRIGGER USER */
-  AT_EnableTrigUser = "AT_EnableTrigUser",
+  AT_EnableTrigUser = 'AT_EnableTrigUser',
   /** DISABLE TRIGGER USER */
-  AT_DisableTrigUser = "AT_DisableTrigUser",
+  AT_DisableTrigUser = 'AT_DisableTrigUser',
   /** ENABLE RULE name */
-  AT_EnableRule = "AT_EnableRule",
+  AT_EnableRule = 'AT_EnableRule',
   /** ENABLE ALWAYS RULE name */
-  AT_EnableAlwaysRule = "AT_EnableAlwaysRule",
+  AT_EnableAlwaysRule = 'AT_EnableAlwaysRule',
   /** ENABLE REPLICA RULE name */
-  AT_EnableReplicaRule = "AT_EnableReplicaRule",
+  AT_EnableReplicaRule = 'AT_EnableReplicaRule',
   /** DISABLE RULE name */
-  AT_DisableRule = "AT_DisableRule",
+  AT_DisableRule = 'AT_DisableRule',
   /** INHERIT parent */
-  AT_AddInherit = "AT_AddInherit",
+  AT_AddInherit = 'AT_AddInherit',
   /** NO INHERIT parent */
-  AT_DropInherit = "AT_DropInherit",
+  AT_DropInherit = 'AT_DropInherit',
   /** OF <type_name> */
-  AT_AddOf = "AT_AddOf",
+  AT_AddOf = 'AT_AddOf',
   /** NOT OF */
-  AT_DropOf = "AT_DropOf",
+  AT_DropOf = 'AT_DropOf',
   /** REPLICA IDENTITY */
-  AT_ReplicaIdentity = "AT_ReplicaIdentity",
+  AT_ReplicaIdentity = 'AT_ReplicaIdentity',
   /** ENABLE ROW SECURITY */
-  AT_EnableRowSecurity = "AT_EnableRowSecurity",
+  AT_EnableRowSecurity = 'AT_EnableRowSecurity',
   /** DISABLE ROW SECURITY */
-  AT_DisableRowSecurity = "AT_DisableRowSecurity",
+  AT_DisableRowSecurity = 'AT_DisableRowSecurity',
   /** FORCE ROW SECURITY */
-  AT_ForceRowSecurity = "AT_ForceRowSecurity",
+  AT_ForceRowSecurity = 'AT_ForceRowSecurity',
   /** NO FORCE ROW SECURITY */
-  AT_NoForceRowSecurity = "AT_NoForceRowSecurity",
+  AT_NoForceRowSecurity = 'AT_NoForceRowSecurity',
   /** OPTIONS (...) */
-  AT_GenericOptions = "AT_GenericOptions",
+  AT_GenericOptions = 'AT_GenericOptions',
   /** ATTACH PARTITION */
-  AT_AttachPartition = "AT_AttachPartition",
+  AT_AttachPartition = 'AT_AttachPartition',
   /** DETACH PARTITION */
-  AT_DetachPartition = "AT_DetachPartition",
+  AT_DetachPartition = 'AT_DetachPartition',
   /** DETACH PARTITION FINALIZE */
-  AT_DetachPartitionFinalize = "AT_DetachPartitionFinalize",
+  AT_DetachPartitionFinalize = 'AT_DetachPartitionFinalize',
   /** ADD IDENTITY */
-  AT_AddIdentity = "AT_AddIdentity",
+  AT_AddIdentity = 'AT_AddIdentity',
   /** SET identity column options */
-  AT_SetIdentity = "AT_SetIdentity",
+  AT_SetIdentity = 'AT_SetIdentity',
   /** DROP IDENTITY */
-  AT_DropIdentity = "AT_DropIdentity",
+  AT_DropIdentity = 'AT_DropIdentity',
   /** internal to commands/tablecmds.c */
-  AT_ReAddStatistics = "AT_ReAddStatistics",
+  AT_ReAddStatistics = 'AT_ReAddStatistics',
 }
 
 /** ----------------------
@@ -669,11 +669,11 @@ export enum AlterTableType {
  */
 export enum GrantTargetType {
   /** grant on specific named object(s) */
-  ACL_TARGET_OBJECT = "ACL_TARGET_OBJECT",
+  ACL_TARGET_OBJECT = 'ACL_TARGET_OBJECT',
   /** grant on all objects in given schema(s) */
-  ACL_TARGET_ALL_IN_SCHEMA = "ACL_TARGET_ALL_IN_SCHEMA",
+  ACL_TARGET_ALL_IN_SCHEMA = 'ACL_TARGET_ALL_IN_SCHEMA',
   /** ALTER DEFAULT PRIVILEGES */
-  ACL_TARGET_DEFAULTS = "ACL_TARGET_DEFAULTS",
+  ACL_TARGET_DEFAULTS = 'ACL_TARGET_DEFAULTS',
 }
 
 /** ----------------------
@@ -685,17 +685,17 @@ export enum GrantTargetType {
  */
 export enum VariableSetKind {
   /** SET var = value */
-  VAR_SET_VALUE = "VAR_SET_VALUE",
+  VAR_SET_VALUE = 'VAR_SET_VALUE',
   /** SET var TO DEFAULT */
-  VAR_SET_DEFAULT = "VAR_SET_DEFAULT",
+  VAR_SET_DEFAULT = 'VAR_SET_DEFAULT',
   /** SET var FROM CURRENT */
-  VAR_SET_CURRENT = "VAR_SET_CURRENT",
+  VAR_SET_CURRENT = 'VAR_SET_CURRENT',
   /** special case for SET TRANSACTION ... */
-  VAR_SET_MULTI = "VAR_SET_MULTI",
+  VAR_SET_MULTI = 'VAR_SET_MULTI',
   /** RESET var */
-  VAR_RESET = "VAR_RESET",
+  VAR_RESET = 'VAR_RESET',
   /** RESET ALL */
-  VAR_RESET_ALL = "VAR_RESET_ALL",
+  VAR_RESET_ALL = 'VAR_RESET_ALL',
 }
 
 /** ----------
@@ -731,21 +731,21 @@ export enum VariableSetKind {
 export enum ConstrType {
   /** not standard SQL, but a lot of people
    * expect it */
-  CONSTR_NULL = "CONSTR_NULL",
-  CONSTR_NOTNULL = "CONSTR_NOTNULL",
-  CONSTR_DEFAULT = "CONSTR_DEFAULT",
-  CONSTR_IDENTITY = "CONSTR_IDENTITY",
-  CONSTR_GENERATED = "CONSTR_GENERATED",
-  CONSTR_CHECK = "CONSTR_CHECK",
-  CONSTR_PRIMARY = "CONSTR_PRIMARY",
-  CONSTR_UNIQUE = "CONSTR_UNIQUE",
-  CONSTR_EXCLUSION = "CONSTR_EXCLUSION",
-  CONSTR_FOREIGN = "CONSTR_FOREIGN",
+  CONSTR_NULL = 'CONSTR_NULL',
+  CONSTR_NOTNULL = 'CONSTR_NOTNULL',
+  CONSTR_DEFAULT = 'CONSTR_DEFAULT',
+  CONSTR_IDENTITY = 'CONSTR_IDENTITY',
+  CONSTR_GENERATED = 'CONSTR_GENERATED',
+  CONSTR_CHECK = 'CONSTR_CHECK',
+  CONSTR_PRIMARY = 'CONSTR_PRIMARY',
+  CONSTR_UNIQUE = 'CONSTR_UNIQUE',
+  CONSTR_EXCLUSION = 'CONSTR_EXCLUSION',
+  CONSTR_FOREIGN = 'CONSTR_FOREIGN',
   /** attributes for previous constraint node */
-  CONSTR_ATTR_DEFERRABLE = "CONSTR_ATTR_DEFERRABLE",
-  CONSTR_ATTR_NOT_DEFERRABLE = "CONSTR_ATTR_NOT_DEFERRABLE",
-  CONSTR_ATTR_DEFERRED = "CONSTR_ATTR_DEFERRED",
-  CONSTR_ATTR_IMMEDIATE = "CONSTR_ATTR_IMMEDIATE",
+  CONSTR_ATTR_DEFERRABLE = 'CONSTR_ATTR_DEFERRABLE',
+  CONSTR_ATTR_NOT_DEFERRABLE = 'CONSTR_ATTR_NOT_DEFERRABLE',
+  CONSTR_ATTR_DEFERRED = 'CONSTR_ATTR_DEFERRED',
+  CONSTR_ATTR_IMMEDIATE = 'CONSTR_ATTR_IMMEDIATE',
 }
 
 /** ----------------------
@@ -754,11 +754,11 @@ export enum ConstrType {
  */
 export enum ImportForeignSchemaType {
   /** all relations wanted */
-  FDW_IMPORT_SCHEMA_ALL = "FDW_IMPORT_SCHEMA_ALL",
+  FDW_IMPORT_SCHEMA_ALL = 'FDW_IMPORT_SCHEMA_ALL',
   /** include only listed tables in import */
-  FDW_IMPORT_SCHEMA_LIMIT_TO = "FDW_IMPORT_SCHEMA_LIMIT_TO",
+  FDW_IMPORT_SCHEMA_LIMIT_TO = 'FDW_IMPORT_SCHEMA_LIMIT_TO',
   /** exclude listed tables from import */
-  FDW_IMPORT_SCHEMA_EXCEPT = "FDW_IMPORT_SCHEMA_EXCEPT",
+  FDW_IMPORT_SCHEMA_EXCEPT = 'FDW_IMPORT_SCHEMA_EXCEPT',
 }
 
 /** ----------------------
@@ -771,9 +771,9 @@ export enum ImportForeignSchemaType {
  * ----------------------
  */
 export enum RoleStmtType {
-  ROLESTMT_ROLE = "ROLESTMT_ROLE",
-  ROLESTMT_USER = "ROLESTMT_USER",
-  ROLESTMT_GROUP = "ROLESTMT_GROUP",
+  ROLESTMT_ROLE = 'ROLESTMT_ROLE',
+  ROLESTMT_USER = 'ROLESTMT_USER',
+  ROLESTMT_GROUP = 'ROLESTMT_GROUP',
 }
 
 /** ----------------------
@@ -782,28 +782,28 @@ export enum RoleStmtType {
  */
 export enum FetchDirection {
   /** for these, howMany is how many rows to fetch; FETCH_ALL means ALL */
-  FETCH_FORWARD = "FETCH_FORWARD",
-  FETCH_BACKWARD = "FETCH_BACKWARD",
+  FETCH_FORWARD = 'FETCH_FORWARD',
+  FETCH_BACKWARD = 'FETCH_BACKWARD',
   /** for these, howMany indicates a position; only one row is fetched */
-  FETCH_ABSOLUTE = "FETCH_ABSOLUTE",
-  FETCH_RELATIVE = "FETCH_RELATIVE",
+  FETCH_ABSOLUTE = 'FETCH_ABSOLUTE',
+  FETCH_RELATIVE = 'FETCH_RELATIVE',
 }
 
 export enum FunctionParameterMode {
   /** the assigned enum values appear in pg_proc, don't change 'em! */
   /** input only */
-  FUNC_PARAM_IN = "FUNC_PARAM_IN",
+  FUNC_PARAM_IN = 'FUNC_PARAM_IN',
   /** output only */
-  FUNC_PARAM_OUT = "FUNC_PARAM_OUT",
+  FUNC_PARAM_OUT = 'FUNC_PARAM_OUT',
   /** both */
-  FUNC_PARAM_INOUT = "FUNC_PARAM_INOUT",
+  FUNC_PARAM_INOUT = 'FUNC_PARAM_INOUT',
   /** variadic (always input) */
-  FUNC_PARAM_VARIADIC = "FUNC_PARAM_VARIADIC",
+  FUNC_PARAM_VARIADIC = 'FUNC_PARAM_VARIADIC',
   /** table function output column */
-  FUNC_PARAM_TABLE = "FUNC_PARAM_TABLE",
+  FUNC_PARAM_TABLE = 'FUNC_PARAM_TABLE',
   /** this is not used in pg_proc: */
   /** default; effectively same as IN */
-  FUNC_PARAM_DEFAULT = "FUNC_PARAM_DEFAULT",
+  FUNC_PARAM_DEFAULT = 'FUNC_PARAM_DEFAULT',
 }
 
 /** ----------------------
@@ -811,17 +811,17 @@ export enum FunctionParameterMode {
  * ----------------------
  */
 export enum TransactionStmtKind {
-  TRANS_STMT_BEGIN = "TRANS_STMT_BEGIN",
+  TRANS_STMT_BEGIN = 'TRANS_STMT_BEGIN',
   /** semantically identical to BEGIN */
-  TRANS_STMT_START = "TRANS_STMT_START",
-  TRANS_STMT_COMMIT = "TRANS_STMT_COMMIT",
-  TRANS_STMT_ROLLBACK = "TRANS_STMT_ROLLBACK",
-  TRANS_STMT_SAVEPOINT = "TRANS_STMT_SAVEPOINT",
-  TRANS_STMT_RELEASE = "TRANS_STMT_RELEASE",
-  TRANS_STMT_ROLLBACK_TO = "TRANS_STMT_ROLLBACK_TO",
-  TRANS_STMT_PREPARE = "TRANS_STMT_PREPARE",
-  TRANS_STMT_COMMIT_PREPARED = "TRANS_STMT_COMMIT_PREPARED",
-  TRANS_STMT_ROLLBACK_PREPARED = "TRANS_STMT_ROLLBACK_PREPARED",
+  TRANS_STMT_START = 'TRANS_STMT_START',
+  TRANS_STMT_COMMIT = 'TRANS_STMT_COMMIT',
+  TRANS_STMT_ROLLBACK = 'TRANS_STMT_ROLLBACK',
+  TRANS_STMT_SAVEPOINT = 'TRANS_STMT_SAVEPOINT',
+  TRANS_STMT_RELEASE = 'TRANS_STMT_RELEASE',
+  TRANS_STMT_ROLLBACK_TO = 'TRANS_STMT_ROLLBACK_TO',
+  TRANS_STMT_PREPARE = 'TRANS_STMT_PREPARE',
+  TRANS_STMT_COMMIT_PREPARED = 'TRANS_STMT_COMMIT_PREPARED',
+  TRANS_STMT_ROLLBACK_PREPARED = 'TRANS_STMT_ROLLBACK_PREPARED',
 }
 
 /** ----------------------
@@ -829,9 +829,9 @@ export enum TransactionStmtKind {
  * ----------------------
  */
 export enum ViewCheckOption {
-  NO_CHECK_OPTION = "NO_CHECK_OPTION",
-  LOCAL_CHECK_OPTION = "LOCAL_CHECK_OPTION",
-  CASCADED_CHECK_OPTION = "CASCADED_CHECK_OPTION",
+  NO_CHECK_OPTION = 'NO_CHECK_OPTION',
+  LOCAL_CHECK_OPTION = 'LOCAL_CHECK_OPTION',
+  CASCADED_CHECK_OPTION = 'CASCADED_CHECK_OPTION',
 }
 
 /** ----------------------
@@ -839,10 +839,10 @@ export enum ViewCheckOption {
  * ----------------------
  */
 export enum DiscardMode {
-  DISCARD_ALL = "DISCARD_ALL",
-  DISCARD_PLANS = "DISCARD_PLANS",
-  DISCARD_SEQUENCES = "DISCARD_SEQUENCES",
-  DISCARD_TEMP = "DISCARD_TEMP",
+  DISCARD_ALL = 'DISCARD_ALL',
+  DISCARD_PLANS = 'DISCARD_PLANS',
+  DISCARD_SEQUENCES = 'DISCARD_SEQUENCES',
+  DISCARD_TEMP = 'DISCARD_TEMP',
 }
 
 /** ----------------------
@@ -851,26 +851,26 @@ export enum DiscardMode {
  */
 export enum ReindexObjectType {
   /** index */
-  REINDEX_OBJECT_INDEX = "REINDEX_OBJECT_INDEX",
+  REINDEX_OBJECT_INDEX = 'REINDEX_OBJECT_INDEX',
   /** table or materialized view */
-  REINDEX_OBJECT_TABLE = "REINDEX_OBJECT_TABLE",
+  REINDEX_OBJECT_TABLE = 'REINDEX_OBJECT_TABLE',
   /** schema */
-  REINDEX_OBJECT_SCHEMA = "REINDEX_OBJECT_SCHEMA",
+  REINDEX_OBJECT_SCHEMA = 'REINDEX_OBJECT_SCHEMA',
   /** system catalogs */
-  REINDEX_OBJECT_SYSTEM = "REINDEX_OBJECT_SYSTEM",
+  REINDEX_OBJECT_SYSTEM = 'REINDEX_OBJECT_SYSTEM',
   /** database */
-  REINDEX_OBJECT_DATABASE = "REINDEX_OBJECT_DATABASE",
+  REINDEX_OBJECT_DATABASE = 'REINDEX_OBJECT_DATABASE',
 }
 
 /**
  * TS Configuration stmts: DefineStmt, RenameStmt and DropStmt are default
  */
 export enum AlterTSConfigType {
-  ALTER_TSCONFIG_ADD_MAPPING = "ALTER_TSCONFIG_ADD_MAPPING",
-  ALTER_TSCONFIG_ALTER_MAPPING_FOR_TOKEN = "ALTER_TSCONFIG_ALTER_MAPPING_FOR_TOKEN",
-  ALTER_TSCONFIG_REPLACE_DICT = "ALTER_TSCONFIG_REPLACE_DICT",
-  ALTER_TSCONFIG_REPLACE_DICT_FOR_TOKEN = "ALTER_TSCONFIG_REPLACE_DICT_FOR_TOKEN",
-  ALTER_TSCONFIG_DROP_MAPPING = "ALTER_TSCONFIG_DROP_MAPPING",
+  ALTER_TSCONFIG_ADD_MAPPING = 'ALTER_TSCONFIG_ADD_MAPPING',
+  ALTER_TSCONFIG_ALTER_MAPPING_FOR_TOKEN = 'ALTER_TSCONFIG_ALTER_MAPPING_FOR_TOKEN',
+  ALTER_TSCONFIG_REPLACE_DICT = 'ALTER_TSCONFIG_REPLACE_DICT',
+  ALTER_TSCONFIG_REPLACE_DICT_FOR_TOKEN = 'ALTER_TSCONFIG_REPLACE_DICT_FOR_TOKEN',
+  ALTER_TSCONFIG_DROP_MAPPING = 'ALTER_TSCONFIG_DROP_MAPPING',
 }
 
 /**
@@ -878,45 +878,45 @@ export enum AlterTSConfigType {
  */
 export enum PublicationObjSpecType {
   /** A table */
-  PUBLICATIONOBJ_TABLE = "PUBLICATIONOBJ_TABLE",
+  PUBLICATIONOBJ_TABLE = 'PUBLICATIONOBJ_TABLE',
   /** All tables in schema */
-  PUBLICATIONOBJ_TABLES_IN_SCHEMA = "PUBLICATIONOBJ_TABLES_IN_SCHEMA",
+  PUBLICATIONOBJ_TABLES_IN_SCHEMA = 'PUBLICATIONOBJ_TABLES_IN_SCHEMA',
   /** All tables in first element of
    * search_path */
-  PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA = "PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA",
+  PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA = 'PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA',
   /** Continuation of previous type */
-  PUBLICATIONOBJ_CONTINUATION = "PUBLICATIONOBJ_CONTINUATION",
+  PUBLICATIONOBJ_CONTINUATION = 'PUBLICATIONOBJ_CONTINUATION',
 }
 
 export enum AlterPublicationAction {
   /** add objects to publication */
-  AP_AddObjects = "AP_AddObjects",
+  AP_AddObjects = 'AP_AddObjects',
   /** remove objects from publication */
-  AP_DropObjects = "AP_DropObjects",
+  AP_DropObjects = 'AP_DropObjects',
   /** set list of objects */
-  AP_SetObjects = "AP_SetObjects",
+  AP_SetObjects = 'AP_SetObjects',
 }
 
 export enum AlterSubscriptionType {
-  ALTER_SUBSCRIPTION_OPTIONS = "ALTER_SUBSCRIPTION_OPTIONS",
-  ALTER_SUBSCRIPTION_CONNECTION = "ALTER_SUBSCRIPTION_CONNECTION",
-  ALTER_SUBSCRIPTION_SET_PUBLICATION = "ALTER_SUBSCRIPTION_SET_PUBLICATION",
-  ALTER_SUBSCRIPTION_ADD_PUBLICATION = "ALTER_SUBSCRIPTION_ADD_PUBLICATION",
-  ALTER_SUBSCRIPTION_DROP_PUBLICATION = "ALTER_SUBSCRIPTION_DROP_PUBLICATION",
-  ALTER_SUBSCRIPTION_REFRESH = "ALTER_SUBSCRIPTION_REFRESH",
-  ALTER_SUBSCRIPTION_ENABLED = "ALTER_SUBSCRIPTION_ENABLED",
-  ALTER_SUBSCRIPTION_SKIP = "ALTER_SUBSCRIPTION_SKIP",
+  ALTER_SUBSCRIPTION_OPTIONS = 'ALTER_SUBSCRIPTION_OPTIONS',
+  ALTER_SUBSCRIPTION_CONNECTION = 'ALTER_SUBSCRIPTION_CONNECTION',
+  ALTER_SUBSCRIPTION_SET_PUBLICATION = 'ALTER_SUBSCRIPTION_SET_PUBLICATION',
+  ALTER_SUBSCRIPTION_ADD_PUBLICATION = 'ALTER_SUBSCRIPTION_ADD_PUBLICATION',
+  ALTER_SUBSCRIPTION_DROP_PUBLICATION = 'ALTER_SUBSCRIPTION_DROP_PUBLICATION',
+  ALTER_SUBSCRIPTION_REFRESH = 'ALTER_SUBSCRIPTION_REFRESH',
+  ALTER_SUBSCRIPTION_ENABLED = 'ALTER_SUBSCRIPTION_ENABLED',
+  ALTER_SUBSCRIPTION_SKIP = 'ALTER_SUBSCRIPTION_SKIP',
 }
 
 export enum OnCommitAction {
   /** No ON COMMIT clause (do nothing) */
-  ONCOMMIT_NOOP = "ONCOMMIT_NOOP",
+  ONCOMMIT_NOOP = 'ONCOMMIT_NOOP',
   /** ON COMMIT PRESERVE ROWS (do nothing) */
-  ONCOMMIT_PRESERVE_ROWS = "ONCOMMIT_PRESERVE_ROWS",
+  ONCOMMIT_PRESERVE_ROWS = 'ONCOMMIT_PRESERVE_ROWS',
   /** ON COMMIT DELETE ROWS */
-  ONCOMMIT_DELETE_ROWS = "ONCOMMIT_DELETE_ROWS",
+  ONCOMMIT_DELETE_ROWS = 'ONCOMMIT_DELETE_ROWS',
   /** ON COMMIT DROP */
-  ONCOMMIT_DROP = "ONCOMMIT_DROP",
+  ONCOMMIT_DROP = 'ONCOMMIT_DROP',
 }
 
 /**
@@ -947,10 +947,10 @@ export enum OnCommitAction {
  *				of Param is also converted to PARAM_EXEC during planning.)
  */
 export enum ParamKind {
-  PARAM_EXTERN = "PARAM_EXTERN",
-  PARAM_EXEC = "PARAM_EXEC",
-  PARAM_SUBLINK = "PARAM_SUBLINK",
-  PARAM_MULTIEXPR = "PARAM_MULTIEXPR",
+  PARAM_EXTERN = 'PARAM_EXTERN',
+  PARAM_EXEC = 'PARAM_EXEC',
+  PARAM_SUBLINK = 'PARAM_SUBLINK',
+  PARAM_MULTIEXPR = 'PARAM_MULTIEXPR',
 }
 
 /**
@@ -961,13 +961,13 @@ export enum ParamKind {
  */
 export enum CoercionContext {
   /** coercion in context of expression */
-  COERCION_IMPLICIT = "COERCION_IMPLICIT",
+  COERCION_IMPLICIT = 'COERCION_IMPLICIT',
   /** coercion in context of assignment */
-  COERCION_ASSIGNMENT = "COERCION_ASSIGNMENT",
+  COERCION_ASSIGNMENT = 'COERCION_ASSIGNMENT',
   /** if no assignment cast, use CoerceViaIO */
-  COERCION_PLPGSQL = "COERCION_PLPGSQL",
+  COERCION_PLPGSQL = 'COERCION_PLPGSQL',
   /** explicit cast operation */
-  COERCION_EXPLICIT = "COERCION_EXPLICIT",
+  COERCION_EXPLICIT = 'COERCION_EXPLICIT',
 }
 
 /**
@@ -984,13 +984,13 @@ export enum CoercionContext {
  */
 export enum CoercionForm {
   /** display as a function call */
-  COERCE_EXPLICIT_CALL = "COERCE_EXPLICIT_CALL",
+  COERCE_EXPLICIT_CALL = 'COERCE_EXPLICIT_CALL',
   /** display as an explicit cast */
-  COERCE_EXPLICIT_CAST = "COERCE_EXPLICIT_CAST",
+  COERCE_EXPLICIT_CAST = 'COERCE_EXPLICIT_CAST',
   /** implicit cast, so hide it */
-  COERCE_IMPLICIT_CAST = "COERCE_IMPLICIT_CAST",
+  COERCE_IMPLICIT_CAST = 'COERCE_IMPLICIT_CAST',
   /** display with SQL-mandated special syntax */
-  COERCE_SQL_SYNTAX = "COERCE_SQL_SYNTAX",
+  COERCE_SQL_SYNTAX = 'COERCE_SQL_SYNTAX',
 }
 
 /**
@@ -1001,9 +1001,9 @@ export enum CoercionForm {
  * or more arguments.
  */
 export enum BoolExprType {
-  AND_EXPR = "AND_EXPR",
-  OR_EXPR = "OR_EXPR",
-  NOT_EXPR = "NOT_EXPR",
+  AND_EXPR = 'AND_EXPR',
+  OR_EXPR = 'OR_EXPR',
+  NOT_EXPR = 'NOT_EXPR',
 }
 
 /**
@@ -1058,15 +1058,15 @@ export enum BoolExprType {
  * in SubPlans generated for WITH subqueries.
  */
 export enum SubLinkType {
-  EXISTS_SUBLINK = "EXISTS_SUBLINK",
-  ALL_SUBLINK = "ALL_SUBLINK",
-  ANY_SUBLINK = "ANY_SUBLINK",
-  ROWCOMPARE_SUBLINK = "ROWCOMPARE_SUBLINK",
-  EXPR_SUBLINK = "EXPR_SUBLINK",
-  MULTIEXPR_SUBLINK = "MULTIEXPR_SUBLINK",
-  ARRAY_SUBLINK = "ARRAY_SUBLINK",
+  EXISTS_SUBLINK = 'EXISTS_SUBLINK',
+  ALL_SUBLINK = 'ALL_SUBLINK',
+  ANY_SUBLINK = 'ANY_SUBLINK',
+  ROWCOMPARE_SUBLINK = 'ROWCOMPARE_SUBLINK',
+  EXPR_SUBLINK = 'EXPR_SUBLINK',
+  MULTIEXPR_SUBLINK = 'MULTIEXPR_SUBLINK',
+  ARRAY_SUBLINK = 'ARRAY_SUBLINK',
   /** for SubPlans only */
-  CTE_SUBLINK = "CTE_SUBLINK",
+  CTE_SUBLINK = 'CTE_SUBLINK',
 }
 
 /**
@@ -1086,25 +1086,25 @@ export enum SubLinkType {
 export enum RowCompareType {
   /** Values of this enum are chosen to match btree strategy numbers */
   /** BTLessStrategyNumber */
-  ROWCOMPARE_LT = "ROWCOMPARE_LT",
+  ROWCOMPARE_LT = 'ROWCOMPARE_LT',
   /** BTLessEqualStrategyNumber */
-  ROWCOMPARE_LE = "ROWCOMPARE_LE",
+  ROWCOMPARE_LE = 'ROWCOMPARE_LE',
   /** BTEqualStrategyNumber */
-  ROWCOMPARE_EQ = "ROWCOMPARE_EQ",
+  ROWCOMPARE_EQ = 'ROWCOMPARE_EQ',
   /** BTGreaterEqualStrategyNumber */
-  ROWCOMPARE_GE = "ROWCOMPARE_GE",
+  ROWCOMPARE_GE = 'ROWCOMPARE_GE',
   /** BTGreaterStrategyNumber */
-  ROWCOMPARE_GT = "ROWCOMPARE_GT",
+  ROWCOMPARE_GT = 'ROWCOMPARE_GT',
   /** no such btree strategy */
-  ROWCOMPARE_NE = "ROWCOMPARE_NE",
+  ROWCOMPARE_NE = 'ROWCOMPARE_NE',
 }
 
 /**
  * MinMaxExpr - a GREATEST or LEAST function
  */
 export enum MinMaxOp {
-  IS_GREATEST = "IS_GREATEST",
-  IS_LEAST = "IS_LEAST",
+  IS_GREATEST = 'IS_GREATEST',
+  IS_LEAST = 'IS_LEAST',
 }
 
 /**
@@ -1119,21 +1119,21 @@ export enum MinMaxOp {
  * not need a collation field; also, all these functions are stable.
  */
 export enum SQLValueFunctionOp {
-  SVFOP_CURRENT_DATE = "SVFOP_CURRENT_DATE",
-  SVFOP_CURRENT_TIME = "SVFOP_CURRENT_TIME",
-  SVFOP_CURRENT_TIME_N = "SVFOP_CURRENT_TIME_N",
-  SVFOP_CURRENT_TIMESTAMP = "SVFOP_CURRENT_TIMESTAMP",
-  SVFOP_CURRENT_TIMESTAMP_N = "SVFOP_CURRENT_TIMESTAMP_N",
-  SVFOP_LOCALTIME = "SVFOP_LOCALTIME",
-  SVFOP_LOCALTIME_N = "SVFOP_LOCALTIME_N",
-  SVFOP_LOCALTIMESTAMP = "SVFOP_LOCALTIMESTAMP",
-  SVFOP_LOCALTIMESTAMP_N = "SVFOP_LOCALTIMESTAMP_N",
-  SVFOP_CURRENT_ROLE = "SVFOP_CURRENT_ROLE",
-  SVFOP_CURRENT_USER = "SVFOP_CURRENT_USER",
-  SVFOP_USER = "SVFOP_USER",
-  SVFOP_SESSION_USER = "SVFOP_SESSION_USER",
-  SVFOP_CURRENT_CATALOG = "SVFOP_CURRENT_CATALOG",
-  SVFOP_CURRENT_SCHEMA = "SVFOP_CURRENT_SCHEMA",
+  SVFOP_CURRENT_DATE = 'SVFOP_CURRENT_DATE',
+  SVFOP_CURRENT_TIME = 'SVFOP_CURRENT_TIME',
+  SVFOP_CURRENT_TIME_N = 'SVFOP_CURRENT_TIME_N',
+  SVFOP_CURRENT_TIMESTAMP = 'SVFOP_CURRENT_TIMESTAMP',
+  SVFOP_CURRENT_TIMESTAMP_N = 'SVFOP_CURRENT_TIMESTAMP_N',
+  SVFOP_LOCALTIME = 'SVFOP_LOCALTIME',
+  SVFOP_LOCALTIME_N = 'SVFOP_LOCALTIME_N',
+  SVFOP_LOCALTIMESTAMP = 'SVFOP_LOCALTIMESTAMP',
+  SVFOP_LOCALTIMESTAMP_N = 'SVFOP_LOCALTIMESTAMP_N',
+  SVFOP_CURRENT_ROLE = 'SVFOP_CURRENT_ROLE',
+  SVFOP_CURRENT_USER = 'SVFOP_CURRENT_USER',
+  SVFOP_USER = 'SVFOP_USER',
+  SVFOP_SESSION_USER = 'SVFOP_SESSION_USER',
+  SVFOP_CURRENT_CATALOG = 'SVFOP_CURRENT_CATALOG',
+  SVFOP_CURRENT_SCHEMA = 'SVFOP_CURRENT_SCHEMA',
 }
 
 /**
@@ -1149,26 +1149,26 @@ export enum SQLValueFunctionOp {
  */
 export enum XmlExprOp {
   /** XMLCONCAT(args) */
-  IS_XMLCONCAT = "IS_XMLCONCAT",
+  IS_XMLCONCAT = 'IS_XMLCONCAT',
   /** XMLELEMENT(name, xml_attributes, args) */
-  IS_XMLELEMENT = "IS_XMLELEMENT",
+  IS_XMLELEMENT = 'IS_XMLELEMENT',
   /** XMLFOREST(xml_attributes) */
-  IS_XMLFOREST = "IS_XMLFOREST",
+  IS_XMLFOREST = 'IS_XMLFOREST',
   /** XMLPARSE(text, is_doc, preserve_ws) */
-  IS_XMLPARSE = "IS_XMLPARSE",
+  IS_XMLPARSE = 'IS_XMLPARSE',
   /** XMLPI(name [, args]) */
-  IS_XMLPI = "IS_XMLPI",
+  IS_XMLPI = 'IS_XMLPI',
   /** XMLROOT(xml, version, standalone) */
-  IS_XMLROOT = "IS_XMLROOT",
+  IS_XMLROOT = 'IS_XMLROOT',
   /** XMLSERIALIZE(is_document, xmlval, indent) */
-  IS_XMLSERIALIZE = "IS_XMLSERIALIZE",
+  IS_XMLSERIALIZE = 'IS_XMLSERIALIZE',
   /** xmlval IS DOCUMENT */
-  IS_DOCUMENT = "IS_DOCUMENT",
+  IS_DOCUMENT = 'IS_DOCUMENT',
 }
 
 export enum XmlOptionType {
-  XMLOPTION_DOCUMENT = "XMLOPTION_DOCUMENT",
-  XMLOPTION_CONTENT = "XMLOPTION_CONTENT",
+  XMLOPTION_DOCUMENT = 'XMLOPTION_DOCUMENT',
+  XMLOPTION_CONTENT = 'XMLOPTION_CONTENT',
 }
 
 /**
@@ -1177,10 +1177,10 @@ export enum XmlOptionType {
  */
 export enum JsonEncoding {
   /** unspecified */
-  JS_ENC_DEFAULT = "JS_ENC_DEFAULT",
-  JS_ENC_UTF8 = "JS_ENC_UTF8",
-  JS_ENC_UTF16 = "JS_ENC_UTF16",
-  JS_ENC_UTF32 = "JS_ENC_UTF32",
+  JS_ENC_DEFAULT = 'JS_ENC_DEFAULT',
+  JS_ENC_UTF8 = 'JS_ENC_UTF8',
+  JS_ENC_UTF16 = 'JS_ENC_UTF16',
+  JS_ENC_UTF32 = 'JS_ENC_UTF32',
 }
 
 /**
@@ -1189,19 +1189,19 @@ export enum JsonEncoding {
  */
 export enum JsonFormatType {
   /** unspecified */
-  JS_FORMAT_DEFAULT = "JS_FORMAT_DEFAULT",
+  JS_FORMAT_DEFAULT = 'JS_FORMAT_DEFAULT',
   /** FORMAT JSON [ENCODING ...] */
-  JS_FORMAT_JSON = "JS_FORMAT_JSON",
+  JS_FORMAT_JSON = 'JS_FORMAT_JSON',
   /** implicit internal format for RETURNING
    * jsonb */
-  JS_FORMAT_JSONB = "JS_FORMAT_JSONB",
+  JS_FORMAT_JSONB = 'JS_FORMAT_JSONB',
 }
 
 export enum JsonConstructorType {
-  JSCTOR_JSON_OBJECT = "JSCTOR_JSON_OBJECT",
-  JSCTOR_JSON_ARRAY = "JSCTOR_JSON_ARRAY",
-  JSCTOR_JSON_OBJECTAGG = "JSCTOR_JSON_OBJECTAGG",
-  JSCTOR_JSON_ARRAYAGG = "JSCTOR_JSON_ARRAYAGG",
+  JSCTOR_JSON_OBJECT = 'JSCTOR_JSON_OBJECT',
+  JSCTOR_JSON_ARRAY = 'JSCTOR_JSON_ARRAY',
+  JSCTOR_JSON_OBJECTAGG = 'JSCTOR_JSON_OBJECTAGG',
+  JSCTOR_JSON_ARRAYAGG = 'JSCTOR_JSON_ARRAYAGG',
 }
 
 /**
@@ -1210,13 +1210,13 @@ export enum JsonConstructorType {
  */
 export enum JsonValueType {
   /** IS JSON [VALUE] */
-  JS_TYPE_ANY = "JS_TYPE_ANY",
+  JS_TYPE_ANY = 'JS_TYPE_ANY',
   /** IS JSON OBJECT */
-  JS_TYPE_OBJECT = "JS_TYPE_OBJECT",
+  JS_TYPE_OBJECT = 'JS_TYPE_OBJECT',
   /** IS JSON ARRAY */
-  JS_TYPE_ARRAY = "JS_TYPE_ARRAY",
+  JS_TYPE_ARRAY = 'JS_TYPE_ARRAY',
   /** IS JSON SCALAR */
-  JS_TYPE_SCALAR = "JS_TYPE_SCALAR",
+  JS_TYPE_SCALAR = 'JS_TYPE_SCALAR',
 }
 
 /** ----------------
@@ -1238,8 +1238,8 @@ export enum JsonValueType {
  * ----------------
  */
 export enum NullTestType {
-  IS_NULL = "IS_NULL",
-  IS_NOT_NULL = "IS_NOT_NULL",
+  IS_NULL = 'IS_NULL',
+  IS_NOT_NULL = 'IS_NOT_NULL',
 }
 
 /**
@@ -1251,25 +1251,25 @@ export enum NullTestType {
  * The appropriate test is performed and returned as a boolean Datum.
  */
 export enum BoolTestType {
-  IS_TRUE = "IS_TRUE",
-  IS_NOT_TRUE = "IS_NOT_TRUE",
-  IS_FALSE = "IS_FALSE",
-  IS_NOT_FALSE = "IS_NOT_FALSE",
-  IS_UNKNOWN = "IS_UNKNOWN",
-  IS_NOT_UNKNOWN = "IS_NOT_UNKNOWN",
+  IS_TRUE = 'IS_TRUE',
+  IS_NOT_TRUE = 'IS_NOT_TRUE',
+  IS_FALSE = 'IS_FALSE',
+  IS_NOT_FALSE = 'IS_NOT_FALSE',
+  IS_UNKNOWN = 'IS_UNKNOWN',
+  IS_NOT_UNKNOWN = 'IS_NOT_UNKNOWN',
 }
 
 export enum LockClauseStrength {
   /** no such clause - only used in PlanRowMark */
-  LCS_NONE = "LCS_NONE",
+  LCS_NONE = 'LCS_NONE',
   /** FOR KEY SHARE */
-  LCS_FORKEYSHARE = "LCS_FORKEYSHARE",
+  LCS_FORKEYSHARE = 'LCS_FORKEYSHARE',
   /** FOR SHARE */
-  LCS_FORSHARE = "LCS_FORSHARE",
+  LCS_FORSHARE = 'LCS_FORSHARE',
   /** FOR NO KEY UPDATE */
-  LCS_FORNOKEYUPDATE = "LCS_FORNOKEYUPDATE",
+  LCS_FORNOKEYUPDATE = 'LCS_FORNOKEYUPDATE',
   /** FOR UPDATE */
-  LCS_FORUPDATE = "LCS_FORUPDATE",
+  LCS_FORUPDATE = 'LCS_FORUPDATE',
 }
 
 /**
@@ -1280,11 +1280,11 @@ export enum LockClauseStrength {
  */
 export enum LockWaitPolicy {
   /** Wait for the lock to become available (default behavior) */
-  LockWaitBlock = "LockWaitBlock",
+  LockWaitBlock = 'LockWaitBlock',
   /** Skip rows that can't be locked (SKIP LOCKED) */
-  LockWaitSkip = "LockWaitSkip",
+  LockWaitSkip = 'LockWaitSkip',
   /** Raise an error if a row cannot be locked (NOWAIT) */
-  LockWaitError = "LockWaitError",
+  LockWaitError = 'LockWaitError',
 }
 
 /**
@@ -1292,13 +1292,13 @@ export enum LockWaitPolicy {
  */
 export enum LockTupleMode {
   /** SELECT FOR KEY SHARE */
-  LockTupleKeyShare = "LockTupleKeyShare",
+  LockTupleKeyShare = 'LockTupleKeyShare',
   /** SELECT FOR SHARE */
-  LockTupleShare = "LockTupleShare",
+  LockTupleShare = 'LockTupleShare',
   /** SELECT FOR NO KEY UPDATE, and UPDATEs that don't modify key columns */
-  LockTupleNoKeyExclusive = "LockTupleNoKeyExclusive",
+  LockTupleNoKeyExclusive = 'LockTupleNoKeyExclusive',
   /** SELECT FOR UPDATE, UPDATEs that modify key columns, and DELETE */
-  LockTupleExclusive = "LockTupleExclusive",
+  LockTupleExclusive = 'LockTupleExclusive',
 }
 
 /**
@@ -1308,23 +1308,23 @@ export enum LockTupleMode {
  * This is needed in both parsenodes.h and plannodes.h, so put it here...
  */
 export enum CmdType {
-  CMD_UNKNOWN = "CMD_UNKNOWN",
+  CMD_UNKNOWN = 'CMD_UNKNOWN',
   /** select stmt */
-  CMD_SELECT = "CMD_SELECT",
+  CMD_SELECT = 'CMD_SELECT',
   /** update stmt */
-  CMD_UPDATE = "CMD_UPDATE",
+  CMD_UPDATE = 'CMD_UPDATE',
   /** insert stmt */
-  CMD_INSERT = "CMD_INSERT",
+  CMD_INSERT = 'CMD_INSERT',
   /** delete stmt */
-  CMD_DELETE = "CMD_DELETE",
+  CMD_DELETE = 'CMD_DELETE',
   /** merge stmt */
-  CMD_MERGE = "CMD_MERGE",
+  CMD_MERGE = 'CMD_MERGE',
   /** cmds like create, destroy, copy, vacuum,
    * etc. */
-  CMD_UTILITY = "CMD_UTILITY",
+  CMD_UTILITY = 'CMD_UTILITY',
   /** dummy command for instead nothing rules
    * with qual */
-  CMD_NOTHING = "CMD_NOTHING",
+  CMD_NOTHING = 'CMD_NOTHING',
 }
 
 /**
@@ -1343,13 +1343,13 @@ export enum JoinType {
    * these codes can appear in parser output (e.g., JoinExpr nodes).
    */
   /** matching tuple pairs only */
-  JOIN_INNER = "JOIN_INNER",
+  JOIN_INNER = 'JOIN_INNER',
   /** pairs + unmatched LHS tuples */
-  JOIN_LEFT = "JOIN_LEFT",
+  JOIN_LEFT = 'JOIN_LEFT',
   /** pairs + unmatched LHS + unmatched RHS */
-  JOIN_FULL = "JOIN_FULL",
+  JOIN_FULL = 'JOIN_FULL',
   /** pairs + unmatched RHS tuples */
-  JOIN_RIGHT = "JOIN_RIGHT",
+  JOIN_RIGHT = 'JOIN_RIGHT',
   /**
    * Semijoins and anti-semijoins (as defined in relational theory) do not
    * appear in the SQL JOIN syntax, but there are standard idioms for
@@ -1360,19 +1360,19 @@ export enum JoinType {
    * guaranteed to be null-extended.
    */
   /** 1 copy of each LHS row that has match(es) */
-  JOIN_SEMI = "JOIN_SEMI",
+  JOIN_SEMI = 'JOIN_SEMI',
   /** 1 copy of each LHS row that has no match */
-  JOIN_ANTI = "JOIN_ANTI",
+  JOIN_ANTI = 'JOIN_ANTI',
   /** 1 copy of each RHS row that has no match */
-  JOIN_RIGHT_ANTI = "JOIN_RIGHT_ANTI",
+  JOIN_RIGHT_ANTI = 'JOIN_RIGHT_ANTI',
   /**
    * These codes are used internally in the planner, but are not supported
    * by the executor (nor, indeed, by most of the planner).
    */
   /** LHS path must be made unique */
-  JOIN_UNIQUE_OUTER = "JOIN_UNIQUE_OUTER",
+  JOIN_UNIQUE_OUTER = 'JOIN_UNIQUE_OUTER',
   /** RHS path must be made unique */
-  JOIN_UNIQUE_INNER = "JOIN_UNIQUE_INNER",
+  JOIN_UNIQUE_INNER = 'JOIN_UNIQUE_INNER',
   /**
    * We might need additional join types someday.
    */
@@ -1386,23 +1386,23 @@ export enum JoinType {
  */
 export enum AggStrategy {
   /** simple agg across all input rows */
-  AGG_PLAIN = "AGG_PLAIN",
+  AGG_PLAIN = 'AGG_PLAIN',
   /** grouped agg, input must be sorted */
-  AGG_SORTED = "AGG_SORTED",
+  AGG_SORTED = 'AGG_SORTED',
   /** grouped agg, use internal hashtable */
-  AGG_HASHED = "AGG_HASHED",
+  AGG_HASHED = 'AGG_HASHED',
   /** grouped agg, hash and sort both used */
-  AGG_MIXED = "AGG_MIXED",
+  AGG_MIXED = 'AGG_MIXED',
 }
 
 /** Supported operating modes (i.e., useful combinations of these options): */
 export enum AggSplit {
   /** Basic, non-split aggregation: */
-  AGGSPLIT_SIMPLE = "AGGSPLIT_SIMPLE",
+  AGGSPLIT_SIMPLE = 'AGGSPLIT_SIMPLE',
   /** Initial phase of partial aggregation, with serialization: */
-  AGGSPLIT_INITIAL_SERIAL = "AGGSPLIT_INITIAL_SERIAL",
+  AGGSPLIT_INITIAL_SERIAL = 'AGGSPLIT_INITIAL_SERIAL',
   /** Final phase of partial aggregation, with deserialization: */
-  AGGSPLIT_FINAL_DESERIAL = "AGGSPLIT_FINAL_DESERIAL",
+  AGGSPLIT_FINAL_DESERIAL = 'AGGSPLIT_FINAL_DESERIAL',
 }
 
 /**
@@ -1412,17 +1412,17 @@ export enum AggSplit {
  * This is needed in both pathnodes.h and plannodes.h, so put it here...
  */
 export enum SetOpCmd {
-  SETOPCMD_INTERSECT = "SETOPCMD_INTERSECT",
-  SETOPCMD_INTERSECT_ALL = "SETOPCMD_INTERSECT_ALL",
-  SETOPCMD_EXCEPT = "SETOPCMD_EXCEPT",
-  SETOPCMD_EXCEPT_ALL = "SETOPCMD_EXCEPT_ALL",
+  SETOPCMD_INTERSECT = 'SETOPCMD_INTERSECT',
+  SETOPCMD_INTERSECT_ALL = 'SETOPCMD_INTERSECT_ALL',
+  SETOPCMD_EXCEPT = 'SETOPCMD_EXCEPT',
+  SETOPCMD_EXCEPT_ALL = 'SETOPCMD_EXCEPT_ALL',
 }
 
 export enum SetOpStrategy {
   /** input must be sorted */
-  SETOP_SORTED = "SETOP_SORTED",
+  SETOP_SORTED = 'SETOP_SORTED',
   /** use internal hashtable */
-  SETOP_HASHED = "SETOP_HASHED",
+  SETOP_HASHED = 'SETOP_HASHED',
 }
 
 /**
@@ -1433,11 +1433,11 @@ export enum SetOpStrategy {
  */
 export enum OnConflictAction {
   /** No "ON CONFLICT" clause */
-  ONCONFLICT_NONE = "ONCONFLICT_NONE",
+  ONCONFLICT_NONE = 'ONCONFLICT_NONE',
   /** ON CONFLICT ... DO NOTHING */
-  ONCONFLICT_NOTHING = "ONCONFLICT_NOTHING",
+  ONCONFLICT_NOTHING = 'ONCONFLICT_NOTHING',
   /** ON CONFLICT ... DO UPDATE */
-  ONCONFLICT_UPDATE = "ONCONFLICT_UPDATE",
+  ONCONFLICT_UPDATE = 'ONCONFLICT_UPDATE',
 }
 
 /**
@@ -1448,619 +1448,619 @@ export enum OnConflictAction {
  */
 export enum LimitOption {
   /** No limit present */
-  LIMIT_OPTION_DEFAULT = "LIMIT_OPTION_DEFAULT",
+  LIMIT_OPTION_DEFAULT = 'LIMIT_OPTION_DEFAULT',
   /** FETCH FIRST... ONLY */
-  LIMIT_OPTION_COUNT = "LIMIT_OPTION_COUNT",
+  LIMIT_OPTION_COUNT = 'LIMIT_OPTION_COUNT',
   /** FETCH FIRST... WITH TIES */
-  LIMIT_OPTION_WITH_TIES = "LIMIT_OPTION_WITH_TIES",
+  LIMIT_OPTION_WITH_TIES = 'LIMIT_OPTION_WITH_TIES',
 }
 
 export enum VacOptValue {
-  VACOPTVALUE_UNSPECIFIED = "VACOPTVALUE_UNSPECIFIED",
-  VACOPTVALUE_AUTO = "VACOPTVALUE_AUTO",
-  VACOPTVALUE_DISABLED = "VACOPTVALUE_DISABLED",
-  VACOPTVALUE_ENABLED = "VACOPTVALUE_ENABLED",
+  VACOPTVALUE_UNSPECIFIED = 'VACOPTVALUE_UNSPECIFIED',
+  VACOPTVALUE_AUTO = 'VACOPTVALUE_AUTO',
+  VACOPTVALUE_DISABLED = 'VACOPTVALUE_DISABLED',
+  VACOPTVALUE_ENABLED = 'VACOPTVALUE_ENABLED',
 }
 
 export enum ScanDirection {
-  BackwardScanDirection = "BackwardScanDirection",
-  NoMovementScanDirection = "NoMovementScanDirection",
-  ForwardScanDirection = "ForwardScanDirection",
+  BackwardScanDirection = 'BackwardScanDirection',
+  NoMovementScanDirection = 'NoMovementScanDirection',
+  ForwardScanDirection = 'ForwardScanDirection',
 }
 
 export enum pg_enc {
   /** SQL/ASCII */
-  PG_SQL_ASCII = "PG_SQL_ASCII",
+  PG_SQL_ASCII = 'PG_SQL_ASCII',
   /** EUC for Japanese */
-  PG_EUC_JP = "PG_EUC_JP",
+  PG_EUC_JP = 'PG_EUC_JP',
   /** EUC for Chinese */
-  PG_EUC_CN = "PG_EUC_CN",
+  PG_EUC_CN = 'PG_EUC_CN',
   /** EUC for Korean */
-  PG_EUC_KR = "PG_EUC_KR",
+  PG_EUC_KR = 'PG_EUC_KR',
   /** EUC for Taiwan */
-  PG_EUC_TW = "PG_EUC_TW",
+  PG_EUC_TW = 'PG_EUC_TW',
   /** EUC-JIS-2004 */
-  PG_EUC_JIS_2004 = "PG_EUC_JIS_2004",
+  PG_EUC_JIS_2004 = 'PG_EUC_JIS_2004',
   /** Unicode UTF8 */
-  PG_UTF8 = "PG_UTF8",
+  PG_UTF8 = 'PG_UTF8',
   /** Mule internal code */
-  PG_MULE_INTERNAL = "PG_MULE_INTERNAL",
+  PG_MULE_INTERNAL = 'PG_MULE_INTERNAL',
   /** ISO-8859-1 Latin 1 */
-  PG_LATIN1 = "PG_LATIN1",
+  PG_LATIN1 = 'PG_LATIN1',
   /** ISO-8859-2 Latin 2 */
-  PG_LATIN2 = "PG_LATIN2",
+  PG_LATIN2 = 'PG_LATIN2',
   /** ISO-8859-3 Latin 3 */
-  PG_LATIN3 = "PG_LATIN3",
+  PG_LATIN3 = 'PG_LATIN3',
   /** ISO-8859-4 Latin 4 */
-  PG_LATIN4 = "PG_LATIN4",
+  PG_LATIN4 = 'PG_LATIN4',
   /** ISO-8859-9 Latin 5 */
-  PG_LATIN5 = "PG_LATIN5",
+  PG_LATIN5 = 'PG_LATIN5',
   /** ISO-8859-10 Latin6 */
-  PG_LATIN6 = "PG_LATIN6",
+  PG_LATIN6 = 'PG_LATIN6',
   /** ISO-8859-13 Latin7 */
-  PG_LATIN7 = "PG_LATIN7",
+  PG_LATIN7 = 'PG_LATIN7',
   /** ISO-8859-14 Latin8 */
-  PG_LATIN8 = "PG_LATIN8",
+  PG_LATIN8 = 'PG_LATIN8',
   /** ISO-8859-15 Latin9 */
-  PG_LATIN9 = "PG_LATIN9",
+  PG_LATIN9 = 'PG_LATIN9',
   /** ISO-8859-16 Latin10 */
-  PG_LATIN10 = "PG_LATIN10",
+  PG_LATIN10 = 'PG_LATIN10',
   /** windows-1256 */
-  PG_WIN1256 = "PG_WIN1256",
+  PG_WIN1256 = 'PG_WIN1256',
   /** Windows-1258 */
-  PG_WIN1258 = "PG_WIN1258",
+  PG_WIN1258 = 'PG_WIN1258',
   /** (MS-DOS CP866) */
-  PG_WIN866 = "PG_WIN866",
+  PG_WIN866 = 'PG_WIN866',
   /** windows-874 */
-  PG_WIN874 = "PG_WIN874",
+  PG_WIN874 = 'PG_WIN874',
   /** KOI8-R */
-  PG_KOI8R = "PG_KOI8R",
+  PG_KOI8R = 'PG_KOI8R',
   /** windows-1251 */
-  PG_WIN1251 = "PG_WIN1251",
+  PG_WIN1251 = 'PG_WIN1251',
   /** windows-1252 */
-  PG_WIN1252 = "PG_WIN1252",
+  PG_WIN1252 = 'PG_WIN1252',
   /** ISO-8859-5 */
-  PG_ISO_8859_5 = "PG_ISO_8859_5",
+  PG_ISO_8859_5 = 'PG_ISO_8859_5',
   /** ISO-8859-6 */
-  PG_ISO_8859_6 = "PG_ISO_8859_6",
+  PG_ISO_8859_6 = 'PG_ISO_8859_6',
   /** ISO-8859-7 */
-  PG_ISO_8859_7 = "PG_ISO_8859_7",
+  PG_ISO_8859_7 = 'PG_ISO_8859_7',
   /** ISO-8859-8 */
-  PG_ISO_8859_8 = "PG_ISO_8859_8",
+  PG_ISO_8859_8 = 'PG_ISO_8859_8',
   /** windows-1250 */
-  PG_WIN1250 = "PG_WIN1250",
+  PG_WIN1250 = 'PG_WIN1250',
   /** windows-1253 */
-  PG_WIN1253 = "PG_WIN1253",
+  PG_WIN1253 = 'PG_WIN1253',
   /** windows-1254 */
-  PG_WIN1254 = "PG_WIN1254",
+  PG_WIN1254 = 'PG_WIN1254',
   /** windows-1255 */
-  PG_WIN1255 = "PG_WIN1255",
+  PG_WIN1255 = 'PG_WIN1255',
   /** windows-1257 */
-  PG_WIN1257 = "PG_WIN1257",
+  PG_WIN1257 = 'PG_WIN1257',
   /** KOI8-U */
-  PG_KOI8U = "PG_KOI8U",
+  PG_KOI8U = 'PG_KOI8U',
   /** PG_ENCODING_BE_LAST points to the above entry */
   /** followings are for client encoding only */
   /** Shift JIS (Windows-932) */
-  PG_SJIS = "PG_SJIS",
+  PG_SJIS = 'PG_SJIS',
   /** Big5 (Windows-950) */
-  PG_BIG5 = "PG_BIG5",
+  PG_BIG5 = 'PG_BIG5',
   /** GBK (Windows-936) */
-  PG_GBK = "PG_GBK",
+  PG_GBK = 'PG_GBK',
   /** UHC (Windows-949) */
-  PG_UHC = "PG_UHC",
+  PG_UHC = 'PG_UHC',
   /** GB18030 */
-  PG_GB18030 = "PG_GB18030",
+  PG_GB18030 = 'PG_GB18030',
   /** EUC for Korean JOHAB */
-  PG_JOHAB = "PG_JOHAB",
+  PG_JOHAB = 'PG_JOHAB',
   /** Shift-JIS-2004 */
-  PG_SHIFT_JIS_2004 = "PG_SHIFT_JIS_2004",
+  PG_SHIFT_JIS_2004 = 'PG_SHIFT_JIS_2004',
   /** mark only */
-  _PG_LAST_ENCODING_ = "_PG_LAST_ENCODING_",
+  _PG_LAST_ENCODING_ = '_PG_LAST_ENCODING_',
 }
 
 export enum yytokentype {
-  IDENT = "IDENT",
-  UIDENT = "UIDENT",
-  FCONST = "FCONST",
-  SCONST = "SCONST",
-  USCONST = "USCONST",
-  BCONST = "BCONST",
-  XCONST = "XCONST",
-  Op = "Op",
-  ICONST = "ICONST",
-  PARAM = "PARAM",
-  TYPECAST = "TYPECAST",
-  DOT_DOT = "DOT_DOT",
-  COLON_EQUALS = "COLON_EQUALS",
-  EQUALS_GREATER = "EQUALS_GREATER",
-  LESS_EQUALS = "LESS_EQUALS",
-  GREATER_EQUALS = "GREATER_EQUALS",
-  NOT_EQUALS = "NOT_EQUALS",
-  SQL_COMMENT = "SQL_COMMENT",
-  C_COMMENT = "C_COMMENT",
-  ABORT_P = "ABORT_P",
-  ABSENT = "ABSENT",
-  ABSOLUTE_P = "ABSOLUTE_P",
-  ACCESS = "ACCESS",
-  ACTION = "ACTION",
-  ADD_P = "ADD_P",
-  ADMIN = "ADMIN",
-  AFTER = "AFTER",
-  AGGREGATE = "AGGREGATE",
-  ALL = "ALL",
-  ALSO = "ALSO",
-  ALTER = "ALTER",
-  ALWAYS = "ALWAYS",
-  ANALYSE = "ANALYSE",
-  ANALYZE = "ANALYZE",
-  AND = "AND",
-  ANY = "ANY",
-  ARRAY = "ARRAY",
-  AS = "AS",
-  ASC = "ASC",
-  ASENSITIVE = "ASENSITIVE",
-  ASSERTION = "ASSERTION",
-  ASSIGNMENT = "ASSIGNMENT",
-  ASYMMETRIC = "ASYMMETRIC",
-  ATOMIC = "ATOMIC",
-  AT = "AT",
-  ATTACH = "ATTACH",
-  ATTRIBUTE = "ATTRIBUTE",
-  AUTHORIZATION = "AUTHORIZATION",
-  BACKWARD = "BACKWARD",
-  BEFORE = "BEFORE",
-  BEGIN_P = "BEGIN_P",
-  BETWEEN = "BETWEEN",
-  BIGINT = "BIGINT",
-  BINARY = "BINARY",
-  BIT = "BIT",
-  BOOLEAN_P = "BOOLEAN_P",
-  BOTH = "BOTH",
-  BREADTH = "BREADTH",
-  BY = "BY",
-  CACHE = "CACHE",
-  CALL = "CALL",
-  CALLED = "CALLED",
-  CASCADE = "CASCADE",
-  CASCADED = "CASCADED",
-  CASE = "CASE",
-  CAST = "CAST",
-  CATALOG_P = "CATALOG_P",
-  CHAIN = "CHAIN",
-  CHAR_P = "CHAR_P",
-  CHARACTER = "CHARACTER",
-  CHARACTERISTICS = "CHARACTERISTICS",
-  CHECK = "CHECK",
-  CHECKPOINT = "CHECKPOINT",
-  CLASS = "CLASS",
-  CLOSE = "CLOSE",
-  CLUSTER = "CLUSTER",
-  COALESCE = "COALESCE",
-  COLLATE = "COLLATE",
-  COLLATION = "COLLATION",
-  COLUMN = "COLUMN",
-  COLUMNS = "COLUMNS",
-  COMMENT = "COMMENT",
-  COMMENTS = "COMMENTS",
-  COMMIT = "COMMIT",
-  COMMITTED = "COMMITTED",
-  COMPRESSION = "COMPRESSION",
-  CONCURRENTLY = "CONCURRENTLY",
-  CONFIGURATION = "CONFIGURATION",
-  CONFLICT = "CONFLICT",
-  CONNECTION = "CONNECTION",
-  CONSTRAINT = "CONSTRAINT",
-  CONSTRAINTS = "CONSTRAINTS",
-  CONTENT_P = "CONTENT_P",
-  CONTINUE_P = "CONTINUE_P",
-  CONVERSION_P = "CONVERSION_P",
-  COPY = "COPY",
-  COST = "COST",
-  CREATE = "CREATE",
-  CROSS = "CROSS",
-  CSV = "CSV",
-  CUBE = "CUBE",
-  CURRENT_P = "CURRENT_P",
-  CURRENT_CATALOG = "CURRENT_CATALOG",
-  CURRENT_DATE = "CURRENT_DATE",
-  CURRENT_ROLE = "CURRENT_ROLE",
-  CURRENT_SCHEMA = "CURRENT_SCHEMA",
-  CURRENT_TIME = "CURRENT_TIME",
-  CURRENT_TIMESTAMP = "CURRENT_TIMESTAMP",
-  CURRENT_USER = "CURRENT_USER",
-  CURSOR = "CURSOR",
-  CYCLE = "CYCLE",
-  DATA_P = "DATA_P",
-  DATABASE = "DATABASE",
-  DAY_P = "DAY_P",
-  DEALLOCATE = "DEALLOCATE",
-  DEC = "DEC",
-  DECIMAL_P = "DECIMAL_P",
-  DECLARE = "DECLARE",
-  DEFAULT = "DEFAULT",
-  DEFAULTS = "DEFAULTS",
-  DEFERRABLE = "DEFERRABLE",
-  DEFERRED = "DEFERRED",
-  DEFINER = "DEFINER",
-  DELETE_P = "DELETE_P",
-  DELIMITER = "DELIMITER",
-  DELIMITERS = "DELIMITERS",
-  DEPENDS = "DEPENDS",
-  DEPTH = "DEPTH",
-  DESC = "DESC",
-  DETACH = "DETACH",
-  DICTIONARY = "DICTIONARY",
-  DISABLE_P = "DISABLE_P",
-  DISCARD = "DISCARD",
-  DISTINCT = "DISTINCT",
-  DO = "DO",
-  DOCUMENT_P = "DOCUMENT_P",
-  DOMAIN_P = "DOMAIN_P",
-  DOUBLE_P = "DOUBLE_P",
-  DROP = "DROP",
-  EACH = "EACH",
-  ELSE = "ELSE",
-  ENABLE_P = "ENABLE_P",
-  ENCODING = "ENCODING",
-  ENCRYPTED = "ENCRYPTED",
-  END_P = "END_P",
-  ENUM_P = "ENUM_P",
-  ESCAPE = "ESCAPE",
-  EVENT = "EVENT",
-  EXCEPT = "EXCEPT",
-  EXCLUDE = "EXCLUDE",
-  EXCLUDING = "EXCLUDING",
-  EXCLUSIVE = "EXCLUSIVE",
-  EXECUTE = "EXECUTE",
-  EXISTS = "EXISTS",
-  EXPLAIN = "EXPLAIN",
-  EXPRESSION = "EXPRESSION",
-  EXTENSION = "EXTENSION",
-  EXTERNAL = "EXTERNAL",
-  EXTRACT = "EXTRACT",
-  FALSE_P = "FALSE_P",
-  FAMILY = "FAMILY",
-  FETCH = "FETCH",
-  FILTER = "FILTER",
-  FINALIZE = "FINALIZE",
-  FIRST_P = "FIRST_P",
-  FLOAT_P = "FLOAT_P",
-  FOLLOWING = "FOLLOWING",
-  FOR = "FOR",
-  FORCE = "FORCE",
-  FOREIGN = "FOREIGN",
-  FORMAT = "FORMAT",
-  FORWARD = "FORWARD",
-  FREEZE = "FREEZE",
-  FROM = "FROM",
-  FULL = "FULL",
-  FUNCTION = "FUNCTION",
-  FUNCTIONS = "FUNCTIONS",
-  GENERATED = "GENERATED",
-  GLOBAL = "GLOBAL",
-  GRANT = "GRANT",
-  GRANTED = "GRANTED",
-  GREATEST = "GREATEST",
-  GROUP_P = "GROUP_P",
-  GROUPING = "GROUPING",
-  GROUPS = "GROUPS",
-  HANDLER = "HANDLER",
-  HAVING = "HAVING",
-  HEADER_P = "HEADER_P",
-  HOLD = "HOLD",
-  HOUR_P = "HOUR_P",
-  IDENTITY_P = "IDENTITY_P",
-  IF_P = "IF_P",
-  ILIKE = "ILIKE",
-  IMMEDIATE = "IMMEDIATE",
-  IMMUTABLE = "IMMUTABLE",
-  IMPLICIT_P = "IMPLICIT_P",
-  IMPORT_P = "IMPORT_P",
-  IN_P = "IN_P",
-  INCLUDE = "INCLUDE",
-  INCLUDING = "INCLUDING",
-  INCREMENT = "INCREMENT",
-  INDENT = "INDENT",
-  INDEX = "INDEX",
-  INDEXES = "INDEXES",
-  INHERIT = "INHERIT",
-  INHERITS = "INHERITS",
-  INITIALLY = "INITIALLY",
-  INLINE_P = "INLINE_P",
-  INNER_P = "INNER_P",
-  INOUT = "INOUT",
-  INPUT_P = "INPUT_P",
-  INSENSITIVE = "INSENSITIVE",
-  INSERT = "INSERT",
-  INSTEAD = "INSTEAD",
-  INT_P = "INT_P",
-  INTEGER = "INTEGER",
-  INTERSECT = "INTERSECT",
-  INTERVAL = "INTERVAL",
-  INTO = "INTO",
-  INVOKER = "INVOKER",
-  IS = "IS",
-  ISNULL = "ISNULL",
-  ISOLATION = "ISOLATION",
-  JOIN = "JOIN",
-  JSON = "JSON",
-  JSON_ARRAY = "JSON_ARRAY",
-  JSON_ARRAYAGG = "JSON_ARRAYAGG",
-  JSON_OBJECT = "JSON_OBJECT",
-  JSON_OBJECTAGG = "JSON_OBJECTAGG",
-  KEY = "KEY",
-  KEYS = "KEYS",
-  LABEL = "LABEL",
-  LANGUAGE = "LANGUAGE",
-  LARGE_P = "LARGE_P",
-  LAST_P = "LAST_P",
-  LATERAL_P = "LATERAL_P",
-  LEADING = "LEADING",
-  LEAKPROOF = "LEAKPROOF",
-  LEAST = "LEAST",
-  LEFT = "LEFT",
-  LEVEL = "LEVEL",
-  LIKE = "LIKE",
-  LIMIT = "LIMIT",
-  LISTEN = "LISTEN",
-  LOAD = "LOAD",
-  LOCAL = "LOCAL",
-  LOCALTIME = "LOCALTIME",
-  LOCALTIMESTAMP = "LOCALTIMESTAMP",
-  LOCATION = "LOCATION",
-  LOCK_P = "LOCK_P",
-  LOCKED = "LOCKED",
-  LOGGED = "LOGGED",
-  MAPPING = "MAPPING",
-  MATCH = "MATCH",
-  MATCHED = "MATCHED",
-  MATERIALIZED = "MATERIALIZED",
-  MAXVALUE = "MAXVALUE",
-  MERGE = "MERGE",
-  METHOD = "METHOD",
-  MINUTE_P = "MINUTE_P",
-  MINVALUE = "MINVALUE",
-  MODE = "MODE",
-  MONTH_P = "MONTH_P",
-  MOVE = "MOVE",
-  NAME_P = "NAME_P",
-  NAMES = "NAMES",
-  NATIONAL = "NATIONAL",
-  NATURAL = "NATURAL",
-  NCHAR = "NCHAR",
-  NEW = "NEW",
-  NEXT = "NEXT",
-  NFC = "NFC",
-  NFD = "NFD",
-  NFKC = "NFKC",
-  NFKD = "NFKD",
-  NO = "NO",
-  NONE = "NONE",
-  NORMALIZE = "NORMALIZE",
-  NORMALIZED = "NORMALIZED",
-  NOT = "NOT",
-  NOTHING = "NOTHING",
-  NOTIFY = "NOTIFY",
-  NOTNULL = "NOTNULL",
-  NOWAIT = "NOWAIT",
-  NULL_P = "NULL_P",
-  NULLIF = "NULLIF",
-  NULLS_P = "NULLS_P",
-  NUMERIC = "NUMERIC",
-  OBJECT_P = "OBJECT_P",
-  OF = "OF",
-  OFF = "OFF",
-  OFFSET = "OFFSET",
-  OIDS = "OIDS",
-  OLD = "OLD",
-  ON = "ON",
-  ONLY = "ONLY",
-  OPERATOR = "OPERATOR",
-  OPTION = "OPTION",
-  OPTIONS = "OPTIONS",
-  OR = "OR",
-  ORDER = "ORDER",
-  ORDINALITY = "ORDINALITY",
-  OTHERS = "OTHERS",
-  OUT_P = "OUT_P",
-  OUTER_P = "OUTER_P",
-  OVER = "OVER",
-  OVERLAPS = "OVERLAPS",
-  OVERLAY = "OVERLAY",
-  OVERRIDING = "OVERRIDING",
-  OWNED = "OWNED",
-  OWNER = "OWNER",
-  PARALLEL = "PARALLEL",
-  PARAMETER = "PARAMETER",
-  PARSER = "PARSER",
-  PARTIAL = "PARTIAL",
-  PARTITION = "PARTITION",
-  PASSING = "PASSING",
-  PASSWORD = "PASSWORD",
-  PLACING = "PLACING",
-  PLANS = "PLANS",
-  POLICY = "POLICY",
-  POSITION = "POSITION",
-  PRECEDING = "PRECEDING",
-  PRECISION = "PRECISION",
-  PRESERVE = "PRESERVE",
-  PREPARE = "PREPARE",
-  PREPARED = "PREPARED",
-  PRIMARY = "PRIMARY",
-  PRIOR = "PRIOR",
-  PRIVILEGES = "PRIVILEGES",
-  PROCEDURAL = "PROCEDURAL",
-  PROCEDURE = "PROCEDURE",
-  PROCEDURES = "PROCEDURES",
-  PROGRAM = "PROGRAM",
-  PUBLICATION = "PUBLICATION",
-  QUOTE = "QUOTE",
-  RANGE = "RANGE",
-  READ = "READ",
-  REAL = "REAL",
-  REASSIGN = "REASSIGN",
-  RECHECK = "RECHECK",
-  RECURSIVE = "RECURSIVE",
-  REF_P = "REF_P",
-  REFERENCES = "REFERENCES",
-  REFERENCING = "REFERENCING",
-  REFRESH = "REFRESH",
-  REINDEX = "REINDEX",
-  RELATIVE_P = "RELATIVE_P",
-  RELEASE = "RELEASE",
-  RENAME = "RENAME",
-  REPEATABLE = "REPEATABLE",
-  REPLACE = "REPLACE",
-  REPLICA = "REPLICA",
-  RESET = "RESET",
-  RESTART = "RESTART",
-  RESTRICT = "RESTRICT",
-  RETURN = "RETURN",
-  RETURNING = "RETURNING",
-  RETURNS = "RETURNS",
-  REVOKE = "REVOKE",
-  RIGHT = "RIGHT",
-  ROLE = "ROLE",
-  ROLLBACK = "ROLLBACK",
-  ROLLUP = "ROLLUP",
-  ROUTINE = "ROUTINE",
-  ROUTINES = "ROUTINES",
-  ROW = "ROW",
-  ROWS = "ROWS",
-  RULE = "RULE",
-  SAVEPOINT = "SAVEPOINT",
-  SCALAR = "SCALAR",
-  SCHEMA = "SCHEMA",
-  SCHEMAS = "SCHEMAS",
-  SCROLL = "SCROLL",
-  SEARCH = "SEARCH",
-  SECOND_P = "SECOND_P",
-  SECURITY = "SECURITY",
-  SELECT = "SELECT",
-  SEQUENCE = "SEQUENCE",
-  SEQUENCES = "SEQUENCES",
-  SERIALIZABLE = "SERIALIZABLE",
-  SERVER = "SERVER",
-  SESSION = "SESSION",
-  SESSION_USER = "SESSION_USER",
-  SET = "SET",
-  SETS = "SETS",
-  SETOF = "SETOF",
-  SHARE = "SHARE",
-  SHOW = "SHOW",
-  SIMILAR = "SIMILAR",
-  SIMPLE = "SIMPLE",
-  SKIP = "SKIP",
-  SMALLINT = "SMALLINT",
-  SNAPSHOT = "SNAPSHOT",
-  SOME = "SOME",
-  SQL_P = "SQL_P",
-  STABLE = "STABLE",
-  STANDALONE_P = "STANDALONE_P",
-  START = "START",
-  STATEMENT = "STATEMENT",
-  STATISTICS = "STATISTICS",
-  STDIN = "STDIN",
-  STDOUT = "STDOUT",
-  STORAGE = "STORAGE",
-  STORED = "STORED",
-  STRICT_P = "STRICT_P",
-  STRIP_P = "STRIP_P",
-  SUBSCRIPTION = "SUBSCRIPTION",
-  SUBSTRING = "SUBSTRING",
-  SUPPORT = "SUPPORT",
-  SYMMETRIC = "SYMMETRIC",
-  SYSID = "SYSID",
-  SYSTEM_P = "SYSTEM_P",
-  SYSTEM_USER = "SYSTEM_USER",
-  TABLE = "TABLE",
-  TABLES = "TABLES",
-  TABLESAMPLE = "TABLESAMPLE",
-  TABLESPACE = "TABLESPACE",
-  TEMP = "TEMP",
-  TEMPLATE = "TEMPLATE",
-  TEMPORARY = "TEMPORARY",
-  TEXT_P = "TEXT_P",
-  THEN = "THEN",
-  TIES = "TIES",
-  TIME = "TIME",
-  TIMESTAMP = "TIMESTAMP",
-  TO = "TO",
-  TRAILING = "TRAILING",
-  TRANSACTION = "TRANSACTION",
-  TRANSFORM = "TRANSFORM",
-  TREAT = "TREAT",
-  TRIGGER = "TRIGGER",
-  TRIM = "TRIM",
-  TRUE_P = "TRUE_P",
-  TRUNCATE = "TRUNCATE",
-  TRUSTED = "TRUSTED",
-  TYPE_P = "TYPE_P",
-  TYPES_P = "TYPES_P",
-  UESCAPE = "UESCAPE",
-  UNBOUNDED = "UNBOUNDED",
-  UNCOMMITTED = "UNCOMMITTED",
-  UNENCRYPTED = "UNENCRYPTED",
-  UNION = "UNION",
-  UNIQUE = "UNIQUE",
-  UNKNOWN = "UNKNOWN",
-  UNLISTEN = "UNLISTEN",
-  UNLOGGED = "UNLOGGED",
-  UNTIL = "UNTIL",
-  UPDATE = "UPDATE",
-  USER = "USER",
-  USING = "USING",
-  VACUUM = "VACUUM",
-  VALID = "VALID",
-  VALIDATE = "VALIDATE",
-  VALIDATOR = "VALIDATOR",
-  VALUE_P = "VALUE_P",
-  VALUES = "VALUES",
-  VARCHAR = "VARCHAR",
-  VARIADIC = "VARIADIC",
-  VARYING = "VARYING",
-  VERBOSE = "VERBOSE",
-  VERSION_P = "VERSION_P",
-  VIEW = "VIEW",
-  VIEWS = "VIEWS",
-  VOLATILE = "VOLATILE",
-  WHEN = "WHEN",
-  WHERE = "WHERE",
-  WHITESPACE_P = "WHITESPACE_P",
-  WINDOW = "WINDOW",
-  WITH = "WITH",
-  WITHIN = "WITHIN",
-  WITHOUT = "WITHOUT",
-  WORK = "WORK",
-  WRAPPER = "WRAPPER",
-  WRITE = "WRITE",
-  XML_P = "XML_P",
-  XMLATTRIBUTES = "XMLATTRIBUTES",
-  XMLCONCAT = "XMLCONCAT",
-  XMLELEMENT = "XMLELEMENT",
-  XMLEXISTS = "XMLEXISTS",
-  XMLFOREST = "XMLFOREST",
-  XMLNAMESPACES = "XMLNAMESPACES",
-  XMLPARSE = "XMLPARSE",
-  XMLPI = "XMLPI",
-  XMLROOT = "XMLROOT",
-  XMLSERIALIZE = "XMLSERIALIZE",
-  XMLTABLE = "XMLTABLE",
-  YEAR_P = "YEAR_P",
-  YES_P = "YES_P",
-  ZONE = "ZONE",
-  FORMAT_LA = "FORMAT_LA",
-  NOT_LA = "NOT_LA",
-  NULLS_LA = "NULLS_LA",
-  WITH_LA = "WITH_LA",
-  WITHOUT_LA = "WITHOUT_LA",
-  MODE_TYPE_NAME = "MODE_TYPE_NAME",
-  MODE_PLPGSQL_EXPR = "MODE_PLPGSQL_EXPR",
-  MODE_PLPGSQL_ASSIGN1 = "MODE_PLPGSQL_ASSIGN1",
-  MODE_PLPGSQL_ASSIGN2 = "MODE_PLPGSQL_ASSIGN2",
-  MODE_PLPGSQL_ASSIGN3 = "MODE_PLPGSQL_ASSIGN3",
-  UMINUS = "UMINUS",
+  IDENT = 'IDENT',
+  UIDENT = 'UIDENT',
+  FCONST = 'FCONST',
+  SCONST = 'SCONST',
+  USCONST = 'USCONST',
+  BCONST = 'BCONST',
+  XCONST = 'XCONST',
+  Op = 'Op',
+  ICONST = 'ICONST',
+  PARAM = 'PARAM',
+  TYPECAST = 'TYPECAST',
+  DOT_DOT = 'DOT_DOT',
+  COLON_EQUALS = 'COLON_EQUALS',
+  EQUALS_GREATER = 'EQUALS_GREATER',
+  LESS_EQUALS = 'LESS_EQUALS',
+  GREATER_EQUALS = 'GREATER_EQUALS',
+  NOT_EQUALS = 'NOT_EQUALS',
+  SQL_COMMENT = 'SQL_COMMENT',
+  C_COMMENT = 'C_COMMENT',
+  ABORT_P = 'ABORT_P',
+  ABSENT = 'ABSENT',
+  ABSOLUTE_P = 'ABSOLUTE_P',
+  ACCESS = 'ACCESS',
+  ACTION = 'ACTION',
+  ADD_P = 'ADD_P',
+  ADMIN = 'ADMIN',
+  AFTER = 'AFTER',
+  AGGREGATE = 'AGGREGATE',
+  ALL = 'ALL',
+  ALSO = 'ALSO',
+  ALTER = 'ALTER',
+  ALWAYS = 'ALWAYS',
+  ANALYSE = 'ANALYSE',
+  ANALYZE = 'ANALYZE',
+  AND = 'AND',
+  ANY = 'ANY',
+  ARRAY = 'ARRAY',
+  AS = 'AS',
+  ASC = 'ASC',
+  ASENSITIVE = 'ASENSITIVE',
+  ASSERTION = 'ASSERTION',
+  ASSIGNMENT = 'ASSIGNMENT',
+  ASYMMETRIC = 'ASYMMETRIC',
+  ATOMIC = 'ATOMIC',
+  AT = 'AT',
+  ATTACH = 'ATTACH',
+  ATTRIBUTE = 'ATTRIBUTE',
+  AUTHORIZATION = 'AUTHORIZATION',
+  BACKWARD = 'BACKWARD',
+  BEFORE = 'BEFORE',
+  BEGIN_P = 'BEGIN_P',
+  BETWEEN = 'BETWEEN',
+  BIGINT = 'BIGINT',
+  BINARY = 'BINARY',
+  BIT = 'BIT',
+  BOOLEAN_P = 'BOOLEAN_P',
+  BOTH = 'BOTH',
+  BREADTH = 'BREADTH',
+  BY = 'BY',
+  CACHE = 'CACHE',
+  CALL = 'CALL',
+  CALLED = 'CALLED',
+  CASCADE = 'CASCADE',
+  CASCADED = 'CASCADED',
+  CASE = 'CASE',
+  CAST = 'CAST',
+  CATALOG_P = 'CATALOG_P',
+  CHAIN = 'CHAIN',
+  CHAR_P = 'CHAR_P',
+  CHARACTER = 'CHARACTER',
+  CHARACTERISTICS = 'CHARACTERISTICS',
+  CHECK = 'CHECK',
+  CHECKPOINT = 'CHECKPOINT',
+  CLASS = 'CLASS',
+  CLOSE = 'CLOSE',
+  CLUSTER = 'CLUSTER',
+  COALESCE = 'COALESCE',
+  COLLATE = 'COLLATE',
+  COLLATION = 'COLLATION',
+  COLUMN = 'COLUMN',
+  COLUMNS = 'COLUMNS',
+  COMMENT = 'COMMENT',
+  COMMENTS = 'COMMENTS',
+  COMMIT = 'COMMIT',
+  COMMITTED = 'COMMITTED',
+  COMPRESSION = 'COMPRESSION',
+  CONCURRENTLY = 'CONCURRENTLY',
+  CONFIGURATION = 'CONFIGURATION',
+  CONFLICT = 'CONFLICT',
+  CONNECTION = 'CONNECTION',
+  CONSTRAINT = 'CONSTRAINT',
+  CONSTRAINTS = 'CONSTRAINTS',
+  CONTENT_P = 'CONTENT_P',
+  CONTINUE_P = 'CONTINUE_P',
+  CONVERSION_P = 'CONVERSION_P',
+  COPY = 'COPY',
+  COST = 'COST',
+  CREATE = 'CREATE',
+  CROSS = 'CROSS',
+  CSV = 'CSV',
+  CUBE = 'CUBE',
+  CURRENT_P = 'CURRENT_P',
+  CURRENT_CATALOG = 'CURRENT_CATALOG',
+  CURRENT_DATE = 'CURRENT_DATE',
+  CURRENT_ROLE = 'CURRENT_ROLE',
+  CURRENT_SCHEMA = 'CURRENT_SCHEMA',
+  CURRENT_TIME = 'CURRENT_TIME',
+  CURRENT_TIMESTAMP = 'CURRENT_TIMESTAMP',
+  CURRENT_USER = 'CURRENT_USER',
+  CURSOR = 'CURSOR',
+  CYCLE = 'CYCLE',
+  DATA_P = 'DATA_P',
+  DATABASE = 'DATABASE',
+  DAY_P = 'DAY_P',
+  DEALLOCATE = 'DEALLOCATE',
+  DEC = 'DEC',
+  DECIMAL_P = 'DECIMAL_P',
+  DECLARE = 'DECLARE',
+  DEFAULT = 'DEFAULT',
+  DEFAULTS = 'DEFAULTS',
+  DEFERRABLE = 'DEFERRABLE',
+  DEFERRED = 'DEFERRED',
+  DEFINER = 'DEFINER',
+  DELETE_P = 'DELETE_P',
+  DELIMITER = 'DELIMITER',
+  DELIMITERS = 'DELIMITERS',
+  DEPENDS = 'DEPENDS',
+  DEPTH = 'DEPTH',
+  DESC = 'DESC',
+  DETACH = 'DETACH',
+  DICTIONARY = 'DICTIONARY',
+  DISABLE_P = 'DISABLE_P',
+  DISCARD = 'DISCARD',
+  DISTINCT = 'DISTINCT',
+  DO = 'DO',
+  DOCUMENT_P = 'DOCUMENT_P',
+  DOMAIN_P = 'DOMAIN_P',
+  DOUBLE_P = 'DOUBLE_P',
+  DROP = 'DROP',
+  EACH = 'EACH',
+  ELSE = 'ELSE',
+  ENABLE_P = 'ENABLE_P',
+  ENCODING = 'ENCODING',
+  ENCRYPTED = 'ENCRYPTED',
+  END_P = 'END_P',
+  ENUM_P = 'ENUM_P',
+  ESCAPE = 'ESCAPE',
+  EVENT = 'EVENT',
+  EXCEPT = 'EXCEPT',
+  EXCLUDE = 'EXCLUDE',
+  EXCLUDING = 'EXCLUDING',
+  EXCLUSIVE = 'EXCLUSIVE',
+  EXECUTE = 'EXECUTE',
+  EXISTS = 'EXISTS',
+  EXPLAIN = 'EXPLAIN',
+  EXPRESSION = 'EXPRESSION',
+  EXTENSION = 'EXTENSION',
+  EXTERNAL = 'EXTERNAL',
+  EXTRACT = 'EXTRACT',
+  FALSE_P = 'FALSE_P',
+  FAMILY = 'FAMILY',
+  FETCH = 'FETCH',
+  FILTER = 'FILTER',
+  FINALIZE = 'FINALIZE',
+  FIRST_P = 'FIRST_P',
+  FLOAT_P = 'FLOAT_P',
+  FOLLOWING = 'FOLLOWING',
+  FOR = 'FOR',
+  FORCE = 'FORCE',
+  FOREIGN = 'FOREIGN',
+  FORMAT = 'FORMAT',
+  FORWARD = 'FORWARD',
+  FREEZE = 'FREEZE',
+  FROM = 'FROM',
+  FULL = 'FULL',
+  FUNCTION = 'FUNCTION',
+  FUNCTIONS = 'FUNCTIONS',
+  GENERATED = 'GENERATED',
+  GLOBAL = 'GLOBAL',
+  GRANT = 'GRANT',
+  GRANTED = 'GRANTED',
+  GREATEST = 'GREATEST',
+  GROUP_P = 'GROUP_P',
+  GROUPING = 'GROUPING',
+  GROUPS = 'GROUPS',
+  HANDLER = 'HANDLER',
+  HAVING = 'HAVING',
+  HEADER_P = 'HEADER_P',
+  HOLD = 'HOLD',
+  HOUR_P = 'HOUR_P',
+  IDENTITY_P = 'IDENTITY_P',
+  IF_P = 'IF_P',
+  ILIKE = 'ILIKE',
+  IMMEDIATE = 'IMMEDIATE',
+  IMMUTABLE = 'IMMUTABLE',
+  IMPLICIT_P = 'IMPLICIT_P',
+  IMPORT_P = 'IMPORT_P',
+  IN_P = 'IN_P',
+  INCLUDE = 'INCLUDE',
+  INCLUDING = 'INCLUDING',
+  INCREMENT = 'INCREMENT',
+  INDENT = 'INDENT',
+  INDEX = 'INDEX',
+  INDEXES = 'INDEXES',
+  INHERIT = 'INHERIT',
+  INHERITS = 'INHERITS',
+  INITIALLY = 'INITIALLY',
+  INLINE_P = 'INLINE_P',
+  INNER_P = 'INNER_P',
+  INOUT = 'INOUT',
+  INPUT_P = 'INPUT_P',
+  INSENSITIVE = 'INSENSITIVE',
+  INSERT = 'INSERT',
+  INSTEAD = 'INSTEAD',
+  INT_P = 'INT_P',
+  INTEGER = 'INTEGER',
+  INTERSECT = 'INTERSECT',
+  INTERVAL = 'INTERVAL',
+  INTO = 'INTO',
+  INVOKER = 'INVOKER',
+  IS = 'IS',
+  ISNULL = 'ISNULL',
+  ISOLATION = 'ISOLATION',
+  JOIN = 'JOIN',
+  JSON = 'JSON',
+  JSON_ARRAY = 'JSON_ARRAY',
+  JSON_ARRAYAGG = 'JSON_ARRAYAGG',
+  JSON_OBJECT = 'JSON_OBJECT',
+  JSON_OBJECTAGG = 'JSON_OBJECTAGG',
+  KEY = 'KEY',
+  KEYS = 'KEYS',
+  LABEL = 'LABEL',
+  LANGUAGE = 'LANGUAGE',
+  LARGE_P = 'LARGE_P',
+  LAST_P = 'LAST_P',
+  LATERAL_P = 'LATERAL_P',
+  LEADING = 'LEADING',
+  LEAKPROOF = 'LEAKPROOF',
+  LEAST = 'LEAST',
+  LEFT = 'LEFT',
+  LEVEL = 'LEVEL',
+  LIKE = 'LIKE',
+  LIMIT = 'LIMIT',
+  LISTEN = 'LISTEN',
+  LOAD = 'LOAD',
+  LOCAL = 'LOCAL',
+  LOCALTIME = 'LOCALTIME',
+  LOCALTIMESTAMP = 'LOCALTIMESTAMP',
+  LOCATION = 'LOCATION',
+  LOCK_P = 'LOCK_P',
+  LOCKED = 'LOCKED',
+  LOGGED = 'LOGGED',
+  MAPPING = 'MAPPING',
+  MATCH = 'MATCH',
+  MATCHED = 'MATCHED',
+  MATERIALIZED = 'MATERIALIZED',
+  MAXVALUE = 'MAXVALUE',
+  MERGE = 'MERGE',
+  METHOD = 'METHOD',
+  MINUTE_P = 'MINUTE_P',
+  MINVALUE = 'MINVALUE',
+  MODE = 'MODE',
+  MONTH_P = 'MONTH_P',
+  MOVE = 'MOVE',
+  NAME_P = 'NAME_P',
+  NAMES = 'NAMES',
+  NATIONAL = 'NATIONAL',
+  NATURAL = 'NATURAL',
+  NCHAR = 'NCHAR',
+  NEW = 'NEW',
+  NEXT = 'NEXT',
+  NFC = 'NFC',
+  NFD = 'NFD',
+  NFKC = 'NFKC',
+  NFKD = 'NFKD',
+  NO = 'NO',
+  NONE = 'NONE',
+  NORMALIZE = 'NORMALIZE',
+  NORMALIZED = 'NORMALIZED',
+  NOT = 'NOT',
+  NOTHING = 'NOTHING',
+  NOTIFY = 'NOTIFY',
+  NOTNULL = 'NOTNULL',
+  NOWAIT = 'NOWAIT',
+  NULL_P = 'NULL_P',
+  NULLIF = 'NULLIF',
+  NULLS_P = 'NULLS_P',
+  NUMERIC = 'NUMERIC',
+  OBJECT_P = 'OBJECT_P',
+  OF = 'OF',
+  OFF = 'OFF',
+  OFFSET = 'OFFSET',
+  OIDS = 'OIDS',
+  OLD = 'OLD',
+  ON = 'ON',
+  ONLY = 'ONLY',
+  OPERATOR = 'OPERATOR',
+  OPTION = 'OPTION',
+  OPTIONS = 'OPTIONS',
+  OR = 'OR',
+  ORDER = 'ORDER',
+  ORDINALITY = 'ORDINALITY',
+  OTHERS = 'OTHERS',
+  OUT_P = 'OUT_P',
+  OUTER_P = 'OUTER_P',
+  OVER = 'OVER',
+  OVERLAPS = 'OVERLAPS',
+  OVERLAY = 'OVERLAY',
+  OVERRIDING = 'OVERRIDING',
+  OWNED = 'OWNED',
+  OWNER = 'OWNER',
+  PARALLEL = 'PARALLEL',
+  PARAMETER = 'PARAMETER',
+  PARSER = 'PARSER',
+  PARTIAL = 'PARTIAL',
+  PARTITION = 'PARTITION',
+  PASSING = 'PASSING',
+  PASSWORD = 'PASSWORD',
+  PLACING = 'PLACING',
+  PLANS = 'PLANS',
+  POLICY = 'POLICY',
+  POSITION = 'POSITION',
+  PRECEDING = 'PRECEDING',
+  PRECISION = 'PRECISION',
+  PRESERVE = 'PRESERVE',
+  PREPARE = 'PREPARE',
+  PREPARED = 'PREPARED',
+  PRIMARY = 'PRIMARY',
+  PRIOR = 'PRIOR',
+  PRIVILEGES = 'PRIVILEGES',
+  PROCEDURAL = 'PROCEDURAL',
+  PROCEDURE = 'PROCEDURE',
+  PROCEDURES = 'PROCEDURES',
+  PROGRAM = 'PROGRAM',
+  PUBLICATION = 'PUBLICATION',
+  QUOTE = 'QUOTE',
+  RANGE = 'RANGE',
+  READ = 'READ',
+  REAL = 'REAL',
+  REASSIGN = 'REASSIGN',
+  RECHECK = 'RECHECK',
+  RECURSIVE = 'RECURSIVE',
+  REF_P = 'REF_P',
+  REFERENCES = 'REFERENCES',
+  REFERENCING = 'REFERENCING',
+  REFRESH = 'REFRESH',
+  REINDEX = 'REINDEX',
+  RELATIVE_P = 'RELATIVE_P',
+  RELEASE = 'RELEASE',
+  RENAME = 'RENAME',
+  REPEATABLE = 'REPEATABLE',
+  REPLACE = 'REPLACE',
+  REPLICA = 'REPLICA',
+  RESET = 'RESET',
+  RESTART = 'RESTART',
+  RESTRICT = 'RESTRICT',
+  RETURN = 'RETURN',
+  RETURNING = 'RETURNING',
+  RETURNS = 'RETURNS',
+  REVOKE = 'REVOKE',
+  RIGHT = 'RIGHT',
+  ROLE = 'ROLE',
+  ROLLBACK = 'ROLLBACK',
+  ROLLUP = 'ROLLUP',
+  ROUTINE = 'ROUTINE',
+  ROUTINES = 'ROUTINES',
+  ROW = 'ROW',
+  ROWS = 'ROWS',
+  RULE = 'RULE',
+  SAVEPOINT = 'SAVEPOINT',
+  SCALAR = 'SCALAR',
+  SCHEMA = 'SCHEMA',
+  SCHEMAS = 'SCHEMAS',
+  SCROLL = 'SCROLL',
+  SEARCH = 'SEARCH',
+  SECOND_P = 'SECOND_P',
+  SECURITY = 'SECURITY',
+  SELECT = 'SELECT',
+  SEQUENCE = 'SEQUENCE',
+  SEQUENCES = 'SEQUENCES',
+  SERIALIZABLE = 'SERIALIZABLE',
+  SERVER = 'SERVER',
+  SESSION = 'SESSION',
+  SESSION_USER = 'SESSION_USER',
+  SET = 'SET',
+  SETS = 'SETS',
+  SETOF = 'SETOF',
+  SHARE = 'SHARE',
+  SHOW = 'SHOW',
+  SIMILAR = 'SIMILAR',
+  SIMPLE = 'SIMPLE',
+  SKIP = 'SKIP',
+  SMALLINT = 'SMALLINT',
+  SNAPSHOT = 'SNAPSHOT',
+  SOME = 'SOME',
+  SQL_P = 'SQL_P',
+  STABLE = 'STABLE',
+  STANDALONE_P = 'STANDALONE_P',
+  START = 'START',
+  STATEMENT = 'STATEMENT',
+  STATISTICS = 'STATISTICS',
+  STDIN = 'STDIN',
+  STDOUT = 'STDOUT',
+  STORAGE = 'STORAGE',
+  STORED = 'STORED',
+  STRICT_P = 'STRICT_P',
+  STRIP_P = 'STRIP_P',
+  SUBSCRIPTION = 'SUBSCRIPTION',
+  SUBSTRING = 'SUBSTRING',
+  SUPPORT = 'SUPPORT',
+  SYMMETRIC = 'SYMMETRIC',
+  SYSID = 'SYSID',
+  SYSTEM_P = 'SYSTEM_P',
+  SYSTEM_USER = 'SYSTEM_USER',
+  TABLE = 'TABLE',
+  TABLES = 'TABLES',
+  TABLESAMPLE = 'TABLESAMPLE',
+  TABLESPACE = 'TABLESPACE',
+  TEMP = 'TEMP',
+  TEMPLATE = 'TEMPLATE',
+  TEMPORARY = 'TEMPORARY',
+  TEXT_P = 'TEXT_P',
+  THEN = 'THEN',
+  TIES = 'TIES',
+  TIME = 'TIME',
+  TIMESTAMP = 'TIMESTAMP',
+  TO = 'TO',
+  TRAILING = 'TRAILING',
+  TRANSACTION = 'TRANSACTION',
+  TRANSFORM = 'TRANSFORM',
+  TREAT = 'TREAT',
+  TRIGGER = 'TRIGGER',
+  TRIM = 'TRIM',
+  TRUE_P = 'TRUE_P',
+  TRUNCATE = 'TRUNCATE',
+  TRUSTED = 'TRUSTED',
+  TYPE_P = 'TYPE_P',
+  TYPES_P = 'TYPES_P',
+  UESCAPE = 'UESCAPE',
+  UNBOUNDED = 'UNBOUNDED',
+  UNCOMMITTED = 'UNCOMMITTED',
+  UNENCRYPTED = 'UNENCRYPTED',
+  UNION = 'UNION',
+  UNIQUE = 'UNIQUE',
+  UNKNOWN = 'UNKNOWN',
+  UNLISTEN = 'UNLISTEN',
+  UNLOGGED = 'UNLOGGED',
+  UNTIL = 'UNTIL',
+  UPDATE = 'UPDATE',
+  USER = 'USER',
+  USING = 'USING',
+  VACUUM = 'VACUUM',
+  VALID = 'VALID',
+  VALIDATE = 'VALIDATE',
+  VALIDATOR = 'VALIDATOR',
+  VALUE_P = 'VALUE_P',
+  VALUES = 'VALUES',
+  VARCHAR = 'VARCHAR',
+  VARIADIC = 'VARIADIC',
+  VARYING = 'VARYING',
+  VERBOSE = 'VERBOSE',
+  VERSION_P = 'VERSION_P',
+  VIEW = 'VIEW',
+  VIEWS = 'VIEWS',
+  VOLATILE = 'VOLATILE',
+  WHEN = 'WHEN',
+  WHERE = 'WHERE',
+  WHITESPACE_P = 'WHITESPACE_P',
+  WINDOW = 'WINDOW',
+  WITH = 'WITH',
+  WITHIN = 'WITHIN',
+  WITHOUT = 'WITHOUT',
+  WORK = 'WORK',
+  WRAPPER = 'WRAPPER',
+  WRITE = 'WRITE',
+  XML_P = 'XML_P',
+  XMLATTRIBUTES = 'XMLATTRIBUTES',
+  XMLCONCAT = 'XMLCONCAT',
+  XMLELEMENT = 'XMLELEMENT',
+  XMLEXISTS = 'XMLEXISTS',
+  XMLFOREST = 'XMLFOREST',
+  XMLNAMESPACES = 'XMLNAMESPACES',
+  XMLPARSE = 'XMLPARSE',
+  XMLPI = 'XMLPI',
+  XMLROOT = 'XMLROOT',
+  XMLSERIALIZE = 'XMLSERIALIZE',
+  XMLTABLE = 'XMLTABLE',
+  YEAR_P = 'YEAR_P',
+  YES_P = 'YES_P',
+  ZONE = 'ZONE',
+  FORMAT_LA = 'FORMAT_LA',
+  NOT_LA = 'NOT_LA',
+  NULLS_LA = 'NULLS_LA',
+  WITH_LA = 'WITH_LA',
+  WITHOUT_LA = 'WITHOUT_LA',
+  MODE_TYPE_NAME = 'MODE_TYPE_NAME',
+  MODE_PLPGSQL_EXPR = 'MODE_PLPGSQL_EXPR',
+  MODE_PLPGSQL_ASSIGN1 = 'MODE_PLPGSQL_ASSIGN1',
+  MODE_PLPGSQL_ASSIGN2 = 'MODE_PLPGSQL_ASSIGN2',
+  MODE_PLPGSQL_ASSIGN3 = 'MODE_PLPGSQL_ASSIGN3',
+  UMINUS = 'UMINUS',
 }
 
 /**

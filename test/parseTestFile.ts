@@ -1,9 +1,9 @@
-import fs from "node:fs"
-import { fingerprintSync, splitWithScannerSync } from "../src/lib/binding"
+import fs from 'node:fs'
+import { fingerprintSync, splitWithScannerSync } from '../src/lib/binding'
 
 export function parseTestFile(testPath: string) {
-  let sql = fs.readFileSync(testPath, "utf8")
-  sql = sql.replace(/FROM STDIN;[\S\s]+\n\\./i, "FROM STDIN;")
+  let sql = fs.readFileSync(testPath, 'utf8')
+  sql = sql.replace(/FROM STDIN;[\S\s]+\n\\./i, 'FROM STDIN;')
 
   const stmts = splitWithScannerSync(sql)
   const lineBreaks = getLineBreakLocations(sql)
@@ -14,8 +14,8 @@ export function parseTestFile(testPath: string) {
   for (let { location, length } of stmts) {
     // Skip comments and empty lines.
     const originalLocation = location
-    while (sql[location] === "\n" || sql.substr(location, 2) === "--") {
-      location = sql.indexOf("\n", location + 1) + 1
+    while (sql[location] === '\n' || sql.substr(location, 2) === '--') {
+      location = sql.indexOf('\n', location + 1) + 1
     }
     length -= location - originalLocation
 
@@ -29,7 +29,7 @@ export function parseTestFile(testPath: string) {
 
         // Get the line number.
         const line =
-          lineBreaks.findIndex((lineBreak) => location < lineBreak) + 1 ||
+          lineBreaks.findIndex(lineBreak => location < lineBreak) + 1 ||
           lineBreaks.length
 
         tests.push({ line, stmt })
@@ -44,7 +44,7 @@ export function parseTestFile(testPath: string) {
 function getLineBreakLocations(sql: string) {
   const locations: number[] = []
   for (let i = 0; i < sql.length; i++) {
-    if (sql[i] === "\n") {
+    if (sql[i] === '\n') {
       locations.push(i)
     }
   }

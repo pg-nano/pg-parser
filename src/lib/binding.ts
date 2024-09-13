@@ -1,7 +1,7 @@
-import bindings from "bindings"
-import type { Node } from "./ast"
+import bindings from 'bindings'
+import type { Node } from './ast'
 
-const loadAddon = () => bindings("queryparser")
+const loadAddon = () => bindings('queryparser')
 
 let PgQuery: {
   parseQueryAsync: (

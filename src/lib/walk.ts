@@ -1,4 +1,4 @@
-import { NodePath, type NodeTag } from "./node.js"
+import { NodePath, type NodeTag } from './node.js'
 
 export type Walker<TNodePath extends NodePath = NodePath> = (
   node: TNodePath,
@@ -22,15 +22,15 @@ export function walk(
   parent: NodePath | null = null,
   keyPath: readonly (string | number)[] = [],
 ) {
-  if (typeof callback !== "function") {
+  if (typeof callback !== 'function') {
     const visitor = callback
-    callback = (path) => visitor[path.tag]?.(path as any)
+    callback = path => visitor[path.tag]?.(path as any)
   }
   if (Array.isArray(root)) {
     root.forEach((node, index) => {
       walk(node, callback, parent, [...keyPath, index])
     })
-  } else if (typeof root === "object" && root !== null) {
+  } else if (typeof root === 'object' && root !== null) {
     const keys = Object.keys(root)
     if (keys.length === 1 && /^[A-Z]/.test(keys[0])) {
       const tag = keys[0] as NodeTag

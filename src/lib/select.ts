@@ -1,4 +1,4 @@
-import type { NodeTag } from "./node.js"
+import type { NodeTag } from './node.js'
 
 /**
  * If a node type is given, unwrap it to its fields. If any other object type is
@@ -47,11 +47,11 @@ export function select<T extends object, TFieldPath extends string>(
   root: T,
   path: TFieldPath,
 ): FieldSelection<T, TFieldPath> {
-  const keys = path.split(".")
+  const keys = path.split('.')
   let current: any = root
 
   for (const key of keys) {
-    if (current === null || typeof current !== "object") {
+    if (current === null || typeof current !== 'object') {
       return undefined as any
     }
 
