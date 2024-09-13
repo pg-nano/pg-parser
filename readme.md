@@ -6,7 +6,9 @@ Not currently intended for use outside of [pg-nano](https://github.com/pg-nano/p
 
 ### Walking the AST
 
-This package provides a `walk` function for easy AST traversal.
+I've added a `walk` function for easy AST traversal. You can pass a callback or a visitor object. You can return false to not walk into the children of the current node.
+
+Each node passed to your visitor is wrapped in a `NodePath` instance, which tracks the parent node and provides type guards (e.g. `isSelectStmt`) for type narrowing. You can access the underlying node with `path.node`.
 
 ```ts
 import { parseQuerySync, walk, NodeTag } from "@pg-nano/pg-parser"
@@ -17,6 +19,7 @@ walk(parseQuerySync(sql), (path) => {
   path.parent // the parent node
 
   if (path.isSelectStmt()) {
+    // The visitor pattern is also supported.
     walk(path.node.targetList, {
       ColumnRef(path) {
         const id = path.node.fields
@@ -29,6 +32,42 @@ walk(parseQuerySync(sql), (path) => {
 
     // don't walk into the children
     return false
+  }
+})
+```
+
+I've also added a `select` function for type-safe, deep field access through dot-notation. You must not include the node types in the field path.
+
+```ts
+import { select, Expr } from "@pg-nano/pg-parser"
+
+/**
+ * Given an expression node of many possible types,
+ * check for a `typeName` field.
+ */
+const typeName = select(expr as Expr, 'typeName')
+//    ^? TypeName | undefined
+```
+
+Similar to `select`, you may like the `$` function for field access. It returns a proxy that makes field access less verbose. It also comes with type guards for all nodes.
+
+```ts
+import { $, walk } from "@pg-nano/pg-parser"
+
+walk(ast, {
+  SelectStmt(path) {
+    for (const target of path.node.targetList) {
+      const { name, val } = $(target)
+
+      if ($.isColumnRef(val)) {
+        console.log(
+          name,
+          $(val).fields.map(field => {
+            return $.isA_Star(field) ? "*" : field.String.sval
+          }).join("."),
+        )
+      }
+    }
   }
 })
 ```
@@ -50,6 +89,12 @@ The type definitions are generated from the [srcdata](https://github.com/pganaly
 - No `deparse` support (turning an AST back into a string), as this isn't needed for our use case.
 
 ## Contributing
+
+To generate the type definitions, you can use this command:
+
+```sh
+pnpm prepare:types
+```
 
 To compile the TypeScript bindings and the C++ addon (and recompile them on file changes), you can use this command:
 
