@@ -1,8 +1,32 @@
 # @pg-nano/pg-parser
 
-A fork of [libpg-query](https://github.com/launchql/libpg-query-node) with best-in-class type definitions.
+A fork of [libpg-query](https://github.com/launchql/libpg-query-node) with best-in-class type definitions and AST utilities.
 
-Not currently intended for use outside of [pg-nano](https://github.com/pg-nano/pg-nano), though it has the same API as its predecessor.
+```ts
+import { parseQuery } from "@pg-nano/pg-parser"
+
+const ast = await parseQuery("SELECT 1; SELECT 2")
+//    ^? ParseResult
+
+ast.version // => 160001
+ast.stmts // => [{ stmt: SelectStmt, stmt_len: 8 }, { stmt: SelectStmt, stmt_location: 9 }]
+```
+
+## API
+
+This package exports the following functions:
+- `parseQuery` (for async parsing a SQL string of one or more statements)
+- `parseQuerySync`
+- `parsePlPgSQL` (for async parsing a plpgsql string)
+- `parsePlPgSQLSync`
+- `fingerprint` (for generating a unique string for a SQL string)
+- `fingerprintSync`
+- `splitWithScannerSync` (for splitting a SQL string into one or more statements)
+- `walk` (for traversing the AST)
+- `select` (for type-safe, deep field access through dot-notation)
+- `$` (for type-safe node proxy and type guards)
+
+**Note:** There is no `deparse` function (for turning an AST back into a string) included, as this isn't needed for my use case.
 
 ### Walking the AST
 
@@ -83,10 +107,6 @@ The type definitions are generated from the [srcdata](https://github.com/pganaly
 - Uses `prebuild-install` to avoid bundling every platform's binaries into the package.
 - Added `splitWithScannerSync` for SQL statement splitting.
 - [Generated](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/generateTests.ts) unit tests (see [snapshots](https://github.com/pg-nano/pg-parser/tree/16-latest/test/postgres_regress/__snapshots__) of every SQL case supported by `libpg_query`).
-
-### Features not included
-
-- No `deparse` support (turning an AST back into a string), as this isn't needed for our use case.
 
 ## Contributing
 
