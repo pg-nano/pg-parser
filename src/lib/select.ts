@@ -1,4 +1,5 @@
 import type { NodeTag } from './node.js'
+import { typeGuards } from './typeGuards.js'
 
 /**
  * If a node type is given, unwrap it to its fields. If any other object type is
@@ -76,10 +77,12 @@ export function select<T extends object, TFieldPath extends string>(
  * burden of type-checking first. It also dissolves node types, so you can do
  * `$(node).larg.sortClause` instead of `node.larg.SelectStmt.sortClause`.
  */
-export function $<T extends object>(root: T): NodeFields<T> {
-  return new Proxy(root as any, {
-    get(target, prop) {
-      return select(target, prop as string)
+export const $ = (root => {
+  return new Proxy(root, {
+    get(target, prop: string) {
+      return select(target, prop)
     },
   })
-}
+}) as (<T extends object>(root: T) => NodeFields<T>) & typeof typeGuards
+
+Object.assign($, typeGuards)
