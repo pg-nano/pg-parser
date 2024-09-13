@@ -12,6 +12,16 @@ ast.version // => 160001
 ast.stmts // => [{ stmt: SelectStmt, stmt_len: 8 }, { stmt: SelectStmt, stmt_location: 9 }]
 ```
 
+## Install
+
+```
+pnpm add @pg-nano/pg-parser
+```
+
+The major and minor version of this package is meant to be aligned with the supported PostgreSQL major and minor version. Older and newer versions may be compatible, but this is not guaranteed.
+
+Upon install, the pre-compiled binary for your operating system and architecture will be pulled from GitHub Releases.
+
 ## API
 
 This package exports the following functions:
