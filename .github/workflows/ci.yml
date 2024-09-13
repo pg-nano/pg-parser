@@ -10,50 +10,50 @@ jobs:
       contents: write
     name: ${{ matrix.os }} - Node.js ${{ matrix.nodejs_version }} ${{ matrix.nodejs_arch }}
     runs-on: ${{ matrix.os }}
-    # container: ${{ matrix.container }}
+    container: ${{ matrix.container }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          # - os: ubuntu-latest
-          #   container: rockylinux:9
-          #   nodejs_version: 20
-          # - os: ubuntu-latest
-          #   container: node:20-alpine3.20
-          # - os: macos-latest
-          #   nodejs_version: 20
-          #   nodejs_arch: x64
-          # - os: macos-latest
-          #   nodejs_version: 20
-          #   nodejs_arch: arm64
+          - os: ubuntu-latest
+            container: rockylinux:9
+            nodejs_version: 20
+          - os: ubuntu-latest
+            container: node:20-alpine3.20
+          - os: macos-latest
+            nodejs_version: 20
+            nodejs_arch: x64
+          - os: macos-latest
+            nodejs_version: 20
+            nodejs_arch: arm64
           # - os: windows-latest
           #   nodejs_version: 20
           #   nodejs_arch: x86
-          - os: windows-latest
-            nodejs_version: 20
-            nodejs_arch: x64
+          # - os: windows-latest
+          #   nodejs_version: 20
+          #   nodejs_arch: x64
     steps:
       - uses: pnpm/action-setup@v4
         with:
           version: 9.7.1
 
-      # - name: Dependencies (Rocky Linux glibc)
-      #   if: contains(matrix.container, 'rockylinux')
-      #   run: |
-      #     curl -sL https://rpm.nodesource.com/setup_${{ matrix.nodejs_version }}.x | bash -
-      #     dnf install -y gcc-toolset-11-gcc-c++ make git python3.12 nodejs
-      #     echo "/opt/rh/gcc-toolset-11/root/usr/bin" >> $GITHUB_PATH
-      #     echo "PYTHON=/usr/bin/python3.12" >> $GITHUB_ENV
+      - name: Dependencies (Rocky Linux glibc)
+        if: contains(matrix.container, 'rockylinux')
+        run: |
+          curl -sL https://rpm.nodesource.com/setup_${{ matrix.nodejs_version }}.x | bash -
+          dnf install -y gcc-toolset-11-gcc-c++ make git python3.12 nodejs
+          echo "/opt/rh/gcc-toolset-11/root/usr/bin" >> $GITHUB_PATH
+          echo "PYTHON=/usr/bin/python3.12" >> $GITHUB_ENV
 
-      # - name: Dependencies (Linux musl)
-      #   if: contains(matrix.container, 'alpine')
-      #   run: apk add build-base git python3 --update-cache
+      - name: Dependencies (Linux musl)
+        if: contains(matrix.container, 'alpine')
+        run: apk add build-base git python3 --update-cache
 
-      # - name: Dependencies (Python - macOS, Windows)
-      #   if: contains(matrix.os, 'macos') || contains(matrix.os, 'windows')
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: "3.12"
+      - name: Dependencies (Python - macOS, Windows)
+        if: contains(matrix.os, 'macos') || contains(matrix.os, 'windows')
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Checkout
         uses: actions/checkout@v4
