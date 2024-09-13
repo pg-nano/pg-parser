@@ -49,6 +49,22 @@ The type definitions are generated from the [srcdata](https://github.com/pganaly
 
 - No `deparse` support (turning an AST back into a string), as this isn't needed for our use case.
 
-### License
+## Contributing
+
+To compile the TypeScript bindings and the C++ addon (and recompile them on file changes), you can use this command:
+
+```sh
+pnpm dev
+```
+
+Otherwise, `pnpm build` will compile just once.
+
+If you're editing C++ code, you'll want to have [compiledb](https://github.com/nickdiego/compiledb) installed and the [clangd extension](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) in VSCode. This enables the `clangd` language server for features like autocomplete, static analysis, and code navigation.
+
+```sh
+brew install compiledb
+```
+
+## License
 
 MIT
