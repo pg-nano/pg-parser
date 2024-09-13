@@ -1,7 +1,7 @@
-import fs from "node:fs"
-import path from "node:path"
+import fs from 'node:fs'
+import path from 'node:path'
 
-const testDir = "libpg_query/test/sql/postgres_regress"
+const testDir = 'libpg_query/test/sql/postgres_regress'
 const testFiles = fs.readdirSync(testDir)
 
 const cwd = process.cwd()
@@ -26,12 +26,12 @@ describe("${testFile}", () => {
 })
 `
 
-const outDir = "test/postgres_regress"
+const outDir = 'test/postgres_regress'
 fs.mkdirSync(outDir, { recursive: true })
 
 for (const testFile of testFiles) {
   fs.writeFileSync(
-    path.join(outDir, testFile.replace(/\.sql$/, ".test.ts")),
+    path.join(outDir, testFile.replace(/\.sql$/, '.test.ts')),
     renderTest(testFile),
   )
 }

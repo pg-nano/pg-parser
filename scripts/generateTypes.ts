@@ -1,10 +1,10 @@
-import fs from "node:fs"
-import { typeMappings } from "./typeMappings"
-import { type NodeFieldMetadataByTag } from "./inferFieldMetadata"
+import fs from 'node:fs'
+import { typeMappings } from './typeMappings'
+import { type NodeFieldMetadataByTag } from './inferFieldMetadata'
 
 /** A record of node tag -> field name -> nullability */
 const nodeFieldsByTag: NodeFieldMetadataByTag = JSON.parse(
-  fs.readFileSync("nodeFields.json", "utf8"),
+  fs.readFileSync('nodeFields.json', 'utf8'),
 )
 
 type StructsByModule = Record<string, Record<string, StructDef>>
@@ -47,75 +47,75 @@ function formatComment(
   comment: string | null | undefined,
   indent: string,
 ): string {
-  if (comment == null || comment === "") {
-    return ""
+  if (comment == null || comment === '') {
+    return ''
   }
   return comment
-    .replace(/\/\*/, "/**")
+    .replace(/\/\*/, '/**')
     .replace(/^\s*/, indent)
-    .replace(/\n?$/, "\n")
+    .replace(/\n?$/, '\n')
 }
 
 const bitMasks: Record<string, string[]> = {
   AclMode: [
-    "ACL_NO_RIGHTS",
-    "ACL_INSERT",
-    "ACL_SELECT",
-    "ACL_UPDATE",
-    "ACL_DELETE",
-    "ACL_TRUNCATE",
-    "ACL_REFERENCES",
-    "ACL_TRIGGER",
-    "ACL_EXECUTE",
-    "ACL_USAGE",
-    "ACL_CREATE",
-    "ACL_CREATE_TEMP",
-    "ACL_CONNECT",
-    "ACL_SET",
-    "ACL_ALTER_SYSTEM",
+    'ACL_NO_RIGHTS',
+    'ACL_INSERT',
+    'ACL_SELECT',
+    'ACL_UPDATE',
+    'ACL_DELETE',
+    'ACL_TRUNCATE',
+    'ACL_REFERENCES',
+    'ACL_TRIGGER',
+    'ACL_EXECUTE',
+    'ACL_USAGE',
+    'ACL_CREATE',
+    'ACL_CREATE_TEMP',
+    'ACL_CONNECT',
+    'ACL_SET',
+    'ACL_ALTER_SYSTEM',
   ],
 }
 
 async function main() {
   const baseURL =
-    "https://raw.githubusercontent.com/pganalyze/libpg_query/16-latest/srcdata/"
+    'https://raw.githubusercontent.com/pganalyze/libpg_query/16-latest/srcdata/'
 
   const [structsByModule, enumsByModule, typeDefs, nodeTypes] =
     await Promise.all([
-      fetch(baseURL + "struct_defs.json").then((r) =>
+      fetch(baseURL + 'struct_defs.json').then(r =>
         r.json(),
       ) as Promise<StructsByModule>,
-      fetch(baseURL + "enum_defs.json").then((r) =>
+      fetch(baseURL + 'enum_defs.json').then(r =>
         r.json(),
       ) as Promise<EnumsByModule>,
-      fetch(baseURL + "typedefs.json").then((r) => r.json()) as Promise<
+      fetch(baseURL + 'typedefs.json').then(r => r.json()) as Promise<
         TypeDef[]
       >,
-      fetch(baseURL + "nodetypes.json")
-        .then((r) => r.json())
-        .then((r) => new Set(r as string[])),
+      fetch(baseURL + 'nodetypes.json')
+        .then(r => r.json())
+        .then(r => new Set(r as string[])),
     ])
 
   const entityNames = [
-    ...typeDefs.map((t) => t.new_type_name),
-    ...Object.values(enumsByModule).flatMap((e) => Object.keys(e)),
-    ...Object.values(structsByModule).flatMap((s) => Object.keys(s)),
+    ...typeDefs.map(t => t.new_type_name),
+    ...Object.values(enumsByModule).flatMap(e => Object.keys(e)),
+    ...Object.values(structsByModule).flatMap(s => Object.keys(s)),
   ]
 
   // These are not used anywhere. They're for libpg_query's internal use.
   const skippedEntities = new Set([
-    "BlockId",
-    "BlockIdData",
-    "BlockNumber",
-    "NodeTag",
-    "ParallelVacuumState",
-    "Query",
-    "QuerySource",
-    "RangeTblEntry",
-    "RangeTblFunction",
-    "TableFunc",
-    "VacAttrStatsP",
-    "pg_wchar",
+    'BlockId',
+    'BlockIdData',
+    'BlockNumber',
+    'NodeTag',
+    'ParallelVacuumState',
+    'Query',
+    'QuerySource',
+    'RangeTblEntry',
+    'RangeTblFunction',
+    'TableFunc',
+    'VacAttrStatsP',
+    'pg_wchar',
   ])
 
   const shouldSkipEntity = (name: string) => skippedEntities.has(name)
@@ -125,20 +125,20 @@ async function main() {
 
   // A type is unknown if it's not found in typeMappings or entityNames.
   const unknownTypes = new Set<string>()
-  const warnUnknownType = (name: string, label = "type") => {
+  const warnUnknownType = (name: string, label = 'type') => {
     if (debugUnknownTypes && !unknownTypes.has(name)) {
       unknownTypes.add(name)
-      console.warn("Unknown %s: %O", label, name)
+      console.warn('Unknown %s: %O', label, name)
     }
   }
 
   // Map a C type to a TypeScript type.
   const applyTypeMapping = (name: string, c_type: string): string => {
-    const rawType = c_type.replace(/\*$/, "")
+    const rawType = c_type.replace(/\*$/, '')
     const mapping = (name && typeMappings[name]) || typeMappings[rawType]
     if (mapping) {
-      if (mapping === "Node" && name.endsWith("expr")) {
-        return "Expr"
+      if (mapping === 'Node' && name.endsWith('expr')) {
+        return 'Expr'
       }
       return mapping
     }
@@ -146,11 +146,11 @@ async function main() {
       return rawType
     }
     warnUnknownType(rawType)
-    return "any"
+    return 'any'
   }
 
   // This is the output TypeScript code.
-  let code = ""
+  let code = ''
 
   // Typedefs are mostly mapped to type aliases, but at least one is a bitmask,
   // which gets mapped to an enum.
@@ -159,14 +159,14 @@ async function main() {
       continue
     }
 
-    code += "\n"
-    code += formatComment(typeDef.comment, "")
+    code += '\n'
+    code += formatComment(typeDef.comment, '')
 
     const bitMask = bitMasks[typeDef.new_type_name]
     if (bitMask) {
       code += `export enum ${typeDef.new_type_name} {\n`
       bitMask.forEach((value, index) => {
-        code += `  ${value} = ${index > 0 ? "1 << " + (index - 1) : 0},\n`
+        code += `  ${value} = ${index > 0 ? '1 << ' + (index - 1) : 0},\n`
       })
       code += `}\n`
     } else {
@@ -181,19 +181,19 @@ async function main() {
     }
 
     // Remove copyright comment.
-    enums[keys[0]].comment = ""
+    enums[keys[0]].comment = ''
 
     for (const [enumName, { values, comment }] of Object.entries(enums)) {
       if (shouldSkipEntity(enumName)) {
         continue
       }
 
-      code += "\n"
-      code += formatComment(comment, "")
+      code += '\n'
+      code += formatComment(comment, '')
       code += `export enum ${enumName} {\n`
       for (const value of values) {
-        code += formatComment(value.comment, "  ")
-        if ("name" in value) {
+        code += formatComment(value.comment, '  ')
+        if ('name' in value) {
           code += `  ${value.name} = "${value.name}",\n`
         }
       }
@@ -201,20 +201,20 @@ async function main() {
     }
   }
 
-  delete structsByModule["../backend/parser/gram"]
-  delete structsByModule["../backend/parser/gramparse"]
+  delete structsByModule['../backend/parser/gram']
+  delete structsByModule['../backend/parser/gramparse']
 
   /** Constant types are included in the "A_Const" union of object types. */
   const constTypes: string[] = []
 
   /** Expression types are included in the "Expr" union of node types. */
   const expressionTypes = new Set([
-    "A_Const",
-    "List",
-    "TypeCast",
-    "FuncCall",
-    "ColumnRef",
-    "ParamRef",
+    'A_Const',
+    'List',
+    'TypeCast',
+    'FuncCall',
+    'ColumnRef',
+    'ParamRef',
   ])
 
   const abstractTypes: Record<string, StructDef | null> = {
@@ -228,7 +228,7 @@ async function main() {
 
   /** Fix structs that do not reflect the AST accurately */
   const fixedStructs: Record<string, string> = {
-    PartitionRangeDatum: "Expr",
+    PartitionRangeDatum: 'Expr',
   }
 
   for (const structs of Object.values(structsByModule)) {
@@ -246,12 +246,12 @@ async function main() {
 
       // Assume any struct with a name ending in "Expr" can be used where an
       // expression is allowed.
-      if (typeName.endsWith("Expr")) {
+      if (typeName.endsWith('Expr')) {
         expressionTypes.add(typeName)
       }
 
-      code += "\n"
-      code += formatComment(comment, "")
+      code += '\n'
+      code += formatComment(comment, '')
       code += `export type ${typeName} = `
 
       if (typeName in fixedStructs) {
@@ -264,7 +264,7 @@ async function main() {
       )
       if (
         namedFields.length === 1 &&
-        namedFields[0].name.endsWith("val") &&
+        namedFields[0].name.endsWith('val') &&
         namedFields[0].name.length > 3
       ) {
         constTypes.push(typeName)
@@ -277,7 +277,7 @@ async function main() {
         objectTypes.add(typeName)
       }
 
-      code += "{\n"
+      code += '{\n'
 
       for (let i = 0; i < fields.length; i++) {
         const field = fields[i]
@@ -294,24 +294,24 @@ async function main() {
         }
 
         /** TypeScript definition for the field. */
-        let fieldTsDef = ""
+        let fieldTsDef = ''
 
         if (field.name !== undefined) {
-          const fieldName = field.name.replace(/\[.+?\]$/, "")
+          const fieldName = field.name.replace(/\[.+?\]$/, '')
 
           // The "xpr" field is never actually included in the AST. It exists to
           // signify that the struct can be used where an expression is allowed.
-          if (fieldName === "xpr") {
+          if (fieldName === 'xpr') {
             expressionTypes.add(typeName)
             continue
           }
 
           let fieldType = applyTypeMapping(
-            typeName + "." + fieldName,
+            typeName + '.' + fieldName,
             field.c_type,
           )
 
-          if (fieldName === "type" && fieldType === "NodeTag") {
+          if (fieldName === 'type' && fieldType === 'NodeTag') {
             // Strangely, the result of pg_query_parse doesn't actually include
             // the node tags, so skip defining them.
             continue
@@ -319,86 +319,86 @@ async function main() {
 
           const debugTags = false
 
-          if (fieldType === "any" || fieldType === "Node") {
+          if (fieldType === 'any' || fieldType === 'Node') {
             const inferredTags = fieldMetadata?.[fieldName]?.[1]
             if (inferredTags) {
               debugTags &&
                 console.log(
-                  "Inferred tags for %s.%s:",
+                  'Inferred tags for %s.%s:',
                   typeName,
                   fieldName,
                   inferredTags,
                 )
               fieldType =
-                "(" +
+                '(' +
                 inferredTags
                   .sort()
-                  .map((tag) => `{ ${tag}: ${tag} }`)
-                  .join(" | ") +
-                ")"
+                  .map(tag => `{ ${tag}: ${tag} }`)
+                  .join(' | ') +
+                ')'
             }
-          } else if (fieldType === "any[]") {
+          } else if (fieldType === 'any[]') {
             const inferredListTags = fieldMetadata?.[fieldName]?.[2]
             if (inferredListTags) {
               debugTags &&
                 console.log(
-                  "Inferred list tags for %s.%s:",
+                  'Inferred list tags for %s.%s:',
                   typeName,
                   fieldName,
                   inferredListTags,
                 )
 
               fieldType =
-                "List<" +
+                'List<' +
                 inferredListTags
                   .sort()
-                  .map((tag) => `{ ${tag}: ${tag} }`)
-                  .join(" | ") +
-                ">"
+                  .map(tag => `{ ${tag}: ${tag} }`)
+                  .join(' | ') +
+                '>'
 
-              if (field.c_type === "List*") {
-                fieldType += "[]"
+              if (field.c_type === 'List*') {
+                fieldType += '[]'
               }
             }
-            if (fieldType === "any[]" && field.c_type === "List*") {
+            if (fieldType === 'any[]' && field.c_type === 'List*') {
               const inferredTags = fieldMetadata?.[fieldName]?.[1]
               if (inferredTags) {
                 debugTags &&
                   console.log(
-                    "Inferred tags for %s.%s:",
+                    'Inferred tags for %s.%s:',
                     typeName,
                     fieldName,
                     inferredTags,
                   )
 
                 fieldType =
-                  "(" +
+                  '(' +
                   inferredTags
                     .sort()
-                    .map((tag) => `{ ${tag}: ${tag} }`)
-                    .join(" | ") +
-                  ")[]"
+                    .map(tag => `{ ${tag}: ${tag} }`)
+                    .join(' | ') +
+                  ')[]'
               }
             }
           }
 
           if (
-            (fieldType === "any[]" || fieldType === "({ String: String })[]") &&
-            /\bname\b/.test(field.comment ?? "")
+            (fieldType === 'any[]' || fieldType === '({ String: String })[]') &&
+            /\bname\b/.test(field.comment ?? '')
           ) {
-            fieldType = "QualifiedName"
-          } else if (fieldType === "any[]") {
-            warnUnknownType(typeName + "." + fieldName, "list type")
+            fieldType = 'QualifiedName'
+          } else if (fieldType === 'any[]') {
+            warnUnknownType(typeName + '.' + fieldName, 'list type')
           }
 
           const nullable = fieldMetadata
-            ? (fieldMetadata[fieldName]?.[0] ?? true)
-            : /\b(NULL|NIL)\b/.test(field.comment ?? "")
+            ? fieldMetadata[fieldName]?.[0] ?? true
+            : /\b(NULL|NIL)\b/.test(field.comment ?? '')
 
-          fieldTsDef += `  ${fieldName}${nullable ? "?" : ""}: ${fieldType}\n`
+          fieldTsDef += `  ${fieldName}${nullable ? '?' : ''}: ${fieldType}\n`
         }
 
-        code += formatComment(field.comment, "  ") + fieldTsDef
+        code += formatComment(field.comment, '  ') + fieldTsDef
       }
 
       code += `}\n`
@@ -407,54 +407,54 @@ async function main() {
 
   // These are untested by libpg_query's test suite, so they've been incorrectly
   // marked as object types, even though they are valid node types.
-  objectTypes.delete("CreateExtensionStmt")
-  objectTypes.delete("AlterExtensionStmt")
-  objectTypes.delete("AlterExtensionContentsStmt")
+  objectTypes.delete('CreateExtensionStmt')
+  objectTypes.delete('AlterExtensionStmt')
+  objectTypes.delete('AlterExtensionContentsStmt')
 
   for (const name of [...objectTypes, ...skippedEntities]) {
     expressionTypes.delete(name)
     nodeTypes.delete(name)
   }
 
-  nodeTypes.forEach((name) => {
+  nodeTypes.forEach(name => {
     if (!entityNames.includes(name)) {
       nodeTypes.delete(name)
     }
   })
 
-  code += "\n"
+  code += '\n'
   code += `/** A qualified name for referencing a database object, e.g. "public.my_table" */\n`
-  code += "export type QualifiedName = { String: String }[]\n"
+  code += 'export type QualifiedName = { String: String }[]\n'
 
-  code += "\n"
-  code += formatComment(abstractTypes.List?.comment, "")
-  code += "export type List<T = Node> = { items: T[] }\n"
+  code += '\n'
+  code += formatComment(abstractTypes.List?.comment, '')
+  code += 'export type List<T = Node> = { items: T[] }\n'
 
-  code += "\n"
-  code += formatComment(abstractTypes.A_Const?.comment, "")
+  code += '\n'
+  code += formatComment(abstractTypes.A_Const?.comment, '')
   code +=
-    "export type A_Const =\n  | " + constTypes.sort().join("\n  | ") + "\n"
+    'export type A_Const =\n  | ' + constTypes.sort().join('\n  | ') + '\n'
 
-  code += "\n"
-  code += formatComment(abstractTypes.Expr?.comment, "")
+  code += '\n'
+  code += formatComment(abstractTypes.Expr?.comment, '')
   code +=
-    "export type Expr =\n  | " +
+    'export type Expr =\n  | ' +
     [...expressionTypes]
       .sort()
-      .map((name) => `{ ${name}: ${name}${name === "List" ? "<Expr>" : ""} }`)
-      .join("\n  | ") +
-    "\n"
+      .map(name => `{ ${name}: ${name}${name === 'List' ? '<Expr>' : ''} }`)
+      .join('\n  | ') +
+    '\n'
 
-  code += "\n"
+  code += '\n'
   code +=
-    "export type Node =\n  | " +
+    'export type Node =\n  | ' +
     [...nodeTypes]
       .sort()
-      .map((name) => `{ ${name}: ${name} }`)
-      .join("\n  | ") +
-    "\n"
+      .map(name => `{ ${name}: ${name} }`)
+      .join('\n  | ') +
+    '\n'
 
-  fs.writeFileSync("ast.ts", code.trimStart())
+  fs.writeFileSync('ast.ts', code.trimStart())
 
   const nodeClass = `
 import type { Node } from "./ast.js"
@@ -477,12 +477,12 @@ export class NodePath<TNodeTag extends NodeTag = NodeTag> {
   constructor(readonly tag: TNodeTag, readonly node: NodeByTag<TNodeTag>, readonly parent: NodePath | null, readonly keyPath: readonly (string | number)[]) {}
   ${Array.from(
     nodeTypes,
-    (name) => `
+    name => `
   is${name}(): this is NodePath<"${name}"> {
     return this.tag === "${name}"
   }`,
   )
-    .join("")
+    .join('')
     .trimStart()}
 }
   
@@ -494,17 +494,17 @@ function isTaggedNode(node: object, tag: string) {
 export const NodeTag = {
   ${Array.from(
     nodeTypes,
-    (name) => `
+    name => `
   is${name}(node: object | undefined): node is { ${name}: import("./ast").${name} } {
     return node != null && isTaggedNode(node, "${name}")
   }`,
   )
-    .join(",")
+    .join(',')
     .trimStart()}
 }
 `
 
-  fs.writeFileSync("node.ts", nodeClass.trimStart())
+  fs.writeFileSync('node.ts', nodeClass.trimStart())
 }
 
 main()

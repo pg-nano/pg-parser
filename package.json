@@ -25,14 +25,7 @@
     "format": "biome format --write package.json **/*.ts",
     "test": "pnpm -s dlx vitest@2.0.5"
   },
-  "keywords": [
-    "postgres",
-    "postgresql",
-    "pg",
-    "query",
-    "parser",
-    "plpgsql"
-  ],
+  "keywords": ["postgres", "postgresql", "pg", "query", "parser", "plpgsql"],
   "dependencies": {
     "bindings": "^1.5.0",
     "node-addon-api": "^8.1.0",
@@ -40,6 +33,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@radashi-org/biome-config": "^1.0.2",
     "@types/bindings": "^1.5.5",
     "node-gyp": "^10.0.1",
     "prebuild": "^13.0.1",
@@ -49,16 +43,12 @@
     "typescript": "^5.5.4",
     "watchlist": "npm:@aleclarson/watchlist@^0.3.3"
   },
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "engines": {
     "node": ">=16"
   },
   "binary": {
-    "napi_versions": [
-      8
-    ]
+    "napi_versions": [8]
   },
   "config": {
     "runtime": "napi",

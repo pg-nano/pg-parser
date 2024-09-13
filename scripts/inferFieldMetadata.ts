@@ -1,13 +1,13 @@
-import fs from "node:fs"
-import path from "node:path"
-import { select, castArrayIfExists, unique } from "radashi"
-import { parseTestFile } from "../test/parseTestFile"
-import { parseQuerySync } from "../binding"
-import { walk } from "../walk"
-import { Node } from "../ast"
-import { NodePath, NodeTag } from "../node"
+import fs from 'node:fs'
+import path from 'node:path'
+import { select, castArrayIfExists, unique } from 'radashi'
+import { parseTestFile } from '../test/parseTestFile'
+import { parseQuerySync } from '../binding'
+import { walk } from '../walk'
+import { Node } from '../ast'
+import { NodePath, NodeTag } from '../node'
 
-const testDir = "libpg_query/test/sql/postgres_regress"
+const testDir = 'libpg_query/test/sql/postgres_regress'
 const testFiles = fs.readdirSync(testDir)
 
 export type NodeFieldMetadata = [
@@ -25,7 +25,7 @@ export type NodeFieldMetadataByTag = {
 const fieldsByNodeTag: NodeFieldMetadataByTag = {}
 
 const toNodeTag = (value: unknown) => {
-  if (value != null && typeof value === "object") {
+  if (value != null && typeof value === 'object') {
     const keys = Object.keys(value)
     if (keys.length === 1 && /^[A-Z]/.test(keys[0])) {
       return keys[0]
@@ -36,11 +36,11 @@ const toNodeTag = (value: unknown) => {
 const inferNodeTags = (value: unknown) =>
   Array.isArray(value)
     ? unique(select(value, toNodeTag))
-    : (castArrayIfExists(toNodeTag(value)) ?? null)
+    : castArrayIfExists(toNodeTag(value)) ?? null
 
 const inferListTags = (value: Node[]) => {
   const lists = value.filter(NodeTag.isList)
-  const itemTags = lists.flatMap((list) => inferNodeTags(list.List.items) ?? [])
+  const itemTags = lists.flatMap(list => inferNodeTags(list.List.items) ?? [])
   return itemTags.length > 0 ? unique(itemTags) : null
 }
 
@@ -50,7 +50,7 @@ for (const testFile of testFiles) {
     for (const { stmt } of stmts) {
       try {
         const ast = parseQuerySync(stmt)
-        walk(ast, (path) => {
+        walk(ast, path => {
           const defaultNullability = path.tag in fieldsByNodeTag
           const seen = (fieldsByNodeTag[path.tag] ??= {})
 
@@ -58,7 +58,7 @@ for (const testFile of testFiles) {
             const value = (path.node as any)[key]
             const tags = inferNodeTags(value)
             const listTags =
-              tags && Array.isArray(value) && tags.includes("List")
+              tags && Array.isArray(value) && tags.includes('List')
                 ? inferListTags(value)
                 : null
 
@@ -90,4 +90,4 @@ for (const testFile of testFiles) {
   } catch {}
 }
 
-fs.writeFileSync("nodeFields.json", JSON.stringify(fieldsByNodeTag, null, 2))
+fs.writeFileSync('nodeFields.json', JSON.stringify(fieldsByNodeTag, null, 2))
