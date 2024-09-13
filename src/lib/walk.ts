@@ -1,4 +1,4 @@
-import { NodeTag, NodePath } from "./node.js"
+import { NodePath, type NodeTag } from "./node.js"
 
 export type Walker<TNodePath extends NodePath = NodePath> = (
   node: TNodePath,

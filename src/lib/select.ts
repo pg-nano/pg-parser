@@ -1,4 +1,4 @@
-import { NodeTag } from "./node.js"
+import type { NodeTag } from "./node.js"
 
 /**
  * If a node type is given, unwrap it to its fields. If any other object type is

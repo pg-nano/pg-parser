@@ -454,7 +454,7 @@ async function main() {
       .join('\n  | ') +
     '\n'
 
-  fs.writeFileSync('ast.ts', code.trimStart())
+  fs.writeFileSync('src/lib/ast.ts', code.trimStart())
 
   const nodeClass = `
 import type { Node } from "./ast.js"
@@ -504,7 +504,7 @@ export const NodeTag = {
 }
 `
 
-  fs.writeFileSync('node.ts', nodeClass.trimStart())
+  fs.writeFileSync('src/lib/node.ts', nodeClass.trimStart())
 }
 
 main()

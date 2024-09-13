@@ -343,8 +343,8 @@ export enum RTEKind {
   /** tuplestore, e.g. for AFTER triggers */
   RTE_NAMEDTUPLESTORE = "RTE_NAMEDTUPLESTORE",
   /** RTE represents an empty FROM clause; such
-								 * RTEs are added by the planner, they're not
-								 * present during parsing or rewriting */
+   * RTEs are added by the planner, they're not
+   * present during parsing or rewriting */
   RTE_RESULT = "RTE_RESULT",
 }
 
@@ -730,7 +730,7 @@ export enum VariableSetKind {
  */
 export enum ConstrType {
   /** not standard SQL, but a lot of people
-								 * expect it */
+   * expect it */
   CONSTR_NULL = "CONSTR_NULL",
   CONSTR_NOTNULL = "CONSTR_NOTNULL",
   CONSTR_DEFAULT = "CONSTR_DEFAULT",
@@ -882,7 +882,7 @@ export enum PublicationObjSpecType {
   /** All tables in schema */
   PUBLICATIONOBJ_TABLES_IN_SCHEMA = "PUBLICATIONOBJ_TABLES_IN_SCHEMA",
   /** All tables in first element of
-											 * search_path */
+   * search_path */
   PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA = "PUBLICATIONOBJ_TABLES_IN_CUR_SCHEMA",
   /** Continuation of previous type */
   PUBLICATIONOBJ_CONTINUATION = "PUBLICATIONOBJ_CONTINUATION",
@@ -1193,7 +1193,7 @@ export enum JsonFormatType {
   /** FORMAT JSON [ENCODING ...] */
   JS_FORMAT_JSON = "JS_FORMAT_JSON",
   /** implicit internal format for RETURNING
-								 * jsonb */
+   * jsonb */
   JS_FORMAT_JSONB = "JS_FORMAT_JSONB",
 }
 
@@ -1320,10 +1320,10 @@ export enum CmdType {
   /** merge stmt */
   CMD_MERGE = "CMD_MERGE",
   /** cmds like create, destroy, copy, vacuum,
-								 * etc. */
+   * etc. */
   CMD_UTILITY = "CMD_UTILITY",
   /** dummy command for instead nothing rules
-								 * with qual */
+   * with qual */
   CMD_NOTHING = "CMD_NOTHING",
 }
 
@@ -1339,9 +1339,9 @@ export enum CmdType {
  */
 export enum JoinType {
   /**
-	 * The canonical kinds of joins according to the SQL JOIN syntax. Only
-	 * these codes can appear in parser output (e.g., JoinExpr nodes).
-	 */
+   * The canonical kinds of joins according to the SQL JOIN syntax. Only
+   * these codes can appear in parser output (e.g., JoinExpr nodes).
+   */
   /** matching tuple pairs only */
   JOIN_INNER = "JOIN_INNER",
   /** pairs + unmatched LHS tuples */
@@ -1351,14 +1351,14 @@ export enum JoinType {
   /** pairs + unmatched RHS tuples */
   JOIN_RIGHT = "JOIN_RIGHT",
   /**
-	 * Semijoins and anti-semijoins (as defined in relational theory) do not
-	 * appear in the SQL JOIN syntax, but there are standard idioms for
-	 * representing them (e.g., using EXISTS).  The planner recognizes these
-	 * cases and converts them to joins.  So the planner and executor must
-	 * support these codes.  NOTE: in JOIN_SEMI output, it is unspecified
-	 * which matching RHS row is joined to.  In JOIN_ANTI output, the row is
-	 * guaranteed to be null-extended.
-	 */
+   * Semijoins and anti-semijoins (as defined in relational theory) do not
+   * appear in the SQL JOIN syntax, but there are standard idioms for
+   * representing them (e.g., using EXISTS).  The planner recognizes these
+   * cases and converts them to joins.  So the planner and executor must
+   * support these codes.  NOTE: in JOIN_SEMI output, it is unspecified
+   * which matching RHS row is joined to.  In JOIN_ANTI output, the row is
+   * guaranteed to be null-extended.
+   */
   /** 1 copy of each LHS row that has match(es) */
   JOIN_SEMI = "JOIN_SEMI",
   /** 1 copy of each LHS row that has no match */
@@ -1366,16 +1366,16 @@ export enum JoinType {
   /** 1 copy of each RHS row that has no match */
   JOIN_RIGHT_ANTI = "JOIN_RIGHT_ANTI",
   /**
-	 * These codes are used internally in the planner, but are not supported
-	 * by the executor (nor, indeed, by most of the planner).
-	 */
+   * These codes are used internally in the planner, but are not supported
+   * by the executor (nor, indeed, by most of the planner).
+   */
   /** LHS path must be made unique */
   JOIN_UNIQUE_OUTER = "JOIN_UNIQUE_OUTER",
   /** RHS path must be made unique */
   JOIN_UNIQUE_INNER = "JOIN_UNIQUE_INNER",
   /**
-	 * We might need additional join types someday.
-	 */
+   * We might need additional join types someday.
+   */
 }
 
 /**
@@ -2090,7 +2090,7 @@ export type TypeName = {
   /** prespecified type modifier */
   typemod: number
   /** array bounds */
-  arrayBounds?: ({ Integer: Integer })[]
+  arrayBounds?: { Integer: Integer }[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2146,7 +2146,19 @@ export type A_Expr = {
  */
 export type TypeCast = {
   /** the expression being casted */
-  arg: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { ParamRef: ParamRef } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SubLink: SubLink } | { TypeCast: TypeCast })
+  arg:
+    | { A_ArrayExpr: A_ArrayExpr }
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { A_Indirection: A_Indirection }
+    | { CollateClause: CollateClause }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { ParamRef: ParamRef }
+    | { RowExpr: RowExpr }
+    | { SQLValueFunction: SQLValueFunction }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
   /** the target type */
   typeName: TypeName
   /** token location, or -1 if unknown */
@@ -2158,7 +2170,12 @@ export type TypeCast = {
  */
 export type CollateClause = {
   /** input expression */
-  arg: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })
+  arg:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { CaseExpr: CaseExpr }
+    | { ColumnRef: ColumnRef }
+    | { TypeCast: TypeCast }
   /** possibly-qualified collation name */
   collname: QualifiedName
   /** token location, or -1 if unknown */
@@ -2192,11 +2209,31 @@ export type FuncCall = {
   /** qualified name of function */
   funcname: QualifiedName
   /** the arguments (list of exprs) */
-  args?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { NamedArgExpr: NamedArgExpr } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SubLink: SubLink } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr })[]
+  args?: (
+    | { A_ArrayExpr: A_ArrayExpr }
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { A_Indirection: A_Indirection }
+    | { BoolExpr: BoolExpr }
+    | { CollateClause: CollateClause }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { NamedArgExpr: NamedArgExpr }
+    | { RowExpr: RowExpr }
+    | { SQLValueFunction: SQLValueFunction }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
+    | { XmlExpr: XmlExpr }
+  )[]
   /** ORDER BY (list of SortBy) */
-  agg_order?: ({ SortBy: SortBy })[]
+  agg_order?: { SortBy: SortBy }[]
   /** FILTER clause, if any */
-  agg_filter?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { NullTest: NullTest } | { SubLink: SubLink })
+  agg_filter?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+    | { NullTest: NullTest }
+    | { SubLink: SubLink }
   /** OVER clause, if any */
   over?: WindowDef
   /** ORDER BY appeared in WITHIN GROUP */
@@ -2219,8 +2256,7 @@ export type FuncCall = {
  * This can appear within ColumnRef.fields, A_Indirection.indirection, and
  * ResTarget.indirection lists.
  */
-export type A_Star = {
-}
+export type A_Star = {}
 
 /**
  * A_Indices - array subscript or slice bounds ([idx] or [lidx:uidx])
@@ -2232,9 +2268,9 @@ export type A_Indices = {
   /** true if slice (i.e., colon present) */
   is_slice?: boolean
   /** slice lower bound, if any */
-  lidx?: ({ A_Const: A_Const })
+  lidx?: { A_Const: A_Const }
   /** subscript, or slice upper bound if any */
-  uidx: ({ A_Const: A_Const } | { ColumnRef: ColumnRef })
+  uidx: { A_Const: A_Const } | { ColumnRef: ColumnRef }
 }
 
 /**
@@ -2254,9 +2290,19 @@ export type A_Indices = {
  */
 export type A_Indirection = {
   /** the thing being selected from */
-  arg: ({ A_Indirection: A_Indirection } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SubLink: SubLink } | { TypeCast: TypeCast })
+  arg:
+    | { A_Indirection: A_Indirection }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { RowExpr: RowExpr }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
   /** subscripts and/or field names and/or * */
-  indirection: ({ A_Indices: A_Indices } | { A_Star: A_Star } | { String: String })[]
+  indirection: (
+    | { A_Indices: A_Indices }
+    | { A_Star: A_Star }
+    | { String: String }
+  )[]
 }
 
 /**
@@ -2264,7 +2310,16 @@ export type A_Indirection = {
  */
 export type A_ArrayExpr = {
   /** array element expressions */
-  elements?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { TypeCast: TypeCast })[]
+  elements?: (
+    | { A_ArrayExpr: A_ArrayExpr }
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { RowExpr: RowExpr }
+    | { SQLValueFunction: SQLValueFunction }
+    | { TypeCast: TypeCast }
+  )[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2293,7 +2348,36 @@ export type ResTarget = {
   /** subscripts, field names, and '*', or NIL */
   indirection?: ({ A_Indices: A_Indices } | { String: String })[]
   /** the value expression to compute or assign */
-  val?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { CaseExpr: CaseExpr } | { CoalesceExpr: CoalesceExpr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { GroupingFunc: GroupingFunc } | { JsonArrayAgg: JsonArrayAgg } | { JsonArrayConstructor: JsonArrayConstructor } | { JsonArrayQueryConstructor: JsonArrayQueryConstructor } | { JsonIsPredicate: JsonIsPredicate } | { JsonObjectAgg: JsonObjectAgg } | { JsonObjectConstructor: JsonObjectConstructor } | { MinMaxExpr: MinMaxExpr } | { MultiAssignRef: MultiAssignRef } | { NullTest: NullTest } | { ParamRef: ParamRef } | { RowExpr: RowExpr } | { SQLValueFunction: SQLValueFunction } | { SetToDefault: SetToDefault } | { SubLink: SubLink } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr } | { XmlSerialize: XmlSerialize })
+  val?:
+    | { A_ArrayExpr: A_ArrayExpr }
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { A_Indirection: A_Indirection }
+    | { BoolExpr: BoolExpr }
+    | { BooleanTest: BooleanTest }
+    | { CaseExpr: CaseExpr }
+    | { CoalesceExpr: CoalesceExpr }
+    | { CollateClause: CollateClause }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { GroupingFunc: GroupingFunc }
+    | { JsonArrayAgg: JsonArrayAgg }
+    | { JsonArrayConstructor: JsonArrayConstructor }
+    | { JsonArrayQueryConstructor: JsonArrayQueryConstructor }
+    | { JsonIsPredicate: JsonIsPredicate }
+    | { JsonObjectAgg: JsonObjectAgg }
+    | { JsonObjectConstructor: JsonObjectConstructor }
+    | { MinMaxExpr: MinMaxExpr }
+    | { MultiAssignRef: MultiAssignRef }
+    | { NullTest: NullTest }
+    | { ParamRef: ParamRef }
+    | { RowExpr: RowExpr }
+    | { SQLValueFunction: SQLValueFunction }
+    | { SetToDefault: SetToDefault }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
+    | { XmlExpr: XmlExpr }
+    | { XmlSerialize: XmlSerialize }
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2309,7 +2393,7 @@ export type ResTarget = {
  */
 export type MultiAssignRef = {
   /** the row-valued expression */
-  source: ({ ColumnRef: ColumnRef } | { RowExpr: RowExpr } | { SubLink: SubLink })
+  source: { ColumnRef: ColumnRef } | { RowExpr: RowExpr } | { SubLink: SubLink }
   /** column number for this target (1..n) */
   colno: number
   /** number of targets in the construct */
@@ -2321,7 +2405,14 @@ export type MultiAssignRef = {
  */
 export type SortBy = {
   /** expression to sort on */
-  node: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { TypeCast: TypeCast })
+  node:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { A_Indirection: A_Indirection }
+    | { CollateClause: CollateClause }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { TypeCast: TypeCast }
   /** ASC/DESC/USING/default */
   sortby_dir: SortByDir
   /** NULLS FIRST/LAST */
@@ -2346,15 +2437,15 @@ export type WindowDef = {
   /** referenced window name, if any */
   refname?: string
   /** PARTITION BY expression list */
-  partitionClause?: ({ ColumnRef: ColumnRef })[]
+  partitionClause?: { ColumnRef: ColumnRef }[]
   /** ORDER BY (list of SortBy) */
-  orderClause?: ({ SortBy: SortBy })[]
+  orderClause?: { SortBy: SortBy }[]
   /** frame_clause options, see below */
   frameOptions: number
   /** expression for starting bound, if any */
-  startOffset?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
+  startOffset?: { A_Const: A_Const } | { TypeCast: TypeCast }
   /** expression for ending bound, if any */
-  endOffset?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
+  endOffset?: { A_Const: A_Const } | { TypeCast: TypeCast }
   /** parse location, or -1 if none/unknown */
   location: number
 }
@@ -2366,7 +2457,7 @@ export type RangeSubselect = {
   /** does it have LATERAL prefix? */
   lateral?: boolean
   /** the untransformed sub-select clause */
-  subquery: ({ SelectStmt: SelectStmt })
+  subquery: { SelectStmt: SelectStmt }
   /** table alias & optional column aliases */
   alias?: Alias
 }
@@ -2393,12 +2484,18 @@ export type RangeFunction = {
   /** is result of ROWS FROM() syntax? */
   is_rowsfrom?: boolean
   /** per-function information, see above */
-  functions: List<{ CoalesceExpr: CoalesceExpr } | { FuncCall: FuncCall } | { List: List } | { SQLValueFunction: SQLValueFunction } | { TypeCast: TypeCast }>[]
+  functions: List<
+    | { CoalesceExpr: CoalesceExpr }
+    | { FuncCall: FuncCall }
+    | { List: List }
+    | { SQLValueFunction: SQLValueFunction }
+    | { TypeCast: TypeCast }
+  >[]
   /** table alias & optional column aliases */
   alias?: Alias
   /** list of ColumnDef nodes to describe result
-								 * of function returning RECORD */
-  coldeflist?: ({ ColumnDef: ColumnDef })[]
+   * of function returning RECORD */
+  coldeflist?: { ColumnDef: ColumnDef }[]
 }
 
 /**
@@ -2412,9 +2509,9 @@ export type RangeTableFunc = {
   /** row generator expression */
   rowexpr: Expr
   /** list of namespaces as ResTarget */
-  namespaces?: ({ ResTarget: ResTarget })[]
+  namespaces?: { ResTarget: ResTarget }[]
   /** list of RangeTableFuncCol */
-  columns: ({ RangeTableFuncCol: RangeTableFuncCol })[]
+  columns: { RangeTableFuncCol: RangeTableFuncCol }[]
   /** table alias & optional column aliases */
   alias?: Alias
   /** token location, or -1 if unknown */
@@ -2456,13 +2553,18 @@ export type RangeTableFuncCol = {
  */
 export type RangeTableSample = {
   /** relation to be sampled */
-  relation: ({ RangeVar: RangeVar })
+  relation: { RangeVar: RangeVar }
   /** sampling method name (possibly qualified) */
   method: QualifiedName
   /** argument(s) for sampling method */
-  args: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })[]
+  args: (
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+    | { TypeCast: TypeCast }
+  )[]
   /** REPEATABLE expression, or NULL if none */
-  repeatable?: ({ A_Const: A_Const })
+  repeatable?: { A_Const: A_Const }
   /** method name location, or -1 if unknown */
   location: number
 }
@@ -2505,13 +2607,13 @@ export type ColumnDef = {
   /** attstorage setting name or NULL for default */
   storage_name?: string
   /** default value (untransformed parse tree) */
-  raw_default?: ({ A_Const: A_Const } | { TypeCast: TypeCast })
+  raw_default?: { A_Const: A_Const } | { TypeCast: TypeCast }
   /** default value (transformed expr tree) */
   cooked_default?: Node
   /** attidentity setting */
   identity?: string
   /** to store identity sequence name for
-									 * ALTER TABLE ... ADD COLUMN */
+   * ALTER TABLE ... ADD COLUMN */
   identitySequence?: RangeVar
   /** attgenerated setting */
   generated?: string
@@ -2520,9 +2622,9 @@ export type ColumnDef = {
   /** collation OID (InvalidOid if not set) */
   collOid?: Oid
   /** other constraints on column */
-  constraints?: ({ Constraint: Constraint })[]
+  constraints?: { Constraint: Constraint }[]
   /** per-column FDW options */
-  fdwoptions?: ({ DefElem: DefElem })[]
+  fdwoptions?: { DefElem: DefElem }[]
   /** parse location, or -1 if none/unknown */
   location: number
 }
@@ -2557,7 +2659,7 @@ export type IndexElem = {
   /** name of desired opclass; NIL = default */
   opclass?: QualifiedName
   /** opclass-specific options, or NIL */
-  opclassopts?: ({ DefElem: DefElem })[]
+  opclassopts?: { DefElem: DefElem }[]
   /** ASC/DESC/default */
   ordering: SortByDir
   /** FIRST/LAST/default */
@@ -2579,8 +2681,16 @@ export type DefElem = {
   defnamespace?: string
   defname: string
   /** typically Integer, Float, String, or
-								 * TypeName */
-  arg?: ({ A_Const: A_Const } | { Boolean: Boolean } | { Float: Float } | { Integer: Integer } | { List: List } | { String: String } | { TypeName: TypeName } | { VariableSetStmt: VariableSetStmt })
+   * TypeName */
+  arg?:
+    | { A_Const: A_Const }
+    | { Boolean: Boolean }
+    | { Float: Float }
+    | { Integer: Integer }
+    | { List: List }
+    | { String: String }
+    | { TypeName: TypeName }
+    | { VariableSetStmt: VariableSetStmt }
   /** unspecified action, or SET/ADD/DROP */
   defaction: DefElemAction
   /** token location, or -1 if unknown */
@@ -2598,7 +2708,7 @@ export type DefElem = {
  */
 export type LockingClause = {
   /** FOR [KEY] UPDATE/SHARE relations */
-  lockedRels?: ({ RangeVar: RangeVar })[]
+  lockedRels?: { RangeVar: RangeVar }[]
   strength: LockClauseStrength
   /** NOWAIT and SKIP LOCKED */
   waitPolicy: LockWaitPolicy
@@ -2838,7 +2948,14 @@ export type SortGroupClause = {
 
 export type GroupingSet = {
   kind: GroupingSetKind
-  content?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr } | { TypeCast: TypeCast })[]
+  content?: (
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+    | { GroupingSet: GroupingSet }
+    | { RowExpr: RowExpr }
+    | { TypeCast: TypeCast }
+  )[]
   location: number
 }
 
@@ -2994,17 +3111,22 @@ export type CTECycleClause = {
 
 export type CommonTableExpr = {
   /**
-	 * Query name (never qualified).  The string name is included in the query
-	 * jumbling because RTE_CTE RTEs need it.
-	 */
+   * Query name (never qualified).  The string name is included in the query
+   * jumbling because RTE_CTE RTEs need it.
+   */
   ctename: string
   /** optional list of column names */
-  aliascolnames?: ({ String: String })[]
+  aliascolnames?: { String: String }[]
   /** is this an optimization fence? */
   ctematerialized: CTEMaterialize
   /** SelectStmt/InsertStmt/etc before parse analysis, Query afterwards: */
   /** the CTE's subquery */
-  ctequery: ({ DeleteStmt: DeleteStmt } | { InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
+  ctequery:
+    | { DeleteStmt: DeleteStmt }
+    | { InsertStmt: InsertStmt }
+    | { MergeStmt: MergeStmt }
+    | { SelectStmt: SelectStmt }
+    | { UpdateStmt: UpdateStmt }
   search_clause?: CTESearchClause
   cycle_clause?: CTECycleClause
   /** token location, or -1 if unknown */
@@ -3013,9 +3135,9 @@ export type CommonTableExpr = {
   /** is this CTE actually recursive? */
   cterecursive?: boolean
   /**
-	 * Number of RTEs referencing this CTE (excluding internal
-	 * self-references), irrelevant for query jumbling.
-	 */
+   * Number of RTEs referencing this CTE (excluding internal
+   * self-references), irrelevant for query jumbling.
+   */
   cterefcount?: number
   /** list of output column names */
   ctecolnames?: any[]
@@ -3041,12 +3163,19 @@ export type MergeWhenClause = {
   /** OVERRIDING clause */
   override: OverridingKind
   /** WHEN conditions (raw parser) */
-  condition?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
+  condition?:
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { NullTest: NullTest }
   /** INSERT/UPDATE targetlist */
-  targetList?: ({ ResTarget: ResTarget })[]
+  targetList?: { ResTarget: ResTarget }[]
   /** the following members are only used in INSERT actions */
   /** VALUES to INSERT, or NULL */
-  values?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })[]
+  values?: (
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+  )[]
 }
 
 /**
@@ -3111,7 +3240,7 @@ export type JsonKeyValue = {
  */
 export type JsonObjectConstructor = {
   /** list of JsonKeyValue pairs */
-  exprs?: ({ JsonKeyValue: JsonKeyValue })[]
+  exprs?: { JsonKeyValue: JsonKeyValue }[]
   /** RETURNING clause, if specified  */
   output?: JsonOutput
   /** skip NULL values? */
@@ -3128,7 +3257,7 @@ export type JsonObjectConstructor = {
  */
 export type JsonArrayConstructor = {
   /** list of JsonValueExpr elements */
-  exprs?: ({ JsonValueExpr: JsonValueExpr })[]
+  exprs?: { JsonValueExpr: JsonValueExpr }[]
   /** RETURNING clause, if specified  */
   output?: JsonOutput
   /** skip NULL elements? */
@@ -3143,7 +3272,7 @@ export type JsonArrayConstructor = {
  */
 export type JsonArrayQueryConstructor = {
   /** subquery */
-  query: ({ SelectStmt: SelectStmt })
+  query: { SelectStmt: SelectStmt }
   /** RETURNING clause, if specified  */
   output?: JsonOutput
   /** FORMAT clause for subquery, if specified */
@@ -3236,13 +3365,13 @@ export type InsertStmt = {
   /** relation to insert into */
   relation: RangeVar
   /** optional: names of the target columns */
-  cols?: ({ ResTarget: ResTarget })[]
+  cols?: { ResTarget: ResTarget }[]
   /** the source SELECT/VALUES, or NULL */
-  selectStmt?: ({ SelectStmt: SelectStmt })
+  selectStmt?: { SelectStmt: SelectStmt }
   /** ON CONFLICT clause */
   onConflictClause?: OnConflictClause
   /** list of expressions to return */
-  returningList?: ({ ResTarget: ResTarget })[]
+  returningList?: { ResTarget: ResTarget }[]
   /** WITH clause */
   withClause?: WithClause
   /** OVERRIDING clause */
@@ -3259,9 +3388,12 @@ export type DeleteStmt = {
   /** optional using clause for more tables */
   usingClause?: ({ RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })[]
   /** qualifications */
-  whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { SubLink: SubLink })
+  whereClause?:
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { SubLink: SubLink }
   /** list of expressions to return */
-  returningList?: ({ ResTarget: ResTarget })[]
+  returningList?: { ResTarget: ResTarget }[]
   /** WITH clause */
   withClause?: WithClause
 }
@@ -3274,13 +3406,24 @@ export type UpdateStmt = {
   /** relation to update */
   relation: RangeVar
   /** the target list (of ResTarget) */
-  targetList: ({ ResTarget: ResTarget })[]
+  targetList: { ResTarget: ResTarget }[]
   /** qualifications */
-  whereClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { CurrentOfExpr: CurrentOfExpr } | { NullTest: NullTest } | { SubLink: SubLink })
+  whereClause?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { CurrentOfExpr: CurrentOfExpr }
+    | { NullTest: NullTest }
+    | { SubLink: SubLink }
   /** optional from clause for more tables */
-  fromClause?: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })[]
+  fromClause?: (
+    | { JoinExpr: JoinExpr }
+    | { RangeFunction: RangeFunction }
+    | { RangeSubselect: RangeSubselect }
+    | { RangeVar: RangeVar }
+  )[]
   /** list of expressions to return */
-  returningList?: ({ ResTarget: ResTarget })[]
+  returningList?: { ResTarget: ResTarget }[]
   /** WITH clause */
   withClause?: WithClause
 }
@@ -3293,11 +3436,18 @@ export type MergeStmt = {
   /** target relation to merge into */
   relation: RangeVar
   /** source relation */
-  sourceRelation: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
+  sourceRelation:
+    | { JoinExpr: JoinExpr }
+    | { RangeFunction: RangeFunction }
+    | { RangeSubselect: RangeSubselect }
+    | { RangeVar: RangeVar }
   /** join condition between source and target */
-  joinCondition: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr })
+  joinCondition:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
   /** list of MergeWhenClause(es) */
-  mergeWhenClauses: ({ MergeWhenClause: MergeWhenClause })[]
+  mergeWhenClauses: { MergeWhenClause: MergeWhenClause }[]
   /** WITH clause */
   withClause?: WithClause
 }
@@ -3317,56 +3467,90 @@ export type MergeStmt = {
  */
 export type SelectStmt = {
   /**
-	 * These fields are used only in "leaf" SelectStmts.
-	 */
+   * These fields are used only in "leaf" SelectStmts.
+   */
   /** NULL, list of DISTINCT ON exprs, or
-								 * lcons(NIL,NIL) for all (SELECT DISTINCT) */
+   * lcons(NIL,NIL) for all (SELECT DISTINCT) */
   distinctClause?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef })[]
   /** target for SELECT INTO */
   intoClause?: IntoClause
   /** the target list (of ResTarget) */
-  targetList?: ({ ResTarget: ResTarget })[]
+  targetList?: { ResTarget: ResTarget }[]
   /** the FROM clause */
-  fromClause?: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeTableFunc: RangeTableFunc } | { RangeTableSample: RangeTableSample } | { RangeVar: RangeVar })[]
+  fromClause?: (
+    | { JoinExpr: JoinExpr }
+    | { RangeFunction: RangeFunction }
+    | { RangeSubselect: RangeSubselect }
+    | { RangeTableFunc: RangeTableFunc }
+    | { RangeTableSample: RangeTableSample }
+    | { RangeVar: RangeVar }
+  )[]
   /** WHERE qualification */
-  whereClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { JsonIsPredicate: JsonIsPredicate } | { NullTest: NullTest } | { SubLink: SubLink })
+  whereClause?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { BooleanTest: BooleanTest }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { JsonIsPredicate: JsonIsPredicate }
+    | { NullTest: NullTest }
+    | { SubLink: SubLink }
   /** GROUP BY clauses */
-  groupClause?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { GroupingSet: GroupingSet } | { RowExpr: RowExpr })[]
+  groupClause?: (
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { GroupingSet: GroupingSet }
+    | { RowExpr: RowExpr }
+  )[]
   /** Is this GROUP BY DISTINCT? */
   groupDistinct?: boolean
   /** HAVING conditional-expression */
-  havingClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { ColumnRef: ColumnRef } | { SubLink: SubLink })
+  havingClause?:
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { ColumnRef: ColumnRef }
+    | { SubLink: SubLink }
   /** WINDOW window_name AS (...), ... */
-  windowClause?: ({ WindowDef: WindowDef })[]
+  windowClause?: { WindowDef: WindowDef }[]
   /**
-	 * In a "leaf" node representing a VALUES list, the above fields are all
-	 * null, and instead this field is set.  Note that the elements of the
-	 * sublists are just expressions, without ResTarget decoration. Also note
-	 * that a list element can be DEFAULT (represented as a SetToDefault
-	 * node), regardless of the context of the VALUES list. It's up to parse
-	 * analysis to reject that where not valid.
-	 */
+   * In a "leaf" node representing a VALUES list, the above fields are all
+   * null, and instead this field is set.  Note that the elements of the
+   * sublists are just expressions, without ResTarget decoration. Also note
+   * that a list element can be DEFAULT (represented as a SetToDefault
+   * node), regardless of the context of the VALUES list. It's up to parse
+   * analysis to reject that where not valid.
+   */
   /** untransformed list of expression lists */
   valuesLists?: List<Expr>[]
   /**
-	 * These fields are used in both "leaf" SelectStmts and upper-level
-	 * SelectStmts.
-	 */
+   * These fields are used in both "leaf" SelectStmts and upper-level
+   * SelectStmts.
+   */
   /** sort clause (a list of SortBy's) */
-  sortClause?: ({ SortBy: SortBy })[]
+  sortClause?: { SortBy: SortBy }[]
   /** # of result tuples to skip */
-  limitOffset?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })
+  limitOffset?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnRef: ColumnRef }
   /** # of result tuples to return */
-  limitCount?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { CaseExpr: CaseExpr } | { FuncCall: FuncCall })
+  limitCount?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { CaseExpr: CaseExpr }
+    | { FuncCall: FuncCall }
   /** limit type */
   limitOption: LimitOption
   /** FOR UPDATE (list of LockingClause's) */
-  lockingClause?: ({ LockingClause: LockingClause })[]
+  lockingClause?: { LockingClause: LockingClause }[]
   /** WITH clause */
   withClause?: WithClause
   /**
-	 * These fields are used only in upper-level SelectStmts.
-	 */
+   * These fields are used only in upper-level SelectStmts.
+   */
   /** type of set op */
   op: SetOperation
   /** ALL specified? */
@@ -3423,7 +3607,13 @@ export type SetOperationStmt = {
  * RETURN statement (inside SQL function body)
  */
 export type ReturnStmt = {
-  returnval: ({ A_Expr: A_Expr } | { A_Indirection: A_Indirection } | { BoolExpr: BoolExpr } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { SubLink: SubLink })
+  returnval:
+    | { A_Expr: A_Expr }
+    | { A_Indirection: A_Indirection }
+    | { BoolExpr: BoolExpr }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { SubLink: SubLink }
 }
 
 /** ----------------------
@@ -3460,7 +3650,12 @@ export type CreateSchemaStmt = {
   /** the owner of the created schema */
   authrole?: RoleSpec
   /** schema components (list of parsenodes) */
-  schemaElts?: ({ CreateSeqStmt: CreateSeqStmt } | { CreateStmt: CreateStmt } | { IndexStmt: IndexStmt } | { ViewStmt: ViewStmt })[]
+  schemaElts?: (
+    | { CreateSeqStmt: CreateSeqStmt }
+    | { CreateStmt: CreateStmt }
+    | { IndexStmt: IndexStmt }
+    | { ViewStmt: ViewStmt }
+  )[]
   /** just do nothing if schema already exists? */
   if_not_exists?: boolean
 }
@@ -3473,7 +3668,7 @@ export type AlterTableStmt = {
   /** table to work on */
   relation: RangeVar
   /** list of subcommands */
-  cmds: ({ AlterTableCmd: AlterTableCmd })[]
+  cmds: { AlterTableCmd: AlterTableCmd }[]
   /** type of object */
   objtype: ObjectType
   /** skip error if table missing */
@@ -3497,15 +3692,27 @@ export type AlterTableCmd = {
   /** Type of table alteration to apply */
   subtype: AlterTableType
   /** column, constraint, or trigger to act on,
-								 * or tablespace */
+   * or tablespace */
   name?: string
   /** attribute number for columns referenced by
-								 * number */
+   * number */
   num?: number
   newowner?: RoleSpec
   /** definition of new column, index,
-								 * constraint, or parent table */
-  def?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnDef: ColumnDef } | { Constraint: Constraint } | { FuncCall: FuncCall } | { Integer: Integer } | { List: List } | { PartitionCmd: PartitionCmd } | { RangeVar: RangeVar } | { ReplicaIdentityStmt: ReplicaIdentityStmt } | { String: String } | { TypeCast: TypeCast })
+   * constraint, or parent table */
+  def?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { ColumnDef: ColumnDef }
+    | { Constraint: Constraint }
+    | { FuncCall: FuncCall }
+    | { Integer: Integer }
+    | { List: List }
+    | { PartitionCmd: PartitionCmd }
+    | { RangeVar: RangeVar }
+    | { ReplicaIdentityStmt: ReplicaIdentityStmt }
+    | { String: String }
+    | { TypeCast: TypeCast }
   /** RESTRICT or CASCADE for DROP cases */
   behavior: DropBehavior
   /** skip error if missing? */
@@ -3531,20 +3738,20 @@ export type AlterCollationStmt = {
  */
 export type AlterDomainStmt = {
   /**------------
-								 *	T = alter column default
-								 *	N = alter column drop not null
-								 *	O = alter column set not null
-								 *	C = add constraint
-								 *	X = drop constraint
-								 *------------
-								 */
+   *	T = alter column default
+   *	N = alter column drop not null
+   *	O = alter column set not null
+   *	C = add constraint
+   *	X = drop constraint
+   *------------
+   */
   subtype: string
   /** domain to work on */
-  typeName: ({ String: String })[]
+  typeName: { String: String }[]
   /** column or constraint name to act on */
   name?: string
   /** definition of default or constraint */
-  def?: ({ A_Const: A_Const } | { Constraint: Constraint })
+  def?: { A_Const: A_Const } | { Constraint: Constraint }
   /** RESTRICT or CASCADE for DROP cases */
   behavior: DropBehavior
   /** skip error if missing? */
@@ -3563,13 +3770,17 @@ export type GrantStmt = {
   /** kind of object being operated on */
   objtype: ObjectType
   /** list of RangeVar nodes, ObjectWithArgs
-								 * nodes, or plain names (as String values) */
-  objects: ({ ObjectWithArgs: ObjectWithArgs } | { RangeVar: RangeVar } | { String: String })[]
+   * nodes, or plain names (as String values) */
+  objects: (
+    | { ObjectWithArgs: ObjectWithArgs }
+    | { RangeVar: RangeVar }
+    | { String: String }
+  )[]
   /** list of AccessPriv nodes */
-  privileges?: ({ AccessPriv: AccessPriv })[]
+  privileges?: { AccessPriv: AccessPriv }[]
   /** privileges == NIL denotes ALL PRIVILEGES */
   /** list of RoleSpec nodes */
-  grantees: ({ RoleSpec: RoleSpec })[]
+  grantees: { RoleSpec: RoleSpec }[]
   /** grant or revoke grant option */
   grant_option?: boolean
   grantor?: RoleSpec
@@ -3598,9 +3809,9 @@ export type ObjectWithArgs = {
   /** qualified name of function/operator */
   objname: QualifiedName
   /** list of Typename nodes (input args only) */
-  objargs?: ({ TypeName: TypeName })[]
+  objargs?: { TypeName: TypeName }[]
   /** list of FunctionParameter nodes */
-  objfuncargs?: ({ FunctionParameter: FunctionParameter })[]
+  objfuncargs?: { FunctionParameter: FunctionParameter }[]
   /** argument list was omitted? */
   args_unspecified?: boolean
 }
@@ -3616,7 +3827,7 @@ export type AccessPriv = {
   /** string name of privilege */
   priv_name: string
   /** list of String */
-  cols?: ({ String: String })[]
+  cols?: { String: String }[]
 }
 
 /** ----------------------
@@ -3630,13 +3841,13 @@ export type AccessPriv = {
  */
 export type GrantRoleStmt = {
   /** list of roles to be granted/revoked */
-  granted_roles: ({ AccessPriv: AccessPriv })[]
+  granted_roles: { AccessPriv: AccessPriv }[]
   /** list of member roles to add/delete */
-  grantee_roles: ({ RoleSpec: RoleSpec })[]
+  grantee_roles: { RoleSpec: RoleSpec }[]
   /** true = GRANT, false = REVOKE */
   is_grant?: boolean
   /** options e.g. WITH GRANT OPTION */
-  opt?: ({ DefElem: DefElem })[]
+  opt?: { DefElem: DefElem }[]
   /** set grantor to other than current role */
   grantor?: RoleSpec
   /** drop behavior (for REVOKE) */
@@ -3649,7 +3860,7 @@ export type GrantRoleStmt = {
  */
 export type AlterDefaultPrivilegesStmt = {
   /** list of DefElem */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
   /** GRANT/REVOKE action (with objects=NIL) */
   action: GrantStmt
 }
@@ -3666,11 +3877,14 @@ export type CopyStmt = {
   /** the relation to copy */
   relation?: RangeVar
   /** the query (SELECT or DML statement with
-								 * RETURNING) to copy, as a raw parse tree */
-  query?: ({ InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt })
+   * RETURNING) to copy, as a raw parse tree */
+  query?:
+    | { InsertStmt: InsertStmt }
+    | { MergeStmt: MergeStmt }
+    | { SelectStmt: SelectStmt }
   /** List of column names (as Strings), or NIL
-								 * for all columns */
-  attlist?: ({ String: String })[]
+   * for all columns */
+  attlist?: { String: String }[]
   /** TO or FROM */
   is_from?: boolean
   /** is 'filename' a program to popen? */
@@ -3678,7 +3892,7 @@ export type CopyStmt = {
   /** filename, or NULL for STDIN/STDOUT */
   filename?: string
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** WHERE condition (or NULL) */
   whereClause?: Node
 }
@@ -3715,10 +3929,14 @@ export type CreateStmt = {
   /** relation to create */
   relation: RangeVar
   /** column definitions (list of ColumnDef) */
-  tableElts?: ({ ColumnDef: ColumnDef } | { Constraint: Constraint } | { TableLikeClause: TableLikeClause })[]
+  tableElts?: (
+    | { ColumnDef: ColumnDef }
+    | { Constraint: Constraint }
+    | { TableLikeClause: TableLikeClause }
+  )[]
   /** relations to inherit from (list of
-								 * RangeVar) */
-  inhRelations?: ({ RangeVar: RangeVar })[]
+   * RangeVar) */
+  inhRelations?: { RangeVar: RangeVar }[]
   /** FOR VALUES clause */
   partbound?: PartitionBoundSpec
   /** PARTITION BY clause */
@@ -3728,7 +3946,7 @@ export type CreateStmt = {
   /** constraints (list of Constraint nodes) */
   constraints?: any[]
   /** options from WITH clause */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** what do we do at COMMIT? */
   oncommit: OnCommitAction
   /** table space to use, or NULL */
@@ -3765,23 +3983,23 @@ export type Constraint = {
   /** null treatment for UNIQUE constraints */
   nulls_not_distinct?: boolean
   /** String nodes naming referenced key
-								 * column(s) */
-  keys?: ({ String: String })[]
+   * column(s) */
+  keys?: { String: String }[]
   /** String nodes naming referenced nonkey
-								 * column(s) */
-  including?: ({ String: String })[]
+   * column(s) */
+  including?: { String: String }[]
   /** Fields used for EXCLUSION constraints: */
   /** list of (IndexElem, operator name) pairs */
   exclusions?: List<{ IndexElem: IndexElem } | { List: List }>[]
   /** Fields used for index constraints (UNIQUE, PRIMARY KEY, EXCLUSION): */
   /** options from WITH clause */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** existing index to use; otherwise NULL */
   indexname?: string
   /** index tablespace; NULL for default */
   indexspace?: string
   /** reset default_tablespace prior to
-										 * creating the index */
+   * creating the index */
   reset_default_tblspc?: boolean
   /** These could be, but currently are not, used for UNIQUE/PKEY: */
   /** index access method; NULL for default */
@@ -3792,9 +4010,9 @@ export type Constraint = {
   /** Primary key table */
   pktable?: RangeVar
   /** Attributes of foreign key */
-  fk_attrs?: ({ String: String })[]
+  fk_attrs?: { String: String }[]
   /** Corresponding attrs in PK table */
-  pk_attrs?: ({ String: String })[]
+  pk_attrs?: { String: String }[]
   /** FULL, PARTIAL, SIMPLE */
   fk_matchtype?: string
   /** ON UPDATE action */
@@ -3806,7 +4024,7 @@ export type Constraint = {
   /** pg_constraint.conpfeqop of my former self */
   old_conpfeqop?: any[]
   /** pg_constraint.confrelid of my former
-									 * self */
+   * self */
   old_pktable_oid?: Oid
   /** Fields used for constraints that allow a NOT VALID specification */
   /** skip validation of existing rows? */
@@ -3823,7 +4041,7 @@ export type CreateTableSpaceStmt = {
   tablespacename: string
   owner?: RoleSpec
   location: string
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3838,7 +4056,7 @@ export type DropTableSpaceStmt = {
 
 export type AlterTableSpaceOptionsStmt = {
   tablespacename: string
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
   isReset?: boolean
 }
 
@@ -3894,9 +4112,9 @@ export type CreateFdwStmt = {
   /** foreign-data wrapper name */
   fdwname: string
   /** HANDLER/VALIDATOR options */
-  func_options?: ({ DefElem: DefElem })[]
+  func_options?: { DefElem: DefElem }[]
   /** generic options to FDW */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3907,9 +4125,9 @@ export type AlterFdwStmt = {
   /** foreign-data wrapper name */
   fdwname: string
   /** HANDLER/VALIDATOR options */
-  func_options?: ({ DefElem: DefElem })[]
+  func_options?: { DefElem: DefElem }[]
   /** generic options to FDW */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3928,7 +4146,7 @@ export type CreateForeignServerStmt = {
   /** just do nothing if it already exists? */
   if_not_exists?: boolean
   /** generic options to server */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3941,7 +4159,7 @@ export type AlterForeignServerStmt = {
   /** optional server version */
   version?: string
   /** generic options to server */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** version specified */
   has_version?: boolean
 }
@@ -3953,7 +4171,7 @@ export type AlterForeignServerStmt = {
 export type CreateForeignTableStmt = {
   base: CreateStmt
   servername: string
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3968,7 +4186,7 @@ export type CreateUserMappingStmt = {
   /** just do nothing if it already exists? */
   if_not_exists?: boolean
   /** generic options to server */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -3981,7 +4199,7 @@ export type AlterUserMappingStmt = {
   /** server name */
   servername: string
   /** generic options to server */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4007,9 +4225,9 @@ export type ImportForeignSchemaStmt = {
   /** type of table list */
   list_type: ImportForeignSchemaType
   /** List of RangeVar */
-  table_list?: ({ RangeVar: RangeVar })[]
+  table_list?: { RangeVar: RangeVar }[]
   /** list of options to pass to FDW */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /**----------------------
@@ -4026,9 +4244,9 @@ export type CreatePolicyStmt = {
   /** restrictive or permissive policy */
   permissive?: boolean
   /** the roles associated with the policy */
-  roles: ({ RoleSpec: RoleSpec })[]
+  roles: { RoleSpec: RoleSpec }[]
   /** the policy's condition */
-  qual: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr })
+  qual: { A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr }
   /** the policy's WITH CHECK condition. */
   with_check?: Node
 }
@@ -4043,9 +4261,9 @@ export type AlterPolicyStmt = {
   /** the table name the policy applies to */
   table: RangeVar
   /** the roles associated with the policy */
-  roles?: ({ RoleSpec: RoleSpec })[]
+  roles?: { RoleSpec: RoleSpec }[]
   /** the policy's condition */
-  qual: ({ A_Const: A_Const })
+  qual: { A_Const: A_Const }
   /** the policy's WITH CHECK condition. */
   with_check?: Node
 }
@@ -4079,7 +4297,7 @@ export type CreateTrigStmt = {
   /** qual. name of function to call */
   funcname: QualifiedName
   /** list of String or NIL */
-  args?: ({ String: String })[]
+  args?: { String: String }[]
   /** ROW/STATEMENT */
   row?: boolean
   /** timing uses the TRIGGER_TYPE bits defined in catalog/pg_trigger.h */
@@ -4094,7 +4312,7 @@ export type CreateTrigStmt = {
   whenClause?: Node
   /** explicitly named transition data */
   /** TriggerTransition nodes, or NIL if none */
-  transitionRels?: ({ TriggerTransition: TriggerTransition })[]
+  transitionRels?: { TriggerTransition: TriggerTransition }[]
   /** The remaining fields are only used for constraint triggers */
   /** [NOT] DEFERRABLE */
   deferrable?: boolean
@@ -4114,7 +4332,7 @@ export type CreateEventTrigStmt = {
   /** event's identifier */
   eventname: string
   /** list of DefElems indicating filtering */
-  whenclause?: ({ DefElem: DefElem })[]
+  whenclause?: { DefElem: DefElem }[]
   /** qual. name of function to call */
   funcname: QualifiedName
 }
@@ -4127,7 +4345,7 @@ export type AlterEventTrigStmt = {
   /** TRIGGER's name */
   trigname: string
   /** trigger's firing configuration WRT
-								 * session_replication_role */
+   * session_replication_role */
   tgenabled: string
 }
 
@@ -4165,7 +4383,7 @@ export type CreateRoleStmt = {
   /** role name */
   role: string
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4181,7 +4399,7 @@ export type AlterRoleStmt = {
   /** role */
   role: RoleSpec
   /** List of DefElem nodes */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
   /** +1 = add members, -1 = drop members */
   action: number
 }
@@ -4215,7 +4433,7 @@ export type AlterRoleSetStmt = {
  */
 export type DropRoleStmt = {
   /** List of roles to remove */
-  roles: ({ RoleSpec: RoleSpec })[]
+  roles: { RoleSpec: RoleSpec }[]
   /** skip error if a role is missing? */
   missing_ok?: boolean
 }
@@ -4227,7 +4445,7 @@ export type DropRoleStmt = {
 export type CreateSeqStmt = {
   /** the sequence to create */
   sequence: RangeVar
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** ID of owner, or InvalidOid for default */
   ownerId?: Oid
   for_identity?: boolean
@@ -4242,7 +4460,7 @@ export type CreateSeqStmt = {
 export type AlterSeqStmt = {
   /** the sequence to alter */
   sequence: RangeVar
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
   for_identity?: boolean
   /** skip error if a role is missing? */
   missing_ok?: boolean
@@ -4262,7 +4480,7 @@ export type DefineStmt = {
   /** a list of TypeName (if needed) */
   args?: List<{ FunctionParameter: FunctionParameter }>[]
   /** a list of DefElem */
-  definition?: ({ DefElem: DefElem })[]
+  definition?: { DefElem: DefElem }[]
   /** just do nothing if it already exists? */
   if_not_exists?: boolean
   /** replace if already exists? */
@@ -4281,7 +4499,7 @@ export type CreateDomainStmt = {
   /** untransformed COLLATE spec, if any */
   collClause?: CollateClause
   /** constraints (list of Constraint nodes) */
-  constraints?: ({ Constraint: Constraint })[]
+  constraints?: { Constraint: Constraint }[]
 }
 
 /** ----------------------
@@ -4298,7 +4516,7 @@ export type CreateOpClassStmt = {
   /** datatype of indexed column */
   datatype: TypeName
   /** List of CreateOpClassItem nodes */
-  items: ({ CreateOpClassItem: CreateOpClassItem })[]
+  items: { CreateOpClassItem: CreateOpClassItem }[]
   /** Should be marked as default for type? */
   isDefault?: boolean
 }
@@ -4317,8 +4535,8 @@ export type CreateOpClassItem = {
   /** only used for ordering operators */
   order_family?: any[]
   /** amproclefttype/amprocrighttype or
-								 * amoplefttype/amoprighttype */
-  class_args?: ({ TypeName: TypeName })[]
+   * amoplefttype/amoprighttype */
+  class_args?: { TypeName: TypeName }[]
   /** fields used for a storagetype item: */
   /** datatype stored in index */
   storedtype?: TypeName
@@ -4347,7 +4565,7 @@ export type AlterOpFamilyStmt = {
   /** ADD or DROP the items? */
   isDrop?: boolean
   /** List of CreateOpClassItem nodes */
-  items: ({ CreateOpClassItem: CreateOpClassItem })[]
+  items: { CreateOpClassItem: CreateOpClassItem }[]
 }
 
 /** ----------------------
@@ -4373,7 +4591,7 @@ export type DropStmt = {
  */
 export type TruncateStmt = {
   /** relations (RangeVars) to be truncated */
-  relations: ({ RangeVar: RangeVar })[]
+  relations: { RangeVar: RangeVar }[]
   /** restart owned sequences? */
   restart_seqs?: boolean
   /** RESTRICT or CASCADE behavior */
@@ -4388,7 +4606,12 @@ export type CommentStmt = {
   /** Object's type */
   objtype: ObjectType
   /** Qualified name of the object */
-  object: ({ Integer: Integer } | { List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String } | { TypeName: TypeName })
+  object:
+    | { Integer: Integer }
+    | { List: List }
+    | { ObjectWithArgs: ObjectWithArgs }
+    | { String: String }
+    | { TypeName: TypeName }
   /** Comment to insert, or NULL to remove */
   comment?: string
 }
@@ -4401,7 +4624,7 @@ export type SecLabelStmt = {
   /** Object's type */
   objtype: ObjectType
   /** Qualified name of the object */
-  object: ({ List: List } | { String: String })
+  object: { List: List } | { String: String }
   /** Label provider (or NULL) */
   provider?: string
   /** New security label to be assigned */
@@ -4415,7 +4638,7 @@ export type DeclareCursorStmt = {
   /** bitmask of options (see above) */
   options: number
   /** the query (see comments above) */
-  query: ({ SelectStmt: SelectStmt })
+  query: { SelectStmt: SelectStmt }
 }
 
 /** ----------------------
@@ -4464,14 +4687,17 @@ export type IndexStmt = {
   /** tablespace, or NULL for default */
   tableSpace?: string
   /** columns to index: a list of IndexElem */
-  indexParams: ({ IndexElem: IndexElem })[]
+  indexParams: { IndexElem: IndexElem }[]
   /** additional columns to index: a list
-										 * of IndexElem */
-  indexIncludingParams?: ({ IndexElem: IndexElem })[]
+   * of IndexElem */
+  indexIncludingParams?: { IndexElem: IndexElem }[]
   /** WITH clause options: a list of DefElem */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** qualification (partial-index predicate) */
-  whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
+  whereClause?:
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { NullTest: NullTest }
   /** exclusion operator names, or NIL if none */
   excludeOpNames?: any[]
   /** comment to apply to index, or NULL */
@@ -4483,7 +4709,7 @@ export type IndexStmt = {
   /** rd_createSubid of oldNumber */
   oldCreateSubid?: SubTransactionId
   /** rd_firstRelfilelocatorSubid
-													 * of oldNumber */
+   * of oldNumber */
   oldFirstRelfilelocatorSubid?: SubTransactionId
   /** is index unique? */
   unique?: boolean
@@ -4504,7 +4730,7 @@ export type IndexStmt = {
   /** just do nothing if index already exists? */
   if_not_exists?: boolean
   /** reset default_tablespace prior to
-										 * executing */
+   * executing */
   reset_default_tblspc?: boolean
 }
 
@@ -4516,11 +4742,11 @@ export type CreateStatsStmt = {
   /** qualified name (list of String) */
   defnames: QualifiedName
   /** stat types (list of String) */
-  stat_types?: ({ String: String })[]
+  stat_types?: { String: String }[]
   /** expressions to build statistics on */
-  exprs: ({ StatsElem: StatsElem })[]
+  exprs: { StatsElem: StatsElem }[]
   /** rels to build stats on (list of RangeVar) */
-  relations: ({ RangeVar: RangeVar })[]
+  relations: { RangeVar: RangeVar }[]
   /** comment to apply to stats, or NULL */
   stxcomment?: string
   /** true when transformStatsStmt is finished */
@@ -4568,12 +4794,12 @@ export type CreateFunctionStmt = {
   /** qualified name of function to create */
   funcname: QualifiedName
   /** a list of FunctionParameter */
-  parameters?: ({ FunctionParameter: FunctionParameter })[]
+  parameters?: { FunctionParameter: FunctionParameter }[]
   /** the return type */
   returnType?: TypeName
   /** a list of DefElem */
-  options?: ({ DefElem: DefElem })[]
-  sql_body?: ({ List: List } | { ReturnStmt: ReturnStmt })
+  options?: { DefElem: DefElem }[]
+  sql_body?: { List: List } | { ReturnStmt: ReturnStmt }
 }
 
 /** ----------------------
@@ -4600,7 +4826,7 @@ export type AlterFunctionStmt = {
   /** name and args of function */
   func: ObjectWithArgs
   /** list of DefElem */
-  actions: ({ DefElem: DefElem })[]
+  actions: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4611,7 +4837,7 @@ export type AlterFunctionStmt = {
  */
 export type DoStmt = {
   /** List of DefElem nodes */
-  args: ({ DefElem: DefElem })[]
+  args: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4667,9 +4893,12 @@ export type RenameStmt = {
   /** in case it's a table */
   relation?: RangeVar
   /** in case it's some other object */
-  object?: ({ List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String })
+  object?:
+    | { List: List }
+    | { ObjectWithArgs: ObjectWithArgs }
+    | { String: String }
   /** name of contained object (column, rule,
-								 * trigger, etc) */
+   * trigger, etc) */
   subname?: string
   /** the new name */
   newname: string
@@ -4706,7 +4935,7 @@ export type AlterObjectSchemaStmt = {
   /** in case it's a table */
   relation?: RangeVar
   /** in case it's some other object */
-  object: ({ List: List } | { ObjectWithArgs: ObjectWithArgs })
+  object: { List: List } | { ObjectWithArgs: ObjectWithArgs }
   /** the new schema */
   newschema: string
   /** skip error if missing? */
@@ -4723,7 +4952,10 @@ export type AlterOwnerStmt = {
   /** in case it's a table */
   relation?: RangeVar
   /** in case it's some other object */
-  object: ({ List: List } | { ObjectWithArgs: ObjectWithArgs } | { String: String })
+  object:
+    | { List: List }
+    | { ObjectWithArgs: ObjectWithArgs }
+    | { String: String }
   /** the new owner */
   newowner: RoleSpec
 }
@@ -4736,7 +4968,7 @@ export type AlterOperatorStmt = {
   /** operator name and argument types */
   opername: ObjectWithArgs
   /** List of DefElem nodes */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
 }
 
 /** ------------------------
@@ -4747,7 +4979,7 @@ export type AlterTypeStmt = {
   /** type name (possibly qualified) */
   typeName: QualifiedName
   /** List of DefElem nodes */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4760,13 +4992,21 @@ export type RuleStmt = {
   /** name of the rule */
   rulename: string
   /** qualifications */
-  whereClause?: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { SubLink: SubLink })
+  whereClause?:
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { SubLink: SubLink }
   /** SELECT, INSERT, etc */
   event: CmdType
   /** is a 'do instead'? */
   instead?: boolean
   /** the action statements */
-  actions?: ({ DeleteStmt: DeleteStmt } | { InsertStmt: InsertStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })[]
+  actions?: (
+    | { DeleteStmt: DeleteStmt }
+    | { InsertStmt: InsertStmt }
+    | { SelectStmt: SelectStmt }
+    | { UpdateStmt: UpdateStmt }
+  )[]
   /** OR REPLACE */
   replace?: boolean
 }
@@ -4808,7 +5048,7 @@ export type TransactionStmt = {
   /** see above */
   kind: TransactionStmtKind
   /** for BEGIN/START commands */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** for savepoint commands */
   savepoint_name?: string
   /** for two-phase-commit related commands */
@@ -4825,7 +5065,7 @@ export type CompositeTypeStmt = {
   /** the composite type to be created */
   typevar: RangeVar
   /** list of ColumnDef nodes */
-  coldeflist: ({ ColumnDef: ColumnDef })[]
+  coldeflist: { ColumnDef: ColumnDef }[]
 }
 
 /** ----------------------
@@ -4836,7 +5076,7 @@ export type CreateEnumStmt = {
   /** qualified name (list of String) */
   typeName: QualifiedName
   /** enum values (list of String) */
-  vals: ({ String: String })[]
+  vals: { String: String }[]
 }
 
 /** ----------------------
@@ -4847,7 +5087,7 @@ export type CreateRangeStmt = {
   /** qualified name (list of String) */
   typeName: QualifiedName
   /** range parameters (list of DefElem) */
-  params: ({ DefElem: DefElem })[]
+  params: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4877,13 +5117,13 @@ export type ViewStmt = {
   /** the view to be created */
   view: RangeVar
   /** target column names */
-  aliases?: ({ String: String })[]
+  aliases?: { String: String }[]
   /** the SELECT query (as a raw parse tree) */
-  query: ({ SelectStmt: SelectStmt })
+  query: { SelectStmt: SelectStmt }
   /** replace an existing view? */
   replace?: boolean
   /** options from WITH clause */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** WITH CHECK OPTION */
   withCheckOption: ViewCheckOption
 }
@@ -4944,7 +5184,7 @@ export type DropdbStmt = {
   /** skip error if db is missing? */
   missing_ok?: boolean
   /** currently only FORCE is supported */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -4978,9 +5218,9 @@ export type ClusterStmt = {
  */
 export type VacuumStmt = {
   /** list of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** list of VacuumRelation, or NIL for all */
-  rels?: ({ VacuumRelation: VacuumRelation })[]
+  rels?: { VacuumRelation: VacuumRelation }[]
   /** true for VACUUM, false for ANALYZE */
   is_vacuumcmd?: boolean
 }
@@ -4998,7 +5238,7 @@ export type VacuumRelation = {
   /** table's OID; InvalidOid if not looked up */
   oid?: Oid
   /** list of column names, or NIL for all */
-  va_cols?: ({ String: String })[]
+  va_cols?: { String: String }[]
 }
 
 /** ----------------------
@@ -5011,9 +5251,17 @@ export type VacuumRelation = {
  */
 export type ExplainStmt = {
   /** the query (see comments above) */
-  query: ({ CreateTableAsStmt: CreateTableAsStmt } | { DeclareCursorStmt: DeclareCursorStmt } | { DeleteStmt: DeleteStmt } | { ExecuteStmt: ExecuteStmt } | { InsertStmt: InsertStmt } | { MergeStmt: MergeStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
+  query:
+    | { CreateTableAsStmt: CreateTableAsStmt }
+    | { DeclareCursorStmt: DeclareCursorStmt }
+    | { DeleteStmt: DeleteStmt }
+    | { ExecuteStmt: ExecuteStmt }
+    | { InsertStmt: InsertStmt }
+    | { MergeStmt: MergeStmt }
+    | { SelectStmt: SelectStmt }
+    | { UpdateStmt: UpdateStmt }
   /** list of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -5031,7 +5279,7 @@ export type ExplainStmt = {
  */
 export type CreateTableAsStmt = {
   /** the query (see comments above) */
-  query: ({ ExecuteStmt: ExecuteStmt } | { SelectStmt: SelectStmt })
+  query: { ExecuteStmt: ExecuteStmt } | { SelectStmt: SelectStmt }
   /** destination table */
   into: IntoClause
   /** OBJECT_TABLE or OBJECT_MATVIEW */
@@ -5059,8 +5307,7 @@ export type RefreshMatViewStmt = {
  * Checkpoint Statement
  * ----------------------
  */
-export type CheckPointStmt = {
-}
+export type CheckPointStmt = {}
 
 /** ----------------------
  * Discard Statement
@@ -5089,20 +5336,20 @@ export type LockStmt = {
  */
 export type ConstraintsSetStmt = {
   /** List of names as RangeVars */
-  constraints?: ({ RangeVar: RangeVar })[]
+  constraints?: { RangeVar: RangeVar }[]
   deferred?: boolean
 }
 
 export type ReindexStmt = {
   /** REINDEX_OBJECT_INDEX, REINDEX_OBJECT_TABLE,
-								 * etc. */
+   * etc. */
   kind: ReindexObjectType
   /** Table or index to reindex */
   relation?: RangeVar
   /** name of database to reindex */
   name?: string
   /** list of DefElem nodes */
-  params?: ({ DefElem: DefElem })[]
+  params?: { DefElem: DefElem }[]
 }
 
 /** ----------------------
@@ -5111,7 +5358,7 @@ export type ReindexStmt = {
  */
 export type CreateConversionStmt = {
   /** Name of the conversion */
-  conversion_name: ({ String: String })[]
+  conversion_name: { String: String }[]
   /** source encoding name */
   for_encoding_name: string
   /** destination encoding name */
@@ -5154,9 +5401,12 @@ export type PrepareStmt = {
   /** Name of plan, arbitrary */
   name: string
   /** Types of parameters (List of TypeName) */
-  argtypes?: ({ TypeName: TypeName })[]
+  argtypes?: { TypeName: TypeName }[]
   /** The query itself (as a raw parsetree) */
-  query: ({ InsertStmt: InsertStmt } | { SelectStmt: SelectStmt } | { UpdateStmt: UpdateStmt })
+  query:
+    | { InsertStmt: InsertStmt }
+    | { SelectStmt: SelectStmt }
+    | { UpdateStmt: UpdateStmt }
 }
 
 /** ----------------------
@@ -5184,7 +5434,7 @@ export type DeallocateStmt = {
  *		DROP OWNED statement
  */
 export type DropOwnedStmt = {
-  roles: ({ RoleSpec: RoleSpec })[]
+  roles: { RoleSpec: RoleSpec }[]
   behavior: DropBehavior
 }
 
@@ -5192,7 +5442,7 @@ export type DropOwnedStmt = {
  *		REASSIGN OWNED statement
  */
 export type ReassignOwnedStmt = {
-  roles: ({ RoleSpec: RoleSpec })[]
+  roles: { RoleSpec: RoleSpec }[]
   newrole: RoleSpec
 }
 
@@ -5203,7 +5453,7 @@ export type AlterTSDictionaryStmt = {
   /** qualified name (list of String) */
   dictname: QualifiedName
   /** List of DefElem nodes */
-  options: ({ DefElem: DefElem })[]
+  options: { DefElem: DefElem }[]
 }
 
 export type AlterTSConfigurationStmt = {
@@ -5212,11 +5462,11 @@ export type AlterTSConfigurationStmt = {
   /** qualified name (list of String) */
   cfgname: QualifiedName
   /**
-	 * dicts will be non-NIL if ADD/ALTER MAPPING was specified. If dicts is
-	 * NIL, but tokentype isn't, DROP MAPPING was specified.
-	 */
+   * dicts will be non-NIL if ADD/ALTER MAPPING was specified. If dicts is
+   * NIL, but tokentype isn't, DROP MAPPING was specified.
+   */
   /** list of String */
-  tokentype?: ({ String: String })[]
+  tokentype?: { String: String }[]
   /** list of list of String */
   dicts: List<{ String: String }>[]
   /** if true - remove old variant */
@@ -5249,9 +5499,9 @@ export type CreatePublicationStmt = {
   /** Name of the publication */
   pubname: string
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /** Optional list of publication objects */
-  pubobjects?: ({ PublicationObjSpec: PublicationObjSpec })[]
+  pubobjects?: { PublicationObjSpec: PublicationObjSpec }[]
   /** Special publication for all tables in db */
   for_all_tables?: boolean
 }
@@ -5261,17 +5511,17 @@ export type AlterPublicationStmt = {
   pubname: string
   /** parameters used for ALTER PUBLICATION ... WITH */
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
   /**
-	 * Parameters used for ALTER PUBLICATION ... ADD/DROP/SET publication
-	 * objects.
-	 */
+   * Parameters used for ALTER PUBLICATION ... ADD/DROP/SET publication
+   * objects.
+   */
   /** Optional list of publication objects */
-  pubobjects?: ({ PublicationObjSpec: PublicationObjSpec })[]
+  pubobjects?: { PublicationObjSpec: PublicationObjSpec }[]
   /** Special publication for all tables in db */
   for_all_tables?: boolean
   /** What action to perform with the given
-									 * objects */
+   * objects */
   action: AlterPublicationAction
 }
 
@@ -5281,9 +5531,9 @@ export type CreateSubscriptionStmt = {
   /** Connection string to publisher */
   conninfo: string
   /** One or more publication to subscribe to */
-  publication: ({ String: String })[]
+  publication: { String: String }[]
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 export type AlterSubscriptionStmt = {
@@ -5294,9 +5544,9 @@ export type AlterSubscriptionStmt = {
   /** Connection string to publisher */
   conninfo?: string
   /** One or more publication to subscribe to */
-  publication?: ({ String: String })[]
+  publication?: { String: String }[]
   /** List of DefElem nodes */
-  options?: ({ DefElem: DefElem })[]
+  options?: { DefElem: DefElem }[]
 }
 
 export type DropSubscriptionStmt = {
@@ -5321,7 +5571,7 @@ export type Alias = {
   /** aliased rel name (never qualified) */
   aliasname: string
   /** optional list of column aliases */
-  colnames: ({ String: String })[]
+  colnames: { String: String }[]
 }
 
 /**
@@ -5381,13 +5631,13 @@ export type IntoClause = {
 /** Symbols for the indexes of the special RTE entries in rules */
 export type Var = {
   /**
-	 * index of this var's relation in the range table, or
-	 * INNER_VAR/OUTER_VAR/etc
-	 */
+   * index of this var's relation in the range table, or
+   * INNER_VAR/OUTER_VAR/etc
+   */
   varno: number
   /**
-	 * attribute number of this var, or zero for all attrs ("whole-row Var")
-	 */
+   * attribute number of this var, or zero for all attrs ("whole-row Var")
+   */
   varattno: AttrNumber
   /** pg_type OID for the type of this var */
   vartype: Oid
@@ -5396,21 +5646,21 @@ export type Var = {
   /** OID of collation, or InvalidOid if none */
   varcollid: Oid
   /**
-	 * RT indexes of outer joins that can replace the Var's value with null.
-	 * We can omit varnullingrels in the query jumble, because it's fully
-	 * determined by varno/varlevelsup plus the Var's query location.
-	 */
+   * RT indexes of outer joins that can replace the Var's value with null.
+   * We can omit varnullingrels in the query jumble, because it's fully
+   * determined by varno/varlevelsup plus the Var's query location.
+   */
   varnullingrels: any
   /**
-	 * for subquery variables referencing outer relations; 0 in a normal var,
-	 * >0 means N levels up
-	 */
+   * for subquery variables referencing outer relations; 0 in a normal var,
+   * >0 means N levels up
+   */
   varlevelsup: Index
   /**
-	 * varnosyn/varattnosyn are ignored for equality, because Vars with
-	 * different syntactic identifiers are semantically the same as long as
-	 * their varno/varattno match.
-	 */
+   * varnosyn/varattnosyn are ignored for equality, because Vars with
+   * different syntactic identifiers are semantically the same as long as
+   * their varno/varattno match.
+   */
   /** syntactic relation index (0 if unknown) */
   /** syntactic attribute number */
   /** token location, or -1 if unknown */
@@ -5441,15 +5691,15 @@ export type Const = {
   /** whether the constant is null (if true, constvalue is undefined) */
   constisnull: boolean
   /**
-	 * Whether this datatype is passed by value.  If true, then all the
-	 * information is stored in the Datum.  If false, then the Datum contains
-	 * a pointer to the information.
-	 */
+   * Whether this datatype is passed by value.  If true, then all the
+   * information is stored in the Datum.  If false, then the Datum contains
+   * a pointer to the information.
+   */
   constbyval: boolean
   /**
-	 * token location, or -1 if unknown.  All constants are tracked as
-	 * locations in query jumbling, to be marked as parameters.
-	 */
+   * token location, or -1 if unknown.  All constants are tracked as
+   * locations in query jumbling, to be marked as parameters.
+   */
   location: number
 }
 
@@ -5557,9 +5807,9 @@ export type Aggref = {
   /** OID of collation that function should use */
   inputcollid: Oid
   /**
-	 * type Oid of aggregate's transition value; ignored for equal since it
-	 * might not be set yet
-	 */
+   * type Oid of aggregate's transition value; ignored for equal since it
+   * might not be set yet
+   */
   /** type Oids of direct and aggregated args */
   aggargtypes: any[]
   /** direct arguments, if an ordered-set agg */
@@ -5575,9 +5825,9 @@ export type Aggref = {
   /** true if argument list was really '*' */
   aggstar: boolean
   /**
-	 * true if variadic arguments have been combined into an array last
-	 * argument
-	 */
+   * true if variadic arguments have been combined into an array last
+   * argument
+   */
   aggvariadic: boolean
   /** aggregate kind (see pg_aggregate.h) */
   aggkind: string
@@ -5623,7 +5873,7 @@ export type Aggref = {
  */
 export type GroupingFunc = {
   /** arguments, not evaluated but kept for benefit of EXPLAIN etc. */
-  args: ({ ColumnRef: ColumnRef })[]
+  args: { ColumnRef: ColumnRef }[]
   /** ressortgrouprefs of arguments */
   refs?: any[]
   /** actual column positions set by planner */
@@ -5716,9 +5966,9 @@ export type SubscriptingRef = {
   /** expressions that evaluate to upper container indexes */
   refupperindexpr: any[]
   /**
-	 * expressions that evaluate to lower container indexes, or NIL for single
-	 * container element.
-	 */
+   * expressions that evaluate to lower container indexes, or NIL for single
+   * container element.
+   */
   reflowerindexpr?: any[]
   /** the expression that evaluates to a container value */
   refexpr: Expr
@@ -5740,9 +5990,9 @@ export type FuncExpr = {
   /** true if function returns set */
   funcretset: boolean
   /**
-	 * true if variadic arguments have been combined into an array last
-	 * argument
-	 */
+   * true if variadic arguments have been combined into an array last
+   * argument
+   */
   funcvariadic: boolean
   /** how to display this function call */
   funcformat: CoercionForm
@@ -5862,7 +6112,18 @@ export type ScalarArrayOpExpr = {
 export type BoolExpr = {
   boolop: BoolExprType
   /** arguments to this expression */
-  args: ({ A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { BooleanTest: BooleanTest } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { JsonIsPredicate: JsonIsPredicate } | { NullTest: NullTest } | { ParamRef: ParamRef } | { SubLink: SubLink } | { TypeCast: TypeCast })[]
+  args: (
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { BooleanTest: BooleanTest }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { JsonIsPredicate: JsonIsPredicate }
+    | { NullTest: NullTest }
+    | { ParamRef: ParamRef }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
+  )[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -5928,7 +6189,7 @@ export type SubLink = {
   /** originally specified operator name */
   operName?: QualifiedName
   /** subselect as Query* or raw parsetree */
-  subselect: ({ SelectStmt: SelectStmt })
+  subselect: { SelectStmt: SelectStmt }
   /** token location, or -1 if unknown */
   location: number
 }
@@ -5992,15 +6253,15 @@ export type SubPlan = {
   /** Typmod of first column of subplan result */
   firstColTypmod: number
   /** Collation of first column of subplan
-									 * result */
+   * result */
   firstColCollation: Oid
   /** Information about execution strategy: */
   /** true to store subselect output in a hash
-								 * table (implies we are doing "IN") */
+   * table (implies we are doing "IN") */
   useHashTable: boolean
   /** true if it's okay to return FALSE when the
-								 * spec result is UNKNOWN; this allows much
-								 * simpler handling of null values */
+   * spec result is UNKNOWN; this allows much
+   * simpler handling of null values */
   unknownEqFalse: boolean
   /** is the subplan parallel-safe? */
   parallel_safe: boolean
@@ -6008,7 +6269,7 @@ export type SubPlan = {
   /** Information for passing params into and out of the subselect: */
   /** setParam and parParam are lists of integers (param IDs) */
   /** initplan and MULTIEXPR subqueries have to
-								 * set these Params for parent plan */
+   * set these Params for parent plan */
   setParam: any[]
   /** indices of input Params from parent plan */
   parParam: any[]
@@ -6235,7 +6496,7 @@ export type CaseExpr = {
   /** implicit equality comparison argument */
   arg?: Expr
   /** the arguments (list of WHEN clauses) */
-  args: ({ CaseWhen: CaseWhen })[]
+  args: { CaseWhen: CaseWhen }[]
   /** the default result (ELSE clause) */
   defresult?: Expr
   /** token location, or -1 if unknown */
@@ -6331,21 +6592,32 @@ export type ArrayExpr = {
  */
 export type RowExpr = {
   /** the fields */
-  args?: ({ A_ArrayExpr: A_ArrayExpr } | { A_Const: A_Const } | { A_Expr: A_Expr } | { CollateClause: CollateClause } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { RowExpr: RowExpr } | { SetToDefault: SetToDefault } | { SubLink: SubLink } | { TypeCast: TypeCast })[]
+  args?: (
+    | { A_ArrayExpr: A_ArrayExpr }
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { CollateClause: CollateClause }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { RowExpr: RowExpr }
+    | { SetToDefault: SetToDefault }
+    | { SubLink: SubLink }
+    | { TypeCast: TypeCast }
+  )[]
   /** RECORDOID or a composite type's ID */
   row_typeid?: Oid
   /**
-	 * row_typeid cannot be a domain over composite, only plain composite.  To
-	 * create a composite domain value, apply CoerceToDomain to the RowExpr.
-	 *
-	 * Note: we deliberately do NOT store a typmod.  Although a typmod will be
-	 * associated with specific RECORD types at runtime, it will differ for
-	 * different backends, and so cannot safely be stored in stored
-	 * parsetrees.  We must assume typmod -1 for a RowExpr node.
-	 *
-	 * We don't need to store a collation either.  The result type is
-	 * necessarily composite, and composite types never have a collation.
-	 */
+   * row_typeid cannot be a domain over composite, only plain composite.  To
+   * create a composite domain value, apply CoerceToDomain to the RowExpr.
+   *
+   * Note: we deliberately do NOT store a typmod.  Although a typmod will be
+   * associated with specific RECORD types at runtime, it will differ for
+   * different backends, and so cannot safely be stored in stored
+   * parsetrees.  We must assume typmod -1 for a RowExpr node.
+   *
+   * We don't need to store a collation either.  The result type is
+   * necessarily composite, and composite types never have a collation.
+   */
   /** how to display this node */
   row_format: CoercionForm
   /** list of String, or NIL */
@@ -6392,7 +6664,11 @@ export type CoalesceExpr = {
   /** OID of collation, or InvalidOid if none */
   coalescecollid?: Oid
   /** the arguments */
-  args: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { TypeCast: TypeCast })[]
+  args: (
+    | { A_Const: A_Const }
+    | { ColumnRef: ColumnRef }
+    | { TypeCast: TypeCast }
+  )[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -6419,9 +6695,9 @@ export type SQLValueFunction = {
   /** which function this is */
   op: SQLValueFunctionOp
   /**
-	 * Result type/typmod.  Type is fully determined by "op", so no need to
-	 * include this Oid in the query jumbling.
-	 */
+   * Result type/typmod.  Type is fully determined by "op", so no need to
+   * include this Oid in the query jumbling.
+   */
   type?: Oid
   typmod?: number
   /** token location, or -1 if unknown */
@@ -6434,11 +6710,17 @@ export type XmlExpr = {
   /** name in xml(NAME foo ...) syntaxes */
   name?: string
   /** non-XML expressions for xml_attributes */
-  named_args?: ({ ResTarget: ResTarget })[]
+  named_args?: { ResTarget: ResTarget }[]
   /** parallel list of String values */
   arg_names?: any[]
   /** list of expressions */
-  args?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | { FuncCall: FuncCall } | { TypeCast: TypeCast } | { XmlExpr: XmlExpr })[]
+  args?: (
+    | { A_Const: A_Const }
+    | { ColumnRef: ColumnRef }
+    | { FuncCall: FuncCall }
+    | { TypeCast: TypeCast }
+    | { XmlExpr: XmlExpr }
+  )[]
   /** DOCUMENT or CONTENT */
   xmloption: XmlOptionType
   /** INDENT option for XMLSERIALIZE */
@@ -6806,15 +7088,27 @@ export type JoinExpr = {
   /** Natural join? Will need to shape table */
   isNatural?: boolean
   /** left subtree */
-  larg: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
+  larg:
+    | { JoinExpr: JoinExpr }
+    | { RangeFunction: RangeFunction }
+    | { RangeSubselect: RangeSubselect }
+    | { RangeVar: RangeVar }
   /** right subtree */
-  rarg: ({ JoinExpr: JoinExpr } | { RangeFunction: RangeFunction } | { RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })
+  rarg:
+    | { JoinExpr: JoinExpr }
+    | { RangeFunction: RangeFunction }
+    | { RangeSubselect: RangeSubselect }
+    | { RangeVar: RangeVar }
   /** USING clause, if any (list of String) */
-  usingClause?: ({ String: String })[]
+  usingClause?: { String: String }[]
   /** alias attached to USING clause, if any */
   join_using_alias?: Alias
   /** qualifiers on join, if any */
-  quals?: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr } | { NullTest: NullTest })
+  quals?:
+    | { A_Const: A_Const }
+    | { A_Expr: A_Expr }
+    | { BoolExpr: BoolExpr }
+    | { NullTest: NullTest }
   /** user-written alias clause, if any */
   alias?: Alias
   /** RT index assigned for join, or 0 */
@@ -6851,7 +7145,7 @@ export type OnConflictExpr = {
   action: OnConflictAction
   /** Arbiter */
   /** unique index arbiter list (of
-								 * InferenceElem's) */
+   * InferenceElem's) */
   arbiterElems: any[]
   /** unique index arbiter WHERE clause */
   arbiterWhere: Node
@@ -7020,9 +7314,9 @@ export type ParamListInfoData = {
   /** nominal/maximum # of Params represented */
   numParams: number
   /**
-	 * params[] may be of length zero if paramFetch is supplied; otherwise it
-	 * must be of length numParams.
-	 */
+   * params[] may be of length zero if paramFetch is supplied; otherwise it
+   * must be of length numParams.
+   */
 }
 
 /** ----------------
@@ -7068,16 +7362,16 @@ export type NullableDatum = {
 
 export type VacAttrStats = {
   /**
-	 * These fields are set up by the main ANALYZE code before invoking the
-	 * type-specific typanalyze function.
-	 *
-	 * Note: do not assume that the data being analyzed has the same datatype
-	 * shown in attr, ie do not trust attr->atttypid, attlen, etc.  This is
-	 * because some index opclasses store a different type than the underlying
-	 * column/expression.  Instead use attrtypid, attrtypmod, and attrtype for
-	 * information about the datatype being fed to the typanalyze function.
-	 * Likewise, use attrcollid not attr->attcollation.
-	 */
+   * These fields are set up by the main ANALYZE code before invoking the
+   * type-specific typanalyze function.
+   *
+   * Note: do not assume that the data being analyzed has the same datatype
+   * shown in attr, ie do not trust attr->atttypid, attlen, etc.  This is
+   * because some index opclasses store a different type than the underlying
+   * column/expression.  Instead use attrtypid, attrtypmod, and attrtype for
+   * information about the datatype being fed to the typanalyze function.
+   * Likewise, use attrcollid not attr->attcollation.
+   */
   /** copy of pg_attribute row for column */
   attr: any
   /** type of data being analyzed */
@@ -7091,9 +7385,9 @@ export type VacAttrStats = {
   /** where to save long-lived data */
   anl_context: any
   /**
-	 * These fields must be filled in by the typanalyze routine, unless it
-	 * returns false.
-	 */
+   * These fields must be filled in by the typanalyze routine, unless it
+   * returns false.
+   */
   /** function pointer */
   compute_stats: any
   /** Minimum # of rows wanted for stats */
@@ -7101,9 +7395,9 @@ export type VacAttrStats = {
   /** for extra type-specific data */
   extra_data: void
   /**
-	 * These fields are to be filled in by the compute_stats routine. (They
-	 * are initialized to zero when the struct is created.)
-	 */
+   * These fields are to be filled in by the compute_stats routine. (They
+   * are initialized to zero when the struct is created.)
+   */
   stats_valid: boolean
   /** fraction of entries that are NULL */
   stanullfrac?: number
@@ -7119,19 +7413,19 @@ export type VacAttrStats = {
   numvalues: number
   stavalues: Datum
   /**
-	 * These fields describe the stavalues[n] element types. They will be
-	 * initialized to match attrtypid, but a custom typanalyze function might
-	 * want to store an array of something other than the analyzed column's
-	 * elements. It should then overwrite these fields.
-	 */
+   * These fields describe the stavalues[n] element types. They will be
+   * initialized to match attrtypid, but a custom typanalyze function might
+   * want to store an array of something other than the analyzed column's
+   * elements. It should then overwrite these fields.
+   */
   statypid: Oid
   statyplen: number
   statypbyval: boolean
   statypalign: string
   /**
-	 * These fields are private to the main ANALYZE code and should not be
-	 * looked at by type-specific functions.
-	 */
+   * These fields are private to the main ANALYZE code and should not be
+   * looked at by type-specific functions.
+   */
   /** attribute number within tuples */
   tupattnum: number
   /** access info for std fetch function */
@@ -7160,26 +7454,26 @@ export type VacuumParams = {
   /** age at which to scan whole table */
   freeze_table_age: number
   /** min multixact freeze age, -1 to
-											 * use default */
+   * use default */
   multixact_freeze_min_age: number
   /** multixact age at which to scan
-											 * whole table */
+   * whole table */
   multixact_freeze_table_age: number
   /** force a for-wraparound vacuum */
   is_wraparound: boolean
   /** minimum execution threshold in ms at
-									 * which autovacuum is logged, -1 to use
-									 * default */
+   * which autovacuum is logged, -1 to use
+   * default */
   log_min_duration: number
   /** Do index vacuum and cleanup */
   index_cleanup: VacOptValue
   /** Truncate empty pages at the end */
   truncate: VacOptValue
   /**
-	 * The number of parallel vacuum workers.  0 by default which means choose
-	 * based on the number of indexes.  -1 indicates parallel vacuum is
-	 * disabled.
-	 */
+   * The number of parallel vacuum workers.  0 by default which means choose
+   * based on the number of indexes.  -1 indicates parallel vacuum is
+   * disabled.
+   */
   nworkers: number
 }
 
@@ -7189,32 +7483,32 @@ export type VacuumParams = {
  */
 export type VacuumCutoffs = {
   /**
-	 * Existing pg_class fields at start of VACUUM
-	 */
+   * Existing pg_class fields at start of VACUUM
+   */
   relfrozenxid: TransactionId
   relminmxid: MultiXactId
   /**
-	 * OldestXmin is the Xid below which tuples deleted by any xact (that
-	 * committed) should be considered DEAD, not just RECENTLY_DEAD.
-	 *
-	 * OldestMxact is the Mxid below which MultiXacts are definitely not seen
-	 * as visible by any running transaction.
-	 *
-	 * OldestXmin and OldestMxact are also the most recent values that can
-	 * ever be passed to vac_update_relstats() as frozenxid and minmulti
-	 * arguments at the end of VACUUM.  These same values should be passed
-	 * when it turns out that VACUUM will leave no unfrozen XIDs/MXIDs behind
-	 * in the table.
-	 */
+   * OldestXmin is the Xid below which tuples deleted by any xact (that
+   * committed) should be considered DEAD, not just RECENTLY_DEAD.
+   *
+   * OldestMxact is the Mxid below which MultiXacts are definitely not seen
+   * as visible by any running transaction.
+   *
+   * OldestXmin and OldestMxact are also the most recent values that can
+   * ever be passed to vac_update_relstats() as frozenxid and minmulti
+   * arguments at the end of VACUUM.  These same values should be passed
+   * when it turns out that VACUUM will leave no unfrozen XIDs/MXIDs behind
+   * in the table.
+   */
   OldestXmin: TransactionId
   OldestMxact: MultiXactId
   /**
-	 * FreezeLimit is the Xid below which all Xids are definitely frozen or
-	 * removed in pages VACUUM scans and cleanup locks.
-	 *
-	 * MultiXactCutoff is the value below which all MultiXactIds are
-	 * definitely removed from Xmax in pages VACUUM scans and cleanup locks.
-	 */
+   * FreezeLimit is the Xid below which all Xids are definitely frozen or
+   * removed in pages VACUUM scans and cleanup locks.
+   *
+   * MultiXactCutoff is the value below which all MultiXactIds are
+   * definitely removed from Xmax in pages VACUUM scans and cleanup locks.
+   */
   FreezeLimit: TransactionId
   MultiXactCutoff: MultiXactId
 }
@@ -7256,12 +7550,7 @@ export type QualifiedName = { String: String }[]
 
 export type List<T = Node> = { items: T[] }
 
-export type A_Const =
-  | BitString
-  | Boolean
-  | Float
-  | Integer
-  | String
+export type A_Const = BitString | Boolean | Float | Integer | String
 
 /**
  * Expr - generic superclass for executable-expression nodes
