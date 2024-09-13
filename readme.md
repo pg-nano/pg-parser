@@ -65,6 +65,8 @@ If you're editing C++ code, you'll want to have [compiledb](https://github.com/n
 brew install compiledb
 ```
 
+**⚠️ Windows support:** The `binding.gyp` file is currently broken for Windows builds. Any help would be appreciated!
+
 ## License
 
 MIT
