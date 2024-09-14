@@ -108,7 +108,7 @@ walk(ast, {
 
 ### Type definitions
 
-Every possible type that could be returned from libpg_query is defined in [ast.ts](https://github.com/pg-nano/pg-parser/blob/16-latest/ast.ts). If a type is missing, it's probably because libpg_query didn't tell us about it (otherwise, please [file an issue](https://github.com/pg-nano/pg-parser/issues)).
+Every possible type that could be returned from libpg_query is defined in [ast.ts](https://github.com/pg-nano/pg-parser/blob/16-latest/src/lib/ast.ts). If a type is missing, it's probably because libpg_query didn't tell us about it (otherwise, please [file an issue](https://github.com/pg-nano/pg-parser/issues)).
 
 The type definitions are generated from the [srcdata](https://github.com/pganalyze/libpg_query/tree/16-latest/srcdata) of `libpg_query` (the C library this package binds to). If you're interested in how they're generated, see [scripts/generateTypes.ts](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/generateTypes.ts) and [scripts/inferFieldMetadata.ts](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/inferFieldMetadata.ts). For some cases, type definitions are manually specified in [scripts/typeMappings.ts](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/typeMappings.ts).
 
