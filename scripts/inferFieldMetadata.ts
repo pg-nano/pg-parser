@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { select, castArrayIfExists, unique } from 'radashi'
-import { parseTestFile } from '../test/parseTestFile'
-import { parseQuerySync } from '../src/lib/binding'
-import { walk } from '../src/lib/walk'
+import { castArrayIfExists, select, unique } from 'radashi'
 import type { Node } from '../src/lib/ast'
-import { NodeTag } from '../src/lib/node'
+import { parseQuerySync } from '../src/lib/binding'
+import { $ } from '../src/lib/select'
+import { walk } from '../src/lib/walk'
+import { parseTestFile } from '../test/parseTestFile'
 
 const testDir = 'libpg_query/test/sql/postgres_regress'
 const testFiles = fs.readdirSync(testDir)
@@ -39,7 +39,7 @@ const inferNodeTags = (value: unknown) =>
     : castArrayIfExists(toNodeTag(value)) ?? null
 
 const inferListTags = (value: Node[]) => {
-  const lists = value.filter(NodeTag.isList)
+  const lists = value.filter($.isList)
   const itemTags = lists.flatMap(list => inferNodeTags(list.List.items) ?? [])
   return itemTags.length > 0 ? unique(itemTags) : null
 }
