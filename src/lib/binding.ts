@@ -26,7 +26,7 @@ let PgQuery: {
 }
 
 export type ParseResult = {
-  stmts: { stmt: Node }[]
+  stmts: { stmt: Node; stmt_location?: number; stmt_len?: number }[]
   version: number
 }
 
