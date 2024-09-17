@@ -174,7 +174,12 @@ async function main() {
     }
   }
 
-  for (const enums of Object.values(enumsByModule)) {
+  for (const [moduleId, enums] of Object.entries(enumsByModule)) {
+    if (!moduleId.startsWith('nodes/')) {
+      // Ignore internal enums.
+      continue
+    }
+
     const keys = Object.keys(enums)
     if (keys.length === 0) {
       continue
