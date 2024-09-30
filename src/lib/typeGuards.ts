@@ -303,7 +303,9 @@ export const typeGuards = {
   ): node is { JsonArrayConstructor: import('./ast').JsonArrayConstructor } {
     return node != null && isTaggedNode(node, 'JsonArrayConstructor')
   },
-  isJsonArrayQueryConstructor(node: object | undefined): node is {
+  isJsonArrayQueryConstructor(
+    node: object | undefined,
+  ): node is {
     JsonArrayQueryConstructor: import('./ast').JsonArrayQueryConstructor
   } {
     return node != null && isTaggedNode(node, 'JsonArrayQueryConstructor')
@@ -393,7 +395,9 @@ export const typeGuards = {
   ): node is { GrantRoleStmt: import('./ast').GrantRoleStmt } {
     return node != null && isTaggedNode(node, 'GrantRoleStmt')
   },
-  isAlterDefaultPrivilegesStmt(node: object | undefined): node is {
+  isAlterDefaultPrivilegesStmt(
+    node: object | undefined,
+  ): node is {
     AlterDefaultPrivilegesStmt: import('./ast').AlterDefaultPrivilegesStmt
   } {
     return node != null && isTaggedNode(node, 'AlterDefaultPrivilegesStmt')
@@ -433,7 +437,9 @@ export const typeGuards = {
   ): node is { DropTableSpaceStmt: import('./ast').DropTableSpaceStmt } {
     return node != null && isTaggedNode(node, 'DropTableSpaceStmt')
   },
-  isAlterTableSpaceOptionsStmt(node: object | undefined): node is {
+  isAlterTableSpaceOptionsStmt(
+    node: object | undefined,
+  ): node is {
     AlterTableSpaceOptionsStmt: import('./ast').AlterTableSpaceOptionsStmt
   } {
     return node != null && isTaggedNode(node, 'AlterTableSpaceOptionsStmt')
@@ -453,7 +459,9 @@ export const typeGuards = {
   ): node is { AlterExtensionStmt: import('./ast').AlterExtensionStmt } {
     return node != null && isTaggedNode(node, 'AlterExtensionStmt')
   },
-  isAlterExtensionContentsStmt(node: object | undefined): node is {
+  isAlterExtensionContentsStmt(
+    node: object | undefined,
+  ): node is {
     AlterExtensionContentsStmt: import('./ast').AlterExtensionContentsStmt
   } {
     return node != null && isTaggedNode(node, 'AlterExtensionContentsStmt')
@@ -468,17 +476,23 @@ export const typeGuards = {
   ): node is { AlterFdwStmt: import('./ast').AlterFdwStmt } {
     return node != null && isTaggedNode(node, 'AlterFdwStmt')
   },
-  isCreateForeignServerStmt(node: object | undefined): node is {
+  isCreateForeignServerStmt(
+    node: object | undefined,
+  ): node is {
     CreateForeignServerStmt: import('./ast').CreateForeignServerStmt
   } {
     return node != null && isTaggedNode(node, 'CreateForeignServerStmt')
   },
-  isAlterForeignServerStmt(node: object | undefined): node is {
+  isAlterForeignServerStmt(
+    node: object | undefined,
+  ): node is {
     AlterForeignServerStmt: import('./ast').AlterForeignServerStmt
   } {
     return node != null && isTaggedNode(node, 'AlterForeignServerStmt')
   },
-  isCreateForeignTableStmt(node: object | undefined): node is {
+  isCreateForeignTableStmt(
+    node: object | undefined,
+  ): node is {
     CreateForeignTableStmt: import('./ast').CreateForeignTableStmt
   } {
     return node != null && isTaggedNode(node, 'CreateForeignTableStmt')
@@ -498,7 +512,9 @@ export const typeGuards = {
   ): node is { DropUserMappingStmt: import('./ast').DropUserMappingStmt } {
     return node != null && isTaggedNode(node, 'DropUserMappingStmt')
   },
-  isImportForeignSchemaStmt(node: object | undefined): node is {
+  isImportForeignSchemaStmt(
+    node: object | undefined,
+  ): node is {
     ImportForeignSchemaStmt: import('./ast').ImportForeignSchemaStmt
   } {
     return node != null && isTaggedNode(node, 'ImportForeignSchemaStmt')
@@ -843,7 +859,9 @@ export const typeGuards = {
   ): node is { AlterTSDictionaryStmt: import('./ast').AlterTSDictionaryStmt } {
     return node != null && isTaggedNode(node, 'AlterTSDictionaryStmt')
   },
-  isAlterTSConfigurationStmt(node: object | undefined): node is {
+  isAlterTSConfigurationStmt(
+    node: object | undefined,
+  ): node is {
     AlterTSConfigurationStmt: import('./ast').AlterTSConfigurationStmt
   } {
     return node != null && isTaggedNode(node, 'AlterTSConfigurationStmt')
@@ -863,7 +881,9 @@ export const typeGuards = {
   ): node is { AlterPublicationStmt: import('./ast').AlterPublicationStmt } {
     return node != null && isTaggedNode(node, 'AlterPublicationStmt')
   },
-  isCreateSubscriptionStmt(node: object | undefined): node is {
+  isCreateSubscriptionStmt(
+    node: object | undefined,
+  ): node is {
     CreateSubscriptionStmt: import('./ast').CreateSubscriptionStmt
   } {
     return node != null && isTaggedNode(node, 'CreateSubscriptionStmt')
