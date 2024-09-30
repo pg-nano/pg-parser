@@ -22,6 +22,7 @@ export const typeMappings: Record<string, string> = {
   Node: 'Node',
   RelFileNumber: 'number',
   'Alias.colnames': NodeArray('String'),
+  'Constraint.generated_when': '"a" | "d"',
   'SelectStmt.valuesLists': 'List<Expr>[]',
 }
 

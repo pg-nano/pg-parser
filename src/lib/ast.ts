@@ -3980,7 +3980,7 @@ export type Constraint = {
   /** expr, as nodeToString representation */
   cooked_expr?: string
   /** ALWAYS or BY DEFAULT */
-  generated_when?: string
+  generated_when?: 'a' | 'd'
   /** Fields used for unique constraints (UNIQUE and PRIMARY KEY): */
   /** null treatment for UNIQUE constraints */
   nulls_not_distinct?: boolean
