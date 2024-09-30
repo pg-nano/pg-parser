@@ -208,6 +208,7 @@ async function main() {
 
   delete structsByModule['../backend/parser/gram']
   delete structsByModule['../backend/parser/gramparse']
+  delete structsByModule['commands/vacuum']
 
   /** Constant types are included in the "A_Const" union of object types. */
   const constTypes: string[] = []
