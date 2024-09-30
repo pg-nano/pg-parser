@@ -6,6 +6,16 @@
   "description": "Node.js addon for PostgreSQL query parsing",
   "license": "MIT",
   "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./ast": {
+      "types": "./lib/ast.d.ts",
+      "default": "./lib/ast.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pg-nano/pg-parser.git"
