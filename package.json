@@ -1,7 +1,7 @@
 {
   "name": "@pg-nano/pg-parser",
   "type": "module",
-  "version": "16.1.1",
+  "version": "16.1.2",
   "sideEffects": false,
   "description": "Node.js addon for PostgreSQL query parsing",
   "license": "MIT",
@@ -36,7 +36,14 @@
     "format": "biome format --write package.json src/lib/*.ts test/*.ts scripts/*.ts",
     "test": "pnpm -s dlx vitest@2.0.5"
   },
-  "keywords": ["postgres", "postgresql", "pg", "query", "parser", "plpgsql"],
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "pg",
+    "query",
+    "parser",
+    "plpgsql"
+  ],
   "dependencies": {
     "bindings": "^1.5.0",
     "node-addon-api": "^8.1.0",
@@ -54,12 +61,16 @@
     "typescript": "^5.5.4",
     "watchlist": "npm:@aleclarson/watchlist@^0.3.3"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "engines": {
     "node": ">=16"
   },
   "binary": {
-    "napi_versions": [8]
+    "napi_versions": [
+      8
+    ]
   },
   "config": {
     "runtime": "napi",
