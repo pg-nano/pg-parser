@@ -33,9 +33,11 @@ export type FieldSelection<
   ? NodeFields<T> extends infer TFields
     ? TFieldPath extends `${infer TField}.${infer TRest}`
       ? TField extends Keys<TFields>
-        ? Access<TFields, TField> extends object
-          ? FieldSelection<Access<TFields, TField>, TRest>
-          : undefined
+        ? Access<TFields, TField> extends infer TValue
+          ? TValue extends object
+            ? FieldSelection<TValue, TRest>
+            : undefined
+          : never
         : undefined
       : TFieldPath extends Keys<TFields>
         ? Access<TFields, TFieldPath>
