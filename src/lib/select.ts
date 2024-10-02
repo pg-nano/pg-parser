@@ -13,6 +13,14 @@ type NodeFields<T extends object> = T extends any
     : never
   : never
 
+// Utility types for handling cases where multiple object types are possible
+type Keys<T> = T extends object ? keyof T : never
+type Access<T, K> = T extends object
+  ? K extends keyof T
+    ? T[K]
+    : undefined
+  : undefined
+
 /**
  * The return type of the `select` function. It takes an object and a
  * dot-separated field path. The field path should *not* include node types
@@ -24,13 +32,13 @@ export type FieldSelection<
 > = T extends any
   ? NodeFields<T> extends infer TFields
     ? TFieldPath extends `${infer TField}.${infer TRest}`
-      ? TField extends keyof TFields
-        ? TFields[TField] extends object
-          ? FieldSelection<TFields[TField], TRest>
+      ? TField extends Keys<TFields>
+        ? Access<TFields, TField> extends object
+          ? FieldSelection<Access<TFields, TField>, TRest>
           : undefined
         : undefined
-      : TFieldPath extends keyof TFields
-        ? TFields[TFieldPath]
+      : TFieldPath extends Keys<TFields>
+        ? Access<TFields, TFieldPath>
         : undefined
     : never
   : never
