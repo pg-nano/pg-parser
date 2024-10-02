@@ -65,9 +65,9 @@ export function select<T extends object, TFieldPath extends string>(
     }
 
     // Check if the current object is a node (has a single capitalized key)
-    const nodeKeys = Object.keys(current)
-    if (nodeKeys.length === 1 && /^[A-Z]/.test(nodeKeys[0])) {
-      current = current[nodeKeys[0]]
+    const tag = onlyKey(current)
+    if (tag && /^[A-Z]/.test(tag)) {
+      current = current[tag]
     }
 
     if (!(key in current)) {
@@ -78,6 +78,17 @@ export function select<T extends object, TFieldPath extends string>(
   }
 
   return current
+}
+
+function onlyKey(obj: object): string | undefined {
+  let i = 0
+  let key: string | undefined
+  for (key in obj) {
+    if (++i > 1) {
+      return undefined
+    }
+  }
+  return key
 }
 
 /**
