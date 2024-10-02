@@ -273,7 +273,9 @@ async function main() {
         namedFields[0].name.endsWith('val') &&
         namedFields[0].name.length > 3
       ) {
-        constTypes.push(typeName)
+        // A_Const double-wraps the value for some strange reason.
+        //   https://github.com/pganalyze/libpg_query/issues/265
+        constTypes.push(`{ ${namedFields[0].name}: ${typeName} }`)
       }
 
       const fieldMetadata = nodeFieldsByTag[typeName]
@@ -427,6 +429,9 @@ async function main() {
       nodeTypes.delete(name)
     }
   })
+
+  // A_Const can represent a NULL value.
+  constTypes.push('{ isnull: true }')
 
   code += '\n'
   code += `/** A qualified name for referencing a database object, e.g. "public.my_table" */\n`

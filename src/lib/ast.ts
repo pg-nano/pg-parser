@@ -6779,7 +6779,13 @@ export type QualifiedName = { String: String }[]
 
 export type List<T = Node> = { items: T[] }
 
-export type A_Const = BitString | Boolean | Float | Integer | String
+export type A_Const =
+  | { boolval: Boolean }
+  | { bsval: BitString }
+  | { fval: Float }
+  | { isnull: true }
+  | { ival: Integer }
+  | { sval: String }
 
 /**
  * Expr - generic superclass for executable-expression nodes
