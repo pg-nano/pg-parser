@@ -16,7 +16,8 @@
             ],
             "include_dirs": [
                 "<!@(node -p \"require('node-addon-api').include\")",
-                "<!@(pwd)/libpg_query"
+                "<!@(pwd)/libpg_query",
+                "<!@(pwd)/libpg_query/vendor",
             ],
             "cflags!": [
                 "-fno-exceptions"

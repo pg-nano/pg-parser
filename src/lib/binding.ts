@@ -1,5 +1,6 @@
 import bindings from 'bindings'
 import type { Node } from './ast'
+import type { Token, KeywordKind } from './tokens'
 
 const loadAddon = () => bindings('queryparser')
 
@@ -19,6 +20,12 @@ let PgQuery: {
     callback: (err: Error | null, result: string) => void,
   ) => void
   fingerprintSync: (query: string) => string
+  scanSync: (query: string) => {
+    kind: Token
+    start: number
+    end: number
+    keyword: KeywordKind
+  }[]
   splitWithScannerSync: (query: string) => {
     location: number
     length: number
@@ -67,6 +74,10 @@ export function fingerprint(query: string) {
 
 export function fingerprintSync(query: string): string {
   return (PgQuery ??= loadAddon()).fingerprintSync(query)
+}
+
+export function scanSync(query: string) {
+  return (PgQuery ??= loadAddon()).scanSync(query)
 }
 
 export function splitWithScannerSync(query: string) {

@@ -35,6 +35,11 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
   );
 
   exports.Set(
+      Napi::String::New(env, "scanSync"),
+      Napi::Function::New(env, ScanSync)
+  );
+
+  exports.Set(
       Napi::String::New(env, "splitWithScannerSync"),
       Napi::Function::New(env, SplitWithScannerSync)
   );
