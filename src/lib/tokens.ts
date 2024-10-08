@@ -7,7 +7,7 @@ export type KeywordKind =
   | 'TYPE_FUNC_NAME_KEYWORD'
   | 'RESERVED_KEYWORD'
 
-export type Token =
+export type TokenKind =
   | 'NUL'
   // Single-character tokens that are returned 1:1 (identical with "self" list in scan.l)
   // Either supporting syntax, or single-character operators (some can be both)

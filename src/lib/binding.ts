@@ -1,6 +1,6 @@
 import bindings from 'bindings'
 import type { Node } from './ast'
-import type { Token, KeywordKind } from './tokens'
+import type { TokenKind, KeywordKind } from './tokens'
 
 const loadAddon = () => bindings('queryparser')
 
@@ -20,12 +20,7 @@ let PgQuery: {
     callback: (err: Error | null, result: string) => void,
   ) => void
   fingerprintSync: (query: string) => string
-  scanSync: (query: string) => {
-    kind: Token
-    start: number
-    end: number
-    keyword: KeywordKind
-  }[]
+  scanSync: (query: string) => ScanResult
   splitWithScannerSync: (query: string) => {
     location: number
     length: number
@@ -36,6 +31,15 @@ export type ParseResult = {
   stmts: { stmt: Node; stmt_location?: number; stmt_len?: number }[]
   version: number
 }
+
+export interface Token {
+  kind: TokenKind
+  start: number
+  end: number
+  keyword: KeywordKind
+}
+
+export type ScanResult = Token[]
 
 export function parseQuery(query: string) {
   return new Promise<ParseResult>((resolve, reject) => {
