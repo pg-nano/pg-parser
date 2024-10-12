@@ -1,19 +1,21 @@
 {
   "name": "@pg-nano/pg-parser",
-  "type": "module",
   "version": "16.1.4",
   "sideEffects": false,
   "description": "Node.js addon for PostgreSQL query parsing",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./ast": {
-      "types": "./lib/ast.d.ts",
-      "default": "./lib/ast.js"
+      "types": "./dist/ast.d.ts",
+      "require": "./dist/ast.js",
+      "import": "./dist/ast.mjs"
     }
   },
   "repository": {
@@ -22,10 +24,10 @@
   },
   "scripts": {
     "dev": "tinyrun --names js,gyp 'pnpm -s dev:js' 'pnpm -s dev:gyp'",
-    "dev:js": "rimraf lib && tsc -p . --watch --preserveWatchOutput",
+    "dev:js": "npm run build:js -- --watch src/lib",
     "dev:gyp": "watchlist src --eager --no-clear -- pnpm -s build:gyp",
     "build": "tinyrun --names js,gyp 'pnpm -s build:js' 'pnpm -s build:gyp'",
-    "build:js": "rimraf lib && tsc -p .",
+    "build:js": "tsup src/lib --format cjs,esm --dts --clean --no-splitting",
     "build:gyp": "node-gyp rebuild && pnpm --no-bail prepare:clangd",
     "prepare:clangd": "cd build && compiledb make -f binding.Makefile -n || true",
     "prepare:types": "pnpm -s dlx tsx scripts/inferFieldMetadata.ts && pnpm -s dlx tsx scripts/generateTypes.ts && pnpm -s format",
@@ -56,13 +58,13 @@
     "node-gyp": "^10.0.1",
     "prebuild": "^13.0.1",
     "prettier": "^3.3.3",
-    "rimraf": "^6.0.1",
     "tinyrun": "^1.0.1",
+    "tsup": "^8.3.0",
     "typescript": "^5.5.4",
     "watchlist": "npm:@aleclarson/watchlist@^0.3.3"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "engines": {
     "node": ">=16"
