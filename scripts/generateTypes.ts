@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import type { NodeFieldMetadataByTag } from './inferFieldMetadata'
-import { nullableFields, typeMappings } from './typeMappings'
+import { expressionFields, nullableFields, typeMappings } from './typeMappings'
 
 /** A record of node tag -> field name -> nullability */
 const nodeFieldsByTag: NodeFieldMetadataByTag = JSON.parse(
@@ -209,8 +209,15 @@ async function main() {
   const renderTagType = (tag: string) =>
     tag === '{}' ? tag : `{ ${tag}: ${tag} }`
 
-  const renderTagTypes = (tags: string[]) =>
-    tags.sort().map(renderTagType).join(' | ')
+  const renderTagTypes = (tags: string[], fieldPath: string) => {
+    if (expressionFields.has(fieldPath)) {
+      if (tags.includes('{}')) {
+        return 'Expr | {}'
+      }
+      return 'Expr'
+    }
+    return tags.sort().map(renderTagType).join(' | ')
+  }
 
   delete structsByModule['../backend/parser/gram']
   delete structsByModule['../backend/parser/gramparse']
@@ -335,27 +342,24 @@ async function main() {
           if (fieldType === 'any' || fieldType === 'Node') {
             const inferredTags = fieldMetadata?.[fieldName]?.[1]
             if (inferredTags) {
-              debugTags &&
-                console.log(
-                  'Inferred tags for %s.%s:',
-                  typeName,
-                  fieldName,
-                  inferredTags,
-                )
-              fieldType = '(' + renderTagTypes(inferredTags) + ')'
+              if (debugTags) {
+                console.log('Inferred tags for %s:', fieldPath, inferredTags)
+              }
+              fieldType = renderTagTypes(inferredTags, fieldPath)
             }
           } else if (fieldType === 'any[]') {
             const inferredListTags = fieldMetadata?.[fieldName]?.[2]
             if (inferredListTags) {
-              debugTags &&
+              if (debugTags) {
                 console.log(
-                  'Inferred list tags for %s.%s:',
-                  typeName,
-                  fieldName,
+                  'Inferred list tags for %s:',
+                  fieldPath,
                   inferredListTags,
                 )
+              }
 
-              fieldType = 'List<' + renderTagTypes(inferredListTags) + '>'
+              fieldType =
+                'List<' + renderTagTypes(inferredListTags, fieldPath) + '>'
 
               if (field.c_type === 'List*') {
                 fieldType += '[]'
@@ -364,15 +368,11 @@ async function main() {
             if (fieldType === 'any[]' && field.c_type === 'List*') {
               const inferredTags = fieldMetadata?.[fieldName]?.[1]
               if (inferredTags) {
-                debugTags &&
-                  console.log(
-                    'Inferred tags for %s.%s:',
-                    typeName,
-                    fieldName,
-                    inferredTags,
-                  )
-
-                fieldType = '(' + renderTagTypes(inferredTags) + ')[]'
+                if (debugTags) {
+                  console.log('Inferred tags for %s:', fieldPath, inferredTags)
+                }
+                fieldType =
+                  '(' + renderTagTypes(inferredTags, fieldPath) + ')[]'
               }
             }
           }

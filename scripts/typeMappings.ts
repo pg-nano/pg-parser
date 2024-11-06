@@ -27,6 +27,41 @@ export const typeMappings: Record<string, string> = {
 }
 
 /**
+ * If a field accepts an arbitrary expression, add it here.
+ */
+export const expressionFields = new Set([
+  'A_ArrayExpr.elements',
+  'A_Indirection.arg',
+  'AlterTableCmd.def',
+  'BoolExpr.args',
+  'CreatePolicyStmt.qual',
+  'DeleteStmt.whereClause',
+  'FuncCall.args',
+  'GroupingSet.content',
+  'IndexStmt.whereClause',
+  'JoinExpr.quals',
+  'MergeWhenClause.condition',
+  'MergeWhenClause.values',
+  'MergeStmt.joinCondition',
+  'MinMaxExpr.args',
+  'RangeFunction.functions',
+  'RangeTableSample.args',
+  'ResTarget.val',
+  'ReturnStmt.returnval',
+  'RowExpr.args',
+  'RuleStmt.whereClause',
+  'SelectStmt.groupClause',
+  'SelectStmt.havingClause',
+  'SelectStmt.whereClause',
+  'SelectStmt.limitCount',
+  'SelectStmt.limitOffset',
+  'SortBy.node',
+  'TypeCast.arg',
+  'UpdateStmt.whereClause',
+  'XmlExpr.args',
+])
+
+/**
  * If a field's nullability is incorrectly inferred, add it here.
  */
 export const nullableFields = new Set(['Alias.colnames'])

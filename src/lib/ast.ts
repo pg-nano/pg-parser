@@ -1540,19 +1540,7 @@ export type A_Expr = {
  */
 export type TypeCast = {
   /** the expression being casted */
-  arg:
-    | { A_ArrayExpr: A_ArrayExpr }
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { A_Indirection: A_Indirection }
-    | { CollateClause: CollateClause }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { ParamRef: ParamRef }
-    | { RowExpr: RowExpr }
-    | { SQLValueFunction: SQLValueFunction }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
+  arg: Expr
   /** the target type */
   typeName: TypeName
   /** token location, or -1 if unknown */
@@ -1603,22 +1591,7 @@ export type FuncCall = {
   /** qualified name of function */
   funcname: QualifiedName
   /** the arguments (list of exprs) */
-  args?: (
-    | { A_ArrayExpr: A_ArrayExpr }
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { A_Indirection: A_Indirection }
-    | { BoolExpr: BoolExpr }
-    | { CollateClause: CollateClause }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { NamedArgExpr: NamedArgExpr }
-    | { RowExpr: RowExpr }
-    | { SQLValueFunction: SQLValueFunction }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
-    | { XmlExpr: XmlExpr }
-  )[]
+  args?: Expr[]
   /** ORDER BY (list of SortBy) */
   agg_order?: { SortBy: SortBy }[]
   /** FILTER clause, if any */
@@ -1684,13 +1657,7 @@ export type A_Indices = {
  */
 export type A_Indirection = {
   /** the thing being selected from */
-  arg:
-    | { A_Indirection: A_Indirection }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { RowExpr: RowExpr }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
+  arg: Expr
   /** subscripts and/or field names and/or * */
   indirection: (
     | { A_Indices: A_Indices }
@@ -1704,16 +1671,7 @@ export type A_Indirection = {
  */
 export type A_ArrayExpr = {
   /** array element expressions */
-  elements?: (
-    | { A_ArrayExpr: A_ArrayExpr }
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { RowExpr: RowExpr }
-    | { SQLValueFunction: SQLValueFunction }
-    | { TypeCast: TypeCast }
-  )[]
+  elements?: Expr[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -1742,36 +1700,7 @@ export type ResTarget = {
   /** subscripts, field names, and '*', or NIL */
   indirection?: ({ A_Indices: A_Indices } | { String: String })[]
   /** the value expression to compute or assign */
-  val?:
-    | { A_ArrayExpr: A_ArrayExpr }
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { A_Indirection: A_Indirection }
-    | { BoolExpr: BoolExpr }
-    | { BooleanTest: BooleanTest }
-    | { CaseExpr: CaseExpr }
-    | { CoalesceExpr: CoalesceExpr }
-    | { CollateClause: CollateClause }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { GroupingFunc: GroupingFunc }
-    | { JsonArrayAgg: JsonArrayAgg }
-    | { JsonArrayConstructor: JsonArrayConstructor }
-    | { JsonArrayQueryConstructor: JsonArrayQueryConstructor }
-    | { JsonIsPredicate: JsonIsPredicate }
-    | { JsonObjectAgg: JsonObjectAgg }
-    | { JsonObjectConstructor: JsonObjectConstructor }
-    | { MinMaxExpr: MinMaxExpr }
-    | { MultiAssignRef: MultiAssignRef }
-    | { NullTest: NullTest }
-    | { ParamRef: ParamRef }
-    | { RowExpr: RowExpr }
-    | { SQLValueFunction: SQLValueFunction }
-    | { SetToDefault: SetToDefault }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
-    | { XmlExpr: XmlExpr }
-    | { XmlSerialize: XmlSerialize }
+  val?: Expr
   /** token location, or -1 if unknown */
   location: number
 }
@@ -1799,14 +1728,7 @@ export type MultiAssignRef = {
  */
 export type SortBy = {
   /** expression to sort on */
-  node:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { A_Indirection: A_Indirection }
-    | { CollateClause: CollateClause }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { TypeCast: TypeCast }
+  node: Expr
   /** ASC/DESC/USING/default */
   sortby_dir: SortByDir
   /** NULLS FIRST/LAST */
@@ -1878,14 +1800,7 @@ export type RangeFunction = {
   /** is result of ROWS FROM() syntax? */
   is_rowsfrom?: boolean
   /** per-function information, see above */
-  functions: List<
-    | { CoalesceExpr: CoalesceExpr }
-    | { FuncCall: FuncCall }
-    | { List: List }
-    | { SQLValueFunction: SQLValueFunction }
-    | { TypeCast: TypeCast }
-    | {}
-  >[]
+  functions: List<Expr | {}>[]
   /** table alias & optional column aliases */
   alias?: Alias
   /** list of ColumnDef nodes to describe result
@@ -1952,12 +1867,7 @@ export type RangeTableSample = {
   /** sampling method name (possibly qualified) */
   method: QualifiedName
   /** argument(s) for sampling method */
-  args: (
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-    | { TypeCast: TypeCast }
-  )[]
+  args: Expr[]
   /** REPEATABLE expression, or NULL if none */
   repeatable?: { A_Const: A_Const }
   /** method name location, or -1 if unknown */
@@ -2343,14 +2253,7 @@ export type SortGroupClause = {
 
 export type GroupingSet = {
   kind: GroupingSetKind
-  content?: (
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-    | { GroupingSet: GroupingSet }
-    | { RowExpr: RowExpr }
-    | { TypeCast: TypeCast }
-  )[]
+  content?: Expr[]
   location: number
 }
 
@@ -2558,19 +2461,12 @@ export type MergeWhenClause = {
   /** OVERRIDING clause */
   override: OverridingKind
   /** WHEN conditions (raw parser) */
-  condition?:
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { NullTest: NullTest }
+  condition?: Expr
   /** INSERT/UPDATE targetlist */
   targetList?: { ResTarget: ResTarget }[]
   /** the following members are only used in INSERT actions */
   /** VALUES to INSERT, or NULL */
-  values?: (
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-  )[]
+  values?: Expr[]
 }
 
 /**
@@ -2783,10 +2679,7 @@ export type DeleteStmt = {
   /** optional using clause for more tables */
   usingClause?: ({ RangeSubselect: RangeSubselect } | { RangeVar: RangeVar })[]
   /** qualifications */
-  whereClause?:
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { SubLink: SubLink }
+  whereClause?: Expr
   /** list of expressions to return */
   returningList?: { ResTarget: ResTarget }[]
   /** WITH clause */
@@ -2803,13 +2696,7 @@ export type UpdateStmt = {
   /** the target list (of ResTarget) */
   targetList: { ResTarget: ResTarget }[]
   /** qualifications */
-  whereClause?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { CurrentOfExpr: CurrentOfExpr }
-    | { NullTest: NullTest }
-    | { SubLink: SubLink }
+  whereClause?: Expr
   /** optional from clause for more tables */
   fromClause?: (
     | { JoinExpr: JoinExpr }
@@ -2837,10 +2724,7 @@ export type MergeStmt = {
     | { RangeSubselect: RangeSubselect }
     | { RangeVar: RangeVar }
   /** join condition between source and target */
-  joinCondition:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
+  joinCondition: Expr
   /** list of MergeWhenClause(es) */
   mergeWhenClauses: { MergeWhenClause: MergeWhenClause }[]
   /** WITH clause */
@@ -2881,33 +2765,13 @@ export type SelectStmt = {
     | { RangeVar: RangeVar }
   )[]
   /** WHERE qualification */
-  whereClause?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { BooleanTest: BooleanTest }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { JsonIsPredicate: JsonIsPredicate }
-    | { NullTest: NullTest }
-    | { SubLink: SubLink }
+  whereClause?: Expr
   /** GROUP BY clauses */
-  groupClause?: (
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { GroupingSet: GroupingSet }
-    | { RowExpr: RowExpr }
-  )[]
+  groupClause?: Expr[]
   /** Is this GROUP BY DISTINCT? */
   groupDistinct?: boolean
   /** HAVING conditional-expression */
-  havingClause?:
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { ColumnRef: ColumnRef }
-    | { SubLink: SubLink }
+  havingClause?: Expr
   /** WINDOW window_name AS (...), ... */
   windowClause?: { WindowDef: WindowDef }[]
   /**
@@ -2927,16 +2791,9 @@ export type SelectStmt = {
   /** sort clause (a list of SortBy's) */
   sortClause?: { SortBy: SortBy }[]
   /** # of result tuples to skip */
-  limitOffset?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
+  limitOffset?: Expr
   /** # of result tuples to return */
-  limitCount?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { CaseExpr: CaseExpr }
-    | { FuncCall: FuncCall }
+  limitCount?: Expr
   /** limit type */
   limitOption: LimitOption
   /** FOR UPDATE (list of LockingClause's) */
@@ -3002,13 +2859,7 @@ export type SetOperationStmt = {
  * RETURN statement (inside SQL function body)
  */
 export type ReturnStmt = {
-  returnval:
-    | { A_Expr: A_Expr }
-    | { A_Indirection: A_Indirection }
-    | { BoolExpr: BoolExpr }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { SubLink: SubLink }
+  returnval: Expr
 }
 
 /** ----------------------
@@ -3095,19 +2946,7 @@ export type AlterTableCmd = {
   newowner?: RoleSpec
   /** definition of new column, index,
    * constraint, or parent table */
-  def?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnDef: ColumnDef }
-    | { Constraint: Constraint }
-    | { FuncCall: FuncCall }
-    | { Integer: Integer }
-    | { List: List }
-    | { PartitionCmd: PartitionCmd }
-    | { RangeVar: RangeVar }
-    | { ReplicaIdentityStmt: ReplicaIdentityStmt }
-    | { String: String }
-    | { TypeCast: TypeCast }
+  def?: Expr
   /** RESTRICT or CASCADE for DROP cases */
   behavior: DropBehavior
   /** skip error if missing? */
@@ -3641,7 +3480,7 @@ export type CreatePolicyStmt = {
   /** the roles associated with the policy */
   roles: { RoleSpec: RoleSpec }[]
   /** the policy's condition */
-  qual: { A_Const: A_Const } | { A_Expr: A_Expr } | { BoolExpr: BoolExpr }
+  qual: Expr
   /** the policy's WITH CHECK condition. */
   with_check?: Node
 }
@@ -4089,10 +3928,7 @@ export type IndexStmt = {
   /** WITH clause options: a list of DefElem */
   options?: { DefElem: DefElem }[]
   /** qualification (partial-index predicate) */
-  whereClause?:
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { NullTest: NullTest }
+  whereClause?: Expr
   /** exclusion operator names, or NIL if none */
   excludeOpNames?: any[]
   /** comment to apply to index, or NULL */
@@ -4387,10 +4223,7 @@ export type RuleStmt = {
   /** name of the rule */
   rulename: string
   /** qualifications */
-  whereClause?:
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { SubLink: SubLink }
+  whereClause?: Expr
   /** SELECT, INSERT, etc */
   event: CmdType
   /** is a 'do instead'? */
@@ -5507,18 +5340,7 @@ export type ScalarArrayOpExpr = {
 export type BoolExpr = {
   boolop: BoolExprType
   /** arguments to this expression */
-  args: (
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { BooleanTest: BooleanTest }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { JsonIsPredicate: JsonIsPredicate }
-    | { NullTest: NullTest }
-    | { ParamRef: ParamRef }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
-  )[]
+  args: Expr[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -5987,18 +5809,7 @@ export type ArrayExpr = {
  */
 export type RowExpr = {
   /** the fields */
-  args?: (
-    | { A_ArrayExpr: A_ArrayExpr }
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { CollateClause: CollateClause }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { RowExpr: RowExpr }
-    | { SetToDefault: SetToDefault }
-    | { SubLink: SubLink }
-    | { TypeCast: TypeCast }
-  )[]
+  args?: Expr[]
   /** RECORDOID or a composite type's ID */
   row_typeid?: Oid
   /**
@@ -6081,7 +5892,7 @@ export type MinMaxExpr = {
   /** function to execute */
   op: MinMaxOp
   /** the arguments */
-  args: ({ A_Const: A_Const } | { A_Expr: A_Expr } | { ColumnRef: ColumnRef })[]
+  args: Expr[]
   /** token location, or -1 if unknown */
   location: number
 }
@@ -6109,13 +5920,7 @@ export type XmlExpr = {
   /** parallel list of String values */
   arg_names?: any[]
   /** list of expressions */
-  args?: (
-    | { A_Const: A_Const }
-    | { ColumnRef: ColumnRef }
-    | { FuncCall: FuncCall }
-    | { TypeCast: TypeCast }
-    | { XmlExpr: XmlExpr }
-  )[]
+  args?: Expr[]
   /** DOCUMENT or CONTENT */
   xmloption: XmlOptionType
   /** INDENT option for XMLSERIALIZE */
@@ -6499,11 +6304,7 @@ export type JoinExpr = {
   /** alias attached to USING clause, if any */
   join_using_alias?: Alias
   /** qualifiers on join, if any */
-  quals?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { BoolExpr: BoolExpr }
-    | { NullTest: NullTest }
+  quals?: Expr
   /** user-written alias clause, if any */
   alias?: Alias
   /** RT index assigned for join, or 0 */
