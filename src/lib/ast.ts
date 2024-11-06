@@ -2271,7 +2271,7 @@ export type WindowClause = {
   /** window name (NULL in an OVER clause) */
   name?: string
   /** referenced window name, if any */
-  refname: string
+  refname?: string
   /** PARTITION BY list */
   partitionClause: any[]
   /** ORDER BY list */
@@ -2279,9 +2279,9 @@ export type WindowClause = {
   /** frame_clause options, see WindowDef */
   frameOptions: number
   /** expression for starting bound, if any */
-  startOffset: Node
+  startOffset?: Node
   /** expression for ending bound, if any */
-  endOffset: Node
+  endOffset?: Node
   /** qual to help short-circuit execution */
   runCondition: any[]
   /** in_range function for startOffset */
@@ -2571,13 +2571,13 @@ export type JsonArrayQueryConstructor = {
  */
 export type JsonAggConstructor = {
   /** RETURNING clause, if any */
-  output: JsonOutput
+  output?: JsonOutput
   /** FILTER clause, if any */
-  agg_filter: Node
+  agg_filter?: Node
   /** ORDER BY clause, if any */
-  agg_order: any[]
+  agg_order?: any[]
   /** OVER clause, if any */
-  over: WindowDef
+  over?: WindowDef
   /** token location, or -1 if unknown */
   location: number
 }
@@ -2863,7 +2863,7 @@ export type PLAssignStmt = {
   /** initial column name */
   name: string
   /** subscripts and field names, if any */
-  indirection: any[]
+  indirection?: any[]
   /** number of names to use in ColumnRef */
   nnames: number
   /** the PL/pgSQL expression to assign */
@@ -4899,7 +4899,7 @@ export type Const = {
   /** pg_type OID of the constant's datatype */
   consttype: Oid
   /** typmod value, if any */
-  consttypmod: number
+  consttypmod?: number
   /** OID of collation, or InvalidOid if none */
   constcollid: Oid
   /** typlen of the constant's datatype */
@@ -5039,7 +5039,7 @@ export type Aggref = {
   /** DISTINCT (list of SortGroupClause) */
   aggdistinct: any[]
   /** FILTER expression, if any */
-  aggfilter: Expr
+  aggfilter?: Expr
   /** true if argument list was really '*' */
   aggstar: boolean
   /**
@@ -5119,7 +5119,7 @@ export type WindowFunc = {
   /** arguments to the window function */
   args: any[]
   /** FILTER expression, if any */
-  aggfilter: Expr
+  aggfilter?: Expr
   /** index of associated WindowClause */
   winref: Index
   /** true if argument list was really '*' */
@@ -6314,7 +6314,7 @@ export type FromExpr = {
   /** List of join subtrees */
   fromlist: any[]
   /** qualifiers on join, if any */
-  quals: Node
+  quals?: Node
 }
 
 /**----------

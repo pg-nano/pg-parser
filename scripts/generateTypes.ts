@@ -389,7 +389,7 @@ async function main() {
           const nullable =
             (fieldMetadata
               ? fieldMetadata[fieldName]?.[0] ?? true
-              : /\b(NULL|NIL)\b/.test(field.comment ?? '')) ||
+              : /\b(NULL|NIL|if any)\b/.test(field.comment ?? '')) ||
             nullableFields.has(fieldPath)
 
           fieldTsDef += `  ${fieldName}${nullable ? '?' : ''}: ${fieldType}\n`
