@@ -4966,7 +4966,7 @@ export type Alias = {
   /** aliased rel name (never qualified) */
   aliasname: string
   /** optional list of column aliases */
-  colnames: { String: String }[]
+  colnames?: { String: String }[]
 }
 
 /**

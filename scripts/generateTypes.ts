@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import type { NodeFieldMetadataByTag } from './inferFieldMetadata'
-import { typeMappings } from './typeMappings'
+import { nullableFields, typeMappings } from './typeMappings'
 
 /** A record of node tag -> field name -> nullability */
 const nodeFieldsByTag: NodeFieldMetadataByTag = JSON.parse(
@@ -320,10 +320,9 @@ async function main() {
             continue
           }
 
-          let fieldType = applyTypeMapping(
-            typeName + '.' + fieldName,
-            field.c_type,
-          )
+          const fieldPath = typeName + '.' + fieldName
+
+          let fieldType = applyTypeMapping(fieldPath, field.c_type)
 
           if (fieldName === 'type' && fieldType === 'NodeTag') {
             // Strangely, the result of pg_query_parse doesn't actually include
@@ -387,9 +386,11 @@ async function main() {
             warnUnknownType(typeName + '.' + fieldName, 'list type')
           }
 
-          const nullable = fieldMetadata
-            ? fieldMetadata[fieldName]?.[0] ?? true
-            : /\b(NULL|NIL)\b/.test(field.comment ?? '')
+          const nullable =
+            (fieldMetadata
+              ? fieldMetadata[fieldName]?.[0] ?? true
+              : /\b(NULL|NIL)\b/.test(field.comment ?? '')) ||
+            nullableFields.has(fieldPath)
 
           fieldTsDef += `  ${fieldName}${nullable ? '?' : ''}: ${fieldType}\n`
         }

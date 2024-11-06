@@ -26,6 +26,11 @@ export const typeMappings: Record<string, string> = {
   'SelectStmt.valuesLists': 'List<Expr>[]',
 }
 
+/**
+ * If a field's nullability is incorrectly inferred, add it here.
+ */
+export const nullableFields = new Set(['Alias.colnames'])
+
 function Node(types: string) {
   return types
     .split(' | ')
