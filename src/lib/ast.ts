@@ -1552,12 +1552,7 @@ export type TypeCast = {
  */
 export type CollateClause = {
   /** input expression */
-  arg:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { CaseExpr: CaseExpr }
-    | { ColumnRef: ColumnRef }
-    | { TypeCast: TypeCast }
+  arg: Expr
   /** possibly-qualified collation name */
   collname: QualifiedName
   /** token location, or -1 if unknown */
@@ -1595,12 +1590,7 @@ export type FuncCall = {
   /** ORDER BY (list of SortBy) */
   agg_order?: { SortBy: SortBy }[]
   /** FILTER clause, if any */
-  agg_filter?:
-    | { A_Const: A_Const }
-    | { A_Expr: A_Expr }
-    | { ColumnRef: ColumnRef }
-    | { NullTest: NullTest }
-    | { SubLink: SubLink }
+  agg_filter?: Expr
   /** OVER clause, if any */
   over?: WindowDef
   /** ORDER BY appeared in WITHIN GROUP */
