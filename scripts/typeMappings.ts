@@ -66,7 +66,7 @@ export const expressionFields = new Set([
 /**
  * If a field's nullability is incorrectly inferred, add it here.
  */
-export const nullableFields = new Set(['Alias.colnames'])
+export const nullableFields = new Set(['Alias.colnames', 'Boolean.boolval'])
 
 function Node(types: string) {
   return types

@@ -6555,7 +6555,7 @@ export type Float = {
 }
 
 export type Boolean = {
-  boolval: boolean
+  boolval?: boolean
 }
 
 export type String = {
