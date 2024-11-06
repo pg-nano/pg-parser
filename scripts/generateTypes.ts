@@ -206,6 +206,12 @@ async function main() {
     }
   }
 
+  const renderTagType = (tag: string) =>
+    tag === '{}' ? tag : `{ ${tag}: ${tag} }`
+
+  const renderTagTypes = (tags: string[]) =>
+    tags.sort().map(renderTagType).join(' | ')
+
   delete structsByModule['../backend/parser/gram']
   delete structsByModule['../backend/parser/gramparse']
   delete structsByModule['commands/vacuum']
@@ -337,13 +343,7 @@ async function main() {
                   fieldName,
                   inferredTags,
                 )
-              fieldType =
-                '(' +
-                inferredTags
-                  .sort()
-                  .map(tag => `{ ${tag}: ${tag} }`)
-                  .join(' | ') +
-                ')'
+              fieldType = '(' + renderTagTypes(inferredTags) + ')'
             }
           } else if (fieldType === 'any[]') {
             const inferredListTags = fieldMetadata?.[fieldName]?.[2]
@@ -356,13 +356,7 @@ async function main() {
                   inferredListTags,
                 )
 
-              fieldType =
-                'List<' +
-                inferredListTags
-                  .sort()
-                  .map(tag => `{ ${tag}: ${tag} }`)
-                  .join(' | ') +
-                '>'
+              fieldType = 'List<' + renderTagTypes(inferredListTags) + '>'
 
               if (field.c_type === 'List*') {
                 fieldType += '[]'
@@ -379,13 +373,7 @@ async function main() {
                     inferredTags,
                   )
 
-                fieldType =
-                  '(' +
-                  inferredTags
-                    .sort()
-                    .map(tag => `{ ${tag}: ${tag} }`)
-                    .join(' | ') +
-                  ')[]'
+                fieldType = '(' + renderTagTypes(inferredTags) + ')[]'
               }
             }
           }

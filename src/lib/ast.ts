@@ -1884,6 +1884,7 @@ export type RangeFunction = {
     | { List: List }
     | { SQLValueFunction: SQLValueFunction }
     | { TypeCast: TypeCast }
+    | {}
   >[]
   /** table alias & optional column aliases */
   alias?: Alias
@@ -2865,7 +2866,7 @@ export type SelectStmt = {
    */
   /** NULL, list of DISTINCT ON exprs, or
    * lcons(NIL,NIL) for all (SELECT DISTINCT) */
-  distinctClause?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef })[]
+  distinctClause?: ({ A_Const: A_Const } | { ColumnRef: ColumnRef } | {})[]
   /** target for SELECT INTO */
   intoClause?: IntoClause
   /** the target list (of ResTarget) */
@@ -3203,7 +3204,7 @@ export type ObjectWithArgs = {
   /** qualified name of function/operator */
   objname: QualifiedName
   /** list of Typename nodes (input args only) */
-  objargs?: { TypeName: TypeName }[]
+  objargs?: ({ TypeName: TypeName } | {})[]
   /** list of FunctionParameter nodes */
   objfuncargs?: { FunctionParameter: FunctionParameter }[]
   /** argument list was omitted? */

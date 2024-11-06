@@ -30,6 +30,9 @@ const toNodeTag = (value: unknown) => {
     if (keys.length === 1 && /^[A-Z]/.test(keys[0])) {
       return keys[0]
     }
+    if (keys.length === 0) {
+      return '{}'
+    }
   }
 }
 
