@@ -1,7 +1,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { bitMasks } from './data/bitMasks'
+import { expressionFields } from './data/expressionFields'
+import { expressionTypes } from './data/expressionTypes'
+import { nullableFields } from './data/nullableFields'
+import { skippedEntities } from './data/skippedEntities'
+import { typeMappings } from './data/typeMappings'
 import type { NodeFieldMetadataByTag } from './inferFieldMetadata'
-import { expressionFields, nullableFields, typeMappings } from './typeMappings'
 
 /** A record of node tag -> field name -> nullability */
 const nodeFieldsByTag: NodeFieldMetadataByTag = JSON.parse(
@@ -57,26 +62,6 @@ function formatComment(
     .replace(/\n?$/, '\n')
 }
 
-const bitMasks: Record<string, string[]> = {
-  AclMode: [
-    'ACL_NO_RIGHTS',
-    'ACL_INSERT',
-    'ACL_SELECT',
-    'ACL_UPDATE',
-    'ACL_DELETE',
-    'ACL_TRUNCATE',
-    'ACL_REFERENCES',
-    'ACL_TRIGGER',
-    'ACL_EXECUTE',
-    'ACL_USAGE',
-    'ACL_CREATE',
-    'ACL_CREATE_TEMP',
-    'ACL_CONNECT',
-    'ACL_SET',
-    'ACL_ALTER_SYSTEM',
-  ],
-}
-
 function readSrcData<T>(fileName: string): T {
   const filePath = path.join(__dirname, '../libpg_query/srcdata', fileName)
   const content = fs.readFileSync(filePath, 'utf-8')
@@ -97,22 +82,6 @@ async function main() {
     ...Object.values(enumsByModule).flatMap(e => Object.keys(e)),
     ...Object.values(structsByModule).flatMap(s => Object.keys(s)),
   ]
-
-  // These are not used anywhere. They're for libpg_query's internal use.
-  const skippedEntities = new Set([
-    'BlockId',
-    'BlockIdData',
-    'BlockNumber',
-    'NodeTag',
-    'ParallelVacuumState',
-    'Query',
-    'QuerySource',
-    'RangeTblEntry',
-    'RangeTblFunction',
-    'TableFunc',
-    'VacAttrStatsP',
-    'pg_wchar',
-  ])
 
   const shouldSkipEntity = (name: string) => skippedEntities.has(name)
 
@@ -221,16 +190,6 @@ async function main() {
 
   /** Constant types are included in the "A_Const" union of object types. */
   const constTypes: string[] = []
-
-  /** Expression types are included in the "Expr" union of node types. */
-  const expressionTypes = new Set([
-    'A_Const',
-    'List',
-    'TypeCast',
-    'FuncCall',
-    'ColumnRef',
-    'ParamRef',
-  ])
 
   const abstractTypes: Record<string, StructDef | null> = {
     A_Const: null,
