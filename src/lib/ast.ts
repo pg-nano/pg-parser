@@ -1530,7 +1530,7 @@ export type A_Expr = {
   /** left argument, or NULL if none */
   lexpr?: Expr
   /** right argument, or NULL if none */
-  rexpr: Expr
+  rexpr?: Expr
   /** token location, or -1 if unknown */
   location: number
 }
@@ -1627,7 +1627,7 @@ export type A_Indices = {
   /** slice lower bound, if any */
   lidx?: { A_Const: A_Const }
   /** subscript, or slice upper bound if any */
-  uidx: { A_Const: A_Const } | { ColumnRef: ColumnRef }
+  uidx?: { A_Const: A_Const } | { ColumnRef: ColumnRef }
 }
 
 /**
@@ -2365,7 +2365,7 @@ export type OnConflictClause = {
   /** DO NOTHING or UPDATE? */
   action: OnConflictAction
   /** Optional index inference clause */
-  infer: InferClause
+  infer?: InferClause
   /** the target list (of ResTarget) */
   targetList: any[]
   /** qualifications */
@@ -2841,7 +2841,7 @@ export type SetOperationStmt = {
   /** OID list of output column collation OIDs */
   colCollations: any[]
   /** a list of SortGroupClause's */
-  groupClauses: any[]
+  groupClauses?: any[]
   /** groupClauses is NIL if UNION ALL, but must be set otherwise */
 }
 
@@ -3049,7 +3049,7 @@ export type ObjectWithArgs = {
  */
 export type AccessPriv = {
   /** string name of privilege */
-  priv_name: string
+  priv_name?: string
   /** list of String */
   cols?: { String: String }[]
 }
@@ -3871,7 +3871,7 @@ export type DeclareCursorStmt = {
  */
 export type ClosePortalStmt = {
   /** name of the portal (cursor) */
-  portalname: string
+  portalname?: string
   /** NULL means CLOSE ALL */
 }
 
@@ -4420,7 +4420,7 @@ export type AlterSystemStmt = {
  */
 export type ClusterStmt = {
   /** relation being indexed, or NULL if all */
-  relation: RangeVar
+  relation?: RangeVar
   /** original index defined */
   indexname?: string
   /** list of DefElem nodes */
@@ -4452,7 +4452,7 @@ export type VacuumStmt = {
  */
 export type VacuumRelation = {
   /** table name to process, or NULL */
-  relation: RangeVar
+  relation?: RangeVar
   /** table's OID; InvalidOid if not looked up */
   oid?: Oid
   /** list of column names, or NIL for all */
@@ -4644,7 +4644,7 @@ export type ExecuteStmt = {
  */
 export type DeallocateStmt = {
   /** The name of the plan to remove */
-  name: string
+  name?: string
   /** NULL means DEALLOCATE ALL */
 }
 
@@ -4841,7 +4841,7 @@ export type IntoClause = {
   /** table space to use, or NULL */
   tableSpaceName?: string
   /** materialized view's SELECT query */
-  viewQuery: Node
+  viewQuery?: Node
   /** true for WITH NO DATA */
   skipData: boolean
 }
@@ -5037,7 +5037,7 @@ export type Aggref = {
   /** ORDER BY (list of SortGroupClause) */
   aggorder: any[]
   /** DISTINCT (list of SortGroupClause) */
-  aggdistinct: any[]
+  aggdistinct?: any[]
   /** FILTER expression, if any */
   aggfilter?: Expr
   /** true if argument list was really '*' */
@@ -5445,7 +5445,7 @@ export type SubPlan = {
   subLinkType: SubLinkType
   /** The combining operators, transformed to an executable expression: */
   /** OpExpr or RowCompareExpr expression tree */
-  testexpr: Expr
+  testexpr?: Expr
   /** IDs of Params embedded in the above */
   paramIds: any[]
   /** Identification of the Plan tree to use: */
@@ -6128,7 +6128,7 @@ export type CurrentOfExpr = {
   /** RT index of target relation */
   cvarno?: Index
   /** name of referenced cursor, or NULL */
-  cursor_name: string
+  cursor_name?: string
   /** refcursor parameter number, or 0 */
   cursor_param?: number
 }
