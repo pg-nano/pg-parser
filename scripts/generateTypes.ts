@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import path from 'node:path'
 import type { NodeFieldMetadataByTag } from './inferFieldMetadata'
 import { expressionFields, nullableFields, typeMappings } from './typeMappings'
 
@@ -76,24 +77,19 @@ const bitMasks: Record<string, string[]> = {
   ],
 }
 
-async function main() {
-  const baseURL =
-    'https://raw.githubusercontent.com/pganalyze/libpg_query/16-latest/srcdata/'
+function readSrcData<T>(fileName: string): T {
+  const filePath = path.join(__dirname, '../libpg_query/srcdata', fileName)
+  const content = fs.readFileSync(filePath, 'utf-8')
+  return JSON.parse(content) as T
+}
 
+async function main() {
   const [structsByModule, enumsByModule, typeDefs, nodeTypes] =
     await Promise.all([
-      fetch(baseURL + 'struct_defs.json').then(r =>
-        r.json(),
-      ) as Promise<StructsByModule>,
-      fetch(baseURL + 'enum_defs.json').then(r =>
-        r.json(),
-      ) as Promise<EnumsByModule>,
-      fetch(baseURL + 'typedefs.json').then(r => r.json()) as Promise<
-        TypeDef[]
-      >,
-      fetch(baseURL + 'nodetypes.json')
-        .then(r => r.json())
-        .then(r => new Set(r as string[])),
+      readSrcData<StructsByModule>('struct_defs.json'),
+      readSrcData<EnumsByModule>('enum_defs.json'),
+      readSrcData<TypeDef[]>('typedefs.json'),
+      new Set(readSrcData<string[]>('nodetypes.json')),
     ])
 
   const entityNames = [
