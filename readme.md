@@ -27,7 +27,8 @@ Upon install, the pre-compiled binary for your operating system and architecture
 
 ## API
 
-This package exports the following functions:
+This package exports the following native functions:
+
 - `parseQuery` (for async parsing a SQL string of one or more statements)
 - `parseQuerySync`
 - `parsePlPgSQL` (for async parsing a plpgsql string)
@@ -36,15 +37,20 @@ This package exports the following functions:
 - `fingerprintSync`
 - `scanSync` (for scanning a SQL string and returning a list of tokens)
 - `splitWithScannerSync` (for splitting a SQL string into one or more statements)
+
+**Note:** There is no `deparse` function (for turning an AST back into a string) included, as this isn't needed for my use case.
+
+#### AST utilities
+
+I've implemented some TypeScript utilities for working with the AST:
+
 - `walk` (for traversing the AST)
 - `select` (for type-safe, deep field access through dot-notation)
 - `$` (for type-safe node proxy and type guards)
 
-**Note:** There is no `deparse` function (for turning an AST back into a string) included, as this isn't needed for my use case.
-
 ### Walking the AST
 
-I've added a `walk` function for easy AST traversal. You can pass a callback or a visitor object. You can return false to not walk into the children of the current node.
+Let's explore the `walk` function, ideal for AST traversal where you're only concerned with specific node types. You can pass a callback or a visitor object. You can return false to not walk into the children of the current node.
 
 Each node passed to your visitor is wrapped in a `NodePath` instance, which tracks the parent node and provides type guards (e.g. `isSelectStmt`) for type narrowing. You can access the underlying node with `path.node`.
 
@@ -74,7 +80,9 @@ walk(parseQuerySync(sql), (path) => {
 })
 ```
 
-I've also added a `select` function for type-safe, deep field access through dot-notation. You must not include the node types in the field path.
+Don't forget the `select` function, which excels at type-safe field access via dot-notation.
+
+Note: You must not include the *node types* (i.e. the capitalized names) in the field path.
 
 ```ts
 import { select, Expr } from "@pg-nano/pg-parser"
