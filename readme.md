@@ -34,6 +34,7 @@ This package exports the following functions:
 - `parsePlPgSQLSync`
 - `fingerprint` (for generating a unique string for a SQL string)
 - `fingerprintSync`
+- `scanSync` (for scanning a SQL string and returning a list of tokens)
 - `splitWithScannerSync` (for splitting a SQL string into one or more statements)
 - `walk` (for traversing the AST)
 - `select` (for type-safe, deep field access through dot-notation)
