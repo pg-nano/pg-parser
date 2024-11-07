@@ -18,7 +18,10 @@ ast.stmts // => [{ stmt: SelectStmt, stmt_len: 8 }, { stmt: SelectStmt, stmt_loc
 pnpm add @pg-nano/pg-parser
 ```
 
-The major and minor version of this package is meant to be aligned with the supported PostgreSQL major and minor version. Older and newer versions may be compatible, but this is not guaranteed.
+The major and minor version of this package is meant to be aligned with the supported PostgreSQL major and minor version. Older and newer versions of PostgreSQL may be compatible, but this is not guaranteed.
+
+> [!WARNING]
+> This package may be improved in ways that break your type guards. You'll probably want to pin to a specific version to avoid unexpected type changes.
 
 Upon install, the pre-compiled binary for your operating system and architecture will be pulled from GitHub Releases.
 
