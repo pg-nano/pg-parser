@@ -34,6 +34,7 @@
     "install": "[ ! -d .git ] && prebuild-install --runtime napi || true",
     "ci:prebuild": "prebuild --runtime napi --target 8 --strip --verbose",
     "format": "biome format --write package.json src/lib/*.ts test/*.ts scripts/*.ts",
+    "version": "biome format --write package.json",
     "test": "vitest"
   },
   "keywords": ["postgres", "postgresql", "pg", "query", "parser", "plpgsql"],
