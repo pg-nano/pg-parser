@@ -3,15 +3,10 @@ import path from 'node:path'
 import { bitMasks } from './data/bitMasks'
 import { expressionFields } from './data/expressionFields'
 import { expressionTypes } from './data/expressionTypes'
+import { fieldMetadataMap } from './data/fieldMetadata'
 import { nullableFields } from './data/nullableFields'
 import { skippedEntities } from './data/skippedEntities'
 import { typeMappings } from './data/typeMappings'
-import type { NodeFieldMetadataByTag } from './inferFieldMetadata'
-
-/** A record of node tag -> field name -> nullability */
-const nodeFieldsByTag: NodeFieldMetadataByTag = JSON.parse(
-  fs.readFileSync('nodeFields.json', 'utf8'),
-)
 
 type StructsByModule = Record<string, Record<string, StructDef>>
 type EnumsByModule = Record<string, Record<string, EnumDef>>
@@ -63,8 +58,9 @@ function formatComment(
 }
 
 function readSrcData<T>(fileName: string): T {
-  const filePath = path.join(__dirname, '../libpg_query/srcdata', fileName)
-  const content = fs.readFileSync(filePath, 'utf-8')
+  const scriptDir = new URL('.', import.meta.url).pathname
+  const dataPath = path.join(scriptDir, '../libpg_query/srcdata', fileName)
+  const content = fs.readFileSync(dataPath, 'utf-8')
   return JSON.parse(content) as T
 }
 
@@ -246,7 +242,7 @@ async function main() {
         constTypes.push(`{ ${namedFields[0].name}: ${typeName} }`)
       }
 
-      const fieldMetadata = nodeFieldsByTag[typeName]
+      const fieldMetadata = fieldMetadataMap[typeName]
       if (!fieldMetadata) {
         // If field metadata could not be inferred from libpg_query's test
         // suite, then it's likely not a node type.
@@ -295,7 +291,7 @@ async function main() {
           const debugTags = false
 
           if (fieldType === 'any' || fieldType === 'Node') {
-            const inferredTags = fieldMetadata?.[fieldName]?.[1]
+            const inferredTags = fieldMetadata?.[fieldName]?.tags
             if (inferredTags) {
               if (debugTags) {
                 console.log('Inferred tags for %s:', fieldPath, inferredTags)
@@ -303,7 +299,7 @@ async function main() {
               fieldType = renderTagTypes(inferredTags, fieldPath)
             }
           } else if (fieldType === 'any[]') {
-            const inferredListTags = fieldMetadata?.[fieldName]?.[2]
+            const inferredListTags = fieldMetadata?.[fieldName]?.listTags
             if (inferredListTags) {
               if (debugTags) {
                 console.log(
@@ -321,7 +317,7 @@ async function main() {
               }
             }
             if (fieldType === 'any[]' && field.c_type === 'List*') {
-              const inferredTags = fieldMetadata?.[fieldName]?.[1]
+              const inferredTags = fieldMetadata?.[fieldName]?.tags
               if (inferredTags) {
                 if (debugTags) {
                   console.log('Inferred tags for %s:', fieldPath, inferredTags)
@@ -343,7 +339,7 @@ async function main() {
 
           const nullable =
             (fieldMetadata
-              ? fieldMetadata[fieldName]?.[0] ?? true
+              ? fieldMetadata[fieldName]?.nullable ?? true
               : /\b(NULL|NIL|if any)\b/.test(field.comment ?? '')) ||
             nullableFields.has(fieldPath)
 

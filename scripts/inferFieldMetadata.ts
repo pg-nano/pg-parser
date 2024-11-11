@@ -17,9 +17,9 @@ export type NodeFieldMetadata = [
 ]
 
 export type NodeFieldMetadataByTag = {
-  [typeName: string]:
-    | { [fieldName: string]: NodeFieldMetadata | undefined }
-    | undefined
+  [typeName: string]: {
+    [fieldName: string]: NodeFieldMetadata
+  }
 }
 
 const fieldsByNodeTag: NodeFieldMetadataByTag = {}
@@ -93,4 +93,8 @@ for (const testFile of testFiles) {
   } catch {}
 }
 
-fs.writeFileSync('nodeFields.json', JSON.stringify(fieldsByNodeTag, null, 2))
+const scriptDir = new URL('.', import.meta.url).pathname
+fs.writeFileSync(
+  path.join(scriptDir, 'data/fieldMetadata.json'),
+  JSON.stringify(fieldsByNodeTag, null, 2),
+)
