@@ -2331,7 +2331,7 @@ export type RowMarkClause = {
  */
 export type WithClause = {
   /** list of CommonTableExprs */
-  ctes: any[]
+  ctes: { CommonTableExpr: CommonTableExpr }[]
   /** true = WITH RECURSIVE */
   recursive: boolean
   /** token location, or -1 if unknown */

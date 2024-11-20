@@ -29,6 +29,7 @@ export const typeMappings: Record<string, string> = {
   'Alias.colnames': NodeArray('String'),
   'Constraint.generated_when': '"a" | "d"',
   'SelectStmt.valuesLists': 'List<Expr>[]',
+  'WithClause.ctes': NodeArray('CommonTableExpr'),
 }
 
 function NodeArray(types: string) {
