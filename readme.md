@@ -87,11 +87,12 @@ Note: You must not include the *node types* (i.e. the capitalized names) in the 
 ```ts
 import { select, Expr } from "@pg-nano/pg-parser"
 
-/**
- * Given an expression node of many possible types,
- * check for a `typeName` field.
- */
-const typeName = select(expr as Expr, 'typeName')
+// Say we have an expression node of many possible types.
+declare const expr: Expr
+
+// By using the `select` function, we can access the `typeName` field
+// without having to use a bunch of type guards.
+const typeName = select(expr, 'typeName')
 //    ^? TypeName | undefined
 ```
 
