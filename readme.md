@@ -55,9 +55,9 @@ Let's explore the `walk` function, ideal for AST traversal where you're only con
 Each node passed to your visitor is wrapped in a `NodePath` instance, which tracks the parent node and provides type guards (e.g. `isSelectStmt`) for type narrowing. You can access the underlying node with `path.node`.
 
 ```ts
-import { parseQuerySync, walk, NodeTag } from "@pg-nano/pg-parser"
+import { parseQuerySync, walk, $ } from "@pg-nano/pg-parser"
 
-walk(parseQuerySync(sql), (path) => {
+walk(parseQuerySync(`SELECT foo FROM bar`), (path) => {
   path.tag // string
   path.node // the node object
   path.parent // the parent node
@@ -67,7 +67,7 @@ walk(parseQuerySync(sql), (path) => {
     walk(path.node.targetList, {
       ColumnRef(path) {
         const id = path.node.fields
-          .map((f) => (NodeTag.isString(f) ? f.String.sval : "*"))
+          .map((f) => ($.isString(f) ? f.String.sval : "*"))
           .join(".")
 
         console.log(id)
