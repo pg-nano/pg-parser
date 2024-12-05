@@ -129,6 +129,7 @@ The type definitions are generated from the [srcdata](https://github.com/pganaly
 
 - Uses `prebuild-install` to avoid bundling every platform's binaries into the package.
 - Added `splitWithScannerSync` for SQL statement splitting.
+- Added `scanSync` for token scanning.
 - [Generated](https://github.com/pg-nano/pg-parser/blob/16-latest/scripts/generateTests.ts) unit tests (see [snapshots](https://github.com/pg-nano/pg-parser/tree/16-latest/test/postgres_regress/__snapshots__) of every SQL case supported by `libpg_query`).
 
 ## Contributing
